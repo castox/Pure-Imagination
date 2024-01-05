@@ -1,0 +1,324 @@
+﻿############################################################################################################################################################
+############################################################################################################################################################
+##CCShop
+
+
+horse_pose = {
+	male = {
+		animation = { head = "joust_head" torso = "joust_body" }
+
+		horse_idle = {
+			animation = { head = "joust_head" torso = "joust_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+				
+					NOT = {
+						has_character_flag = horse_ridingr
+						has_character_flag = horse_ridingl
+						has_character_flag = j_got_hit
+						has_character_flag = j_hit_it
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horse_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_l = {
+			animation = { head = "joust_head" torso = "joust_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingl
+					NOR= {
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingr
+						has_character_flag = j_got_hit
+						has_character_flag = j_hit_it
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horsel_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_r = {
+			animation = { head = "joust_head" torso = "joust_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingr
+					NOR = {
+						has_character_flag = j_got_hit
+						has_character_flag = j_hit_it
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingl
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horser_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_idle2 = {
+			animation = { head = "joust_head" torso = "joust_strike_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = j_hit_it
+					NOT = {
+						has_character_flag = j_got_hit
+						has_character_flag = horse_ridingr
+						has_character_flag = horse_ridingl
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horse_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_l2 = {
+			animation = { head = "joust_head" torso = "joust_strike_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingl
+					has_character_flag = j_hit_it
+					NOR= {
+						has_character_flag = j_got_hit
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingr
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horsel_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_r2 = {
+			animation = { head = "joust_head" torso = "joust_strike_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingr
+					has_character_flag = j_hit_it
+					NOR = {
+						has_character_flag = j_got_hit
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingl
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horser_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_idle3 = {
+			animation = { head = "joust_head" torso = "joust_hit_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = j_got_hit
+					NOT = {
+						has_character_flag = j_hit_it
+						has_character_flag = horse_ridingr
+						has_character_flag = horse_ridingl
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horse_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_l3 = {
+			animation = { head = "joust_head" torso = "joust_hit_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingl
+					has_character_flag = j_got_hit
+					NOR= {
+						has_character_flag = j_hit_it
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingr
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horsel_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_r3 = {
+			animation = { head = "joust_head" torso = "joust_hit_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingr
+					has_character_flag = j_got_hit
+					NOR = {
+						has_character_flag = j_hit_it
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingl
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horser_prop
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+tribune_pose = {
+	male = {
+		default = { head = "idle" torso = "idle" }
+		
+
+		cheer_j = {
+			animation = { head = "emotion_happy_entry" torso = "cheer_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 130
+					OR = {
+						global_var:j_status = 1
+						global_var:j_status = 2
+					}
+					prowess > 8
+					NOT = {
+						global_var:j_status = 0
+					}
+					
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+		sad_j = {
+			animation = { head = "emotion_sadness_entry" torso = "emotion_sadness_entry" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 130
+				
+					global_var:j_status = 3
+				
+					prowess > 8
+					NOT = {
+						global_var:j_status = 0
+					}
+					
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+		tribune_idle = {
+			
+			animation = { head = "idle" torso = "idle" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					global_var:j_status = 0
+				}
+			}
+
+		}
+
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+
+
+lost_pose = {
+	male = {
+		animation = { head = "misc_dungeon" torso = "emotion_dying_entry" }
+
+		lost_idle = {
+			animation = { head = "misc_dungeon" torso = "emotion_dying_entry" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = joust_lost
+					NOT = {
+						has_character_flag = joust_win
+					}
+				}
+			}
+			portrait_modifier = {
+				animations = misc_dungeon_decal
+			}
+		}
+
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}

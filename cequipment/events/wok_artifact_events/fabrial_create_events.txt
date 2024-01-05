@@ -1,0 +1,50 @@
+﻿namespace = fabrial_create
+
+fabrial_create.1 = { #Create Fabrial
+	type = character_event
+	title = fabrial_create.1.t
+	desc = fabrial_create.1.desc
+	# is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		animation = personality_rational
+	}
+	
+	option = {
+		name = fabrial_create.1.a
+		show_as_unavailable = { gold < 90 }
+		remove_short_term_gold = 90
+		add_artifact = {ARTIFACT = artifact_spanreed}
+	}
+
+	option = {
+		name = fabrial_create.1.b
+		show_as_unavailable = { gold < 120 }
+		remove_short_term_gold = 120
+		add_artifact = {ARTIFACT = artifact_painrial}
+	}
+
+	option = {
+		name = fabrial_create.1.c
+
+		show_as_unavailable = { gold < 150 }
+
+		remove_short_term_gold = 150
+		add_artifact = {ARTIFACT = artifact_alerter}
+	}
+
+	option = {
+		name = fabrial_create.1.d
+
+		show_as_unavailable = { gold < 500 }
+
+		remove_short_term_gold = 500
+		add_artifact = {ARTIFACT = artifact_soulcaster}
+	}
+	
+	option = {
+		name = fabrial_create.1.nope
+	}
+}

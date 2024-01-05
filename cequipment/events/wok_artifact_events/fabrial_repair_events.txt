@@ -1,0 +1,751 @@
+﻿namespace = fabrial_repair
+
+# Artifabrian repairs a broken artifact.
+# 100x: Decision to fix own artifact
+# 1001: Decide on which artifact to get fixed.
+# 1002: It's easy!
+# 1003: It's tricky!
+# 1004: Disaster!
+fabrial_repair.1001 = { #Repair fabrial
+	type = character_event
+	title = fabrial_repair.1001.t
+	desc = fabrial_repair.1001.desc
+	
+	theme = learning
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = { #My soulcaster is broken, please fix
+		name = fabrial_repair.1001.a
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		stress_impact = {
+			diligent = minor_stress_impact_loss
+		}
+		set_variable = {
+			name = repairing_broken_artifact 
+			value = flag:artifact_broken_soulcaster_name
+		}
+		random_list = {
+			10 = {
+				custom_tooltip = fabrial_repair.1001.easy
+				modifier = {
+					add = learning
+				}
+				modifier = {
+					add = learning
+					has_trait = diligent
+				}
+				trigger_event = {
+					ID = fabrial_repair.1002
+					days = 1
+				}
+			}
+			20 = { # It's tricky
+			custom_tooltip = fabrial_repair.1001.difficult
+				trigger_event = {
+					ID = fabrial_repair.1003
+					days = 10
+				}
+			}
+			12 = {
+				modifier = {
+					add = 10 
+					has_trait = impatient
+				}
+				modifier = {
+					add = 10 
+					has_trait = lazy
+				}
+				modifier = {
+					add = 10 
+					has_trait = arrogant
+				}
+				custom_tooltip = fabrial_repair.1001.disaster
+				modifier = {add = {value = learning multiply = -1}}
+				trigger_event = { # Catastrophic result!
+					ID = fabrial_repair.1004
+					days = 10
+				}
+			}
+		}
+	}
+
+	option = { #Nevermind
+		name = fabrial_repair.1001.nope
+		stress_impact = {
+			stubborn = minor_stress_impact_gain
+		}
+	}
+}
+fabrial_repair.1002 = { #Repairing the fabrial was super easy.
+	type = character_event
+	title = fabrial_repair.1001.t
+	desc = fabrial_repair.1002.desc
+	
+	theme = learning
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = { #My fabrial is fixed!
+		name = fabrial_repair.1002.a
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+		add_artifact = {ARTIFACT = artifact_soulcaster}
+	}
+	option = { #Nevermind
+		trigger = {NOT = {exists = var:artifact_broken_soulcaster}}
+		name = fabrial_repair.1001.nope
+		stress_impact = {
+			stubborn = minor_stress_impact_gain
+		}
+	}
+}
+fabrial_repair.1003 = { #Repairing the fabrial gets tricky.
+	type = character_event
+	title = fabrial_repair.1001.t
+	desc = fabrial_repair.1003.desc
+	
+	theme = learning
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = { #My fabrial is fixed!
+		name = fabrial_repair.1003.a
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		show_as_unavailable = {
+			gold < 100
+			NOT = {compare_investiture = {AMOUNT = 100}}
+		}
+		remove_short_term_gold = 100
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+		add_artifact = {ARTIFACT = artifact_soulcaster}
+	}
+	option = { #Nevermind
+		trigger = {NOT = {exists = var:artifact_broken_soulcaster}}
+		name = fabrial_repair.1001.nope
+		stress_impact = {
+			stubborn = minor_stress_impact_gain
+		}
+	}
+}
+
+fabrial_repair.1004 = { #Disaster!
+	type = character_event
+	title = fabrial_repair.1001.t
+	desc = fabrial_repair.1004.desc
+	
+	theme = learning
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = { #My fabrial is destroyed!
+		name = fabrial_repair.1004.a
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		add_stress = 35
+		stress_impact = {
+			greedy = major_stress_impact_gain
+		}
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+	}
+}
+
+# Repair fabrial request
+
+fabrial_repair.2001 = { #Repair this fabrial, please.
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2001.desc
+	
+	theme = diplomacy
+	
+	left_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	
+	option = { #My soulcaster is broken, please fix
+		name = fabrial_repair.2001.a
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		set_variable = {
+			name = repairing_broken_artifact 
+			value = flag:artifact_broken_soulcaster_name
+		}
+		scope:recipient = {
+			set_variable = {
+				name = repairing_broken_artifact 
+				value = flag:artifact_broken_soulcaster_name
+			}
+		}
+		transfer_artifact = {
+			ARTIFACT = artifact_broken_soulcaster 
+			A = scope:actor
+			B = scope:recipient
+		}
+		stress_impact = {
+			shy = major_stress_impact_gain
+			greedy = medium_stress_impact_gain
+			paranoid = medium_stress_impact_gain
+		}
+		pay_short_term_gold = {
+			target = scope:recipient 
+			gold = soulcaster_repair_cost
+		}
+		scope:recipient = {
+			random_list = {
+				10 = {
+					custom_tooltip = fabrial_repair.1001.easy
+					modifier = {
+						add = learning
+					}
+					modifier = {
+						add = learning
+						has_trait = diligent
+					}
+					trigger_event = {
+						ID = fabrial_repair.2002
+						days = 1
+					}
+				}
+				20 = { # It's tricky
+				custom_tooltip = fabrial_repair.1001.difficult
+					trigger_event = {
+						ID = fabrial_repair.2003
+						days = 10
+					}
+				}
+				12 = {
+					modifier = {
+						add = 10 
+						has_trait = impatient
+					}
+					modifier = {
+						add = 10 
+						has_trait = lazy
+					}
+					modifier = {
+						add = 10 
+						has_trait = arrogant
+					}
+					custom_tooltip = fabrial_repair.1001.disaster
+					modifier = {add = {value = learning multiply = -1}}
+					trigger_event = { # Catastrophic result!
+						ID = fabrial_repair.2004
+						days = 10
+					}
+				}
+			}
+		}
+	}
+	option = { #Nevermind
+		name = fabrial_repair.2001.nope
+		stress_impact = {
+			stubborn = minor_stress_impact_gain
+		}
+	}
+}
+# Recipient fixes:
+fabrial_repair.2002 = { #Repairing the fabrial was super easy.
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2002.desc
+	
+	theme = learning
+	
+	left_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	immediate = {
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+		add_artifact = {ARTIFACT = artifact_soulcaster}
+	}
+	option = { #Send it back
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = ai_greed
+			}
+		}
+		name = fabrial_repair.2002.a
+		transfer_artifact = {
+			ARTIFACT = artifact_broken_soulcaster 
+			A = scope:recipient 
+			B = scope:actor
+		}
+		scope:actor = {
+			trigger_event = fabrial_repair.2011
+		}
+	}
+	option = { #Send it back alongside the money
+		ai_chance = {
+			base = 100
+			opinion_modifier = {
+				who = scope:recipient
+				opinion_target = scope:actor
+				multiplier = 1
+			}
+			modifier = {
+				has_trait = generous
+				add = 100
+			}
+			modifier = {
+				has_trait = humble
+				add = 40
+			}
+			modifier = {
+				has_trait = content
+				add = 30
+			}
+			modifier = {
+				add = {value = ai_greed multiply = -1}
+			}
+			modifier = {
+				factor = 0.5
+				has_trait = deceitful
+			}
+			modifier = {
+				factor = 2
+				has_relation_friend = scope:actor
+			}
+		}
+		name = fabrial_repair.2002.b
+		transfer_artifact = {
+			ARTIFACT = artifact_broken_soulcaster 
+			A = scope:recipient 
+			B = scope:actor
+		}
+		pay_short_term_gold = {target = scope:actor gold = soulcaster_repair_cost}
+		stress_impact = {
+			greedy = major_stress_impact_gain
+			ambitious = minor_stress_impact_gain
+			generous = medium_stress_impact_loss
+			humble = medium_stress_impact_loss
+			content = minor_stress_impact_loss
+		}
+		scope:actor = {
+			add_opinion = {modifier = repaired_my_artifact_for_free_opinion target = scope:recipient}
+			trigger_event = fabrial_repair.2013
+		}
+	}
+	option = { #I'll steal it!
+		stress_impact = {
+			greedy = medium_stress_impact_loss
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				has_trait = deceitful
+			}
+			modifier = {
+				add = 100
+				has_trait = greedy
+			}
+		}
+		name = fabrial_repair.2002.steal
+		scope:actor = {
+			trigger_event = fabrial_repair.2012
+		}
+		add_to_variable_list = {
+			name = stolen_artifact_from
+			target = scope:actor
+		}
+	}
+}
+fabrial_repair.2003 = { #Repairing the fabrial gets tricky.
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2003.desc
+	theme = learning
+
+	left_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	
+	option = { #The fabrial is fixed with effort and I return it
+		name = fabrial_repair.2003.a
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		remove_short_term_gold = soulcaster_repair_cost
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+		add_artifact = {ARTIFACT = artifact_soulcaster}
+		transfer_artifact = {
+			ARTIFACT = artifact_soulcaster 
+			A = scope:recipient 
+			B = scope:actor
+		}
+		stress_impact = {
+			greedy = medium_stress_impact_gain
+			deceitful = minor_stress_impact_gain
+		}
+		scope:actor = {
+			trigger_event = fabrial_repair.2011
+		}
+	}
+	option = { #The fabrial is fixed with effort and I steal it
+		name = fabrial_repair.2003.steal
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		remove_short_term_gold = soulcaster_repair_cost
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+		add_artifact = {ARTIFACT = artifact_soulcaster}
+		stress_impact = {
+			honest = major_stress_impact_gain
+			greedy = minor_stress_impact_loss
+			just = medium_stress_impact_gain
+			generous = medium_stress_impact_gain
+			deceitful = major_stress_impact_loss
+		}
+		add_to_variable_list = {
+			name = stolen_artifact_from
+			target = scope:actor
+		}
+		scope:actor = {
+			trigger_event = fabrial_repair.2012
+		}
+	}
+	option = { #I'll pocket it for later
+		trigger = {NOT = {exists = var:artifact_broken_soulcaster}}
+		name = fabrial_repair.2003.steal_b
+		stress_impact = {
+			honest = major_stress_impact_gain
+			greedy = medium_stress_impact_loss
+			just = medium_stress_impact_gain
+			generous = medium_stress_impact_gain
+			deceitful = major_stress_impact_loss
+		}
+		add_to_variable_list = {
+			name = stolen_artifact_from
+			target = scope:actor
+		}
+		scope:actor = {
+			trigger_event = fabrial_repair.2012
+		}
+	}
+}
+
+fabrial_repair.2004 = { #Disaster!
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2004.desc
+	theme = learning
+	
+	left_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	
+	option = { #The fabrial is destroyed!
+		name = fabrial_repair.2004.a
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		stress_impact = {
+			base = 13
+			greedy = major_stress_impact_gain
+			diligent = medium_stress_impact_gain
+			just = medium_stress_impact_gain
+			honest = medium_stress_impact_gain
+		}
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+		scope:actor = {
+			trigger_event = fabrial_repair.2012
+		}
+	}
+	option = { #The fabrial is destroyed!
+		name = fabrial_repair.2004.b
+		trigger = {
+			exists = var:artifact_broken_soulcaster
+		}
+		stress_impact = {
+			base = 13
+			greedy = major_stress_impact_gain
+			diligent = medium_stress_impact_gain
+			just = medium_stress_impact_gain
+			honest = medium_stress_impact_gain
+		}
+		remove_artifact = {ARTIFACT = artifact_broken_soulcaster}
+		scope:actor = {
+			trigger_event = fabrial_repair.2012
+		}
+	}
+}
+
+# Actor response events: 
+fabrial_repair.2011 = { # Success!
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2011.desc
+	theme = learning
+	immediate = {
+		show_as_tooltip = {
+			add_character_modifier = artifact_soulcaster_modifier
+		}
+	}
+	left_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	option = { # Thanks!
+		name = fabrial_repair.2011.a
+	}
+}
+fabrial_repair.2012 = { # Failure?
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2012.desc
+	theme = learning
+	
+	left_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	option = { # Accept your losses
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_trait = humble
+			}
+			modifier = {
+				factor = 2
+				has_trait = content
+			}
+			modifier = {
+				factor = 0.1
+				has_trait = paranoid
+			}
+			modifier = {
+				factor = 0.5
+				has_trait = vengeful
+			}
+		}
+		name = fabrial_repair.2012.a
+		scope:actor = {remove_variable = repairing_broken_artifact}
+		scope:recipient = {remove_variable = repairing_broken_artifact}
+		stress_impact = {
+			greedy = major_stress_impact_gain
+			wrathful = major_stress_impact_gain
+			vengeful = major_stress_impact_gain
+			paranoid = major_stress_impact_gain
+		}
+	}
+	option = { # Investigate your losses
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_trait = vengeful
+			}
+			modifier = {
+				factor = 10
+				has_trait = paranoid
+			}
+		}
+		name = fabrial_repair.2012.b
+		custom_tooltip = fabrial_repair.investigate #"You will investigate for any signs of wrongdoing."
+		if = {
+			limit = {
+				intrigue_diff = { target = scope:recipient value > 0}
+				scope:recipient = {
+					is_target_in_variable_list = {
+						name = stolen_artifact_from
+						target = scope:actor
+					}
+				}
+			}
+			trigger_event = {ID = fabrial_repair.2021 days = 10}
+		}
+		else = {
+			trigger_event = {ID = fabrial_repair.2022 days = 10}
+		}
+	}
+}
+fabrial_repair.2013 = { # Success *and* money!
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2013.desc
+	theme = learning
+	immediate = {
+		show_as_tooltip = {
+			scope:recipient = { 
+				pay_short_term_gold = {
+					target = scope:actor 
+					gold = soulcaster_repair_cost
+				}
+			}
+			add_artifact = {ARTIFACT = artifact_soulcaster}
+		}
+	}
+	left_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	option = { # Thanks!
+		name = fabrial_repair.2013.a
+		scope:actor = {remove_variable = repairing_broken_artifact}
+		scope:recipient = {remove_variable = repairing_broken_artifact}
+		stress_impact = {
+			greedy = major_stress_impact_loss
+		}
+	}
+	option = { # Thanks! Have a hook on me!
+		name = fabrial_repair.2014.a
+		scope:actor = {remove_variable = repairing_broken_artifact}
+		scope:recipient = {remove_variable = repairing_broken_artifact}
+		scope:recipient = {
+			add_hook = {type = favor_hook target = scope:actor years = 5} 
+			add_opinion = {
+				modifier = freely_promised_me_a_favor
+				target = scope:actor
+			}
+		}
+		stress_impact = {
+			content = medium_stress_impact_loss
+			humble = medium_stress_impact_loss
+			generous = medium_stress_impact_loss
+		}
+	}
+}
+fabrial_repair.2014 = { # Failure *but* money...
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2014.desc
+	theme = learning
+	immediate = {
+		show_as_tooltip = {
+			scope:recipient = {
+				pay_short_term_gold = {
+					target = scope:actor
+					gold = soulcaster_repair_cost
+				}
+			}
+		}
+	}
+	left_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	option = { # Oh well...
+		name = fabrial_repair.2014.a
+		scope:actor = {remove_variable = repairing_broken_artifact}
+		scope:recipient = {remove_variable = repairing_broken_artifact}
+		stress_impact = {
+			greedy = major_stress_impact_gain
+			wrathful = major_stress_impact_gain
+			vengeful = medium_stress_impact_gain
+		}
+	}
+}
+
+fabrial_repair.2021 = { # They stole my artifact! 
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2021.desc
+	theme = learning
+	immediate = {
+		custom_tooltip = fabrial_repair.discovery
+	}
+	left_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	option = { # Oh well...
+		name = fabrial_repair.2021.a
+		scope:actor = {remove_variable = repairing_broken_artifact}
+		scope:recipient = {remove_variable = repairing_broken_artifact}
+		stress_impact = {
+			greedy = major_stress_impact_gain
+			wrathful = major_stress_impact_gain
+			vengeful = medium_stress_impact_gain
+		}
+	}
+}
+fabrial_repair.2022 = { # They did not steal my artifact. 
+	type = character_event
+	title = fabrial_repair.2001.t
+	desc = fabrial_repair.2022.desc
+	theme = learning
+	immediate = {
+		custom_tooltip = fabrial_repair.no_discovery #"You discovered they did not steal your artifact"
+	}
+	left_portrait = {
+		character = scope:actor
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_rational
+	}
+	option = { # Oh well...
+		name = fabrial_repair.2022.a
+		scope:actor = {remove_variable = repairing_broken_artifact}
+		scope:recipient = {remove_variable = repairing_broken_artifact}
+		stress_impact = {
+			greedy = major_stress_impact_gain
+			wrathful = major_stress_impact_gain
+			vengeful = medium_stress_impact_gain
+		}
+	}
+}

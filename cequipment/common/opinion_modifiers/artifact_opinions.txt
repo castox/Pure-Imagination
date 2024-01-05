@@ -1,0 +1,35 @@
+﻿gave_shards_opinion = {
+	opinion = 60
+}
+
+nightblood_hates_evil = {
+	opinion = -100
+}
+
+gave_artifacts_opinion = {
+	stacking = yes
+	months = 40	
+	opinion = 20
+	decaying = yes
+}
+
+repaired_my_artifact_opinion = {
+	stacking = yes
+	months = 30	
+	opinion = 15
+	decaying = yes
+}
+
+repaired_my_artifact_for_free_opinion = {
+	stacking = yes
+	months = 60	
+	opinion = 30
+	decaying = yes
+}
+
+freely_promised_me_a_favor = {
+	stacking = yes
+	months = 30	
+	opinion = 15
+	decaying = yes
+}

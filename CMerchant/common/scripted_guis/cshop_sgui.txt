@@ -1,0 +1,317 @@
+#drink gui
+is_backward = {
+	scope = character
+	is_shown = {
+		global_var:castox = {
+			has_character_flag = s_backward
+			NOR = {
+				has_character_flag = s_left
+				has_character_flag = s_right
+			}
+			
+		}
+		
+	}
+	effect = {
+		global_var:castox = {
+			add_character_flag = s_backward
+		}
+	}
+}
+is_n_side = {
+	scope = character
+
+	effect = {
+		global_var:castox = {
+			remove_character_flag = s_side
+		}
+	}
+}
+is_n_side_s = {
+	scope = character
+
+	effect = {
+		global_var:castox = {
+			remove_character_flag = s_side_s
+		}
+	}
+}
+is_side_s = {
+	scope = character
+	is_shown = {
+		global_var:castox = {
+			has_character_flag = s_side_s			
+		}
+		
+	}
+	effect = {
+		global_var:castox = {
+			add_character_flag = s_side_s
+		}
+	}
+}
+is_side = {
+	scope = character
+	is_shown = {
+		global_var:castox = {
+			has_character_flag = s_side
+			NOR = {
+				has_character_flag = s_left
+				has_character_flag = s_right
+				has_character_flag = s_backward
+			}
+			
+		}
+		
+	}
+	effect = {
+		global_var:castox = {
+			add_character_flag = s_side
+		}
+	}
+}
+is_forward = {
+	scope = character
+	is_shown = {
+		global_var:castox = {
+			
+			NOR = {
+				has_character_flag = s_backward
+				has_character_flag = s_side
+				has_character_flag = s_side_s
+			}
+			
+		}
+		
+	}
+	effect = {
+		global_var:castox = {
+			remove_character_flag = s_backward
+		}
+	}
+}
+talkbox_top = {
+	scope = character
+	is_shown = {
+		global_var:castox = {
+			OR = {
+				has_character_flag = s_left
+				has_character_flag = s_right
+				has_character_flag = s_backward
+				has_character_flag  = s_side
+				has_character_flag = s_side_s
+
+			}
+			
+		}
+		
+	}
+}
+talkbox = {
+	scope = character
+	is_shown = {
+		global_var:castox = {
+			OR = {
+				has_character_flag = s_left
+				has_character_flag = s_right
+
+			}
+			
+		}
+		
+	}
+}
+open_shop = {
+	scope = character
+
+
+	effect = {
+		play_music_cue =  mx_welcome
+	} 
+}
+start_talk = {
+	scope = character
+	is_shown = {
+		has_character_flag = start_talk
+	}
+
+	effect = {
+		remove_character_flag = end_talk
+		add_character_flag = start_talk
+	} 
+}
+talk_begin = {
+	scope = character
+
+	effect = {
+
+		if = {
+			limit = {
+				has_character_flag = start_talk
+			}
+			if = {
+				limit = {
+					has_character_flag = talk_begin
+				}
+				remove_character_flag = talk_begin
+			}
+			else = {
+				add_character_flag = talk_begin
+			}
+		}
+		
+	} 
+}
+end_talk_n = {
+	scope = character
+	is_shown = {
+		has_character_flag = end_talk
+	}
+	effect = {
+		add_character_flag = end_talk
+		remove_character_flag = talk_begin
+		remove_character_flag = start_talk
+	} 
+}
+
+is_nw = {
+
+    scope = character
+	is_shown = {
+		OR = {
+			capital_province = { geographical_region = world_europe_north }
+			capital_province = { geographical_region = world_steppe }
+			capital_province = { geographical_region = world_asia_minor }
+			capital_province = { geographical_region = world_africa }
+		}
+	}
+}
+is_se = {
+
+    scope = character
+	is_shown = {
+		NOT = {
+			OR = {
+				capital_province = { geographical_region = world_europe_north }
+				capital_province = { geographical_region = world_steppe }
+				capital_province = { geographical_region = world_asia_minor }
+				capital_province = { geographical_region = world_africa }
+			}
+
+		}
+	}
+}
+is_def_x = {
+
+    scope = character
+	is_shown = {
+	
+		OR = {
+			capital_province = { geographical_region = world_africa }
+			capital_province = { geographical_region = world_middle_east }
+			capital_province = { geographical_region = world_india }
+			capital_province = { geographical_region = world_europe_north }
+			capital_province = { geographical_region = world_steppe }
+			capital_province = { geographical_region = world_asia_minor }
+		}
+			
+	}
+}
+is_def_c = {
+
+    scope = character
+	is_shown = {
+		NOT = {
+			OR = {
+				capital_province = { geographical_region = world_africa }
+				capital_province = { geographical_region = world_middle_east }
+				capital_province = { geographical_region = world_india }
+				capital_province = { geographical_region = world_europe_north }
+				capital_province = { geographical_region = world_steppe }
+				capital_province = { geographical_region = world_asia_minor }
+			}
+		}
+		
+	}
+}
+s_leave_r = {
+
+    scope = character
+	is_shown = {
+		NOT = {
+			OR = {
+				global_var:castox = {
+					has_character_flag = s_right
+				}
+			}
+		}
+	}
+
+	effect = {
+		global_var:castox = {
+			remove_character_flag = s_right
+		}
+		
+	}
+}
+s_leave_l = {
+
+    scope = character
+	is_shown = {
+		NOT = {
+			OR = {
+				global_var:castox = {
+					has_character_flag = s_left
+				}
+			}
+		}
+	}
+
+	effect = {
+		global_var:castox = {
+			remove_character_flag = s_left
+		}
+		
+	}
+}
+s_left = {
+
+    scope = character
+
+	is_shown = {
+		global_var:castox = {
+			has_character_flag = s_left
+		}
+		
+	}
+
+	effect = {
+		global_var:castox = {
+			add_character_flag = s_left
+		}
+	}
+}
+s_right = {
+
+    scope = character
+
+	is_shown = {
+		global_var:castox = {
+			has_character_flag = s_right
+		}
+		
+	}
+
+	effect = {
+		global_var:castox = {
+			add_character_flag = s_right
+		}
+	}
+}
+
+debug_visual = {
+	is_shown = {
+		has_character_flag = debugger
+	}
+}
+

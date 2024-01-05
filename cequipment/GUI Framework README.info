@@ -1,0 +1,78 @@
+##################################
+### WAY OF KINGS GUI FRAMEWORK ###
+###          README            ###
+###        by  Tobbzn          ###
+##################################
+
+##### OVERVIEW ######
+What is this mod and what does it do?
+
+On its own, this mod doesn't do much. However, the framework it provides allows you to create custom GUIs entirely from script, which makes GUI compatibility much easier. 
+The typical method most modders use to create their custom GUIs involves editing a vanilla GUI file, and either adding a GUI type or executing a console command to create the custom GUI.
+However, this means that if two mods edit the same vanilla GUI, they'll be incompatible for no good reason. This is especially a problem for people who work on Total Conversion mods, because half their bug reports will be from people who don't understand that Free Console Access is incompatible with their mod.
+One could attempt to let each separate mod use event_widgets to create their GUIs, but the problem is that if two such events are fired at the exact same time, then the console commands attempt to be fired at the exact same time, which fails. There needs to be at least some time between each console command.
+
+With this mod, two events are fired for each player. 
+The first event on game start, and pushes the datatypes GetDummyMale and GetDummyFemale to be accessible via script. It also initializes a list of "indices" (which are actually provinces) so that the provinces may be passed from GUI to sGUI. This is needed because actual numerical values can't be passed from GUI to sGUI.
+Once the characters are initialized in script, on_actions fire which allows any modder to add their GUI to the list of GUIs using the add_custom_gui effect. This is stored on the dummy_male.
+The second event is then fired, and it reads every entry in dummy_male's list of custom GUIs, and executes console commands that create them in a staggered way with a tiny delay between them. 
+This prevents conflicting console commands from being fired at the same time.
+
+Voila; now every custom GUI has been safely initialized without editing a single vanilla file.
+
+Furthermore, the function add_sidebar_button may be invoked at any time to add a button to the custom_sidebar GUI which comes bundled with the mod. These buttons will toggle a system variable which can be used for GUI visibility conditions, and as a fallback it will create the GUI anew using a console command.
+
+
+#### USAGE ####
+
+1. DO NOT DIRECTLY EDIT ANY OF THE FILES INCLUDED IN THE GUI FRAMEWORK! If you do, you'll introduce incompatibilities with other mods using the same framework.
+Instead, include the framework's files in your mod and reference them from your own custom files. The custom files should be named in such a way that it's unlikely that any other mod will use the same file name.
+For example:
+common/on_action/way_of_kings_on_actions.txt
+In such an file you can add an on_action which appends to on_after_gui_dummy_male, where you can use functionns like add_custom_gui = {NAME = <string>}
+For example:
+on_after_gui_dummy_male = {
+	on_actions = {
+		on_after_gui_dummy_male_artifacts # Replace with your custom on_action
+	}
+}
+on_after_gui_dummy_male_artifacts = { # Replace with your custom on_action
+	effect  = {
+		add_sidebar_button = {NAME = window_artifacts}
+		add_custom_gui = {NAME = window_artifacts}
+	}
+}
+REMEMBER THAT YOU CANNOT APPEND EFFECTS DIRECTLY, ONLY ON_ACTIONS AND EVENTS! 
+This means that your effect block must be in the appended on_action, *not* in the referenced on_action!
+
+2. Your GUI must be in gui/custom_gui/ and have the same filename as the actual GUI name.
+For example:
+gui/custom_gui/window_artifacts.gui should contain a window with the line
+	name = "window_artifacts"
+
+3. Whenever you want after the initialization step, you can use add_sidebar_button = {NAME = <string>} to add a button to the side.
+3.1 The button tooltip localization is given by sidebar_button_tooltip_<string>. 
+For example: 
+	sidebar_button_tooltip_window_artifacts: "Artifacts"
+3.2 In the manner of gui/texticons.gui or gui/example_sidebar_icons.gui, make your own icons file with an entry named icon_<name>. This icon will be automatically used for the sidebar button.
+For example:
+texticon = { 
+	icon = icon_window_artifacts
+	iconsize = {
+		texture = "gfx/artifacts/maintab_artifacts.dds"
+		size = { 50 50 }
+		fontsize = 16
+	}
+}
+
+3.3 If you want your custom GUI in the sidebar, then visibility should be set by the system variable sidebar_window having the GUI name as a value.
+		visible = "[And(GetVariableSystem.HasValue('sidebar_window','window_artifacts'),IsInGame)]"
+		
+3.4 If added to the sidebar, then your GUI should set its own name as a system variable when initialized (to indicate that the initialization was successful and prevent the sidebar from trying to recreate it from scratch when clicked)
+For example: 
+		state = {
+			name = initialize
+			trigger_on_create = yes
+			on_start = "[GetVariableSystem.Set( 'window_artifacts', 'yes' )]"
+		}
+		

@@ -1,0 +1,443 @@
+#drink gui
+casting = {
+
+    scope = character
+
+	is_shown = {
+		has_character_flag = casting
+	}
+
+	effect = {
+		add_character_flag = fishing_idle
+		remove_character_flag = casting
+
+		random_list = {
+
+			50 = {
+
+				set_variable = { name = fish_wait value = 1 }
+			}
+			50 = {
+				set_variable = { name = fish_wait value = 2 }
+			}
+			50 = {
+
+				set_variable = { name = fish_wait value = 3 }
+			}
+		}
+	}
+}
+debug_reset = {
+
+    scope = character
+
+	effect = {
+		remove_variable = current_fish1
+		set_variable = { name = fish_wait value = 0 }
+		set_variable = { name = fish_tier value = 0 }
+		set_variable = { name = fish_loc value = 100 }
+		set_variable = { name = div_loc value = 160 }
+		set_variable = { name = fish_score value = 0 }
+		set_variable = { name = match value = 0 }
+		#play_music_cue =  mx_fishing
+		remove_character_flag = fish_on_line
+		add_character_flag = fishing_idle
+
+
+	}
+}
+you_caught = {
+
+    scope = character
+
+	is_shown = {
+		has_character_flag = you_caught_one
+	}
+
+	effect = {
+		remove_character_flag = you_caught_one
+	}
+}
+idle_fishing = {
+
+    scope = character
+
+	effect = {
+		add_character_flag = fishing_idle
+	}
+}
+reel_bar = {
+
+    scope = character
+
+	effect = {
+		if = {
+			limit = {
+				var:div_loc <= -150 
+			}
+
+			set_variable = { name = div_loc value = -150 }
+		} 
+		else = {
+			change_variable = { name = div_loc subtract = 30 }
+		}
+	}
+}
+
+
+
+fishy = {
+
+    scope = character
+	is_shown = {
+		has_character_flag = fish_on_line
+	}
+
+	effect = {
+
+		if = {
+			limit = {
+				has_character_flag = fish_on_line
+				var:div_loc >= root.fish_range1
+				var:div_loc <= root.fish_range2
+			}
+		
+			change_variable = { name = fish_score add = 1 }
+		}
+		if = {
+			limit = {
+				var:fish_score >= 200
+			}
+			if = {
+				limit = {
+					var:fish_tier = 1
+				}
+				add_stress = -10
+			}
+			if = {
+				limit = {
+					var:fish_tier = 1
+				}
+				add_stress = -20
+			}
+			if = {
+				limit = {
+					var:fish_tier = 1
+				}
+				add_stress = -30
+			}
+			remove_character_flag = no_touch
+			set_variable = { name = fish_wait value = 0 }
+			set_variable = { name = fish_tier value = 0 }
+			set_variable = { name = fish_loc value = 100 }
+			set_variable = { name = div_loc value = 160 }
+			set_variable = { name = fish_score value = 0 }
+			add_character_flag = you_caught_one
+
+			remove_character_flag = fish_on_line
+			add_character_flag = fishing_idle
+			change_variable = { name = match add = 1 }
+
+			add_to_variable_list = {
+				name = caught_fish
+				target = var:current_fish1
+			}
+                
+            
+			#clear_variable_list = current_fish
+
+			if = {
+				limit = {
+					root.fish_total = 16
+				}
+				add_trait = legendary_fisherman
+			}
+
+		}
+		if = {
+			limit = {
+				has_character_flag = fish_on_line
+				var:fish_score <= 0
+			}
+			set_variable = { name = fish_wait value = 0 }
+			set_variable = { name = fish_tier value = 0 }
+			set_variable = { name = fish_loc value = 100 }
+			set_variable = { name = div_loc value = 160 }
+			set_variable = { name = fish_score value = 0 }
+			remove_character_flag = fish_on_line
+			add_character_flag = fishing_idle
+			remove_character_flag = no_touch
+			
+		}
+	}
+}
+debug_visual = {
+	is_shown = {
+		has_character_flag = debugger
+	}
+}
+fish_music = {
+	effect = {
+		play_music_cue =  mx_fishing
+	}
+}
+reel_visual = {
+	is_shown = {
+		has_character_flag = fish_on_line
+	}
+}
+fish_1 = {
+	is_shown = {
+		has_character_flag = fish_on_line
+		var:fish_tier = 1
+	}
+}
+fish_2 = {
+	is_shown = {
+		has_character_flag = fish_on_line
+		var:fish_tier = 2
+	}
+}
+fish_3 = {
+	is_shown = {
+		has_character_flag = fish_on_line
+		var:fish_tier = 3
+	}
+}
+fish_tiers = {
+
+    scope = character
+
+
+	effect = {
+		random_list = {
+
+			50 = {
+				tier_1_fish = yes
+			}
+			40 = {
+				tier_2_fish = yes
+			}
+			10 = {
+				tier_3_fish = yes
+			}
+		}
+	}
+}
+
+lower_bar = {
+
+    scope = character
+
+	is_shown = {
+		has_character_flag = fish_on_line
+	}
+	effect = {
+
+		if = {
+			limit = {
+				has_character_flag = fish_on_line
+			}
+			if = {
+				limit = {
+					var:div_loc >= 160 
+				}
+
+				set_variable = { name = div_loc value = 160 }
+			} 
+			change_variable = { name = fish_score subtract = 0.5 }
+			change_variable = { name = div_loc add = 3 }
+		}
+	}
+}
+start_fishing = {
+
+    scope = character
+
+	effect = {
+		remove_variable = current_fish1
+		set_variable = { name = fish_wait value = 0 }
+		set_variable = { name = fish_tier value = 0 }
+		set_variable = { name = fish_loc value = 100 }
+		set_variable = { name = div_loc value = 160 }
+		set_variable = { name = fish_score value = 0 }
+		set_variable = { name = match value = 0 }
+		play_music_cue =  mx_fishing
+		remove_character_flag = fish_on_line
+		add_character_flag = fishing_idle
+		remove_character_flag = no_touch
+		
+	}
+}
+exit_fishing = {
+
+    scope = character
+
+	effect = {
+		play_music_cue =  mx_cue_peace_ensues
+		remove_character_flag = fishing_idle
+		set_variable = { name = fish_wait value = 0 }
+		set_variable = { name = fish_tier value = 0 }
+		set_variable = { name = fish_loc value = 100 }
+		set_variable = { name = div_loc value = 160 }
+		set_variable = { name = fish_score value = 0 }
+		set_variable = { name = match value = 0 }
+		remove_character_flag = fish_on_line
+		remove_character_flag = casting
+		remove_character_flag = reeling
+		remove_character_flag = no_touch
+
+	}
+}
+casting2 = {
+
+    scope = character
+
+	effect = {
+		add_character_flag = no_touch
+		remove_character_flag = fishing_idle
+		add_character_flag = casting
+
+	}
+}
+casting_visual = {
+	is_shown = {
+		NOT = {
+			has_character_flag = fish_on_line
+		}
+		
+	}
+	effect = {
+	
+	}
+}
+casting_visual1 = {
+	is_shown = {
+		NOT = {
+			has_character_flag = no_touch
+		}
+		
+	}
+	effect = {
+	
+	}
+}
+wait_1 = {
+	is_shown = {
+		var:fish_wait = 1
+	}
+	effect = {
+		var:fish_wait = 0
+	}
+}
+wait_2 = {
+	is_shown = {
+		var:fish_wait = 2
+	}
+	effect = {
+		var:fish_wait = 0
+	}
+}
+wait_3 = {
+	is_shown = {
+		var:fish_wait = 3
+	}
+	effect = {
+		var:fish_wait = 0
+	}
+}
+is_stopped = {
+	is_shown = {
+		NOT = {
+			has_character_flag = fish_on_line
+		}
+	}
+}
+fish_movements = {
+	scope = character
+
+	effect = {
+		random_list = {
+
+			10 = {
+				set_variable = { name = fish_loc value = -150 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -140 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -130 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -120 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -110 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -100 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -90 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -80 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -70 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -60 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -50 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -40 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -30 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -20 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = -10 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 0 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 100 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 90 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 80 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 70 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 60 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 50 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 40 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 30 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 20 }
+			}
+			10 = {
+				set_variable = { name = fish_loc value = 10 }
+			}
+		}
+
+	}
+}

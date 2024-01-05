@@ -1,0 +1,462 @@
+#drink gui
+opp_tier_1 = {
+    scope = character
+	is_shown = {
+		AND = {
+			var:drinking = 1
+			var:drink_challenger = {
+				prowess > 20
+			}
+		}
+	}
+}
+opp_tier_2 = {
+    scope = character
+	is_shown = {
+		AND = {
+			var:drinking = 1
+			var:drink_challenger = {
+				prowess > 10
+				prowess < 20
+			}
+		}
+	}
+}
+opp_tier_3 = {
+    scope = character
+	is_shown = {
+		AND = {
+			var:drinking = 1
+			var:drink_challenger = {
+				prowess < 10
+			}
+		}
+	}
+}
+lost_drinking_game = {
+    scope = character
+	is_shown = {
+		var:drinking = 4
+	}
+	effect = {}
+}
+won_drinking_game = {
+    scope = character
+	is_shown = {
+		var:drinking = 3
+	}
+	effect = {}
+}
+dd1 = {
+    scope = character
+	is_shown = {
+		OR = {
+			var:drinks_down = 1
+			var:drinks_down = 2
+			var:drinks_down = 3
+		}
+
+	}
+
+}
+edrink_refill = {
+    scope = character
+	is_shown = {
+		var:drink_challenger = {
+			has_character_flag = drinking_refill
+		}
+	}
+	effect = {
+		var:drink_challenger = {
+			add_character_flag = drinking_now
+			remove_character_flag = drinking_refill
+		}
+	}
+
+}
+drink_refill = {
+    scope = character
+	is_shown = {
+		has_character_flag = drinking_refill
+
+	}
+	effect = {
+		add_character_flag = drinking_now
+		remove_character_flag = drinking_refill
+	}
+
+}
+dd2 = {
+    scope = character
+	is_shown = {
+		OR = {
+			var:drinks_down = 2
+			var:drinks_down = 3
+		}
+	}
+
+}
+dd3 = {
+    scope = character
+	is_shown = {
+		var:drinks_down = 3
+	}
+
+}
+ddd1 = {
+    scope = character
+	is_shown = {
+		OR = {
+			var:edrinks_down = 1
+			var:edrinks_down = 2
+			var:edrinks_down = 3
+		}
+
+	}
+
+}
+ddd2 = {
+    scope = character
+	is_shown = {
+		OR = {
+			var:edrinks_down = 2
+			var:edrinks_down = 3
+		}
+	}
+
+}
+ddd3 = {
+    scope = character
+	is_shown = {
+		var:edrinks_down = 3
+	}
+
+}
+randos = {
+	scope = character
+	effect = {
+		clear_variable_list = your_randos
+		remove_variable = rando_1
+		remove_variable = rando_2
+		remove_variable = rando_3
+		remove_variable = rando_4
+		random_courtier_or_guest = { 
+			limit = { 
+				is_councillor = no
+				is_landed = no
+				is_adult = yes
+				NOT = {
+					root = {
+						is_target_in_variable_list = { name = your_randos target = prev }
+					}
+					
+				}
+			}
+			root = {
+				add_to_variable_list = { name = your_randos target = prev }
+				set_variable = {
+					name = rando_1
+					value = prev
+				} 
+			}
+		}		
+		random_courtier_or_guest = { 
+			limit = { 
+				is_councillor = no
+				is_landed = no
+				is_adult = yes
+				NOT = {
+					root = {
+						is_target_in_variable_list = { name = your_randos target = prev }
+					}
+					
+				}
+			}
+			root = {
+				add_to_variable_list = { name = your_randos target = prev }
+				set_variable = {
+					name = rando_2
+					value = prev
+				} 
+			}
+		}
+		random_courtier_or_guest = { 
+			limit = { 
+				is_councillor = no
+				is_landed = no
+				is_adult = yes
+				NOT = {
+					root = {
+						is_target_in_variable_list = { name = your_randos target = prev }
+					}
+					
+				}
+			}
+			root = {
+				add_to_variable_list = { name = your_randos target = prev }
+				set_variable = {
+					name = rando_3
+					value = prev
+				} 
+			}
+		}
+		random_courtier_or_guest = { 
+			limit = { 
+				is_councillor = no
+				is_landed = no
+				is_adult = yes
+				NOT = {
+					root = {
+						is_target_in_variable_list = { name = your_randos target = prev }
+					}
+					
+				}
+			}
+			root = {
+				add_to_variable_list = { name = your_randos target = prev }
+				set_variable = {
+					name = rando_4
+					value = prev
+				} 
+			}
+		}					
+	}
+}
+start_drinking_game = {
+    scope = character
+	is_shown = {
+		var:drinking = 1
+	}
+    effect = {
+		set_variable = { name = circle_set value = 0 }
+		set_variable = { name = drinks_down value = 0 }
+		set_variable = { name = edrinks_down value = 0 }
+		set_variable = { name = drinking value = 1 }
+		set_variable = { name = hu_val value = 0 }
+		set_variable = { name = hu_val2 value = 0 }
+		add_character_flag = drinking_now
+		var:drink_challenger = {
+			add_character_flag = drinking_now
+			set_variable = { name = drinking value = 1 }
+		}
+	}
+}
+end_drink = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				var:drinking = 1
+			}
+			game_lost_effect = yes
+		}
+		set_variable = { name = circle_set value = 0 }
+		set_variable = { name = drinks_down value = 0 }
+		set_variable = { name = edrinks_down value = 0 }
+		set_variable = { name = drinking value = 0 }
+		set_variable = { name = hu_val value = 0 }
+		set_variable = { name = hu_val2 value = 0 }
+		set_variable = { name = wager_value value = 0 }
+		remove_character_flag = drinking_now
+		remove_character_flag = drinking_refill
+		play_music_cue =  mx_cue_peace_ensues
+		var:drink_challenger = {
+			set_variable = { name = circle_set value = 0 }
+			set_variable = { name = drinks_down value = 0 }
+			set_variable = { name = edrinks_down value = 0 }
+			set_variable = { name = drinking value = 0 }
+			set_variable = { name = hu_val value = 0 }
+			set_variable = { name = hu_val2 value = 0 }
+			set_variable = { name = wager_value value = 0 }
+			remove_character_flag = drinking_now
+			remove_character_flag = drinking_refill
+		}
+	}
+}
+open_drinking_game = {
+    scope = character
+	is_shown = {
+		OR = {
+			var:drinking = 0
+			var:drinking = 2
+			NOT = {
+				has_variable = drinking
+			}
+		}
+	}
+    effect = {
+		play_music_cue = mx_tavern
+		remove_character_flag = drinking_now
+		var:drink_challenger = {
+			remove_character_flag = drinking_now
+			set_variable = { name = drinking value = 0 }
+		}
+		set_variable = { name = tar_loc value = 1 }
+		set_variable = { name = circle_set value = 0 }
+		set_variable = { name = drinks_down value = 0 }
+		set_variable = { name = edrinks_down value = 0 }
+		set_variable = { name = drinking value = 0 }
+		set_variable = { name = hu_val value = 0 }
+		set_variable = { name = hu_val2 value = 0 }
+		set_variable = { name = wager_value value = 5 }
+	}
+}
+add_bet = {
+    scope = character
+    effect = {
+		var:drink_challenger = {
+			save_scope_as = drink_c
+		}
+		if = {
+			limit = {
+			NOT = { has_variable = wager_value }
+			}
+			set_variable = {
+				name = wager_value
+				value = 1
+			}
+		}
+		change_variable = { name = wager_value add = 5 }
+
+		if = {
+			limit = {
+				var:wager_value = { compare_value > root.current_gold_value }
+			}
+			set_variable = { name = wager_value value = current_gold_value }
+		}
+		if = {
+			limit = {
+				var:wager_value = { compare_value > scope:drink_c.current_gold_value }
+			}
+			set_variable = { name = wager_value value = scope:drink_c.current_gold_value }
+		}
+		if = {
+			limit = {
+				var:wager_value = { compare_value > 20 }
+			}
+			set_variable = { name = wager_value value = 20 }
+		}
+	}
+}
+sub_bet = {
+    scope = character
+    effect = {
+		if = {
+			limit = {
+			NOT = { has_variable = wager_value }
+			}
+			set_variable = {
+				name = wager_value
+				value = 1
+			}
+		}
+		change_variable = { name = wager_value subtract = 5 }
+
+		if = {
+			limit = {
+				var:wager_value = { compare_value < 5 }
+			}
+			set_variable = { name = wager_value value = 5 }
+		}
+	}
+}
+reset_bet = {
+    scope = character
+    effect = {
+		set_variable = { name = wager_value value = 5 }
+	}
+}
+cpu_drink_1 = {
+    scope = character
+    effect = {
+		if = {
+			limit = {
+				var:drinking = 1
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						has_variable = hu_val2
+					}
+				}
+				set_variable = {
+					name = hu_val2
+					value = 0
+				}
+			}
+
+			change_variable = {
+				name = hu_val2
+				add = 8
+			} 
+			if = {
+				limit = {
+					var:drink_challenger = {
+						has_trait = drunkard
+					}
+				}
+				change_variable = {
+					name = hu_val2
+					add = 5
+				} 
+			}
+			if = {
+				limit = {
+					var:hu_val2 >= 100
+				}
+				set_variable = {
+					name = hu_val2
+					value = 0
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_variable = edrinks_down
+						}
+					}
+					set_variable = {
+						name = edrinks_down
+						value = 1
+					}
+					var:drink_challenger = {
+						remove_character_flag = drinking_now
+						add_character_flag = drinking_refill
+					}
+				}
+				else = {
+					change_variable = {
+						name = edrinks_down
+						add = 1
+					}
+					var:drink_challenger = {
+						remove_character_flag = drinking_now
+						add_character_flag = drinking_refill
+					}
+				}
+				if = {
+					limit = {
+						var:edrinks_down = 3
+					}
+					if = {
+						limit = {
+							var:drinks_down < 3
+						}
+						game_lost_effect = yes
+					}
+
+				}
+			}
+			if = {
+				limit = {
+					var:hu_val2 < 1
+				}
+				set_variable = {
+					name = hu_val2
+					value = 0
+				}
+			}
+		}
+    }
+}

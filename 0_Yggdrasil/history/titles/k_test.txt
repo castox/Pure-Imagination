@@ -1,0 +1,10 @@
+
+
+
+e_merchia = {
+	landless = yes
+	851.1.1 = {
+		holder = gg_char
+		set_landless_title = yes
+	}
+}

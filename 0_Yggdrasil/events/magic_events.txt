@@ -1,0 +1,17 @@
+namespace = magic_event
+magic_event.1 = {
+
+	hidden = yes
+
+	
+	immediate = {
+
+			every_county = {
+				set_county_culture = liege.culture
+				set_county_faith = liege.faith
+			}
+
+		
+	}
+}
+

@@ -1,0 +1,533 @@
+dummy_t_1 = {
+	scope = character
+	is_shown = {
+		has_character_flag = dummy_target_1
+	}
+	effect = {
+		add_character_flag = dummy_target_1
+	}
+}
+dummy_t_2 = {
+	scope = character
+	is_shown = {
+		has_character_flag = dummy_target_2
+	}
+	effect = {
+		add_character_flag = dummy_target_2
+	}
+}
+dummy_t_3 = {
+	scope = character
+	is_shown = {
+		has_character_flag = dummy_target_3
+	}
+	effect = {
+		add_character_flag = dummy_target_3
+	}
+}
+dummy_t_3_n = {
+	scope = character
+	is_shown = {
+		NOT = {
+			has_character_flag = dummy_target_3
+		}
+		
+	}
+}
+allow_shot = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			has_character_flag = maim
+			has_character_flag = haim
+			has_character_flag = laim
+		}
+	}
+}
+get_dummy = {
+	scope = character
+
+	effect = {
+		set_variable = { name = target_c value = 0 }
+		set_variable = { name = game_countx value = 60 }
+		add_character_flag = start_game
+		get_dummy_effect = yes
+	}
+}
+b_maim = {
+	scope = character
+	is_shown = {
+		has_character_flag = maim
+	}
+	effect = {
+		remove_character_flag = maim
+	}
+}
+b_haim = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = haim
+	}
+
+	effect = {
+		remove_character_flag = haim
+	}
+}
+
+b_laim = {
+	scope = character
+	is_shown = {
+		has_character_flag = laim
+	}
+	effect = {
+		remove_character_flag = laim
+	}
+}
+is_in_range1 = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			has_character_flag = dummy_target_1
+			var:power_bar >= 20
+		}
+	}
+}
+is_in_range2 = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			has_character_flag = dummy_target_2
+			var:power_bar >= 10
+		}
+	}
+}
+is_in_range3 = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			has_character_flag = dummy_target_3
+			var:power_bar >= 70
+		}
+	}
+}
+d_hit = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				
+				AND = {
+					has_character_flag = dummy_target_1
+					var:arrow_loc <= -15
+					var:arrow_loc >= -68
+					var:power_bar >= 20
+				}
+			}
+			if = {
+				limit = {
+					has_character_flag = start_game
+				}
+				change_variable = { name = target_c add = 1 }
+			}
+			global_var:t_dummy = {
+				add_character_flag = is_target_dummy_hit
+			}
+		}
+		
+		remove_character_flag = haim
+		remove_character_flag = maim
+		remove_character_flag = laim
+	}
+}
+#high
+d_hit3 = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				
+				AND = {
+					has_character_flag = dummy_target_3
+					var:arrow_loc <= -15
+					var:arrow_loc >= -68
+					var:power_bar >= 70
+				}
+			}
+			if = {
+				limit = {
+					has_character_flag = start_game
+				}
+				change_variable = { name = target_c add = 1 }
+			}
+			global_var:t_dummy = {
+				add_character_flag = is_target_dummy_hit
+			}
+		}
+		
+		remove_character_flag = haim
+		remove_character_flag = maim
+		remove_character_flag = laim
+	}
+}
+#low
+d_hit2 = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				
+				AND = {
+					has_character_flag = dummy_target_2
+					var:arrow_loc <= -15
+					var:arrow_loc >= -68
+					var:power_bar >= 10
+				}
+
+			}
+			if = {
+				limit = {
+					has_character_flag = start_game
+				}
+				change_variable = { name = target_c add = 1 }
+			}
+			
+			global_var:t_dummy = {
+				add_character_flag = is_target_dummy_hit
+			}
+		}
+
+		remove_character_flag = haim
+		remove_character_flag = maim
+		remove_character_flag = laim
+	}
+}
+b_cleaner = {
+	scope = character
+	is_shown = {
+		OR = {
+			has_character_flag = haim
+			has_character_flag = maim
+			has_character_flag = laim
+		}
+	}
+	effect = {
+		global_var:t_dummy = {
+			remove_character_flag = is_target_dummy_hit
+		}
+		remove_character_flag = haim
+		remove_character_flag = maim
+		remove_character_flag = laim
+		remove_character_flag = pull_draw
+	}
+}
+
+
+exit_archer = {
+	scope = character
+
+	effect = {
+		play_music_cue =  mx_cue_peace_ensues
+		if = {
+			limit = {
+				has_character_flag = start_game
+			}
+			end_archer_game = yes
+		}
+		global_var:t_dummy = {
+			remove_character_flag = is_target_dummy_hit
+		}
+		remove_variable = b_you_won
+		remove_variable = b_you_tied
+		remove_variable = b_you_lost
+		remove_variable = target_c
+		remove_variable = target_c1
+		remove_variable = target_c2
+		remove_variable = archer_winner
+		remove_variable = game_countx
+		remove_character_flag = start_game
+		remove_character_flag = is_archer
+		remove_character_flag = haim
+		remove_character_flag = maim
+		remove_character_flag = laim
+		remove_character_flag = pull_drawm
+		remove_character_flag = pull_draw
+		remove_character_flag = pull_drawl
+		remove_character_flag = pull_drawh
+		remove_character_flag = pull_idle
+		remove_character_flag = pull_release
+		remove_character_flag = dummy_target_1
+		remove_character_flag = dummy_target_2
+		remove_character_flag = dummy_target_3
+		
+
+	}
+}
+b_release = {
+	scope = character
+
+	effect = {
+		remove_character_flag = pull_draw
+		add_character_flag = pull_release
+		
+		if = {
+			limit = {
+				has_character_flag = pull_drawh
+			}
+			add_character_flag = haim
+		}
+		if = {
+			limit = {
+				has_character_flag = pull_drawm
+			}
+			add_character_flag = maim
+		}
+		if = {
+			limit = {
+				has_character_flag = pull_drawl
+			}
+			add_character_flag = laim
+		}
+	}
+}
+pp_0 = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = pull_draw
+			}
+			change_variable = { name = power_bar subtract = 0.25 }
+		}
+		
+		if = {
+			limit = {
+				var:power_bar < 0
+			}
+			set_variable = { name = power_bar value = 0 }
+		}
+	}
+}
+pp_1 = {
+	scope = character
+
+	is_shown ={
+		has_character_flag = pull_draw
+	}
+}
+pull_power = {
+
+	scope = character
+	is_shown = {
+		var:power_bar = 1
+	}
+
+	effect = {
+
+		change_variable = { name = power_bar add = 2.5 }
+		if = {
+			limit = {
+				var:power_bar > 100
+			}
+			set_variable = { name = power_bar value = 100 }
+		}
+	}
+}
+b_idle = {
+	scope = character
+	is_shown = {
+		has_character_flag = pull_release
+	}
+	effect = {
+		remove_character_flag = pull_release
+		add_character_flag = pull_idle
+	}
+}
+b_idle2 = {
+	scope = character
+	is_shown = {
+		global_var:t_dummy = {
+			has_character_flag = is_target_dummy_hit
+		}
+	}
+	effect = {
+		get_dummy_effect = yes
+	}
+}
+arrow_trigger = {
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = pull_draw	
+			}
+			if ={
+				limit = {
+					NOT = { has_variable = arrow_loc }
+				}
+				set_variable  = { name = arrow_loc value = 150 }
+				set_variable  = { name = arrow_locx value = 1 }				
+			}
+			else = {
+				if = {
+					limit = {
+						var:arrow_locx = 1
+					}
+					if ={
+						limit ={
+							AND = {
+								var:power_bar > 30
+								var:power_bar < 60
+							}
+						}
+						change_variable = { name = arrow_loc subtract = 10 }
+					}
+						
+					if ={
+						limit ={
+							var:power_bar >= 60
+						}
+						change_variable = { name = arrow_loc subtract = 30 }
+					}
+						
+					if ={
+						limit ={
+							var:power_bar < 20
+						}
+						change_variable = { name = arrow_loc subtract = 5 }
+					}
+					if = {
+						limit = {
+							var:arrow_loc < -120
+						}
+						set_variable  = { name = arrow_locx value = 0 }	
+					}
+				}
+				
+				else = {
+					if ={
+						limit ={
+							AND = {
+								var:power_bar > 20
+								var:power_bar < 60
+							}
+
+						}
+						change_variable = { name = arrow_loc add = 10 }
+					}
+						
+					if ={
+						limit ={
+							var:power_bar >= 60
+						}
+						change_variable = { name = arrow_loc add = 30 }
+					}
+						
+					
+					if ={
+						limit ={
+							var:power_bar < 20
+						}
+						change_variable = { name = arrow_loc add = 5 }
+					}
+						
+					
+					if = {
+						limit = {
+							var:arrow_loc > 150
+						}
+						set_variable  = { name = arrow_locx value = 1 }	
+					}
+				}
+
+			}
+		}
+	}
+}
+b_draw = {
+	scope = character
+
+	effect = {
+		set_variable = { name = power_bar value = 0 }
+		remove_character_flag = pull_idle
+		add_character_flag = pull_draw
+	}
+}
+b_add_h = {
+	scope = character
+	is_shown = {
+		OR ={
+			has_character_flag = haim
+		
+			AND = {
+				has_character_flag = pull_drawh
+				has_character_flag = pull_draw
+			}
+		}
+	}
+	effect = {
+		add_character_flag = pull_drawh
+	}
+}
+b_remove_h = {
+	scope = character
+
+	effect = {
+		remove_character_flag = pull_drawh
+	}
+}
+b_add_m = {
+	scope = character
+	is_shown = {
+		OR ={
+			has_character_flag = maim
+		
+			AND = {
+				has_character_flag = pull_drawm
+				has_character_flag = pull_draw
+			}
+		}
+	}
+
+	effect = {
+		add_character_flag = pull_drawm
+	}
+}
+b_remove_m = {
+	scope = character
+
+	effect = {
+		remove_character_flag = pull_drawm
+	}
+}
+b_add_l = {
+	scope = character
+	is_shown = {
+		OR ={
+			has_character_flag = laim
+		
+			AND = {
+				has_character_flag = pull_drawl
+				has_character_flag = pull_draw
+			}
+		}
+	}
+	effect = {
+		add_character_flag = pull_drawl
+	}
+}
+b_remove_l = {
+	scope = character
+
+	effect = {
+		remove_character_flag = pull_drawl
+	}
+}

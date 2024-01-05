@@ -1,0 +1,60 @@
+﻿#Diplo opinions
+
+deal_made = { 
+	opinion = 5
+	years = 5
+	stacking = yes
+}
+
+good_deal_made = { 
+	opinion = 40
+	years = 5
+	stacking = yes
+}
+
+great_deal_made = { 
+	opinion = 70
+	years = 50
+	stacking = yes
+}
+
+insulting_offer = {
+	opinion = -20
+	years = 5
+	decaying = yes
+	stacking = yes
+}
+strong_insulting_offer = {
+	opinion = -50
+	years = 7
+	decaying = yes
+	stacking = yes
+}
+deadly_insulting_offer = {
+	opinion = -100
+	years = 20
+	decaying = yes
+	stacking = yes
+	disable_non_aggression_pacts = yes
+}
+block_offer = {
+	opinion = -100
+	disable_non_aggression_pacts = yes
+	decaying = no
+}
+
+diplo_non_aggression_20 = {
+	opinion = 80
+	years = 20
+	non_aggression_pact = yes
+}
+diplo_non_aggression_5 = {
+	opinion = 30
+	years = 5
+	non_aggression_pact = yes
+}
+diplo_non_aggression_10 = {
+	opinion = 50
+	years = 10
+	non_aggression_pact = yes
+}

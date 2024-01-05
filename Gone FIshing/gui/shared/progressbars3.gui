@@ -1,0 +1,37 @@
+types ProgressBarArcher
+{
+
+    Type progressbar_metera = icon
+    {
+        shaderfile = "gfx/FX/pdxgui_repeat_texture.shader"
+        alpha = 0.8
+
+        block "bar_color"
+        {
+			texture = "gfx/interface/tavern/p_progress.dds"
+        }
+    }
+
+
+    Type progressbar_metera_1 = icon
+    {
+        shaderfile = "gfx/FX/pdxgui_repeat_texture.shader"
+        alpha = 0.8
+
+        block "bar_color"
+        {
+			texture = "gfx/interface/tavern/f_progress.dds"
+        }
+    }
+    Type progressbar_metera_2 = icon
+    {
+        shaderfile = "gfx/FX/pdxgui_repeat_texture.shader"
+        alpha = 0.8
+
+        block "bar_color"
+        {
+			texture = "gfx/interface/tavern/f_progress.dds"
+        }
+    }
+
+}

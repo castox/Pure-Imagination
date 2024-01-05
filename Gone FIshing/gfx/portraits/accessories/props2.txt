@@ -1,0 +1,18 @@
+﻿# These assets are then used in the genes (game/common/genes/..) at the bottom of the file. 
+
+
+mug = {
+	entity = {	required_tags = ""        node = "bn_r_prop"		entity = "mug_entity" }
+}
+pole = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "pole_entity" }
+}
+bow = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "bow_entity" }
+}
+bow1 = {
+	entity = {	required_tags = ""        node = "bn_l_prop"		entity = "bow1_entity" }
+}
+x_target = {
+	entity = {	required_tags = ""        node = "bn_f_skirt2"		entity = "target_entity" }
+}

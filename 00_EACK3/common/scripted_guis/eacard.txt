@@ -1,0 +1,111 @@
+﻿is_smaller = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			is_female = yes
+			age < 15
+			has_trait = dwarf
+		}
+	}
+
+}
+
+is_gold_card = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			this.card_value > 59
+			this.card_value < 85
+		}
+		
+	}
+
+}
+
+is_bronze_card = {
+	scope = character
+
+	is_shown = {
+
+		this.card_value < 20
+		
+	}
+
+}
+
+is_silver_card = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			this.card_value > 19
+			this.card_value < 60
+		}
+		
+	}
+
+}
+
+is_ultra_card = {
+	scope = character
+
+	is_shown = {
+
+		this.card_value > 84
+		
+	}
+
+}
+
+start_unpack = {
+	scope = character
+
+	effect = {
+		play_music_cue =  card_pack
+	}
+}
+
+do_walking = {
+	scope = character
+
+	is_shown = {
+
+		has_variable = is_walking
+		
+	}
+	effect = {
+		add_character_flag = is_walking
+	}
+
+}
+done_walking = {
+	scope = character
+
+	is_shown = {
+
+		has_variable = is_celly
+		
+	}
+	effect = {
+		remove_character_flag = is_walking
+		add_character_flag = is_celly
+	}
+
+}
+
+clear_all = {
+	scope = character
+
+	is_shown = {
+
+		has_variable = is_walking
+		
+	}
+	effect = {
+		remove_character_flag = is_walking
+		remove_character_flag = is_celly
+	}
+
+}

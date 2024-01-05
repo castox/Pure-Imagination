@@ -1,0 +1,115 @@
+﻿
+
+#trigger - tells me that a title ;duchy,kingdom,empire is in the list but no
+
+diplo_valid_claim = {
+
+	any_in_global_list = {
+		variable = diplo_1_lands
+		global_var:diplo_2 = {
+			OR = {
+				has_strong_claim_on = prev
+				has_claim_on = prev
+			}
+		}
+	}
+	
+}
+
+diplo_marriage_request = {
+
+	any_in_global_list = {
+		variable = diplo_1_marriage
+
+		any_in_global_list = {
+			variable = diplo_2_marriage
+			could_marry_character_trigger = { CHARACTER = prev }
+
+		}
+	}
+}
+
+
+
+##########################
+diplo_m1 = {
+	global_var:diplo_1_offered = {
+		could_marry_character_trigger = { CHARACTER = global_var:diplo_2_offered }
+	}
+}
+diplo_m2 = {
+	global_var:diplo_2_offered = {
+		could_marry_character_trigger = { CHARACTER = global_var:diplo_1_offered }
+	}
+}
+diplo_could_marry_character_trigger = {
+	save_temporary_scope_as = can_marry_check
+	can_marry_common_trigger = yes
+	$CHARACTER$ = { can_marry_common_trigger = yes }
+	#Opposite genders if you don't have accepted same-sex marriage game rule enabled and your faith supports it
+	trigger_if = {
+		limit = { #If you're someone's courtier, your liege can marry you anyway
+			NOT = { is_courtier_of = $CHARACTER$ }
+			allowed_to_marry_same_sex_trigger = no
+		}
+		sex_opposite_of = $CHARACTER$
+	}
+	trigger_if = {
+		limit = { #If you're someone's courtier, your liege can marry you anyway
+			$CHARACTER$ = { NOT = { is_courtier_of = scope:can_marry_check } }
+			$CHARACTER$ = { allowed_to_marry_same_sex_trigger = no }
+		}
+		sex_opposite_of = $CHARACTER$
+	}
+	trigger_if = {
+		limit = {
+			is_courtier_of = $CHARACTER$
+			$CHARACTER$ = { allowed_to_marry_same_sex_trigger = no }
+		}
+		sex_opposite_of = $CHARACTER$
+	}
+	trigger_if = {
+		limit = {
+			$CHARACTER$ = { is_courtier_of = scope:can_marry_check }
+			allowed_to_marry_same_sex_trigger = no
+		}
+		sex_opposite_of = $CHARACTER$
+	}
+	#Have you recently divorced this character?
+	NOT = {
+		has_opinion_modifier = {
+			modifier = divorced_me_opinion
+			target = $CHARACTER$
+		}
+	}
+	#Faith hostility & consanguinity
+	trigger_if = {
+		limit = { NOT = { is_courtier_of = $CHARACTER$ } } #If you're someone's courtier, your liege can marry you anyway
+		faith = {
+			faith_allows_marriage_consanguinity_trigger = {
+				CHARACTER_1 = scope:can_marry_check
+				CHARACTER_2 = $CHARACTER$
+			}
+			#faith_hostility_level = {
+			#	target = $CHARACTER$.faith
+			#	value < faith_hostility_prevents_marriage_level
+			#}
+		}
+	}
+	trigger_if = {
+		limit = { $CHARACTER$ = { NOT = { is_courtier_of = scope:can_marry_check } } } #If you're someone's courtier, your liege can marry you anyway
+		$CHARACTER$.faith = {
+			faith_allows_marriage_consanguinity_trigger = {
+				CHARACTER_1 = scope:can_marry_check
+				CHARACTER_2 = $CHARACTER$
+			}
+			#faith_hostility_level = {
+			#	target = scope:can_marry_check.faith
+			#	value < faith_hostility_prevents_marriage_level
+			#}
+		}
+	}
+	NOT = {
+		scope:can_marry_check = { is_spouse_of = $CHARACTER$ }
+	}
+}

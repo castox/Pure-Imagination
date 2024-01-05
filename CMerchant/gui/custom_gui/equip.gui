@@ -1,0 +1,946 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "equip"
+
+	parentanchor = hcenter|vcenter
+	size = { 100% 100% }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	movable = yes
+	icon = {
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/body/ui_back.png"
+		icon = {
+			parentanchor = right|top
+			position = { 160 -15 }
+			size = { 480 108 }
+			texture = "gfx/interface/cshop/body/banner.png"
+		}
+	}
+
+	icon = {
+		parentanchor = hcenter|vcenter
+		position = { 200 0 }
+		texture = "gfx/interface/cshop/body/ui.png"
+	}
+	equip_stance = {
+		parentanchor = hcenter|vcenter
+		#datacontext = "[GetGlobalVariable('castox')]"
+		#datacontext = "[Scope.GetCharacter]"
+		datacontext = "[GetPlayer]"
+		position = { 0 110 }
+		icon = {
+			visible = no
+			parentanchor = hcenter|top
+			position = { 300 -150 }
+			size = { 187 282 }
+			texture = "gfx/interface/cshop/body/body.png"
+		}
+
+		icon = {
+
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 1
+		}
+		scrollbox = {
+			##helmet
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'helmets' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('helmets')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_helmet').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'plates' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('plates')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_plate').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'pants' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('pants')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_pants').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'range' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('range_w')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_range').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'projectile' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('projectile')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_projectile').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'weapon' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('weapon')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_weapon').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'shield' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('shield')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						onclick = "[GetScriptedGui('eq_shield').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						#onclick = "[GetVariableSystem.Set('current_spell2',Scope.GetFlagName)]"
+						#button_ignore = none
+						#visible = "[GetScriptedGui(Concatenate(Scope.GetFlagName,'_check')).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						#enabled = "[GetScriptedGui(Concatenate(Scope.GetFlagName,'_check')).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						#tooltip = "[GetScriptedGui(Concatenate(Scope.GetFlagName,'_check')).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'neck' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('neck')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_neck').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'shoulders' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('shoulders')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_shoulders').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'gloves' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('gloves')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_gloves').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'accessory' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('accessory')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_accessory').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+		scrollbox = {
+			##plates
+			visible = "[GetVariableSystem.HasValue( 'equip_tab', 'boots' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = vcenter|hcenter
+			size = { 290 660 }
+			position = { 0 -90 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('boots')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "cshop_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+						onclick = "[GetScriptedGui('eq_boots').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+						onclick = "[GetVariableSystem.Set( 'equip_tab', 'xxx' )]"
+						tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = CSHOP_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= CSHOP_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+	}
+	#bottom
+	#weapon
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'weapon' )]"
+		parentanchor = hcenter|vcenter
+		position = { 80 460 }
+		texture = "gfx/interface/cshop/ebar2.png"
+		size = { 140 140 }
+		text_single = { 
+			parentanchor = vcenter
+			text = CURRENT_WEAPON
+			default_format = "#SIZE:40"
+			position = { 10 0 }
+		}
+		icon = {
+			visible = "[GetScriptedGui('a_bl').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = vcenter|hcenter
+			position = { -80 -220 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('a_bl').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('a_ble').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+	}
+	#shield
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'shield' )]"
+		parentanchor = hcenter|vcenter
+		position = { -87 460 }
+		size = { 140 140 }
+		texture = "gfx/interface/cshop/ebar2.png"
+
+		text_single = { 
+			parentanchor = vcenter
+			text = CURRENT_SHIELD
+			default_format = "#SIZE:40"
+			position = { 10 0 }
+		}
+		#icon = {
+		#	parentanchor = hcenter|vcenter
+		#	texture = "gfx/interface/cshop/equip/l4-27.png"
+		#}
+		icon = {
+			visible = "[GetScriptedGui('a_br').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = vcenter|hcenter
+			position = { 90 -220 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('a_br').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('a_bre').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+	}
+
+	##
+	#L/D
+	#helmet
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'helmets' )]"
+		parentanchor = hcenter|vcenter
+		position = { -370 -290 }
+		size = { 140 140 }
+
+		text = CURRENT_HELMET
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = left|top
+			position = { -310 0 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	
+	#plate
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'plates' )]"
+		parentanchor = hcenter|vcenter
+		position = { -370 -120 }
+		size = { 140 140 }
+		text = CURRENT_PLATES
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = left|top
+			position = { -320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	#legs
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'pants' )]"
+		parentanchor = hcenter|vcenter
+		position = { -370 45 }
+		size = { 140 140 }
+		text = CURRENT_PANTS
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = left|top
+			position = { -320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	#range	
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'range' )]"
+		parentanchor = hcenter|vcenter
+		position = { -370 215 }
+		size = { 140 140 }
+		text = CURRENT_RANGE
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = left|top
+			position = { -320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	#projectile
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'projectile' )]"
+		parentanchor = hcenter|vcenter
+		position = { -370 380 }
+		size = { 140 140 }
+		text = CURRENT_PROJECTILE
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = left|top
+			position = { -320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}#
+	#R/D
+	#neck
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'neck' )]"
+		parentanchor = hcenter|vcenter
+		position = { 355 -290 }
+		size = { 140 140 }
+		text = CURRENT_NECK
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = right|top
+			position = { 320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	#shoulder
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'shoulders' )]"
+		parentanchor = hcenter|vcenter
+		position = { 355 -120 }
+		size = { 140 140 }
+		text = CURRENT_SHOULDERS
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = right|top
+			position = { 320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	#hands
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'gloves' )]"
+		parentanchor = hcenter|vcenter
+		position = { 355 45 }
+		size = { 140 140 }
+		text = CURRENT_GLOVES
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = right|top
+			position = { 320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}	
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'accessory' )]"
+		parentanchor = hcenter|vcenter
+		position = { 355 215 }
+		size = { 140 140 }
+		text = CURRENT_ACCESSORY
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = right|top
+			position = { 320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	button = {
+		onclick = "[GetVariableSystem.Set( 'equip_tab', 'boots' )]"
+		parentanchor = hcenter|vcenter
+		position = { 355 380 }
+		size = { 140 140 }
+		text = CURRENT_BOOTS
+		default_format = "#SIZE:40"
+
+		icon = {
+			parentanchor = right|top
+			position = { 320 -10 }
+			texture = "gfx/interface/cshop/ebar2.png"
+			size = { 300 150 }
+		}
+	}
+	#GuiScope.SetRoot( GetGlobalVariable('castox').GetCharacter.MakeScope
+	
+	state = {
+		name = ready2
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+
+
+
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('exit_archer').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets equip')]"
+    }
+
+}

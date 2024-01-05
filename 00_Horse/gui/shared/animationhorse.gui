@@ -1,0 +1,53 @@
+type animation_trot = icon {
+	name = "effect_trot"
+
+	alwaystransparent = yes
+
+
+	state = {
+		trigger_when = "[GetScriptedGui('is_trot').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+		name = a
+		next = b
+		on_start = "[GetScriptedGui('trot_f').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+		using = Animation_Curve_Default
+		duration = 0.2
+
+	}
+
+	state = {
+		name = b
+		next = c
+		on_start = "[GetScriptedGui('trot_r').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+		using = Animation_Curve_Default
+		duration = 0.2
+
+	}
+
+	state = {
+		name = c
+		next = d
+		using = Animation_Curve_Default
+		duration = 0.2
+		on_start = "[GetScriptedGui('trot_l').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+	}
+
+	state = {
+		name = d
+		next = a
+		on_start = "[GetScriptedGui('trot_f').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+		using = Animation_Curve_Default
+		duration = 0.2
+
+	}
+
+	state = {
+		name = stop_trotting_now
+		
+		on_start = "[PdxGuiWidget.InterruptAnimation('a')]"
+		on_start = "[PdxGuiWidget.InterruptAnimation('b')]"
+		on_start = "[PdxGuiWidget.InterruptAnimation('c')]"
+		on_start = "[PdxGuiWidget.InterruptAnimation('d')]"
+		trigger_when = "[GetScriptedGui('is_not_trot').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+	}                        
+
+}

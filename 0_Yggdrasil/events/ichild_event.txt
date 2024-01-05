@@ -1,0 +1,153 @@
+namespace = ichild_event
+#tutorial
+ichild_event.1 = {
+	type = character_event
+	title = "Childhood"
+	desc = "When you were a toddler your parents always said you were a ..."
+	theme = education
+	
+	################
+	right_portrait = {
+		character = root
+		animation = idle
+	}
+	override_background = {
+		event_background = guild_test
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = itoddler
+		}
+	}
+
+	option = {
+		name = "talker"
+		talk_opt = { talk_val = 10 }
+		remove_character_flag = itoddler
+		trigger_event = ichild_event.2
+		
+	}
+	option = {
+		name = "little Angel"
+		char_opt = { char_val = 10 }
+		remove_character_flag = itoddler
+		trigger_event = ichild_event.2
+		
+	}
+	option = {
+		name = "Fighter"
+		fight_opt = { fight_val = 10 }
+		remove_character_flag = itoddler
+		trigger_event = ichild_event.2
+	}
+	option = {
+		name = "bit sus"
+		inter_opt = { inter_val = 10 }
+		remove_character_flag = itoddler
+		trigger_event = ichild_event.2
+	}
+}
+
+ichild_event.2 = {
+	type = character_event
+	title = "Adolencence"
+	desc = "You'll never forget the time Diogenes tried to bully you, you ..."
+	theme = education
+	
+	################
+	right_portrait = {
+		character = root
+		animation = idle
+	}
+	override_background = {
+		event_background = guild_test
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = ikid
+		}
+	}
+	option = {
+		name = "killed him with kindness."
+		char_opt = { char_val = 10 }
+		remove_character_flag = ikid
+		trigger_event = ichild_event.3
+		
+	}
+	option = {
+		name = "beat him senseless."
+		fight_opt = { fight_val = 10 }
+		remove_character_flag = ikid
+		trigger_event = ichild_event.3
+	}
+	option = {
+		name = "gave him an earful."
+		talk_opt = { talk_val = 10 }
+		remove_character_flag = ikid
+		trigger_event = ichild_event.3
+		
+	}
+	option = {
+		name = "tricked him into giving you his money."
+		inter_opt = { inter_val = 10 }
+		remove_character_flag = ikid
+		trigger_event = ichild_event.3
+	}
+}
+
+ichild_event.3 = {
+	type = character_event
+	title = "Make your mark"
+	desc = "You set off on your journey, before you leave you tell your parents ..."
+	theme = education
+	
+	################
+	right_portrait = {
+		character = root
+		animation = idle
+	}
+	override_background = {
+		event_background = guild_test
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = iyoung
+		}
+	}
+	option = {
+		name = "alright then."
+		inter_opt = { inter_val = 10 }
+		remove_character_flag = iyoung
+		trigger_event = ichild_event.4
+	}
+	option = {
+		name = "I will be the greatest warrior to ever live"
+		fight_opt = { fight_val = 10 }
+		remove_character_flag = iyoung
+		trigger_event = ichild_event.4
+	}
+	option = {
+		name = "I will be King!"
+		talk_opt = { talk_val = 10 }
+		remove_character_flag = iyoung
+		trigger_event = ichild_event.4
+		
+	}
+	option = {
+		name = "I will do my best."
+		char_opt = { char_val = 10 }
+		remove_character_flag = iyoung
+		trigger_event = ichild_event.4
+		
+	}
+
+}
+
+ichild_event.4 = {
+	immediate = {
+		final_opt = {}
+	}
+}

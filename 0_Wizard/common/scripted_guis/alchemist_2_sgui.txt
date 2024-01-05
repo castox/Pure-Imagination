@@ -1,0 +1,41 @@
+can_bellow = {
+	scope = character
+	is_shown = { 
+		is_target_in_global_variable_list = { name = pshop_tools_resources target = flag:Bellows  }
+	}
+}
+add_heat = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_variable = heat_level
+				}
+			}
+			set_variable = { name = heat_level value = 0 }
+		}
+		else = {
+			change_variable = { name = heat_level add = 1 }
+		}
+	}
+}
+reduce_heat = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						has_variable = heat_level
+					}
+					var:heat_level = 0
+				}
+			}
+			#nothing
+		}
+		else = { change_variable = { name = heat_level subtract = 1 } }
+	}
+}

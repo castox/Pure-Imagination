@@ -1,0 +1,651 @@
+﻿
+joust_interaction = {
+		interface_priority = 30
+		common_interaction = yes
+		category = interaction_category_hostile
+
+		desc = JOUST_FRIENDLY
+	
+		greeting = negative
+	
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				is_clergy = no
+				is_adult = yes
+				age > 17
+			}
+			scope:recipient = {
+				is_ai = yes
+				is_landed = yes #because of flag and they can afford a horse of course.
+				is_adult = yes
+				is_clergy = no
+				age > 17
+			}
+		}
+	
+		is_valid_showing_failures_only = {
+			# Neither of the characters can be imprisoned.
+			scope:actor = { is_imprisoned = no }
+			scope:recipient = { is_imprisoned = no }
+		}
+	
+		can_send = {
+		}
+		
+		cost = { gold = 60 }
+	
+		on_send = {
+		}
+	
+		on_accept = {
+			# Set up the bout immediately.
+			scope:actor = {
+				if = {
+					limit = {
+						NOT = { has_variable = j_wins }
+					}
+					set_variable = {
+						name = j_wins
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_variable = j_losses }
+					}
+					set_variable = {
+						name = j_losses
+						value = 0
+					}
+				}
+				remove_variable = joust_challenger
+				set_variable = {
+					name = joust_challenger
+					value = scope:recipient
+				}
+				set_variable = {
+					name = joust_h
+					value = 0
+				}
+				set_variable = {
+					name = joust_o
+					value = 0
+				}			
+				set_variable = {
+					name = joust_s
+					value = 0
+				}
+				trigger_event = horse.1000
+			
+				clear_variable_list = joust_spectate
+				add_character_flag = is_jouster
+				every_vassal = {
+					limit = {
+						is_alive = yes
+						age > 15
+						is_imprisoned = no
+						NOT = { 
+							is_heir_of = prev
+							is_spouse_of = prev
+							this = scope:actor
+						}
+					}
+					prev = {
+						add_to_variable_list = { name = joust_spectate target = prev }
+					}
+				}
+				every_courtier_or_guest = {
+					limit = {
+						is_alive = yes
+						age > 15
+						is_imprisoned = no
+						NOT = { 
+							is_heir_of = prev
+							is_spouse_of = prev
+							this = scope:actor
+						}
+					}
+					prev = {
+						add_to_variable_list = { name = joust_spectate target = prev }
+					}
+					
+				}
+				scope:recipient = {
+					every_vassal = {
+						limit = {
+							is_alive = yes
+							age > 15
+							is_imprisoned = no
+							NOT = { 
+								is_heir_of = prev
+								is_spouse_of = prev
+								this = scope:recipient
+							}
+						}
+						scope:actor = {
+							add_to_variable_list = { name = joust_spectate target = prev }
+						}
+					}
+					every_courtier_or_guest = {
+						limit = {
+							is_alive = yes
+							age > 15
+							is_imprisoned = no
+							NOT = { 
+								is_heir_of = prev
+								is_spouse_of = prev
+								this = scope:recipient
+							}
+						}
+						scope:actor = {
+							add_to_variable_list = { name = joust_spectate target = prev }
+						}
+						
+					}
+				}
+			}
+			scope:recipient = {
+				add_character_flag = is_jouster
+			}
+			
+		}
+	
+		on_decline = {
+			# Scope:actor decline processing.
+			scope:actor = {
+				# Inform them of the decline & scope:recipient loses some prestige.
+				send_interface_toast = {
+					title = "No... I dont think I will"
+					left_icon = scope:recipient
+					right_icon = scope:actor
+					scope:recipient = { add_prestige = medium_prestige_loss }
+					show_as_tooltip = {
+						add_prestige = medium_prestige_value
+					}
+				}
+			}
+		}
+	
+		auto_accept = no
+	
+		ai_accept = {
+			base = 0 # Try to make it 0 for most interactions
+	
+			# Relative fightan ability.
+			modifier = {
+				desc = CTSC_RELATIVE_PROWESS
+				scope:actor.prowess < scope:recipient.prowess
+				add = {
+					value = scope:recipient.prowess
+					subtract = scope:actor.prowess
+					multiply = 2
+				}
+			}
+			modifier = {
+				desc = CTSC_RELATIVE_PROWESS
+				scope:recipient.prowess < scope:actor.prowess
+				add = {
+					value = scope:actor.prowess
+					subtract = scope:recipient.prowess
+					multiply = -2
+				}
+			}
+			# Weight up for personality values.
+			ai_value_modifier = {
+				who = scope:recipient
+				ai_boldness = {
+					if = {
+						limit = {
+							scope:recipient = {
+								ai_boldness > 0
+								ai_rationality < 0
+							}
+						}
+						value = 2
+					}
+					else_if = {
+						limit = {
+							scope:recipient = {
+								NOT = { ai_boldness = 0 }
+							}
+						}
+						value = 1
+					}
+				}
+				ai_vengefulness = {
+					if = {
+						limit = {
+							scope:recipient = {
+								NOT = { ai_vengefulness = 0 }
+							}
+						}
+						value = 0.75
+					}
+				}
+				ai_honor = {
+					if = {
+						limit = {
+							scope:recipient = {
+								ai_honor > 0
+							}
+						}
+						value = 0.5
+					}
+				}
+			}
+			# Apply tier differences.
+			## King -> Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value >= 4
+					}
+				}
+				add = 15
+			}
+			## Duke -> Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = 3
+					}
+				}
+				add = 10
+			}
+			## Count -> Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = 2
+					}
+				}
+				add = 5
+			}
+			## King <- Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = -2
+					}
+				}
+				add = -10
+			}
+			## Duke <- Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = -3
+					}
+				}
+				add = -20
+			}
+			## Count <- Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value <= -4
+					}
+				}
+				add = -30
+			}
+			# Nemesis modifier.
+			modifier = {
+				desc = offer_vassalization_interaction_aibehavior_nemesis_tt
+				trigger = {
+					scope:recipient = {
+						has_relation_nemesis = scope:actor
+					}
+				}
+				add = 50
+			}
+		}
+	
+		# AI
+		ai_potential = {
+
+		}
+		
+		ai_target_quick_trigger = {
+			adult = yes
+		}
+		ai_targets = {
+			ai_recipients = scripted_relations
+		}
+	
+		ai_will_do = {
+			base = -50
+		}
+}
+
+joust_duel_interaction = {
+	interface_priority = 30
+	common_interaction = yes
+	category = interaction_category_hostile
+
+	desc = JOUST_DUEL
+
+	greeting = negative
+
+	is_shown = {
+		NOT = { scope:actor = scope:recipient }
+		scope:actor = {
+			is_clergy = no
+			is_adult = yes
+			age > 17
+		}
+		scope:recipient = {
+			is_ai = yes
+			is_adult = yes
+			is_clergy = no
+			is_landed = yes #because of flag and they can afford a horse of course.
+			age > 17
+			OR = {
+				has_relation_nemesis = scope:actor
+				has_relation_rival = scope:actor
+			}
+	
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		# Neither of the characters can be imprisoned.
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+	}
+
+	can_send = {
+	}
+	
+	
+
+	on_send = {
+	}
+
+	on_accept = {
+		# Set up the bout immediately.
+		scope:actor = {
+			add_character_flag = joust_to_death
+
+			remove_variable = joust_challenger
+			set_variable = {
+				name = joust_challenger
+				value = scope:recipient
+			}
+			set_variable = {
+				name = joust_h
+				value = 0
+			}
+			set_variable = {
+				name = joust_o
+				value = 0
+			}			
+			set_variable = {
+				name = joust_s
+				value = 0
+			}
+			trigger_event = horse.1000
+		
+			clear_variable_list = joust_spectate
+			add_character_flag = is_jouster
+			every_vassal = {
+				limit = {
+					is_alive = yes
+					age > 15
+					is_imprisoned = no
+					NOT = { 
+						is_heir_of = prev
+						is_spouse_of = prev
+						this = scope:actor
+					}
+				}
+				prev = {
+					add_to_variable_list = { name = joust_spectate target = prev }
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					is_alive = yes
+					age > 15
+					is_imprisoned = no
+					NOT = { 
+						is_heir_of = prev
+						is_spouse_of = prev
+						this = scope:actor
+					}
+				}
+				prev = {
+					add_to_variable_list = { name = joust_spectate target = prev }
+				}
+				
+			}
+			scope:recipient = {
+				every_vassal = {
+					limit = {
+						is_alive = yes
+						age > 15
+						is_imprisoned = no
+						NOT = { 
+							is_heir_of = prev
+							is_spouse_of = prev
+							this = scope:recipient
+						}
+					}
+					scope:actor = {
+						add_to_variable_list = { name = joust_spectate target = prev }
+					}
+				}
+				every_courtier_or_guest = {
+					limit = {
+						is_alive = yes
+						age > 15
+						is_imprisoned = no
+						NOT = { 
+							is_heir_of = prev
+							is_spouse_of = prev
+							this = scope:recipient
+						}
+					}
+					scope:actor = {
+						add_to_variable_list = { name = joust_spectate target = prev }
+					}
+					
+				}
+			}
+		}
+		scope:recipient = {
+			add_character_flag = is_jouster
+		}
+		
+	}
+
+	on_decline = {
+		# Scope:actor decline processing.
+		scope:actor = {
+			# Inform them of the decline & scope:recipient loses some prestige.
+			send_interface_toast = {
+				title = "No... I dont think I will"
+				left_icon = scope:recipient
+				right_icon = scope:actor
+				scope:recipient = { add_prestige = medium_prestige_loss }
+				show_as_tooltip = {
+					add_prestige = medium_prestige_value
+				}
+			}
+		}
+	}
+
+	auto_accept = no
+
+	ai_accept = {
+		base = -50 # Try to make it 0 for most interactions
+
+		# Relative fightan ability.
+		modifier = {
+			desc = CTSC_RELATIVE_PROWESS
+			scope:actor.prowess < scope:recipient.prowess
+			add = {
+				value = scope:recipient.prowess
+				subtract = scope:actor.prowess
+				multiply = 2
+			}
+		}
+		modifier = {
+			desc = CTSC_RELATIVE_PROWESS
+			scope:recipient.prowess < scope:actor.prowess
+			add = {
+				value = scope:actor.prowess
+				subtract = scope:recipient.prowess
+				multiply = -2
+			}
+		}
+		# Weight up for personality values.
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_boldness = {
+				if = {
+					limit = {
+						scope:recipient = {
+							ai_boldness > 0
+							ai_rationality < 0
+						}
+					}
+					value = 2
+				}
+				else_if = {
+					limit = {
+						scope:recipient = {
+							NOT = { ai_boldness = 0 }
+						}
+					}
+					value = 1
+				}
+			}
+			ai_vengefulness = {
+				if = {
+					limit = {
+						scope:recipient = {
+							NOT = { ai_vengefulness = 0 }
+						}
+					}
+					value = 0.75
+				}
+			}
+			ai_honor = {
+				if = {
+					limit = {
+						scope:recipient = {
+							ai_honor > 0
+						}
+					}
+					value = 0.5
+				}
+			}
+		}
+		# Apply tier differences.
+		## King -> Baron.
+		modifier = {
+			desc = AI_REFUSAL_RANK_DIFFERENCE
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value >= 4
+				}
+			}
+			add = 15
+		}
+		## Duke -> Baron.
+		modifier = {
+			desc = AI_REFUSAL_RANK_DIFFERENCE
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value = 3
+				}
+			}
+			add = 10
+		}
+		## Count -> Baron.
+		modifier = {
+			desc = AI_REFUSAL_RANK_DIFFERENCE
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value = 2
+				}
+			}
+			add = 5
+		}
+		## King <- Baron.
+		modifier = {
+			desc = AI_REFUSAL_RANK_DIFFERENCE
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value = -2
+				}
+			}
+			add = -10
+		}
+		## Duke <- Baron.
+		modifier = {
+			desc = AI_REFUSAL_RANK_DIFFERENCE
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value = -3
+				}
+			}
+			add = -20
+		}
+		## Count <- Baron.
+		modifier = {
+			desc = AI_REFUSAL_RANK_DIFFERENCE
+			scope:actor = {
+				tier_difference = {
+					target = scope:recipient
+					value <= -4
+				}
+			}
+			add = -30
+		}
+		# Nemesis modifier.
+		modifier = {
+			desc = offer_vassalization_interaction_aibehavior_nemesis_tt
+			trigger = {
+				scope:recipient = {
+					has_relation_nemesis = scope:actor
+				}
+			}
+			add = 80
+		}
+	}
+
+	# AI
+	ai_potential = {
+
+	}
+	
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+	}
+
+	ai_will_do = {
+		base = -50
+	}
+}

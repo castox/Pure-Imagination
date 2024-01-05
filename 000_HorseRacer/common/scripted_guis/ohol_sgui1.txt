@@ -1,0 +1,245 @@
+﻿
+dp_bowx =  {
+	scope = character
+	is_shown = {
+		
+	}
+
+	effect = {
+	
+		global_var:diplo_1 = {
+			remove_character_flag = is_walking
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						has_character_flag = dp_bow
+					}
+					remove_character_flag = dp_bow
+				}
+				else = {
+					remove_character_flag = is_walking
+					remove_character_flag = dance_dance
+					add_character_flag = dp_bow
+				}
+			}
+		}
+
+	}
+}
+dp_giftx = {
+	scope = character
+	is_shown = {
+		
+	}
+
+	effect = {
+		
+		global_var:diplo_1 = {
+			remove_character_flag = is_walking
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						has_character_flag = dance_dance
+					}
+					remove_character_flag = dance_dance
+
+				}
+				else = {
+					remove_character_flag = is_walking
+					remove_character_flag = dp_bow
+					add_character_flag = dance_dance
+				}
+			}
+	}
+	}
+}
+sk_movement = {
+
+	scope = character
+	is_shown = {
+		
+	}
+
+	effect = {
+
+		if = {
+			limit = {
+				has_character_flag = sk_swing
+			}
+
+		}
+
+		else_if = {
+			limit = {
+				OR = {
+					any_in_global_list = {
+						variable = npc_listing
+						is_in_br = yes
+					}
+
+				}
+			}
+			sk_collision = yes
+			if = { limit = { has_character_flag = sk_walk_down } change_global_variable = { name = sk_s_pos add = 25} change_global_variable = { name = sk_ss_pos subtract = 25} }
+			if = { limit = { has_character_flag = sk_walk_up } change_global_variable = { name = sk_s_pos subtract = 25} change_global_variable = { name = sk_ss_pos add = 25} }
+
+			if = { limit = { has_character_flag = sk_walk_right } change_global_variable = { name = sk_x_pos add = 25} change_global_variable = { name = sk_xx_pos subtract = 25} }
+			if = { limit = { has_character_flag = sk_walk_left } change_global_variable = { name = sk_x_pos subtract = 25} change_global_variable = { name = sk_xx_pos add = 25} }
+
+			if = { limit = { has_character_flag = sk_upl } change_global_variable = { name = sk_s_pos subtract = 25} change_global_variable = { name = sk_ss_pos add = 25} change_global_variable = { name = sk_x_pos subtract = 25} change_global_variable = { name = sk_xx_pos add = 25}}
+			if = { limit = { has_character_flag = sk_upr } change_global_variable = { name = sk_s_pos subtract = 25} change_global_variable = { name = sk_ss_pos add = 25} change_global_variable = { name = sk_x_pos add = 25} change_global_variable = { name = sk_xx_pos subtract = 25} }
+
+			if = { limit = { has_character_flag = sk_downl } change_global_variable = { name = sk_s_pos add = 25} change_global_variable = { name = sk_ss_pos subtract = 25} change_global_variable = { name = sk_x_pos subtract = 25} change_global_variable = { name = sk_xx_pos add = 25}}
+			if = { limit = { has_character_flag = sk_downr } change_global_variable = { name = sk_s_pos add = 25} change_global_variable = { name = sk_ss_pos subtract = 25} change_global_variable = { name = sk_x_pos add = 25} change_global_variable = { name = sk_xx_pos subtract = 25} }
+
+			map_fixer = yes
+		}
+		else = {
+			#CONSTANT WATCH FOR MOVEMENT
+
+				if = {
+					limit = {
+						AND = {
+							has_character_flag = sk_walk_left
+							has_character_flag = is_walking
+							global_var:sk_xx_pos >= 50
+						}
+					}
+					change_global_variable = { name = sk_xx_pos subtract = 15}
+					change_global_variable = { name = sk_x_pos add = 7 }
+	
+				#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+				}
+				if = {
+					limit = {
+						AND = {
+							has_character_flag = sk_walk_left
+							has_character_flag = is_walking
+							global_var:sk_xx_pos <= 50
+						}
+					}
+					remove_character_flag = is_walking
+					set_global_variable = { name = sk_xx_pos value = 50 }
+					set_global_variable = { name = sk_x_pos value = 0 }
+	
+				#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+				}
+			#WALK LEFT
+
+						#WALK RIGHT
+			if = {
+				limit = {
+					AND = {
+						has_character_flag = sk_walk_right
+						has_character_flag = is_walking
+						global_var:sk_xx_pos <= 2175
+					}
+				}
+				change_global_variable = { name = sk_xx_pos add = 15}
+				change_global_variable = { name = sk_x_pos subtract = 7 }
+
+			#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+			}
+			if = {
+				limit = {
+					AND = {
+						has_character_flag = sk_walk_right
+						has_character_flag = is_walking
+						global_var:sk_xx_pos >= 2175
+					}
+				}
+				remove_character_flag = is_walking
+				set_global_variable = { name = sk_xx_pos value = 2175 }
+				set_global_variable = { name = sk_x_pos value = -960 }
+
+			#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+			}
+		}
+
+
+	}
+
+}
+ohol_start = {
+	scope = character
+
+	effect = {
+		set_global_variable = { name = gblock1c value = 30 }
+		set_global_variable = { name = gblock1r value = 30 }
+		#set_global_variable = { name = sk_s_pos value = 0 }
+		#set_global_variable = { name = sk_xx_pos value = 0 }
+		#set_global_variable = { name = sk_ss_pos value = 0 }
+		add_character_flag = is_in_ohol
+		set_variable = { name = ohol_r value = 9 }
+		set_variable = { name = ohol_c value = 16 }
+	}
+}
+
+
+
+ohol_walk_left = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = walk_left
+
+		NOT = {
+			has_character_flag = walk_right
+		}
+	}
+
+	effect = {
+
+		remove_character_flag = walk_right
+		add_character_flag = walk_left
+		add_character_flag = is_walking		
+	}
+}
+
+ohol_walk_right = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = walk_right
+
+		NOT = {
+			has_character_flag = walk_left
+		}
+	}
+
+	effect = {
+		remove_character_flag = walk_left
+		add_character_flag = walk_right
+		add_character_flag = is_walking	
+		
+	}
+}
+
+ggblock1 = {
+	scope = character
+
+	effect = {
+		set_variable = { name = target_ohol_r value = 1 }
+		set_variable = { name = target_ohol_c value = 1 }
+		if = { limit = { AND = {  var:ohol_c = var:target_ohol_c var:ohol_r = var:target_ohol_r } } } else = { add_character_flag = is_walking add_character_flag = move_to_block_1 if = { limit = { var:target_ohol_c < ohol_c  } ohol_move_left = yes } else = { ohol_move_right = yes } }
+
+	
+	}
+}
+
+exit_ohol = {
+	scope = character
+
+	effect = {
+		remove_character_flag = is_in_ohol
+	
+	}
+}
+
+truck_kun_t = {
+	scope = character
+
+	effect = {
+		play_music_cue =  truck_kun_track
+	}
+}

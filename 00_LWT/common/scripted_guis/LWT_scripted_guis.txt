@@ -1,0 +1,227 @@
+﻿###########################
+
+##################
+# Get Resources
+##################
+
+set_talker_test = {
+	scope = character
+
+	effect = {
+		set_global_variable = { name = ctalker value = this }
+	}
+}
+set_talker = {
+	scope = character
+
+	effect = {
+		set_global_variable = { name = ctalker value = scope:character }
+	}
+}
+set_active_talker1 = {
+	scope = character
+
+	effect = {
+		set_global_variable = { name = ctalker value = global_var:ctalker1 }
+	}
+}
+set_active_talker2 = {
+	scope = character
+
+	effect = {
+		set_global_variable = { name = ctalker value = global_var:ctalker2 }
+	}
+}
+set_active_talker3 = {
+	scope = character
+
+	effect = {
+		set_global_variable = { name = ctalker value = global_var:ctalker3 }
+	}
+}
+set_talker1 = {
+	scope = character
+	is_shown = {
+		this = global_var:ctalker1
+	}
+	effect = {
+		set_global_variable = { name = ctalker1 value = this }
+	}
+}
+set_talker2 = {
+	scope = character
+	is_shown = {
+		this = global_var:ctalker2
+	}
+	effect = {
+		set_global_variable = { name = ctalker2 value = this }
+	}
+}
+set_talker3 = {
+	scope = character
+	is_shown = {
+		this = global_var:ctalker3
+	}
+	effect = {
+		set_global_variable = { name = ctalker3 value = this}
+	}
+}
+talk_now = {
+	scope = character
+
+	is_shown = { global_var:ctalker = { has_character_flag = talk_now } }
+	effect = {
+		if = {
+			limit = {
+				global_var:ctalker= { has_character_flag = talk_now }
+			}
+			global_var:ctalker= { 
+			remove_character_flag = talk_now
+
+			remove_character_flag = talk_mode_a
+			remove_character_flag = talk_mode_e
+			remove_character_flag = talk_mode_i
+			remove_character_flag = talk_mode_o
+			remove_character_flag = talk_mode_u
+			remove_character_flag = talk_mode_d
+			}
+		}
+		else = {
+			global_var:ctalker = { 
+				add_character_flag = talk_now
+			}
+		}
+		
+		
+	}
+}
+end_talk_now = {
+	scope = character
+
+	is_shown = { NOT = { global_var:ctalker= {  has_character_flag = talk_now  } }}
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_now
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		}
+	}
+}
+talk_mode_a = {
+	scope = character
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		add_character_flag = talk_mode_a
+		}
+		
+	} 
+}
+talk_mode_e = {
+	
+	scope = character
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		add_character_flag = talk_mode_e
+		}
+		
+	} 
+}
+talk_mode_i = {
+	scope = character
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		add_character_flag = talk_mode_i
+		}
+		
+	} 
+}
+talk_mode_o = {
+	scope = character
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		add_character_flag = talk_mode_o
+		}
+		
+	} 
+}
+talk_mode_u = {
+	scope = character
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		add_character_flag = talk_mode_u
+		}
+		
+	} 
+}
+talk_mode_d = {
+	scope = character
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		add_character_flag = talk_mode_d
+		}
+		
+	} 
+}
+end_talk = {
+	scope = character
+
+
+	effect = {
+		global_var:ctalker= { 
+		remove_character_flag = talk_mode_a
+		remove_character_flag = talk_mode_e
+		remove_character_flag = talk_mode_i
+		remove_character_flag = talk_mode_o
+		remove_character_flag = talk_mode_u
+		remove_character_flag = talk_mode_d
+		}
+	} 
+}
+

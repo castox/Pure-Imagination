@@ -1,0 +1,143 @@
+﻿
+
+diplo_lvl_1_good = {
+	OR = {
+		has_trait = education_diplomacy_1
+		has_trait = just
+		has_trait = journaller
+		has_trait = brave
+		has_trait = diligent
+		has_trait = temperate
+		has_trait = content
+		has_trait = patient
+		has_trait = calm
+		has_trait = inappetetic
+		has_trait = temperate
+		has_trait = trusting
+		has_trait = humble
+		has_trait = gregarious
+		average_sum_of_all_skills_trigger = yes
+	}
+}
+diplo_lvl_2_good = {
+	OR = {
+		has_trait = education_diplomacy_2
+		has_trait = confider
+		has_trait = athletic
+		has_trait = zealous
+		has_trait = chaste
+		has_trait = honest
+		has_trait = scholar
+		has_trait = theologian
+		has_trait = contrite 
+		has_trait = lifestyle_mystic
+		has_trait = lifestyle_herbalist
+		has_trait = giant
+		has_trait = beauty_good
+		good_sum_of_all_skills_trigger = yes
+	}
+}
+diplo_lvl_3_good = {
+	OR = {
+		has_trait = education_diplomacy_3
+		has_trait = education_diplomacy_4
+		has_trait = gallant
+		has_trait = lifestyle_hunter
+		has_trait = lifestyle_blademaster
+		has_trait = lifestyle_hunter
+		has_trait = berserker
+		has_trait = shieldmaiden
+		has_trait = varangian
+		has_trait = viking
+		has_trait = lifestyle_reveler
+		has_trait = lifestyle_physician
+
+
+		excellent_sum_of_all_skills_trigger = yes
+	}
+}
+
+diplo_lvl_1_bad = {
+	OR = {
+		has_trait = improvident
+		has_trait = reclusive 
+		has_trait = craven
+		has_trait = irritable
+		has_trait = lustful
+		has_trait = rakish
+		has_trait = impatient
+		has_trait = schemer
+		has_trait = rowdy
+		has_trait = dull
+		has_trait = fickle
+		has_trait = arbitrary
+		has_trait = impatient
+		has_trait = comfort_eater
+		has_trait = inappetetic
+		has_trait = gluttonous
+		has_trait = confider
+		has_trait = shy
+		has_trait = arrogant
+		has_trait = paranoid
+		has_trait = stubborn
+		has_trait = cynical
+		has_trait = inappetetic
+		poor_sum_of_all_skills_trigger = yes
+	}
+}
+
+
+diplo_lvl_2_bad = {
+
+	OR = {
+		has_trait = deviant
+		has_trait = drunkard
+		has_trait = hashishiyah
+		has_trait = profligate
+		has_trait = seducer
+		has_trait = deceitful
+		has_trait = callous
+		has_trait = sadistic
+		has_trait = vengeful
+		has_trait = wrathful
+		has_trait = torturer
+		has_trait = greedy
+		has_trait = flagellant
+		has_trait = wounded 
+		has_variable = std_from_unfaithfulness_against
+		terrible_sum_of_all_skills_trigger = yes
+		
+	}
+}
+
+
+diplo_lvl_3_bad = {
+
+	OR = {
+		has_trait = consumption
+		has_trait = cancer
+		has_trait = great_pox
+		has_trait = gout_ridden
+		has_trait = ill
+		has_trait = pneumonic
+		has_trait = typhus
+		has_trait = smallpox
+		has_trait = bubonic_plague
+		has_trait = leper
+		has_trait = beauty_bad
+		has_trait = scarred
+		has_trait = blind
+		has_trait = hunchbacked
+		has_trait = dwarf
+		has_trait = spindly
+		has_trait = scaly
+		has_trait = albino
+		has_trait = one_eyed
+		has_trait = incapable
+		has_trait = maimed
+		has_trait = typhus 
+		has_trait = gout_ridden
+	}
+
+}
+

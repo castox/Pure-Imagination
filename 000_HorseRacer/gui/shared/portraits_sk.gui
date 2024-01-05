@@ -1,0 +1,38 @@
+######################################################
+################## PORTRAIT TYPES ####################
+######################################################
+
+types PortraitTypes_Racing
+{
+
+    ####################################
+    ######### MAIN PORTRAITS ###########
+    ####################################
+
+
+    type horse_racing_1 = widget {
+        size = { 840 1020 }
+        allow_outside = yes
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 840 1020 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_fp2_garden1', 'riding_right', 'racing_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+    }
+
+
+
+}

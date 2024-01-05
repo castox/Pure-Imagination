@@ -1,0 +1,76 @@
+﻿
+wizard_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
+	desc = wizard_decision_desc
+	selection_tooltip = equip_decision_tooltip
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		hidden_effect = {
+
+			#
+		}
+
+		trigger_event = {
+			id = wizard.1000
+		}
+		custom_tooltip = wizard_decision_effect_tooltip
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+wizard_decision2 = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
+	desc = wizard_decision_desc
+	selection_tooltip = equip_decision_tooltip
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		hidden_effect = {
+			add_a_inventory = yes
+			#
+		}
+
+		trigger_event = {
+			id = wizard.1001
+		}
+		custom_tooltip = wizard_decision_effect_tooltip
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

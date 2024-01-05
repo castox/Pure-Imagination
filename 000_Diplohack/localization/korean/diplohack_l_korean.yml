@@ -1,0 +1,71 @@
+﻿l_korean:
+
+COUNTY_DEVELOPMENT_TOOLTIP_DIPLO: "#T 개발도: [Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevel]/100#!\n[Scope.GetLandedTitle.GetCountyData.GetDevelopmentIgnoredDesc][Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentIncreaseDesc]"
+COUNTY_CONTROL_TOOLTIP_DIPLO:0 "#T 장악력: [Scope.GetLandedTitle.GetCountyData.GetControlLevelOutOfMax]#!\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlIncreaseDesc]"
+
+envoy_court_position:0 "사절"
+envoy_court_position_desc:0 "$envoy_court_position$의 목적은 외교 임무를 수행하고 외교적 행동을 가능하게 하는 것입니다."
+diplo_non_aggression_20:0 "불가침조약 20년"
+diplo_non_aggression_10:0 "불가침조약 10년"
+diplo_non_aggression_5:0 "불가침조약 5년"
+I_CANNOT_DECLARE_WAR_NONA:0 "유효한 불가침 조약이 있습니다."
+has_non_aggression_pact:0 "유효한 불가침 조약이 있습니다."
+diplo_start:0 "사절 보내기"
+
+ok_offer_ok:0 "확인"
+deal_offer_ok:0 "거래가 완료되었습니다!"
+tos_deal:0 "거래 조건"
+
+
+#event outcome messages
+fatal_offer:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]..."
+fatal_offer_ok:0 "당신의 사절은 죽었습니다..."
+fatal_offer_message:0 "당신의 사절단이 대표를 잃었습니다. 사람을 보내 수습할 수 있습니다."
+
+diplo_block_offer:0 "나나 내 아들에게 다시는 말을 걸지 마시오."
+
+diplo_insulting_offer_opening:0 "사악한 [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]에게"
+diplo_insulting_offer:0 "비록 내가 당신을 모욕하려 드는 것은 아니나, 당신이 보낸 제안을 보아하니 당신은 그 제안의 요점을 이해할 수 있을만큼 머리가 좋지 않은 것 같소."
+diplo_strong_insulting_offer:0 "당신의 그 호의라는 것은 당신네들에게나 베풀도록 하고, 사절단의 목숨이 아까운 줄 안다면 부디 다른 사절단을 보내지 마시오!"
+
+diplo_accept_offer_opening:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]에게"
+diplo_accept_offer:0 "당신의 제안을 신중히 검토하였으며, 그 제안을 받아들이겠습니다. 앞으로도 서로에게 이득이 되는 거래가 이루어지길 바랍니다."
+
+diplo_accept_good_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_good_offer:0 "내가 받아들일 수 밖에 없는 환상적인 제안이었습니다."
+
+diplo_accept_great_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_great_offer:0 "당신의 제안을 신중히 검토하였으며, 그 제안이 상호간에 많은 이득을 줄 수 있다는 것을 알게 되었습니다."
+
+diplo_decline_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_offer:0 "거절해야만 한다..."
+
+diplo_decline_np_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_np_offer:0 " 미안하지만 나는 당신의 제안에 의미가 없다고 생각합니다."
+
+#Deal Outcomes
+diplo_result_tool1:0 "당신의 사절이 죽임을 당했습니다."
+diplo_result_tool2:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 크게 화가 나서 향후의 모든 거래를 끊었습니다."
+diplo_result_tool3:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 크게 모욕당했습니다."
+diplo_result_tool4:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 모욕당했습니다."
+diplo_result_tool5:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 제안을 수락했습니다."
+diplo_result_tool6:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 제안을 기쁘게 받아들였습니다."
+diplo_result_tool7:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 당신의 제안에 감사를 표하며 당신을 높이 평가합니다."
+diplo_result_tool8:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 제안을 수락하지 않았습니다."
+diplo_result_tool9:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]이 제안에서 어떠한 이점도 찾지 못했습니다."
+
+#Interface
+diplo_enabled:0 " [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]와 [GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 사이의 거래가 진행 중입니다."
+diplo_able:0 " 현재 사절이 없습니다. 궁정 직위의 특별 부문에서 사절을 고용하십시오."
+
+#opinion modifiers
+deal_made:0 "외교 거래 완료"
+good_deal_made:0 "좋은 외교 거래 완료"
+great_deal_made:0 "훌륭한 외교 거래 완료"
+insulting_offer:0 "외교적 모욕"
+strong_insulting_offer:0 "중대한 외교적 모욕"
+deadly_insulting_offer:0 "사망자가 발생한 사절단"
+block_offer:0 "차단된 외교 협상"
+
+#p Modifier
+shady_deal_made:0 "은밀한 거래"

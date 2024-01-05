@@ -1,0 +1,41 @@
+﻿select_artifact = {
+	scope = character
+	saved_scopes = {
+		artifact
+	}
+	effect = {
+		#add_gold = 50
+		select_artifact_flag = {ARTIFACT = scope:artifact}
+	}
+}
+select_artifact_filter_type_by_flag = {
+	scope = character
+	saved_scopes = {
+		filter
+	}
+	effect = {
+		set_variable = {name = artifact_filter value = scope:filter}
+		refresh_filter = yes
+	}
+}
+toggle_gift_artifact_by_flag = {
+	scope = character
+	saved_scopes = {
+		artifact
+	}
+	effect = {
+		if = {
+			limit = {
+				is_target_in_variable_list = {name = artifact_gift_selection target = scope:artifact}
+			}
+			remove_list_variable = {name = artifact_gift_selection target = scope:artifact}
+		}
+		else = {
+			add_to_variable_list = {name = artifact_gift_selection target = scope:artifact}
+		}
+	}
+	is_shown = {
+		#always = no
+		is_target_in_variable_list = {name = artifact_gift_selection target = scope:artifact}
+	}
+}

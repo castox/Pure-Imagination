@@ -1,0 +1,27 @@
+785.1.1 = {
+	discover_innovation = innovation_raiding_parties
+	discover_innovation = innovation_earthworks
+	discover_innovation = innovation_bronze_socket_axe
+	#
+	discover_innovation = innovation_kingship
+	#
+	discover_innovation = innovation_gutian_raiders
+}
+900.1.1 = {
+	join_era = culture_era_early_medieval
+}
+1310.1.1 = {
+	discover_innovation = innovation_barracks
+	discover_innovation = innovation_mustering_grounds
+	discover_innovation = innovation_tribal_vassals
+	#
+	discover_innovation = innovation_potters_wheel
+	discover_innovation = innovation_city_states
+	discover_innovation = innovation_city_planning
+	discover_innovation = innovation_kings_justice
+	discover_innovation = innovation_border_stones
+	#
+	discover_innovation = innovation_fortifications_2
+	#
+	#
+}

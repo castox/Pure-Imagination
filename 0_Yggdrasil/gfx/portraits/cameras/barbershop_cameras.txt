@@ -1,0 +1,504 @@
+﻿camera_head = {
+	camera = {
+		position = cylindrical{	150 3 0 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head+30 = {
+	camera = {
+		position = cylindrical{	150 3 30 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head-30 = {
+	camera = {
+		position = cylindrical{	150 3 -30 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head+60 = {
+	camera = {
+		position = cylindrical{	150 3 60 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head-60 = {
+	camera = {
+		position = cylindrical{	150 3 -60 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head+90 = {
+	camera = {
+		position = cylindrical{	150 3 90 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head-90 = {
+	camera = {
+		position = cylindrical{	150 3 -90 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head+120 = {
+	camera = {
+		position = cylindrical{	150 3 120 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head-120 = {
+	camera = {
+		position = cylindrical{	150 3 -120 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head+150 = {
+	camera = {
+		position = cylindrical{	150 3 150 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head-150 = {
+	camera = {
+		position = cylindrical{	150 3 -150 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_head+180 = {
+	camera = {
+		position = cylindrical{	150 3 180 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 3 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_center = {
+	camera = {
+		position = cylindrical{ 360 -22 0 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera+30 = {
+	camera = {
+		position = cylindrical{ 360 -22 30 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera+60 = {
+	camera = {
+		position = cylindrical{ 360 -22 60 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera+90 = {
+	camera = {
+		position = cylindrical{ 360 -22 90 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera+120 = {
+	camera = {
+		position = cylindrical{ 360 -22 120 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera+150 = {
+	camera = {
+		position = cylindrical{ 360 -22 150 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera+180 = {
+	camera = {
+		position = cylindrical{ 360 -22 180 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera-30 = {
+	camera = {
+		position = cylindrical{ 360 -22 -30 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera-60 = {
+	camera = {
+		position = cylindrical{ 360 -22 -60 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera-90 = {
+	camera = {
+		position = cylindrical{ 360 -22 -90 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera-120 = {
+	camera = {
+		position = cylindrical{ 360 -22 -120 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera-150 = {
+	camera = {
+		position = cylindrical{ 360 -22 -150 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+
+camera_full_body = {
+	camera = {
+		position = cylindrical{ 600 95 0 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body+30 = {
+	camera = {
+		position = cylindrical{ 600 95 30 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body+60 = {
+	camera = {
+		position = cylindrical{ 600 95 60 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body+90 = {
+	camera = {
+		position = cylindrical{ 600 95 90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body+120 = {
+	camera = {
+		position = cylindrical{ 600 95 120 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body+150 = {
+	camera = {
+		position = cylindrical{ 600 95 150 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body+180 = {
+	camera = {
+		position = cylindrical{ 600 95 180 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body-30 = {
+	camera = {
+		position = cylindrical{ 600 95 -30 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body-60 = {
+	camera = {
+		position = cylindrical{ 600 95 -60 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body-90 = {
+	camera = {
+		position = cylindrical{ 600 95 -90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body-120 = {
+	camera = {
+		position = cylindrical{ 600 95 -120 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_full_body-150 = {
+	camera = {
+		position = cylindrical{ 600 95 -150 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}

@@ -1,0 +1,66 @@
+
+window = {
+	name = "r2d2"
+	scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	movable = yes
+	icon = {
+		parentanchor = "center"
+		texture = "gfx/interface/tavern_gfx/sw.png"
+	}
+	#PLayer Right ide
+
+		r2d2_s_stance = {
+			visible = "[GetScriptedGui('r2d2_view').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			parentanchor = hcenter|vcenter
+			position = { -200 230 }
+			datacontext = "[GetPlayer]"  
+
+		}
+		r2d2_stance = {
+			#visible = noS
+			visible = "[Not(GetScriptedGui('r2d2_view').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+			parentanchor = hcenter|vcenter
+			position = { -200 230 }
+			datacontext = "[GetPlayer]"  
+
+		}
+		#	on_finish = "[GetScriptedGui('j_end').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+	state = {
+		name = haltall
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+		on_finish = "[GetScriptedGui('is_r2d2').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -110 }
+        text = "Rotate"
+		onclick = "[GetScriptedGui('r2d2_rotate').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+    }
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -60 }
+        text = "Side View"
+		onclick = "[GetScriptedGui('r2d2_view').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+    }
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('exit_joust').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets r2d2')]"
+    }
+
+
+}

@@ -1,0 +1,2748 @@
+######################################################
+################## CBOXES TYPES ####################
+######################################################
+
+types Alchemist_ccshop
+{
+    type pot_box = widget {
+
+        allow_outside = yes
+        tooltip_enabled = no
+        fixedgridbox = {
+            flipdirection = yes
+            addcolumn = 140
+            addrow = 150
+            maxverticalslots = 1
+            maxhorizontalslots = 10
+            #using = Window_Background
+            #datamodel = "[GetPlayer.MakeScope.GetList('in_the_pot')]"
+            datamodel = "[GetGlobalList('ashop_resources')]"
+            item = {
+                
+                text_single = { 
+                    parentanchor = vcenter
+                    text = AR_ICON
+                    default_format = "#SIZE:15"
+                    #position = { 10 0 }
+                    text_single = {
+                        parentanchor = hcenter|bottom
+                        layoutpolicy_horizontal = expanding
+                        text = AR_NAME
+                        position = { 0 20 }
+                        default_format = "#high"
+                        using = Font_Type_Flavor
+                    }
+                }
+
+            }
+        }
+    }
+    type magic_grid = widget {
+
+        allow_outside = no
+        tooltip_enabled = no
+        #guinodes FILE
+        icon = { 
+            #node1
+            parentanchor = left
+            position = {50 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node1-11').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node1-2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node2
+            parentanchor = left
+            position = {200 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node2-12').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node2-3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node3
+            parentanchor = left
+            position = {350 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node3-13').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node3-4').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node4
+            parentanchor = left
+            position = {500 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node4-14').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node4-5').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node4').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node5
+            parentanchor = left
+            position = {650 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node5-15').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node5-6').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node5').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node6
+            parentanchor = left
+            position = {800 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node6-16').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node6-7').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node6').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node7
+            parentanchor = left
+            position = {950 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node7-17').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node7-8').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node7').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node8
+            parentanchor = left
+            position = {1100 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node8-18').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node8-9').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node8').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node9
+            parentanchor = left
+            position = {1250 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node9-19').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node9-10').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node9').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node10
+            parentanchor = left
+            position = {1400 0}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node10-20').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node10-11').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node10').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node11
+            parentanchor = left
+            position = {50 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node11-21').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node11-12').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node11').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node12
+            parentanchor = left
+            position = {200 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node12-22').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node12-13').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node12').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node13
+            parentanchor = left
+            position = {350 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node13-23').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node13-14').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node13').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node14
+            parentanchor = left
+            position = {500 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node14-24').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node14-15').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node14').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node15
+            parentanchor = left
+            position = {650 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node15-25').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node15-16').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node15').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node16
+            parentanchor = left
+            position = {800 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node16-26').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node16-17').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node16').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node17
+            parentanchor = left
+            position = {950 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node17-27').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node17-18').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node17').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node18
+            parentanchor = left
+            position = {1100 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node18-28').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node18-19').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node18').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node19
+            parentanchor = left
+            position = {1250 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node19-29').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node19-20').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node19').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node20
+            parentanchor = left
+            position = {1400 70}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node20-30').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node20-21').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node20').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node21
+            parentanchor = left
+            position = {50 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node21-31').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node21-22').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node21').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node22
+            parentanchor = left
+            position = {200 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node22-32').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node22-23').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node22').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node23
+            parentanchor = left
+            position = {350 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node23-33').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node23-24').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node23').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node24
+            parentanchor = left
+            position = {500 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node24-34').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node24-25').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node24').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node25
+            parentanchor = left
+            position = {650 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node25-35').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node25-26').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node25').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node26
+            parentanchor = left
+            position = {800 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node26-36').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node26-27').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node26').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node27
+            parentanchor = left
+            position = {950 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node27-37').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node27-28').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node27').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node28
+            parentanchor = left
+            position = {1100 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node28-38').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node28-29').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node28').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node29
+            parentanchor = left
+            position = {1250 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node29-39').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node29-30').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node29').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node30
+            parentanchor = left
+            position = {1400 140}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node30-40').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node30-31').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node30').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node31
+            parentanchor = left
+            position = {50 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node31-41').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node31-32').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node31').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node32
+            parentanchor = left
+            position = {200 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node32-42').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node32-33').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node32').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node33
+            parentanchor = left
+            position = {350 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node33-43').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node33-34').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node33').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node34
+            parentanchor = left
+            position = {500 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node34-44').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node34-35').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node34').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node35
+            parentanchor = left
+            position = {650 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node35-45').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node35-36').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node35').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node36
+            parentanchor = left
+            position = {800 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node36-46').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node36-37').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node36').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node37
+            parentanchor = left
+            position = {950 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node37-47').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node37-38').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node37').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node38
+            parentanchor = left
+            position = {1100 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node38-48').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node38-39').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node38').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node39
+            parentanchor = left
+            position = {1250 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node39-49').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node39-40').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node39').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node40
+            parentanchor = left
+            position = {1400 210}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node40-50').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node40-41').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node40').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node41
+            parentanchor = left
+            position = {50 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node41-51').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node41-42').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node41').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node42
+            parentanchor = left
+            position = {200 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node42-52').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node42-43').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node42').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node43
+            parentanchor = left
+            position = {350 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node43-53').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node43-44').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node43').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node44
+            parentanchor = left
+            position = {500 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node44-54').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node44-45').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node44').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node45
+            parentanchor = left
+            position = {650 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node45-55').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node45-46').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node45').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node46
+            parentanchor = left
+            position = {800 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node46-56').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node46-47').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node46').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node47
+            parentanchor = left
+            position = {950 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node47-57').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node47-48').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node47').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node48
+            parentanchor = left
+            position = {1100 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node48-58').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node48-49').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node48').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node49
+            parentanchor = left
+            position = {1250 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node49-59').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node49-50').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node49').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node50
+            parentanchor = left
+            position = {1400 280}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node50-60').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node50-51').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node50').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node51
+            parentanchor = left
+            position = {50 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node51-61').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node51-52').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node51').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node52
+            parentanchor = left
+            position = {200 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node52-62').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node52-53').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node52').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node53
+            parentanchor = left
+            position = {350 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node53-63').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node53-54').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node53').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node54
+            parentanchor = left
+            position = {500 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node54-64').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node54-55').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node54').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node55
+            parentanchor = left
+            position = {650 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node55-65').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node55-56').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node55').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node56
+            parentanchor = left
+            position = {800 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node56-66').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node56-57').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node56').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node57
+            parentanchor = left
+            position = {950 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node57-67').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node57-58').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node57').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node58
+            parentanchor = left
+            position = {1100 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node58-68').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node58-59').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node58').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node59
+            parentanchor = left
+            position = {1250 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node59-69').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node59-60').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node59').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node60
+            parentanchor = left
+            position = {1400 350}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+                texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node60-70').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node60-61').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node60').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node61
+            parentanchor = left
+            position = {50 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node61-71').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node61-62').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node61').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node62
+            parentanchor = left
+            position = {200 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node62-72').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node62-63').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node62').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node63
+            parentanchor = left
+            position = {350 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node63-73').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node63-64').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node63').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node64
+            parentanchor = left
+            position = {500 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node64-74').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node64-65').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node64').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node65
+            parentanchor = left
+            position = {650 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node65-75').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node65-66').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node65').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node66
+            parentanchor = left
+            position = {800 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node66-76').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node66-67').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node66').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node67
+            parentanchor = left
+            position = {950 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node67-77').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node67-68').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node67').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node68
+            parentanchor = left
+            position = {1100 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node68-78').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node68-69').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node68').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node69
+            parentanchor = left
+            position = {1250 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node69-79').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node69-70').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node69').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node70
+            parentanchor = left
+            position = {1400 420}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node70-80').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node70-71').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node70').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node71
+            parentanchor = left
+            position = {50 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node71-81').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node71-72').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node71').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node72
+            parentanchor = left
+            position = {200 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node72-82').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node72-73').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node72').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node73
+            parentanchor = left
+            position = {350 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node73-83').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node73-74').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node73').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node74
+            parentanchor = left
+            position = {500 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node74-84').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node74-75').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node74').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node75
+            parentanchor = left
+            position = {650 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node75-85').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node75-76').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node75').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node76
+            parentanchor = left
+            position = {800 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node76-86').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node76-77').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node76').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node77
+            parentanchor = left
+            position = {950 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node77-87').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node77-78').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node77').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node78
+            parentanchor = left
+            position = {1100 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node78-88').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node78-79').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node78').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node79
+            parentanchor = left
+            position = {1250 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node79-89').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node79-80').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node79').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node80
+            parentanchor = left
+            position = {1400 490}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node80-90').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node80-81').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node80').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node81
+            parentanchor = left
+            position = {50 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node81-91').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node81-82').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node81').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node82
+            parentanchor = left
+            position = {200 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node82-92').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node82-83').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node82').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node83
+            parentanchor = left
+            position = {350 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node83-93').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node83-84').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node83').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node84
+            parentanchor = left
+            position = {500 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node84-94').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node84-85').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node84').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node85
+            parentanchor = left
+            position = {650 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node85-95').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node85-86').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node85').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node86
+            parentanchor = left
+            position = {800 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node86-96').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node86-87').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node86').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node87
+            parentanchor = left
+            position = {950 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node87-97').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node87-88').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node87').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node88
+            parentanchor = left
+            position = {1100 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node88-98').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node88-89').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node88').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node89
+            parentanchor = left
+            position = {1250 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node89-99').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node89-90').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node89').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node90
+            parentanchor = left
+            position = {1400 560}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node90-100').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node90-91').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node90').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node91
+            parentanchor = left
+            position = {50 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node91-101').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node91-92').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node91').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node92
+            parentanchor = left
+            position = {200 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node92-102').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node92-93').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node92').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node93
+            parentanchor = left
+            position = {350 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node93-103').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node93-94').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node93').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node94
+            parentanchor = left
+            position = {500 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node94-104').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node94-95').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node94').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node95
+            parentanchor = left
+            position = {650 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node95-105').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node95-96').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node95').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node96
+            parentanchor = left
+            position = {800 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node96-106').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node96-97').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node96').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node97
+            parentanchor = left
+            position = {950 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node97-107').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node97-98').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node97').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node98
+            parentanchor = left
+            position = {1100 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node98-108').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node98-99').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node98').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node99
+            parentanchor = left
+            position = {1250 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node99-109').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node99-100').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node99').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+        icon = { 
+            #node100
+            parentanchor = left
+            position = {1400 630}
+            texture = "gfx/interface/cshop/mcircle.png"
+            size = { 70 70 }
+            icon = {
+            parentanchor = bottom|hcenter
+                position = { 0 5 }
+            texture = "gfx/interface/cshop/mlinev.png"
+                size = { 60 20 }
+                visible = "[GetScriptedGui('node100-110').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = right|vcenter
+                position = { 105 0 }
+                texture = "gfx/interface/cshop/mline.png"
+                size = { 130 60 }
+                visible = "[GetScriptedGui('node100-101').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            icon = {
+                parentanchor = center
+                texture = "gfx/interface/cshop/mcirclew.png"
+                size = { 70 70 }
+                visible = "[GetScriptedGui('node100').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+        }
+
+
+    }
+}

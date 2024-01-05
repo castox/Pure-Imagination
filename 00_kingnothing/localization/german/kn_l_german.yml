@@ -1,0 +1,18 @@
+﻿l_german:
+
+king_nothing_modifier: "König Nichts"
+king_nothing_modifier_desc: "Du bist ein König, aber was hat es gekostet? Alles.."
+
+rem_king_nothing_decision: "Entfernen Sie den Spitznamen King Nothing."
+rem_king_nothing_decision_tooltip: "$kn_i_must_admit$"
+rem_king_nothing_decision_confirm: "Es muss getan werden!"
+
+king_nothing_decision: "Warum nicht, ich sollte König sein!"
+king_nothing_decision_tooltip: "$kn_gain_nothing$"
+king_nothing_decision_confirm: "Sie werden das Knie beugen!"
+
+kn_gain_nothing: "Du erlangst ein Königreich, aber du verlierst den Respekt vieler, was dazu führt, dass viele dich hassen und dich zum falschen König erklären. Da geht König Nichts!!"
+kn_i_must_admit: "Ich muss zugeben, dass ich mich geirrt habe!"
+kn_requirements: "Besitze mindestens 1 oder mehr [duchies|E]"
+kn_hold_another: "Halte 2 Königreiche"
+kn_rem_nothing: "Mit viel Stolz geben Sie zu, dass Sie sich geirrt haben, und verlieren den Spitznamen King Nothing."

@@ -1,0 +1,6 @@
+﻿# These assets are then used in the genes (game/common/genes/..) at the bottom of the file. 
+
+
+dslongsword_prop = {
+	entity = {	required_tags = ""        node = "bn_r_prop"		entity = "dslongsword_entity" }
+}

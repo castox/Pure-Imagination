@@ -1,0 +1,146 @@
+﻿onhorse_pose = {
+	male = {
+		animation = { head = "idle" torso = "horse_body_idle" }
+
+		horse_idle = {
+			animation = { head = "idle" torso = "horse_body_idle" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+				
+					NOT = {
+						has_character_flag = horse_ridingr
+						has_character_flag = horse_ridingl
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horse_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_l = {
+			animation = { head = "idle" torso = "horse_body_idle" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingl
+					NOR= {
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingr
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horsel_prop
+				animations = emotion_happy_decal
+			}
+		}
+		horse_r = {
+			animation = { head = "idle" torso = "horse_body_idle" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = horse_ridingr
+					NOR = {
+						has_character_flag = horse_idle
+						has_character_flag = horse_ridingl
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = horser_prop
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+
+
+r2d2_pose = {
+	male = {
+		animation = { head = "idle" torso = "r2d2_body" }
+
+		r2d2_idle = {
+			animation = { head = "idle" torso = "r2d2_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+				
+					NOT = {
+						has_character_flag = r2_move
+						has_character_flag = r2d2_rotate
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = r2d2_prop
+				animations = emotion_happy_decal
+			}
+		}
+		r2d2_move = {
+			animation = { head = "idle" torso = "r2d2_bodym" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 150
+					has_character_flag = r2_move
+					NOT = {
+						has_character_flag = r2_movex
+						has_character_flag = r2d2_rotate
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = r2d2_prop
+				animations = emotion_happy_decal
+			}
+		}
+		r2d2_rotate = {
+			animation = { head = "idle" torso = "r2d2_bodyr" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 170
+					has_character_flag = r2d2_rotate
+					NOT = {
+						has_character_flag = r2_movex
+						has_character_flag = r2_move
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = r2d2_prop
+				animations = emotion_happy_decal
+			}
+		}
+		boy = {
+			default = { head = "idle" torso = "idle" }
+		}
+		female = male
+		girl = boy
+	}
+	

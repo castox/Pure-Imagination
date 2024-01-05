@@ -1,0 +1,110 @@
+####################################
+### WAY OF KINGS ARTIFACT MODULE ###
+###     WHAT IS NEW IN 2.0       ###
+###        by  Tobbzn            ###
+####################################
+
+# Note for 2.1: Welcome to the new GUI Modding Framework, baby! No more need to edit hud.gui!
+
+##### INDEX OF THIS FILE #####
+New core systems:
+Freedom from console commands
+Indexation system
+How indexed triggers work
+Generating arbitrary new interactive lists in GUI
+
+Demonstration of extra systems
+Dueling
+Artifact repair
+Mapmodes
+
+##### NEW CORE SYSTEMS ######
+### FREEDOM FROM CONSOLE COMMANDS
+Console commands have been determined to be the major non-cartographic source of multiplayer desynchronization. This is unfortunate since the ExecuteConsoleCommand function provided a very convenient way to pass information from GUI to scripted effects without a lot of maintenance.
+
+To do so, we needed to fully revise the artifact GUI and adjust the scripted GUI accordingly. The toolbox for the dynamic parts of the GUI is now mostly stored as types in gui/shared/artifacts.gui, but the window_artifacts.gui also contains a type which can be included in hud.gui with one line.
+
+Old script files have been left for demonstration purposes, and most of the new script stuff is in artifacts_index_system, artifacts_index_triggers, and artifacts_indexed_gui. 
+
+We also have new gui and sgui for map modes, which may conflict with your other mods. However, they are just for demonstration purposes and are not essential - they can be removed at your leisure. 
+
+###   INDEXATION SYSTEM:
+The Way of Kings Artifacts Module 2.0 is more dynamic than ever, thanks to its reliance on a new indexation system, which utilizes the fact that Provinces are naturally ordered by their province IDs to pass numerical values from GUI to Scripted GUI. This circumvents the problem modders have had due to the inability to pass flags or numerical values directly to scripted GUI.
+
+In effect, instead of using a console command to select the clicked artifact, pressing on the Nth entry in the GUI will now pass the Nth province to Scripted GUI, thereby telling the script to select the Nth artifact in the current artifact list. This avoids the desynchronization issues that may arise when using console commands in multiplayer. The system is also robust enough to work for arbitrary combinations of list-based datamodels and datacontexts that invoke scripted GUI.
+
+For instance, by creating a list of artifact filters, the same indexation method will set the relevant filter from the list, and this can be extended to any number of list elements. Hence there is no need to hardcode new artifact type/slot filters in the GUI; they are handled automatically.
+
+### HOW INDEXED TRIGGERS WORK
+Indexed triggers are a bit tricky; you can't easily return the Nth element of an ordered list in triggers, because ordered_<thing> is an *effect* and therefore not accessible in triggers. The workaround is to use methods like
+
+fetch_list_entry = {# LIST, N
+	any_in_list = {
+		variable = $LIST$
+		save_temporary_scope_as = artifact
+		add_to_temporary_list = tamplist
+		list_size = {
+			name = tamplist
+			value > $N$
+		}
+	}
+}
+Running this trigger returns true if the Nth elements of the list exists, but more importantly it saves the value of the Nth element in the temporary scope:artifact, which may then be used for triggers further down the line. 
+NOTE that normally lists start with the index 0, but because of a coding limitation, if you want to check that scope:artifact from fetch_list_entry happens to have the Nth position in another list, you would have to use the SHIFTED index, as if the index started at 1.
+
+has_shifted_filtered_position = { #TARGET, N
+	any_in_list = {
+		variable = artifact_list_filtered
+		list_size = {
+			name = tumplist
+			value = $N$
+		}
+		add_to_temporary_list = tumplist
+		$TARGET$ = this
+	}
+}
+This is because we need to be in the cycle which returns true in order to escape the loop. For fetch_list_entry this happens during the Nth cycle because the trigger checks whether a list of N+1 elements is greater than N - which it is. For has_shifted_filtered_position, we can't add to the temporary list because if TARGET has a position greater than N, it would always return true using the preceding method, and there is no easy method available for adjusting values during triggers to, say, check for equality with N+1. Therefore the function itself has to call the shifted_index script value, rather than the index script value.
+
+
+### GENERATING ARBITRARY INTERACTIVE LISTS IN GUI
+A list should be a type that calls two other types: A visual GUI, and an index GUI. 
+The visual GUI should be a layout for a datamodel. It determines what you see based on some list.
+The index GUI should use "indices" as the datamodel and overlay the visual datamodel layout. It should be provided a datacontext to fire a scripted GUI which passes the indexing province from "indices".
+
+	type artifact_list = container {
+        artifact_indices_gui = { # To click on things
+		}
+        artifact_visual_gui = { # To look at things
+        }
+    }
+
+To see what the artifact_visual_gui and artifact_indices_gui do, check out gui/shared/artifacts.gui.
+
+This composite type can then be reused in another GUI as 
+
+artifact_list = {
+	blockoverride "datamodel" {
+		datamodel = "[<Some datamodel>]"
+	}
+	blockoverride "itemcontext" {
+		datacontext = "[<Some datacontext>]"
+	}
+}
+
+This will create an artifact list using the visual datamodel, and executing the provided datacontext when clicked.
+
+#########  EXTRA SYSTEMS ########
+These systems are not core to the effects of the artifact module and may freely be disabled by modders who aren't interested in this functionality in their mod.
+
+### DUELING
+You may duel characters for prestige, artifacts, or land. You can only duel someone if they have something to stake and if you can match the stake. If you wish to focus on dueling, there is a perk tree dedicated to it, in which you can unlock stances to employ during the duel to various effects.
+FILES: Interactions, events, localization, customizable_localization, script values and the dueling perk tree. Includes one trait.
+
+### ARTIFACT REPAIR
+A demo decision/interaction; If you own a "broken" type artifact, an Artifabrian (New Perk tree) can repair it. If you are the artifabrian, you can repair it yourself. If you know an artifabrian, they can repair it for you. The Learning skill of the artifabrian determines likelihood of success, and the cost.
+Note, however, that the artifabrian may steal the artifact and simply *claim* that it broke beyond repair.
+FILES: Interactions, events, script values and the artifabrian perk tree. Includes one trait.
+
+### MAP MODES
+You can enable Artifact and Shard type map modes that will display the artifacts of any ruler whose banner is currently visible inn your selected normal map mode. This should help organize theft, find targets to duel, and identify dangerous enemies.
+FILES: GUI and scripted GUI files.

@@ -1,0 +1,36 @@
+﻿l_english:
+
+challenge_interaction:0 "Drinking Contest"
+trait_fisher_character_desc:0 "This person spends way too much time fishing, but this has gained them the respect of dudes that smell like fish"
+trait_fisher_desc:0 "Out fishing"
+trait_legendary_fisherman:0 "Legendary Fisherman"
+
+fish1_name: "Tuna"
+fish2_name: "Mackerel"
+fish3_name: "Salmon"
+fish4_name: "Pangasius"
+fish5_name: "Pink Salmon"
+fish6_name: "Turbot Brill"
+fish7_name: "Sea Bass"
+fish8_name: "Silver Carp"
+fish9_name: "Rock Fish"
+fish10_name: "Dorado"
+fish11_name: "Pike"
+fish12_name: "Pike Perch"
+fish13_name: "Channel Catfish"
+fish14_name: "Rainbow Trout"
+fish15_name: "Herring"
+fish16_name: "Hornicorn"
+
+go_fishing_decision:0 "Go Fishing!"
+go_fishing_decision_confirm:0 "$go_fishing_decision$"
+go_fishing_decision_tooltip:0 "$go_fishing_decision$"
+go_fishing_decision_desc:0 "I need to reduce some stress, how about I go fishing, my good friend Count Castox knows the perfect spot!"
+go_fishing_decision_effect_tooltip:0 "Going fishing reduces stress, the tougher the fish, the more stress is reduced.\n\nCapturing all 15 fish grants you the trait, Legendary Fishermen!"
+
+
+FISH_ICON_CAUGHT: "[Localize(Concatenate(Concatenate('@fish_',GetPlayer.MakeScope.Var('current_fish1').GetFlagName), '!'))]" 
+FISH_NAME_DESC: "You caught a [Localize(Concatenate(GetPlayer.MakeScope.Var('current_fish1').GetFlagName,'_name'))]! "
+FISH_NAME: "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+FISH_ICON: "[Localize(Concatenate(Concatenate('@fish_',Scope.GetFlagName), '!'))]" 
+

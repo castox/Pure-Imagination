@@ -1,0 +1,3062 @@
+#animation v_dance_s
+@fDuration = 0.0243
+@fWidth = 100%
+@fHeight = 100%
+types Animations
+{
+type v_dance_s = widget {
+name = "v_dance_s_effect"
+parentanchor = center
+size = { 100% 100% }
+#v_dance_s
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','1')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_1.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s1
+  next = v_dance_s2
+  trigger_on_create = yes
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','1')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','2')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_2.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s2
+  next = v_dance_s3
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','2')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','3')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_3.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s3
+  next = v_dance_s4
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','3')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','4')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_4.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s4
+  next = v_dance_s5
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','4')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','5')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_5.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s5
+  next = v_dance_s6
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','5')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','6')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_6.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s6
+  next = v_dance_s7
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','6')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','7')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_7.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s7
+  next = v_dance_s8
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','7')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','8')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_8.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s8
+  next = v_dance_s9
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','8')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','9')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_9.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s9
+  next = v_dance_s10
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','9')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','10')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_10.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s10
+  next = v_dance_s11
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','10')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','11')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_11.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s11
+  next = v_dance_s12
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','11')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','12')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_12.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s12
+  next = v_dance_s13
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','12')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','13')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_13.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s13
+  next = v_dance_s14
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','13')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','14')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_14.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s14
+  next = v_dance_s15
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','14')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','15')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_15.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s15
+  next = v_dance_s16
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','15')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','16')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_16.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s16
+  next = v_dance_s17
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','16')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','17')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_17.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s17
+  next = v_dance_s18
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','17')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','18')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_18.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s18
+  next = v_dance_s19
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','18')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','19')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_19.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s19
+  next = v_dance_s20
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','19')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','20')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_20.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s20
+  next = v_dance_s21
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','20')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','21')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_21.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s21
+  next = v_dance_s22
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','21')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','22')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_22.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s22
+  next = v_dance_s23
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','22')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','23')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_23.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s23
+  next = v_dance_s24
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','23')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','24')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_24.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s24
+  next = v_dance_s25
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','24')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','25')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_25.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s25
+  next = v_dance_s26
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','25')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','26')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_26.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s26
+  next = v_dance_s27
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','26')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','27')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_27.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s27
+  next = v_dance_s28
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','27')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','28')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_28.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s28
+  next = v_dance_s29
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','28')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','29')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_29.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s29
+  next = v_dance_s30
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','29')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','30')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_30.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s30
+  next = v_dance_s31
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','30')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','31')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_31.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s31
+  next = v_dance_s32
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','31')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','32')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_32.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s32
+  next = v_dance_s33
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','32')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','33')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_33.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s33
+  next = v_dance_s34
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','33')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','34')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_34.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s34
+  next = v_dance_s35
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','34')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','35')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_35.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s35
+  next = v_dance_s36
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','35')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','36')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_36.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s36
+  next = v_dance_s37
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','36')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','37')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_37.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s37
+  next = v_dance_s38
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','37')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','38')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_38.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s38
+  next = v_dance_s39
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','38')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','39')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_39.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s39
+  next = v_dance_s40
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','39')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','40')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_40.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s40
+  next = v_dance_s41
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','40')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','41')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_41.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s41
+  next = v_dance_s42
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','41')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','42')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_42.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s42
+  next = v_dance_s43
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','42')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','43')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_43.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s43
+  next = v_dance_s44
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','43')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','44')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_44.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s44
+  next = v_dance_s45
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','44')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','45')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_45.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s45
+  next = v_dance_s46
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','45')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','46')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_46.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s46
+  next = v_dance_s47
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','46')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','47')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_47.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s47
+  next = v_dance_s48
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','47')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','48')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_48.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s48
+  next = v_dance_s49
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','48')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','49')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_49.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s49
+  next = v_dance_s50
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','49')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','50')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_50.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s50
+  next = v_dance_s51
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','50')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','51')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_51.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s51
+  next = v_dance_s52
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','51')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','52')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_52.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s52
+  next = v_dance_s53
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','52')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','53')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_53.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s53
+  next = v_dance_s54
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','53')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','54')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_54.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s54
+  next = v_dance_s55
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','54')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','55')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_55.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s55
+  next = v_dance_s56
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','55')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','56')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_56.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s56
+  next = v_dance_s57
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','56')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','57')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_57.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s57
+  next = v_dance_s58
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','57')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','58')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_58.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s58
+  next = v_dance_s59
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','58')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','59')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_59.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s59
+  next = v_dance_s60
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','59')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','60')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_60.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s60
+  next = v_dance_s61
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','60')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','61')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_61.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s61
+  next = v_dance_s62
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','61')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','62')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_62.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s62
+  next = v_dance_s63
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','62')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','63')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_63.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s63
+  next = v_dance_s64
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','63')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','64')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_64.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s64
+  next = v_dance_s65
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','64')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','65')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_65.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s65
+  next = v_dance_s66
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','65')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','66')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_66.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s66
+  next = v_dance_s67
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','66')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','67')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_67.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s67
+  next = v_dance_s68
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','67')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','68')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_68.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s68
+  next = v_dance_s69
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','68')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','69')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_69.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s69
+  next = v_dance_s70
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','69')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','70')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_70.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s70
+  next = v_dance_s71
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','70')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','71')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_71.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s71
+  next = v_dance_s72
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','71')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','72')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_72.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s72
+  next = v_dance_s73
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','72')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','73')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_73.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s73
+  next = v_dance_s74
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','73')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','74')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_74.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s74
+  next = v_dance_s75
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','74')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','75')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_75.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s75
+  next = v_dance_s76
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','75')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','76')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_76.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s76
+  next = v_dance_s77
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','76')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','77')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_77.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s77
+  next = v_dance_s78
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','77')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','78')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_78.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s78
+  next = v_dance_s79
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','78')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','79')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_79.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s79
+  next = v_dance_s80
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','79')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','80')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_80.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s80
+  next = v_dance_s81
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','80')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','81')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_81.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s81
+  next = v_dance_s82
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','81')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','82')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_82.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s82
+  next = v_dance_s83
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','82')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','83')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_83.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s83
+  next = v_dance_s84
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','83')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','84')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_84.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s84
+  next = v_dance_s85
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','84')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','85')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_85.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s85
+  next = v_dance_s86
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','85')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','86')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_86.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s86
+  next = v_dance_s87
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','86')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','87')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_87.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s87
+  next = v_dance_s88
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','87')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','88')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_88.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s88
+  next = v_dance_s89
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','88')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','89')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_89.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s89
+  next = v_dance_s90
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','89')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','90')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_90.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s90
+  next = v_dance_s91
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','90')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','91')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_91.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s91
+  next = v_dance_s92
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','91')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','92')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_92.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s92
+  next = v_dance_s93
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','92')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','93')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_93.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s93
+  next = v_dance_s94
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','93')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','94')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_94.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s94
+  next = v_dance_s95
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','94')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','95')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_95.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s95
+  next = v_dance_s96
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','95')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','96')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_96.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s96
+  next = v_dance_s97
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','96')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','97')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_97.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s97
+  next = v_dance_s98
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','97')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','98')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_98.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s98
+  next = v_dance_s99
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','98')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','99')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_99.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s99
+  next = v_dance_s100
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','99')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','100')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_100.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s100
+  next = v_dance_s101
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','100')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','101')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_101.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s101
+  next = v_dance_s102
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','101')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','102')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_102.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s102
+  next = v_dance_s103
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','102')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','103')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_103.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s103
+  next = v_dance_s104
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','103')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','104')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_104.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s104
+  next = v_dance_s105
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','104')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','105')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_105.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s105
+  next = v_dance_s106
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','105')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','106')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_106.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s106
+  next = v_dance_s107
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','106')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','107')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_107.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s107
+  next = v_dance_s108
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','107')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','108')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_108.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s108
+  next = v_dance_s109
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','108')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','109')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_109.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s109
+  next = v_dance_s110
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','109')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','110')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_110.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s110
+  next = v_dance_s111
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','110')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','111')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_111.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s111
+  next = v_dance_s112
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','111')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','112')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_112.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s112
+  next = v_dance_s113
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','112')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','113')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_113.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s113
+  next = v_dance_s114
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','113')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','114')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_114.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s114
+  next = v_dance_s115
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','114')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','115')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_115.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s115
+  next = v_dance_s116
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','115')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','116')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_116.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s116
+  next = v_dance_s117
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','116')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','117')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_117.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s117
+  next = v_dance_s118
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','117')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','118')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_118.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s118
+  next = v_dance_s119
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','118')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','119')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_119.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s119
+  next = v_dance_s120
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','119')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','120')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_120.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s120
+  next = v_dance_s121
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','120')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','121')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_121.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s121
+  next = v_dance_s122
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','121')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','122')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_122.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s122
+  next = v_dance_s123
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','122')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','123')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_123.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s123
+  next = v_dance_s124
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','123')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','124')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_124.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s124
+  next = v_dance_s125
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','124')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','125')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_125.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s125
+  next = v_dance_s126
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','125')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','126')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_126.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s126
+  next = v_dance_s127
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','126')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','127')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_127.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s127
+  next = v_dance_s128
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','127')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','128')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_128.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s128
+  next = v_dance_s129
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','128')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','129')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_129.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s129
+  next = v_dance_s130
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','129')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','130')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_130.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s130
+  next = v_dance_s131
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','130')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','131')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_131.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s131
+  next = v_dance_s132
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','131')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','132')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_132.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s132
+  next = v_dance_s133
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','132')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','133')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_133.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s133
+  next = v_dance_s134
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','133')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','134')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_134.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s134
+  next = v_dance_s135
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','134')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','135')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_135.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s135
+  next = v_dance_s136
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','135')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','136')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_136.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s136
+  next = v_dance_s137
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','136')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','137')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_137.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s137
+  next = v_dance_s138
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','137')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','138')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_138.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s138
+  next = v_dance_s139
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','138')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','139')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_139.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s139
+  next = v_dance_s140
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','139')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','140')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_140.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s140
+  next = v_dance_s141
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','140')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','141')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_141.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s141
+  next = v_dance_s142
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','141')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','142')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_142.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s142
+  next = v_dance_s143
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','142')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','143')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_143.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s143
+  next = v_dance_s144
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','143')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','144')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_144.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s144
+  next = v_dance_s145
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','144')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','145')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_145.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s145
+  next = v_dance_s146
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','145')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','146')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_146.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s146
+  next = v_dance_s147
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','146')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','147')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_147.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s147
+  next = v_dance_s148
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','147')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','148')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_148.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s148
+  next = v_dance_s149
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','148')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','149')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_149.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s149
+  next = v_dance_s150
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','149')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','150')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_150.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s150
+  next = v_dance_s151
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','150')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','151')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_151.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s151
+  next = v_dance_s152
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','151')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','152')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_152.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s152
+  next = v_dance_s153
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','152')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','153')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_153.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s153
+  next = v_dance_s154
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','153')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','154')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_154.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s154
+  next = v_dance_s155
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','154')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','155')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_155.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s155
+  next = v_dance_s156
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','155')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','156')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_156.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s156
+  next = v_dance_s157
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','156')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','157')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_157.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s157
+  next = v_dance_s158
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','157')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','158')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_158.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s158
+  next = v_dance_s159
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','158')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','159')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_159.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s159
+  next = v_dance_s160
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','159')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','160')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_160.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s160
+  next = v_dance_s161
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','160')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','161')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_161.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s161
+  next = v_dance_s162
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','161')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','162')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_162.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s162
+  next = v_dance_s163
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','162')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','163')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_163.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s163
+  next = v_dance_s164
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','163')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','164')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_164.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s164
+  next = v_dance_s165
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','164')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','165')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_165.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s165
+  next = v_dance_s166
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','165')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','166')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_166.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s166
+  next = v_dance_s167
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','166')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','167')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_167.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s167
+  next = v_dance_s168
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','167')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','168')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_168.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s168
+  next = v_dance_s169
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','168')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','169')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_169.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s169
+  next = v_dance_s170
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','169')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','170')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_170.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s170
+  next = v_dance_s171
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','170')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','171')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_171.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s171
+  next = v_dance_s172
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','171')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','172')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_172.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s172
+  next = v_dance_s173
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','172')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','173')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_173.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s173
+  next = v_dance_s174
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','173')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','174')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_174.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s174
+  next = v_dance_s175
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','174')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','175')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_175.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s175
+  next = v_dance_s176
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','175')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','176')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_176.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s176
+  next = v_dance_s177
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','176')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','177')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_177.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s177
+  next = v_dance_s178
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','177')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','178')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_178.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s178
+  next = v_dance_s179
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','178')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','179')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_179.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s179
+  next = v_dance_s180
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','179')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','180')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_180.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s180
+  next = v_dance_s181
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','180')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','181')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_181.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s181
+  next = v_dance_s182
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','181')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','182')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_182.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s182
+  next = v_dance_s183
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','182')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','183')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_183.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s183
+  next = v_dance_s184
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','183')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','184')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_184.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s184
+  next = v_dance_s185
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','184')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','185')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_185.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s185
+  next = v_dance_s186
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','185')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','186')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_186.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s186
+  next = v_dance_s187
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','186')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','187')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_187.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s187
+  next = v_dance_s188
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','187')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','188')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_188.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s188
+  next = v_dance_s189
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','188')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','189')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_189.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s189
+  next = v_dance_s190
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','189')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','190')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_190.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s190
+  next = v_dance_s191
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','190')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','191')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_191.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s191
+  next = v_dance_s192
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','191')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','192')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_192.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s192
+  next = v_dance_s193
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','192')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','193')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_193.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s193
+  next = v_dance_s194
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','193')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','194')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_194.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s194
+  next = v_dance_s195
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','194')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','195')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_195.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s195
+  next = v_dance_s196
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','195')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','196')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_196.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s196
+  next = v_dance_s197
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','196')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','197')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_197.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s197
+  next = v_dance_s198
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','197')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','198')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_198.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s198
+  next = v_dance_s199
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','198')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','199')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_199.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s199
+  next = v_dance_s200
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','199')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','200')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_200.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s200
+  next = v_dance_s201
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','200')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','201')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_201.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s201
+  next = v_dance_s202
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','201')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','202')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_202.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s202
+  next = v_dance_s203
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','202')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','203')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_203.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s203
+  next = v_dance_s204
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','203')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','204')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_204.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s204
+  next = v_dance_s205
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','204')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','205')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_205.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s205
+  next = v_dance_s206
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','205')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','206')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_206.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s206
+  next = v_dance_s207
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','206')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','207')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_207.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s207
+  next = v_dance_s208
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','207')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','208')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_208.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s208
+  next = v_dance_s209
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','208')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','209')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_209.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s209
+  next = v_dance_s210
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','209')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','210')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_210.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s210
+  next = v_dance_s211
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','210')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','211')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_211.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s211
+  next = v_dance_s212
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','211')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','212')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_212.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s212
+  next = v_dance_s213
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','212')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','213')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_213.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s213
+  next = v_dance_s214
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','213')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','214')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_214.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s214
+  next = v_dance_s215
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','214')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','215')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_215.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s215
+  next = v_dance_s216
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','215')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','216')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_216.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s216
+  next = v_dance_s217
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','216')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','217')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_217.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s217
+  next = v_dance_s218
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','217')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','218')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_218.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s218
+  next = v_dance_s219
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','218')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','219')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_219.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s219
+  next = v_dance_s220
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','219')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','220')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_220.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s220
+  next = v_dance_s221
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','220')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','221')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_221.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s221
+  next = v_dance_s222
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','221')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','222')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_222.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s222
+  next = v_dance_s223
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','222')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','223')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_223.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s223
+  next = v_dance_s224
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','223')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','224')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_224.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s224
+  next = v_dance_s225
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','224')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','225')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_225.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s225
+  next = v_dance_s226
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','225')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','226')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_226.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s226
+  next = v_dance_s227
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','226')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','227')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_227.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s227
+  next = v_dance_s228
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','227')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','228')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_228.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s228
+  next = v_dance_s229
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','228')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','229')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_229.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s229
+  next = v_dance_s230
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','229')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','230')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_230.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s230
+  next = v_dance_s231
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','230')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','231')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_231.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s231
+  next = v_dance_s232
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','231')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','232')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_232.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s232
+  next = v_dance_s233
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','232')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','233')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_233.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s233
+  next = v_dance_s234
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','233')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','234')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_234.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s234
+  next = v_dance_s235
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','234')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','235')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_235.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s235
+  next = v_dance_s236
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','235')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','236')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_236.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s236
+  next = v_dance_s237
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','236')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','237')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_237.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s237
+  next = v_dance_s238
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','237')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','238')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_238.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s238
+  next = v_dance_s239
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','238')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','239')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_239.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s239
+  next = v_dance_s240
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','239')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','240')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_240.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s240
+  next = v_dance_s241
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','240')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','241')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_241.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s241
+  next = v_dance_s242
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','241')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','242')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_242.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s242
+  next = v_dance_s243
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','242')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','243')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_243.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s243
+  next = v_dance_s244
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','243')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','244')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_244.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s244
+  next = v_dance_s245
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','244')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','245')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_245.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s245
+  next = v_dance_s246
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','245')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','246')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_246.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s246
+  next = v_dance_s247
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','246')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','247')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_247.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s247
+  next = v_dance_s248
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','247')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','248')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_248.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s248
+  next = v_dance_s249
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','248')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','249')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_249.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s249
+  next = v_dance_s250
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','249')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','250')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_250.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s250
+  next = v_dance_s251
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','250')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','251')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_251.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s251
+  next = v_dance_s252
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','251')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','252')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_252.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s252
+  next = v_dance_s253
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','252')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','253')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_253.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s253
+  next = v_dance_s254
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','253')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','254')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_254.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s254
+  next = v_dance_s255
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','254')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','255')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_255.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s255
+  next = v_dance_s256
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','255')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','256')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_256.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s256
+  next = v_dance_s257
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','256')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','257')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_257.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s257
+  next = v_dance_s258
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','257')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','258')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_258.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s258
+  next = v_dance_s259
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','258')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','259')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_259.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s259
+  next = v_dance_s260
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','259')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','260')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_260.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s260
+  next = v_dance_s261
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','260')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','261')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_261.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s261
+  next = v_dance_s262
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','261')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','262')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_262.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s262
+  next = v_dance_s263
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','262')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','263')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_263.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s263
+  next = v_dance_s264
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','263')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','264')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_264.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s264
+  next = v_dance_s265
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','264')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','265')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_265.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s265
+  next = v_dance_s266
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','265')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','266')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_266.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s266
+  next = v_dance_s267
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','266')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','267')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_267.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s267
+  next = v_dance_s268
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','267')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','268')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_268.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s268
+  next = v_dance_s269
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','268')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','269')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_269.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s269
+  next = v_dance_s270
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','269')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','270')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_270.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s270
+  next = v_dance_s271
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','270')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','271')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_271.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s271
+  next = v_dance_s272
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','271')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','272')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_272.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s272
+  next = v_dance_s273
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','272')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','273')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_273.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s273
+  next = v_dance_s274
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','273')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','274')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_274.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s274
+  next = v_dance_s275
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','274')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','275')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_275.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s275
+  next = v_dance_s276
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','275')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','276')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_276.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s276
+  next = v_dance_s277
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','276')]"
+}
+icon = {
+  visible = "[GetVariableSystem.HasValue('v_dance_s_v','277')]"
+  texture = "gfx/interface/animations/v_dance_s/v_dance_s_277.png"
+  size = { @fWidth @fHeight }
+}
+state = {
+  name = v_dance_s277
+  next = v_dance_s1
+  duration = @fDuration
+  on_start = "[GetVariableSystem.Set('v_dance_s_v','277')]"
+}
+  #End v_dance_s
+}
+}

@@ -1,0 +1,21 @@
+pdxmesh = {
+	name = "pole_mesh"
+	file = "pole.mesh"
+
+	meshsettings = {
+		name = "pole.001"
+		index = 0
+		texture_diffuse = "plank_diffuse.dds"
+		texture_normal = "plank_normal.dds"
+		texture_specular = "nospec.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+
+}
+
+entity = {
+	name = "pole_entity"
+	pdxmesh = "pole_mesh"
+}

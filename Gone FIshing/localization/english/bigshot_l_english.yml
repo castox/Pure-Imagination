@@ -1,0 +1,10 @@
+﻿l_english:
+
+bow_decision:0 "Host an Archery tournament!"
+bow_decision_confirm:0 "$bow_decision$"
+bow_decision_tooltip:0 "$bow_decision$"
+bow_decision_desc:0 "Host an archery tournament, test your skills against the worlds best from every region!"
+bow_decision_effect_tooltip: "The entry fee is 50 gold, Winner take all!\n\nIf you draw, you split it with the other archer. Because I am to lazy to do a golden arrow round!\n\nA tournament can be held every 30 days.\n\nIf this is your first time hit the tutorial button because you are going to\nhave bad time. But dont worry! you will get the hang of it and soon you will see that bar is not set to high.\n\nYou can also stick around after the tournament to get some more practice"
+
+BOW_TUT: "Start by moving your mouse up and down the screen to discover your 3 position ranges\n\nHigh , Mid, Low\n\nClick the right side of the screen and test it out.\nDepending on where your target is you need to adjust.\n\nHolding down the left mouse button equips an arrow for as long as you hold it down.\nWhile you have an arrow you will notice that the arrow on the accurancy dummy moves up and down. Releasing an arrow any inside the red target is max accuracy.\n\nHowever this will not gurantee a hit! On the right side of the dummy you will see a bar. Holding down the SPACE BAR will add power to your shot! the bar itself is yellow, but when you reach the appropriate power for the shot it will turn green!\nAfter releasing an arrow your power will go back to 0 or when letting go of the SPACE BAR it will start lowering.\n\nThe right combination of Aim Position, Aim Accuracy, Aim Power ensure you get a hit.\n\nHit as many targets as you can in 60 seconds.When you hit start your opponents scores and the timer will appear in the top left side of the screen.\nOut shoot them and win! Also leaving during the match is a forfeit. Have fun.\n\n~Castox"
+

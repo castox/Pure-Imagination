@@ -1,0 +1,562 @@
+
+
+
+window = {
+	name = "drink"
+	parentanchor = vcenter|hcenter
+	# position = { -50 100 }
+	movable = no
+	size = { 100% 100% }
+	icon = {
+		size = { 100% 100% }
+		texture = "gfx/interface/backgrounds/tavern_back.dds"
+	}
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+	state = {
+		name = ready
+		using = Animation_Curve_Default
+		trigger_on_create = yes
+		on_start = "[GetScriptedGui('randos').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('open_drinking_game').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		
+	}
+	state = {
+		name = ready2
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+	state = {
+		name = cpu_refill
+		trigger_when = "[GetScriptedGui('edrink_refill').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		using = Animation_Curve_Default
+		duration = 1
+		on_finish = "[GetScriptedGui('edrink_refill').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = your_refill
+		trigger_when = "[GetScriptedGui('drink_refill').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		using = Animation_Curve_Default
+		duration = 1
+		on_finish = "[GetScriptedGui('drink_refill').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = _show
+		using = Animation_Curve_Default
+		duration = .8
+		alpha = 1
+		on_start = "[GetScriptedGui('open_drinking_game').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('randos').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		
+	}
+
+	state = {
+		name = _hide
+		using = Animation_Curve_Default
+		duration = .8
+		alpha = 0
+		on_start = "[GetScriptedGui('open_drinking_game').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	icon = {
+		visible = "[GetScriptedGui('start_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		texture = "gfx/interface/tavern/sidebar.png"
+		parentanchor = vcenter|right
+		size = { 390 660 }
+		position = { 0 -40 }
+
+	}
+	icon = {
+		visible = "[GetScriptedGui('open_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		texture = "gfx/interface/tavern/sidebar.png"
+		parentanchor = vcenter|right
+		size = { 350 160 }
+		position = { 0 250 }
+
+	}
+	#circle game
+
+		widget = {
+
+			name = "Meter_Bar2"
+			visible = "[GetScriptedGui('start_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			size = { 40 342 }
+			parentanchor = vcenter|hcenter
+			position = { -400 -140 }
+			icon = {
+				visible = "[GetScriptedGui('ddd1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = vcenter|hcenter
+				position = { -100 -250 }
+				size = { 100 100 }
+				texture = "gfx/interface/tavern/ale.dds"
+			}
+			icon = {
+				visible = "[GetScriptedGui('ddd2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = vcenter|hcenter
+				position = { 0 -250 }
+				size = { 100 100 }
+				texture = "gfx/interface/tavern/ale.dds"
+			}
+			icon = {
+				visible = "[GetScriptedGui('ddd3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = vcenter|hcenter
+				position = { 100 -250 }
+				size = { 100 100 }
+				texture = "gfx/interface/tavern/ale.dds"
+			}
+			tooltip = "Meter2"
+			using = tooltip_below
+						#CPU statess
+			state = {
+				name = cpu_tier_1_1
+				trigger_when = "[GetScriptedGui('opp_tier_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				next = cpu_tier_1_1
+				using = Animation_Curve_Default
+				duration = 0.69
+				on_start = "[GetScriptedGui('cpu_drink_1').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+				
+				state = {
+				name = cpu_tier_2_1
+				trigger_when = "[GetScriptedGui('opp_tier_2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				next = cpu_tier_2_1
+				using = Animation_Curve_Default
+				duration = 0.72
+				on_start = "[GetScriptedGui('cpu_drink_1').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+				
+				state = {
+				name = cpu_tier_3_1
+				trigger_when = "[GetScriptedGui('opp_tier_3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				next = cpu_tier_3_1
+				using = Animation_Curve_Default
+				duration = 0.75
+				on_start = "[GetScriptedGui('cpu_drink_1').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+				
+					#
+			vbox = {
+				background = {
+					texture = "gfx/interface/tavern/t_progress.dds"
+				}
+	
+				#pushes the progress part to bottom
+				widget = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					layoutstretchfactor_vertical = "[GetProgressBarValueMaxOtherScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('hu_val2').GetValue), '(float)100', '(int32)342' )]"
+					#layoutstretchfactor_horizontal = 110
+				}
+				#gets the progress bar part
+				widget = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					layoutstretchfactor_vertical = "[GetProgressBarValueMaxScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('hu_val2').GetValue), '(float)100', '(int32)342' )]"
+					#layoutstretchfactor_horizontal = 110
+	
+					progressbar_metera = {
+						size = { 100% 100% }
+						using = Animation_ShowHide_Standard
+					}
+				}
+			}
+			icon = {
+				parentanchor = vcenter|hcenter
+				texture = "gfx/interface/tavern/drink_frame.dds"
+			}
+			#
+		}
+		icon = {
+			parentanchor = vcenter|right
+			visible = "[GetScriptedGui('start_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position = { -100 -140 }
+			texture = "gfx/interface/tavern/circle_target.dds"
+			icon = {
+				parentanchor = vcenter|hcenter
+	
+				texture = "gfx/interface/tavern/circle_bar.dds"
+					#circle sizerfs
+					state = {
+						name = a
+						next = a
+						trigger_on_create = yes
+						duration = 0.035
+						scale = "[FixedPointToFloat(GetPlayer.MakeScope.Var('tar_loc').GetValue)]"
+						on_start = "[GetScriptedGui('target_trigger').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					}
+					#end circle
+			}
+			icon = {
+				visible = "[GetScriptedGui('dd1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = vcenter|hcenter
+				position = { -100 -200 }
+				size = { 100 100 }
+				texture = "gfx/interface/tavern/ale.dds"
+			}
+			icon = {
+				visible = "[GetScriptedGui('dd2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = vcenter|hcenter
+				position = { 0 -200 }
+				size = { 100 100 }
+				texture = "gfx/interface/tavern/ale.dds"
+			}
+			icon = {
+				visible = "[GetScriptedGui('dd3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = vcenter|hcenter
+				position = { 100 -200 }
+				size = { 100 100 }
+				texture = "gfx/interface/tavern/ale.dds"
+			}
+			#"[EqualTo_string(GetPlayer.MakeScope.Var('is_selected').GetFlagName, 'selected')]"
+			text_single = {
+				visible = no
+				parentanchor = vcenter|hcenter
+				position = { 0 -200 }
+				text = "Debug: location [GetPlayer.MakeScope.Var('tar_loc').GetValue|0]"
+			}
+			text_single = {
+				visible = no
+				parentanchor = vcenter|hcenter
+				position = { 0 -300 }
+				text = "Debug: hit [GetPlayer.MakeScope.Var('circle_set').GetValue|0]"
+			}
+			text_single = {
+				visible = no
+				parentanchor = vcenter|hcenter
+				position = { 0 -350 }
+				text = "Debug: drinks [GetPlayer.MakeScope.Var('drinks_down').GetValue|0]"
+			}
+			text_single = {
+				visible = no
+				parentanchor = vcenter|hcenter
+				position = { 0 -250 }
+				text = "Debug: game [GetPlayer.MakeScope.Var('drinking').GetValue|0]"
+			}
+			widget = {
+				name = "Meter_Bar"
+				size = { 40 342 }
+				parentanchor = vcenter|hcenter
+				position = { 165 0 }
+		
+				tooltip = "Meter"
+				using = tooltip_below
+		
+				vbox = {
+					background = {
+						texture = "gfx/interface/tavern/t_progress.dds"
+					}
+		
+					#pushes the progress part to bottom
+					widget = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						layoutstretchfactor_vertical = "[GetProgressBarValueMaxOtherScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('hu_val').GetValue), '(float)100', '(int32)342' )]"
+						#layoutstretchfactor_horizontal = 110
+					}
+					#gets the progress bar part
+					widget = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						layoutstretchfactor_vertical = "[GetProgressBarValueMaxScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('hu_val').GetValue), '(float)100', '(int32)342' )]"
+						#layoutstretchfactor_horizontal = 110
+		
+						progressbar_metera = {
+							size = { 100% 100% }
+							using = Animation_ShowHide_Standard
+						}
+					}
+				}
+				icon = {
+					parentanchor = vcenter|hcenter
+					texture = "gfx/interface/tavern/drink_frame.dds"
+				}
+			}
+		}
+		button_standard = {
+			visible = "[GetScriptedGui('start_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = vcenter|right
+			position = { -110 20 }
+			text = "Drink Button"
+			onclick = "[GetScriptedGui('circle_hit2').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			state = {
+				name = sway
+				next = sway2
+				#trigger_when = "[GetScriptedGui('sway').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				duration = 4
+				position_x = 20
+				position_y = 20
+			}
+			state = {
+				name = sway2
+				next = sway3
+				duration = 4
+				position_y = -10
+				position_x = -20
+			}
+			state = {
+				name = sway3
+				next = sway4
+				duration = 4
+				position_y = -110
+				position_x = -40
+			}
+			state = {
+				name = sway4
+				next = sway5
+				duration = 4
+				position_y = 40
+				position_x = -80
+			}
+			state = {
+				name = sway5
+				#
+				duration = 2.5
+				position_y = 20
+				position_x = -110
+			}
+		}
+		## wagers
+		text_single = {
+			position = { -110 740 }
+			parentanchor = right
+			text = "[GetPlayer.MakeScope.Var('wager_value').GetValue|0]"
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			background = {
+				using = Text_Label_Background
+				margin = { 17 3 }
+			}
+		}
+		text_single = {
+			position = { -110 765 }
+			parentanchor = right
+			text = "Wager Amount"
+			default_format = "#high"
+			using = Font_Type_Flavor
+			using = Font_Size_Big
+		}								
+		button = {
+			parentanchor = right
+			visible = "[GetScriptedGui('open_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			texture = "gfx/interface/tavern_gfx/icon_up.dds"
+			onclick = "[GetScriptedGui('add_bet').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			position = { -25 730 }
+		}			
+		button = {
+			parentanchor = right
+			visible = "[GetScriptedGui('open_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			texture = "gfx/interface/tavern_gfx/icon_down.dds"
+			onclick = "[GetScriptedGui('sub_bet').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			position = { -25 770 }
+		}
+		button = {
+			parentanchor = right
+			visible = "[GetScriptedGui('open_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			texture = "gfx/interface/tavern_gfx/reset.dds"
+			onclick = "[GetScriptedGui('reset_bet').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			position = { -25 810 }
+		}
+
+		###
+		button_standard = {
+			position = { -110 815 }
+			parentanchor = right
+			visible = "[GetScriptedGui('open_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			text = "Start Game"
+			onclick = "[GetScriptedGui('start_drinking_game').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+		text_single = {
+			parentanchor = vcenter|hcenter
+			position = { -30 -330 }
+			visible = "[GetScriptedGui('won_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			text = "YOU WIN!!!! ~ [GetPlayer.MakeScope.Var('wager_value').GetValue|0] Gold"
+			fontsize = 100
+			background = {
+				using = Text_Label_Background
+				margin = { 17 3 }
+			}
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+		}
+		text_single = {
+			parentanchor = vcenter|hcenter
+			position = { -30 -330 }
+			visible = "[GetScriptedGui('lost_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			text = "YOU LOST ! ~ [GetPlayer.MakeScope.Var('wager_value').GetValue|0] Gold"
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			fontsize = 100
+			background = {
+				using = Text_Label_Background
+				margin = { 17 3 }
+			}
+		
+		}
+
+	###
+	# END circle game
+	state = {
+		name = stumble
+		next = stumble2
+		trigger_when = "[GetScriptedGui('stumble').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 1
+		on_finish = "[GetScriptedGui('stumble').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	icon = {
+		parentanchor = top|hcenter
+		position = { 310 400 }	
+		size = {170 70 }
+		animation_aggressive = {}
+	}
+
+	portrait_drink_spouse  = {
+		parentanchor = top|hcenter
+		position = { 90 310 }
+		visible = "[Character.IsValid]"
+		datacontext = "[GetPlayer.GetPrimarySpouse]"
+
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	portrait_drink_random_1  = {
+		parentanchor = vcenter|hcenter
+		position = { 230 40 }
+		datacontext = "[GetPlayer.MakeScope.Var('rando_1')]"
+		datacontext = "[Scope.GetCharacter]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	portrait_drink_random_2  = {
+		parentanchor = vcenter|hcenter
+		position = { -600 120 }
+		datacontext = "[GetPlayer.MakeScope.Var('rando_2')]"
+		datacontext = "[Scope.GetCharacter]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	portrait_drink_random_3  = {
+		parentanchor = vcenter|hcenter
+		position = { -290 0 }
+		datacontext = "[GetPlayer.MakeScope.Var('rando_3')]"
+		datacontext = "[Scope.GetCharacter]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	portrait_drink_random_4  = {
+		parentanchor = vcenter|hcenter
+		position = { -160 0 }
+		datacontext = "[GetPlayer.MakeScope.Var('rando_4')]"
+		datacontext = "[Scope.GetCharacter]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	icon = {
+		texture = "gfx/interface/tavern/barrelback.dds"
+		parentanchor = hcenter|bottom
+		size = { 400 450 }
+		position = { 180 80 }
+	}	
+	portrait_drink  = {
+		parentanchor = vcenter|hcenter
+		position = { 400 150 }
+		datacontext = "[GetPlayer]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	portrait_drink_opp  = {
+		parentanchor = vcenter|hcenter
+		position = { -25 150 }
+		datacontext = "[GetPlayer.MakeScope.Var('drink_challenger')]"
+		datacontext = "[Scope.GetCharacter]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	icon = {
+		texture = "gfx/interface/tavern/barrel.dds"
+		parentanchor = hcenter|bottom
+		size = { 400 450 }
+		position = { 180 80 }
+	}
+	icon = {
+		texture = "gfx/interface/tavern/sidebar.png"
+		parentanchor = hcenter|bottom
+		size = { 460 60 }
+		position = { 180 0 }
+		text_single = {
+			position = { 20 5 }
+			text = "#explanation_link #L Your Gold#!#!"
+		}
+		text_single = {
+			position = { 45 25 }
+		    text = "[GetPlayer.GetGold|0]"
+		}
+		text_single = {
+			position = { 130 5 }
+			text = "#explanation_link #L Opponent Gold#!#!"
+		}
+		text_single = {
+			position = { 170 25 }
+		    text = "[GetPlayer.MakeScope.Var('drink_challenger').GetCharacter.GetGold|0]"
+		}
+		text_single = {
+			position = { 250 5 }
+			text = "#explanation_link #L Wins/Loses#!#!"
+		}
+		text_single = {
+			position = { 280 25 }
+			text = "[GetPlayer.MakeScope.Var('d_win').GetValue|0]/[GetPlayer.MakeScope.Var('d_lose').GetValue|0]"
+		}
+		text_single = {
+			position = { 350 5 }
+			text = "#explanation_link #L Total Earnings#!#!"
+		}
+		text_single = {
+			position = { 390 25 }
+			text = "[GetPlayer.MakeScope.Var('d_earnings').GetValue|0]"
+		}
+	}	
+
+	button_standard = {
+		text = "Quit"
+		parentanchor = bottom|right
+		onclick = "[GetScriptedGui('end_drink').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets drink')]"
+	}
+
+
+}

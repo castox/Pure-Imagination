@@ -1,0 +1,84 @@
+﻿
+horse_decision = {
+	picture = "gfx/inter/hcc.dds"
+
+	desc = "Visit a tavern, have an adventure! Do it!"
+	selection_tooltip = "Do it."
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+		is_adult = yes
+		age > 17
+		is_imprisoned = no
+
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		hidden_effect = {
+			add_character_flag = is_on_a_horse_b
+			#
+		}
+
+		trigger_event = {
+			id = horse.1000
+		}
+		custom_tooltip = "Get a horse"
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+r2d2_decision = {
+	picture = "gfx/inter/hcc.dds"
+
+	desc = "Visit a tavern, have an adventure! Do it!"
+	selection_tooltip = "Do it."
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+		is_adult = yes
+		age > 17
+		is_imprisoned = no
+
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		hidden_effect = {
+			#add_character_flag = is_on_a_horse_b
+			#
+		}
+
+		trigger_event = {
+			id = horse.1001
+		}
+		custom_tooltip = "Get a R2D2"
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

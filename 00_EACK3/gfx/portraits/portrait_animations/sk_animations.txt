@@ -1,0 +1,117 @@
+﻿############################################################################################################################################################
+############################################################################################################################################################
+##CCShop
+
+
+cardwalk_pose = {
+	male = {
+
+
+		default = {  head = "idle_entry" torso = "idle_entry" }
+		normal_walk = {
+			animation = { head = "emotion_oneHandedAggressive1_entry" torso = "sk_walk_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+				
+					has_character_flag = is_walking
+	
+				}
+			}
+			#portrait_modifier_pack = one_handed_sword
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+		celly = {
+			animation = { head = "idle_entry" torso = "idle_entry" }
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					AND = {
+						has_character_flag = is_celly
+						NOT = { has_character_flag = is_walking }
+					}
+					
+	
+				}
+			}
+			#portrait_modifier_pack = one_handed_sword
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+
+		}
+		
+
+	}
+
+
+	boy = male
+	female = male
+	girl = female
+}
+
+
+
+
+
+
+cardwalk_pose_old = {
+	male = {
+
+
+		default = { head = "emotion_oneHandedAggressive1_entry" torso = "sk_walk_body" }
+		normal_walk = {
+			animation = { head = "emotion_oneHandedAggressive1_entry" torso = "sk_walk_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+				
+					has_character_flag = is_walking
+	
+				}
+			}
+			#portrait_modifier_pack = one_handed_sword
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+		celly = {
+			animation = { head = "emotion_celebrateOneHanded2_entry" torso = "emotion_celebrateOneHanded2_entry" }
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					AND = {
+						has_character_flag = is_celly
+						NOT = { has_character_flag = is_walking }
+					}
+					
+	
+				}
+			}
+			#portrait_modifier_pack = one_handed_sword
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+
+		}
+		
+
+	}
+
+
+	boy = male
+	female = male
+	girl = female
+}

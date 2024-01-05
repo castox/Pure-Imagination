@@ -1,0 +1,353 @@
+
+a_bl = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_bl
+	}
+	effect = {
+		add_character_flag = a_bl
+	}
+}
+a_ble = {
+	scope = character
+
+	effect = {
+		remove_character_flag = a_bl
+	}
+}
+a_br = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_br
+	}
+	effect = {
+		add_character_flag = a_br
+	}
+}
+a_bre = {
+	scope = character
+
+	effect = {
+		remove_character_flag = a_br
+	}
+}
+a_l1 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_l1
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_l1
+			}
+			remove_character_flag = a_l1
+		}
+		else = {
+			add_character_flag = a_l1
+		}
+	}
+}
+a_l2 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_l2
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_l2
+			}
+			remove_character_flag = a_l2
+		}
+		else = {
+			add_character_flag = a_l2
+		}
+	}
+}
+a_l3 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_l3
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_l3
+			}
+			remove_character_flag = a_l3
+		}
+		else = {
+			add_character_flag = a_l3
+		}
+	}
+}
+a_l4 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_l4
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_l4
+			}
+			remove_character_flag = a_l4
+		}
+		else = {
+			add_character_flag = a_l4
+		}
+	}
+}
+a_l5 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_l5
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_l5
+			}
+			remove_character_flag = a_l5
+		}
+		else = {
+			add_character_flag = a_l5
+		}
+	}
+}
+
+#
+
+a_r1 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_r1
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_r1
+			}
+			remove_character_flag = a_r1
+		}
+		else = {
+			add_character_flag = a_r1
+		}
+	}
+}
+a_r2 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_r2
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_r2
+			}
+			remove_character_flag = a_r2
+		}
+		else = {
+			add_character_flag = a_r2
+		}
+	}
+}
+a_r3 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_r3
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_r3
+			}
+			remove_character_flag = a_r3
+		}
+		else = {
+			add_character_flag = a_r3
+		}
+	}
+}
+a_r4 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_r4
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_r4
+			}
+			remove_character_flag = a_r4
+		}
+		else = {
+			add_character_flag = a_r4
+		}
+	}
+}
+a_r5 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = a_r5
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = a_r5
+			}
+			remove_character_flag = a_r5
+		}
+		else = {
+			add_character_flag = a_r5
+		}
+	}
+}
+#onclick = "[GetScriptedGui('eq_shield').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', Scope.GetFlagName.MakeScope ).End )]"
+
+eq_shield = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_shield
+			value = scope:target
+		}
+	}
+}
+eq_pants = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_pants
+			value = scope:target
+		}
+	}
+}
+eq_weapon = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_weapon
+			value = scope:target
+		}
+	}
+}
+eq_helmet= {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_helmet
+			value = scope:target
+		}
+	}
+}
+eq_plate = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_plates
+			value = scope:target
+		}
+	}
+}
+eq_range = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_range
+			value = scope:target
+		}
+	}
+}
+eq_projectile = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_projectile
+			value = scope:target
+		}
+	}
+}
+eq_neck = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_neck
+			value = scope:target
+		}
+	}
+}
+eq_shoulders = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_shoulders
+			value = scope:target
+		}
+	}
+}
+eq_accessory = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_accessory
+			value = scope:target
+		}
+	}
+}
+eq_boots = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_boots
+			value = scope:target
+		}
+	}
+}
+eq_gloves = {
+	scope = character
+
+	effect = {
+
+		set_variable = {
+			name = current_gloves
+			value = scope:target
+		}
+	}
+}
+

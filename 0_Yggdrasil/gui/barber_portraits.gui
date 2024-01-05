@@ -1,0 +1,978 @@
+template "full" { size = { 100% 100% } }
+template "showme" { on_start = "[PdxGuiWidget.Show]" }
+template "hideme" { on_start = "[PdxGuiWidget.Hide]" }
+template "hide_bg_temp"
+{
+	state = {
+		name = hide_bg
+		on_start = "[PdxGuiWidget.Hide]"
+	}
+}
+
+types BigPortraits
+{
+	type portrait_full = margin_widget {
+		size = { 100% 100% }
+		visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+
+		portrait_button = {
+			size = { 100% 100% }
+			parentanchor = bottom|hcenter
+			using = portrait_base
+			alwaystransparent = yes
+			portrait_texture = "[Character.GetAnimatedPortrait(Illustration.GetEnvironment(Character.Self), 'camera_character_view_main', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			mask = "gfx/portraits/portrait_mask_character_view.dds"
+			effectname = "NoHighlight"
+			block "portrait_button" {}
+			tooltip_enabled = no
+		}
+	}
+
+	# need to use a different function for the main character so the cloth selector works
+	type portrait_body_barber_main = widget {
+		size = { 100% 100% }
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body-150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body-120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body-90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body-60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body-30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body+30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body+60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body+90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body+120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body+150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+6')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_full_body+180', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_controls = {
+			size = { 240 400 }
+			blockoverride "shadow" {
+				visible = yes
+			}
+			datacontext = "[GetScriptedGui('age_controls_0')]"
+			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+		}
+
+		portrait_controls = {
+			size = { 240 600 }
+			blockoverride "shadow" {
+				visible = yes
+			}
+			datacontext = "[GetScriptedGui('age_controls_8')]"
+			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+		}
+
+		portrait_controls = {
+			size = { 240 100% }
+			blockoverride "shadow" {
+				visible = yes
+			}
+			datacontext = "[GetScriptedGui('age_controls_16')]"
+			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+		}
+	}
+
+	type portrait_torso_barber_main = widget {
+		size = { 100% 100% }
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera-150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera-120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera-90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera-60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera-30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_center', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera+30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera+60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera+90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera+120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera+150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+6')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera+180', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_controls = {
+			size = { 340 100% }
+		}
+	}
+
+	type portrait_head_barber_main = widget {
+		size = { 100% 100% }
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head-150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head-120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head-90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head-60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head-30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head+30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head+60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head+90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head+120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head+150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+6')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[PortraitCustomizationWindow.GetPortraitTexture('environment_body', 'camera_head+180', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_controls = {
+			size = { 500 100% }
+		}
+	}
+
+	###
+
+	type portrait_body_barber = widget {
+		size = { 100% 100% }
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body-150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body-120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body-90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body-60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body-30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body+30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body+60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body+90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body+120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body+150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+6')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_full_body+180', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_controls = {
+			size = { 240 700 }
+			blockoverride "anchor" {
+				parentanchor = bottom|hcenter
+			}
+			blockoverride "shadow" {
+				visible = yes
+			}
+			datacontext = "[GetScriptedGui('age_controls_0')]"
+			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+		}
+
+		portrait_controls = {
+			size = { 240 800 }
+			blockoverride "anchor" {
+				parentanchor = bottom|hcenter
+			}
+			blockoverride "shadow" {
+				visible = yes
+			}
+			datacontext = "[GetScriptedGui('age_controls_8')]"
+			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+		}
+
+		portrait_controls = {
+			size = { 240 100% }
+			blockoverride "shadow" {
+				visible = yes
+			}
+			datacontext = "[GetScriptedGui('age_controls_16')]"
+			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+		}
+	}
+
+	type portrait_torso_barber = widget {
+		size = { 100% 100% }
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera-150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera-120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera-90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera-60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera-30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_center', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera+30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera+60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera+90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera+120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera+150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+6')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera+180', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_controls = {
+			size = { 340 100% }
+		}
+	}
+
+	type portrait_head_barber = widget {
+		size = { 100% 100% }
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head-150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head-120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head-90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head-60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation-1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head-30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+1')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head+30', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+2')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head+60', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+3')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head+90', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+4')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head+120', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+5')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head+150', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_full = {
+			datacontext = "[GetScriptedGui('portrait_rotation+6')]"
+
+			blockoverride "portrait_button"
+			{
+				portrait_texture = "[Character.GetAnimatedPortrait('environment_body', 'camera_head+180', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+			}
+		}
+
+		portrait_controls = {
+			size = { 400 100% }
+		}
+	}
+
+	###
+
+	type portrait_window = window {
+		movable = yes
+		alwaystransparent = yes
+
+		block "context" {
+			size = "[PdxGetWidgetScreenSize(PdxGuiWidget.AccessParent.AccessParent.AccessParent.Self)]"
+			datacontext = "[Scope.GetCharacter]"
+		}
+
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { 0 55 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.7
+			name = "shadow"
+		}
+
+		widget = { # portrait
+			using = full
+
+			portrait_body_barber = {
+				datacontext = "[GetScriptedGui('zoom1')]"
+				visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			}
+
+			portrait_torso_barber = {
+				datacontext = "[GetScriptedGui('zoom2')]"
+				visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			}
+
+			portrait_head_barber = {
+				datacontext = "[GetScriptedGui('zoom3')]"
+				visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			}
+		}
+	}
+
+	type portrait_item = icon {
+		alwaystransparent = yes
+
+		block "context" {
+			size = "[PdxGetWidgetScreenSize(PdxGuiWidget.AccessParent.AccessParent.AccessParent.Self)]"
+			datacontext = "[Scope.GetCharacter]"
+		}
+
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { 0 55 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.7
+			name = "shadow"
+		}
+
+		widget = { # portrait
+			using = full
+
+			portrait_body_barber = {
+				datacontext = "[GetScriptedGui('zoom1')]"
+				visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			}
+
+			portrait_torso_barber = {
+				datacontext = "[GetScriptedGui('zoom2')]"
+				visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			}
+
+			portrait_head_barber = {
+				datacontext = "[GetScriptedGui('zoom3')]"
+				visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			}
+		}
+	}
+
+	type portrait_slot = window {
+		movable = yes
+		using = full
+		alwaystransparent = yes
+
+		hbox = {
+			block "data" {
+				datamodel = "[GetPlayer.MakeScope.GetList('portrait_1')]"
+			}
+			item = {
+				portrait_item = {}
+			}
+		}
+	}
+	###
+
+	type portrait_controls = margin_widget {
+		margin_top = 120
+		margin_bottom = 30
+		block "anchor" {
+			parentanchor = center
+		}
+		alwaystransparent = yes
+
+		widget = {
+			using = full
+			alpha = 0
+			alwaystransparent = no
+
+			onmousehierarchyenter = "[PdxGuiWidget.TriggerAnimation('show_movement')]"
+			onmousehierarchyleave = "[PdxGuiWidget.TriggerAnimation('hide_movement')]"
+
+			state = {
+				name = show_movement
+				alpha = 1
+			}
+
+			state = {
+				name = hide_movement
+				alpha = 0
+			}
+
+			button_standard_clean = {
+				size = { 100% 100% }
+				alwaystransparent = yes
+			}
+
+			widget = { # rotation
+				size = { 100% 100 }
+				position = { 0 0 }
+				parentanchor = vcenter
+				alpha = 0.7
+
+				button_icon = {
+					texture = "gfx/interface/icons/flat_icons/arrow.dds"
+
+					mirror = horizontal
+					scale = 2
+
+					datacontext = "[GetScriptedGui('rotate_portrait_left')]"
+					onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Character.MakeScope ).End)]"
+				}
+
+				button_icon = {
+					texture = "gfx/interface/icons/flat_icons/arrow.dds"
+
+					datacontext = "[GetScriptedGui('rotate_portrait_right')]"
+					onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Character.MakeScope ).End)]"
+
+					parentanchor = right
+					scale = 2
+				}
+			}
+
+			button_me = {
+				#parentanchor = hcenter
+				position = { 10 10 }
+				scale = 1.5
+
+				tooltip = "choose_pose"
+				datacontext = "[GetScriptedGui('choose_pose')]"
+				onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).End)]"
+				visible = "[Not(ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).End))]"
+			}
+
+			container = {
+				ignoreinvisible = yes
+				parentanchor = bottom|hcenter
+				position = { 0 -10 }
+
+				block "shadow" {
+					visible = no
+				}
+
+				button_icon = {
+					texture = "gfx/shadow.dds"
+					size = { 70 40 }
+					alpha = 0.8
+					name = "hide shadow"
+
+					onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('shadow').Hide]"
+					onclick = "[PdxGuiWidget.Hide]"
+					onclick = "[PdxGuiWidget.AccessParent.AccessChild('show shadow').Show]"
+					tooltip = "hide_shadow"
+				}
+
+				button_icon = {
+					texture = "gfx/shadow.dds"
+					size = { 70 40 }
+					alpha = 0.2
+					visible = no
+					name = "show shadow"
+
+					onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('shadow').Show]"
+					onclick = "[PdxGuiWidget.Hide]"
+					onclick = "[PdxGuiWidget.AccessParent.AccessChild('hide shadow').Show]"
+					tooltip = "show_shadow"
+				}
+			}
+		}
+	}
+}

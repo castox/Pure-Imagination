@@ -1,0 +1,1361 @@
+﻿#AICON FILE
+	texticon = {
+	icon = ar_Amethyst_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Amethyst_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Amethyst_Large
+	iconsize = {
+	texture = "gfx/alchemist/Amethyst_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Animal_Claw
+	iconsize = {
+	texture = "gfx/alchemist/Animal_Claw.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Animal_Fat
+	iconsize = {
+	texture = "gfx/alchemist/Animal_Fat.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Animal_Skin
+	iconsize = {
+	texture = "gfx/alchemist/Animal_Skin.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Animal_Tooth
+	iconsize = {
+	texture = "gfx/alchemist/Animal_Tooth.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Apple
+	iconsize = {
+	texture = "gfx/alchemist/Apple.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Arachnid_Leg
+	iconsize = {
+	texture = "gfx/alchemist/Arachnid_Leg.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Ash
+	iconsize = {
+	texture = "gfx/alchemist/Ash.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Bear_Skin
+	iconsize = {
+	texture = "gfx/alchemist/Bear_Skin.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Bellows
+	iconsize = {
+	texture = "gfx/alchemist/Bellows.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Book_1
+	iconsize = {
+	texture = "gfx/alchemist/Book_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Bread
+	iconsize = {
+	texture = "gfx/alchemist/Bread.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Brick
+	iconsize = {
+	texture = "gfx/alchemist/Brick.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Bug_Shell_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Bug_Shell_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Bug_Shell_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Bug_Shell_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Carrot
+	iconsize = {
+	texture = "gfx/alchemist/Carrot.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Cheese
+	iconsize = {
+	texture = "gfx/alchemist/Cheese.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Cherries
+	iconsize = {
+	texture = "gfx/alchemist/Cherries.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Citrine_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Citrine_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Citrine_Large
+	iconsize = {
+	texture = "gfx/alchemist/Citrine_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Claw
+	iconsize = {
+	texture = "gfx/alchemist/Claw.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Clay
+	iconsize = {
+	texture = "gfx/alchemist/Clay.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Coal
+	iconsize = {
+	texture = "gfx/alchemist/Coal.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Cooked_Fish
+	iconsize = {
+	texture = "gfx/alchemist/Cooked_Fish.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Deer_Horn
+	iconsize = {
+	texture = "gfx/alchemist/Deer_Horn.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Diamond_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Diamond_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Diamond_Large
+	iconsize = {
+	texture = "gfx/alchemist/Diamond_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Dragon_Scales_Black
+	iconsize = {
+	texture = "gfx/alchemist/Dragon_Scales_Black.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Dragon_Scales_Blue
+	iconsize = {
+	texture = "gfx/alchemist/Dragon_Scales_Blue.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Dragon_Scales_Red
+	iconsize = {
+	texture = "gfx/alchemist/Dragon_Scales_Red.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Dragon_Scales_White
+	iconsize = {
+	texture = "gfx/alchemist/Dragon_Scales_White.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Dragon_Scales_Yellow
+	iconsize = {
+	texture = "gfx/alchemist/Dragon_Scales_Yellow.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Dyes
+	iconsize = {
+	texture = "gfx/alchemist/Dyes.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Egg
+	iconsize = {
+	texture = "gfx/alchemist/Egg.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Emerald_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Emerald_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Emerald_Large
+	iconsize = {
+	texture = "gfx/alchemist/Emerald_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Feathers
+	iconsize = {
+	texture = "gfx/alchemist/Feathers.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Flower_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Flower_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Flower_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Flower_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Flower_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Flower_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Flower_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Flower_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Flower_Type_5
+	iconsize = {
+	texture = "gfx/alchemist/Flower_Type_5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Flower_Type_6
+	iconsize = {
+	texture = "gfx/alchemist/Flower_Type_6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Garlic
+	iconsize = {
+	texture = "gfx/alchemist/Garlic.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Grape
+	iconsize = {
+	texture = "gfx/alchemist/Grape.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Heart
+	iconsize = {
+	texture = "gfx/alchemist/Heart.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Herb_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Herb_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Herb_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Herb_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Herb_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Herb_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Human_Bone
+	iconsize = {
+	texture = "gfx/alchemist/Human_Bone.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Human_Eye
+	iconsize = {
+	texture = "gfx/alchemist/Human_Eye.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Human_Skull
+	iconsize = {
+	texture = "gfx/alchemist/Human_Skull.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Human_Tooth
+	iconsize = {
+	texture = "gfx/alchemist/Human_Tooth.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Icons_Layer_Effect
+	iconsize = {
+	texture = "gfx/alchemist/Icons_Layer_Effect.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Ink
+	iconsize = {
+	texture = "gfx/alchemist/Ink.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Jasper
+	iconsize = {
+	texture = "gfx/alchemist/Jasper.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Journal_Bloody
+	iconsize = {
+	texture = "gfx/alchemist/Journal_Bloody.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Journal_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Journal_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Journal_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Journal_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Leaf
+	iconsize = {
+	texture = "gfx/alchemist/Leaf.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Liqueur
+	iconsize = {
+	texture = "gfx/alchemist/Liqueur.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Liquor
+	iconsize = {
+	texture = "gfx/alchemist/Liquor.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Liver
+	iconsize = {
+	texture = "gfx/alchemist/Liver.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Livestock
+	iconsize = {
+	texture = "gfx/alchemist/Livestock.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Metal_1_Ore
+	iconsize = {
+	texture = "gfx/alchemist/Metal_1_Ore.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Metal_2_Ore
+	iconsize = {
+	texture = "gfx/alchemist/Metal_2_Ore.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Metal_3_Ore
+	iconsize = {
+	texture = "gfx/alchemist/Metal_3_Ore.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Metal_4_Ore
+	iconsize = {
+	texture = "gfx/alchemist/Metal_4_Ore.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Metal_5_Ore
+	iconsize = {
+	texture = "gfx/alchemist/Metal_5_Ore.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Milk
+	iconsize = {
+	texture = "gfx/alchemist/Milk.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Monster_Claw
+	iconsize = {
+	texture = "gfx/alchemist/Monster_Claw.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Monster_Eye
+	iconsize = {
+	texture = "gfx/alchemist/Monster_Eye.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Monster_Feather
+	iconsize = {
+	texture = "gfx/alchemist/Monster_Feather.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Monster_Tooth
+	iconsize = {
+	texture = "gfx/alchemist/Monster_Tooth.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Mortar
+	iconsize = {
+	texture = "gfx/alchemist/Mortar.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Mushroom_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Mushroom_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Mushroom_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Mushroom_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Mushroom_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Mushroom_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Mushroom_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Mushroom_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Mushroom_Type_5
+	iconsize = {
+	texture = "gfx/alchemist/Mushroom_Type_5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Mushroom_Type_6
+	iconsize = {
+	texture = "gfx/alchemist/Mushroom_Type_6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Oil_Large_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Oil_Large_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Oil_Large_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Oil_Large_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Oil_Large_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Oil_Large_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Oil_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Oil_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Oil_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Oil_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Oil_Type_33
+	iconsize = {
+	texture = "gfx/alchemist/Oil_Type_33.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Orange
+	iconsize = {
+	texture = "gfx/alchemist/Orange.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pear
+	iconsize = {
+	texture = "gfx/alchemist/Pear.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pearl
+	iconsize = {
+	texture = "gfx/alchemist/Pearl.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pearl_Black
+	iconsize = {
+	texture = "gfx/alchemist/Pearl_Black.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pearl_Black_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Pearl_Black_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pearl_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Pearl_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pen
+	iconsize = {
+	texture = "gfx/alchemist/Pen.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Polar_Bear_Skin
+	iconsize = {
+	texture = "gfx/alchemist/Polar_Bear_Skin.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pot
+	iconsize = {
+	texture = "gfx/alchemist/Pot.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion
+	iconsize = {
+	texture = "gfx/alchemist/Potion.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Cure_Large
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Cure_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Cure_Medium
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Cure_Medium.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Cure_Small
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Cure_Small.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Empty
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Empty.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Health_Large
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Health_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Health_Medium
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Health_Medium.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Health_Small
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Health_Small.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Mana_Large
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Mana_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Mana_Medium
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Mana_Medium.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Mana_Small
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Mana_Small.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Misc_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Misc_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Misc_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Misc_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Misc_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Misc_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Misc_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Misc_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Misc_Type_5
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Misc_Type_5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Poison_Large
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Poison_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Poison_Medium
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Poison_Medium.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Poison_Small
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Poison_Small.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Regeneration_Large
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Regeneration_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Regeneration_Medium
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Regeneration_Medium.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Potion_Regeneration_Small
+	iconsize = {
+	texture = "gfx/alchemist/Potion_Regeneration_Small.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Pouch
+	iconsize = {
+	texture = "gfx/alchemist/Pouch.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Radish
+	iconsize = {
+	texture = "gfx/alchemist/Radish.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Recipe_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Recipe_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Red_Moss
+	iconsize = {
+	texture = "gfx/alchemist/Red_Moss.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Root_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Root_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Root_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Root_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Root_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Root_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Root_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Root_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Ruby_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Ruby_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Ruby_Large
+	iconsize = {
+	texture = "gfx/alchemist/Ruby_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Large_Blank
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Large_Blank.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Large_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Large_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Large_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Large_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Large_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Large_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Large_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Large_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Small_Blank
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Small_Blank.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Small_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Small_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Small_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Small_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Small_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Small_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Rune_Small_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Rune_Small_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Sack
+	iconsize = {
+	texture = "gfx/alchemist/Sack.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Sack_Bloody
+	iconsize = {
+	texture = "gfx/alchemist/Sack_Bloody.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Sapphire_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Sapphire_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Sapphire_Large
+	iconsize = {
+	texture = "gfx/alchemist/Sapphire_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Scroll_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Scroll_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Scroll_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Scroll_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Scroll_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Scroll_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Scroll_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Scroll_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Scroll_Type_5
+	iconsize = {
+	texture = "gfx/alchemist/Scroll_Type_5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Scroll_Type_6
+	iconsize = {
+	texture = "gfx/alchemist/Scroll_Type_6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Scroll_Type_7
+	iconsize = {
+	texture = "gfx/alchemist/Scroll_Type_7.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Sea_Shell
+	iconsize = {
+	texture = "gfx/alchemist/Sea_Shell.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Silkworm_Cocoon
+	iconsize = {
+	texture = "gfx/alchemist/Silkworm_Cocoon.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Silver_Coin
+	iconsize = {
+	texture = "gfx/alchemist/Silver_Coin.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spellbook_Blank
+	iconsize = {
+	texture = "gfx/alchemist/Spellbook_Blank.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spellbook_Type_1
+	iconsize = {
+	texture = "gfx/alchemist/Spellbook_Type_1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spellbook_Type_2
+	iconsize = {
+	texture = "gfx/alchemist/Spellbook_Type_2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spellbook_Type_3
+	iconsize = {
+	texture = "gfx/alchemist/Spellbook_Type_3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spellbook_Type_4
+	iconsize = {
+	texture = "gfx/alchemist/Spellbook_Type_4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spellbook_Type_5
+	iconsize = {
+	texture = "gfx/alchemist/Spellbook_Type_5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spellbook_Type_6
+	iconsize = {
+	texture = "gfx/alchemist/Spellbook_Type_6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Spices
+	iconsize = {
+	texture = "gfx/alchemist/Spices.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Sting
+	iconsize = {
+	texture = "gfx/alchemist/Sting.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Tongue
+	iconsize = {
+	texture = "gfx/alchemist/Tongue.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Tourmaline_Dust
+	iconsize = {
+	texture = "gfx/alchemist/Tourmaline_Dust.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Tourmaline_Large
+	iconsize = {
+	texture = "gfx/alchemist/Tourmaline_Large.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Turquoise
+	iconsize = {
+	texture = "gfx/alchemist/Turquoise.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Water
+	iconsize = {
+	texture = "gfx/alchemist/Water.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Wine
+	iconsize = {
+	texture = "gfx/alchemist/Wine.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Wolf_Skin
+	iconsize = {
+	texture = "gfx/alchemist/Wolf_Skin.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = ar_Wooden_Hammer
+	iconsize = {
+	texture = "gfx/alchemist/Wooden_Hammer.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}

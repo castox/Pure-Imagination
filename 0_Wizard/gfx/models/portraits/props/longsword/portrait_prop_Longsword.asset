@@ -1,0 +1,21 @@
+pdxmesh = {
+	name = "Longsword"
+	file = "Longsword.mesh"
+
+
+	meshsettings = {
+		name = "Longsword"
+		index = 0
+		texture_diffuse = "DaggerSword_D.TGA"
+		texture_normal = "DaggerSword_N.TGA"
+		texture_specular = "DaggerSword_S.TGA"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+}
+
+entity = {
+	name = "Longsword_entity"
+	pdxmesh = "Longsword"
+}

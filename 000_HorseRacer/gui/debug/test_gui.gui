@@ -1,0 +1,232 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "test_window"
+	@pac_mov = 0.120
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+	movable = no
+
+	icon = {
+		size = { 100% 100% }
+		texture = "gfx/race/sky1.jpg"
+		parentanchor = hcenter|vcenter
+	}
+	icon = {
+		#visible = no
+		size = { 9600 1080  }
+		position = { 0 30} #
+		parentanchor = left|top
+		mirror = horizontal ###
+		alpha = 1
+		scale = 1.2 #
+		texture = "gfx/race/fg2.png"
+
+	}
+	icon = {
+		size = { 9600 1080  }  ##
+		position = { 0 50}
+		parentanchor = left|top
+		alpha = 1
+		scale = 1.1
+		texture = "gfx/race/fg2.png"
+		state = {
+			name = aa1
+			next = aa2
+			duration = 60
+			position_x = -7680
+			trigger_on_create = yes
+		}
+		state = {
+			name = aa2
+			#next = aa2
+			duration = 0
+			position_x = 0
+		}
+	}
+
+	icon = {
+		#visible = no
+		size = { 9600 1080  }
+		#position = { 0 70}
+		parentanchor = left|top
+		alpha = 1
+		texture = "gfx/race/fg3.png"
+
+		state = {
+			name = aa1
+			next = aa2
+			duration = 30
+			position_x = -7680
+			trigger_on_create = yes
+		}
+		state = {
+			name = aa2
+			#next = aa2
+			duration = 0
+			position_x = 0
+		}
+
+
+
+		state = {
+			name = sk_x_pos
+			next = sk_x_pos
+			#trigger_on_create = yes
+			duration = @pac_mov
+			position_x = "[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('true_map_x')|0]"
+			#position_x = "[FixedPointToFloat(GetGlobalVariable('sk_x_pos').GetValue)]"
+		}
+		####
+		state = {
+			name = sk_m_pos
+			next = sk_m_pos
+			#trigger_on_create = yes
+			duration = @pac_mov
+			on_start = "[GetScriptedGui('sk_movement').Execute( GuiScope.SetRoot( GetGlobalVariable('diplo_1').GetCharacter.MakeScope ).End )]"
+		}
+		state = {
+			name = sk_rem_walk
+
+			#trigger_when = "[GetScriptedGui('sk_remove_walk').IsShown( GuiScope.SetRoot( GetGlobalVariable('diplo_1').GetCharacter.MakeScope ).End )]"
+			duration = 1
+			on_finish = "[GetScriptedGui('sk_remove_walk').Execute( GuiScope.SetRoot( GetGlobalVariable('diplo_1').GetCharacter.MakeScope ).End )]"
+		}
+		horse_racing_1  = {
+			scale = 0.6
+			parentanchor = left|top
+			position = { 350 370 }
+			#visible = "[Not(GetScriptedGui('sk_walk_left').IsShown( GuiScope.SetRoot( GetGlobalVariable('diplo_1').GetCharacter.MakeScope  ).End ))]"
+			#datacontext = "[GetGlobalVariable('diplo_1').GetCharacter.GetCouncillorPosition( 'envoy_court_position' ).GetCouncillor]"
+			datacontext = "[GetPlayer]"
+			state = {
+				name = gamess
+				next = step1
+				trigger_on_create = yes
+				duration = 32
+				position_x = 7690
+
+			}
+			state = {
+				name = step1
+				#next = step22
+				#duration = 5
+				position_x = 350
+			}
+
+		}
+		horse_racing_1  = {
+			scale = 0.7
+			parentanchor = left|top
+			position = { 300 390 }
+			#visible = "[Not(GetScriptedGui('sk_walk_left').IsShown( GuiScope.SetRoot( GetGlobalVariable('diplo_1').GetCharacter.MakeScope  ).End ))]"
+			#datacontext = "[GetGlobalVariable('diplo_1').GetCharacter.GetCouncillorPosition( 'envoy_court_position' ).GetCouncillor]"
+			datacontext = "[GetPlayer]"
+			state = {
+				name = gamess
+				next = step1
+				trigger_on_create = yes
+				duration = 32
+				position_x = 7690
+
+			}
+			state = {
+				name = step1
+				#next = step22
+				#duration = 5
+				position_x = 300
+			}
+
+		}
+		horse_racing_1  = {
+			scale = 0.8
+			parentanchor = left|top
+			position = { 250 420 }
+			#visible = "[Not(GetScriptedGui('sk_walk_left').IsShown( GuiScope.SetRoot( GetGlobalVariable('diplo_1').GetCharacter.MakeScope  ).End ))]"
+			#datacontext = "[GetGlobalVariable('diplo_1').GetCharacter.GetCouncillorPosition( 'envoy_court_position' ).GetCouncillor]"
+			datacontext = "[GetPlayer]"
+			state = {
+				name = gamess
+				next = step1
+				trigger_on_create = yes
+				duration = 31
+				position_x = 7690
+
+			}
+			state = {
+				name = step1
+				#next = step22
+				#duration = 5
+				position_x = 250
+			}
+
+		}
+		widget = {
+			####
+			horse_racing_1  = {
+				scale = 0.9
+				parentanchor = left|top
+				position = { 200 470 }
+				#visible = "[Not(GetScriptedGui('sk_walk_left').IsShown( GuiScope.SetRoot( GetGlobalVariable('diplo_1').GetCharacter.MakeScope  ).End ))]"
+				#datacontext = "[GetGlobalVariable('diplo_1').GetCharacter.GetCouncillorPosition( 'envoy_court_position' ).GetCouncillor]"
+				datacontext = "[GetPlayer]"
+
+			}
+
+			state = {
+				name = gamess
+				next = step1
+				trigger_on_create = yes
+				duration = 30
+				position_x = 7690
+
+			}
+			state = {
+				name = step1
+				#next = step22
+				#duration = 5
+				position_x = 0
+			}
+			state = {
+				name = step22
+				#next = aa2
+				duration = 0
+				position_x = 200 #
+			}
+
+			state = {
+				name = sk_xx_pos
+				next = sk_xx_pos
+				#trigger_on_create = yes
+				duration = @pac_mov
+				position_x = "[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('true_envoy_x')|0]"
+			}
+		}
+		
+
+
+	
+	}
+	icon = {
+		parentanchor = left|vcenter
+		size = { 1920 100 }
+		position = { 0 -300}
+		alpha = 0.7
+		texture = "gfx/interface/tavern_gfx/mask_off.dds" #
+
+	}
+	state = { name = haltall trigger_when = "[Not(IsGamePaused)]" on_start = "[OnPause]" }
+
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -60 -80 }
+        raw_text = "Exit"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets test_window')]"
+    }
+
+}

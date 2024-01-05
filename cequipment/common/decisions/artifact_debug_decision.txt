@@ -1,0 +1,39 @@
+﻿artifact_debug_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	major = yes
+
+	is_shown = {
+		debug_only = yes
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult_or_is_commanding = yes
+	}
+	effect = {
+		#custom_tooltip = wild_goose_chase_decision_effect_tooltip
+		
+		every_player = {
+			for_all_artifacts_no_arguments = {APPLY = add_artifact}
+			
+			
+		}
+	}
+	
+	ai_check_interval = 0
+}
+reinitialize_custom_gui = {
+	title = "Reboot Artifact Module"
+	#picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	desc = "Seems like the artifact window isn't showing in the sidebar for some reason. Enact this decision to restore it without having to worry about desyncs."
+	#major = yes
+	confirm_text = "Reboot"
+	is_shown = {
+		NOT = {
+			is_widget_open = custom_sidebar
+		}
+	}
+	effect = {
+		custom_tooltip = "Restores the custom sidebar widget."
+		trigger_event = CustomGUI.2
+	}	
+}

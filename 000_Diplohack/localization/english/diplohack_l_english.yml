@@ -1,0 +1,74 @@
+﻿l_english:
+
+ COUNTY_DEVELOPMENT_TOOLTIP_DIPLO: "#T Development: [Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevel]/100#!\n[Scope.GetLandedTitle.GetCountyData.GetDevelopmentIgnoredDesc][Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentIncreaseDesc]"
+ COUNTY_CONTROL_TOOLTIP_DIPLO:0 "#T County Control: [Scope.GetLandedTitle.GetCountyData.GetControlLevelOutOfMax]#!\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlIncreaseDesc]"
+
+ envoy_court_position:0 "Envoy"
+ envoy_court_position_desc:0 "The purpose of the $envoy_court_position$ is to go on diplomatic missions and enable diplomatic actions."
+ diplo_non_aggression_20:0 "Non-Aggression Pact 20 Years"
+ diplo_non_aggression_10:0 "Non-Aggression Pact 10 Years"
+ diplo_non_aggression_5:0 "Non-Aggression Pact 5 Years"
+ I_CANNOT_DECLARE_WAR_NONA:0 "You have an active Non-Aggression Pact"
+ has_non_aggression_pact:0 "You have an active Non-Aggression Pact"
+ diplo_start:0 "Send Envoy"
+
+ ok_offer_ok:0 "Ok"
+ diplo_offer_ok:0 "The deal is done!"
+ tos_deal:0 "Terms of The Deal"
+
+#event outcome messages
+ fatal_offer:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]..."
+ fatal_offer_ok:0 "Your Envoy has died..."
+ fatal_offer_message:0 "Your envoy seemed to have lost their head, you may send someone to recover it"
+
+ diplo_block_offer:0 "Dont talk to me or my son ever again."
+
+ diplo_insulting_offer_opening:0 "To the vile [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+ diplo_insulting_offer:0 "Id insult you but judging from your offer, you arent intelligent enough to understand it..."
+ diplo_strong_insulting_offer:0 "Do yourself a favor and do not send another envoy if you value their life!"
+
+ diplo_accept_offer_opening:0 "To [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+ diplo_accept_offer:0 "I've read over the terms of the deal and accept, I hope the future will hold more fruitful deals."
+
+ diplo_accept_good_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_accept_good_offer:0 "Fantastic proposal, I must accept"
+
+ diplo_accept_great_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_accept_great_offer:0 "I've received your offer and find it to be a great deal that benefits both of us greatly!"
+
+ diplo_decline_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_decline_offer:0 "I must decline..."
+
+ diplo_decline_np_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_decline_np_offer:0 " I am sorry but I see no point in your offer"
+
+
+#Deal Outcomes
+ diplo_result_tool1:0 "Your envoy is killed."
+ diplo_result_tool2:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] is so mad they cuts off all future deals."
+ diplo_result_tool3:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] is greatly insulted."
+ diplo_result_tool4:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] is insulted."
+ diplo_result_tool5:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Accepts the deal."
+ diplo_result_tool6:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] is grateful for the deal."
+ diplo_result_tool7:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] is thankful for your kindness and has a high opinion of you."
+ diplo_result_tool8:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Does not accept the deal."
+ diplo_result_tool9:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Does not see a point in the deal."
+
+
+#Interface
+ diplo_enabled:0 " A deal between [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip] and [GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] is in progress."
+ diplo_able:0 " You do not have an envoy, employ one in court positions special tab."
+
+
+#opinion modifiers
+ deal_made:0 "Diplomatic Deals Completed"
+ good_deal_made:0 "Good Diplomatic Deals Completed"
+ great_deal_made:0 "Great Diplomatic Deals Completed"
+ insulting_offer:0 "Diplomatic Insults"
+ strong_insulting_offer:0 "Grave Diplomatic Insults"
+ deadly_insulting_offer:0 "Diplomatic Fatality"
+ block_offer:0 "Blocked Diplomatic Negotiations"
+
+
+#p Modifier
+ shady_deal_made:0 "Shady Deals"

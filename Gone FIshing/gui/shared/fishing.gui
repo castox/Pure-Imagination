@@ -1,0 +1,269 @@
+#animation fishing
+
+types Animations
+{
+
+  type fishing = widget {
+    name = "fishing_effect"
+    parentanchor = center
+    size = { 100% 100% }
+    #fishing
+      icon = {
+        visible = yes
+        texture = "gfx/interface/animations/fishing/fishing_1.png"
+        size = { 1920 1080 }
+      }
+      icon = {
+        texture = "gfx/interface/animations/fishing/fishing_2.png"
+        size = { 1920 1080 }
+        alpha = 1
+        visible = yes
+        state = {
+          name = ac1
+          next = ac2
+          trigger_on_create = yes
+          duration = 1
+          alpha = 0
+        }
+        state = {
+          name = ac2
+          next = ac1
+
+          duration = 1
+          alpha = 1
+        }
+      }
+      icon = {
+        texture = "gfx/interface/animations/fishing/fishing_3.png"
+        size = { 1920 1080 }
+        alpha = 1
+        visible = yes
+        state = {
+          name = ac1
+          next = ac2
+          trigger_on_create = yes
+          duration = 1.5
+          alpha = 0
+        }
+        state = {
+          name = ac2
+          next = ac1
+
+          duration = 1.5
+          alpha = 1
+        }
+      }
+   #End fishing
+  }
+
+  type lake_fishing = widget {
+   # name = "fishing_effect"
+    parentanchor = center
+    size = { 100% 100% }
+    #fishing
+      icon = {
+        visible = yes
+        texture = "gfx/interface/animations/fishing/lake_1.dds"
+        size = { 1920 1080 }
+      }
+      icon = {
+        texture = "gfx/interface/animations/fishing/lake_2.dds"
+        size = { 1920 1080 }
+        alpha = 1
+        visible = yes
+        state = {
+          name = ac1
+          next = ac2
+          trigger_on_create = yes
+          duration = 1
+          alpha = 0
+        }
+        state = {
+          name = ac2
+          next = ac1
+
+          duration = 1
+          alpha = 1
+        }
+      }
+      icon = {
+        texture = "gfx/interface/animations/fishing/lake_3.dds"
+        size = { 1920 1080 }
+        alpha = 1
+        visible = yes
+        state = {
+          name = ac1
+          next = ac2
+          trigger_on_create = yes
+          duration = 2
+          alpha = 0
+        }
+        state = {
+          name = ac2
+          next = ac1
+
+          duration = 2
+          alpha = 1
+        }
+      }
+   #End fishing
+  }
+
+  type island_fishing = widget {
+    # name = "fishing_effect"
+     parentanchor = center
+     size = { 100% 100% }
+     #fishing
+       icon = {
+         visible = yes
+         texture = "gfx/interface/animations/fishing/island_1.dds"
+         size = { 1920 1080 }
+       }
+       icon = {
+         texture = "gfx/interface/animations/fishing/island_2.dds"
+         size = { 1920 1080 }
+         alpha = 1
+         visible = yes
+         state = {
+           name = ac1
+           next = ac2
+           trigger_on_create = yes
+           duration = 0.5
+           alpha = 0
+         }
+         state = {
+           name = ac2
+           next = ac1
+ 
+           duration = 0.5
+           alpha = 1
+         }
+       }
+       icon = {
+         texture = "gfx/interface/animations/fishing/island_3.dds"
+         size = { 1920 1080 }
+         alpha = 1
+         visible = yes
+         state = {
+           name = ac1
+           next = ac2
+           trigger_on_create = yes
+           duration = 1.2
+           alpha = 0
+         }
+         state = {
+           name = ac2
+           next = ac1
+ 
+           duration = 1.2
+           alpha = 1
+         }
+       }
+      #End fishing
+  }
+
+  type rural_fishing = widget {
+    # name = "fishing_effect"
+     parentanchor = center
+     size = { 100% 100% }
+     #fishing
+       icon = {
+         visible = yes
+         texture = "gfx/interface/animations/fishing/rural_1.dds"
+         size = { 1920 1080 }
+       }
+       icon = {
+         texture = "gfx/interface/animations/fishing/rural_2.dds"
+         size = { 1920 1080 }
+         alpha = 1
+         visible = yes
+         state = {
+           name = ac1
+           next = ac2
+           trigger_on_create = yes
+           duration = 1
+           alpha = 0
+         }
+         state = {
+           name = ac2
+           next = ac1
+ 
+           duration = 1
+           alpha = 1
+         }
+       }
+       icon = {
+         texture = "gfx/interface/animations/fishing/rural_3.dds"
+         size = { 1920 1080 }
+         alpha = 1
+         visible = yes
+         state = {
+           name = ac1
+           next = ac2
+           trigger_on_create = yes
+           duration = 1.5
+           alpha = 0
+         }
+         state = {
+           name = ac2
+           next = ac1
+ 
+           duration = 1.5
+           alpha = 1
+         }
+       }
+      #End fishing
+  }
+  type norse_fishing = widget {
+    # name = "fishing_effect"
+     parentanchor = center
+     size = { 100% 100% }
+     #fishing
+       icon = {
+         visible = yes
+         texture = "gfx/interface/animations/fishing/norse_1.dds"
+         size = { 1920 1080 }
+       }
+       icon = {
+         texture = "gfx/interface/animations/fishing/norse_2.dds"
+         size = { 1920 1080 }
+         alpha = 1
+         visible = yes
+         state = {
+           name = ac1
+           next = ac2
+           trigger_on_create = yes
+           duration = 0.5
+           alpha = 0
+         }
+         state = {
+           name = ac2
+           next = ac1
+ 
+           duration = 0.5
+           alpha = 1
+         }
+       }
+       icon = {
+         texture = "gfx/interface/animations/fishing/norse_3.dds"
+         size = { 1920 1080 }
+         alpha = 1
+         visible = yes
+         state = {
+           name = ac1
+           next = ac2
+           trigger_on_create = yes
+           duration = 1.2
+           alpha = 0
+         }
+         state = {
+           name = ac2
+           next = ac1
+ 
+           duration = 1.2
+           alpha = 1
+         }
+       }
+      #End fishing
+  }
+}

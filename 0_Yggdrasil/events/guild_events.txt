@@ -1,0 +1,447 @@
+namespace = guild_event
+#tutorial
+guild_event.1 = {
+	type = character_event
+	title = "Guild Test"
+	desc = "Welcome to the guild - Take this Placement exam"
+	theme = education
+	
+	################
+	right_portrait = {
+		character = root
+		animation = idle
+	}
+	left_portrait = {
+		character = character:gg_char
+		animation = love
+	}
+	override_background = {
+		event_background = guild_test
+	}
+
+	option = {
+		name = "Yes"
+	}
+
+	option = {
+		name = "No"
+	
+	}
+
+}
+
+guild_event.2 = {
+	type = character_event
+	title = "Goblins in the North"
+	desc = "Goblins are getting out of hand in the north east, we are looking for a team to take down a county!"
+	theme = education
+	
+	################
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+	override_background = {
+		event_background = guild_quest
+	}
+
+	option = {
+		name = "Accept Quest, Reward 1000G"
+		add_character_flag= {
+			flag = goblin_quest_1
+		}
+	}
+
+	option = {
+		name = "No thanks."
+	
+	}
+
+}
+
+guild_event.3 = {
+	type = character_event
+	title = "Meeting With Tanya"
+	desc = tutorial_3
+	theme = education
+	
+	################
+	left_portrait = {
+		character = root
+		animation = dismissal
+	}
+
+	option = {
+		name = "Ok.."
+		root = {
+			te_opt ={ tal = -2}
+		}
+		trigger_event = { id=guild_event.4 days=30 }
+	}
+
+	option = {
+		name = "No"
+		root = {
+			te_opt ={ tal = -10 }
+			emx1 = {}
+		}
+		trigger_event = { id=guild_event.4 days= 30 }
+	}	
+
+}
+
+guild_event.4 = {
+	type = character_event
+	title = "Meeting With Tanya"
+	desc = "You should change the name of this county, its garbage"
+	theme = education
+	
+	################
+	left_portrait = {
+		character = root
+		animation = dismissal
+	}
+
+	option = {
+		name = "Ok.."
+		trigger_event = { id=guild_event.5 days= 90 }
+		te_opt ={ tal = 10 }
+	}
+
+}
+guild_event.5 = {
+	type = character_event
+	title = "Meeting With Tanya"
+	desc = "Winning or losing battles will affect my opinion of you... Just so ya know."
+	theme = education
+	
+	################
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = {
+		name = "Got it.."
+		te_opt ={ tal = 10 }
+		trigger_event = { id=guild_event.6 days= 90 }
+	}
+
+}
+guild_event.6 = {
+	type = character_event
+	title = "Meeting With Tanya"
+	desc = "You know they dont have underwear in these time?"
+	theme = education
+	
+	################
+	left_portrait = {
+		character = root
+		animation = dismissal
+	}
+
+	option = {
+		name = "yes"
+		te_opt ={ tal = -5 }
+		emx3 = {}
+	}
+	
+	option = {
+		name = "no"
+		te_opt ={ tal = 10 }
+		emx4 = {}
+	}
+}
+## end tutorial
+
+#bootcamp
+guild_event.2000 = {
+
+	type = character_event
+	title = "Boot Camp"
+	desc = "Are you ready to sink or swim? I am sending you to boot camp, fail and wear the mark of shame forever! Now get out of my face..."
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_cynical
+	}
+	right_portrait = {
+		character = scope:student
+		animation = personality_coward
+	}
+	immediate = {
+
+	}
+
+
+	option = {
+		name = "Enter training for 1 year"
+		hidden_effect = {
+			scope:student ={
+				random_list = {
+
+					80 = {
+						modifier = {
+							martial > 10
+							prowess > 10
+							add = 20
+						}
+						
+						trigger_event = { id = guild_event.2001 years= 1}
+					}
+					20 = {
+						modifier = {
+							learning < 5
+							diplomacy < 7
+							intrigue  < 7
+							prowess < 5
+							martial < 7
+							add = 20
+						}
+
+						add_trait = spartan_learner
+						trigger_event = { id = guild_event.2002 years= 1}
+					}
+
+				}
+					
+			}
+		}
+	}
+
+
+
+
+}
+
+#success
+guild_event.2001 = {
+
+	type = character_event
+	title = "Boot Camp"
+	desc = "I see you made it... Now get get to work!"
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:student
+		animation = personality_content
+	}
+	immediate = {
+		scope:student = {
+			add_trait = 203_trained
+			remove_character_flag = in_203_bootcamp
+		}
+	}
+
+	option = {
+		name = "Right Away Commander!"
+		root = {
+			te_opt ={ tal = 15}
+		}
+	}
+}
+#failure
+guild_event.2002 = {
+
+	type = character_event
+	title = "Boot Camp"
+	desc = "You make me sick, and BEING X! You're a fool for guiding me wrong!"
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:student
+		animation = shame
+	}
+	immediate = {
+		scope:student = {
+			add_trait = 203_washout
+			remove_character_flag = in_203_bootcamp
+		}
+	}
+
+	option = {
+		name = " ... "
+		root = {
+			te_opt ={ tal = -15}
+		}
+	}
+}
+
+guild_event.3001 = {
+	type = character_event
+	title = "Prayer"
+	desc = "Oh, Lord… Save our Fatherland from these faithless invaders. At the end of our long road, we shall reach the promised land."
+	theme = witchcraft
+	override_background = {
+		event_background = tanya_limitbreak
+	}
+
+	immediate = {}
+	option = {
+		name = " ... "
+		amulet_prayer = {}
+		change_variable = { name = te_op_val add = -50 }
+	}
+}
+guild_event.3004 = {
+
+	immediate = {
+		ai_targets = {
+			ai_recipients = primary_war_enemies
+		}
+		
+		
+		# Depending on who was the attacker, we need to send a different notification message to the recipient.
+		notification_text = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						scope:recipient = {
+							any_character_war = {
+								casus_belli = {
+									primary_attacker = scope:actor
+								}
+							}
+						}				}
+					desc = end_war_attacker_victory_attacker_desc
+				}
+				desc = end_war_attacker_victory_defender_desc
+			}
+		}
+
+		on_accept = {
+			casus_belli = {
+				primary_attacker = {
+					save_scope_as = attacker_winner
+				}
+				primary_defender = {
+					save_scope_as = defender_loser
+				}
+			}
+
+			release_prisoners_of_war_effect = yes
+
+			#Send notification to vassals
+			scope:attacker_winner = {
+				if = {
+					limit = {
+						any_vassal = {
+							NOT = { this = scope:defender_loser }
+						}
+					}
+					every_vassal = {
+						limit = { NOT = { this = scope:defender_loser } }
+						send_interface_toast = {
+							title = war_event.notification_liege_win.t
+							left_icon = scope:attacker_winner
+							custom_tooltip = war_event.1901
+						}
+					}
+				}
+			}
+			scope:defender_loser = {
+				if = {
+					limit = {
+						any_vassal = { NOT = { this = scope:attacker_winner } }
+					}
+					every_vassal = {
+						limit = {
+							NOT = { this = scope:attacker_winner }
+						}
+						send_interface_toast = {
+							title = war_event.notification_liege_loss.t
+							left_icon = scope:defender_loser
+							custom_tooltip = war_event.1902
+						}
+					}
+				}
+			}
+
+			#Special bookmark event for Aella of Northumbria
+			bookmark_867_northmen_aellas_capture_war_imprisonment_effect = yes
+
+			end_war = attacker
+		}
+		
+		on_decline = {
+		}
+		
+		ai_potential = {
+			is_at_war = yes
+
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+		
+		ai_accept = {
+			base = 100
+
+			compare_modifier = {
+				target = scope:war
+				value = attacker_war_score
+				desc = "WARSCORE_MODIFIER"
+			}
+			modifier = {
+				scope:war.casus_belli = {
+					primary_attacker = {
+						has_perk = peacemaker_perk
+						NOT = { this = scope:recipient }
+					}
+				}
+				
+				add = peacemaker_value
+				
+				desc = "PEACEMAKER_PERK_MODIFIER"
+			}
+		}
+		
+		auto_accept = {
+		}
+		
+		is_valid_showing_failures_only = {
+			scope:war = {
+				has_valid_casus_belli = yes
+			}
+		}
+		
+		show_answer_notification = yes
+	}
+}
+guild_event.3002 = {
+	type = character_event
+	title = "no"
+	desc = "You make me sick, and BEING X! You're a fool for guiding me wrong!"
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	immediate = {}
+	option = {
+		name = " ... "
+	}
+}
+
+guild_event.3000 = {
+	immediate = {
+		if = {
+			limit = {
+				root = {
+				te_opt_value => 1
+				}
+			}
+			trigger_event = guild_event.4
+		}
+		else = {
+			trigger_event = guild_event.2
+		}
+	}
+}

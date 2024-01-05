@@ -1,0 +1,81 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "viking"
+
+	parentanchor = hcenter|vcenter
+	size = { 100% 100% }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	movable = yes
+	icon = {
+		parentanchor = hcenter|vcenter
+		size = { 1920 1080 }
+		texture = "gfx/interface/mage/ponder.dds"
+
+	}
+
+
+	ponder = {
+		parentanchor = hcenter|vcenter
+
+		datacontext = "[GetPlayer]"
+		position = { 70 755 }
+
+
+		icon = {
+
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 1
+		}
+
+	}
+	icon = {
+		parentanchor = hcenter|vcenter
+		size = { 1920 1080 }
+		texture = "gfx/interface/mage/ponder_f.dds"
+
+	}
+	being_viewed = {
+		parentanchor = hcenter|vcenter
+		position = { 80 5 }
+		datacontext = "[GetPlayer.GetPrimarySpouse]"
+		progressbar_mp = {
+			parentanchor = hcenter|vcenter
+			position = { 0 150 }
+			size = {60 100 }
+			using = Animation_ShowHide_Standard
+		}
+	}
+	icon = {
+		parentanchor = hcenter|vcenter
+		position = { 80 130 }
+		size = { 197 160}
+		texture = "gfx/interface/mage/ball.dds"
+
+
+	}
+	state = {
+		name = ready2
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+
+
+
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('exit_archer').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets viking')]"
+    }
+
+}

@@ -1,0 +1,39 @@
+﻿l_english:
+# Artifabrian lifestyle #
+ learning_artifabrian_focus:0 "Artifabrian Focus"
+ learning_artifabrian_focus_desc:0 "The Artifabrian lifestyle focuses on studying fabrial technology, and the mechanical manipulation of [spren|E] and [investiture|E]."
+ learning_artifabrian_focus_effect_desc:0 "Focusing on fabrials grants:"
+ artifabrian_name:1 "Artifabrian"
+
+# Artifabrian perks
+ basic_fabrial_perk_name:0 "Basic Fabrials"
+ learned_scholar_perk_name:0 "Amateur Artifabrian"
+ fledgling_artifabrian_perk_name:0 "Apprentice Artifabrian"
+ artifabrian_perk_name:0 "Artifabrian"
+
+ combat_battlefield_focus:0 "Battlefield Focus"
+ combat_battlefield_focus_desc:0 "The Battlefield lifestyle focuses on combat on the battlefield, destroying one's enemies."
+ combat_battlefield_focus_effect_desc:0 "Focusing on battlefield combat grants:"
+ battlefield_name:1 "Battlefield Mastery"
+
+ martial_dueling_focus:0 "Dueling Focus"
+ martial_dueling_focus_desc:0 "The Dueling lifestyle focuses on the dueling ring."
+ martial_dueling_focus_effect_desc:0 "Focusing on dueling grants:"
+ dueling_name:1 "Dueling"
+
+ combat_lifestyle_name:0 "Combat"
+ combat_lifestyle_desc:0 "Focus on fighting your enemies, either in the dueling ring or on the battlefield."
+ combat_lifestyle_highlight_desc:0 "Because of your PRowess [education|E], you gain #P [GetPlayer.Custom('GetCombatLifestylePercentageBoost')]#! more [experience|E] in this Lifestyle."
+
+ windstance_perk_name:0 "Windstance"
+ stonestance_perk_name:0 "Stonestance"
+ ironstance_perk_name:0 "Ironstance"
+ vinestance_perk_name:0 "Vinestance"
+ smokestance_perk_name:0 "Smokestance"
+ bloodstance_perk_name:0 "Bloodstance"
+ flamestance_perk_name:0 "Flamestance"
+ brutal_combat_perk_name:0 "Brutal Combat"
+ relentless_assault_perk_name:0 "Relentless Assault"
+ elite_warriors_perk_name:0 "Elite Warriors"
+ battlefield_mastery_perk_name:0 "Battlefield Mastery"
+ duelist_perk_name:0 "Duelist"

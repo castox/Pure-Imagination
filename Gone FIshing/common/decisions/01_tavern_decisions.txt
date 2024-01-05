@@ -1,0 +1,41 @@
+﻿go_fishing_decision = {
+	picture = "gfx/interface/animations/fishing/fishing_2.png"
+
+	desc = go_fishing_decision_desc
+	selection_tooltip = go_fishing_decision_tooltip
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+		is_adult = yes
+		age > 17
+	}
+
+	cooldown = { days = 5 }
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		hidden_effect = {
+			#none for now
+		}
+
+		trigger_event = {
+			id = tavern_games_1.1001
+		}
+		custom_tooltip = go_fishing_decision_effect_tooltip
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+

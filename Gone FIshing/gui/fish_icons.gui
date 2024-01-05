@@ -1,0 +1,131 @@
+﻿##################################################
+# fish Icons
+
+texticon = { 
+	icon = fish_fish1
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish1.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish2
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish2.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish3
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish3.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish4
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish4.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish5
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish5.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish6
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish6.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish7
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish7.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish8
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish8.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish9
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish9.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish10
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish10.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish11
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish11.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish12
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish12.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish13
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish13.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish14
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish14.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish15
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish15.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}
+texticon = { 
+	icon = fish_fish16
+	iconsize = {
+		texture = "gfx/interface/tavern/fish/fish16.png"
+		size = { 50 25 }
+		fontsize = 16
+	}
+}

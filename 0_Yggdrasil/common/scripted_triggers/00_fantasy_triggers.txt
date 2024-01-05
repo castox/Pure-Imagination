@@ -1,0 +1,12 @@
+﻿is_ork = { has_trait = orcblood }
+
+is_elf = { 
+	OR = {
+		has_trait = elf_blood
+		has_trait = frost_elf
+		has_trait = woodelf
+		}
+	}
+
+is_dwarv = { has_trait = dwarf }
+

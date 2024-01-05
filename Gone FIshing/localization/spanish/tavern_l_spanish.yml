@@ -1,0 +1,35 @@
+﻿l_spanish:
+
+challenge_interaction:0 "Concurso de bebidas"
+trait_fisher_character_desc:0 "Esta persona pasa demasiado tiempo pescando, pero esto le ha ganado el respeto de los tipos que huelen a pescado."
+trait_fisher_desc:0 "Pescando"
+trait_legendary_fisherman:0 "Pescador Legendario"
+
+fish1_name: "Atún"
+fish2_name: "Caballa"
+fish3_name: "Salmón"
+fish4_name: "Pangasius"
+fish5_name: "Salmón rosado"
+fish6_name: "Turbot Brill"
+fish7_name: "Lubina"
+fish8_name: "Carpa plateada"
+fish9_name: "Pez de roca"
+fish10_name: "Dorado"
+fish11_name: "Lucio"
+fish12_name: "Lucioperca"
+fish13_name: "Canal de bagres"
+fish14_name: "Trucha arcoiris"
+fish15_name: "Arenque"
+fish16_name: "Hornicorn"
+
+go_fishing_decision:0 "¡Ir a pescar!"
+go_fishing_decision_confirm:0 "$go_fishing_decision$"
+go_fishing_decision_tooltip:0 "$go_fishing_decision$"
+go_fishing_decision_desc:0 "Necesito reducir un poco el estrés, ¿qué tal si voy a pescar? ¡Mi buen amigo el Conde Castox conoce el lugar perfecto!"
+go_fishing_decision_effect_tooltip:0 "Ir a pescar reduce el estrés, cuanto más duro es el pez, más estrés se reduce. \n\nCapturar los 15 peces te otorga el rasgo, ¡Pescadores legendarios!"
+
+FISH_ICON_CAUGHT: "[Localize(Concatenate(Concatenate('@fish_',GetPlayer.MakeScope.Var('current_fish1').GetFlagName), '!'))]" 
+FISH_NAME_DESC: "Atrapaste un[Localize(Concatenate(GetPlayer.MakeScope.Var('current_fish1').GetFlagName,'_name'))]! "
+FISH_NAME: "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+FISH_ICON: "[Localize(Concatenate(Concatenate('@fish_',Scope.GetFlagName), '!'))]" 
+

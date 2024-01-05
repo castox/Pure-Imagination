@@ -1,0 +1,3 @@
+﻿
+gui/custom_gui/envoy_deal_button.gui = envoy_deal_active
+gui/custom_gui/diplo.gui = diplohack

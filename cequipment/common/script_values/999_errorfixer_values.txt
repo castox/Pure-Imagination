@@ -1,0 +1,2 @@
+﻿monthly_investiture = 0
+investiture_drain_soulcaster = 0

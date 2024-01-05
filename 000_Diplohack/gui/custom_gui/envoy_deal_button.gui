@@ -1,0 +1,53 @@
+﻿
+envoy_window = {}
+
+types EnvoyWin {
+	type envoy_window = window {
+		name = "envoy_deal_active"
+
+		visible = "[And(GetScriptedGui('diplo_in_progress').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ),IsInGame)]"
+		parentanchor = bottom|hcenter
+
+		size = { 80 80 }
+		layer = bottom
+
+		filter_mouse = all
+		alwaystransparent = no
+		button = {
+			size = { 80 80 }
+			parentanchor = center
+			texture = "gfx/interface/tavern_gfx/c_button.dds"
+	
+			icon = {
+				parentanchor = center
+				texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+			}
+			enabled = "[GetScriptedGui('diplo_is_enabled').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			tooltip = diplo_enabled
+			onclick = "[GetScriptedGui('diplo_deal_view').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+
+		state = {
+			name = setup_game
+			trigger_on_create = yes
+			duration = 0.01
+			on_finish = "[GetScriptedGui('diplo_world_checker').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			on_start = "[GetScriptedGui('diplo_error_fixer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+		state = {
+			name = setup_game2
+			trigger_when = "[GetScriptedGui('diplo_error_fixer').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			duration = 0.01
+			on_finish = "[GetScriptedGui('diplo_world_checker').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			on_start = "[GetScriptedGui('diplo_error_fixer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+		state = {
+			name = death_checker
+			trigger_when = "[GetScriptedGui('diplo_death_fixer').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			duration = 0.01
+			on_start = "[GetScriptedGui('diplo_death_fixer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+
+}

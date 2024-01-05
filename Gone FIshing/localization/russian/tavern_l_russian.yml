@@ -1,0 +1,35 @@
+﻿l_russian:
+
+challenge_interaction:0 "Соревнования по питью"
+trait_fisher_character_desc:0 "Этот человек слишком много времени проводит на рыбалке, но это принесло ему уважение парней, которые пахнут рыбой."
+trait_fisher_desc:0 "На рыбалке"
+trait_legendary_fisherman:0 "Легендарный рыбак"
+
+fish1_name: "Тунец"
+fish2_name: "Скумбрия"
+fish3_name: "Лосось"
+fish4_name: "Пангасиус"
+fish5_name: "Горбуша"
+fish6_name: "Turbot Brill"
+fish7_name: "Морской окунь"
+fish8_name: "Толстолобик"
+fish9_name: "Каменная рыба"
+fish10_name: "Дорадо"
+fish11_name: "Щука"
+fish12_name: "Судак"
+fish13_name: "Канальный сом"
+fish14_name: "Радужная форель"
+fish15_name: "сельдь"
+fish16_name: "Hornicorn"
+
+go_fishing_decision:0 "На рыбалку!"
+go_fishing_decision_confirm:0 "$go_fishing_decision$"
+go_fishing_decision_tooltip:0 "$go_fishing_decision$"
+go_fishing_decision_desc:0 "Мне нужно немного снизить стресс, как насчет того, чтобы пойти на рыбалку, мой хороший друг граф Кастокс знает идеальное место!"
+go_fishing_decision_effect_tooltip:0 "Рыбалка снижает стресс, чем жестче рыба, тем меньше стресс.\n\nПоймав все 15 рыб, вы получите черту «Легендарный рыбак»!"
+
+FISH_ICON_CAUGHT: "[Localize(Concatenate(Concatenate('@fish_',GetPlayer.MakeScope.Var('current_fish1').GetFlagName), '!'))]" 
+FISH_NAME_DESC: "Вы поймали [Localize(Concatenate(GetPlayer.MakeScope.Var('current_fish1').GetFlagName,'_name'))]! "
+FISH_NAME: "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+FISH_ICON: "[Localize(Concatenate(Concatenate('@fish_',Scope.GetFlagName), '!'))]" 
+

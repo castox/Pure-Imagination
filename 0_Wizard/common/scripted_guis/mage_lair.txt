@@ -1,0 +1,151 @@
+
+up_liar = {
+	scope = character
+
+	is_shown = {
+		NOR = { 
+			has_character_flag = l_decision_3_u
+			has_character_flag = l_decision_3_l
+			has_character_flag = l_decision_2_l
+			has_character_flag = l_decision_3_r
+			has_character_flag = l_decision_2_r
+			has_character_flag = l_decision_1_r 
+		}
+	}
+	effect = {
+	
+		if = { limit = { has_character_flag = l_decision_3 } remove_character_flag = l_decision_3 add_character_flag = l_decision_3_u }
+		if = { limit = { has_character_flag = l_decision_2_u } remove_character_flag = l_decision_2_u add_character_flag = l_decision_3 } 
+		if = { limit = { has_character_flag = l_decision_2 } remove_character_flag = l_decision_2 add_character_flag = l_decision_2_u } 
+		if = { limit = { has_character_flag = l_entry } remove_character_flag = l_entry add_character_flag = l_decision_2 }
+	}
+}
+down_liar = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			has_character_flag = l_entry
+			has_character_flag = l_decision_3_l
+			has_character_flag = l_decision_2_l
+			has_character_flag = l_decision_3_r
+			has_character_flag = l_decision_2_r
+		}
+	}
+
+	effect = {
+		if = { limit = { has_character_flag = l_decision_1_r } remove_character_flag = l_decision_1_r add_character_flag = l_entry }
+		if = { limit = { has_character_flag = l_decision_2 } remove_character_flag = l_decision_2 add_character_flag = l_entry }
+		if = { limit = { has_character_flag = l_decision_2_u } remove_character_flag = l_decision_2_u add_character_flag = l_decision_2 }
+		if = { limit = { has_character_flag = l_decision_3 } remove_character_flag = l_decision_3 add_character_flag = l_decision_2_u }
+		if = { limit = { has_character_flag = l_decision_3_u } remove_character_flag = l_decision_3_u add_character_flag = l_decision_3 }
+	}
+}
+right_liar = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			has_character_flag = l_decision_3
+			has_character_flag = l_decision_1_r
+			has_character_flag = l_decision_3_r
+			has_character_flag = l_decision_2_u
+		}
+	}
+	effect = {
+		
+		if = { limit = { has_character_flag = l_decision_3_u } remove_character_flag = l_decision_3_u add_character_flag = l_decision_3_r }
+		if = { limit = { has_character_flag = l_decision_3_l } remove_character_flag = l_decision_3_l add_character_flag = l_decision_3_u }
+		if = { limit = { has_character_flag = l_decision_2_r } remove_character_flag = l_decision_2_r add_character_flag = l_decision_1_r }
+		if = { limit = { has_character_flag = l_decision_2 } remove_character_flag = l_decision_2 add_character_flag = l_decision_2_r }
+		if = { limit = { has_character_flag = l_decision_2_l } remove_character_flag = l_decision_2_l add_character_flag = l_decision_2 }
+		if = { limit = { has_character_flag = l_entry } remove_character_flag = l_entry add_character_flag = l_decision_1_r }
+	}
+}
+left_liar = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			has_character_flag = l_entry
+			has_character_flag = l_decision_3_l
+			has_character_flag = l_decision_2_l
+			has_character_flag = l_decision_3
+			has_character_flag = l_decision_2_u
+		}
+	}
+	effect = {
+		
+		 if = { limit = { has_character_flag = l_decision_3_u } remove_character_flag = l_decision_3_u add_character_flag = l_decision_3_l }
+		 if = { limit = { has_character_flag = l_decision_3_r } remove_character_flag = l_decision_3_r add_character_flag = l_decision_3_u }
+		 if = { limit = { has_character_flag = l_decision_2 } remove_character_flag = l_decision_2 add_character_flag = l_decision_2_l }
+		 if = { limit = { has_character_flag = l_decision_2_r } remove_character_flag = l_decision_2_r add_character_flag = l_decision_2 }
+		 if = { limit = { has_character_flag = l_decision_1_r } remove_character_flag = l_decision_1_r add_character_flag = l_decision_2_r }
+	}
+}
+start_liar = {
+	scope = character
+
+	effect = {
+		add_character_flag = l_entry
+		remove_character_flag = l_decision_1_r
+		remove_character_flag = l_decision_2_u
+		remove_character_flag = l_decision_2_l
+		remove_character_flag = l_decision_2_r
+		remove_character_flag = l_decision_2
+		remove_character_flag = l_decision_3_u
+		remove_character_flag = l_decision_3_l
+		remove_character_flag = l_decision_3_r
+		remove_character_flag = l_decision_3
+	}
+}
+ls_d_1 = {
+	is_shown = {
+		has_character_flag = l_entry
+	}
+}
+ls_d_1r = {
+	is_shown = {
+		has_character_flag = l_decision_1_r
+	}
+}
+ls_d_2 = {
+	is_shown = {
+		has_character_flag = l_decision_2
+	}
+}
+ls_d_2l = {
+	is_shown = {
+		has_character_flag = l_decision_2_l
+	}
+}
+ls_d_2u = {
+	is_shown = {
+		has_character_flag = l_decision_2_u
+	}
+}
+ls_d_2r = {
+	is_shown = {
+		has_character_flag = l_decision_2_r
+	}
+}
+ls_d_3 = {
+	is_shown = {
+		has_character_flag = l_decision_3
+	}
+}
+ls_d_3l = {
+	is_shown = {
+		has_character_flag = l_decision_3_l
+	}
+}
+ls_d_3u = {
+	is_shown = {
+		has_character_flag = l_decision_3_u
+	}
+}
+ls_d_3r = {
+	is_shown = {
+		has_character_flag = l_decision_3_r
+	}
+}

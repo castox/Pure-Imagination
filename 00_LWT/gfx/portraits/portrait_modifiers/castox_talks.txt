@@ -1,0 +1,653 @@
+﻿
+
+talk_mode_a = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}		
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                is_female = no
+				has_character_flag = talk_mode_a
+            }
+        }
+    }
+}
+talk_mode_e = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.22
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                 is_female = no
+				has_character_flag = talk_mode_e
+            }
+        }
+    }
+}
+talk_mode_u = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.08
+			}	
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                 is_female = no
+				has_character_flag = talk_mode_u
+            }
+        }
+    }
+}
+talk_mode_i = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.08
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_forward
+				template = mouth_forward_pos
+				value = 0.11
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}	
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                 is_female = no
+				has_character_flag = talk_mode_i
+            }
+        }
+    }
+}
+talk_mode_o = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.38
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.38
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.08
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_forward
+				template = mouth_forward_pos
+				value = 0.32
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                 is_female = no
+				has_character_flag = talk_mode_o
+            }
+        }
+    }
+}
+talk_mode_d = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.34
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.34
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.11
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_forward
+				template = mouth_forward_pos
+				value = 0.11
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}	
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                 is_female = no
+				has_character_flag = talk_mode_d
+            }
+        }
+    }
+}
+
+
+talk_mode_a2 = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+					
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				is_female = yes
+				has_character_flag = talk_mode_a
+            }
+        }
+    }
+}
+talk_mode_e2 = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.22
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				is_female = yes
+				has_character_flag = talk_mode_e
+            }
+        }
+    }
+}
+talk_mode_u2 = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.1
+			}	
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				is_female = yes
+				has_character_flag = talk_mode_u
+            }
+        }
+    }
+}
+talk_mode_i2 = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.42
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.08
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_forward
+				template = mouth_forward_pos
+				value = 0.32
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}	
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				is_female = yes
+				has_character_flag = talk_mode_i
+            }
+        }
+    }
+}
+talk_mode_o2 = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.38
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.38
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.08
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_forward
+				template = mouth_forward_pos
+				value = 0.32
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0.10
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				is_female = yes
+				has_character_flag = talk_mode_o
+            }
+        }
+    }
+}
+talk_mode_d2 = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_pos
+				value = 0.34
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.34
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_width
+				template = mouth_width_pos
+				value = 0.11
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_forward
+				template = mouth_forward_pos
+				value = 0.11
+			}	
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_pos
+				value = -0.22
+			}
+            morph = {
+				mode = modify				
+				gene = gene_mouth_height
+				template = mouth_height_neg
+				value = 0
+			}	
+			morph = {
+				mode = modify				
+				gene = gene_jaw_angle
+				template = jaw_angle_pos
+				value = 0
+			}
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				is_female = yes
+				has_character_flag = talk_mode_d
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+﻿#### MOOD TRACKS
+mx_welcome = {
+	music = "file:/music/welcome.wav"
+	mood = no
+	can_be_interrupted = no
+}

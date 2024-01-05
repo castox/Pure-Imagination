@@ -1,0 +1,27 @@
+﻿
+portrait_shadari_clothing_trigger = {
+	culture = { has_graphical_culture = shadari_clothing_gfx }	
+}	
+portrait_woodari_clothing_trigger = {
+	culture = { has_graphical_culture = woodari_clothing_gfx }
+}
+
+portrait_eldari_clothing_trigger = {
+	culture = { has_graphical_culture = eldari_clothing_gfx }
+}
+portrait_dwarv_clothing_trigger = {
+	culture = { has_graphical_culture = dwarv_clothing_gfx }
+}
+portrait_norkse_clothing_trigger = {
+	culture = { has_graphical_culture = norkse_clothing_gfx }
+}
+
+
+
+
+
+
+
+
+
+

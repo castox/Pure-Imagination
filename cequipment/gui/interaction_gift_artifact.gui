@@ -1,0 +1,108 @@
+######################################################
+#################### GIFT ARTIFACT ####################
+######################################################
+window = {
+	name = "interaction_gift_artifact"
+	parentanchor = top|right
+	position = { -15 90 }
+	size = { 600 960 }
+	movable = no
+	layer = windows_layer
+
+	using = Window_Background
+	using = Window_Decoration_Spike
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		using = Sound_WindowShow_Standard
+		on_start = "[GetVariableSystem.Set( 'interaction_gift_artifact_open', 'true' )]"
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Sound_WindowHide_Standard
+		on_start = "[GetVariableSystem.Clear( 'interaction_gift_artifact_open' )]"
+	}
+
+	vbox = {
+		using = Window_Margins
+
+		header_pattern_interaction = {
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "header_text"
+			{
+				text = "gift_artifact"
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets interaction_gift_artifact')]"
+			}
+
+			icon_character_interaction = {}
+		}
+
+		### artifact list
+		scrollbox = {
+			name = "gift_artifact_list"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+
+			blockoverride "scrollbox_empty"
+			{
+				text_single = {
+					position = {}
+					#datacontext = "[GetScriptedGui('artifacts_has_no_artifacts')]"
+					#visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					visible = "[EqualTo_int32(GetDataModelSize(GetPlayer.MakeScope.GetList('artifact_list')),'(int32)0')]"
+					text = "ARTIFACTS_VIEW_NONE"
+					default_format = "#low;italic"
+				}
+			}
+
+			blockoverride "scrollbox_content"
+			{
+				artifact_list = {
+					datacontext = "[GetPlayer]"
+					blockoverride "itemcontext" {
+						datacontext = "[GetScriptedGui('toggle_gift_artifact_by_flag')]"
+					}
+					blockoverride "equipped" {
+						icon = {
+							texture = "gfx/artifacts/icon_check.dds"
+							size = { 22 16 }
+							visible = "[GetScriptedGui('toggle_gift_artifact_by_flag').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', MakeScopeFlag(Scope.GetFlagName)).End)]"
+						}
+						
+						artifact_spacer_horizontal = {}
+					}
+					blockoverride "size" {
+						size = {500 101}
+					}
+				}
+			}
+			expand = {}
+		}
+
+		### Other Effects
+		vbox = {
+			name = "other_effects_list"
+			layoutpolicy_horizontal = expanding
+			margin_bottom = 15
+			spacing = 10
+			# TODO: NEEDS CONSOLE COMMAND PURGING
+			### SEND OFFER BUTTON
+			button_primary = {
+				name = "send_artifacts_button"
+				size = { 400 42 }
+				text = "send_artifacts"
+				datacontext = "[GetScriptedGui('artifacts_gift_confirm')]"
+				onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets interaction_gift_artifact')]"
+			}
+		}
+	}
+}

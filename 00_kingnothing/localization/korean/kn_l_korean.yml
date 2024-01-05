@@ -1,0 +1,18 @@
+﻿l_korean:
+
+king_nothing_modifier: "왕 아무것도"
+king_nothing_modifier_desc: "당신은 왕이지만 비용은 얼마였습니까? 모든 것.."
+
+rem_king_nothing_decision: "왕 아무것도 이라는 이름을 제거합니다."
+rem_king_nothing_decision_tooltip: "$kn_i_must_admit$"
+rem_king_nothing_decision_confirm: "반드시 해야 한다!"
+
+king_nothing_decision: "왜 안 돼, 내가 왕이 되어야 해!"
+king_nothing_decision_tooltip: "$kn_gain_nothing$"
+king_nothing_decision_confirm: "그들은 무릎을 구부릴 것입니다!"
+
+kn_gain_nothing: "당신은 왕국을 얻었지만 많은 사람들의 존경을 잃어 많은 사람들이 당신을 미워하고 당신을 거짓 왕이라고 선언했습니다. 킹 노노 간다!!"
+kn_i_must_admit: "내가 틀렸다는 것을 인정해야 한다!"
+kn_requirements: "최소 1개 이상 소유 [duchies|E]"
+kn_hold_another: "왕국 2개 보유"
+kn_rem_nothing: "많은 자부심의 대가로 당신은 당신이 틀렸음을 인정하고 King Nothing이라는 별명을 잃습니다."

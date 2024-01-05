@@ -1,0 +1,172 @@
+mana_check = { 
+
+	if = {
+		limit =  {
+			NOT = {has_character_flag = mana_val}
+		}
+			add_character_flag = {
+			flag = mana_val
+			}
+			
+			set_variable = { name = mana_val value = 0 }
+	}
+
+
+	change_variable = { name = mana_val add = 5 }
+	
+		if = {
+			limit = {
+				var:mana_val = { compare_value > 100 }
+			}
+			set_variable = { name = mana_val value = 100 }
+		}
+
+}
+magic_begin = {
+	if = {
+		limit = {
+			has_character_flag = flirtation_left_pose
+		}
+		remove_character_flag = flirtation_left_pose
+		add_character_flag = cynical_pose
+	}
+	else = {
+		add_character_flag = flirtation_left_pose
+		remove_character_flag = cynical_pose
+	}
+}
+magic_end = {
+	remove_character_flag = flirtation_left_pose
+	remove_character_flag = cynical_pose
+}
+talk_begin = {
+	if = {
+		limit = {
+			has_character_flag = talk_begin
+		}
+		remove_character_flag = talk_begin
+	}
+	else = {
+		add_character_flag = talk_begin
+	}
+}
+
+talk_remove = {
+	remove_character_flag = talk_begin
+	remove_character_flag = talk_end
+}
+magic_x = {
+		add_character_flag = cynical_pose
+}
+set_mana = {
+	set_variable = { name = mana_val value = $mph$ }
+}
+mana_checkd = {
+ root = {
+	every_primary_war_enemy = {
+
+		add_character_modifier = {
+			modifier = blasted
+			days = 500
+		}
+
+		levies = death
+
+		every_knight = {
+			death = yes
+		}
+		every_hired_mercenary = {
+			death = yes
+		}
+
+		every_character_war = {
+			add_character_modifier = {
+			modifier = blasted
+			days = 500
+			}
+		}
+
+		every_army = {
+			levy_size = 0
+		}
+	}
+ }
+}
+
+mana_sum = {
+	if = {
+		limit =  {
+			NOT = {has_character_flag = mana_limit}
+		}
+			add_character_flag = {
+			flag = mana_limit
+			}
+	}
+	set_variable = { name = mana_limit value = 0 }
+	#change_variable = { name = mana_limit add = root.diplomacy }
+	change_variable = { name = mana_limit add = root.martial }
+	#change_variable = { name = mana_limit add = root.stewardship }
+	change_variable = { name = mana_limit add = root.intrigue }
+	change_variable = { name = mana_limit add = root.prowess }
+	change_variable = { name = mana_limit multiply = root.learning }
+
+	var:mana_limit = {
+		value = mana_limit
+		save_scope_as = mana_break
+	}
+	mana_check ={}
+}
+
+mana_checksum = {
+	set_variable = { name = mana_limit value = 0 }
+	#change_variable = { name = mana_limit add = root.diplomacy }
+	change_variable = { name = mana_limit add = root.martial }
+	#change_variable = { name = mana_limit add = root.stewardship }
+	change_variable = { name = mana_limit add = root.intrigue }
+	change_variable = { name = mana_limit add = root.prowess }
+	change_variable = { name = mana_limit multiply = root.learning }
+}
+
+mana_loadname = {
+		if = {
+			limit = {
+				var:magic_type = { compare_value = 1 }
+			}
+			desc = "Blue"
+		}
+		if = {
+			limit = {
+				var:magic_type = { compare_value = 1 }
+			}
+			desc = "Gold"
+		}
+		if = {
+			limit = {
+				var:magic_type = { compare_value = 1 }
+			}
+			desc = "Red"
+		}
+		if = {
+			limit = {
+				var:magic_type = { compare_value = 1 }
+			}
+			desc = "Green"
+		}
+		if = {
+			limit = {
+				var:magic_type = { compare_value = 1 }
+			}
+			desc = "Purple"
+		}
+}
+
+populateme={
+effect = {
+	if = {
+		limit =  {
+			has_character_flag = high_elf
+		}
+		set_culture = high_elf
+	}
+}
+}

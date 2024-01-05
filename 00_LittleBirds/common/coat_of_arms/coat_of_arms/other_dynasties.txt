@@ -1,0 +1,32 @@
+﻿dynn_Most_Devout = { #AGOT TODO - ACTUAL COA
+	pattern = "pattern_solid.dds"
+	color1 = "agot_white_dark"
+	colored_emblem = {
+		texture = "cl_high_septon.dds"
+		color1 = "agot_red_dark"
+	}
+}
+
+dynn_ruins = {
+	pattern = "pattern_solid.dds"
+	color1 = "agot_grey"
+}
+
+dynn_varys = {
+	pattern = "pattern_solid.dds"
+	color1 = "black"
+	colored_emblem = {
+		texture = "ce_varys_spider.dds"
+		color1 = "agot_grey"
+		color2 = "agot_red_dark"
+	}
+}
+c_blackstripe = {
+	pattern = "pattern_solid.dds"
+	color1 = "black"
+	colored_emblem = {
+		texture = "ce_varys_spider.dds"
+		color1 = "agot_grey"
+		color2 = "agot_red_dark"
+	}
+}

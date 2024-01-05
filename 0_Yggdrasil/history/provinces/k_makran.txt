@@ -1,0 +1,99 @@
+# 4270 - Tiz
+4270 = {	# 4270 - Tiz
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # baloch
+	religion = faye  # zurvanism
+	
+	# History
+}
+
+# 4274 - Riqan
+4274 = {	# 4274 - Riqan
+		
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # baloch
+	religion = faye  # mazdakism
+	
+	# History
+	830.1.1 = {
+		religion = faye  # azariqa
+	}
+	880.1.1 = {
+		religion = faye  # ashari
+	}
+}
+
+# 4285 - Kiz
+4285 = {	# 1139 - Makran
+		
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # baloch
+	religion = faye  # zurvanism
+	
+	# History
+	880.1.1 = {
+		religion = faye  # ashari
+	}
+}
+
+# 4290 - Qarnin
+4290 = {	# 1275 - Zaranj
+	
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # afghan
+	religion = faye  # zun_pagan
+	
+	# History
+	860.1.1 = { religion = faye  # ashari }
+
+}
+# 4299 - Farah
+4299 = {	# 4299 - Farah
+	
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # afghan
+	religion = faye  # zun_pagan
+	
+	# History
+	830.1.1 = {
+		religion = faye  # azariqa
+	}
+	880.1.1 = {
+		religion = faye  # ashari
+	}
+
+}
+
+# 4473 - RODKHAN
+4473 = {	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # baloch
+	religion = faye  # zurvanism
+	
+	# History
+	religion = faye  # zun_pagan
+	
+	# History
+	830.1.1 = {
+		religion = faye  # azariqa
+	}
+	880.1.1 = {
+		religion = faye  # ashari
+	}
+}
+

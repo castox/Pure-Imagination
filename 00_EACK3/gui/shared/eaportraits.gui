@@ -1,0 +1,585 @@
+######################################################
+################## PORTRAIT TYPES ####################
+######################################################
+
+types PortraitTypes_Diplo
+{
+
+    ####################################
+    ######### MAIN PORTRAITS ###########
+    ####################################
+
+
+    type portrait_diplo = margin_widget {
+        size = { 240 300 }
+        margin = { 3 3 }
+        tooltip_enabled = no
+
+        portrait_button = {
+            size = { 620 832 }
+            parentanchor = bottom|hcenter
+            using = portrait_base
+            allow_outside = yes
+            tooltip_enabled = no
+            alwaystransparent = yes
+            portrait_texture = "[Character.GetAnimatedPortrait('environment_cw_india_throneroom_main', 'diplo_overview_1', 'throne_room_conversation_1', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            mask = "gfx/2.dds"
+            effectname = "NoHighlight"
+
+            block "portrait_button" {}
+
+            block "portrait_transformation"
+            {
+                portrait_scale = { 1 1 }
+            }
+
+
+        }
+    }
+    type portrait_diplo_2 = margin_widget {
+        size = { 240 300 }
+        margin = { 3 3 }
+        tooltip_enabled = no
+
+        portrait_button = {
+            size = { 560 772 }
+            parentanchor = bottom|hcenter
+            using = portrait_base
+            allow_outside = yes
+            tooltip_enabled = no
+            alwaystransparent = yes
+            portrait_texture = "[Character.GetAnimatedPortrait('environment_cw_india_throneroom_main', 'diplo_overview_2', 'throne_room_conversation_2', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            mask = "gfx/2.dds"
+            effectname = "NoHighlight"
+
+            block "portrait_button" {}
+
+            block "portrait_transformation"
+            {
+                portrait_scale = { 1 1 }
+            }
+
+
+        }
+    }
+
+}
+
+template portrait_base_tavern
+{
+    pop_out = yes
+    block "grayscale" {
+        grayscale = "[Not(Character.IsAlive)]"
+    }
+
+    gfxtype = portraitbuttongfx
+    shaderfile = "gfx/FX/jomini/gui_portrait.shader"
+
+    intersectionmask = no
+
+    background_texture = "gfx/portraits/portrait_transparent.dds"
+    texture = "gfx/portraits/portrait_transparent.dds"
+
+    clicksound = "event:/SFX/UI/Character/sfx_ui_character_portrait_select"
+    oversound = "event:/SFX/UI/Character/sfx_ui_character_portrait_pointer_over"
+
+    block "portrait_button_template_onmouseenter"
+    {
+        state = {
+            name = _mouse_enter
+            on_start = "[Character.OnMouseEnter]"
+        }
+    }
+    block "portrait_button_template_onmouseleave"
+    {
+        state = {
+            name = _mouse_leave
+            on_start = "[Character.OnMouseLeave]"
+        }
+    }
+
+    block "portrait_button_template_onclick"
+    {
+        onclick = "[DefaultOnCharacterClick(Character.GetID)]"
+    }
+
+    block "portrait_button_template_onrightclick"
+    {
+        onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
+        button_ignore = none
+    }
+
+    filter_mouse = right
+
+    block "portrait_button_template_tooltip"
+    {
+        tooltip_enabled = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+
+        tooltipwidget = {
+            cooltip_type = {
+                blockoverride "interaction_info" {
+                    text = "CHARACTER_TOOLTIP_INSTRUCTION"
+                }
+            }
+        }
+    }
+
+    using = tooltip_es
+    tooltip_offset = { 0 0 }
+    tooltip_verticalbehavior = slide
+    tooltip_horizontalbehavior = mirror
+
+    block "portrait_transformation"
+    {
+        portrait_scale = { 1.0 1.0 }
+        portrait_offset = { 0.0 0.0 }
+    }
+}
+
+
+types PortraitTypes_EACARD
+{
+
+    ####################################
+    ######### MAIN PORTRAITS ###########
+    ####################################
+
+
+    type portrait_card = margin_widget {
+        size = { 290 400 }
+		icon = {
+			visible = "[And(Not(GetScriptedGui('is_ultra_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )), Character.IsValid)]"
+			parentanchor = center
+			texture = "gfx/loot/cbackground.png"
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_ultra_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			parentanchor = center
+			texture = "gfx/loot/ultraback.png"
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_bronze_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			alpha = 0.2
+			parentanchor = center
+			texture = "gfx/loot/bfade.png"
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_silver_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			alpha = 0.2
+			parentanchor = center
+			texture = "gfx/loot/sfade.png"
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_gold_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			alpha = 0.2
+			parentanchor = center
+			texture = "gfx/loot/gfade.png"
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_ultra_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			alpha = 0.2
+			parentanchor = center
+			texture = "gfx/loot/ufade.png"
+		}
+		portrait_card_character = {
+			visible = "[And(Not(GetScriptedGui('is_smaller').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )), Character.IsValid)]"
+			parentanchor = center
+		}
+		portrait_card_character_female = {
+			parentanchor = center 
+			visible = "[And(GetScriptedGui('is_smaller').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_bronze_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			texture = "gfx/loot/pfrg.png"
+			size = { 290 400 }
+			parentanchor = center
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_silver_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			texture = "gfx/loot/pfrs.png"
+			size = { 290 400 }
+			parentanchor = center
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_gold_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			texture = "gfx/loot/pfrg.png"
+			size = { 290 400 }
+			parentanchor = center
+		}
+		icon = {
+			visible = "[And(GetScriptedGui('is_ultra_card').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ), Character.IsValid)]"
+			texture = "gfx/loot/pfru.png"
+			size = { 290 400 }
+			parentanchor = center
+		}
+		text_single = {
+			parentanchor = bottom|hcenter
+			position = { -78 -56 }
+			raw_text = "[Character.GetSkill( 'diplomacy' )]"
+			default_format = "#high"
+			using = Font_Size_Medium
+			align = nobaseline
+		}
+		text_single = {
+			parentanchor = bottom|hcenter
+			position = { -40 -56 }
+			raw_text = "[Character.GetSkill( 'martial' )]"
+			default_format = "#high"
+			using = Font_Size_Medium
+			align = nobaseline
+		}
+		text_single = {
+			parentanchor = bottom|hcenter
+			position = { 1 -56 }
+			raw_text = "[Character.GetSkill( 'stewardship' )]"
+			default_format = "#high"
+			using = Font_Size_Medium
+			align = nobaseline
+		}
+		text_single = {
+			parentanchor = bottom|hcenter
+			position = { 42 -56 }
+			raw_text = "[Character.GetSkill( 'intrigue' )]"
+			default_format = "#high"
+			using = Font_Size_Medium
+			align = nobaseline
+		}
+		text_single = {
+			parentanchor = bottom|hcenter
+			position = { 82 -56 }
+			raw_text = "[Character.GetSkill( 'learning' )]"
+			default_format = "#high"
+			using = Font_Size_Medium
+			align = nobaseline
+		}
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { 3 -13 }
+			
+			size = { 38 38 }
+			texture = "gfx/loot/prow.dds"
+			#alpha = 0.6
+			
+			text_single = {
+				parentanchor = center
+				position = { 0 1 }
+				raw_text = "[Character.GetSkill( 'prowess' )]"
+				default_format = "#high"
+				#fontsize = 22
+				using = Font_Size_Medium
+				align = nobaseline
+				#blend_mode = colordodge
+			}
+
+		}
+
+
+		text_single = {
+			parentanchor = bottom|hcenter
+			position = { 0 -94 }
+			size = { 258 40 }
+			raw_text = " [Character.GetFirstNameNoTooltip]"
+			default_format = "#light_background"
+			using = Font_Type_Flavor
+			fontsize = 22
+			align = nobaseline
+		}
+		coa_house_tiny = {
+			datacontext = "[Character.GetHouse]"
+			parentanchor = center
+			position = { -85 -58 }
+			using = tooltip_ne
+			scale = 0.72
+
+			blockoverride "coa_button"
+			{
+				alwaystransparent = yes
+			}
+
+			blockoverride "coa_tooltip"
+			{}
+			
+		}
+		highlight_icon = {
+			datacontext = "[Character.GetFaith]"
+			texture = "[Faith.GetIcon]"
+			size = { 40 40 }
+			position = { -20 55 }
+			parentanchor = top|right
+			scale = 1.3
+			alpha = 0.7
+			glow = {
+				color = { 0 0 0 0.8 }
+				glow_radius = 3
+				using = Glow_Standard
+			}
+		}
+		highlight_icon = {
+			visible = no
+			parentanchor = center
+			position = { -85 -15 }
+			size = { 40 40 }
+			texture = "gfx/interface/icons/icon_culture.dds"
+			scale = 0.82
+			glow = {
+				color = { 0 0 0 0.8 }
+				glow_radius = 3
+				using = Glow_Standard
+			}
+		}
+		text_single = {
+			parentanchor = left|top
+			position = { 41 80 }
+			raw_text = "[GuiScope.SetRoot( Character.MakeScope ).ScriptValue('card_value')|0]"
+			default_format = "#light_background"
+			using = Font_Type_Flavor
+			fontsize = 33
+			align = nobaseline
+		}
+		#[GuiScope.SetRoot( Character.MakeScope ).ScriptValue('card_value')|0]
+    }
+
+	type portrait_card_character = margin_widget {
+        size = { 290 400 }
+        margin = { 3 3 }
+        tooltip_enabled = no
+		#
+        portrait_button = {
+            size = { 290 400 }
+			position = { 0 0 }
+            parentanchor = bottom|hcenter
+            using = portrait_base
+            allow_outside = yes
+            tooltip_enabled = no
+            alwaystransparent = yes
+            portrait_texture = "[Character.GetPortrait('environment_cw_india_throneroom_main', 'card_view_1', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            mask = "gfx/loot/bmsk.png"
+            effectname = "NoHighlight"
+
+            block "portrait_button" {}
+
+            block "portrait_transformation"
+            {
+                portrait_scale = { 1 1 }
+            }
+
+
+        }
+    }
+	type portrait_card_character_female = margin_widget {
+        size = { 290 400 }
+        margin = { 3 3 }
+        tooltip_enabled = no
+		#
+        portrait_button = {
+            size = { 290 400 }
+			position = { 0 0 }
+            parentanchor = bottom|hcenter
+            using = portrait_base
+            allow_outside = yes
+            tooltip_enabled = no
+            alwaystransparent = yes
+            portrait_texture = "[Character.GetPortrait('environment_cw_india_throneroom_main', 'card_view_2', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            mask = "gfx/loot/bmsk.png"
+            effectname = "NoHighlight"
+
+            block "portrait_button" {}
+
+            block "portrait_transformation"
+            {
+                portrait_scale = { 1 1 }
+            }
+
+
+        }
+    }
+
+	type bvid = margin_widget {
+        size = { 100% 100% }
+
+        tooltip_enabled = no
+		#
+
+		video_icon = {
+			scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+			video = "gfx/cardwalk.bk2"
+			size = { 1920 1080 }
+			loop = no
+			restart_on_show = yes
+			
+		}
+    }
+
+	type espark = widget {
+        using = Animation_ShowHide_Standard
+		
+        widget = {
+            size = { 100% 100% }
+
+            widget = {
+                size = { 100% 100% }
+                scissor = yes
+
+                button = {
+                    parentanchor = bottom|hcenter
+                    size = { 290 400 }
+					visible = yes
+					position = { 0 0}
+                    framesize = { 290 400 }
+                    texture = "gfx/effects/sparks.dds"
+                    alpha = 0.12
+                    alwaystransparent = yes
+
+                    gfxtype = animatedbuttongfx
+                    loopinterval = 0.50
+
+                    modify_texture = {
+                        texture = "gfx/effects/mask_fade_horizontal.dds"
+                        blend_mode = alphamultiply
+                    }
+					modify_texture = {
+						texture = "gfx/loot/bmsk.png"
+						blend_mode = alphamultiply
+					}
+
+                }
+
+                icon = {
+					visible = yes
+                    parentanchor = bottom|hcenter
+                    size = { 290 400 }
+					#position = { 0 20}
+                    texture = "gfx/interface/colors/white.dds"
+                    shaderfile = "gfx/FX/pdxgui_repeat_texture.shader"
+                    alpha = 0.4
+
+                    #   block "glow_color"
+                    #  {
+                    using = Color_Bright_Yellow
+
+                    #   }
+
+                    modify_texture = {
+                        texture = "gfx/effects/mask_fade_horizontal.dds"
+                        blend_mode = alphamultiply
+                    }
+
+                    modify_texture = {
+                        name = "clouds"
+                        texture = "gfx/effects/mask_clouds.dds"
+                        blend_mode = alphamultiply
+                        spriteType = corneredtiled
+                        texture_density = 2
+                    }
+					modify_texture = {
+						texture = "gfx/loot/bmsk.png"
+						blend_mode = alphamultiply
+					}
+                    state = {
+                        name = a
+                        next = b
+                        trigger_on_create = yes
+
+                        modify_texture = {
+                            name = "clouds"
+                            translate_uv = { 0 -1 }
+                        }
+                    }
+
+                    state = {
+                        name = b
+                        next = a
+                        duration = 2
+
+                        modify_texture = {
+                            name = "clouds"
+                            translate_uv = { 0 1 }
+                        }
+                    }
+                }
+            }
+
+            icon = {
+				visible = yes
+                parentanchor = bottom|hcenter
+                #position = { 0 -20 }
+                size = { 290 400 }
+                texture = "gfx/effects/progressbar_center_glow.dds"
+
+                # block "glow_color"
+                # {
+                #     using = Color_Bright_Yellow
+
+                # }
+				modify_texture = {
+					texture = "gfx/loot/bmsk.png"
+					blend_mode = alphamultiply
+				}
+                state = {
+                    name = a
+                    next = b
+                    trigger_on_create = yes
+                    duration = 0.1
+                    alpha = 1
+                }
+
+                state = {
+                    name = b
+                    next = a
+                    duration = 0.2
+                    alpha = 0.9
+                }
+            }
+        }
+    }
+
+	type card_1 = widget {
+        size = { 740 940 }
+        allow_outside = yes
+  
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 740 940 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_cw_west_spouse', 'card_1_cam', 'cardwalk_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+
+    }
+    type card_2 = widget {
+        size = { 740 940 }
+        allow_outside = yes
+  
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 740 940 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_cw_west_spouse', 'card_2_cam', 'cardwalk_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+
+    }
+}

@@ -1,0 +1,25 @@
+
+pdxmesh = {
+	name = "bow_mesh"
+	file = "bow.mesh"
+	animation = { id = "bow_0" type = "bow.anim" }
+
+	meshsettings = {
+		name = "bow.001"
+		index = 0
+		texture_diffuse = "bow_diffuse.dds"
+		texture_diffuse = "bow_normal.dds"
+		texture_specular = "nospec.dds"
+		shader = "portrait_attachment_pattern"
+		#shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+}
+entity = {
+	name = "bow_entity"
+	pdxmesh = "bow_mesh"
+
+	default_state = "idle"
+	state = {	name = "idle"	animation = "bow_0" }
+}

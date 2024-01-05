@@ -1,0 +1,6 @@
+﻿#### MOOD TRACKS
+mx_fishing = {
+	music = "file:/music/fishing.mp3"
+	mood = no
+	can_be_interrupted = no
+}

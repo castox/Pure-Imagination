@@ -1,0 +1,400 @@
+# 6568 - DOSSO
+6568 = {	# 6568 - DOSSO
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # mossi
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+	1250.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6569 - GAYA2
+6569 = {	# 6569 - GAYA2 / Gaya
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # mossi
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+	1250.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6570 - ROZI
+6570 = {	# 6570 - ROZI
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # sorko
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+	1250.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6571 - TILLABERI
+6571 = {	# 6671 - TILLABERI
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6572 - KUKIYA
+6572 = {	# 6672 - KUKIYA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6573 - TANDO_HUSUBIYA
+6573 = {	# 6673 - TANDO_HUSUBIYA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6574 - KAMGALA
+6574 = {	# 6674 - KAMGALA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6575 - ANSONGO
+6575 = {	# 6675 - ANSONGO
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6576 - GADEI
+6576 = {	# 6676 - GADEI
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6577 - GAO
+6577 = {	# 6677 - GAO
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	920.1.1 = { religion = faye  # ashari }
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6578 - SARNAH
+6578 = {	# 6678 - SARNAH
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6579 - KOIMA
+6579 = {	# 6579 - KOIMA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # sorko
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+	1150.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6580 - BOUREM
+6580 = {	# 6680 - BOUREM
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6581 - TIRAKKA
+6581 = {	# 6681 - TIRAKKA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # gaw
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	989.1.1 = {
+		#special_building_slot = sankore_university
+		special_building = sankore_university
+	}
+	1150.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+
+}
+
+# 6608 - KABARA
+6608 = {	# 6608 - KABARA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # bozo
+	religion = faye  # west_african_bidu_pagan
+	#religion = faye  # west_african_bida_pagan
+	
+	# History
+	960.1.1 = { religion = faye  # ibadi }
+	1083.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6609 - TIMBUKTU
+6609 = {	# 6609 - TIMBUKTU
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # butr
+	#culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # tagelmust
+	religion = faye  # ibadi
+	
+	# History
+	1050.1.1 = { religion = faye  # ashari } #almoravid
+	#1200.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6610 - ARAWAN
+6610 = {	# 6610 - ARAWAN
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # butr
+	#culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # tagelmust
+	religion = faye  # ibadi
+	
+	# History
+	1050.1.1 = { religion = faye  # ashari } #Almoravid
+
+}
+
+# 6612 - KILLI
+6612 = {	# 6612 - KILLI
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # butr
+	#culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # tagelmust
+	religion = faye  # ibadi
+	
+	# History
+	1050.1.1 = { religion = faye  # ashari } #almoravid
+	#1200.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6656 - ARAWAN_ROAD
+6656 = {	# 6656 - ARAWAN_ROAD
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # butr
+	#culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # tagelmust
+	religion = faye  # ibadi
+	
+	holding = none
+	
+	# History
+	1050.1.1 = { religion = faye  # ashari } #Almoravid
+	#1200.1.1 = { religion = faye  # ashari }
+
+}
+
+# 6714 - PEKINGA
+6714 = {	# 6714 - PEKINGA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # sorko
+	religion = faye  # west_african_orisha_pagan
+	
+	# History
+	#1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # mossi }
+
+}
+
+# 6715 - BIRNIN_LAFIYA
+6715 = {	# 6715 - BIRNIN_LAFIYA
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # sorko
+	religion = faye  # west_african_orisha_pagan
+	
+	# History
+	#1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # mossi }
+
+}
+
+# County of Zarma
+8994 = {	# 8994 - Zarmaganda
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # sorko
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+	1250.1.1 = { religion = faye  # ashari }
+
+}
+8993 = {	# 8993 - Zarmatarey
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # sorko
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+	1250.1.1 = { religion = faye  # ashari }
+
+}
+8995 = {	# 8995 - Sargan
+	
+	# Misc
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # sorko
+	religion = faye  # west_african_bidu_pagan
+	
+	# History
+	1250.1.1 = { culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # songhai }
+	1250.1.1 = { religion = faye  # ashari }
+
+}

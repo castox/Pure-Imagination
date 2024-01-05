@@ -1,0 +1,18 @@
+﻿l_spanish:
+
+king_nothing_modifier: "Rey de Nada"
+king_nothing_modifier_desc: "Eres un rey, pero ¿cuánto te costó? Todo.."
+
+rem_king_nothing_decision: "Elimina el apodo de Rey de Nada"
+rem_king_nothing_decision_tooltip: "$kn_i_must_admit$"
+rem_king_nothing_decision_confirm: "¡Debe hacerse!"
+
+king_nothing_decision: "¡Por qué no, debería ser rey!"
+king_nothing_decision_tooltip: "$kn_gain_nothing$"
+king_nothing_decision_confirm: "Ellos doblarán la rodilla!"
+
+kn_gain_nothing: "Ganas un Reino pero pierdes el respeto de muchos, haciendo que muchos te odien y te declaren un falso rey. Ahí va Rey Nada!!"
+kn_i_must_admit: "Debo admitir que estaba equivocado!"
+kn_requirements: "Poseer al menos 1 o más [duchies|E]"
+kn_hold_another: "Mantén 2 reinos"
+kn_rem_nothing: "A costa de mucho orgullo admites que te equivocaste y pierdes el apodo de Rey de Nada."

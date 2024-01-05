@@ -1,0 +1,21 @@
+﻿#### MOOD TRACKS
+mx_j_open = {
+	music = "file:/music/c_open.wav"
+	mood = no
+	can_be_interrupted = no
+}
+mx_j_bad = {
+	music = "file:/music/c_bad.wav"
+	mood = no
+	can_be_interrupted = no
+}
+mx_j_good = {
+	music = "file:/music/c_good.wav"
+	mood = no
+	can_be_interrupted = no
+}
+mx_j_crowd = {
+	music = "file:/music/c_crowd.wav"
+	mood = no
+	can_be_interrupted = no
+}

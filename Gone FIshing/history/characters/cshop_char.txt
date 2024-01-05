@@ -1,0 +1,36 @@
+﻿
+t_dummy = {
+	name = "Target"
+	
+	dna = castox
+	dynasty = castox
+	
+	religion = catholic
+	culture = roman
+	
+	immortal = yes
+
+	martial = 40
+	prowess = 0
+	diplomacy = 0
+	intrigue = 0
+	stewardship = 0
+	learning = 0
+	
+
+
+	disallow_random_traits = yes
+
+
+	1.1.1= {
+		birth = "1.1.1"	
+		effect = {
+			set_immortal_age = 24
+			add_character_flag = has_scripted_appearance
+			add_character_flag = is_target_dummy
+			set_global_variable = { name = t_dummy value = character:t_dummy }
+			new_dummy = yes
+		}
+	}
+
+}

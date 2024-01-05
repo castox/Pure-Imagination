@@ -1,0 +1,27 @@
+# 3275 - JAFFNA
+3275 = {	# 1194 - Nagadipa
+	
+	# County Title
+	#title = c_nagadipa
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # tamil
+	religion = catholic  # theravada
+	
+	# History
+}
+
+# 3276 - KOTTE
+3276 = {	# 1215 - Dakhina Desa
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # sinhala
+	religion = catholic  # theravada
+	
+	# History
+}
+

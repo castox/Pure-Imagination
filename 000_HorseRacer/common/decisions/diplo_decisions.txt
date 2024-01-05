@@ -1,0 +1,102 @@
+﻿
+diplo_cancel_deal = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
+	desc = "Cancel hung deal"
+	selection_tooltip = "Cancel hung deal"
+
+	ai_check_interval = 0
+
+	is_shown = {
+		OR = {
+			AND = {
+				exists = global_var:diplo_1
+				global_var:diplo_1 = { is_alive = no }
+			}
+			AND = {
+				exists = global_var:diplo_2
+				global_var:diplo_2 = { is_alive = no }
+			}
+		}
+		
+
+	}
+
+	effect = {
+		end_diplo_deal = yes
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+
+diplo_easy_deal = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
+	desc = "Diplomatic Envoy - Turn on easy mode! Half Cost. Can only be turned on once a game and you cant turn off"
+	selection_tooltip = "Set Easy Mode"
+
+	ai_check_interval = 0
+
+	is_shown = {
+
+		NOT = {
+			exists = global_var:diplo_emode
+			exists = global_var:nodiplo_emode
+		}
+
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = diplo_bs11
+		}
+		set_global_variable = { name =  diplo_emode value = 1 }
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+diplo_no_easy_deal = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
+	desc = "Diplomatic Envoy - Turn off opitional easy mode decision for rest of game."
+	selection_tooltip = "No Easy Mode Decision"
+
+	ai_check_interval = 0
+
+	is_shown = {
+
+		NOT = {
+			exists = global_var:diplo_emode
+			exists = global_var:nodiplo_emode
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = diplo_bs10
+		}
+		set_global_variable = { name =  nodiplo_emode value = 1 }
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

@@ -1,0 +1,20 @@
+﻿# These assets are then used in the genes (game/common/genes/..) at the bottom of the file. 
+
+horse = {
+	entity = {	required_tags = ""        node = "bn_f_skirt2"		entity = "horse_entity" }
+}
+horsel = {
+	entity = {	required_tags = ""        node = "bn_f_skirt2"		entity = "horsel_entity" }
+}
+horser = {
+	entity = {	required_tags = ""        node = "bn_f_skirt2"		entity = "horser_entity" }
+}
+horsepl = {
+	entity = {	required_tags = ""        node = "bn_f_skirt2"		entity = "horsepl_entity" }
+}
+horsepr = {
+	entity = {	required_tags = ""        node = "bn_f_skirt2"		entity = "horsepr_entity" }
+}
+lance = {
+	entity = {	required_tags = ""        node = "bn_r_prop"		entity = "lance_entity" }
+}

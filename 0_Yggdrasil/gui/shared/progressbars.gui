@@ -1,0 +1,182 @@
+types ProgressBars
+{
+    type progressbar_standard = progressbar {
+        min = 0
+        max = 100
+        value = 35
+        size = { 50 20 }
+
+        progresstexture = "gfx/interface/progressbars/progress_standard.dds"
+        noprogresstexture = "gfx/interface/progressbars/progress_red.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 6 6 }
+
+        icon = {
+            name = "overlay"
+            texture = "gfx/interface/progressbars/progress_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 2 2 }
+            size = { 100% 100% }
+        }
+    }
+
+    type progressbar_standard_transparent = progressbar {
+        min = 0
+        max = 100
+        value = 35
+        size = { 50 20}
+
+        progresstexture = "gfx/interface/progressbars/progress_standard_transparent.dds"
+        noprogresstexture = "gfx/interface/progressbars/progress_red_transparent.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 6 6 }
+
+        icon = {
+            name = "overlay"
+            texture = "gfx/interface/progressbars/progress_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 2 2 }
+            size = { 100% 100% }
+        }
+	}
+	
+    Type progressbar_mp = icon
+    {
+        shaderfile = "gfx/FX/repeat_texture.shader"
+        alpha = 0.8
+		animation_progessbar_center_glowx = {
+			#visible = "[Not(SiegeWindow.GetSiege.IsBlocked)]"
+            flipdirection = yes
+			size = { 100% 100% }
+		}
+        block "bar_color"
+        {
+			texture = "gfx/interface/tavern/p_progress.dds"
+        }
+    }
+    Type progressbar_ball = icon
+    {
+        shaderfile = "gfx/FX/repeat_texture.shader"
+        alpha = 0.8
+		animation_progessbar_center_glowy = {
+			#visible = "[Not(SiegeWindow.GetSiege.IsBlocked)]"
+			size = { 100% 100% }
+		}
+        block "bar_color"
+        {
+			#texture = "gfx/interface/hud/mp.dds"
+        }
+	}    
+    Type progressbar_hp = icon
+    {
+        shaderfile = "gfx/FX/repeat_texture.shader"
+        alpha = 0.8
+
+        block "bar_color"
+        {
+            texture = "gfx/interface/hud/hp.dds"
+        }
+	}	
+    type progressbar_red = progressbar {
+        min = 0
+        max = 100
+        value = 35
+        size = { 50 20}
+
+        progresstexture = "gfx/interface/progressbars/progress_red.dds"
+        noprogresstexture = "gfx/interface/progressbars/progress_black.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 6 6 }
+
+        icon = {
+            name = "overlay"
+            texture = "gfx/interface/progressbars/progress_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 2 2 }
+            size = { 100% 100% }
+        }
+    }
+
+    type progressbar_green = progressbar {
+        min = 0
+        max = 100
+        value = 35
+        size = { 50 20 }
+
+        progresstexture = "gfx/interface/progressbars/progress_green.dds"
+        noprogresstexture = "gfx/interface/progressbars/progress_black.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 6 6 }
+
+        icon = {
+            name = "overlay"
+            texture = "gfx/interface/progressbars/progress_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 2 2 }
+            size = { 100% 100% }
+        }
+    }
+    type progressbar_battle = progressbar {
+        min = 0
+        max = 100
+        value = 35
+        size = { 50 20 }
+
+        progresstexture = "gfx/interface/progressbars/war_progress_blue.dds"
+        noprogresstexture = "gfx/interface/progressbars/war_progress_red.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 6 6 }
+
+        icon = {
+            name = "overlay"
+            texture = "gfx/interface/progressbars/progress_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 2 2 }
+            size = { 100% 100% }
+        }
+    }
+    type progressbar_frozen = progressbar {
+        min = 0
+        max = 100
+        value = 35
+        size = { 50 20}
+
+        progresstexture = "gfx/interface/progressbars/progress_frozen.dds"
+        noprogresstexture = "gfx/interface/progressbars/progress_black.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 6 6 }
+
+        icon = {
+            name = "overlay"
+            texture = "gfx/interface/progressbars/progress_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 2 2 }
+            size = { 100% 100% }
+        }
+    }
+
+    type progressbar_frozen_transparent = progressbar {
+        min = 0
+        max = 100
+        value = 35
+        size = { 50 20}
+
+        progresstexture = "gfx/interface/progressbars/progress_frozen.dds"
+        noprogresstexture = "gfx/interface/progressbars/progress_black.dds"
+        spriteType = Corneredtiled
+        spriteborder = { 6 6 }
+
+        icon = {
+            name = "overlay"
+            texture = "gfx/interface/progressbars/progress_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 2 2 }
+            size = { 100% 100% }
+        }
+    }
+
+    type progress_threshold = icon {
+        alwaystransparent = yes
+        texture = "gfx/interface/window_factions/faction_progress_threshold.dds"
+    }
+}

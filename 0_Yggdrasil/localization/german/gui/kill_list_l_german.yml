@@ -1,0 +1,5 @@
+﻿l_german:
+ KILL_LIST:1 "Opfer von [KillListWindow.GetCharacter.GetUIName|U]"
+ OPEN_KILL_LIST_TOOLTIP:4 "#T Tötungen anzeigen\n#!Alle Charaktere anzeigen, die [Character.GetShortUINameNoTooltip] getötet [Character.LocalPlayerString( 'habt, wenn Ihr sie noch einmal Revue passieren lassen wollt …', 'hat, zumindest soweit Ihr wisst …' )]"
+ DEATH_DATE:0 "Todesdatum"
+ DEATH_REASON:0 "Todesursache"

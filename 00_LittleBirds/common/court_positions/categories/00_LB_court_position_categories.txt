@@ -1,0 +1,5 @@
+﻿
+court_position_category_little_bird = {
+	name = COURT_POSITION_CATEGORY_LB_NAME
+}
+

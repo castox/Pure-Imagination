@@ -1,0 +1,71 @@
+﻿l_spanish:
+
+COUNTY_DEVELOPMENT_TOOLTIP_DIPLO: "#T Desarrollo: [Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevel]/100#!\n[Scope.GetLandedTitle.GetCountyData.GetDevelopmentIgnoredDesc][Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentIncreaseDesc]"
+COUNTY_CONTROL_TOOLTIP_DIPLO:0 "#T Control del Condado: [Scope.GetLandedTitle.GetCountyData.GetControlLevelOutOfMax]#!\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlIncreaseDesc]"
+
+envoy_court_position:0 "Enviado"
+envoy_court_position_desc:0 "El propósito de $envoy_court_position$ es ir a misiones diplomáticas y permitir acciones diplomáticas."
+diplo_non_aggression_20:0 "Pacto de No Agresión 20 Años"
+diplo_non_aggression_10:0 "Pacto de No Agresión 10 Años"
+diplo_non_aggression_5:0 "Pacto de No Agresión 5 Años"
+I_CANNOT_DECLARE_WAR_NONA:0 "Tienes un Pacto de No Agresión activo"
+has_non_aggression_pact:0 "Tienes un Pacto de No Agresión activo"
+diplo_start:0 "Enviar Enviado"
+
+ok_offer_ok:0 "De acuerdo"
+deal_offer_ok:0 "¡El trato está hecho!"
+tos_deal:0 "Términos del Trato"
+
+
+#event outcome messages
+fatal_offer:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]..."
+fatal_offer_ok:0 "Tu Enviado ha muerto..."
+fatal_offer_message:0 "Su enviado parecía haber perdido la cabeza, puede enviar a alguien para recuperarla.."
+
+diplo_block_offer:0 "No me hables a mí ni a mi hijo nunca más."
+
+diplo_insulting_offer_opening:0 "Al vil [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_insulting_offer:0 "Te insultaría, pero a juzgar por tu oferta, no eres lo suficientemente inteligente como para entenderlo..."
+diplo_strong_insulting_offer:0 "¡Hazte un favor y no envíes otro enviado si valoras su vida!"
+
+diplo_accept_offer_opening:0 "A [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_accept_offer:0 "He leído los términos del trato y acepto, espero que el futuro traiga tratos más fructíferos."
+
+diplo_accept_good_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_good_offer:0 "Fantástica propuesta, debo aceptar."
+
+diplo_accept_great_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_great_offer:0 "Recibí su oferta y creo que es una gran oferta que nos beneficia a ambos en gran medida."
+
+diplo_decline_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_offer:0 "Debo declinar..."
+
+diplo_decline_np_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_np_offer:0 "Lo siento, pero no veo ningún sentido en su oferta."
+
+#Deal Outcomes
+diplo_result_tool1:0 "Tu enviado es asesinado."
+diplo_result_tool2:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] está tan enojado que corta todos los tratos futuros."
+diplo_result_tool3:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Es muy insultado."
+diplo_result_tool4:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Es insultado."
+diplo_result_tool5:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Acepta el trato."
+diplo_result_tool6:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Es agradecido por el trato."
+diplo_result_tool7:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] está agradecido por su amabilidad y tiene una alta opinión de usted."
+diplo_result_tool8:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] No acepta el trato."
+diplo_result_tool9:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] No ve un punto en el trato."
+
+#Interface
+diplo_enabled:0 " un trato entre [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip] y [GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] está en proceso."
+diplo_able:0 "No tiene un enviado, emplee uno en la ficha especial de los puestos de la corte."
+
+#opinion modifiers
+deal_made:0 "Acuerdos diplomáticos completados"
+good_deal_made:0 "Buenos tratos diplomáticos completados"
+great_deal_made:0 "Grandes acuerdos diplomáticos completados"
+insulting_offer:0 "Insultos diplomáticos"
+strong_insulting_offer:0 "Graves insultos diplomáticos"
+deadly_insulting_offer:0 "Fatalidad diplomática"
+block_offer:0 "Negociaciones diplomáticas bloqueadas"
+
+#p Modifier
+shady_deal_made:0 "Tratos Turbios"

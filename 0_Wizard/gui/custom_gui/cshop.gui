@@ -1,0 +1,560 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "cshop"
+
+	parentanchor = hcenter|vcenter
+	size = { 100% 100% }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	movable = yes
+	state = {
+		name = welcome_sounds
+		#
+		trigger_on_create = yes
+		duration = 1
+		#on_start = "[GetScriptedGui('open_shop').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('open_shop').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = welcome
+		next = welcome1
+		trigger_on_create = yes
+		duration = 1
+		on_start = "[GetScriptedGui('start_talk').Execute( GuiScope.SetRoot( GetGlobalVariable('castox').GetCharacter.MakeScope ).End )]"
+		#on_start = "[GetScriptedGui('open_shop').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = welcome1
+		on_start = "[GetScriptedGui('end_talk_n').Execute( GuiScope.SetRoot( GetGlobalVariable('castox').GetCharacter.MakeScope ).End )]"
+	}
+	icon = {
+		parentanchor = hcenter|vcenter
+		visible = "[GetScriptedGui('is_se').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		size = { 100% 100% }
+		texture = "gfx/interface/cshop/shop3.png"
+	}
+	icon = {
+		parentanchor = hcenter|vcenter
+		visible = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		size = { 100% 100% }
+		texture = "gfx/interface/cshop/shop_n.png"
+	}
+
+	cshop = {
+		visible = "[GetScriptedGui('is_forward').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetGlobalVariable('castox')]"
+		datacontext = "[Scope.GetCharacter]"
+		position = { -310 380 }
+		animation_talk = {}
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	#GuiScope.SetRoot( GetGlobalVariable('castox').GetCharacter.MakeScope
+	cshop_b = {
+		visible = "[GetScriptedGui('is_backward').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetGlobalVariable('castox')]"
+		datacontext = "[Scope.GetCharacter]"
+		position = { -310 380 }
+		animation_talk = {}
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	cshop_s = {
+		visible = "[GetScriptedGui('is_side').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetGlobalVariable('castox')]"
+		datacontext = "[Scope.GetCharacter]"
+		position = { -310 380 }
+		animation_talk = {}
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	cshop_s1 = {
+		visible = "[GetScriptedGui('is_side_s').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetGlobalVariable('castox')]"
+		datacontext = "[Scope.GetCharacter]"
+		position = { -310 380 }
+		animation_talk = {}
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	icon = {
+		visible = "[GetScriptedGui('is_se').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		size = { 100% 100% }
+		texture = "gfx/interface/cshop/shop3_f.png"
+	}
+	icon = {
+		visible = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		size = { 100% 100% }
+		texture = "gfx/interface/cshop/shop_n_f.png"
+	}
+	icon = {
+		visible = "[GetScriptedGui('talkbox_top').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = top|hcenter
+		position = { -420 240 }
+		texture = "gfx/interface/cshop/ebar.dds"
+		size = { 500 40 }
+		text_single = {
+			visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|vcenter
+			position = { 5 -2 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "Ahh you have your eye on my Artifact of the Day!"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('s_right').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|vcenter
+			position = { 5 -2 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "You have a good eye, this is also a steal!"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('is_side').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|vcenter
+			position = { 5 -2 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "That part of the shop is not open yet..."
+		}
+		text_single = {
+			visible = "[GetScriptedGui('is_backward').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|vcenter
+			position = { 5 -2 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "This is what I have in stock now."
+		}
+		text_single = {
+			visible = "[GetScriptedGui('is_side_s').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|vcenter
+			position = { 5 -2 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "Well, when we get them. They will be displayed."
+		}
+	}
+	#talkbox
+	icon = {
+		visible = no
+		#visible = "[GetScriptedGui('talkbox').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = top|hcenter
+		position = { -560 340 }
+		texture = "gfx/interface/cshop/ebar.dds"
+		size = { 200 200 }
+		text_single = {
+			#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|top
+			position = { 5 5 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "Effects:"
+		}
+		text_single = {
+			#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|top
+			position = { 5 55 }
+			#default_format = "#high"
+			#using = Font_Size_Big
+			#using = Font_Type_Flavor
+			Text = "WIP"
+		}
+	}
+	cshop_1 = {
+
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetPlayer]"
+		position = { -700 550 }
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+
+	text_single = {
+		parentanchor =right|vcenter
+		position = { -290 -52 }
+		default_format = "#light_background"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+		Text = "Artifacts"
+		state = {
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position_x = -350
+		}
+		
+	}
+	text_single = {
+		parentanchor =right|vcenter
+		position = { -270 -22 }
+		default_format = "#light_background"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+		Text = "Coming Soon"
+		state = {
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position_x = -330
+		}
+	}
+	text_single = {
+
+		parentanchor =right|vcenter
+		position = { -280  12 }
+		default_format = "#light_background"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+		Text = "(they said)"
+		state = {
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position_x = -340
+		}
+	}
+	#artifacts
+	icon = {
+		position = { -20 0 }
+		size = { 50 95 }
+		parentanchor = vcenter|right
+		texture = "gfx/interface/cshop/arrow.dds"
+
+		state = {
+			trigger_on_create = yes
+			name = mm1
+			next = mm2
+			duration = 1
+			position_x = -10
+		}
+		state = {
+			name = mm2
+			next = mm1
+			duration = 1
+			position_x = -20
+		}
+	}
+	window = {
+		parentanchor = top|right
+		size = { 360 800 }
+		position = { -200 200 }
+		#texture = "gfx/interface/cshop/ebar.dds"
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('is_side_s').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('is_n_side_s').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+		state = {
+			name = move_shift_all
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position = { -250 200 }
+		}
+	}
+	window = {
+		parentanchor = top|right
+		size = { 350 800 }
+		position = { 140 200 }
+		#texture = "gfx/interface/cshop/ebar.dds"
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('is_side').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('is_n_side').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+		state = {
+			name = move_shift_all
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position = { 100 200 }
+		}
+	}
+	window = {
+		parentanchor = top|hcenter
+		#position = { -55 20 }
+		size = { 500 600 }
+		#texture = "gfx/interface/cshop/ebar.dds"
+		position = { 150 100 }
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('is_backward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('is_forward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+		state = {
+			name = move_shift_all
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position = { 100 120 }
+		}
+
+		icon = {
+			parentanchor = top|hcenter
+			position = { -150 80 }
+			texture = "gfx/interface/cshop/equip/l3-3.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { -50 80 }
+			texture = "gfx/interface/cshop/equip/l3-22.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 50 80 }
+			texture = "gfx/interface/cshop/equip/l4-10.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 150 80 }
+			texture = "gfx/interface/cshop/equip/l4-18.png"
+			size = { 80 80 }
+		}
+		#2
+		icon = {
+			parentanchor = top|hcenter
+			position = { -150 200 }
+			texture = "gfx/interface/cshop/equip/l2-5.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { -50 200 }
+			texture = "gfx/interface/cshop/equip/l2-22.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 50 200 }
+			texture = "gfx/interface/cshop/equip/l2-10.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 150 200 }
+			texture = "gfx/interface/cshop/equip/l2-18.png"
+			size = { 80 80 }
+		}
+		#3
+		icon = {
+			parentanchor = top|hcenter
+			position = { -150 320 }
+			texture = "gfx/interface/cshop/equip/l1-5.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { -50 320 }
+			texture = "gfx/interface/cshop/equip/l1-22.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 50 320 }
+			texture = "gfx/interface/cshop/equip/l1-10.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 150 320 }
+			texture = "gfx/interface/cshop/equip/l1-18.png"
+			size = { 80 80 }
+		}
+		#4
+		icon = {
+			parentanchor = top|hcenter
+			position = { -150 440 }
+			texture = "gfx/interface/cshop/equip/l1-1.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { -50 440 }
+			texture = "gfx/interface/cshop/equip/l1-14.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 50 440 }
+			texture = "gfx/interface/cshop/equip/l1-23.png"
+			size = { 80 80 }
+		}
+		icon = {
+			parentanchor = top|hcenter
+			position = { 150 440 }
+			texture = "gfx/interface/cshop/equip/l1-2.png"
+			size = { 80 80 }
+		}
+	}
+
+	state = {
+		name = ready2
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+
+
+
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		#onclick = "[GetScriptedGui('exit_fishing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets cshop')]"
+    }
+
+	button = {
+		size = { 100 100 }
+		position = { -130 200 }
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/equip/l5-12.png"
+
+		state = {
+			name = c_hover1
+			next = c_hover2
+			duration = 1
+			trigger_when = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position_y = 180
+		}
+		state = {
+			duration = 1
+			name = c_hover2
+			next = c_hover1
+			position_y = 195
+		}
+		state = {
+			name = c_hover3
+			position_y = 200
+			on_start = "[PdxGuiWidget.InterruptAnimation('c_hover1')]"
+			on_start = "[PdxGuiWidget.InterruptAnimation('c_hover2')]"
+			trigger_when = "[GetScriptedGui('s_leave_l').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+		state = {
+			name = move_shift
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position_x = -180
+		}
+	}
+
+	button = {
+		size = { 200 200 }
+		position = { -130 200 }
+		parentanchor = hcenter|vcenter
+		#texture = "gfx/interface/icons/traits/legendary_fisherman.dds"
+	
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('s_left').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetScriptedGui('start_talk').Execute( GuiScope.SetRoot(GetGlobalVariable('castox').GetCharacter.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('s_leave_l').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetScriptedGui('end_talk_n').Execute( GuiScope.SetRoot( GetGlobalVariable('castox').GetCharacter.MakeScope ).End )]"
+			frame = 1
+		}
+		state = {
+			name = move_shift1
+			trigger_when = "[GetScriptedGui('is_nw').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position_x = -180
+		}
+	}
+	button = {
+		size = { 100 100 }
+		position = { -520 120 }
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/equip/l2-15.png"
+
+		state = {
+			name = c_hover4
+			next = c_hover5
+			duration = 1
+			trigger_when = "[GetScriptedGui('s_right').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position_y = 80
+		}
+		state = {
+			duration = 1
+			name = c_hover5
+			next = c_hover4
+			position_y = 100
+		}
+		state = {
+			name = c_hover6
+			
+			on_start = "[PdxGuiWidget.InterruptAnimation('c_hover4')]"
+			on_start = "[PdxGuiWidget.InterruptAnimation('c_hover5')]"
+			position_y = 120
+			trigger_when = "[GetScriptedGui('s_leave_r').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+	}
+	button = {
+		size = { 200 200 }
+		position = { -520 120 }
+		parentanchor = hcenter|vcenter
+		#texture = "gfx/interface/icons/traits/legendary_fisherman.dds"
+	
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('s_right').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetScriptedGui('start_talk').Execute( GuiScope.SetRoot( GetGlobalVariable('castox').GetCharacter.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('s_leave_r').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetScriptedGui('end_talk_n').Execute( GuiScope.SetRoot( GetGlobalVariable('castox').GetCharacter.MakeScope ).End )]"
+			frame = 1
+		}
+	}
+	#hashishiyah
+}

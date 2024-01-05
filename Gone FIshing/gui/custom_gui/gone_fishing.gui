@@ -1,0 +1,618 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "fishing"
+
+	scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	movable = no
+
+	fishing = {
+		parentanchor = hcenter|vcenter
+		visible = "[GetScriptedGui('is_def_fish').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	lake_fishing = {
+		parentanchor = hcenter|vcenter
+		visible = "[GetScriptedGui('is_lake').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	rural_fishing = {
+		parentanchor = hcenter|vcenter
+		visible = "[GetScriptedGui('is_rural').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	island_fishing = {
+		parentanchor = hcenter|vcenter
+		visible = "[GetScriptedGui('is_islandx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	norse_fishing = {
+		visible = "[GetScriptedGui('is_norse_fish').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+	}
+
+	icon = {
+		parentanchor = hcenter|bottom
+		position = { 80 -130 }
+		size = { 250 250 }
+		texture = "gfx/interface/tavern_gfx/bucket2.dds"
+		visible = "[GetScriptedGui('is_not_n').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 60 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	portrait_fish = {
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetPlayer]"
+		position = { -70 260 }
+		visible = "[GetScriptedGui('is_def_fish').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+	}
+	portrait_fish_norse = {
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetPlayer]"
+		position = { 70 390 }
+		visible = "[GetScriptedGui('is_norse_fish').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+
+	}
+	portrait_fish_lake = {
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetPlayer]"
+		position = { -260 290 }
+		visible = "[GetScriptedGui('is_not_nn').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		icon = {
+			
+			parentanchor = bottom|hcenter
+			position = { -10 40 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+
+	}
+	
+	icon = {
+		parentanchor = hcenter|bottom
+		position = { 200 0 }
+		size = { 300 300 }
+		texture = "gfx/interface/tavern_gfx/bucket.dds"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { -10 60 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.6
+		}
+
+		state = {
+			name = norse_shift
+			trigger_when = "[GetScriptedGui('is_norse_fish').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			duration = 0.1
+			position_x = 350
+			position_y = 10
+		}
+	}
+	icon = {
+		#visible = "[GetScriptedGui('start_drinking_game').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		texture = "gfx/interface/tavern/sidebar2.dds"
+		parentanchor = vcenter|right
+		size = { 290 730 }
+		position = { -40 -40 }
+
+		text_single = {
+			parentanchor = top|hcenter
+			position = { 0 2 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "Caught Fish Listing"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 10 -2 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug bar :[GetPlayer.MakeScope.Var('div_loc').GetValue|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 150 -2 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug fish :[GetPlayer.MakeScope.Var('fish_loc').GetValue|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 10 -20 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug match :[GetPlayer.MakeScope.Var('match').GetValue|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 150 -20 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug score :[GetPlayer.MakeScope.Var('fish_score').GetValue|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 150 -42 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug fish_tier:[GetPlayer.MakeScope.Var('fish_tier').GetValue|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 10 -42 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug wait :[GetPlayer.MakeScope.Var('fish_wait').GetValue|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 150 -62 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug range 2:[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('fish_range2')|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 10 -62 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug rang 1 :[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('fish_range1')|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 10 -82 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug dev :[GetPlayer.MakeScope.Var('div_loc').GetValue|0]"
+		}
+		text_single = {
+			visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = bottom|left
+			position = { 150 -82 }
+			default_format = "#high"
+			using = Font_Type_Flavor
+			Text = "Debug fish total:[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('fish_total')|0]"
+		}
+		scrollbox = {
+				
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			parentanchor = center
+			size = { 290 660 }
+			position = { 0 10 }
+	
+			blockoverride "scrollbox_content" {
+				vbox_list_interaction_title_selection = {
+	
+					datamodel = "[GetPlayer.MakeScope.GetList('caught_fish')]"
+					
+					layoutpolicy_horizontal = expanding
+					spacing = 3
+	
+				item = {
+					
+					button_standard = {
+						name = "fish_button"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 0 60 }
+						button_ignore = none
+	
+						#tooltip = "[Scope.GetCharacter.GetTooltip]"
+						using = tooltip_es
+	
+						text_single = {
+							parentanchor = vcenter|hcenter
+							layoutpolicy_horizontal = expanding
+							text = FISH_NAME
+							position = { 0 0 }
+	
+						}
+	
+						text_single = { 
+							parentanchor = vcenter
+							text= FISH_ICON
+							default_format = "#SIZE:14"
+							position = { 10 0 }
+						}											
+	
+					}
+	
+	
+				}
+		
+				}
+			}
+		}
+	}
+
+	state = {
+		name = ready2
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+	state = {
+		name = ready
+		trigger_on_create = yes
+		on_start = "[GetScriptedGui('start_fishing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = ready3
+		next = ready3
+		trigger_on_create = yes
+		duration = 299
+		on_finish = "[GetScriptedGui('fish_music').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = cast1
+		#next = stumble2
+		trigger_when = "[GetScriptedGui('casting').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 8.5
+		on_finish = "[GetScriptedGui('casting').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	text_single = {
+		alpha = 0
+		parentanchor = top|hcenter
+		position = { 0 0 }
+		#visible = "[GetScriptedGui('caught_a_fish').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		text = FISH_NAME_DESC
+		fontsize = 100
+		background = {
+			using = Text_Label_Background
+			margin = { 1000 0 }
+		}
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+
+		text_single = { 
+			parentanchor = right|vcenter
+			text= FISH_ICON_CAUGHT
+			default_format = "#SIZE:45"
+			position = { 200 0 }
+		}
+
+		state = {
+			name = youcaughtone
+			next = youcaughtone1
+			trigger_when = "[GetScriptedGui('you_caught').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			alpha = 1
+			duration = 0.5
+
+		}
+		state = {
+			name = youcaughtonesound
+			trigger_when = "[GetScriptedGui('you_caught').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			duration = 3
+			start_sound = {
+				soundeffect = "event:/SFX/UI/Notifications/Alerts/sfx_ui_notification_alert_action_show"
+			}
+		}
+		state = {
+			name = youcaughtone1
+			next = youcaughtone2
+			alpha = 1
+			duration = 2
+		}
+		#pause
+		state = {
+			name = youcaughtone2
+			duration = 1
+			alpha = 0
+			on_finish = "[GetScriptedGui('you_caught').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+	}
+
+	widget = {
+		name = "power_Meter_Bar"
+		size = { 40 342 }
+		visible = "[GetScriptedGui('reel_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = vcenter|hcenter
+		position = { 390 -140 }
+
+		tooltip = "Power Meter"
+		using = tooltip_below
+		state = {
+			name = clnk
+			duration = 3
+			trigger_when = "[GetScriptedGui('reel_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			start_sound = {
+				soundeffect = "event:/SFX/UI/Generic/sfx_ui_generic_advance"
+			}
+
+		}
+		
+		vbox = {
+			background = {
+				texture = "gfx/interface/tavern/c_progress.dds"
+			}
+
+			#pushes the progress part to bottom
+			widget = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				layoutstretchfactor_vertical = "[GetProgressBarValueMaxOtherScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('fish_score').GetValue), '(float)200', '(int32)342' )]"
+				#layoutstretchfactor_horizontal = 110
+			}
+			#gets the progress bar part
+			widget = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				layoutstretchfactor_vertical = "[GetProgressBarValueMaxScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('fish_score').GetValue), '(float)200', '(int32)342' )]"
+				#layoutstretchfactor_horizontal = 110
+
+				progressbar_metera_1 = {
+					size = { 100% 100% }
+					using = Animation_ShowHide_Standard
+				}
+			}
+		}
+		icon = {
+			parentanchor = vcenter|hcenter
+			texture = "gfx/interface/tavern/drink_frame.dds"
+		}
+	}
+	widget = {
+
+		name = "fish_meter"
+		visible = "[GetScriptedGui('reel_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		size = { 40 342 }
+		parentanchor = vcenter|hcenter
+		position = { 320 -140 }
+
+		tooltip = "fish_meter"
+		using = tooltip_below
+					#CPU states
+				#
+		vbox = {
+			background = {
+				texture = "gfx/interface/tavern/t_progress.dds"
+			}
+
+			#pushes the progress part to bottom
+			widget = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				layoutstretchfactor_vertical = "[GetProgressBarValueMaxOtherScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('fish_val').GetValue), '(float)100', '(int32)342' )]"
+				#layoutstretchfactor_horizontal = 110
+			}
+			#gets the progress bar part
+			widget = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				layoutstretchfactor_vertical = "[GetProgressBarValueMaxScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('fish_val').GetValue), '(float)100', '(int32)342' )]"
+				#layoutstretchfactor_horizontal = 110
+
+				progressbar_metera = {
+					size = { 100% 100% }
+					using = Animation_ShowHide_Standard
+				}
+			}
+		}
+		icon = {
+			name = the_fish_target
+			parentanchor = vcenter|hcenter
+			texture = "gfx/interface/tavern/target.dds"
+			size = { 40 60 }
+
+	
+			state = {
+				name = fish_adjust_1
+				next = fish_adjust_1
+				trigger_when = "[GetScriptedGui('fish_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				duration = .5
+				position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('fish_loc').GetValue)]"
+			}
+			state = {
+				name = fish_adjust_2
+				next = fish_adjust_2
+				trigger_when = "[GetScriptedGui('fish_2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				duration = .5
+				position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('fish_loc').GetValue)]"
+			}
+			state = {
+				name = fish_adjust_3
+				next = fish_adjust_3
+				trigger_when = "[GetScriptedGui('fish_2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				duration = .2
+				position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('fish_loc').GetValue)]"
+			}
+		
+			state = {
+				name = interrupt_
+				trigger_when = "[GetScriptedGui('is_stopped').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	
+				on_start = "[PdxGuiWidget.InterruptAnimation('fish_adjust_1')]"
+				on_start = "[PdxGuiWidget.InterruptAnimation('fish_adjust_2')]"
+				on_start = "[PdxGuiWidget.InterruptAnimation('fish_adjust_3')]"
+			}
+		}
+
+		icon = {
+			parentanchor = vcenter|hcenter
+			texture = "gfx/interface/tavern/drink_frame.dds"
+		}#
+		icon = {
+			parentanchor = vcenter|hcenter
+			texture = "gfx/interface/tavern/divider.dds"
+			position = { 0 160 }
+
+			#sd
+	
+			state = {
+				name = boost_bar
+				next = boost_bar
+				trigger_when = "[GetScriptedGui('lower_bar').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				duration = 0.025
+				on_start = "[GetScriptedGui('lower_bar').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = bar_pos
+				next = bar_pos
+
+				trigger_when = "[GetScriptedGui('lower_bar').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				duration = 0.125
+				position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('div_loc').GetValue)]"
+			}
+		}
+	}
+
+	button = { 
+		visible = "[GetScriptedGui('debug_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		texture = "gfx/interface/tavern/fish_button.dds"
+		parentanchor = vcenter|hcenter
+		size = { 194 50 }
+		position = { 530 -90 }
+		enabled = yes
+		text_single = {
+			
+			parentanchor = vcenter|hcenter
+			position = { 0 -5 }
+			text = "Debug RESET"
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+		}
+
+		onclick = "[GetScriptedGui('debug_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[PdxGuiWidget.AccessChild('the_fish_target').InterruptAnimation('fish_adjust_1')]"
+		onclick = "[PdxGuiWidget.AccessChild('the_fish_target').InterruptAnimation('fish_adjust_2')]"
+		onclick = "[PdxGuiWidget.AccessChild('the_fish_target').InterruptAnimation('fish_adjust_3')]"
+	}
+
+	button = { 
+		texture = "gfx/interface/tavern/fish_button.dds"
+		parentanchor = vcenter|hcenter
+		shortcut = "pause"
+		size = { 194 50 }
+		position = { 530 -150 }
+		enabled = "[GetScriptedGui('reel_visual').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		text_single = {
+			parentanchor = vcenter|hcenter
+			position = { 0 -5 }
+			text = "REEL"
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+		}
+
+		onclick = "[GetScriptedGui('reel_bar').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	button = { 
+		texture = "gfx/interface/tavern/fish_button.dds"
+		parentanchor = vcenter|hcenter
+		size = { 194 50 }
+		position = { 530 -200 }
+		enabled = "[GetScriptedGui('casting_visual1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		text_single = {
+			parentanchor = vcenter|hcenter
+			position = { 0 -5 }
+			text = "~ CAST! ~"
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+		}
+
+		onclick = "[GetScriptedGui('casting2').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('exit_fishing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets fishing')]"
+    }
+
+	state = {
+		name = fish
+		next = fish
+		trigger_when = "[GetScriptedGui('fishy').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 0.0125
+		#position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('fish_loc').GetValue)]"
+		on_start = "[GetScriptedGui('fishy').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = cc_1
+		next = cc_1
+		trigger_when = "[GetScriptedGui('fish_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 2
+		on_start = "[GetScriptedGui('fish_movements').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = cc_2
+		next = cc_2
+		trigger_when = "[GetScriptedGui('fish_2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 2
+		on_start = "[GetScriptedGui('fish_movements').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = cc_3
+		next = cc_3
+		trigger_when = "[GetScriptedGui('fish_3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 2
+		on_start = "[GetScriptedGui('fish_movements').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = interrupt_1
+		trigger_when = "[GetScriptedGui('is_stopped').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+		on_start = "[PdxGuiWidget.InterruptAnimation('cc_1')]"
+		on_start = "[PdxGuiWidget.InterruptAnimation('cc_2')]"
+		on_start = "[PdxGuiWidget.InterruptAnimation('cc_3')]"
+		on_start = "[PdxGuiWidget.InterruptAnimation('fish')]"
+	}
+	state = {
+		name = w_1
+	
+		trigger_when = "[GetScriptedGui('wait_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 5
+		on_finish = "[GetScriptedGui('fish_tiers').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = w_2
+	
+		trigger_when = "[GetScriptedGui('wait_2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 10
+		on_start = "[GetScriptedGui('fish_tiers').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = w_3
+
+		trigger_when = "[GetScriptedGui('wait_3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 20
+		on_start = "[GetScriptedGui('fish_tiers').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+}

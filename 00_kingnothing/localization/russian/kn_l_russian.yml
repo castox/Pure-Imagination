@@ -1,0 +1,18 @@
+﻿l_russian:
+
+king_nothing_modifier: "Король Ничего"
+king_nothing_modifier_desc: "Ты король, но чего это стоило? Все.."
+
+rem_king_nothing_decision: "Удалите прозвище Король Ничто."
+rem_king_nothing_decision_tooltip: "$kn_i_must_admit$"
+rem_king_nothing_decision_confirm: "Это должно быть сделано!"
+
+king_nothing_decision: "Почему бы и нет, я должен быть королем!"
+king_nothing_decision_tooltip: "$kn_gain_nothing$"
+king_nothing_decision_confirm: "Они преклонят колени!"
+
+kn_gain_nothing: "Вы получаете Королевство, но теряете уважение многих, заставляя многих ненавидеть вас и объявлять вас ложным королем. Там идет король Ничего!!"
+kn_i_must_admit: "Я должен признать, что был не прав!"
+kn_requirements: "Владеть как минимум 1 или более [duchies|E]"
+kn_hold_another: "Держите 2 королевства"
+kn_rem_nothing: "Ценой большой гордости вы признаете, что были неправы, и теряете прозвище Король Ничто."

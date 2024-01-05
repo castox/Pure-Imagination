@@ -1,0 +1,3057 @@
+add_a_inventory = {
+	#ARES FILE
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Amethyst_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Amethyst_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Animal_Claw
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Animal_Fat
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Animal_Skin
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Animal_Tooth
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Apple
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Arachnid_Leg
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Ash
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Bear_Skin
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Bellows
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Book_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Bread
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Brick
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Bug_Shell_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Bug_Shell_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Carrot
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Cheese
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Cherries
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Citrine_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Citrine_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Claw
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Clay
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Coal
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Cooked_Fish
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Deer_Horn
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Diamond_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Diamond_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Dragon_Scales_Black
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Dragon_Scales_Blue
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Dragon_Scales_Red
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Dragon_Scales_White
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Dragon_Scales_Yellow
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Dyes
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Egg
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Emerald_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Emerald_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Feathers
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Flower_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Flower_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Flower_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Flower_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Flower_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Flower_Type_6
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Garlic
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Grape
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Heart
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Herb_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Herb_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Herb_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Human_Bone
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Human_Eye
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Human_Skull
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Human_Tooth
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Icons_Layer_Effect
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Ink
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Jasper
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Journal_Bloody
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Journal_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Journal_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Leaf
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Liqueur
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Liquor
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Liver
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Livestock
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Metal_1_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Metal_2_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Metal_3_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Metal_4_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Metal_5_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Milk
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Monster_Claw
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Monster_Eye
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Monster_Feather
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Monster_Tooth
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Mortar
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Mushroom_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Mushroom_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Mushroom_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Mushroom_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Mushroom_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Mushroom_Type_6
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Oil_Large_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Oil_Large_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Oil_Large_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Oil_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Oil_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Oil_Type_33
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Orange
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pear
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pearl
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pearl_Black
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pearl_Black_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pearl_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pen
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Polar_Bear_Skin
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pot
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Cure_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Cure_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Cure_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Empty
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Health_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Health_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Health_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Mana_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Mana_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Mana_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Misc_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Misc_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Misc_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Misc_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Misc_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Poison_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Poison_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Poison_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Regeneration_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Regeneration_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Potion_Regeneration_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Pouch
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Radish
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Recipe_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Red_Moss
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Root_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Root_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Root_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Root_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Ruby_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Ruby_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Large_Blank
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Large_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Large_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Large_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Large_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Small_Blank
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Small_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Small_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Small_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Rune_Small_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Sack
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Sack_Bloody
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Sapphire_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Sapphire_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Scroll_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Scroll_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Scroll_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Scroll_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Scroll_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Scroll_Type_6
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Scroll_Type_7
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Sea_Shell
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Silkworm_Cocoon
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Silver_Coin
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spellbook_Blank
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spellbook_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spellbook_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spellbook_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spellbook_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spellbook_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spellbook_Type_6
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Spices
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Sting
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Tongue
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Tourmaline_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Tourmaline_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Turquoise
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Water
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Wine
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Wolf_Skin
+	}
+	add_to_global_variable_list = {
+	name = ashop_resources
+	target = flag:Wooden_Hammer
+	}
+	#Animal FILE
+add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Animal_Claw
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Animal_Fat
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Animal_Skin
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Animal_Tooth
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Arachnid_Leg
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Bear_Skin
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Bug_Shell_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Bug_Shell_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Claw
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Cooked_Fish
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Deer_Horn
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Dragon_Scales_Black
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Dragon_Scales_Blue
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Dragon_Scales_Red
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Dragon_Scales_White
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Dragon_Scales_Yellow
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Egg
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Feathers
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Heart
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Human_Bone
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Human_Eye
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Human_Skull
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Human_Tooth
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Liver
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Livestock
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Milk
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Monster_Claw
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Monster_Eye
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Monster_Feather
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Monster_Tooth
+	}
+	add_to_global_variable_list = {
+	name = ashop_tools_resources
+	target = flag:Pen
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Polar_Bear_Skin
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Silkworm_Cocoon
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Sting
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Tongue
+	}
+	add_to_global_variable_list = {
+	name = ashop_animal_resources
+	target = flag:Wolf_Skin
+	}
+	#mineral FILE
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Amethyst_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Amethyst_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Ash
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Brick
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Citrine_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Citrine_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Clay
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Coal
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Diamond_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Diamond_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Dyes
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Emerald_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Emerald_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Jasper
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Metal_1_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Metal_2_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Metal_3_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Metal_4_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Metal_5_Ore
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Pearl
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Pearl_Black
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Pearl_Black_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Pearl_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Ruby_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Ruby_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Large_Blank
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Large_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Large_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Large_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Large_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Small_Blank
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Small_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Small_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Small_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Rune_Small_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Sapphire_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Sapphire_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Sea_Shell
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Silver_Coin
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Spices
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Tourmaline_Dust
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Tourmaline_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_mineral_resources
+	target = flag:Turquoise
+	}
+	#plant FILE
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Apple
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Bread
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Carrot
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Cheese
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Cherries
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Flower_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Flower_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Flower_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Flower_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Flower_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Flower_Type_6
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Garlic
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Grape
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Herb_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Herb_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Herb_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Icons_Layer_Effect
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Leaf
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Mushroom_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Mushroom_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Mushroom_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Mushroom_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Mushroom_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Mushroom_Type_6
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Orange
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Pear
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Red_Moss
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Root_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Root_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Root_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Root_Type_4
+	}
+	#potion FILE
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Liqueur
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Liquor
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Oil_Large_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Oil_Large_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Oil_Large_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Oil_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Oil_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Oil_Type_33
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Cure_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Cure_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Cure_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Empty
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Health_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Health_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Health_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Mana_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Mana_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Mana_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Misc_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Misc_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Misc_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Misc_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Misc_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Poison_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Poison_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Poison_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Regeneration_Large
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Regeneration_Medium
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Potion_Regeneration_Small
+	}
+	add_to_global_variable_list = {
+	name = ashop_plant_resources
+	target = flag:Radish
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Water
+	}
+	add_to_global_variable_list = {
+	name = ashop_potion_resources
+	target = flag:Wine
+	}
+	#special FILE
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Book_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Journal_Bloody
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Journal_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Journal_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Pouch
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Sack
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Sack_Bloody
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Scroll_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Scroll_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Scroll_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Scroll_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Scroll_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Scroll_Type_6
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Scroll_Type_7
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Spellbook_Blank
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Spellbook_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Spellbook_Type_2
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Spellbook_Type_3
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Spellbook_Type_4
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Spellbook_Type_5
+	}
+	add_to_global_variable_list = {
+	name = ashop_special_resources
+	target = flag:Spellbook_Type_6
+	}
+	#tools FILE
+	add_to_global_variable_list = {
+	name = ashop_tools_resources
+	target = flag:Bellows
+	}
+	add_to_global_variable_list = {
+	name = ashop_tools_resources
+	target = flag:Ink
+	}
+	add_to_global_variable_list = {
+	name = ashop_tools_resources
+	target = flag:Mortar
+	}
+	add_to_global_variable_list = {
+	name = ashop_tools_resources
+	target = flag:Pot
+	}
+	add_to_global_variable_list = {
+	name = ashop_tools_resources
+	target = flag:Recipe_Type_1
+	}
+	add_to_global_variable_list = {
+	name = ashop_tools_resources
+	target = flag:Wooden_Hammer
+	}
+	#tools FILE
+add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Amethyst_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Animal_Fat
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Animal_Skin
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Apple
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Bear_Skin
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Bread
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Brick
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Carrot
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Cheese
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Cherries
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Citrine_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Claw
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Cooked_Fish
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Deer_Horn
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Diamond_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Dyes
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Egg
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Emerald_Dust
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Emerald_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Flower_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Flower_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Flower_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Flower_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Flower_Type_5
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Flower_Type_6
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Garlic
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Grape
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Herb_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Herb_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Herb_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Icons_Layer_Effect
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Jasper
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Leaf
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Liqueur
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Liquor
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Livestock
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Metal_1_Ore
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Metal_2_Ore
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Metal_3_Ore
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Metal_4_Ore
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Metal_5_Ore
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Milk
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Mushroom_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Mushroom_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Mushroom_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Mushroom_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Mushroom_Type_5
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Mushroom_Type_6
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Oil_Large_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Oil_Large_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Oil_Large_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Oil_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Oil_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Oil_Type_33
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Orange
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Pear
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Pearl
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Pearl_Black
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Pen
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Polar_Bear_Skin
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Cure_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Cure_Medium
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Cure_Small
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Empty
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Health_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Health_Medium
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Health_Small
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Mana_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Mana_Medium
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Mana_Small
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Misc_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Misc_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Misc_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Misc_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Misc_Type_5
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Poison_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Poison_Medium
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Poison_Small
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Regeneration_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Regeneration_Medium
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Potion_Regeneration_Small
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Radish
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Root_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Root_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Root_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Root_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Ruby_Dust
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Ruby_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Large_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Large_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Large_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Large_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Small_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Small_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Small_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Rune_Small_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Sapphire_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Sea_Shell
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Silver_Coin
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Spices
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Tourmaline_Dust
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Tourmaline_Large
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Turquoise
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Water
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Wine
+	}
+	add_to_global_variable_list = {
+	name = can_i_sell
+	target = flag:Wolf_Skin
+	}
+	#tools FILE
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Animal_Claw
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Animal_Tooth
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Arachnid_Leg
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Bug_Shell_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Bug_Shell_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Flower_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Flower_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Flower_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Flower_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Flower_Type_5
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Flower_Type_6
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Garlic
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Herb_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Herb_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Herb_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Human_Eye
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Icons_Layer_Effect
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Leaf
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Monster_Claw
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Monster_Eye
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Monster_Tooth
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Mushroom_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Mushroom_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Mushroom_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Mushroom_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Mushroom_Type_5
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Mushroom_Type_6
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Red_Moss
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Root_Type_1
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Root_Type_2
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Root_Type_3
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Root_Type_4
+	}
+	add_to_global_variable_list = {
+	name = can_motar
+	target = flag:Sea_Shell
+	}
+	#tools FILE
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Amethyst_Large
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Citrine_Large
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Deer_Horn
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Diamond_Large
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Emerald_Large
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Human_Bone
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Human_Skull
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Human_Tooth
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Jasper
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Livestock
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Pearl
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Pearl_Black
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Ruby_Large
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Sapphire_Large
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Tourmaline_Large
+	}
+	add_to_global_variable_list = {
+	name = can_hammer
+	target = flag:Turquoise
+	}
+	#QTY FILE
+add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Amethyst_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Amethyst_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Animal_Claw_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Animal_Claw_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Animal_Fat_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Animal_Skin_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Animal_Tooth_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Animal_Tooth_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Apple_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Arachnid_Leg_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Arachnid_Leg_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Ash_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Bear_Skin_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Bellows_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Book_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Bread_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Brick_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Bug_Shell_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Bug_Shell_Type_1_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Bug_Shell_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Bug_Shell_Type_2_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Carrot_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Cheese_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Cherries_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Citrine_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Citrine_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Claw_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Clay_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Coal_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Cooked_Fish_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Deer_Horn_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Deer_Horn_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Diamond_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Diamond_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Dragon_Scales_Black_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Dragon_Scales_Blue_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Dragon_Scales_Red_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Dragon_Scales_White_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Dragon_Scales_Yellow_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Dyes_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Egg_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Emerald_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Emerald_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Feathers_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_1_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_2_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_3_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_4_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_5_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_5_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_6_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Flower_Type_6_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Garlic_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Garlic_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Grape_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Heart_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Herb_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Herb_Type_1_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Herb_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Herb_Type_2_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Herb_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Herb_Type_3_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Bone_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Bone_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Eye_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Eye_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Skull_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Skull_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Tooth_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Human_Tooth_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Icons_Layer_Effect_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Icons_Layer_Effect_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Ink_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Jasper_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Journal_Bloody_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Journal_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Journal_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Leaf_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Leaf_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Liqueur_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Liquor_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Liver_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Livestock_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Metal_1_Ore_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Metal_2_Ore_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Metal_3_Ore_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Metal_4_Ore_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Metal_5_Ore_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Milk_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Monster_Claw_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Monster_Claw_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Monster_Eye_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Monster_Eye_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Monster_Feather_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Monster_Tooth_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Monster_Tooth_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mortar_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_1_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_2_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_3_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_4_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_5_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_5_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_6_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Mushroom_Type_6_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Oil_Large_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Oil_Large_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Oil_Large_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Oil_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Oil_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Oil_Type_33_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Orange_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pear_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pearl_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pearl_Black_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pearl_Black_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pearl_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pen_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Polar_Bear_Skin_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pot_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Cure_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Cure_Medium_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Cure_Small_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Empty_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Health_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Health_Medium_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Health_Small_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Mana_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Mana_Medium_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Mana_Small_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Misc_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Misc_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Misc_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Misc_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Misc_Type_5_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Poison_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Poison_Medium_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Poison_Small_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Regeneration_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Regeneration_Medium_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Potion_Regeneration_Small_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Pouch_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Radish_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Recipe_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Red_Moss_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Red_Moss_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_1_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_2_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_3_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Root_Type_4_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Ruby_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Ruby_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Large_Blank_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Large_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Large_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Large_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Large_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Small_Blank_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Small_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Small_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Small_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Rune_Small_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Sack_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Sack_Bloody_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Sapphire_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Sapphire_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Scroll_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Scroll_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Scroll_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Scroll_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Scroll_Type_5_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Scroll_Type_6_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Scroll_Type_7_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Sea_Shell_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Sea_Shell_M_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Silkworm_Cocoon_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Silver_Coin_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spellbook_Blank_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spellbook_Type_1_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spellbook_Type_2_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spellbook_Type_3_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spellbook_Type_4_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spellbook_Type_5_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spellbook_Type_6_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Spices_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Sting_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Tongue_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Tourmaline_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Tourmaline_Large_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Turquoise_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Turquoise_Dust_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Water_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Wine_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Wolf_Skin_Qty
+	}
+	add_to_global_variable_list = {
+	name = pshop_resources_qty
+	target = flag:Wooden_Hammer_Qty
+	}
+	
+	if = { limit = { NOT = { global_var:start_a_j = 1 } } start_aj = yes }
+}
+start_aj = {
+	set_global_variable = { name = start_a_j value = 1 }
+	set_global_variable = { name = Amethyst_Dust_Qty value = 0 }
+	set_global_variable = { name = Amethyst_Large_Qty value = 0 }
+	set_global_variable = { name = Animal_Claw_Qty value = 0 }
+	set_global_variable = { name = Animal_Fat_Qty value = 0 }
+	set_global_variable = { name = Animal_Skin_Qty value = 0 }
+	set_global_variable = { name = Animal_Tooth_Qty value = 0 }
+	set_global_variable = { name = Apple_Qty value = 0 }
+	set_global_variable = { name = Arachnid_Leg_Qty value = 0 }
+	set_global_variable = { name = Ash_Qty value = 0 }
+	set_global_variable = { name = Bear_Skin_Qty value = 0 }
+	set_global_variable = { name = Bellows_Qty value = 0 }
+	set_global_variable = { name = Book_1_Qty value = 0 }
+	set_global_variable = { name = Bread_Qty value = 0 }
+	set_global_variable = { name = Brick_Qty value = 0 }
+	set_global_variable = { name = Bug_Shell_Type_1_Qty value = 0 }
+	set_global_variable = { name = Bug_Shell_Type_2_Qty value = 0 }
+	set_global_variable = { name = Carrot_Qty value = 0 }
+	set_global_variable = { name = Cheese_Qty value = 0 }
+	set_global_variable = { name = Cherries_Qty value = 0 }
+	set_global_variable = { name = Citrine_Dust_Qty value = 0 }
+	set_global_variable = { name = Citrine_Large_Qty value = 0 }
+	set_global_variable = { name = Claw_Qty value = 0 }
+	set_global_variable = { name = Clay_Qty value = 0 }
+	set_global_variable = { name = Coal_Qty value = 0 }
+	set_global_variable = { name = Cooked_Fish_Qty value = 0 }
+	set_global_variable = { name = Deer_Horn_Qty value = 0 }
+	set_global_variable = { name = Diamond_Dust_Qty value = 0 }
+	set_global_variable = { name = Diamond_Large_Qty value = 0 }
+	set_global_variable = { name = Dragon_Scales_Black_Qty value = 0 }
+	set_global_variable = { name = Dragon_Scales_Blue_Qty value = 0 }
+	set_global_variable = { name = Dragon_Scales_Red_Qty value = 0 }
+	set_global_variable = { name = Dragon_Scales_White_Qty value = 0 }
+	set_global_variable = { name = Dragon_Scales_Yellow_Qty value = 0 }
+	set_global_variable = { name = Dyes_Qty value = 0 }
+	set_global_variable = { name = Egg_Qty value = 0 }
+	set_global_variable = { name = Emerald_Dust_Qty value = 0 }
+	set_global_variable = { name = Emerald_Large_Qty value = 0 }
+	set_global_variable = { name = Feathers_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_1_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_2_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_3_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_4_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_5_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_6_Qty value = 0 }
+	set_global_variable = { name = Garlic_Qty value = 0 }
+	set_global_variable = { name = Grape_Qty value = 0 }
+	set_global_variable = { name = Heart_Qty value = 0 }
+	set_global_variable = { name = Herb_Type_1_Qty value = 0 }
+	set_global_variable = { name = Herb_Type_2_Qty value = 0 }
+	set_global_variable = { name = Herb_Type_3_Qty value = 0 }
+	set_global_variable = { name = Human_Bone_Qty value = 0 }
+	set_global_variable = { name = Human_Eye_Qty value = 0 }
+	set_global_variable = { name = Human_Skull_Qty value = 0 }
+	set_global_variable = { name = Human_Tooth_Qty value = 0 }
+	set_global_variable = { name = Icons_Layer_Effect_Qty value = 0 }
+	set_global_variable = { name = Ink_Qty value = 0 }
+	set_global_variable = { name = Jasper_Qty value = 0 }
+	set_global_variable = { name = Journal_Bloody_Qty value = 0 }
+	set_global_variable = { name = Journal_Type_1_Qty value = 0 }
+	set_global_variable = { name = Journal_Type_2_Qty value = 0 }
+	set_global_variable = { name = Leaf_Qty value = 0 }
+	set_global_variable = { name = Liqueur_Qty value = 0 }
+	set_global_variable = { name = Liquor_Qty value = 0 }
+	set_global_variable = { name = Liver_Qty value = 0 }
+	set_global_variable = { name = Livestock_Qty value = 0 }
+	set_global_variable = { name = Metal_1_Ore_Qty value = 0 }
+	set_global_variable = { name = Metal_2_Ore_Qty value = 0 }
+	set_global_variable = { name = Metal_3_Ore_Qty value = 0 }
+	set_global_variable = { name = Metal_4_Ore_Qty value = 0 }
+	set_global_variable = { name = Metal_5_Ore_Qty value = 0 }
+	set_global_variable = { name = Milk_Qty value = 0 }
+	set_global_variable = { name = Monster_Claw_Qty value = 0 }
+	set_global_variable = { name = Monster_Eye_Qty value = 0 }
+	set_global_variable = { name = Monster_Feather_Qty value = 0 }
+	set_global_variable = { name = Monster_Tooth_Qty value = 0 }
+	set_global_variable = { name = Mortar_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_1_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_2_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_3_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_4_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_5_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_6_Qty value = 0 }
+	set_global_variable = { name = Oil_Large_Type_1_Qty value = 0 }
+	set_global_variable = { name = Oil_Large_Type_2_Qty value = 0 }
+	set_global_variable = { name = Oil_Large_Type_3_Qty value = 0 }
+	set_global_variable = { name = Oil_Type_1_Qty value = 0 }
+	set_global_variable = { name = Oil_Type_2_Qty value = 0 }
+	set_global_variable = { name = Oil_Type_33_Qty value = 0 }
+	set_global_variable = { name = Orange_Qty value = 0 }
+	set_global_variable = { name = Pear_Qty value = 0 }
+	set_global_variable = { name = Pearl_Qty value = 0 }
+	set_global_variable = { name = Pearl_Black_Qty value = 0 }
+	set_global_variable = { name = Pearl_Black_Dust_Qty value = 0 }
+	set_global_variable = { name = Pearl_Dust_Qty value = 0 }
+	set_global_variable = { name = Pen_Qty value = 0 }
+	set_global_variable = { name = Polar_Bear_Skin_Qty value = 0 }
+	set_global_variable = { name = Pot_Qty value = 0 }
+	set_global_variable = { name = Potion_Qty value = 0 }
+	set_global_variable = { name = Potion_Cure_Large_Qty value = 0 }
+	set_global_variable = { name = Potion_Cure_Medium_Qty value = 0 }
+	set_global_variable = { name = Potion_Cure_Small_Qty value = 0 }
+	set_global_variable = { name = Potion_Empty_Qty value = 0 }
+	set_global_variable = { name = Potion_Health_Large_Qty value = 0 }
+	set_global_variable = { name = Potion_Health_Medium_Qty value = 0 }
+	set_global_variable = { name = Potion_Health_Small_Qty value = 0 }
+	set_global_variable = { name = Potion_Mana_Large_Qty value = 0 }
+	set_global_variable = { name = Potion_Mana_Medium_Qty value = 0 }
+	set_global_variable = { name = Potion_Mana_Small_Qty value = 0 }
+	set_global_variable = { name = Potion_Misc_Type_1_Qty value = 0 }
+	set_global_variable = { name = Potion_Misc_Type_2_Qty value = 0 }
+	set_global_variable = { name = Potion_Misc_Type_3_Qty value = 0 }
+	set_global_variable = { name = Potion_Misc_Type_4_Qty value = 0 }
+	set_global_variable = { name = Potion_Misc_Type_5_Qty value = 0 }
+	set_global_variable = { name = Potion_Poison_Large_Qty value = 0 }
+	set_global_variable = { name = Potion_Poison_Medium_Qty value = 0 }
+	set_global_variable = { name = Potion_Poison_Small_Qty value = 0 }
+	set_global_variable = { name = Potion_Regeneration_Large_Qty value = 0 }
+	set_global_variable = { name = Potion_Regeneration_Medium_Qty value = 0 }
+	set_global_variable = { name = Potion_Regeneration_Small_Qty value = 0 }
+	set_global_variable = { name = Pouch_Qty value = 0 }
+	set_global_variable = { name = Radish_Qty value = 0 }
+	set_global_variable = { name = Recipe_Type_1_Qty value = 0 }
+	set_global_variable = { name = Red_Moss_Qty value = 0 }
+	set_global_variable = { name = Root_Type_1_Qty value = 0 }
+	set_global_variable = { name = Root_Type_2_Qty value = 0 }
+	set_global_variable = { name = Root_Type_3_Qty value = 0 }
+	set_global_variable = { name = Root_Type_4_Qty value = 0 }
+	set_global_variable = { name = Ruby_Dust_Qty value = 0 }
+	set_global_variable = { name = Ruby_Large_Qty value = 0 }
+	set_global_variable = { name = Rune_Large_Blank_Qty value = 0 }
+	set_global_variable = { name = Rune_Large_Type_1_Qty value = 0 }
+	set_global_variable = { name = Rune_Large_Type_2_Qty value = 0 }
+	set_global_variable = { name = Rune_Large_Type_3_Qty value = 0 }
+	set_global_variable = { name = Rune_Large_Type_4_Qty value = 0 }
+	set_global_variable = { name = Rune_Small_Blank_Qty value = 0 }
+	set_global_variable = { name = Rune_Small_Type_1_Qty value = 0 }
+	set_global_variable = { name = Rune_Small_Type_2_Qty value = 0 }
+	set_global_variable = { name = Rune_Small_Type_3_Qty value = 0 }
+	set_global_variable = { name = Rune_Small_Type_4_Qty value = 0 }
+	set_global_variable = { name = Sack_Qty value = 0 }
+	set_global_variable = { name = Sack_Bloody_Qty value = 0 }
+	set_global_variable = { name = Sapphire_Dust_Qty value = 0 }
+	set_global_variable = { name = Sapphire_Large_Qty value = 0 }
+	set_global_variable = { name = Scroll_Type_1_Qty value = 0 }
+	set_global_variable = { name = Scroll_Type_2_Qty value = 0 }
+	set_global_variable = { name = Scroll_Type_3_Qty value = 0 }
+	set_global_variable = { name = Scroll_Type_4_Qty value = 0 }
+	set_global_variable = { name = Scroll_Type_5_Qty value = 0 }
+	set_global_variable = { name = Scroll_Type_6_Qty value = 0 }
+	set_global_variable = { name = Scroll_Type_7_Qty value = 0 }
+	set_global_variable = { name = Sea_Shell_Qty value = 0 }
+	set_global_variable = { name = Silkworm_Cocoon_Qty value = 0 }
+	set_global_variable = { name = Silver_Coin_Qty value = 0 }
+	set_global_variable = { name = Spellbook_Blank_Qty value = 0 }
+	set_global_variable = { name = Spellbook_Type_1_Qty value = 0 }
+	set_global_variable = { name = Spellbook_Type_2_Qty value = 0 }
+	set_global_variable = { name = Spellbook_Type_3_Qty value = 0 }
+	set_global_variable = { name = Spellbook_Type_4_Qty value = 0 }
+	set_global_variable = { name = Spellbook_Type_5_Qty value = 0 }
+	set_global_variable = { name = Spellbook_Type_6_Qty value = 0 }
+	set_global_variable = { name = Spices_Qty value = 0 }
+	set_global_variable = { name = Sting_Qty value = 0 }
+	set_global_variable = { name = Tongue_Qty value = 0 }
+	set_global_variable = { name = Tourmaline_Dust_Qty value = 0 }
+	set_global_variable = { name = Tourmaline_Large_Qty value = 0 }
+	set_global_variable = { name = Turquoise_Qty value = 0 }
+	set_global_variable = { name = Water_Qty value = 0 }
+	set_global_variable = { name = Wine_Qty value = 0 }
+	set_global_variable = { name = Wolf_Skin_Qty value = 0 }
+	set_global_variable = { name = Wooden_Hammer_Qty value = 0 }
+	set_global_variable = { name = Animal_Claw_M_Qty value = 0 }
+	set_global_variable = { name = Animal_Tooth_M_Qty value = 0 }
+	set_global_variable = { name = Arachnid_Leg_M_Qty value = 0 }
+	set_global_variable = { name = Bug_Shell_Type_1_M_Qty value = 0 }
+	set_global_variable = { name = Bug_Shell_Type_2_M_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_1_M_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_2_M_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_3_M_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_4_M_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_5_M_Qty value = 0 }
+	set_global_variable = { name = Flower_Type_6_M_Qty value = 0 }
+	set_global_variable = { name = Garlic_M_Qty value = 0 }
+	set_global_variable = { name = Herb_Type_1_M_Qty value = 0 }
+	set_global_variable = { name = Herb_Type_2_M_Qty value = 0 }
+	set_global_variable = { name = Herb_Type_3_M_Qty value = 0 }
+	set_global_variable = { name = Human_Eye_M_Qty value = 0 }
+	set_global_variable = { name = Icons_Layer_Effect_M_Qty value = 0 }
+	set_global_variable = { name = Leaf_M_Qty value = 0 }
+	set_global_variable = { name = Monster_Claw_M_Qty value = 0 }
+	set_global_variable = { name = Monster_Eye_M_Qty value = 0 }
+	set_global_variable = { name = Monster_Tooth_M_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_1_M_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_2_M_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_3_M_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_4_M_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_5_M_Qty value = 0 }
+	set_global_variable = { name = Mushroom_Type_6_M_Qty value = 0 }
+	set_global_variable = { name = Red_Moss_M_Qty value = 0 }
+	set_global_variable = { name = Root_Type_1_M_Qty value = 0 }
+	set_global_variable = { name = Root_Type_2_M_Qty value = 0 }
+	set_global_variable = { name = Root_Type_3_M_Qty value = 0 }
+	set_global_variable = { name = Root_Type_4_M_Qty value = 0 }
+	set_global_variable = { name = Sea_Shell_M_Qty value = 0 }
+	#tools FILE
+	set_global_variable = { name = Amethyst_Large_Dust_Qty value = 0 }
+	set_global_variable = { name = Citrine_Large_Dust_Qty value = 0 }
+	set_global_variable = { name = Deer_Horn_Dust_Qty value = 0 }
+	set_global_variable = { name = Diamond_Large_Dust_Qty value = 0 }
+	set_global_variable = { name = Emerald_Large_Dust_Qty value = 0 }
+	set_global_variable = { name = Human_Bone_Dust_Qty value = 0 }
+	set_global_variable = { name = Human_Skull_Dust_Qty value = 0 }
+	set_global_variable = { name = Human_Tooth_Dust_Qty value = 0 }
+	set_global_variable = { name = Jasper_Dust_Qty value = 0 }
+	set_global_variable = { name = Livestock_Dust_Qty value = 0 }
+	set_global_variable = { name = Pearl_Dust_Qty value = 0 }
+	set_global_variable = { name = Pearl_Black_Dust_Qty value = 0 }
+	set_global_variable = { name = Ruby_Large_Dust_Qty value = 0 }
+	set_global_variable = { name = Sapphire_Large_Dust_Qty value = 0 }
+	set_global_variable = { name = Tourmaline_Large_Dust_Qty value = 0 }
+	set_global_variable = { name = Turquoise_Dust_Qty value = 0 }
+}
+
+#if = { limit = { this = flag:something } change_global_variable = { name = something_qty add = 1 } }
+#if = { limit = { this = flag:something } change_global_variable = { name = something_qty subtract = 1 } }

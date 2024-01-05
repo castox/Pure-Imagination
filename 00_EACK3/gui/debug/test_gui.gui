@@ -1,0 +1,172 @@
+
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "test_window"
+
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	icon = {
+		parentanchor = center
+		size = {100% 100% }
+		texture = "gfx/interface/tavern_gfx/mask_off.dds" #
+	}
+	bvid ={}
+	state = { name = haltall trigger_when = "[Not(IsGamePaused)]" on_start = "[OnPause]" }
+	state = { 
+		name = music
+		trigger_on_create = yes
+		on_start = "[GetScriptedGui('start_unpack').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		on_finish = "[GetVariableSystem.Clear( 'gui_togglex' )]" #
+	}
+	@fadetime = 10
+	movable = no
+
+
+
+	portrait_card = {
+		datacontext = "[GetPlayer]"
+		parentanchor = center
+		scale = 1.2
+		position = { 0 -170 }
+		alpha = 0
+		
+		state = {
+			name = c1
+			next = d1
+			alpha = 0
+			trigger_on_create = yes
+			duration = @fadetime #
+		}
+		state = {
+			name = d1
+			duration = 1
+			alpha = 1
+		}
+
+		icon = {
+			parentanchor = bottom|hcenter
+			texture = "gfx/shadowx.png"
+			position = { 0 200 }
+			scale = 3
+		}
+	}
+
+	state = {
+		name = sparks
+		next = sparks2
+		duration = 7
+		trigger_on_create = yes
+		on_finish = "[GetVariableSystem.Toggle( 'gui_toggle' )]"
+	}
+	state = {
+		name = sparks2
+		
+		duration = 6
+		on_finish = "[GetVariableSystem.Clear( 'gui_toggle' )]"
+	}
+	espark = {
+		parentanchor = center
+		#scale = 10
+		visible = "[GetVariableSystem.Exists( 'gui_toggle' )]"
+		#position = { 0 2000 }
+		position = { 0 -170 }
+		size = { 290 400 }
+		alpha = 0
+		scale = 10
+		state = {
+			name = c1
+			next = d1
+			alpha = 0
+			scale = 9
+			trigger_on_create = yes
+			duration = 7
+		}
+		state = {
+			name = d1
+			next = e1
+			duration = 3
+			alpha = 1
+			scale = 1.1
+		}	
+		state = {
+			name = e1
+			duration = 2
+			alpha = 0
+			scale = 1.1
+		}
+
+		#mask = "gfx/loot/bmsk.png"
+	}
+	card_1 = {
+		datacontext = "[GetPlayer]"
+		parentanchor = center
+		visible = "[Not(GetScriptedGui('done_walking').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+		position = { 1200 170 }
+		state = {
+			name = c1
+			next = e1
+			on_start = "[GetScriptedGui('clear_all').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			position_x = 1200
+			trigger_on_create = yes
+			duration = 9
+		}
+		state = {
+			name = e1
+			next = f1
+			alpha = 1
+		}
+		state = {
+			name = f1
+			next = g1
+			duration = 3.2
+			on_start = "[GetScriptedGui('do_walking').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+			
+			position_x = -350
+		}
+		state = {
+			name = g1
+			duration = 4
+			on_finish = "[GetScriptedGui('done_walking').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		}
+		state = {
+			name = g2
+			alpha = 0
+		}
+
+		icon = {
+			parentanchor = bottom|hcenter
+			texture = "gfx/shadowx.png"
+			position = { 0 0 }
+			scale = 5
+		}
+	}
+	card_2 = {
+		datacontext = "[GetPlayer]"
+		parentanchor = center
+		position = { -350 170 }
+		visible = "[GetScriptedGui('done_walking').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		icon = {
+			parentanchor = bottom|hcenter
+			texture = "gfx/shadowx.png"
+			position = { 0 0 }
+			scale = 5
+		}
+	}
+
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -60 -80 }
+        raw_text = "Exit"
+		onclick = "[GetVariableSystem.Clear( 'gui_toggle' )]"
+		onclick = "[GetScriptedGui('clear_all').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets test_window')]"
+    }
+
+}

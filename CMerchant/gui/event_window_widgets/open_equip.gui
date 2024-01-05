@@ -1,0 +1,37 @@
+﻿
+vbox = {
+	name = "open_equip"
+	layoutpolicy_horizontal = expanding
+	margin = { 5 0 }
+	spacing = 10
+
+	fixedgridbox = {
+		name = "option_grid"
+		addcolumn = 490
+		addrow = 42
+		datamodel = "[EventWindow.GetOptions]"
+
+		item = {
+			button_event_standard = {
+				name = "event_option_button"
+				
+				state = {
+					name = widget_show
+					trigger_on_create = yes
+
+					block "onstart" {
+                    }
+                    duration = 1 
+                    on_start = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.InterruptAnimation('show')]"        
+                    on_start = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.InterruptAnimation('_hide')]"    
+										
+					on_finish = "[EventOption.Select]"			
+					
+					on_start = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/equip.gui equip')]"
+				}
+			}
+		}
+	}
+	
+	expand = {}
+}

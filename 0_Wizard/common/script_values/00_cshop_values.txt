@@ -1,0 +1,27 @@
+﻿
+fish_range = {
+	value = var:fish_loc
+	add = 40
+}
+fish_range1= {
+	value = var:fish_loc
+	subtract = 20
+
+}
+fish_range2 = {
+	value = var:fish_loc
+	add = 40
+}
+
+fish_spot = {
+	value = 0
+	add = { -150 100 } 
+}
+fish_total = {
+	value = 0
+
+	every_in_list = {
+		variable = caught_fish
+		add = 1
+	}
+}

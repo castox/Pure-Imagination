@@ -1,0 +1,29 @@
+
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "test_window2"
+
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	icon = {
+		parentanchor = center
+		size = {100% 100% }
+		texture = "gfx/interface/tavern_gfx/mask_off.dds" #
+	}
+	state = { name = haltall trigger_when = "[Not(IsGamePaused)]" on_start = "[OnPause]" }
+
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -60 -80 }
+        raw_text = "Exit"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets test_window2')]"
+    }
+
+}

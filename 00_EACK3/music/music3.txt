@@ -1,0 +1,14 @@
+
+#### MOOD TRACKS
+
+
+
+##### MAINTHEME
+
+card_pack = {
+	#music = "event:/MUSIC/MainTheme/Maintheme"
+	music = "file:/gfx/cardpack.mp3"
+	can_be_interrupted = yes
+}
+
+

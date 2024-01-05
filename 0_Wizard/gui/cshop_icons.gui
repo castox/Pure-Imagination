@@ -1,0 +1,1538 @@
+﻿#CSHOP ICONS
+texticon = {
+	icon = cs_l1-0
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-0.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-1
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-2
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-3
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-4
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-5
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-6
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-7
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-7.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-8
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-8.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-9
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-9.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-10
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-10.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-11
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-11.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-12
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-12.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-13
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-13.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-14
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-14.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-15
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-15.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-16
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-16.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-17
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-17.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-18
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-18.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-19
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-19.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-20
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-20.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-21
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-21.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-22
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-22.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-23
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-23.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-24
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-24.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-25
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-25.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-26
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-26.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-27
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-27.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-28
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-28.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-29
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-29.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-30
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-30.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-31
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-31.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-32
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-32.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-33
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-33.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-34
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-34.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-35
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-35.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-36
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-36.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-37
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-37.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-38
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-38.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-39
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-39.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-40
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-40.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-41
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-41.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-42
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-42.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-43
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-43.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-44
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-44.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-45
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-45.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-46
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-46.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-47
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-47.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-48
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-48.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l1-49
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l1-49.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-0
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-0.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-1
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-2
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-3
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-4
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-5
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-6
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-7
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-7.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-8
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-8.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-9
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-9.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-10
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-10.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-11
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-11.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-12
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-12.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-13
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-13.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-14
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-14.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-15
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-15.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-16
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-16.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-17
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-17.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-18
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-18.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-19
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-19.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-20
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-20.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-21
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-21.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-22
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-22.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-23
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-23.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-24
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-24.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-25
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-25.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-26
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-26.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-27
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-27.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-28
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-28.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-29
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-29.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-30
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-30.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-31
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-31.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-32
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-32.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-33
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-33.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-34
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-34.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-35
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-35.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-36
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-36.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-37
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-37.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-38
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-38.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-39
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-39.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-40
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-40.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-41
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-41.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-42
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-42.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-43
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-43.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-44
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-44.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-45
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-45.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-46
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-46.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-47
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-47.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-48
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-48.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-49
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-49.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-50
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-50.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-51
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-51.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-52
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-52.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l2-53
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l2-53.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-0
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-0.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-1
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-2
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-3
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-4
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-5
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-6
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-7
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-7.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-8
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-8.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-9
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-9.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-10
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-10.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-11
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-11.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-12
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-12.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-13
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-13.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-14
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-14.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-15
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-15.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-16
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-16.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-17
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-17.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-18
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-18.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-19
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-19.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-20
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-20.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-21
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-21.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-22
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-22.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-23
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-23.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-24
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-24.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-25
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-25.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-26
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-26.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-27
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-27.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-28
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-28.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-29
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-29.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-30
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-30.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-31
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-31.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-32
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-32.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-33
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-33.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-34
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-34.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-35
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-35.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-36
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-36.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-37
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-37.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-38
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-38.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-39
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-39.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-40
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-40.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-41
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-41.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-42
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-42.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-43
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-43.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-44
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-44.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-45
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-45.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-46
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-46.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-47
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-47.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-48
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-48.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-49
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-49.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-50
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-50.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l3-51
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l3-51.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-0
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-0.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-1
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-1.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-2
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-2.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-3
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-3.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-4
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-4.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-5
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-5.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-6
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-6.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-7
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-7.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-8
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-8.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-9
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-9.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-10
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-10.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-11
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-11.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-12
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-12.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-13
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-13.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-14
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-14.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-15
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-15.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-16
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-16.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-17
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-17.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-18
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-18.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-19
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-19.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-20
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-20.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-21
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-21.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-22
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-22.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-23
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-23.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-24
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-24.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-25
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-25.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-26
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-26.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-27
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-27.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-28
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-28.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-29
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-29.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-30
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-30.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-31
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-31.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-32
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-32.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-33
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-33.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-34
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-34.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	texticon = {
+	icon = cs_l4-35
+	iconsize = {
+	texture = "gfx/interface/cshop/equip/l4-35.png"
+	size = { 50 50 }
+	fontsize = 16
+	}
+	}
+	

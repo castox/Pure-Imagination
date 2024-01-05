@@ -1,0 +1,8 @@
+﻿ohol_move_left = {
+	remove_character_flag = walk_right
+	add_character_flag = walk_left
+}
+ohol_move_right = {
+	remove_character_flag = walk_left
+	add_character_flag = walk_right
+}

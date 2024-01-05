@@ -1,0 +1,142 @@
+﻿
+300001 = {
+	prefix = "dynnp_of"
+	name = dynn_Everlight
+	culture = high_elf
+}
+300002 = {
+	prefix = "dynnp_of"
+	name = dynn_Skystone
+	culture = high_elf
+}
+300003 = {
+	prefix = "dynnp_of"
+	name = dynn_Whitetower
+	culture = high_elf
+}
+300004 = {
+	prefix = "dynnp_of"
+	name = dynn_Goldbow
+	culture = high_elf		
+}
+300005 = {
+	prefix = "dynnp_of"
+	name = dynn_Proudmore
+	culture = high_elf
+}
+300010 = {
+	prefix = "dynnp_of"
+	name = dynn_Raventree
+	culture = wood_elf	
+	}
+300011 = {
+	prefix = "dynnp_of"
+	name = dynn_Wolfwood
+	culture = wood_elf		
+}
+300012 = {
+	prefix = "dynnp_of"
+	name = dynn_Greenheart
+	culture = wood_elf		
+}
+300013 = {
+	prefix = "dynnp_of"
+	name = dynn_Fairgarden
+	culture = wood_elf		
+}
+
+300020 = {
+	prefix = "dynnp_of"
+	name = dynn_Darkheart
+	culture = shadow_elf		
+}
+
+300021 = {
+	prefix = "dynnp_of"
+	name = dynn_Shadowsong
+	culture = shadow_elf		
+}
+
+300022 = {
+	prefix = "dynnp_of"
+	name = dynn_Moonmist
+	culture = shadow_elf		
+}
+
+300030 = {
+	prefix = "dynnp_of"
+	name = dynn_Stonebeard
+	culture = dwarv	
+	
+}
+300031 = {
+	prefix = "dynnp_of"
+	name = dynn_Rockbottom
+	culture = dwarv		
+}
+
+300032 = {
+	prefix = "dynnp_of"
+	name = dynn_Strongdong
+	culture = dwarv		
+}
+
+300033= {
+	prefix = "dynnp_of"
+	name = dynn_Archeron
+	culture = dwarv		
+}
+
+300040 = {
+	prefix = "dynnp_of"
+	name = dynn_Irontooth
+	culture = norkse	
+}	
+300041 = {
+	prefix = "dynnp_of"
+	name = dynn_Blackhand
+	culture = norkse	
+}	
+300042 = {
+	prefix = "dynnp_of"
+	name = dynn_Greensight
+	culture = norkse	
+}
+300043 = {
+	prefix = "dynnp_of"
+	name = dynn_Doomhammer
+	culture = norkse	
+}
+300050 = {
+	prefix = "dynnp_of"
+	name = dynn_Lurkz
+	culture = goblin	
+}
+
+300051 = {
+	prefix = "dynnp_of"
+	name = dynn_Cogz
+	culture = goblin	
+}
+300052 = {
+	prefix = "dynnp_of"
+	name = dynn_Guzlow
+	culture = goblin	
+}
+	
+300070 = {
+	prefix = "dynnp_of"
+	name = dynn_Wiseworth
+	culture = gnome		
+}
+300071 = {
+	prefix = "dynnp_of"
+	name = dynn_Bigbrane
+	culture = gnome		
+}
+300072 = {
+	prefix = "dynnp_of"
+	name = dynn_Longbottom
+	culture = gnome		
+}
+

@@ -1,0 +1,1892 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "alchemist"
+
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	movable = no
+
+
+
+	icon = {
+		texture = "gfx/interface/cshop/alchemist_back2.png"
+	}
+
+	mage = {
+		#visible = "[GetScriptedGui('is_forward').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#visible = no
+		parentanchor = hcenter|vcenter
+		#datacontext = "[GetGlobalVariable('castox')]"
+		#datacontext = "[Scope.GetCharacter]"
+		datacontext = "[GetPlayer]"
+		position = { -280 120 }
+		#animation_talk = {}
+
+
+	}
+	#PBAR
+		icon = {
+			parentanchor = hcenter|vcenter
+			size = { 400 700 }
+			position = { 0 120 }
+			texture = "gfx/interface/cshop/ebar.dds"
+			alpha = 0
+			state = {
+				name = a
+				trigger_when = "[GetVariableSystem.Exists( 'shop_toggle' )]"
+				duration = 0.5
+				alpha = 1
+			}
+		
+			state = {
+				name = b
+				trigger_when = "[Not(GetVariableSystem.Exists( 'shop_toggle' ))]"
+				duration = 0.5
+				alpha = 0
+			}
+			icon = {
+				parentanchor = center|top
+				position = { 0 -17 }
+				size = { 300 50 }
+				texture = "gfx/interface/icons/banners/banner_brown_center.dds"
+				text_single = {
+					#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					parentanchor = center
+					position = { 0 -5 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					Text = "Purchase"
+				}
+			}
+			text_single = {
+				visible = "[GetScriptedGui('buy_enable').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = bottom|right
+				position = { -50 -85 }
+				default_format = "#high"
+				using = Font_Size_Big
+				using = Font_Type_Flavor
+				text = "Current Cost: [GetPlayer.MakeScope.Var('total_s_value').GetValue|0]"
+				icon = {
+					parentanchor = right|vcenter
+					name = "gold_icon"
+					position = {30 5 }
+					size = { 30 30 }
+					texture = "gfx/interface/icons/icon_gold.dds"
+				}
+			}
+			icon = {
+				parentanchor = bottom|hcenter
+				position = { 0 -125 }
+				size = { 400 40 }
+				texture = "gfx/interface/icons/divider_v.dds"
+			}
+			text_single = {
+				visible = "[Not(GetScriptedGui('buy_enable').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				parentanchor = bottom|right
+				position = { -50 -85 }
+				default_format = "#N"
+				using = Font_Size_Big
+				using = Font_Type_Flavor
+				text = "Current Cost: [GetPlayer.MakeScope.Var('total_s_value').GetValue|0]"
+				icon = {
+					parentanchor = right|vcenter
+					name = "gold_icon"
+					position = {30 5 }
+					size = { 30 30 }
+					texture = "gfx/interface/icons/icon_gold.dds"
+				}
+			}
+			button_standard = {
+				parentanchor = left|bottom
+				position = { 15 -30 }
+				text = "Clear"
+				onclick = "[GetScriptedGui('clear_cart').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			button_standard = {
+				parentanchor = right|bottom
+				position = { -15 -30 }
+				text = "Purchase"
+				onclick = "[GetScriptedGui('purchase_cart').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				enabled = "[GetScriptedGui('buy_enable').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"	
+			}
+			#all
+			scrollbox = {
+				#visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'all' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 500 }
+				position = { 0 -65 }
+		
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetPlayer.MakeScope.GetList('current_purchases')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+																	
+		}
+	#LeftBar
+		icon = {
+
+			parentanchor = left|vcenter
+			size = { 400 700 }
+			position = { -400 120 }
+			texture = "gfx/interface/cshop/ebar.dds"
+
+
+			state = {
+				name = a
+				trigger_when = "[GetVariableSystem.Exists( 'shop_toggle' )]"
+				duration = 0.5
+				position_x = 10
+			}
+
+			state = {
+				name = b
+				trigger_when = "[Not(GetVariableSystem.Exists( 'shop_toggle' ))]"
+				duration = 0.5
+				position_x = -400
+			}
+			icon = {
+				parentanchor = center|top
+				position = { 0 -17 }
+				size = { 300 50 }
+				texture = "gfx/interface/icons/banners/banner_brown_center.dds"
+				text_single = {
+					#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					parentanchor = center
+					position = { 0 -5 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					Text = "Merchant Shop"
+				}
+			}
+			state = {
+				name = opas
+				trigger_on_create = yes
+				on_start = "[GetVariableSystem.Set( 'shop_listing', 'all' )]"
+			}
+
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {10 32 }
+				onclick = "[GetVariableSystem.Set( 'shop_listing', 'all' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'shop_listing', 'all' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "All"
+				}
+			}
+			#row 2
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {10 62 }
+				onclick = "[GetVariableSystem.Set( 'shop_listing', 'plant' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'shop_listing', 'plant' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Plants & Food"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {150 62 }
+				onclick = "[GetVariableSystem.Set( 'shop_listing', 'animal' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'shop_listing', 'animal' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Animals"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {270 62 }
+				onclick = "[GetVariableSystem.Set( 'shop_listing', 'mineral' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'shop_listing', 'mineral' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Minerals"
+				}
+			}
+
+			#row 3
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {10 92 }
+				onclick = "[GetVariableSystem.Set( 'shop_listing', 'tools' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'shop_listing', 'tools' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Tools"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {150 92 }
+				onclick = "[GetVariableSystem.Set( 'shop_listing', 'potion' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'shop_listing', 'potion' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Potions"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {270 92 }
+				onclick = "[GetVariableSystem.Set( 'shop_listing', 'special' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'shop_listing', 'special' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Specials"
+				}
+			}
+			#all
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'shop_listing', 'all' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetGlobalList('ashop_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"s
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+						}
+			
+					}
+				}
+			}
+			#animal
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'shop_listing', 'animal' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+		
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetGlobalList('ashop_animal_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#plant
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'shop_listing', 'plant' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+		
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetGlobalList('ashop_plant_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#mineral
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'shop_listing', 'mineral' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+		
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetGlobalList('ashop_mineral_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#tools
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'shop_listing', 'tools' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+		
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetGlobalList('ashop_tools_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#potion
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'shop_listing', 'potion' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+		
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetGlobalList('ashop_potion_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#special
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'shop_listing', 'special' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+		
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+		
+						datamodel = "[GetGlobalList('ashop_special_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								onclick = "[GetScriptedGui('add_purchase').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).AddScope('valuex', MakeScopeValue(GetNamedValue(Concatenate(Scope.GetFlagName,'_Value')))).End )]"
+								down = "[GetScriptedGui('add_purchase').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								#tooltip = "[Scope.GetCharacter.GetTooltip]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_COST
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}															
+		}
+		button = {
+			size = { 50 95 }
+			parentanchor = vcenter|left
+			texture = "gfx/interface/cshop/arrow.dds"
+			#mirror = horizontal
+			position = { 10 0 }
+			onclick = "[GetVariableSystem.Toggle( 'shop_toggle' )]"
+			onclick = "[GetVariableSystem.Clear( 'inv_toggle' )]"
+			onclick = "[GetVariableSystem.Toggle( 'inv_toggle' )]"
+			state = {
+				name = a
+				trigger_when = "[GetVariableSystem.Exists( 'shop_toggle' )]"
+				duration = 0.5
+				position_x = 410
+			}
+
+			state = {
+				name = b
+				trigger_when = "[Not(GetVariableSystem.Exists( 'shop_toggle' ))]"
+				duration = 0.5
+				position_x = 10
+			}
+		}
+	#/LeftBar
+	#RightBar
+		icon = {
+			parentanchor = right|vcenter
+			size = { 400 700 }
+			position = { -10 120 }
+			texture = "gfx/interface/cshop/ebar.dds"
+			state = {
+				name = a
+				trigger_when = "[GetVariableSystem.Exists( 'inv_toggle' )]"
+				duration = 0.5
+				position_x = -10
+			}
+
+			state = {
+				name = b
+				trigger_when = "[Not(GetVariableSystem.Exists( 'inv_toggle' ))]"
+				duration = 0.5
+				position_x = 400
+			}
+			icon = {
+				parentanchor = center|top
+				position = { 0 -17 }
+				size = { 300 50 }
+				texture = "gfx/interface/icons/banners/banner_brown_center.dds"
+				text_single = {
+					#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					parentanchor = center
+					position = { 0 -5 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					Text = "Inventory"
+				}
+			}
+			state = {
+				name = opas2
+				trigger_on_create = yes
+				on_start = "[GetVariableSystem.Set( 'inventory_listing', 'all' )]"
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {10 32 }
+				onclick = "[GetVariableSystem.Set( 'inventory_listing', 'all' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'inventory_listing', 'all' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "All"
+				}
+			}
+			#row 2
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {10 62 }
+				onclick = "[GetVariableSystem.Set( 'inventory_listing', 'plant' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'inventory_listing', 'plant' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Plants & Food"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {150 62 }
+				onclick = "[GetVariableSystem.Set( 'inventory_listing', 'animal' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'inventory_listing', 'animal' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Animals"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {270 62 }
+				onclick = "[GetVariableSystem.Set( 'inventory_listing', 'mineral' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'inventory_listing', 'mineral' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Minerals"
+				}
+			}
+
+			#row 3
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {10 92 }
+				onclick = "[GetVariableSystem.Set( 'inventory_listing', 'tools' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'inventory_listing', 'tools' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Tools"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {150 92 }
+				onclick = "[GetVariableSystem.Set( 'inventory_listing', 'potion' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'inventory_listing', 'potion' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Potions"
+				}
+			}
+			button_checkbox_label = {
+				parentanchor = top|left
+				position = {270 92 }
+				onclick = "[GetVariableSystem.Set( 'inventory_listing', 'special' )]"
+				
+
+				blockoverride "checkbox"
+				{
+					checked = "[GetVariableSystem.HasValue( 'inventory_listing', 'special' )]"
+
+				}
+
+				blockoverride "text"
+				{
+					text = "Specials"
+				}
+			}
+			#all
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'all' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+
+						datamodel = "[GetGlobalList('pshop_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+								
+								onclick = "[GetScriptedGui('load_ing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_QTY
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#animal
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'animal' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+
+						datamodel = "[GetGlobalList('pshop_animal_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+			
+								onclick = "[GetScriptedGui('load_ing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_QTY
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#plant
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'plant' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+
+						datamodel = "[GetGlobalList('pshop_plant_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+			
+								onclick = "[GetScriptedGui('load_ing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_QTY
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#mineral
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'mineral' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+
+						datamodel = "[GetGlobalList('pshop_mineral_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+			
+								onclick = "[GetScriptedGui('load_ing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_QTY
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#tools
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'tools' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+
+						datamodel = "[GetGlobalList('pshop_tools_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+			
+								onclick = "[GetScriptedGui('load_ing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_QTY
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#potion
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'potion' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+
+						datamodel = "[GetGlobalList('pshop_potion_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+			
+								onclick = "[GetScriptedGui('load_ing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_QTY
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}
+			#special
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'inventory_listing', 'special' )]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				parentanchor = center
+				size = { 390 560 }
+				position = { 0 60 }
+
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+
+						datamodel = "[GetGlobalList('pshop_special_resources')]"
+						
+						layoutpolicy_horizontal = expanding
+						spacing = 3
+			
+						item = {
+							
+							button_standard = {
+								
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								size = { 0 60 }
+								button_ignore = none
+			
+								onclick = "[GetScriptedGui('load_ing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', MakeScopeFlag(Scope.GetFlagName) ).End )]"
+								using = tooltip_es
+			
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_NAME
+									position = { 70 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|right
+									layoutpolicy_horizontal = expanding
+									text = AR_QTY
+									position = { -10 -10 }
+			
+								}
+								text_single = {
+									parentanchor = vcenter|left
+									layoutpolicy_horizontal = expanding
+									text = AR_FLAVOR
+									position = { 70 10 }
+			
+								}
+			
+								text_single = { 
+									parentanchor = vcenter
+									text = AR_ICON
+									default_format = "#SIZE:15"
+									position = { 10 0 }
+								}											
+			
+							}
+			
+			
+						}
+			
+					}
+				}
+			}															
+		}
+		button = {
+			size = { 50 95 }
+			parentanchor = vcenter|right
+			texture = "gfx/interface/cshop/arrow.dds"
+			mirror = horizontal
+			position = { -10 0 }
+			onclick = "[GetVariableSystem.Toggle( 'inv_toggle' )]"
+			state = {
+				name = a
+				trigger_when = "[GetVariableSystem.Exists( 'inv_toggle' )]"
+				duration = 0.5
+				position_x = -410
+			}
+
+			state = {
+				name = b
+				trigger_when = "[Not(GetVariableSystem.Exists( 'inv_toggle' ))]"
+				duration = 0.5
+				position_x = -10
+			}
+		}
+	#/RightBar
+	#TopBar
+		icon = {
+			#visible = no
+			parentanchor = top|hcenter
+			size = { 1920 250 }
+			position = { 0 -250 }
+			texture = "gfx/interface/tavern_gfx/mask_off.dds"
+			alpha = 0.8
+			state = {
+				name = a
+				trigger_when = "[GetVariableSystem.Exists( 'spell_toggle' )]"
+				duration = 0.5
+				position_y = 0
+			}
+
+			state = {
+				name = b
+				trigger_when = "[Not(GetVariableSystem.Exists( 'spell_toggle' ))]"
+				duration = 0.5
+				position_y = -250
+			}
+
+			#pot
+			pot_box = {
+				parentanchor = left|top
+				position = { 50 -25 }
+				size = { 1400 200 }
+				
+			}
+			icon = {
+				parentanchor = center
+				position = { -270 10 }
+				size = { 1338 82 }
+				mirror = vertical
+				texture = "gfx/interface/icons/divider_v.dds"
+				icon = {
+					parentanchor = center
+					position = { 10 10 }
+					size = { 300 50 }
+					#mirror = vertical
+					texture = "gfx/interface/icons/banners/banner_brown_center.dds"
+					text_single = {
+						#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+						parentanchor = center
+						position = { 0 -5 }
+						default_format = "#light_background"
+						using = Font_Size_Big
+						using = Font_Type_Flavor
+						Text = "Current Mixture"
+					}
+				}
+			}
+			text_single = {
+				parentanchor = hcenter|bottom
+				position = { 250 -10 }
+				default_format = "#high"
+				using = Font_Size_Big
+				using = Font_Type_Flavor
+				Text = "Heat Level"
+				icon = {
+					parentanchor = hcenter|bottom
+					position = {0 -25 }
+					texture = "gfx/interface/icons/icon_fervor.dds"
+				}
+				text_single = {
+					parentanchor = hcenter|bottom
+					position = {0 -28 }
+					default_format = "#light_background"
+					fontsize = 50
+					using = Font_Type_Flavor
+					Text = "[GetPlayer.MakeScope.Var('heat_level').GetValue|0]"
+					text_single = {
+						parentanchor = center
+						position = { 1 1 }
+						default_format = "#High"
+						fontsize = 40
+						using = Font_Type_Flavor
+						Text = "[GetPlayer.MakeScope.Var('heat_level').GetValue|0]"
+					}
+				}
+
+			}
+			button_standard = {
+				parentanchor = left|bottom
+				position = { 90 -10 }
+				size = { 210 50 }
+				text_single = {
+					parentanchor = left|vcenter
+					position = { 20 -2 }
+					default_format = "#high"
+					fontsize = 20
+					using = Font_Type_Flavor
+					Text = "Mixture Map"
+				}
+				icon = {
+					parentanchor = right|vcenter
+					position = { -5 0 }
+					size = { 40 40 }
+					texture = "gfx/interface/cshop/Scroll_Blank.png"
+				}
+				onclick = "[GetVariableSystem.Toggle( 'spellx_toggle' )]"
+				#enabled = "[GetScriptedGui('can_i_sell').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			button_standard = {
+				parentanchor = hcenter|bottom
+				position = { -510 -10 }
+				size = { 200 50 }
+				text_single = {
+					parentanchor = center
+					position = { -10 -2 }
+					default_format = "#high"
+					fontsize = 20
+					using = Font_Type_Flavor
+					Text = "Empty Pot"
+					icon = {
+						parentanchor = right|vcenter
+						position = {30 5 }
+						size = { 30 30 }
+						texture = "gfx/interface/icons/symbols/icon_cross.dds"
+					}
+				}
+				#enabled = "[GetScriptedGui('can_i_sell').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			button_standard = {
+				parentanchor = hcenter|bottom
+				position = { -260 -10 }
+				size = { 200 50 }
+				text_single = {
+					parentanchor = left|vcenter
+					position = { 20 -2 }
+					default_format = "#high"
+					fontsize = 20
+					using = Font_Type_Flavor
+					Text = "Construct Pot"
+				}
+				icon = {
+					parentanchor = right|vcenter
+					position = { -5 0 }
+					size = { 40 40 }
+					texture = "gfx/alchemist/Potion_Empty.png"
+				}
+				#enabled = "[GetScriptedGui('can_i_sell').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			button_standard = {
+				parentanchor = hcenter|bottom
+				position = { -10 -10 }
+				size = { 200 50 }
+				text_single = {
+					parentanchor = left|vcenter
+					position = { 20 -2 }
+					default_format = "#high"
+					fontsize = 20
+					using = Font_Type_Flavor
+					Text = "Save Recipe"
+				}
+				icon = {
+					parentanchor = right|vcenter
+					position = { -5 0 }
+					size = { 40 40 }
+					texture = "gfx/alchemist/Recipe_Type_1.png"
+				}
+				#enabled = "[GetScriptedGui('can_i_sell').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			#reduce heat tick
+			state = {
+				name = reduce_heat
+				next = reduce_heat
+				duration = 10
+				trigger_on_create = yes
+				on_start = "[GetScriptedGui('reduce_heat').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			button = {
+				size = {80 80}
+				parentanchor = hcenter|bottom
+				position = { 380 -10 }
+				texture = "gfx/alchemist/Bellows.png"
+				enabled = "[GetScriptedGui('can_bellow').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('add_heat').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			#
+
+			widget = {
+				parentanchor = right|top
+				size = { 400 250 }
+				icon = {
+					parentanchor = right|top
+					position = { 20 -10 }
+					size = { 510 80 }
+					mirror = horizontal
+					texture = "gfx/interface/icons/banners/banner_brown_left.dds"
+					text_single = {
+						#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+						parentanchor = center
+						position = { 20 -10 }
+						default_format = "#light_background"
+						using = Font_Size_Big
+						using = Font_Type_Flavor
+						Text = "Current Ingredient"
+					}
+				}
+				icon = {
+					parentanchor = right|top
+					position = { -500 0 }
+					size = { 30 250 }
+					texture = "gfx/interface/icons/divider.dds"
+				}
+				text_single = {
+					#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					datacontext = "[GetPlayer.MakeScope.Var('current_ind')]"
+					parentanchor = left|top
+					position = { 15 65 }
+					default_format = "#high"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					Text = AR_NAMEX
+				}
+
+				button = {
+					parentanchor = right|top
+					position = { -300 105 }
+					size = { 80 80 }
+					text_single = {
+						parentanchor = bottom|hcenter
+						position = { 0 5 }
+						default_format = "#high"
+						fontsize = 20
+						using = Font_Type_Flavor
+						Text = "Mortar"
+					}
+					texture = "gfx/alchemist/Mortar.png"
+					enabled = "[GetScriptedGui('can_motar').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					onclick = "[GetScriptedGui('be_mortar').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+				button = {
+					parentanchor = right|top
+					position = { -180 105 }
+					size = { 80 80 }
+					text_single = {
+						parentanchor = bottom|hcenter
+						position = { 0 5 }
+						default_format = "#high"
+						fontsize = 20
+						using = Font_Type_Flavor
+						Text = "Hammer"
+					}
+					texture = "gfx/alchemist/Wooden_Hammer.png"
+					enabled = "[GetScriptedGui('can_hammer').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					onclick = "[GetScriptedGui('be_crushed').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+				button = {
+					parentanchor = right|top
+					position = { -60 105 }
+					size = { 80 80 }
+					text_single = {
+						parentanchor = bottom|hcenter
+						position = { 0 5 }
+						default_format = "#high"
+						fontsize = 20
+						using = Font_Type_Flavor
+						Text = "Add to Pot"
+					}
+					texture = "gfx/alchemist/Pot.png"
+					enabled = "[GetScriptedGui('can_boil').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+				button_standard = {
+					parentanchor = right|top
+					position = { -40 205 }
+					size = { 120 40 }
+					text_single = {
+						parentanchor = center
+						position = { -10 -2 }
+						default_format = "#high"
+						fontsize = 20
+						using = Font_Type_Flavor
+						Text = "Sell"
+						icon = {
+							parentanchor = right|vcenter
+							name = "gold_icon"
+							position = {30 5 }
+							size = { 30 30 }
+							texture = "gfx/interface/icons/icon_gold.dds"
+						}
+					}
+					enabled = "[GetScriptedGui('can_i_sell').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				}
+				text_single = {
+					#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					parentanchor = left|top
+					position = { 15 205 }
+					default_format = "#high"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					Text = "Value: 5"
+				}
+			}
+		
+		}
+		button = {
+			size = { 95 50 }
+			parentanchor = hcenter|top
+			texture = "gfx/interface/cshop/arrowu.dds"
+			mirror = vertical
+			position = { 0 5 }
+			onclick = "[GetVariableSystem.Toggle( 'spell_toggle' )]"
+			state = {
+				name = a
+				trigger_when = "[GetVariableSystem.Exists( 'spell_toggle' )]"
+				duration = 0.5
+				position_y = 240
+			}
+
+			state = {
+				name = b
+				trigger_when = "[Not(GetVariableSystem.Exists( 'spell_toggle' ))]"
+				duration = 0.5
+				position_y = 5
+			}
+		}
+	#/TopBar	
+
+
+
+
+	##########################################
+	state = {
+		name = block_time
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+	#BottomBar
+		icon = {
+			parentanchor = bottom|hcenter
+			size = { 1920 50 }
+			texture = "gfx/interface/tavern_gfx/mask_off.dds"
+			alpha = 0.8
+		}
+		button_standard = { 
+			parentanchor = right|bottom
+			position = { -450 -5 }
+			text = "Access Windows"
+			onclick = "[GetVariableSystem.Clear( 'inv_toggle' )]"
+			onclick = "[GetVariableSystem.Clear( 'shop_toggle' )]"
+			onclick = "[GetVariableSystem.Clear( 'spell_toggle' )]"
+			onclick = "[GetVariableSystem.Toggle( 'inv_toggle' )]"
+			onclick = "[GetVariableSystem.Toggle( 'shop_toggle' )]"
+			onclick = "[GetVariableSystem.Toggle( 'spell_toggle' )]"
+		}
+		text_single = {
+			#visible = "[GetScriptedGui('s_left').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = left|bottom
+			position = { 15 -10 }
+			default_format = "#high"
+			using = Font_Size_Big
+			using = Font_Type_Flavor
+			Text = "Gold: [GetPlayer.GetGold|0]"
+			icon = {
+				parentanchor = right|vcenter
+				name = "gold_icon"
+				position = {30 5 }
+				size = { 30 30 }
+				texture = "gfx/interface/icons/icon_gold.dds"
+			}
+		}
+		
+		button_standard = { 
+			parentanchor = right|bottom
+			position = { -250 -5 }
+			text = "Dismiss Windows"
+			onclick = "[GetVariableSystem.Clear( 'inv_toggle' )]"
+			onclick = "[GetVariableSystem.Clear( 'shop_toggle' )]"
+			onclick = "[GetVariableSystem.Clear( 'spell_toggle' )]"
+			onclick = "[GetVariableSystem.Clear( 'spellx_toggle' )]"
+		}
+		button_standard = { #exits test gui
+			parentanchor = right|bottom
+			position = { -50 -5 }
+			text = "Exit"
+			onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets alchemist')]"
+		}
+
+
+		###NWW
+		window = {
+			layer = top
+			filter_mouse = all
+			alwaystransparent = no
+			parentanchor = bottom|left
+			visible = "[GetVariableSystem.Exists( 'spellx_toggle' )]"
+			#using = Window_Background
+			movable = no
+			position = { -20 -40 }
+			size = { 1510 770 }
+			background = {
+				texture = "gfx/interface/cshop/scroll_paper.png"
+			}
+			magic_grid = {
+				position = { 0 25 }
+			}
+
+		}
+
+}

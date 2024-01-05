@@ -1,0 +1,96 @@
+is_rural = {
+
+    scope = character
+	is_shown = {
+		OR = {
+			capital_province = { geographical_region = world_steppe }
+			capital_province = { geographical_region = world_asia_minor }
+		}
+	}
+}
+is_not_n = {
+
+    scope = character
+	is_shown = {
+
+		NOT= {
+			capital_province = { geographical_region = world_europe_north }
+		}
+	}
+}
+is_not_nn = {
+
+    scope = character
+	is_shown = {
+
+		OR = {
+			capital_province = { geographical_region = world_africa }
+			capital_province = { geographical_region = world_africa_west }
+			capital_province = { geographical_region = world_africa_east }
+			capital_province = { geographical_region = world_africa_north }
+			capital_province = { geographical_region = world_africa_north_west }
+			capital_province = { geographical_region = world_africa_north_east }
+			capital_province = { geographical_region = world_middle_east }
+			capital_province = { geographical_region = world_india }
+			capital_province = { geographical_region = world_steppe }
+			capital_province = { geographical_region = world_asia_minor }
+		}
+	}
+}
+is_norse_fish = {
+
+    scope = character
+	is_shown = {
+
+		OR = {
+			capital_province = { geographical_region = world_europe_north }
+		}
+	}
+}
+is_islandx = {
+
+    scope = character
+	is_shown = {
+	
+		OR = {
+			capital_province = { geographical_region = world_middle_east }
+			capital_province = { geographical_region = world_india }
+		}
+			
+	}
+}
+is_lake = {
+
+    scope = character
+	is_shown = {
+	
+		OR = {
+			capital_province = { geographical_region = world_africa }
+			capital_province = { geographical_region = world_africa_west }
+			capital_province = { geographical_region = world_africa_east }
+			capital_province = { geographical_region = world_africa_north }
+			capital_province = { geographical_region = world_africa_north_west }
+			capital_province = { geographical_region = world_africa_north_east }
+		}
+	}
+}
+
+is_def_fish = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			capital_province = { geographical_region = world_africa }
+			capital_province = { geographical_region = world_africa_west }
+			capital_province = { geographical_region = world_africa_east }
+			capital_province = { geographical_region = world_africa_north }
+			capital_province = { geographical_region = world_africa_north_west }
+			capital_province = { geographical_region = world_africa_north_east }
+			capital_province = { geographical_region = world_middle_east }
+			capital_province = { geographical_region = world_india }
+			capital_province = { geographical_region = world_europe_north }
+			capital_province = { geographical_region = world_steppe }
+			capital_province = { geographical_region = world_asia_minor }
+		}
+	}
+}

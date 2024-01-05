@@ -1,0 +1,71 @@
+﻿l_french:
+
+COUNTY_DEVELOPMENT_TOOLTIP_DIPLO: "#T Développement: [Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevel]/100#!\n[Scope.GetLandedTitle.GetCountyData.GetDevelopmentIgnoredDesc][Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentIncreaseDesc]"
+COUNTY_CONTROL_TOOLTIP_DIPLO:0 "#T Contrôle du comté: [Scope.GetLandedTitle.GetCountyData.GetControlLevelOutOfMax]#!\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlIncreaseDesc]"
+
+envoy_court_position:0 "Envoyé"
+envoy_court_position_desc:0 "Le but du $envoy_court_position$ est de partir en mission diplomatique et de permettre des actions diplomatiques."
+diplo_non_aggression_20:0 "Pacte de non-agression 20 ans"
+diplo_non_aggression_10:0 "Pacte de non-agression 10 ans"
+diplo_non_aggression_5:0 "Pacte de non-agression 5 ans"
+I_CANNOT_DECLARE_WAR_NONA:0 "Vous avez un pacte de non-agression actif"
+has_non_aggression_pact:0 "Vous avez un pacte de non-agression actif"
+diplo_start:0 "Envoyer un émissaire"
+
+ok_offer_ok:0 "Ok"
+deal_offer_ok:0 "L'affaire est conclue !"
+tos_deal:0 "Conditions de l'accord"
+
+
+#event outcome messages
+fatal_offer:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]..."
+fatal_offer_ok:0 "Votre Envoyé est mort..."
+fatal_offer_message:0 "Votre émissaire semblait avoir perdu la tête, vous pouvez envoyer quelqu'un pour le récupérer."
+
+diplo_block_offer:0 "Ne me parle plus jamais à moi ou à mon fils."
+
+diplo_insulting_offer_opening:0 "Au vil [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_insulting_offer:0 "Je t'insulterais mais à en juger par ton offre, tu n'es pas assez intelligent pour la comprendre..."
+diplo_strong_insulting_offer:0 "Faites-vous une faveur et n'envoyez pas un autre émissaire si vous tenez à leur vie!"
+
+diplo_accept_offer_opening:0 "Pour [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_accept_offer:0 "J'ai lu les termes de l'accord et j'accepte, j'espère que l'avenir contiendra des accords plus fructueux."
+
+diplo_accept_good_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_good_offer:0 "Proposition fantastique, je dois accepter"
+
+diplo_accept_great_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_great_offer:0 "J'ai reçu votre offre et je trouve que c'est une bonne affaire qui nous profite tous les deux grandement!"
+
+diplo_decline_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_offer:0 "Je dois refuser..."
+
+diplo_decline_np_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_np_offer:0 " Je suis désolé mais je ne vois pas l'intérêt de votre offre"
+
+#Deal Outcomes
+diplo_result_tool1:0 "Votre envoyé est tué."
+diplo_result_tool2:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] est tellement en colère qu'ils coupent toutes les offres futures."
+diplo_result_tool3:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] est grandement insulté."
+diplo_result_tool4:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] est insulté."
+diplo_result_tool5:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Accepte le marché."
+diplo_result_tool6:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] est reconnaissant pour l'affaire."
+diplo_result_tool7:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] est reconnaissant pour votre gentillesse et a une haute opinion de vous."
+diplo_result_tool8:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] N'accepte pas l'accord."
+diplo_result_tool9:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Ne voit pas un point dans l'affaire."
+
+#Interface
+diplo_enabled:0 " Un accord entre [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip] et [GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] est en cours."
+diplo_able:0 " Vous n'avez pas d'envoyé, employez-en un dans l'onglet spécial des postes à la cour."
+
+#opinion modifiers
+deal_made:0 "Accords diplomatiques conclus"
+good_deal_made:0 "Bons accords diplomatiques conclus"
+great_deal_made:0 "Grandes affaires diplomatiques conclues"
+insulting_offer:0 "Insultes diplomatiques"
+strong_insulting_offer:0 "Insultes diplomatiques graves"
+deadly_insulting_offer:0 "Fatalité diplomatique"
+block_offer:0 "Négociations diplomatiques bloquées"
+
+#p Modifier
+shady_deal_made:0 "Offres louches"

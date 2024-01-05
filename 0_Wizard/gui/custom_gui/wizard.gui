@@ -1,0 +1,224 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "wizard"
+
+	parentanchor = hcenter|vcenter
+	size = { 100% 100% }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	movable = yes
+
+
+	icon = {
+		#visible = no
+		texture = "gfx/interface/cshop/western.dds"
+		#visible = "[GetScriptedGui('ls_entry').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	fight = {
+		#visible = "[GetScriptedGui('is_forward').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#visible = no
+		parentanchor = hcenter|vcenter
+		#datacontext = "[GetGlobalVariable('castox')]"
+		#datacontext = "[Scope.GetCharacter]"
+		datacontext = "[GetPlayer]"
+		position = { 0 0 }
+		#animation_talk = {}
+		state = {
+			name = aa
+			next = aa
+			trigger_on_create = yes
+			duration = 0.01
+			position_x = "[FixedPointToFloat(GetPlayer.MakeScope.Var('plane_value').GetValue)]"
+			on_start = "[GetScriptedGui('move_trigger').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+
+	}
+	fight_opp = {
+		#visible = "[GetScriptedGui('is_forward').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#visible = no
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetGlobalVariable('castox')]"
+		datacontext = "[Scope.GetCharacter]"
+		#datacontext = "[GetPlayer]"
+		position = { -400 10 }
+		#animation_talk = {}
+		state = {
+			name = aa
+			next = aa
+			trigger_on_create = yes
+			duration = 0.01
+			position_x = "[FixedPointToFloat(GetPlayer.MakeScope.Var('plane_value_2').GetValue)]"
+			#on_start = "[GetScriptedGui('move_trigger_2').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+
+	}
+	text_single = {
+		#visible = "[GetScriptedGui('gcx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		visible = no
+		parentanchor = top|left
+		position = { 20 20 }
+		text = "Player distance: [FixedPointToFloat(GetPlayer.MakeScope.Var('plane_value').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+	text_single = {
+		#visible = "[GetScriptedGui('gcx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		visible = no
+		parentanchor = top|left
+		position = { 20 60 }
+		text = "Player distance: [FixedPointToFloat(GetPlayer.MakeScope.Var('plane_value_2').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+	text_single = {
+		#visible = "[GetScriptedGui('gcx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		visible = no
+		parentanchor = top|left
+		position = { 20 120 }
+		text = "diff distance: [FixedPointToFloat(GetPlayer.MakeScope.Var('plane_value_x').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+	state = {
+		name = s_back
+		trigger_when = "[And(GetScriptedGui('move_backward').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End ),GetVariableSystem.HasValue( 'fight_state', '1' ))]"
+		duration = 0.5
+		on_finish = "[GetScriptedGui('move_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_finish = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+	}
+	state = {
+		name = s_front
+		trigger_when = "[And(GetScriptedGui('move_forward').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End ),GetVariableSystem.HasValue( 'fight_state', '1' ))]"
+		duration = 0.5
+		on_finish = "[GetScriptedGui('move_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_finish = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+	}
+	state = {
+		name = s_attack
+		trigger_when = "[GetScriptedGui('move_strike').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 1.1
+		on_finish = "[GetScriptedGui('move_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#on_finish = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+	}
+	state = {
+		name = s_hit
+		trigger_when = "[GetScriptedGui('move_hit').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 1.8
+		on_finish = "[GetScriptedGui('move_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#on_finish = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+	}
+	state = {
+		name = s_hit2
+		trigger_when = "[GetScriptedGui('move_hit2').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 1.8
+		on_finish = "[GetScriptedGui('move_reset2').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#on_finish = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+	}
+	state = {
+		name = s_victory
+		trigger_when = "[GetScriptedGui('move_victory').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 11
+		on_finish = "[GetScriptedGui('move_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#on_finish = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+	}
+	button_standard = {
+		text = "Foward"
+		parentanchor = hcenter|vcenter
+		position = { 300 0 }
+		shortcut = "character_finder"
+		onclick = "[GetScriptedGui('move_forward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetVariableSystem.Set( 'fight_state', '1' )]"
+		enabled = "[GetVariableSystem.HasValue( 'fight_state', '0' )]"
+		state = {
+			name = _mouse_press
+			frame = 3
+			on_start = "[GetScriptedGui('move_forward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+		}
+
+		state = {
+			name = _mouse_release
+			frame = 2
+			on_start = "[GetScriptedGui('move_r_forward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+		}
+	}
+	button_standard = {
+		text = "Backward"
+		parentanchor = hcenter|vcenter
+		position = { 300 40 }
+		shortcut = "find_title_shortcut"
+		onclick = "[GetScriptedGui('move_backward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetVariableSystem.Set( 'fight_state', '1' )]"
+		enabled = "[GetVariableSystem.HasValue( 'fight_state', '0' )]"
+		#onclick = "[GetScriptedGui('move_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+		state = {
+			name = _mouse_press
+			frame = 3
+			on_start = "[GetScriptedGui('move_backward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+		}
+
+		state = {
+			name = _mouse_release
+			frame = 2
+			on_start = "[GetScriptedGui('move_r_backward').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			on_start = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+		}
+	}
+
+	button_standard = {
+		text = "Strike"
+		shortcut = "pause"
+		parentanchor = hcenter|vcenter
+		position = { 300 80 }
+		#onclick = "[GetVariableSystem.Set( 'fight_state', '1' )]"
+		onclick = "[GetScriptedGui('move_strike').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	button_standard = {
+		text = "Hit"
+		shortcut = "go_back"
+		parentanchor = hcenter|vcenter
+		position = { 300 120 }
+		#onclick = "[GetVariableSystem.Set( 'fight_state', '1' )]"
+		onclick = "[GetScriptedGui('move_hit').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	button_standard = {
+		text = "Victory"
+		#shortcut = "go_back"
+		parentanchor = hcenter|vcenter
+		position = { 300 160 }
+		#onclick = "[GetVariableSystem.Set( 'fight_state', '1' )]"
+		onclick = "[GetScriptedGui('move_victory').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	button_standard = {
+		text = "Reset"
+		parentanchor = hcenter|vcenter
+		position = { 300 200 }
+		#onclick = "[GetVariableSystem.Set( 'fight_state', '1' )]"
+		onclick = "[GetScriptedGui('move_reset').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetVariableSystem.Set( 'fight_state', '0' )]"
+	}
+	
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('start_liar').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		#onclick = "[GetScriptedGui('exit_fishing').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets wizard')]"
+    }
+
+
+}

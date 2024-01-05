@@ -1,0 +1,10 @@
+﻿#########################################################
+#														#
+#  DO NOT LEAVE GAPS IN "index" OR THE GAME WILL CRASH  #
+#														#
+#########################################################
+
+interaction_category_little_birds = {
+	index = 9
+	desc = "Little Birds"
+}

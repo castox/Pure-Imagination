@@ -1,0 +1,323 @@
+﻿# Called from code after history generation
+# Empty scope
+on_game_start = {
+	effect = {
+		every_living_character = {
+
+			limit = { NOT = { has_character_flag = magic_type } }
+			#limit = { NOT = { has_game_rule = random_ruler_placement_off } }
+
+			#Start Mana
+			add_character_flag = {
+			flag = mana_val
+			}
+			set_variable = { name = mana_val value = 0 }
+			#End Mana
+
+			##Limits
+			add_character_flag = {
+			flag = mana_limit
+			}
+			set_variable = { name = mana_limit value = 0 }
+			change_variable = { name = mana_limit add = martial }
+			change_variable = { name = mana_limit add = intrigue }
+			change_variable = { name = mana_limit add = diplomacy }
+			change_variable = { name = mana_limit multiply = learning }
+			change_variable = { name = magic_val value = var:magic_limit }
+			#End Limit
+			#Add Types
+			add_character_flag ={
+				flag = magic_type
+			}
+										#Elfs
+			if = {
+				limit = {
+					has_culture = culture:high_elf
+				}
+					set_character_faith_history =  faith:elvani
+			}
+			if = {
+				limit = {
+					has_culture = culture:wood_elf
+				}
+				set_character_faith_history = faith:sacred_grove
+			}
+			if = {
+				limit = {
+					has_culture = culture:shadow_elf
+					
+				}
+				set_character_faith_history = faith:moonmist
+			}
+			if = {
+				limit = {
+					OR ={
+					has_culture = culture:gnome
+					has_culture = culture:faye
+					}
+
+				}
+				set_character_faith_history = faith:faye
+			add_character_flag = {
+			flag = eval_debug
+			}
+				
+			}
+			##Greens
+			if = {
+				limit = {
+					has_culture = culture:norkse
+				}
+				set_character_faith_history = faith:orkan
+			}
+			if = {
+				limit = {
+					has_culture = culture:goblin
+				}
+				set_character_faith_history = faith:gob
+				add_character_flag = {
+			flag = eval_debug
+			}
+			}
+			if = {
+				limit = {
+					has_culture = culture:troll			
+				}
+				set_character_faith_history = faith:troll
+			}
+			if = {
+				limit = {
+					has_culture = culture:ogre
+				}
+				set_character_faith_history = faith:ogre
+			}
+			if = {
+				limit = {
+					has_culture = culture:dwarv
+				}
+				set_character_faith_history =  faith:allshadow
+			}
+
+			if = {
+				limit = {
+						has_culture = culture:human
+				}
+				set_character_faith_history = faith:"catholic"
+				add_character_flag = {
+			flag = eval_debug
+			}
+			}
+			every_county = {
+				limit = {
+					has_culture = culture:akan
+				}
+				set_county_culture = culture:human
+				set_county_faith = faith:"catholic"
+				add_character_flag = {
+				flag = eval_debug_2
+				}
+			}
+
+						if = {
+							limit = {
+								OR = {
+									has_culture = culture:goblin
+									has_culture = culture:hobgoblin
+									has_culture = culture:ogre
+									has_culture = culture:troll
+									has_culture = culture:norkse
+								}
+								
+							}
+						
+							if = { limit = { has_trait = charming } remove_trait = charming }
+							if = { limit = { has_trait = beauty_good_1 } remove_trait = beauty_good_1 }
+							if = { limit = { has_trait = beauty_good_2 } remove_trait = beauty_good_2 }
+							if = { limit = { has_trait = beauty_good_3 } remove_trait = beauty_good_3 }
+							if = { limit = { has_trait = honest } remove_trait = honest }
+							if = { limit = { has_trait = diligent } remove_trait = diligent }
+							if = { limit = { has_trait = humble } remove_trait = humble }
+							if = { limit = { has_trait = gregarious } remove_trait = gregarious }
+							if = { limit = { has_trait = gallant } remove_trait = gallant }
+							if = { limit = { has_trait = just } remove_trait = just }
+							if = { limit = { has_trait = forgiving } remove_trait = forgiving }
+							if = { limit = { has_trait = calm } remove_trait = calm }
+							if = { limit = { has_trait = compassionate } remove_trait = compassionate }
+							if = { limit = { has_trait = trusting } remove_trait = trusting }
+
+							add_trait = sadistic
+							add_trait = stubborn
+							add_trait = callous
+							add_trait = deceitful
+							add_trait = lustful
+							add_trait = impatient
+							add_trait = greedy
+							add_trait = vengeful
+
+							random_list = {
+								limit = { 
+									NOT = { has_character_flag = bad_culture_eval }
+								}
+								20 = { add_trait = shy }
+								20 = { add_trait = fickle }
+								20 = { add_trait = paranoid }
+								20 = { add_trait = craven }
+								20 = { add_trait = arrogant }
+							}
+
+							if = { 
+								limit = { 
+									OR = {
+										has_culture = culture:hobgoblin
+										has_culture = culture:ogre 
+										has_culture = culture:norkse 
+									} 
+								}
+									add_trait = gluttonous
+									add_trait = brave
+									remove_trait = shy
+									remove_trait = craven
+								
+							}
+
+							add_character_flag = {
+								flag = bad_culture_eval
+							}
+					
+					}
+
+					if = {
+						limit = {
+							has_culture = culture:shadow_elf
+						}
+						add_trait = deceitful
+						remove_trait = just
+						remove_trait = forgiving
+						remove_trait = compassionate
+						remove_trait = honest
+					}
+
+				every_war_attacker = {
+					end_war = white_peace
+				}
+		}
+	}
+}
+
+# Like on_game_start, except it is called once the host (or player, in single player) exits the lobby. Good for anything where you need to know who the players are, or what the game rules are
+on_game_start_after_lobby = {
+	effect = {
+		### GAME RULE: VIEW ON SAME-SEX RELATIONS
+		if = {
+			limit = { has_game_rule = accepted_same_sex_relations }
+			game_rule_accepted_same_sex_relations_effect = yes
+		}
+
+		### GAME RULE: RANDOM RULER PLACEMENT
+		if = {
+			limit = { NOT = { has_game_rule = random_ruler_placement_off } }
+			game_rule_random_ruler_placement_effect = yes
+		}
+
+		### GAME RULE: RANDOMIZE FAITH
+		if = {
+			limit = { has_game_rule = randomized_faiths_on }
+			game_rule_randomize_faith_effect = yes
+		}
+
+		### GAME RULE: FAITH ACCEPTANCE
+		if = {
+			limit = { has_game_rule = full_faith_acceptance }
+			game_rule_faith_acceptance_effect = yes
+		}
+
+		### GAME RULE: GENDER EQUALITY ###
+		if = {
+			limit = { has_game_rule = full_gender_equality }
+			game_rule_full_gender_equality_effect = yes
+		}
+		else_if = {
+			limit = { has_game_rule = inversed_gender_equality }
+			game_rule_inversed_gender_equality_effect = yes #todo fix
+		}
+
+		### GAME RULE: SEXUALITY DISTRIBUTION ###
+		if = {
+			limit = { NOT = { has_game_rule = sexuality_distribution_default } }
+			game_rule_sexuality_distribution_effect = yes
+		}
+
+		### ACHIEVEMENT: FROM RAGS TO RICHES
+		every_player = {
+			limit = { highest_held_title_tier = tier_county }
+			add_achievement_global_variable = {
+				VARIABLE = achievement_rags_to_riches_valid
+				VALUE = yes
+			}
+			add_character_flag = {
+				flag = leave_me_alone
+			}
+		}
+		### ACHIEVEMENT TRACKING FOR STARTING CHARACTERS
+		if = { 
+			limit = { has_multiple_players = no }
+			every_player = { 
+				if = {
+					limit = { 
+						exists = character:7757
+						this = character:7757
+					}
+					add_achievement_global_variable = {
+						VARIABLE = started_give_a_dog_a_bone_achievement
+						VALUE = yes
+					}
+				}	
+				if = {
+					limit = { 
+						exists = character:1128
+						this = character:1128
+					}
+					add_achievement_global_variable = {
+						VARIABLE = started_wily_as_the_fox_achievement
+						VALUE = yes
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								exists = character:108501
+								this = character:108501
+							}
+							AND = {
+								exists = character:107500
+								this = character:107500
+							}
+							AND = {
+								exists = character:107501
+								this = character:107501
+							}
+							AND = {
+								exists = character:108500
+								this = character:108500
+							}
+							AND = {
+								exists = character:109500
+								this = character:109500
+							}
+						}
+					}
+					add_achievement_global_variable = {
+						VARIABLE = started_sibling_rivalry_achievement
+						VALUE = yes
+					}
+				}
+
+			}
+		}
+	}
+
+	events = {
+		game_rule.1000	#Autopopulate families.
+	}
+}

@@ -1,0 +1,111 @@
+﻿
+bow_decision = {
+	picture = "gfx/interface/cshop/range/bow_dec.dds"
+
+	desc = bow_decision_desc
+	selection_tooltip = bow_decision_tooltip
+
+	ai_check_interval = 0
+	cooldown = { days = 30 }
+	is_shown = {
+		is_ai = no
+		is_adult = yes
+		is_imprisoned = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_ai = no
+		is_adult = yes
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					global_var:t_dummy= { is_alive = no }
+				}
+				reincarnate_dummy = yes
+			}
+			clear_variable_list = spectate
+			add_character_flag = is_archer
+			every_vassal = {
+				limit = {
+					is_alive = yes
+					age > 15
+					is_imprisoned = no
+				}
+				root = {
+					add_to_variable_list = { name = spectate target = prev }
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					is_alive = yes
+					age > 15
+					is_imprisoned = no
+				}
+				root = {
+					add_to_variable_list = { name = spectate target = prev }
+				}
+				
+			}
+			remove_variable = archer1
+			remove_variable = archer2
+			random_living_character = {
+				limit = {
+					is_ai = yes
+					is_adult = yes
+					is_imprisoned = no
+					NOT = { this = root }
+					is_landed = yes
+					marshal > 10
+					gold > 50
+					prowess > 10
+				}
+				root = {
+					set_variable = {
+						name = archer1
+						value = prev
+					}
+				}
+			}
+			random_living_character = {
+				limit = {
+					is_ai = yes
+					is_adult = yes
+					is_imprisoned = no
+					is_landed = yes
+					gold > 50
+					prowess > 10
+					marshal > 10
+					NOT = {
+						this = var:archer1
+						this = root
+					}
+				}
+				root = {
+					set_variable = {
+						name = archer2
+						value = prev
+					}
+				}
+			}
+			
+		}
+
+		trigger_event = {
+			id = bow.1000
+		}
+		custom_tooltip = bow_decision_effect_tooltip
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

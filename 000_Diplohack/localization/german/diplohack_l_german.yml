@@ -1,0 +1,74 @@
+﻿l_german:
+
+ COUNTY_DEVELOPMENT_TOOLTIP_DIPLO: "#T Entwicklung: [Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevel]/100#!\n[Scope.GetLandedTitle.GetCountyData.GetDevelopmentIgnoredDesc][Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentIncreaseDesc]"
+ COUNTY_CONTROL_TOOLTIP_DIPLO:0 "#T Gemeindekontrolle: [Scope.GetLandedTitle.GetCountyData.GetControlLevelOutOfMax]#!\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlIncreaseDesc]"
+
+ envoy_court_position:0 "Botschafter"
+ envoy_court_position_desc:0 "$envoy_court_position$ gehen auf diplomatische Missionen und ermöglichen diplomatische Aktionen."
+ diplo_non_aggression_20:0 "Nichtangriffspakt für 20 Jahre"
+ diplo_non_aggression_10:0 "Nichtangriffspakt für 10 Jahre"
+ diplo_non_aggression_5:0 "Nichtangriffspakt für 5 Jahre"
+ I_CANNOT_DECLARE_WAR_NONA:0 "Ihr habt einen aktiven Nichtangriffspakt"
+ has_non_aggression_pact:0 "Ihr habt einen aktiven Nichtangriffspakt"
+ diplo_start:0 "$envoy_court_position$ schicken"
+
+ ok_offer_ok:0 "In Ordnung"
+ diplo_offer_ok:0 "Die diplomatische Verhandlung ist abgeschlossen!"
+
+
+#event outcome messages
+ fatal_offer:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetTitledFirstNameNoTooltip]..."
+ fatal_offer_ok:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_PRO_POS_P_2P_N')] $envoy_court_position$[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_END_NOU_S_GS_N')] ist gestorben..."
+ fatal_offer_message:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_PRO_POS_P_2P_N')|U] $envoy_court_position$[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_END_NOU_S_GS_N')] wurde enthauptet. Ihr könnt jemanden schicken, um [GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_PRO_POS_S_3P')]en Leichnam zu holen."
+
+ diplo_block_offer:0 "Belästigt mich oder meinesgleichen nie wieder!"
+
+ diplo_insulting_offer_opening:0 "An den boshaften [GetGlobalVariable('diplo_1').GetCharacter.GetTitledFirstNameNoTooltip]"
+ diplo_insulting_offer:0 "Ich würde Euch gerne beleidigen, aber Eurem törichten Angebot nach zu urteilen, seid Ihr nicht intelligent genug, um es zu verstehen..."
+ diplo_strong_insulting_offer:0 "Tut Euch selbst den Gefallen und schickt keinen weiteren $envoy_court_position$, wenn Ihr [GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).GetHerHim] wertschätzt!"
+
+ diplo_accept_offer_opening:0 "An [GetGlobalVariable('diplo_1').GetCharacter.GetTitledFirstNameNoTooltip]"
+ diplo_accept_offer:0 "Ich akzeptiere die $tos_deal$ und hoffe, dass die Zukunft weitere fruchtbare Geschäfte bereit hält."
+
+ diplo_accept_good_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_accept_good_offer:0 "Fantastischer Vorschlag, ich schlage ein."
+
+ diplo_accept_great_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_accept_great_offer:0 "Ich habe Euer Angebot erhalten und bin sicher, dass wir beide davon profitieren werden!"
+
+ diplo_decline_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_decline_offer:0 "Ich muss leider ablehnen..."
+
+ diplo_decline_np_offer_opening:0 "$diplo_accept_offer_opening$"
+ diplo_decline_np_offer:0 "Verzeiht, doch ich sehe keinen Sinn in Eurem Angebot."
+
+
+#Deal Outcomes
+ diplo_result_tool1:0 "[[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_PRO_POS_P_2P_N')] $envoy_court_position$[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_END_NOU_S_GS_N')] wurde getötet."
+ diplo_result_tool2:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] ist so wütend, dass er kein[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_END_PRO_S_A')] $envoy_court_position$[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' ).Custom('DE_END_NOU_S_GS_N')] mehr von euch empfangen wird."
+ diplo_result_tool3:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] ist stark beleidigt."
+ diplo_result_tool4:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] ist beleidigt."
+ diplo_result_tool5:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] akzeptiert das Angebot."
+ diplo_result_tool6:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] ist dankbar für das Angebot."
+ diplo_result_tool7:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] ist dankbar für Eure Großzügigkeit und schätzt Euch dafür sehr."
+ diplo_result_tool8:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] lehnt das Angebot ab."
+ diplo_result_tool9:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] sieht keinen Sinn in dem Angebot."
+
+
+#Interface
+ diplo_enabled:0 "Eine diplomatische Verhandlung zwischen [GetGlobalVariable('diplo_1').GetCharacter.GetTitledFirstNameNoTooltip] und [GetGlobalVariable('diplo_2').GetCharacter.GetTitledFirstNameNoTooltip] ist im Gange."
+ diplo_able:0 "Ihr habt keinen $envoy_court_position$. Stellt einen an Eurem Hof an."
+
+
+#opinion modifiers
+ deal_made:0 "Diplomatische Geschäfte abgeschlossen"
+ good_deal_made:0 "Gute diplomatische Geschäfte abgeschlossen"
+ great_deal_made:0 "Großartige diplomatische Geschäfte abgeschlossen"
+ insulting_offer:0 "Diplomatische Beleidigung"
+ strong_insulting_offer:0 "Schwere diplomatische Beleidigung"
+ deadly_insulting_offer:0 "Diplomatischer Todesfall"
+ block_offer:0 "Diplomatisches Angebot abgelehnt"
+
+
+#p Modifier
+ shady_deal_made:0 "Zwielichtige Angebote"

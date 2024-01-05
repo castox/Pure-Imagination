@@ -1,0 +1,144 @@
+﻿cameraxd = {
+	camera = {
+		position = cylindrical{ 360 -22 -120 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -22 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 500 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+## test
+camerafor = {
+	camera = {
+		position = cylindrical{ 400 95 -120 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = { 0 110 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 600 }
+	}
+
+	unknown = camera_torso
+}
+topdown = {
+	camera = {
+		position = cylindrical{ 20 510 80 }
+		position_node = camera_torso_look_at
+
+		look_at = {	-30 -100 20 }
+		#to create different angles adjust the -30 in the line above.
+		fov = 20
+		camera_near_far = { 110 1200 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+camera_fishing = {
+	camera = {
+		position = cylindrical{ 900 150 -150 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+camera_fishing3 = {
+	camera = {
+		position = cylindrical{ 900 400 -150 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 2000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+camera_fishing2 = {
+	camera = {
+		position = cylindrical{ 900 450 -170 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 2000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+drinking_pri = {
+	camera = {
+		position = cylindrical{ 600 195 -90 }
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+	unknown = "gfx/0.dds"
+}
+drinking_sec = {
+	camera = {
+		position = cylindrical{ 600 195 60 }
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+	unknown = "gfx/0.dds"
+}
+drinking_rando1 = {
+	camera = {
+		position = cylindrical{ 600 195 -30 }
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+	unknown = "gfx/0.dds"
+}
+drinking_rando2 = {
+	camera = {
+		position = cylindrical{ 600 195 15 }
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+	unknown = "gfx/0.dds"
+}
+drinking_rando3 = {
+	camera = {
+		position = cylindrical{ 600 195 15 }
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+	unknown = "gfx/0.dds"
+}
+drinking_rando4 = {
+	camera = {
+		position = cylindrical{ 600 195 -15 }
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+	unknown = "gfx/0.dds"
+}
+drinking_spouse = {
+	camera = {
+		position = cylindrical{ 600 195 15 }
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+	unknown = "gfx/0.dds"
+}

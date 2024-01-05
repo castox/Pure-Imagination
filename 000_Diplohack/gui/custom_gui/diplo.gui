@@ -1,0 +1,3673 @@
+﻿
+diplo_window = {}
+
+types DiploWin {
+	type diplo_window = window {
+
+		name = "diplohack"
+		scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+		parentanchor = hcenter|vcenter
+		size = { 1920 1080 }
+		layer = top
+		filter_mouse = all
+		alwaystransparent = no
+
+		movable = no
+		icon = {
+			size = { 100% 100% }
+			parentanchor = center
+			texture = "gfx/interface/tavern_gfx/mask_off.dds"
+		}
+		icon = {
+			#visible = no
+			size = { 1920 540 }
+			parentanchor = bottom
+			alpha = 4
+			texture = "gfx/interface/tavern_gfx/diploback.png"
+			modify_texture = {
+					
+				texture = "gfx/2.dds"
+				blend_mode = alphamultiply
+			}
+		}
+
+		visible = "[GetScriptedGui('diplo_viewport_0').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+
+
+		widget = {
+			#visible = no
+			parentanchor = left|top
+			position = { 0 -35 }
+			datacontext = "[GetGlobalVariable('diplo_2')]"
+			datacontext = "[Scope.GetCharacter]"
+			datacontext = "[GetIllustration( 'character_view_bg' )]"
+			size = { 1920 740 }
+			icon = {
+				size = { 1920 740 }
+				texture = "[Illustration.GetTexture( Character.MakeScope )]"
+				# OLD texture = "[Illustration.GetTexture( Character.Self )]"
+				
+				modify_texture = {
+					
+					texture = "gfx/2.dds"
+					blend_mode = alphamultiply
+				}
+			}
+		}
+		icon = {
+			#george
+			parentanchor = bottom|hcenter
+			position = { -1 -25 }
+			size = { 280 1000 }
+			texture = "gfx/interface/tavern_gfx/deco_diplolarge.png"
+			mirror = horizontal
+			#tintcolor = { 0.6 0.6 0.4 1 }
+			#tintcolor = { 1 0.9 0.7 0.9 }
+			tintcolor = { 1 1 1 0.9 }
+
+		}
+		icon = {
+			parentanchor = top|left
+			size = { 1920 120 }
+			texture = "gfx/interface/tavern_gfx/topbar_diplo.dds"
+		}
+		text_single = {
+			parentanchor = top|right
+			position = { -60 15 }
+			default_format = "#high"
+			fontsize  = 32
+			using = Font_Type_Flavor
+			text = diplo_gui_unpaused 
+			visible = "[Not(IsGamePaused)]"
+		}
+		text_single = {
+			parentanchor = top|right
+			position = { -60 15 }
+			default_format = "#high"
+			fontsize  = 32
+			using = Font_Type_Flavor
+			text = diplo_gui_paused
+			visible = "[IsGamePaused]"
+		}
+		#Overview
+			icon = {
+			
+				size = { 770 410 }
+				parentanchor = top|right
+				position = { -50 100 }
+				#alpha = 0.5
+				texture = "gfx/interface/tavern_gfx/overview.png"
+				#spriteType = Corneredtiled
+				#spriteborder = { 3 3 }
+				icon = {
+					visible = yes
+					#parentanchor = "center"
+					parentanchor = top|right
+					position = { -5 5 }
+					size = { 760 400 }
+					texture = "gfx/interface/tavern_gfx/diploback.png"
+				}
+				text_single = {
+					parentanchor = top|left
+					position = { 80 10 }
+					default_format = "#high"
+					fontsize  = 22
+					using = Font_Type_Flavor
+					text = diplo_gui_value_breakout 
+				}
+				scrollbox = {
+					
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					size = { 310 350 }
+					parentanchor = top|left
+					position = { 0 50 }
+	
+					blockoverride "scrollbox_content"
+					{
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							spacing = 10
+	
+							vbox = {
+								name = "effect"
+								visible = "[DecisionDetailView.HasEffect]"
+								layoutpolicy_horizontal = expanding
+							
+								background = {
+									name = "illustrations"
+									texture = "gfx/interface/icons/lifestyle_tree_backgrounds/skulduggery.dds"
+									tintcolor = { 0.6 0.8 0.8 0.8 }
+	
+									margin = { 0 5 }
+									using = Mask_Rough_Edges
+									alpha = 0.5
+									fittype = centercrop
+									mirror = horizontal
+	
+									modify_texture = {
+										texture = "gfx/interface/component_masks/mask_fade_corners_bottom.dds"
+										blend_mode = alphamultiply
+										alpha = 0.6
+									}
+	
+									modify_texture = {
+										texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+										blend_mode = overlay
+										alpha = 0.4
+									}
+								}
+	
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_opinion'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_general_opinion 
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('g_land_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_give_titles
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('t_land_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_request_titles
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('g_gold_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_give_gold
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('t_gold_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_request_gold
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('fear_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_fear_value
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('rival_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_rival_value
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('ext_treaty_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_hook_value
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('ptm_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_marriage_value
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('legacy_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_dynasty_legacy
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_artifact'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_artifact_value
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_alliance_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_alliance_value
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_rank'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_liege_relations
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('envoy_skill_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_envoy_skill
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('rec_diplo_skill'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_diplo2_skill
+								}
+	
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_soath'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_sworn_oath
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_vassalize'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_vassalization
+								}
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_vassal_value'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_vassal_value
+								}
+								
+								text_single = {
+									visible = "[Not(EqualTo_CFixedPoint(GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_warscore'), '(CFixedPoint)0'))]"
+									default_format = "#high"
+									fontsize  = 22
+									using = Font_Type_Flavor
+									text = diplo_gui_war_value
+								}
+	
+							}
+	
+	
+	
+							expand = {}
+	
+						}
+					}
+	
+					blockoverride "scrollbox_background_fade" {}
+				}
+				scrollbox = {
+				
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					size = { 470 400 }
+					parentanchor = top|right
+					#position = { -50 180 }
+					blockoverride "scrollbox_content"
+					{
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							spacing = 10
+	
+							vbox = {
+								name = "effect"
+								visible = "[DecisionDetailView.HasEffect]"
+								layoutpolicy_horizontal = expanding
+							
+								background = {
+									name = "illustrations"
+									texture = "gfx/interface/icons/lifestyle_tree_backgrounds/skulduggery.dds"
+									tintcolor = { 0.6 0.8 0.8 0.8 }
+	
+									margin = { 0 5 }
+									using = Mask_Rough_Edges
+									alpha = 0.5
+									fittype = centercrop
+									mirror = horizontal
+	
+									modify_texture = {
+										texture = "gfx/interface/component_masks/mask_fade_corners_bottom.dds"
+										blend_mode = alphamultiply
+										alpha = 0.6
+									}
+	
+									modify_texture = {
+										texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+										blend_mode = overlay
+										alpha = 0.4
+									}
+								}
+	
+								text_label_center = {
+									text = tos_deal
+									default_format = "#high"
+									using = Font_Size_Big
+									using = Font_Type_Flavor
+								}
+	
+								text_multi = {
+									layoutpolicy_horizontal = expanding
+									margin = { 15 15 }
+									max_width = 400
+									autoresize = yes
+									text = "[GetScriptedGui('diplo_deal').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+							}
+	
+	
+	
+							expand = {}
+	
+						}
+					}
+	
+					blockoverride "scrollbox_background_fade" {}
+				}
+			}
+
+		#.Overview
+
+		#Portraits
+
+			portrait_diplo = {
+				parentanchor = left|top
+				position = { 200 420 }
+				#datacontext = "[GetGlobalVariable('diplo_1').GetCharacter.GetCouncillorPosition( 'envoy_court_position' ).GetCouncillor]"
+				datacontext = "[GetGlobalVariable('diplo_1').GetCharacter.GetCharacterEmployedAs( 'envoy_court_position' )]"
+
+			}
+			portrait_diplo_2 = {
+				parentanchor = left|top
+				position = { 420 390 }
+				datacontext = "[GetGlobalVariable('diplo_2').GetCharacter]"
+			}
+		#.Portraits
+		##Extras
+
+
+		icon = {
+			#Other Actions
+			visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'prewar' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+			size = { 760 360 }
+			parentanchor = bottom|right
+			position = { -50 -30 }
+			#alpha = 0.5
+			texture = "gfx/interface/tavern_gfx/overview.png"
+
+			button_standard = { #alliance
+				parentanchor = top|left
+				position = { 10 10 }
+				icon = {
+					texture = "gfx/interface/icons/message_feed/alliance.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_other_actions_alliance
+				}
+				onclick = "[GetScriptedGui('diplo_alliance').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				down = "[GetScriptedGui('diplo_alliance').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[GetScriptedGui('diplo_can_ally').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip =  "[GetScriptedGui('diplo_can_ally').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+			button_standard = { 
+				parentanchor = top|left
+				position = { 10 60 }
+				icon = {
+					texture = "gfx/interface/icons/icon_vassal.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 5 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_other_actions_swear_oath
+				}
+				onclick = "[GetScriptedGui('diplo_soath').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				down = "[GetScriptedGui('diplo_soath').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[GetScriptedGui('diplo_soath1').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+			button_standard = { 
+				parentanchor = top|left
+				position = { 10 110 }
+				icon = {
+					texture = "gfx/interface/icons/icon_liege.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 5 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_other_actions_vassalize
+				}
+				onclick = "[GetScriptedGui('diplo_vassalize').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				down = "[GetScriptedGui('diplo_vassalize').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[GetScriptedGui('diplo_vassalize1').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+			}
+					#Gold
+
+				icon = {
+					size = { 170 180 }
+					parentanchor = hcenter|top
+					position = { -60 10 }
+					icon = {
+						size = { 170 180 }
+						parentanchor = center
+						
+						texture = "gfx/interface/tavern_gfx/overview.png"
+
+					}
+
+					icon = {
+						texture = "gfx/interface/icons/message_feed/money.dds"
+						size = { 30 35 }
+						parentanchor = top|hcenter
+						position = { 35 14 }
+					}
+					text_single = { #Place
+						parentanchor = top|hcenter
+						position = { -15 5}
+						text = "[gold]"
+						default_format = "#clickable"
+						alwaystransparent = yes
+						using = Font_Type_Flavor
+						fontsize = 30
+						#onclick = "[GetScriptedGui('rem_gold_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						#down = "[GetVariableSystem.HasValue( 'trade_tab', 'titles' )]"
+					}
+					
+					button = {
+						parentanchor = hcenter|top
+						position = { -50 80 }
+						onclick = "[GetScriptedGui('add_gold_v1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						size = { 25 25 }
+						mirror = vertical
+						texture = "gfx/interface/tavern_gfx/arrow.dds"
+						text_single = {
+							position = { -3 -25}
+							text = diplo_gui_other_actions_gold_button_offer
+							default_format = "#high"
+						}
+						enabled = "[GetScriptedGui('diplo_player_has_gold').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}
+					button = {
+						parentanchor = hcenter|top
+						position = { -50 140 }
+						onclick = "[GetScriptedGui('rem_gold_v1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						size = { 25 25 }
+						texture = "gfx/interface/tavern_gfx/arrow.dds"
+						text_single = {
+							parentanchor = center
+							position = { 0 -37}
+							text = "[GetGlobalVariable('gold_1_val').GetValue|0]"
+							fontsize = 22
+							using = Font_Type_Flavor
+							default_format = "#high"
+						}
+						enabled = "[GetScriptedGui('diplo_player_has_gold').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}
+					button = {
+						parentanchor = hcenter|top
+						position = { 35 80 }
+						onclick = "[GetScriptedGui('add_gold_v2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						size = { 25 25 }
+						mirror = vertical
+						texture = "gfx/interface/tavern_gfx/arrow.dds"
+						text_single = {
+							position = { -10 -25}
+							text = diplo_gui_other_actions_gold_button_demand
+							default_format = "#high"
+						}
+						enabled = "[GetScriptedGui('diplo_ai_has_gold').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}
+					button = {
+						parentanchor = hcenter|top
+						position = { 35 140 }
+						onclick = "[GetScriptedGui('rem_gold_v2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						size = { 25 25 }
+						texture = "gfx/interface/tavern_gfx/arrow.dds"
+						text_single = {
+							parentanchor = center
+							position = {0 -37}
+							text = "[GetGlobalVariable('gold_2_val').GetValue|0]"
+							fontsize = 22
+							using = Font_Type_Flavor
+							default_format = "#high"
+						}
+						
+						enabled = "[GetScriptedGui('diplo_ai_has_gold').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}
+				}
+				#.Gold
+				#Buttons
+
+			button_standard = { #WeakHook
+				parentanchor = top|left
+				position = { 10 170 }
+				icon = {
+					texture = "gfx/interface/icons/character_interactions/hook_icon.dds"
+					size = { 24 24 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_other_actions_weak_hook
+				}
+				#
+				onclick = "[GetScriptedGui('has_diplo_whook').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[GetScriptedGui('has_diplo_whook').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+			button_standard = { #Place
+				parentanchor = top|left
+				position = { 10 220 }
+				icon = {
+					texture = "gfx/interface/icons/character_interactions/hook_strong.dds"
+					size = { 24 24 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_other_actions_strong_hook
+				}
+				onclick = "[GetScriptedGui('has_diplo_shook').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[GetScriptedGui('has_diplo_shook').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+
+
+		}
+		#Labels
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				parentanchor = top|left
+				position = { 40 0 }
+				text = diplo_gui_title
+				default_format = "#high"
+				#default_format = "#clickable"
+				#using = Font_Size_Big
+				using = Font_Type_Flavor
+				align = center
+				autoresize = yes
+				fontsize = 40
+				#max_width = 185
+			}
+			icon = {
+				parentanchor = bottom|hcenter
+				position = { 0 -455 }
+				layoutpolicy_horizontal = expanding
+				texture = "gfx/interface/icons/banners/banner_brown_center.dds"
+				size = { 380 110 }
+				text_single = {
+					visible = "[GetVariableSystem.HasValue( 'trade_tab', 'titles' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 30
+					layoutpolicy_horizontal = expanding
+					text = diplo_gui_title_label
+				}
+				text_single = {
+					visible = "[GetVariableSystem.HasValue( 'trade_tab', 'artifacts' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 30
+					layoutpolicy_horizontal = expanding
+					text = diplo_gui_artifact_label
+				}
+				text_single = {
+					visible = "[GetVariableSystem.HasValue( 'trade_tab', 'vassals' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 30
+					layoutpolicy_horizontal = expanding
+					text = game_concept_vassals
+				}
+				text_single = {
+					visible = "[GetVariableSystem.HasValue( 'trade_tab', 'marriage' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 30
+					layoutpolicy_horizontal = expanding
+					text = diplo_gui_marriages_label
+				}
+				text_single = {
+					visible = "[GetVariableSystem.HasValue( 'trade_tab', 'prewar' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 25
+					layoutpolicy_horizontal = expanding
+					text = diplo_gui_other_actions_label
+				}
+			}
+			#seal
+			icon = {
+				scale = 1.5
+				parentanchor = center
+				position = { 0 -90 }
+				layoutpolicy_horizontal = expanding
+				texture = "gfx/interface/window_event/sigil_bg.dds"
+				size = { 100 100 }
+				text_single = {
+					visible = no #"[GetVariableSystem.HasValue( 'trade_tab', 'titles' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 30
+					layoutpolicy_horizontal = expanding
+					text = "[titles]"
+				}
+				text_single = {
+					visible = no #"[GetVariableSystem.HasValue( 'trade_tab', 'artifacts' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 30
+					layoutpolicy_horizontal = expanding
+					text = "[artifacts]"
+				}
+				text_single = {
+					#visible = "[GetVariableSystem.HasValue( 'trade_tab', 'marriages' )]"
+					parentanchor = center
+					position = { 0 -6 }
+					default_format = "#high"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					fontsize = 30
+					layoutpolicy_horizontal = expanding
+					text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_deal')|0]" 
+				}
+				tooltip = "[GetScriptedGui('diplo_send').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+
+			icon = {
+				parentanchor = bottom|hcenter
+				position = { -340 -380 }
+				layoutpolicy_horizontal = expanding
+				texture = "gfx/interface/icons/banners/banner_brown_left.dds"
+				size = { 600 90 }
+				text_single = {
+				
+					parentanchor = center
+					position = { -30 -10 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					layoutpolicy_horizontal = expanding
+					text = "[GetGlobalVariable('diplo_1').GetCharacter.GetNameNoTooltip]"
+				}
+			}
+			icon = {
+				parentanchor = bottom|hcenter
+				position = { 340 -380 }
+				layoutpolicy_horizontal = expanding
+				texture = "gfx/interface/icons/banners/banner_brown_left.dds"
+				mirror = horizontal
+				size = { 600 90 }
+				text_single = {
+							#datacontext = "[GetGlobalVariable('diplo_2')]"
+				#datacontext = "[Scope.GetCharacter]"
+					parentanchor = center
+					position = { 30 -10 }
+					default_format = "#light_background"
+					using = Font_Size_Big
+					using = Font_Type_Flavor
+					layoutpolicy_horizontal = expanding
+					text = "[GetGlobalVariable('diplo_2').GetCharacter.GetNameNoTooltip]"
+				}
+			}
+			
+		#.Labels
+
+		#Player 1
+			
+			scrollbox = {
+				name = "title_list"
+
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				size = { 810 380 }
+				parentanchor = bottom|left
+				position = { 30 -30 }
+				
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'titles' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+						name = "titles_grid"
+						datamodel = "[GetGlobalList('diplo_1_lands')]"
+						spacing = 3
+						
+						item = {
+
+							button_standard = {
+								name = "title_button"
+								layoutpolicy_horizontal = expanding
+								size = { 0 110 }
+								datacontext = "[Scope.GetLandedTitle.GetTitle]"
+								onclick = "[GetScriptedGui('add_domain_give').Execute( GuiScope.SetRoot(Scope.GetLandedTitle.MakeScope ).End )]"
+								onclick = "[GetScriptedGui('title_select').Execute( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )]"
+								down = "[EqualTo_string(Scope.GetLandedTitle.MakeScope.Var('is_selected').GetFlagName, 'selected')]"
+								enabled = "[GetScriptedGui('diplo_title_dejure').IsValid( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )]"
+							
+								tooltip = "[GetScriptedGui('diplo_title_dejure').BuildTooltip( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )]"
+								using = tooltip_es
+								
+								icon = {
+									visible = "[Scope.GetLandedTitle.IsCounty]"
+									size = { 290 100 }
+									position = { 5 0 }
+									parentanchor = left|vcenter
+									texture = "[Scope.GetLandedTitle.GetCountyData.GetCapital.GetHolding.GetIllustration]"
+									alpha = 0.8
+
+									modify_texture = {
+										texture = "gfx/interface/window_county/mask_holding_illustration.dds"
+										blend_mode = alphamultiply
+										alpha = 0.95
+									}
+								}
+								icon = {
+									visible = "[Not(Scope.GetLandedTitle.IsCounty)]"
+									size = { 740 100 }
+									position = { 5 0 }
+									parentanchor = left|vcenter
+									texture = "gfx/interface/illustrations/legacy_tracks/glory_legacy_track.dds"
+									alpha = 0.2
+
+									modify_texture = {
+										texture = "gfx/interface/window_county/mask_holding_illustration.dds"
+										blend_mode = alphamultiply
+										alpha = 0.95
+									}
+								}
+								coa_title_small_crown = {
+									datacontext = "[Scope.GetLandedTitle]"
+									parentanchor = vcenter
+									position = {5 0 }
+									
+								}
+								text_single = {
+									parentanchor = right|top
+									position = { -10 5 }
+									fontsize = 20
+									#using = Font_Type_Flavor
+									text = diplo_gui_titles2_est_value
+								}
+								# diplo_gui_provinces
+								text_single = {
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									parentanchor = vcenter
+									position = {300 19 }
+									text = diplo_gui_provinces
+								}
+								
+								text_single = {
+									visible = no
+									position = { 480 0 }
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									text = diplo_gui_development1
+									tooltip = "COUNTY_DEVELOPMENT_TOOLTIP_DIPLO"
+								}
+								text_single = {
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									position = { 480 20 }
+									text = diplo_gui_levies1
+								}
+
+								### new
+								text_single = {
+									visible = no
+									position = { 480 40 }
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									text =  diplo_gui_control1
+									tooltip = "COUNTY_CONTROL_TOOLTIP_DIPLO"
+								}											
+								text_single = {
+									position = { 300 20 }
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									text = diplo_gui_culture1
+									#text = "#E Buildings: #! [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('building_value2')|0]"
+								}
+								##											
+
+								#text_single = {
+								#	visible = "[And(Scope.GetLandedTitle.IsLanded,GetScriptedGui('diplo_check_sinews').IsShown( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End ))]"
+								#	position = { 300 0 }
+								#	text = diplo_gui_estimated_population2
+
+									# "[Scope.GetLandedTitle.MakeScope.Var('county_population').GetValue|0]"
+								#}												
+								#text_single = {
+								#	visible = "[And(Scope.GetLandedTitle.IsLanded,Not(GetScriptedGui('diplo_check_sinews').IsShown( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )))]"
+								#	position = { 300 0 }
+								#	text = diplo_gui_estimated_population1
+								#}
+
+								hbox = {
+									margin_left = 55
+									margin_right = 5
+									margin_bottom = -60
+									text_single = {
+										text = "[Scope.GetLandedTitle.GetNameNoTooltip]"
+										fontsize = 17
+										margin_bottom = 60
+										margin_left = 20
+										default_format = "#high"
+										using = Font_Type_Flavor
+										layoutpolicy_horizontal = expanding
+									}
+									icon = {
+										#parentanchor = right|bottom
+										#position = { 0 -10 }
+										name = "faith"
+										visible = "[Scope.GetLandedTitle.IsLanded]"
+										size = { 44 44 }
+										datacontext = "[Scope.GetLandedTitle.GetCountyData.GetFaith]"
+										texture = "[Faith.GetIcon]"
+										tooltip = "[Faith.GetNameNoTooltip]"
+									}												
+									icon = {
+										name = "pressed_claim"
+										visible = "[GetPlayer.HasPressedClaimOnTitle( Scope.GetLandedTitle.Self )]"
+										#parentanchor = right|bottom
+										#position = { -40 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/title_status/icon_claim_pressed.dds"
+										tooltip = REVOKE_TITLE_PRESSED_CLAIM
+									}
+
+									icon = {
+										name = "unpressed_claim"
+										visible = "[And(GetPlayer.HasClaimOnTitle( Scope.GetLandedTitle.Self  ), Not(GetPlayer.HasPressedClaimOnTitle( Scope.GetLandedTitle.Self )))]"
+										#visible = "[GetPlayer.HasUnpressedClaimOnTitle( Scope.GetLandedTitle.Self )]"
+										#parentanchor = right|bottom
+										#position = { -80 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/title_status/icon_claim_unpressed.dds"
+										tooltip = REVOKE_TITLE_UNPRESSED_CLAIM
+									}
+
+									icon = {
+										name = "leased_out"
+										visible = "[Scope.GetLandedTitle.HasLeasedOutVassal]"
+										#parentanchor = right|bottom
+										#position = { -120 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/icon_holding_church.dds"
+										tooltip = GRANT_TITLE_LEASED_OUT_VASSAL
+									}
+									icon = {
+										name = "has_holy_site"
+										visible = "[GetScriptedGui('diplo_has_holysite').IsShown(GuiScope.SetRoot(Scope.GetLandedTitle.MakeScope ).End )]"
+										#parentanchor = right|bottom
+										#position = { -160 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/traits/devoted.dds"
+										tooltip = IS_HOLY_SITE_TRIGGER
+									}
+									icon = {
+										name = "has_sp_building"
+										visible = "[GetScriptedGui('diplo_has_sp').IsShown(GuiScope.SetRoot(Scope.GetLandedTitle.MakeScope ).End )]"
+										#parentanchor = right|bottom
+										#position = { -200 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/message_feed/building.dds"
+										tooltip = game_concept_special_building
+									}
+									
+								}
+							}
+
+						}
+					}
+				}
+			}
+
+			scrollbox = { # artifact list
+				size = { 810 380 }
+				parentanchor = bottom|left
+				position = { 40 -30 }
+				name = "artifacts"
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'artifacts' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+
+				blockoverride "scrollbox_content" {
+					vbox = {
+						name = "equippable_artifacts_list"
+						datamodel = "[GetGlobalVariable('diplo_1').GetCharacter.GetInventory.GetArtifacts]"
+						layoutpolicy_horizontal = expanding
+						spacing = 8
+
+						item = {
+							widget_artifact_diplo = {
+								visible = "[GetScriptedGui('artifact_block').IsShown( GuiScope.SetRoot( Artifact.MakeScope ).End )]"
+								tooltipwidget = {
+									#visible = no
+									artifact_tooltip = {
+										blockoverride "extra_information"
+										{
+											hbox = {
+												layoutpolicy_horizontal = expanding
+
+												text_multi = {
+													visible = "[InventoryView.GetCharacter.IsLocalPlayer]"
+													text =  "[InventoryView.GetArtifactOnClickTooltip( Artifact.Self )]"
+													max_width = 500
+													autoresize = yes
+													using = Font_Size_Small
+												}
+
+												expand = {}
+											}
+										}
+									}
+								}
+
+								using = tooltip_above
+
+								blockoverride "background_button_overrides"
+								{
+
+								}
+
+								blockoverride "portrait" {
+									expand = { minimumsize = { 0 0 } }
+								}
+							}
+						}
+					}
+				}
+
+				blockoverride "scrollbox_empty"
+				{
+					visible = "[Or( Not( Inventory.HasAnyInventoryArtifact ), And( InventoryView.HasSelectedSlot, Not( Inventory.HasArtifactsOfSlotType( InventoryView.GetSelectedSlot.GetType ) ) ) )]"
+					text = "CHARACTER_HAS_NO_ARTIFACTS"
+				}
+			}
+
+			### Character List
+			state = {
+				name = mmm
+				trigger_on_create = yes
+				on_start = "[GetVariableSystem.Set( 'marriage_type', 'reg' )]"
+			}
+			button = {
+				size = { 60 60 }
+				position = { 100 -405 }
+				parentanchor = bottom|left
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'marriage' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				onclick = "[GetScriptedGui('matrilinealx').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				icon = {
+					parentanchor = center
+					texture = "gfx/interface/tavern_gfx/m_reg.dds"
+					size = { 60 60 }
+				}
+				icon = {
+					visible = "[GetScriptedGui('matrilinealx').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					parentanchor = center
+					texture = "gfx/interface/tavern_gfx/m_mat.dds"
+					size = { 60 60 }
+				}
+			}
+			scrollbox = {
+
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				size = { 810 380 }
+				parentanchor = bottom|left
+				position = { 55 -30 }
+				block "sort_buttons"
+				{
+
+				}
+
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'marriage' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				blockoverride "scrollbox_content" {
+					vbox_character_list_diplo = {
+						margin_top = -10
+						#datacontext = "[MatchmakerInteractionWindow.GetCharacterList]"
+						#datacontext = "[CharacterSelectionList.GetFilterWithDefault('fertility_filter', '(int32)1')]"
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+		
+						blockoverride "container_implementation" {
+							fixedgridbox = {
+								#visible = "[Not(GetVariableSystem.Exists( 'ladies'))]"
+								addcolumn = 750
+								addrow = 100
+								#name = "characters_grid"
+								datamodel_reuse_widgets = yes
+		
+								datamodel = "[GetGlobalList('diplo_1_marriage')]"
+								#visible = "[Not(CharacterSelectionList.IsBuildingList)]"
+		
+								item = {
+									widget_diplo_1_marriage = {
+										datacontext = "[Scope.GetCharacter]"
+										size = { 770 110 }
+									}
+								}
+							}
+		
+						}
+		
+						blockoverride "scrollbox_empty_visibility"
+						{
+							layoutpolicy_vertical = expanding
+							visible = "[IsDataModelEmpty(GetGlobalList('diplo_1_marriage'))]"
+							text = "NO_CHARACTERS_TO_SELECT"
+						}
+					}
+				}
+			}
+
+			scrollbox = {
+
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				size = { 810 380 }
+				parentanchor = bottom|left
+				position = { 55 -30 }
+				block "sort_buttons"
+				{
+
+				}
+
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'vassals' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				blockoverride "scrollbox_content" {
+					vbox_character_list_diplo = {
+						margin_top = -10
+
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+		
+						blockoverride "container_implementation" {
+							fixedgridbox = {
+	
+								addcolumn = 750
+								addrow = 100
+								#name = "characters_grid"
+								datamodel_reuse_widgets = yes
+		
+								datamodel = "[GetGlobalList('diplo_1_vassals')]"
+								#visible = "[Not(CharacterSelectionList.IsBuildingList)]"
+		
+								item = {
+									widget_diplo_vassal_1 = {
+										datacontext = "[Scope.GetCharacter]"
+										size = { 770 110 }
+									}
+								}
+							}
+		
+						}
+		
+						blockoverride "scrollbox_empty_visibility"
+						{
+							layoutpolicy_vertical = expanding
+							visible = "[IsDataModelEmpty(GetGlobalList('diplo_1_vassals'))]"
+							text = "NO_CHARACTERS_TO_SELECT"
+						}
+					}
+				}
+			}	
+		#.Player 1
+		#Player 2
+
+			#state = {
+			#	name = land_kicker
+			#	trigger_when = "[GetScriptedGui('diplo_title_dejure_kick').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			#	on_start = "[GetScriptedGui('diplo_title_dejure_kick').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				#diplo_title_dejure_kick
+			#}
+			scrollbox = {
+				name = "diplo_2_land_list"
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'titles' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				size = { 810 380 }
+				parentanchor = bottom|right
+				position = { -30 -30 }
+				#visible = "[GetVariableSystem.HasValue( 'tr_tab', 'give_domain' )]"
+				blockoverride "scrollbox_content" {
+					vbox_list_interaction_title_selection = {
+						name = "titles_grid2"
+						datamodel = "[GetGlobalList('diplo_2_lands')]"
+						spacing = 3
+						
+						item = {
+
+							button_standard = {
+								name = "title_button"
+								layoutpolicy_horizontal = expanding
+								size = { 0 110 }
+								datacontext = "[Scope.GetLandedTitle.GetTitle]"
+								onclick = "[GetScriptedGui('add_domain_take').Execute(GuiScope.SetRoot(Scope.GetLandedTitle.MakeScope ).End )]"
+								onclick = "[GetScriptedGui('title_select').Execute( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )]"
+								down = "[EqualTo_string(Scope.GetLandedTitle.MakeScope.Var('is_selected').GetFlagName, 'selected')]"
+								enabled = "[GetScriptedGui('diplo_title_dejure2').IsValid( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )]"
+								
+								tooltip = "[GetScriptedGui('diplo_title_dejure2').BuildTooltip( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )]"
+								using = tooltip_es
+								
+								icon = {
+									visible = "[Scope.GetLandedTitle.IsCounty]"
+									size = { 290 100 }
+									position = { 5 0 }
+									parentanchor = left|vcenter
+									texture = "[Scope.GetLandedTitle.GetCountyData.GetCapital.GetHolding.GetIllustration]"
+									alpha = 0.8
+
+									modify_texture = {
+										texture = "gfx/interface/window_county/mask_holding_illustration.dds"
+										blend_mode = alphamultiply
+										alpha = 0.95
+									}
+								}
+								icon = {
+									visible = "[Not(Scope.GetLandedTitle.IsCounty)]"
+									size = { 740 100 }
+									position = { 5 0 }
+									parentanchor = left|vcenter
+									texture = "gfx/interface/illustrations/legacy_tracks/glory_legacy_track.dds"
+									alpha = 0.2
+
+									modify_texture = {
+										texture = "gfx/interface/window_county/mask_holding_illustration.dds"
+										blend_mode = alphamultiply
+										alpha = 0.95
+									}
+								}
+								coa_title_small_crown = {
+									datacontext = "[Scope.GetLandedTitle]"
+									parentanchor = vcenter
+									position = {5 0 }
+									
+								}
+								text_single = {
+									parentanchor = right|top
+									position = { -10 5 }
+									fontsize = 20
+									#using = Font_Type_Flavor
+									text = diplo_gui_titles2_est_value
+								}
+								# diplo_gui_provinces
+								text_single = {
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									parentanchor = vcenter
+									position = {300 19 }
+									text = diplo_gui_provinces
+								}
+								
+								text_single = {
+									position = { 480 0 }
+									visible = no
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									text = diplo_gui_development1
+									tooltip = "COUNTY_DEVELOPMENT_TOOLTIP_DIPLO"
+								}
+								text_single = {
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									position = { 480 20 }
+									text = diplo_gui_levies1
+									#raw_text = "@soldier_icon! [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('total_county_levies')|0]"
+								}
+
+								### new
+								text_single = {
+									visible = no
+									position = { 480 40 }
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									text = diplo_gui_control1
+									tooltip = "COUNTY_CONTROL_TOOLTIP_DIPLO"
+								}											
+								text_single = {
+									position = { 300 20 }
+									visible = "[Scope.GetLandedTitle.IsLanded]"
+									text = diplo_gui_culture1
+									#text = "#E Buildings: #! [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('building_value2')|0]"
+								}
+								##											
+
+								#text_single = {
+								#	visible = "[And(Scope.GetLandedTitle.IsLanded,GetScriptedGui('diplo_check_sinews').IsShown( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End ))]"
+								#	position = { 300 0 }
+								#	text = diplo_gui_estimated_population2
+
+									## "[Scope.GetLandedTitle.MakeScope.Var('county_population').GetValue|0]"
+								#}												
+								#text_single = {
+								#	visible = "[And(Scope.GetLandedTitle.IsLanded,Not(GetScriptedGui('diplo_check_sinews').IsShown( GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).End )))]"
+								#	position = { 300 0 }
+								#	text = diplo_gui_estimated_population1
+								#}
+
+								hbox = {
+									margin_left = 55
+									margin_right = 5
+									margin_bottom = -60
+									text_single = {
+										text = "[Scope.GetLandedTitle.GetNameNoTooltip]"
+										fontsize = 17
+										margin_bottom = 60
+										margin_left = 20
+										default_format = "#high"
+										using = Font_Type_Flavor
+										layoutpolicy_horizontal = expanding
+									}
+									icon = {
+										#parentanchor = right|bottom
+										#position = { 0 -10 }
+										name = "faith"
+										visible = "[Scope.GetLandedTitle.IsLanded]"
+										size = { 44 44 }
+										datacontext = "[Scope.GetLandedTitle.GetCountyData.GetFaith]"
+										texture = "[Faith.GetIcon]"
+										tooltip = "[Faith.GetNameNoTooltip]"
+									}												
+									icon = {
+										name = "pressed_claim"
+										visible = "[GetPlayer.HasPressedClaimOnTitle( Scope.GetLandedTitle.Self )]"
+										#visible = "[GetPlayer.HasPressedClaimOnTitle( Scope.GetLandedTitle.Self )]"
+										#parentanchor = right|bottom
+										#position = { -40 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/title_status/icon_claim_pressed.dds"
+										tooltip = REVOKE_TITLE_PRESSED_CLAIM
+									}
+
+									icon = {
+										name = "unpressed_claim"
+										visible = "[And(GetPlayer.HasClaimOnTitle( Scope.GetLandedTitle.Self  ), Not(GetPlayer.HasPressedClaimOnTitle( Scope.GetLandedTitle.Self )))]"
+										#visible = "[GetPlayer.HasUnpressedClaimOnTitle( Scope.GetLandedTitle.Self )]"
+										#parentanchor = right|bottom
+										#position = { -80 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/title_status/icon_claim_unpressed.dds"
+										tooltip = REVOKE_TITLE_UNPRESSED_CLAIM
+									}
+
+									icon = {
+										name = "leased_out"
+										visible = "[Scope.GetLandedTitle.HasLeasedOutVassal]"
+										#parentanchor = right|bottom
+										#position = { -120 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/icon_holding_church.dds"
+										tooltip = GRANT_TITLE_LEASED_OUT_VASSAL
+									}
+									icon = {
+										name = "has_holy_site"
+										visible = "[GetScriptedGui('diplo_has_holysite').IsShown(GuiScope.SetRoot(Scope.GetLandedTitle.MakeScope ).End )]"
+										#parentanchor = right|bottom
+										#position = { -160 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/traits/devoted.dds"
+										tooltip = IS_HOLY_SITE_TRIGGER
+									}
+									icon = {
+										name = "has_sp_building"
+										visible = "[GetScriptedGui('diplo_has_sp').IsShown(GuiScope.SetRoot(Scope.GetLandedTitle.MakeScope ).End )]"
+										#parentanchor = right|bottom
+										#position = { -200 -10 }
+										size = { 44 44 }
+										texture = "gfx/interface/icons/message_feed/building.dds"
+										tooltip = game_concept_special_building
+									}
+									
+								}
+							}
+						}
+					}
+				}
+			}
+
+			
+			scrollbox = { # artifact list
+				size = { 810 380 }
+				parentanchor = bottom|right
+				position = { -30 -30 }
+				name = "artifacts2"
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'artifacts' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				#datacontext = "[GetGlobalVariable('diplo_2')]"
+				#datacontext = "[Scope.GetCharacter]"
+				blockoverride "scrollbox_content" {
+					vbox = {
+						name = "equippable_artifacts_list2"
+						datamodel = "[GetGlobalVariable('diplo_2').GetCharacter.GetInventory.GetArtifacts]"
+						layoutpolicy_horizontal = expanding
+						spacing = 8
+
+						item = {
+							widget_artifact_diplo2 = {
+								visible = "[GetScriptedGui('artifact_block').IsShown( GuiScope.SetRoot( Artifact.MakeScope ).End )]"
+								tooltipwidget = {
+									#visible = no
+									artifact_tooltip = {
+										blockoverride "extra_information"
+										{
+											hbox = {
+												layoutpolicy_horizontal = expanding
+
+												text_multi = {
+													visible = "[InventoryView.GetCharacter.IsLocalPlayer]"
+													text =  "[InventoryView.GetArtifactOnClickTooltip( Artifact.Self )]"
+													max_width = 500
+													autoresize = yes
+													using = Font_Size_Small
+												}
+
+												expand = {}
+											}
+										}
+									}
+								}
+
+								using = tooltip_above
+
+								blockoverride "background_button_overrides"
+								{
+
+								}
+
+								blockoverride "portrait" {
+									expand = { minimumsize = { 0 0 } }
+								}
+							}
+						}
+					}
+				}
+
+				blockoverride "scrollbox_empty"
+				{
+					visible = "[Or( Not( Inventory.HasAnyInventoryArtifact ), And( InventoryView.HasSelectedSlot, Not( Inventory.HasArtifactsOfSlotType( InventoryView.GetSelectedSlot.GetType ) ) ) )]"
+					text = "CHARACTER_HAS_NO_ARTIFACTS"
+				}
+			}
+
+			scrollbox = {
+
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				size = { 810 380 }
+				parentanchor = bottom|right
+				position = { -60 -30 }
+
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'marriage' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				blockoverride "scrollbox_content" {
+					vbox_character_list_diplo = {
+						margin_top = -10
+						datacontext = "[MatchmakerInteractionWindow.GetCharacterList]"
+						datacontext = "[CharacterSelectionList.GetFilterWithDefault('fertility_filter', '(int32)1')]"
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+		
+						blockoverride "container_implementation" {
+							fixedgridbox = {
+								#visible = "[Not(GetVariableSystem.Exists( 'ladies'))]"
+								addcolumn = 750
+								addrow = 100
+								#name = "characters_grid"
+								datamodel_reuse_widgets = yes
+		
+								datamodel = "[GetGlobalList('diplo_2_marriage')]"
+								#visible = "[Not(CharacterSelectionList.IsBuildingList)]"
+		
+								item = {
+									
+									widget_diplo_2_marriage = {
+										datacontext = "[Scope.GetCharacter]"
+										size = { 770 110 }
+									}
+								}
+							}
+		
+						}
+		
+						blockoverride "scrollbox_empty_visibility"
+						{
+							layoutpolicy_vertical = expanding
+							visible = "[IsDataModelEmpty(GetGlobalList('diplo_2_marriage'))]"
+							text = "NO_CHARACTERS_TO_SELECT"
+						}
+					}
+				}
+			}
+
+			scrollbox = {
+
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				size = { 810 380 }
+				parentanchor = bottom|right
+				position = { -60 -30 }
+				block "sort_buttons"
+				{
+
+				}
+
+				visible = "[And(GetVariableSystem.HasValue( 'trade_tab', 'vassals' ),GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+				blockoverride "scrollbox_content" {
+					vbox_character_list_diplo = {
+						margin_top = -10
+
+						layoutpolicy_vertical = expanding
+						layoutpolicy_horizontal = expanding
+		
+						blockoverride "container_implementation" {
+							fixedgridbox = {
+	
+								addcolumn = 750
+								addrow = 100
+								#name = "characters_grid"
+								datamodel_reuse_widgets = yes
+		
+								datamodel = "[GetGlobalList('diplo_2_vassals')]"
+								#visible = "[Not(CharacterSelectionList.IsBuildingList)]"
+		
+								item = {
+									widget_diplo_vassal_2 = {
+										datacontext = "[Scope.GetCharacter]"
+										size = { 770 110 }
+									}
+								}
+							}
+		
+						}
+		
+						blockoverride "scrollbox_empty_visibility"
+						{
+							layoutpolicy_vertical = expanding
+							visible = "[IsDataModelEmpty(GetGlobalList('diplo_2_vassals'))]"
+							text = "NO_CHARACTERS_TO_SELECT"
+						}
+					}
+				}
+			}
+		#.Player 2
+
+		#	on_finish = "[GetScriptedGui('j_end').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+		state = {
+			name = haltall
+			#trigger_when = "[Not(IsGamePaused)]"
+			on_start = "[OnPause]"
+
+		}
+		state = {
+			name = start_dis
+			#remove this
+			#trigger_when = "[GetVariableSystem.HasValue( 'diplo_pos', 'center' )]"
+			position = { 0 0 }
+			duration = 0.1
+			on_finish = "[GetVariableSystem.Set( 'diplo_pos', 'normal' )]"
+		}
+		state = {
+			name = start_tab
+			trigger_on_create = yes
+			on_finish = "[GetVariableSystem.Set( 'trade_tab', 'titles' )]"
+		}
+
+
+		
+
+
+			#Bottom
+			button_standard = { #Titles
+				parentanchor = hcenter|bottom
+				position = { 0 -430 }
+				icon = {
+					texture = "gfx/interface/icons/message_feed/building.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_title_tab
+				}
+				onclick = "[GetVariableSystem.Set( 'trade_tab', 'titles' )]"
+				down = "[GetVariableSystem.HasValue( 'trade_tab', 'titles' )]"
+				visible = "[GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			}
+			button_standard = { #Artifacts
+				parentanchor = hcenter|bottom
+				position = { 0 -380 }
+				icon = {
+					texture = "gfx/interface/icons/meta/icon_achievements_enabled.dds"
+					size = { 25 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_artifact_tab
+				}
+				down = "[GetVariableSystem.HasValue( 'trade_tab', 'artifacts' )]"
+				onclick = "[GetVariableSystem.Set( 'trade_tab', 'artifacts' )]"
+				visible = "[GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			}
+			button_standard = { #Vassals
+				parentanchor = hcenter|bottom
+				position = { 0 -330 }
+				icon = {
+					texture = "gfx/interface/icons/icon_vassal.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = game_concept_vassals #diplo_gui_marriage_tab
+				}
+				onclick = "[GetVariableSystem.Set( 'trade_tab', 'vassals' )]"
+				down = "[GetVariableSystem.HasValue( 'trade_tab', 'vassals' )]"
+				visible = "[GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			button_standard = { #Marriages
+				parentanchor = hcenter|bottom
+				position = { 0 -280 }
+				icon = {
+					texture = "gfx/interface/icons/character_interactions/icon_marriage.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_marriage_tab
+				}
+				onclick = "[GetVariableSystem.Set( 'trade_tab', 'marriage' )]"
+				down = "[GetVariableSystem.HasValue( 'trade_tab', 'marriage' )]"
+				visible = "[GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+
+			button_standard = { #Pre_war
+				parentanchor = hcenter|bottom
+				position = { 0 -230 }
+				icon = {
+					texture = "gfx/interface/icons/message_feed/generic_good_effect.dds"
+					size = { 20 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 20 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_other_actions_tab
+				}
+				onclick = "[GetVariableSystem.Set( 'trade_tab', 'prewar' )]"
+				down = "[GetVariableSystem.HasValue( 'trade_tab', 'prewar' )]"
+				visible = "[GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+
+			button_standard = { #Accept
+				visible = "[GetScriptedGui('diplo_player_accept').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = hcenter|bottom
+				position = { 0 -280 }
+				icon = {
+					texture = "gfx/interface/icons/symbols/icon_check.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_accept_offer_tab
+				}
+				onclick = "[GetScriptedGui('diplo_player_accept').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('diplo_deal_viewr').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			}
+			button_standard = { #Counter
+				visible = "[GetScriptedGui('diplo_counter').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = hcenter|bottom
+				position = { 0 -230 }
+				icon = {
+					texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_counter_offer_tab
+				}
+				onclick = "[GetScriptedGui('diplo_counter').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			}
+			button_standard = { #Send
+				visible = "[GetScriptedGui('diplo_send').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = hcenter|bottom
+				position = { 0 -120}
+				icon = {
+					texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_send_offer_tab
+				}
+				enabled = "[GetScriptedGui('diplo_makesense').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				#enabled = "[GetScriptedGui('diplo_makesense').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('diplo_send').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('diplo_deal_viewr').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				tooltip = "[GetScriptedGui('diplo_makesense').BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			}
+			button_standard = { #Send
+				visible = "[GetScriptedGui('diplo_send_player').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				parentanchor = hcenter|bottom
+				position = { 0 -120 }
+				icon = {
+					texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_send_player_tab
+				}
+				enabled = "[GetScriptedGui('diplo_makesense').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('diplo_send_player').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('diplo_deal_viewr').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+			}
+			button_standard = { #exits gui
+				parentanchor = hcenter|bottom
+				position = { 0 -80 }
+				icon = {
+					texture = "gfx/interface/icons/symbols/icon_cross.dds"
+					size = { 30 30 }
+					parentanchor = left|vcenter
+					position = { 10 0 }
+				}
+				text_single = {
+					size = { 100% 100% }
+					autoresize = no
+					margin = { 10 0 }
+					align = center|nobaseline
+					default_format = "#clickable"
+					alwaystransparent = yes
+					text = diplo_gui_decline_offer_tab
+				}
+				onclick = "[GetScriptedGui('exit_diplo').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('diplo_deal_viewr').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			button = { #Reset
+				parentanchor = hcenter|bottom
+				position = { -50 -32 }
+				texture = "gfx/interface/tavern_gfx/reset.dds"
+				#size = { 36 36 }
+				onclick = "[GetScriptedGui('reset_i_diplo').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[GetScriptedGui('diplo_viewport_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				tooltip = diplo_gui_reset_button
+			}
+
+			button = { #minimize
+				parentanchor = hcenter|bottom
+				position = { 50 -32 }
+				texture = "gfx/interface/tavern_gfx/min.dds"
+				#size = { 36 36 }
+				onclick = "[GetScriptedGui('diplo_deal_view').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+				tooltip = diplo_gui_minimize_button
+			}
+		#.Buttons
+
+	}
+}
+
+types InventoryDiplo
+{
+
+
+	type widget_artifact_diplo = widget
+	{
+		# Requires
+		# datacontext = character
+		# datacontext = Inventory
+		# datacontext = InventorySlot
+
+		datacontext = "[AccessLocalPlayerCachedData.AccessNewArtifacts]"
+		datacontext = "[GetIllustration( 'artifact_regional_pattern' )]"
+		size = { 840 140 }
+		using = tooltip_above
+
+		button_standard = {
+			size = { 92% 100% }
+			
+			framesize = { 249 78 }
+			spriteType = Corneredtiled
+			spriteborder = { 20 20 }
+
+			icon =  {
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
+				spriteType = Corneredtiled
+				size = { 100% 15% }
+				color = "[Artifact.GetRarityColor]"
+				alpha = 0.2
+				alwaystransparent = yes
+			}
+
+			icon =  {
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
+				spriteType = Corneredtiled
+				size = { 100% 15% }
+				color = "[Artifact.GetRarityColor]"
+				alpha = 0.2
+				alwaystransparent = yes
+				parentanchor = bottom
+			}
+
+			block "button"
+			{
+				#herehere
+				onclick = "[GetScriptedGui('add_artifact_give').Execute( GuiScope.SetRoot( Artifact.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('artifact_select').Execute( GuiScope.SetRoot( Artifact.MakeScope ).End )]"
+				down = "[EqualTo_string(Artifact.MakeScope.Var('is_selected').GetFlagName, 'selected')]"
+				#enabled = "[Character.IsLocalPlayer]"
+				#clicksound = "event:/DLC/EP1/SFX/UI/inventory_artifact_place"
+			}
+
+			block "overlay"
+			{
+				using = default_character_list_overlay
+			}
+
+			block "background_button_overrides" {}
+
+			tooltipwidget = {
+				artifact_tooltip = {}
+			}
+
+			using = tooltip_es
+
+			block "new_artifact"
+			{
+
+			}
+		}
+
+		hbox = {
+			layoutpolicy_horizontal = expanding
+	
+			vbox = {
+				name = "icon"
+				layoutpolicy_vertical = expanding
+				margin = { 2 2 }
+	
+				icon_artifact = {
+					blockoverride "tooltipwidget" {}
+				}
+	
+				block "new_artifact"
+				{
+					text_single = {
+						visible = no # "[LocalPlayerNewArtifacts.IsNewArtifact( Artifact.Self )]"
+						margin_top = -14
+						text = "NEW_ARTIFACT"
+						align = nobaseline
+	
+						tooltip = "NEW_ARTIFACT_TOOLTIP"
+					}
+				}
+			}
+	
+			vbox = {
+				name = "text"
+				layoutpolicy_vertical = expanding
+				margin_top = 4
+				margin_bottom = 10
+	
+				expand = {}
+	
+				text_single = {
+					layoutpolicy_horizontal = expanding
+					text = "[Artifact.GetRarityAndSlotType]"
+					max_width = 300
+					using = Font_Size_Small
+				}
+	
+				text_multi = {
+					layoutpolicy_horizontal = expanding
+					text = "[Artifact.GetNameNoTooltip]"
+					autoresize = yes
+					max_width = 350
+					using = Font_Size_Medium
+					default_format = "#high"
+					alwaystransparent = yes
+				}
+				text_single = {
+					#parentanchor = right
+					#margin_bottom = 2
+					margin_left  = 25
+					layoutpolicy_horizontal = expanding
+					text = diplo_gui_artifact_value1
+					max_width = 400
+					autoresize = yes
+					using = Font_Type_Flavor
+					using = Font_Size_Medium
+					default_format = "#high"
+					fontsize = 17
+				}
+				spacer = {
+					size = { 0 6 }
+				}
+
+				hbox_artifact_durability = {
+					layoutpolicy_horizontal = expanding
+					# simple tooltip override so that the durability tooltip doesnt show up here
+					tooltip = ""
+				}
+
+				expand = {}
+			}
+			spacer = {
+				size = { 16 0 }
+			}
+
+			text_multi = {
+				#parentanchor = right
+				text = "[Artifact.GetDesc]"
+				max_width = 420
+				autoresize = yes
+				using = Font_Size_Small
+			}
+			spacer = {
+				size = { 6 0 }
+			}
+
+			expand = {}
+		}
+	
+		widget = {
+			parentanchor = center
+			position = { 112 14 }
+			allow_outside = yes
+	
+			hbox = {
+				visible = "[And( Not( Artifact.GetOwner.IsLocalPlayer ), Artifact.HasClaim( GetPlayer ) )]"
+				layoutpolicy_horizontal = expanding
+				spacing = 2
+	
+				button_round = {
+					name = "steal"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						parentanchor = center
+						size = { 25 25 }
+						texture = "gfx/interface/icons/flat_icons/scheme.dds"
+					}
+	
+					enabled = "[Artifact.GetOwner.IsPlayerInteractionValid('start_stealing_back_artifact')]"
+					onclick = "[Artifact.GetOwner.OpenPlayerInteraction('start_stealing_back_artifact')]"
+					tooltip = "[Artifact.GetOwner.GetPlayerInteractionTooltip( 'start_stealing_back_artifact' )]"
+				}
+	
+				button_round = {
+					name = "declare_war"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						size = { 25 25 }
+						parentanchor = center
+						texture = "gfx/interface/icons/flat_icons/declare_war.dds"
+					}
+	
+					enabled = "[Artifact.GetOwner.IsPlayerInteractionValid('declare_war_interaction')]"
+					onclick = "[Artifact.GetOwner.OpenDeclareWarViewWithArtifactCB]"
+					tooltip = "[Artifact.GetOwner.GetPlayerInteractionTooltip('declare_war_interaction')]"
+				}
+	
+				button_round = {
+					name = "duel"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						parentanchor = center
+						size = { 25 25 }
+						texture = "gfx/interface/icons/flat_icons/duel.dds"
+					}
+	
+					enabled = "[Artifact.GetOwner.IsPlayerInteractionValid('challenge_for_artifact_interaction')]"
+					onclick = "[Artifact.GetOwner.OpenPlayerInteraction('challenge_for_artifact_interaction')]"
+					tooltip = "[Artifact.GetOwner.GetPlayerInteractionTooltip('challenge_for_artifact_interaction')]"
+				}
+	
+				expand = {}
+			}
+		}
+	
+		widget = {
+			name = "round_buttons"
+			size = { 40 74 }
+			parentanchor = right|vcenter
+			position = { 2 0 }
+			allow_outside = yes
+	
+			datacontext = "[AccessLocalPlayerCachedData.AccessNewArtifacts]"
+	
+			vbox = {
+				layoutpolicy_vertical = expanding
+	
+				button_round = {
+					name = "reforge"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						size = { 25 25 }
+						parentanchor = center
+						texture = "gfx/interface/icons/flat_icons/reforge.dds"
+					}
+					visible = "[Artifact.GetOwner.IsLocalPlayer]"
+	
+					onclick = "[ToggleGameViewData( 'reforge_artifact', Artifact.GetID )]"
+					onclick = "[LocalPlayerNewArtifacts.RemoveNewArtifact( Artifact.Self )]"
+					enabled = "[Artifact.CanReforgeOrRepair( Artifact.GetOwner.Self )]"
+					tooltip = "[Artifact.GetReforgeOrRepairTooltip( Artifact.GetOwner.Self )]"
+	
+					icon = {
+						name = "selection_glow"
+						visible = "[Artifact.IsDurabilityLow]"
+						parentanchor = center
+						size = { 45 45 }
+	
+						state = {
+							trigger_on_create = yes
+	
+							name = max_glow
+							next = min_glow
+							duration = 1
+							#using = Animation_Curve_Default
+							alpha = 0.5
+						}
+	
+						state = {
+							name = min_glow
+							next = max_glow
+							duration = 1.6
+							#using = Animation_Curve_Default
+							alpha = 0.3
+						}
+	
+						background = {
+							texture = "gfx/interface/component_masks/mask_fade_circle.dds"
+							tintcolor = { 1 0.8 0.6 1 }
+						}
+					}
+				}
+	
+				button_round = {
+					name = "details"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						parentanchor = center
+						position = { 0 -6 }
+						size = { 25 25 }
+						texture = "gfx/interface/icons/flat_icons/dots.dds"
+					}
+	
+					onclick = "[ToggleGameViewData( 'artifact_details', Artifact.GetID )]"
+					onclick = "[LocalPlayerNewArtifacts.RemoveNewArtifact( Artifact.Self )]"
+					tooltip = "ARTIFACT_DETAILS"
+				}
+			}
+		}
+
+	}
+	type widget_artifact_diplo2 = widget
+	{
+		# Requires
+		# datacontext = character
+		# datacontext = Inventory
+		# datacontext = InventorySlot
+
+		datacontext = "[AccessLocalPlayerCachedData.AccessNewArtifacts]"
+		datacontext = "[GetIllustration( 'artifact_regional_pattern' )]"
+		size = { 840 140 }
+		using = tooltip_above
+
+		button_standard = {
+			size = { 92% 100% }
+
+			framesize = { 249 78 }
+			spriteType = Corneredtiled
+			spriteborder = { 20 20 }
+
+			icon =  {
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
+				spriteType = Corneredtiled
+				size = { 100% 15% }
+				color = "[Artifact.GetRarityColor]"
+				alpha = 0.2
+				alwaystransparent = yes
+			}
+
+			icon =  {
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
+				spriteType = Corneredtiled
+				size = { 100% 15% }
+				color = "[Artifact.GetRarityColor]"
+				alpha = 0.2
+				alwaystransparent = yes
+				parentanchor = bottom
+			}
+
+			block "button"
+			{
+				#herehere
+				onclick = "[GetScriptedGui('add_artifact_take').Execute( GuiScope.SetRoot(Artifact.MakeScope ).End )]"
+				onclick = "[GetScriptedGui('artifact_select').Execute( GuiScope.SetRoot( Artifact.MakeScope ).End )]"
+				down = "[EqualTo_string(Artifact.MakeScope.Var('is_selected').GetFlagName, 'selected')]"
+				#enabled = "[Character.IsLocalPlayer]"
+				#clicksound = "event:/DLC/EP1/SFX/UI/inventory_artifact_place"
+			}
+
+			block "overlay"
+			{
+				using = default_character_list_overlay
+			}
+
+			block "background_button_overrides" {}
+
+			tooltipwidget = {
+				artifact_tooltip = {}
+			}
+
+			using = tooltip_es
+
+			block "new_artifact"
+			{
+
+			}
+		}
+
+		hbox = {
+			layoutpolicy_horizontal = expanding
+	
+			vbox = {
+				name = "icon"
+				layoutpolicy_vertical = expanding
+				margin = { 2 2 }
+	
+				icon_artifact = {
+					blockoverride "tooltipwidget" {}
+				}
+	
+				block "new_artifact"
+				{
+					text_single = {
+						visible = no # "[LocalPlayerNewArtifacts.IsNewArtifact( Artifact.Self )]"
+						margin_top = -14
+						text = "NEW_ARTIFACT"
+						align = nobaseline
+	
+						tooltip = "NEW_ARTIFACT_TOOLTIP"
+					}
+				}
+			}
+	
+			vbox = {
+				name = "text"
+				layoutpolicy_vertical = expanding
+				margin_top = 4
+				margin_bottom = 10
+	
+				expand = {}
+	
+				text_single = {
+					layoutpolicy_horizontal = expanding
+					text = "[Artifact.GetRarityAndSlotType]"
+					max_width = 300
+					using = Font_Size_Small
+				}
+	
+				text_multi = {
+					layoutpolicy_horizontal = expanding
+					text = "[Artifact.GetNameNoTooltip]"
+					autoresize = yes
+					max_width = 350
+					using = Font_Size_Medium
+					default_format = "#high"
+					alwaystransparent = yes
+				}
+				text_single = {
+					#parentanchor = right
+					#margin_bottom = 2
+					margin_left  = 25
+					layoutpolicy_horizontal = expanding
+					text = diplo_gui_artifact_value2
+					max_width = 400
+					autoresize = yes
+					using = Font_Type_Flavor
+					using = Font_Size_Medium
+					default_format = "#high"
+					fontsize = 17
+				}
+				spacer = {
+					size = { 0 6 }
+				}
+
+				hbox_artifact_durability = {
+					layoutpolicy_horizontal = expanding
+					# simple tooltip override so that the durability tooltip doesnt show up here
+					tooltip = ""
+				}
+
+				expand = {}
+			}
+			spacer = {
+				size = { 16 0 }
+			}
+
+			text_multi = {
+				#parentanchor = right
+				text = "[Artifact.GetDesc]"
+				max_width = 420
+				autoresize = yes
+				using = Font_Size_Small
+			}
+			spacer = {
+				size = { 6 0 }
+			}
+
+			expand = {}
+		}
+	
+		widget = {
+			parentanchor = center
+			position = { 112 14 }
+			allow_outside = yes
+	
+			hbox = {
+				visible = "[And( Not( Artifact.GetOwner.IsLocalPlayer ), Artifact.HasClaim( GetPlayer ) )]"
+				layoutpolicy_horizontal = expanding
+				spacing = 2
+	
+				button_round = {
+					name = "steal"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						parentanchor = center
+						size = { 25 25 }
+						texture = "gfx/interface/icons/flat_icons/scheme.dds"
+					}
+	
+					enabled = "[Artifact.GetOwner.IsPlayerInteractionValid('start_stealing_back_artifact')]"
+					onclick = "[Artifact.GetOwner.OpenPlayerInteraction('start_stealing_back_artifact')]"
+					tooltip = "[Artifact.GetOwner.GetPlayerInteractionTooltip( 'start_stealing_back_artifact' )]"
+				}
+	
+				button_round = {
+					name = "declare_war"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						size = { 25 25 }
+						parentanchor = center
+						texture = "gfx/interface/icons/flat_icons/declare_war.dds"
+					}
+	
+					enabled = "[Artifact.GetOwner.IsPlayerInteractionValid('declare_war_interaction')]"
+					onclick = "[Artifact.GetOwner.OpenDeclareWarViewWithArtifactCB]"
+					tooltip = "[Artifact.GetOwner.GetPlayerInteractionTooltip('declare_war_interaction')]"
+				}
+	
+				button_round = {
+					name = "duel"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						parentanchor = center
+						size = { 25 25 }
+						texture = "gfx/interface/icons/flat_icons/duel.dds"
+					}
+	
+					enabled = "[Artifact.GetOwner.IsPlayerInteractionValid('challenge_for_artifact_interaction')]"
+					onclick = "[Artifact.GetOwner.OpenPlayerInteraction('challenge_for_artifact_interaction')]"
+					tooltip = "[Artifact.GetOwner.GetPlayerInteractionTooltip('challenge_for_artifact_interaction')]"
+				}
+	
+				expand = {}
+			}
+		}
+	
+		widget = {
+			name = "round_buttons"
+			size = { 40 74 }
+			parentanchor = right|vcenter
+			position = { 2 0 }
+			allow_outside = yes
+	
+			datacontext = "[AccessLocalPlayerCachedData.AccessNewArtifacts]"
+	
+			vbox = {
+				layoutpolicy_vertical = expanding
+	
+				button_round = {
+					name = "reforge"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						size = { 25 25 }
+						parentanchor = center
+						texture = "gfx/interface/icons/flat_icons/reforge.dds"
+					}
+					visible = "[Artifact.GetOwner.IsLocalPlayer]"
+	
+					onclick = "[ToggleGameViewData( 'reforge_artifact', Artifact.GetID )]"
+					onclick = "[LocalPlayerNewArtifacts.RemoveNewArtifact( Artifact.Self )]"
+					enabled = "[Artifact.CanReforgeOrRepair( Artifact.GetOwner.Self )]"
+					tooltip = "[Artifact.GetReforgeOrRepairTooltip( Artifact.GetOwner.Self )]"
+	
+					icon = {
+						name = "selection_glow"
+						visible = "[Artifact.IsDurabilityLow]"
+						parentanchor = center
+						size = { 45 45 }
+	
+						state = {
+							trigger_on_create = yes
+	
+							name = max_glow
+							next = min_glow
+							duration = 1
+							#using = Animation_Curve_Default
+							alpha = 0.5
+						}
+	
+						state = {
+							name = min_glow
+							next = max_glow
+							duration = 1.6
+						#	using = Animation_Curve_Default
+							alpha = 0.3
+						}
+	
+						background = {
+							texture = "gfx/interface/component_masks/mask_fade_circle.dds"
+							tintcolor = { 1 0.8 0.6 1 }
+						}
+					}
+				}
+	
+				button_round = {
+					name = "details"
+					size = { 35 35 }
+	
+					button_icon_highlight = {
+						parentanchor = center
+						position = { 0 -6 }
+						size = { 25 25 }
+						texture = "gfx/interface/icons/flat_icons/dots.dds"
+					}
+	
+					onclick = "[ToggleGameViewData( 'artifact_details', Artifact.GetID )]"
+					onclick = "[LocalPlayerNewArtifacts.RemoveNewArtifact( Artifact.Self )]"
+					tooltip = "ARTIFACT_DETAILS"
+				}
+			}
+		}
+
+	}
+	
+	type widget_diplo_vassal_1 = widget {
+
+		size = { 10 110 }
+		
+		block "divider" {
+			divider = {
+				parentanchor = bottom|hcenter
+				size = { 100% 3 }
+			}
+		}
+
+		block "widget" {}
+
+		hbox = {
+			margin = { 20 5 }
+			#spacing = 15
+			button_standard = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				datacontext = "[Scope.GetCharacter]"
+				onclick = "[GetScriptedGui('vassal_transfer_select1').Execute( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				down = "[GetScriptedGui('vassal_transfer_select1').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				#enabled = "[GetScriptedGui('marry_vis_1').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"	
+					
+
+				button_standard = {
+					parentanchor = top|hcenter
+					position = { 120 0 }
+					size = { 120 26 }
+					text = release_only_trigger
+					datacontext = "[Scope.GetCharacter]"
+					onclick = "[GetScriptedGui('vassal_select').Execute( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+					down = "[GetScriptedGui('vassal_select').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+					tooltip = BECOMES_INDEPENDENT 
+				}
+				framesize = { 249 78 }
+				spriteType = Corneredtiled
+				spriteborder = { 20 20 }
+
+				block "button" {}
+
+				character_list_arrow = {
+					name = "character_list_arrow"
+				}
+
+				block "overlay" {
+					using = default_character_list_overlay
+				}
+
+				block "button_content"
+				{
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						
+						portrait_head_small = {}
+
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							
+							# Name and age
+							vbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 20
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding								
+
+									text_single = {
+										
+										layoutpolicy_horizontal = expanding
+										using = Font_Size_Medium
+										autoresize = no
+										text = "[Character.GetUINameNoTooltip]"
+									}
+								}
+								
+
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+
+									using = character_age_or_death_text
+									blockoverride "list_layout" {}
+									icon = {
+
+										visible = "[Not(Character.IsFemale)]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_male.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+		
+									icon = {
+
+										visible = "[Character.IsFemale]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_female.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+									block "character_relation"
+									{
+										text_single = {
+											name = "character_relation"
+											layoutpolicy_horizontal = expanding
+											text = "[Character.GetRelationToString( GetPlayer )]"
+											default_format = "#high"
+											autoresize = no
+											align = nobaseline
+											visible = "[Character.HasRelationTo( GetPlayer )]"
+										}
+
+										expand = {
+											visible = "[Not(Character.HasRelationTo( GetPlayer ))]"
+										}
+									}
+
+									
+								}
+							}
+
+							# Dynasty
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 5
+
+								widget = {
+									size = { 45 60 }
+
+									coa_house_small = {
+										datacontext = "[Character.GetHouse]"
+										scale = 0.7
+									}
+								}
+								# Traits
+
+								flowcontainer = {
+									
+									datamodel = "[GetTraits]"
+									margin_bottom = 15
+								
+									ignoreinvisible = yes
+									
+									item = {
+										
+										#container = {
+											
+											icon_trait = {
+												visible = "[Character.HasTrait(Trait.Self)]"
+												blockoverride "icon_size"
+												{
+													size = { 30 30 }
+												}
+
+												blockoverride "tooltip_placement"
+												{
+													using = tooltip_se
+												}
+
+												blockoverride "glow_radius"
+												{
+													glow_radius = 3
+												}
+											}
+										#}
+									}
+								}
+								block "bottom_middle_box" {
+									expand  = {}
+								}
+
+							}
+						}
+
+						expand = {}
+
+						vbox = {
+							minimumsize = { 200 0 }
+							
+							layoutpolicy_vertical = expanding
+							margin_top = 8
+							margin_right = 5
+
+							# Skills
+							hbox = {
+								layoutpolicy_horizontal = expanding
+
+								
+								expand = {}
+								margin_right = 5
+								margin_top = 20
+								#position = { 100 10 }
+						
+									
+								size = { 32 25 }
+								#spacer = { 15 0 }
+								icon = {
+									size = { 160 16 }
+									texture = "gfx/interface/window_character/characterlist_skills_diplo.dds"
+									icon = { position = { 0 -23 } size = {165 20 } texture = "gfx/interface/window_character/characterlist_skills_icons_diplo.dds" }
+									text_single = {
+										position = {0 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_vassal_capital_value')|0]"
+									}
+									text_single = {
+										position = { 28 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sd')|0]"
+									}
+									text_single = {
+										position = { 51 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sm')|0]"
+									}
+									text_single = {
+										position = { 71 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_ss')|0]"
+									}
+									text_single = {
+										position = { 96 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_si')|0]"
+									}
+									text_single = {
+										position = { 119 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sl')|0]"
+									}
+									text_single = {
+										position = { 144 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sp')|0]"
+									}
+								}
+
+
+
+							}
+
+							expand = {}
+
+							block "bottom_right_box"
+							{
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									#datamodel = "[GetCharacter]"
+									# Realm
+									widget = {
+										size = {55 58 }
+										visible = "[Character.HasLandedTitles]"
+
+										coa_title_tiny_crown = {
+											using = tooltip_ne
+											datacontext = "[Character.GetPrimaryTitle]"
+
+										}
+									}
+
+									expand = {}
+
+									# Religion
+									icon = {
+										name = "faith_button"
+										size = { 35 35 }
+										datacontext = "[Character.GetFaith]"
+										tooltipwidget = { faith_tooltip = {} }
+										texture = "[Faith.GetIcon]"
+									}
+
+									widget = {
+										datacontext = "[Character.GetCulture]"
+										size = { 120 24 }
+
+										tooltipwidget = {
+											culture_tooltip = {}
+										}
+										using = tooltip_se
+
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											spacing = 3
+											icon = {
+												name = "culture"
+												texture = "gfx/interface/icons/icon_culture.dds"
+												size = { 24 24 }
+											}
+
+											text_multi = {
+												layoutpolicy_horizontal = expanding
+												min_width = 95
+												max_width = 95
+												autoresize = yes
+												text = "CULTURE_LISTS_WINDOW"
+											}
+										}
+									}
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	type widget_diplo_vassal_2 = widget {
+
+		size = { 10 110 }
+		
+		block "divider" {
+			divider = {
+				parentanchor = bottom|hcenter
+				size = { 100% 3 }
+			}
+		}
+
+		block "widget" {}
+
+		hbox = {
+			margin = { 20 5 }
+			#spacing = 15
+
+			button_standard = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				onclick = "[GetScriptedGui('vassal_transfer_select2').Execute( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				down = "[GetScriptedGui('vassal_transfer_select2').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				#enabled = "[GetScriptedGui('marry_vis_2').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"	
+
+				button_standard = {
+					parentanchor = top|hcenter
+					position = { 120 0 }
+					size = { 120 26 }
+					text = release_only_trigger
+					datacontext = "[Scope.GetCharacter]"
+					onclick = "[GetScriptedGui('vassal_select').Execute( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+					down = "[GetScriptedGui('vassal_select').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+					tooltip = BECOMES_INDEPENDENT 
+				}
+				framesize = { 249 78 }
+				spriteType = Corneredtiled
+				spriteborder = { 20 20 }
+
+
+				block "button" {}
+
+				character_list_arrow = {
+					name = "character_list_arrow"
+				}
+
+				block "overlay" {
+					using = default_character_list_overlay
+				}
+
+				block "button_content"
+				{
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						portrait_head_small = {}
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+
+							# Name and age
+							vbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 20
+								
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding								
+
+									text_single = {
+										#margin_left = 5
+										layoutpolicy_horizontal = expanding
+										using = Font_Size_Medium
+										autoresize = no
+										text = "[Character.GetUINameNoTooltip]"
+									}
+								}
+
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									icon = {
+										visible = "[Not(Character.IsFemale)]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_male.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+		
+									icon = {
+										visible = "[Character.IsFemale]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_female.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+									using = character_age_or_death_text
+									blockoverride "list_layout" {}
+
+									block "character_relation"
+									{
+										text_single = {
+											name = "character_relation"
+											layoutpolicy_horizontal = expanding
+											text = "[Character.GetRelationToString( GetGlobalVariable('diplo_2').GetCharacter )]"
+											default_format = "#high"
+											autoresize = no
+											align = nobaseline
+											visible = "[Character.HasRelationTo( GetGlobalVariable('diplo_2').GetCharacter )]"
+										}
+
+										expand = {
+											visible = "[Not(Character.HasRelationTo( GetGlobalVariable('diplo_2').GetCharacter ))]"
+										}
+									}
+								}
+							}
+
+							# Dynasty
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 5
+
+								widget = {
+									size = { 45 60 }
+
+									coa_house_small = {
+										datacontext = "[Character.GetHouse]"
+										scale = 0.7
+									}
+								}
+								# Traits
+
+								flowcontainer = {
+									margin_bottom = 15
+									datamodel = "[GetTraits]"
+									
+									ignoreinvisible = yes
+									
+									item = {
+										
+										#container = {
+											
+											icon_trait = {
+												visible = "[Character.HasTrait(Trait.Self)]"
+												blockoverride "icon_size"
+												{
+													size = { 30 30 }
+												}
+
+												blockoverride "tooltip_placement"
+												{
+													using = tooltip_se
+												}
+
+												blockoverride "glow_radius"
+												{
+													glow_radius = 3
+												}
+											}
+										#}
+									}
+								}
+								block "bottom_middle_box" {
+									expand  = {}
+								}
+
+							}
+						}
+
+						expand = {}
+
+						vbox = {
+							minimumsize = { 200 0 }
+							
+							layoutpolicy_vertical = expanding
+							margin_top = 8
+							margin_right = 5
+
+							# Skills
+							hbox = {
+								layoutpolicy_horizontal = expanding
+
+								expand = {}
+								margin_right = 5
+								margin_top = 20
+						
+									
+								icon = {
+									size = { 160 20 }
+									texture = "gfx/interface/window_character/characterlist_skills_diplo.dds"
+									icon = { position = { 0 -23 } size = {165 20 } texture = "gfx/interface/window_character/characterlist_skills_icons_diplo.dds" }
+									
+									text_single = {
+										position = { 0 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_vassal_capital_value')|0]"
+									}
+									text_single = {
+										position = { 28 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sd')|0]"
+									}
+									text_single = {
+										position = { 51 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sm')|0]"
+									}
+									text_single = {
+										position = { 71 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_ss')|0]"
+									}
+									text_single = {
+										position = { 96 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_si')|0]"
+									}
+									text_single = {
+										position = { 119 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sl')|0]"
+									}
+									text_single = {
+										position = { 144 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sp')|0]"
+									}
+								}
+									
+								
+							}
+
+							expand = {}
+
+							block "bottom_right_box"
+							{
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									#datamodel = "[GetCharacter]"
+									# Realm
+									widget = {
+										size = {55 58 }
+										visible = "[Character.HasLandedTitles]"
+
+				
+
+										#datacontext = "[GetCharacter.GetPrimaryTitle]"
+
+										coa_title_tiny_crown = {
+											using = tooltip_ne
+											datacontext = "[Character.GetPrimaryTitle]"
+
+										}
+
+									}
+
+									expand = {}
+
+									# Religion
+									icon = {
+										name = "faith_button"
+										size = { 35 35 }
+										datacontext = "[Character.GetFaith]"
+										tooltipwidget = { faith_tooltip = {} }
+										texture = "[Faith.GetIcon]"
+									}
+
+									widget = {
+										datacontext = "[Character.GetCulture]"
+										size = { 120 24 }
+
+										tooltipwidget = {
+											culture_tooltip = {}
+										}
+										using = tooltip_se
+
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											spacing = 3
+											icon = {
+												name = "culture"
+												texture = "gfx/interface/icons/icon_culture.dds"
+												size = { 24 24 }
+											}
+
+											text_multi = {
+												layoutpolicy_horizontal = expanding
+												min_width = 95
+												max_width = 95
+												autoresize = yes
+												text = "CULTURE_LISTS_WINDOW"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	##############
+		#GetPMM	
+	type widget_diplo_1_marriage = widget {
+
+		size = { 10 110 }
+		
+		block "divider" {
+			divider = {
+				parentanchor = bottom|hcenter
+				size = { 100% 3 }
+			}
+		}
+
+		block "widget" {}
+
+		hbox = {
+			margin = { 20 5 }
+			#spacing = 15
+			button_standard = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				datacontext = "[Scope.GetCharacter]"
+				onclick = "[GetScriptedGui('set_my_offered').Execute( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				down = "[GetScriptedGui('is_offered').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				enabled = "[GetScriptedGui('marry_vis_1').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"	
+					
+				framesize = { 249 78 }
+				spriteType = Corneredtiled
+				spriteborder = { 20 20 }
+
+				block "button" {}
+
+				character_list_arrow = {
+					name = "character_list_arrow"
+				}
+
+				block "overlay" {
+					using = default_character_list_overlay
+				}
+
+				block "button_content"
+				{
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						
+						portrait_head_small = {}
+
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							
+							# Name and age
+							vbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 20
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding								
+
+									text_single = {
+										
+										layoutpolicy_horizontal = expanding
+										using = Font_Size_Medium
+										autoresize = no
+										text = "[Character.GetUINameNoTooltip]"
+									}
+								}
+								
+
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+
+									using = character_age_or_death_text
+									blockoverride "list_layout" {}
+									icon = {
+
+										visible = "[Not(Character.IsFemale)]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_male.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+		
+									icon = {
+
+										visible = "[Character.IsFemale]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_female.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+									block "character_relation"
+									{
+										text_single = {
+											name = "character_relation"
+											layoutpolicy_horizontal = expanding
+											text = "[Character.GetRelationToString( GetPlayer )]"
+											default_format = "#high"
+											autoresize = no
+											align = nobaseline
+											visible = "[Character.HasRelationTo( GetPlayer )]"
+										}
+
+										expand = {
+											visible = "[Not(Character.HasRelationTo( GetPlayer ))]"
+										}
+									}
+
+									
+								}
+							}
+
+							# Dynasty
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 5
+
+								widget = {
+									size = { 45 60 }
+
+									coa_house_small = {
+										datacontext = "[Character.GetHouse]"
+										scale = 0.7
+									}
+								}
+								# Traits
+
+								flowcontainer = {
+									
+									datamodel = "[GetTraits]"
+									margin_bottom = 15
+								
+									ignoreinvisible = yes
+									
+									item = {
+										
+										#container = {
+											
+											icon_trait = {
+												visible = "[Character.HasTrait(Trait.Self)]"
+												blockoverride "icon_size"
+												{
+													size = { 30 30 }
+												}
+
+												blockoverride "tooltip_placement"
+												{
+													using = tooltip_se
+												}
+
+												blockoverride "glow_radius"
+												{
+													glow_radius = 3
+												}
+											}
+										#}
+									}
+								}
+								block "bottom_middle_box" {
+									expand  = {}
+								}
+
+							}
+						}
+
+						expand = {}
+
+						vbox = {
+							minimumsize = { 200 0 }
+							
+							layoutpolicy_vertical = expanding
+							margin_top = 8
+							margin_right = 5
+
+							# Skills
+							hbox = {
+								layoutpolicy_horizontal = expanding
+
+								
+								expand = {}
+								margin_right = 5
+								margin_top = 20
+								#position = { 100 10 }
+						
+									
+								size = { 32 25 }
+								#spacer = { 15 0 }
+								icon = {
+									size = { 160 16 }
+									texture = "gfx/interface/window_character/characterlist_skills_diplo.dds"
+									icon = { position = { 0 -23 } size = {160 20 } texture = "gfx/interface/window_character/characterlist_skills_icons_diplo.dds" }
+									text_single = {
+										position = { 6 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_human_capital_value')|0]"
+									}
+									text_single = {
+										position = { 28 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sd')|0]"
+									}
+									text_single = {
+										position = { 51 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sm')|0]"
+									}
+									text_single = {
+										position = { 71 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_ss')|0]"
+									}
+									text_single = {
+										position = { 96 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_si')|0]"
+									}
+									text_single = {
+										position = { 119 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sl')|0]"
+									}
+									text_single = {
+										position = { 144 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sp')|0]"
+									}
+								}
+
+
+
+							}
+
+							expand = {}
+
+							block "bottom_right_box"
+							{
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									#datamodel = "[GetCharacter]"
+									# Realm
+									widget = {
+										size = {55 58 }
+										visible = "[Character.HasLandedTitles]"
+
+										coa_title_tiny_crown = {
+											using = tooltip_ne
+											datacontext = "[Character.GetPrimaryTitle]"
+
+										}
+									}
+
+									expand = {}
+
+									# Religion
+									icon = {
+										name = "faith_button"
+										size = { 35 35 }
+										datacontext = "[Character.GetFaith]"
+										tooltipwidget = { faith_tooltip = {} }
+										texture = "[Faith.GetIcon]"
+									}
+
+									widget = {
+										datacontext = "[Character.GetCulture]"
+										size = { 120 24 }
+
+										tooltipwidget = {
+											culture_tooltip = {}
+										}
+										using = tooltip_se
+
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											spacing = 3
+											icon = {
+												name = "culture"
+												texture = "gfx/interface/icons/icon_culture.dds"
+												size = { 24 24 }
+											}
+
+											text_multi = {
+												layoutpolicy_horizontal = expanding
+												min_width = 95
+												max_width = 95
+												autoresize = yes
+												text = "CULTURE_LISTS_WINDOW"
+											}
+										}
+									}
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#GetPME	
+	type widget_diplo_2_marriage = widget {
+
+		size = { 10 110 }
+		
+		block "divider" {
+			divider = {
+				parentanchor = bottom|hcenter
+				size = { 100% 3 }
+			}
+		}
+
+		block "widget" {}
+
+		hbox = {
+			margin = { 20 5 }
+			#spacing = 15
+
+			button_standard = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				onclick = "[GetScriptedGui('set_their_offered').Execute( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				down = "[GetScriptedGui('is_offered').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				enabled = "[GetScriptedGui('marry_vis_2').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"	
+
+				framesize = { 249 78 }
+				spriteType = Corneredtiled
+				spriteborder = { 20 20 }
+
+
+				block "button" {}
+
+				character_list_arrow = {
+					name = "character_list_arrow"
+				}
+
+				block "overlay" {
+					using = default_character_list_overlay
+				}
+
+				block "button_content"
+				{
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						portrait_head_small = {}
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+
+							# Name and age
+							vbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 20
+								
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding								
+
+									text_single = {
+										#margin_left = 5
+										layoutpolicy_horizontal = expanding
+										using = Font_Size_Medium
+										autoresize = no
+										text = "[Character.GetUINameNoTooltip]"
+									}
+								}
+
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									icon = {
+										visible = "[Not(Character.IsFemale)]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_male.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+		
+									icon = {
+										visible = "[Character.IsFemale]"
+										size = { 25 25 }
+										framesize = { 40 40 }
+										frame = "[Character.GetSexualityFrame]"
+										texture = "gfx/interface/icons/character_status/sexuality_icons_female.dds"
+										tooltip = "SEXUALITY_TT"
+									}
+									using = character_age_or_death_text
+									blockoverride "list_layout" {}
+
+									block "character_relation"
+									{
+										text_single = {
+											name = "character_relation"
+											layoutpolicy_horizontal = expanding
+											text = "[Character.GetRelationToString( GetGlobalVariable('diplo_2').GetCharacter )]"
+											default_format = "#high"
+											autoresize = no
+											align = nobaseline
+											visible = "[Character.HasRelationTo( GetGlobalVariable('diplo_2').GetCharacter )]"
+										}
+
+										expand = {
+											visible = "[Not(Character.HasRelationTo( GetGlobalVariable('diplo_2').GetCharacter ))]"
+										}
+									}
+								}
+							}
+
+							# Dynasty
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								layoutpolicy_vertical = expanding
+								margin_left = 5
+
+								widget = {
+									size = { 45 60 }
+
+									coa_house_small = {
+										datacontext = "[Character.GetHouse]"
+										scale = 0.7
+									}
+								}
+								# Traits
+
+								flowcontainer = {
+									margin_bottom = 15
+									datamodel = "[GetTraits]"
+									
+									ignoreinvisible = yes
+									
+									item = {
+										
+										#container = {
+											
+											icon_trait = {
+												visible = "[Character.HasTrait(Trait.Self)]"
+												blockoverride "icon_size"
+												{
+													size = { 30 30 }
+												}
+
+												blockoverride "tooltip_placement"
+												{
+													using = tooltip_se
+												}
+
+												blockoverride "glow_radius"
+												{
+													glow_radius = 3
+												}
+											}
+										#}
+									}
+								}
+								block "bottom_middle_box" {
+									expand  = {}
+								}
+
+							}
+						}
+
+						expand = {}
+
+						vbox = {
+							minimumsize = { 200 0 }
+							
+							layoutpolicy_vertical = expanding
+							margin_top = 8
+							margin_right = 5
+
+							# Skills
+							hbox = {
+								layoutpolicy_horizontal = expanding
+
+								expand = {}
+								margin_right = 5
+								margin_top = 20
+						
+									
+								icon = {
+									size = { 160 20 }
+									texture = "gfx/interface/window_character/characterlist_skills_diplo.dds"
+									icon = { position = { 0 -23 } size = {160 20 } texture = "gfx/interface/window_character/characterlist_skills_icons_diplo.dds" }
+									
+									text_single = {
+										position = { 6 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_human_capital_value')|0]"
+									}
+									text_single = {
+										position = { 28 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sd')|0]"
+									}
+									text_single = {
+										position = { 51 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sm')|0]"
+									}
+									text_single = {
+										position = { 71 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_ss')|0]"
+									}
+									text_single = {
+										position = { 96 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_si')|0]"
+									}
+									text_single = {
+										position = { 119 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sl')|0]"
+									}
+									text_single = {
+										position = { 144 -5 }
+										text = "[GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).ScriptValue('diplo_sp')|0]"
+									}
+								}
+									
+								
+							}
+
+							expand = {}
+
+							block "bottom_right_box"
+							{
+								hbox = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									#datamodel = "[GetCharacter]"
+									# Realm
+									widget = {
+										size = {55 58 }
+										visible = "[Character.HasLandedTitles]"
+
+				
+
+										#datacontext = "[GetCharacter.GetPrimaryTitle]"
+
+										coa_title_tiny_crown = {
+											using = tooltip_ne
+											datacontext = "[Character.GetPrimaryTitle]"
+
+										}
+
+									}
+
+									expand = {}
+
+									# Religion
+									icon = {
+										name = "faith_button"
+										size = { 35 35 }
+										datacontext = "[Character.GetFaith]"
+										tooltipwidget = { faith_tooltip = {} }
+										texture = "[Faith.GetIcon]"
+									}
+
+									widget = {
+										datacontext = "[Character.GetCulture]"
+										size = { 120 24 }
+
+										tooltipwidget = {
+											culture_tooltip = {}
+										}
+										using = tooltip_se
+
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											spacing = 3
+											icon = {
+												name = "culture"
+												texture = "gfx/interface/icons/icon_culture.dds"
+												size = { 24 24 }
+											}
+
+											text_multi = {
+												layoutpolicy_horizontal = expanding
+												min_width = 95
+												max_width = 95
+												autoresize = yes
+												text = "CULTURE_LISTS_WINDOW"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	type vbox_character_list_diplo = vbox {
+		name = "character_list"
+		spacing = 3
+
+
+
+		block "special_character" {}
+
+		scrollbox = {
+			name = "characters_scroll_area"
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "scrollbox_content" {
+
+				block "container_implementation" {
+					vbox = {
+						name = "characters_grid"
+						datamodel = "[CharacterSelectionList.GetList]"
+						visible = "[Not(CharacterSelectionList.IsBuildingList)]"
+						layoutpolicy_horizontal = expanding
+
+						item = {
+							widget_character_list_item = {
+								block "item_size" {
+									size = { 650 110 }
+									layoutpolicy_horizontal = expanding
+								}
+							}
+						}
+					}
+				}
+			}
+
+			blockoverride "scrollbox_empty"
+			{
+				block "scrollbox_empty_visibility"
+				{
+					layoutpolicy_vertical = expanding
+					visible = "[IsDataModelEmpty( CharacterSelectionList.GetList )]"
+					text = "NO_CHARACTERS_TO_SELECT"
+				}
+			}
+		}
+
+
+	}
+
+}

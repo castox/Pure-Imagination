@@ -1,0 +1,285 @@
+#k_caucasus
+##d_khazaria ###################################
+###c_sarkel
+607 = {	#607 - Sarkel
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	750.1.2 = {
+		religion = faye  # kabarism
+	}
+	1000.1.2 = {
+		culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # cuman
+	}
+}
+5315 = {	#5315 - Aksay
+	holding = none
+}
+5332 = {	#5332 - Semikarakary
+	holding = none
+}
+
+###c_astrakhan
+5311 = {	#5311 - Astrakhan
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	750.1.2 = {
+		religion = faye  # kabarism
+	}
+}
+5312 = {	#5312 - Sara
+	holding = none
+}
+604 = {	#604 - Khazaran
+	holding = none
+	#holding = city_holding
+}
+
+###c_beksima
+605 = {	#605 - Beksima
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	750.1.2 = {
+		religion = faye  # kabarism
+	}
+	1000.1.2 = {
+		culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # cuman
+	}
+}
+5333 = {	#5333 - Sarepta
+	holding = none
+}
+5334 = {	#5334 - Yenotayevka
+	holding = none
+}
+
+##d_azov ###################################
+###c_tmutarakan
+598 = {	#598 - Tmutarakan
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	990.1.2 = {
+		culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # russian
+		religion = faye  # orthodox
+		holding = castle_holding
+	}
+}
+5289 = {	#5289 - Papagia
+	holding = none
+}
+5335 = {	#5335 - Kuban
+	holding = none
+}
+5336 = {	#5336 - Soleny
+	holding = none
+}
+
+###c_khumar
+599 = {	#599 - Yaseni
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	1000.1.2 = {
+		culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # cuman
+	}
+}
+5337 = {	#5337 - Chelbaska
+	holding = none
+}
+5338 = {	#5338 - Tikhon
+	holding = none
+}
+
+###c_azov
+597 = {	#597 - Azov
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	750.1.2 = {
+		religion = faye  # kabarism
+	}
+	1000.1.2 = {
+		culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # cuman
+	}
+}
+5288 = {	#5288 - Manych
+	holding = none
+}
+5339 = {	#5339 - Chamchev
+	holding = none
+}
+5340 = {	#5340 - Yergolyk
+	holding = none
+}
+
+##d_alania ###################################
+###c_maghas
+5299 = {	#5299 - Maghas
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # alan
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	965.1.2 = {
+		religion = faye  # orthodox
+	}
+}
+5300 = {	#5300 - Etzeri
+	holding = none
+	#1066.1.2 = {
+	#	holding = city_holding
+	#}
+}
+5301 = {	#5301 - Betzini
+	holding = none
+}
+
+###c_cabardinia
+603 = {	#603 - Cabarda
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # alan
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	965.1.2 = {
+		religion = faye  # orthodox
+	}
+}
+5302 = {	#5302 - Tatartopa
+	holding = none
+}
+606 = {	#606 - Petigoria
+	holding = none
+	#1066.1.2 = {
+	#	holding = city_holding
+	#}
+}
+5303 = {	#5303 - Besinada
+	holding = none
+}
+5344 = {	#5344 - Majar
+	holding = none
+}
+
+###c_zichia
+5296 = {	#5296 - Bata
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # alan
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	965.1.2 = {
+		religion = faye  # orthodox
+	}
+}
+5297 = {	#5297 - Zapaxi
+	holding = none
+	#1066.1.2 = {
+	#	holding = city_holding
+	#}
+}
+5298 = {	#5298 - Ulmi
+	holding = none
+}
+
+##d_ciscaucasia ###################################
+###c_derbent
+674 = {	#674 - Derbent
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = castle_holding
+	750.1.2 = {
+		religion = faye  # kabarism
+	}
+	1066.1.1 = {
+		culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # persian
+		religion = faye  # ashari
+	}
+}
+675 = {	#675 - Kumukh
+	holding = church_holding
+}
+5304 = {	#5304 - Balanjar
+	holding = city_holding
+}
+5341 = {	#5341 - Kuba
+	holding = none
+	1066.1.1 = {
+		holding = city_holding
+	}
+}
+
+###c_samander
+5305 = {	#5305 - Samander
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	750.1.2 = {
+		religion = faye  # kabarism
+	}
+}
+5306 = {	#5306 - Durdzukia
+	holding = none
+	#1066.1.1 = {
+	#	holding = church_holding
+	#}
+}
+5342 = {	#5342 - Sambalut
+	holding = none
+	#holding = city_holding
+}
+
+###c_samiran
+5343 = {	#5343 - Samiran
+	culture = faye
+850.1.1 = { culture = faye}
+851.1.1 = { religion = faye }  # khazar
+	religion = faye  # tengri_pagan
+	holding = tribal_holding
+	750.1.2 = {
+		religion = faye  # kabarism
+	}
+}
+5307 = {	#5307 - Kizlyar
+	holding = none
+}
+5308 = {	#5308 - Cabartei
+	holding = none
+}
+5309 = {	#5309 - Tserlona
+	holding = none
+}
+5310 = {	#5310 - Cisterki
+	holding = none
+}

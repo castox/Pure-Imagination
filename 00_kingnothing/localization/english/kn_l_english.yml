@@ -1,0 +1,26 @@
+﻿l_english:
+
+##################################################
+##################################################
+##         Text in [brackets] will change       ## 
+##           automatically depending on         ##
+##              the game language!              ##
+##################################################
+##################################################
+
+king_nothing_modifier: "King Nothing"
+king_nothing_modifier_desc: "You're a king, but what did it cost? Everything.."
+
+rem_king_nothing_decision: "Remove the moniker King Nothing."
+rem_king_nothing_decision_tooltip: "$kn_i_must_admit$"
+rem_king_nothing_decision_confirm: "It must be done!"
+
+king_nothing_decision: "Why not, I should be King!"
+king_nothing_decision_tooltip: "$kn_gain_nothing$"
+king_nothing_decision_confirm: "They will bend the knee!"
+
+kn_gain_nothing: "You gain a Kingdom but you lose the respect of many, causing many to hate you and declare you a false king. There goes King Nothing!!"
+kn_i_must_admit: "I must admit I was wrong!"
+kn_requirements: "Own at least 1 or more [duchies|E]"
+kn_hold_another: "Hold 2 Kingdoms"
+kn_rem_nothing: "With the cost of much pride you admit you were wrong and lose the moniker King Nothing."

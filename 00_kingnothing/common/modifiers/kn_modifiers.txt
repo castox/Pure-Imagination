@@ -1,0 +1,6 @@
+﻿
+
+king_nothing_modifier = { 
+	icon = diplomacy_negative
+	general_opinion = -50
+}

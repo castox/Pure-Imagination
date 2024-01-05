@@ -1,0 +1,1233 @@
+
+window = {
+	name = "horse"
+	scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	movable = no
+	
+	icon = {
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/tavern/j_layer1.dds"
+	}
+	icon = {
+		parentanchor = top
+		position = { 0 70 }
+		texture = "gfx/interface/tavern/ppl.dds"
+	}
+	icon = {
+		parentanchor = top
+		position = { 0 270 }
+		size = { 1920 292 }
+		texture = "gfx/interface/tavern/backwall.dds"
+	}
+	#my_dummy_tribune
+		test_this = {
+			position = { 420 130 }
+			size = { 1920 1080 }
+			parentanchor = top
+			#using = Window_Background
+		}
+		my_dummy_tribune2 = {
+			datacontext = "[GetPlayer.GetPrimarySpouse]"
+			position = { -25 -100 }
+			parentanchor = hcenter|vcenter
+
+		}
+		my_dummy_tribune2 = {
+			visible = "[GetScriptedGui('liege_check2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			datacontext = "[GetPlayer.GetLiege]"
+			position = { -95 -100 }
+			parentanchor = hcenter|vcenter
+
+		}
+		my_dummy_tribune2 = {
+			datacontext = "[GetPlayer.GetPlayerHeir]"
+			position = { -225 -100 }
+			parentanchor = hcenter|vcenter
+
+		}
+		my_dummy_tribune2 = {
+			datacontext = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetPrimarySpouse]"
+			position = { 55 -100 }
+			parentanchor = hcenter|vcenter
+
+		}
+		my_dummy_tribune2 = {
+			visible = "[GetScriptedGui('liege_check').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			datacontext = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetLiege]"
+			datacontext = "[Scope.GetCharacter]"
+			position = { 125 -100 }
+			parentanchor = hcenter|vcenter
+
+		}
+		my_dummy_tribune2 = {
+			datacontext = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetPlayerHeir]"
+			datacontext = "[Scope.GetCharacter]"
+			position = { 235 -100 }
+			parentanchor = hcenter|vcenter
+
+		}
+	###################
+	icon = {
+		#visible = no
+		size = { 2204 1096 }
+		position = { 0 -10 }
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/tavern/j_layer2.dds"
+	}
+	@overlay_alpha = 0.4
+	coat_of_arms_icon = {
+		parentanchor = center
+		position = { 185 45 }
+		size = { 160 160 }
+		coat_of_arms = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetPrimaryTitle.GetTitleCoA.GetTexture('(int32)230','(int32)230')]"
+		coat_of_arms_slot = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetPrimaryTitle.GetTitleCoA.GetSlot('(int32)230','(int32)230')]"
+		coat_of_arms_mask = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetGovernment.GetRealmMask]"
+		
+		modify_texture = {
+			texture = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetGovernment.GetRealmMask]"
+			blend_mode = overlay
+			alpha = @overlay_alpha
+
+		}
+
+		coa_realm_overlay = {
+			texture = "[GetPlayer.MakeScope.Var('joust_challenger').GetCharacter.GetGovernment.GetRealmFrame('(int32)115')]"
+			size = { 160 180 }
+			framesize = { 160 180 }
+		}
+	}
+	coat_of_arms_icon = {
+		parentanchor = center
+		position = { -165 45 }
+		size = { 160 160 }
+		coat_of_arms = "[GetPlayer.GetPrimaryTitle.GetTitleCoA.GetTexture('(int32)230','(int32)230')]"
+		coat_of_arms_slot = "[GetPlayer.GetPrimaryTitle.GetTitleCoA.GetSlot('(int32)230','(int32)230')]"
+		coat_of_arms_mask = "[GetPlayer.GetGovernment.GetRealmMask]"
+		
+		modify_texture = {
+			texture = "[GetPlayer.GetGovernment.GetRealmMask]"
+			blend_mode = overlay
+			alpha = @overlay_alpha
+		}
+
+		coa_realm_overlay = {
+			texture = "[GetPlayer.GetGovernment.GetRealmFrame('(int32)115')]"
+			size = { 160 180 }
+			framesize = { 160 180 }
+		}
+	}
+	##
+	#Opp Rightside
+	icon = {
+		visible = "[GetScriptedGui('o_rounds').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		position = { 50 340 }
+		parentanchor = right|vcenter
+
+
+		horse_stance = {
+			#visible = no
+			parentanchor = hcenter|vcenter
+			datacontext = "[GetPlayer.MakeScope.Var('joust_challenger')]"
+			datacontext = "[Scope.GetCharacter]"
+
+		}
+
+
+
+		state = {
+			trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = move
+			next = move1
+			position_x = 700
+		}
+		state = {
+			#trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = movey
+			next = movey1
+			duration = 0.2
+			position_y = 432
+		}
+		state = {
+			name = movey1
+			next = movey
+			duration = 0.2
+			position_y = 440
+		}
+		state = {
+			name = move1
+			next = movez
+			duration = 5
+			position_x = -2000
+			on_finish = "[GetScriptedGui('j_end').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+		state = {
+			name = movez
+			position_x = 700
+		}
+	}
+	#PLayer Right ide
+	icon = {
+		visible = "[GetScriptedGui('e_rounds').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		position = { -150 340 }
+		parentanchor = right|vcenter
+
+
+		horse_stance = {
+			#visible = no
+			parentanchor = hcenter|vcenter
+			datacontext = "[GetPlayer]"
+
+		}
+
+
+
+		state = {
+			trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = move
+			next = move1
+			position_x = 700
+		}
+		state = {
+			#trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = movey
+			next = movey1
+			duration = 0.2
+			position_y = 432
+		}
+		state = {
+			name = movey1
+			next = movey
+			duration = 0.2
+			position_y = 440
+		}
+		state = {
+			name = move1
+			next = movez
+			duration = 5
+			position_x = -2000
+			on_finish = "[GetScriptedGui('j_end').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+		state = {
+			name = movez
+			position_x = 700
+		}
+	}	
+	#fence
+		icon = {
+			visible ="[GetScriptedGui('jf_over').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = hcenter|vcenter
+			position = { 0 190 }
+			texture = "gfx/interface/tavern/fence.dds"
+		}
+		icon = {
+			visible = no # "[GetScriptedGui('jf_over').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = hcenter|vcenter
+			position = { 0 165 }
+			texture = "gfx/interface/tavern/fence.dds"
+		}
+		icon = {
+			visible = "[GetScriptedGui('jf_over').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = hcenter|vcenter
+			position = { 0 85 }
+			texture = "gfx/interface/tavern/fence.dds"
+		}
+	#/Fence
+
+	#Player Leftside
+	icon = {
+		visible = "[GetScriptedGui('o_rounds').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		position = { -50 400 }
+		parentanchor = left|vcenter
+		
+
+		#
+		horse_opp = {
+			parentanchor = hcenter|vcenter
+			datacontext = "[GetPlayer]"
+		}
+
+		state = {
+			trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = move
+			next = move1
+			position_x = -650
+		}
+		state = {
+			#trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = movey
+			next = movey1
+			duration = 0.2
+			position_y = 492
+		}
+		state = {
+			name = movey1
+			next = movey
+			duration = 0.2
+			position_y = 500
+		}
+		#
+		state = {
+			name = move1
+			next = movez
+			duration = 5
+			position_x = 2000
+			#on_finish = "[GetScriptedGui('j_end').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+		}
+		state = {
+			name = movez
+			position_x = -650
+		}
+	
+	}
+	#Opp Left Side
+	icon = {
+		position = { 150 400}
+		parentanchor = left|vcenter
+		visible = "[GetScriptedGui('e_rounds').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+
+		horse_opp = {
+			parentanchor = hcenter|vcenter
+			datacontext = "[GetPlayer.MakeScope.Var('joust_challenger')]"
+			datacontext = "[Scope.GetCharacter]"
+		}
+
+		state = {
+			trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = move
+			next = move1
+			position_x = -650
+		}
+		state = {
+		#	trigger_when = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			name = movey
+			next = movey1
+			duration = 0.2
+			position_y = 492
+		}
+		state = {
+			name = movey1
+			next = movey
+			duration = 0.2
+			position_y = 500
+		}
+		#
+		state = {
+			name = move1
+			next = movez
+			duration = 5
+			position_x = 2000
+			#on_finish = "[GetScriptedGui('j_end').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+		}
+		state = {
+			name = movez
+			position_x = -650
+		}
+	
+	}	
+	button = {
+		position = { 200 0 }
+		#size = { 50 95 }
+		parentanchor = center
+		texture = "gfx/interface/tavern/arrow.dds"
+		visible = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetScriptedGui('right_j_adjust').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		state = {
+			trigger_on_create = yes
+			name = mm1
+			next = mm2
+			duration = 1
+			position_x = 195
+		}
+		state = {
+			name = mm2
+			next = mm1
+			duration = 1
+			position_x = 200
+		}
+	}
+	button = {
+		position = { -200 0 }
+		#size = { 50 95 }
+		mirror = horizontal
+		parentanchor = center
+		texture = "gfx/interface/tavern/arrow.dds"
+		visible = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetScriptedGui('left_j_adjust').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		state = {
+			trigger_on_create = yes
+			name = mm1
+			next = mm2
+			duration = 1
+			position_x = -195
+		}
+		state = {
+			name = mm2
+			next = mm1
+			duration = 1
+			position_x = -200
+		}
+	}
+	button = {
+		position = { 0 -200 }
+		#size = { 50 95 }
+		#mirror = horizontal
+		parentanchor = center
+		texture = "gfx/interface/tavern/arrowu.dds"
+		visible = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetScriptedGui('up_j_adjust').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		state = {
+			trigger_on_create = yes
+			name = mm1
+			next = mm2
+			duration = 1
+			position_y = -195
+		}
+		state = {
+			name = mm2
+			next = mm1
+			duration = 1
+			position_y = -200
+		}
+	}
+	button = {
+		position = { 0 200 }
+		#size = { 50 95 }
+		mirror = vertical
+		parentanchor = center
+		texture = "gfx/interface/tavern/arrowu.dds"
+		visible = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetScriptedGui('down_j_adjust').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		state = {
+			trigger_on_create = yes
+			name = mm1
+			next = mm2
+			duration = 1
+			position_y = 195
+		}
+		state = {
+			name = mm2
+			next = mm1
+			duration = 1
+			position_y = 200
+		}
+	}
+	button = {
+		visible = "[GetScriptedGui('j_striker_cleaner').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		size = { 300 300 }
+		texture = "gfx/interface/tavern/t_box_g.dds"
+		onclick = "[GetScriptedGui('j_target_in').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	icon = {
+		visible = "[GetScriptedGui('j_now').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		size = { 300 300 }
+		texture = "gfx/interface/tavern/t_box.dds"
+
+		icon = {
+			parentanchor = center
+			texture = "gfx/interface/tavern/o_ball.dds"
+			state = {
+				name = cpu_adjust_1
+				next = cpu_adjust_1
+				trigger_on_create = yes
+				position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('o_y_loc').GetValue)]"
+				position_x = "[FixedPointToFloat(GetPlayer.MakeScope.Var('o_x_loc').GetValue)]"
+			}
+		}
+		icon = {
+			parentanchor = center
+			texture = "gfx/interface/tavern/p_ball.dds"
+			state = {
+				name = cpu_adjust_1
+				next = cpu_adjust_1
+				trigger_on_create = yes
+				position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('p_y_loc').GetValue)]"
+				position_x = "[FixedPointToFloat(GetPlayer.MakeScope.Var('p_x_loc').GetValue)]"
+			}
+			
+		}
+
+	}
+#
+	text_single = {
+		#visible = no
+		parentanchor = top|hcenter
+		position = { 10 170 }
+		text = "Round [FixedPointToFloat(GetPlayer.MakeScope.Var('joust_h').GetValue)]"
+		default_format = "#high"
+		fontsize = 50
+		using = Font_Type_Flavor
+	}
+	text_single = {
+		#visible = no
+		parentanchor = top|hcenter
+		position = { -380 170 }
+		text = "Hits: [FixedPointToFloat(GetPlayer.MakeScope.Var('joust_s').GetValue)]"
+		default_format = "#high"
+		fontsize = 50
+		using = Font_Type_Flavor
+	}
+	text_single = {
+		#visible = no
+		parentanchor = top|hcenter
+		position = { 380 170 }
+		text = "Hits: [FixedPointToFloat(GetPlayer.MakeScope.Var('joust_o').GetValue)]"
+		default_format = "#high"
+		fontsize = 50
+		using = Font_Type_Flavor
+	}
+	state = {
+		name = striker
+		next = striker1
+		trigger_when = "[GetScriptedGui('j_striker').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 2.2
+		on_finish = "[GetScriptedGui('j_striker').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = striker1
+		next = striker2
+		duration = 0.5
+		on_finish = "[GetScriptedGui('j_striker_cleaner').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = striker2
+		duration = 1
+		on_finish = "[GetScriptedGui('j_striker_music').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	state = {
+		name = ready2
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+	# not wotk
+			state = {
+				name = trot1
+				next = trot2
+				#trigger_on_create = yes
+				duration = 0.3
+				on_start = "[GetScriptedGui('trot_pl').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = trot2
+				next = trot3
+				duration = 0.3
+				on_start = "[GetScriptedGui('trot_l').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = trot3
+				next = trot4
+				duration = 0.3
+				on_start = "[GetScriptedGui('trot_pl').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = trot4
+				next = trot5
+				duration = 0.2
+				on_start = "[GetScriptedGui('exit_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = trot5
+				next = trot6
+				duration = 0.3
+				on_start = "[GetScriptedGui('trot_pr').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = trot6
+				next = trot7
+				duration = 0.3
+				on_start = "[GetScriptedGui('trot_r').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = trot7
+				next = trot8
+				duration = 0.3
+				on_start = "[GetScriptedGui('trot_pr').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			state = {
+				name = trot8
+				next = trot1
+				duration = 0.2
+				on_start = "[GetScriptedGui('exit_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+	#
+
+	state = {
+		name = trota1
+		next = trota2
+		trigger_on_create = yes
+		duration = 0.1
+		on_start = "[GetScriptedGui('trot_l').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = trota2
+		next = trota3
+		duration = 0.1
+		on_start = "[GetScriptedGui('exit_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = trota3
+		next = trota4
+		duration = 0.1
+		on_start = "[GetScriptedGui('trot_r').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = trota4
+		next = trota1
+		duration = 0.1
+		on_start = "[GetScriptedGui('exit_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	button_standard = { #exits test gui
+		text = "Joust"
+		shortcut = "pause"
+		visible = "[GetScriptedGui('j_start').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = right|bottom
+		position = { -450 -10 }
+		onclick = "[GetScriptedGui('j_now').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetScriptedGui('j_start').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('exit_joust').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+    }
+	state = {
+		name = jj_open
+		next = jj_open1
+		trigger_on_create = yes
+		duration = 3
+		on_start = "[GetScriptedGui('j_opening').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+		on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+	}
+	#
+	state = {
+		name = jj_open1
+		on_start = "[GetScriptedGui('j_opening_crowd').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	widget = {
+		#visible = "[GetVariableSystem.HasValue( 'j_dec_box', '1' )]"
+		layoutpolicy_vertical = expanding
+		parentanchor = center
+		position = { -600 0 }
+		size = { 600 600 }
+		#texture = "gfx/interface/tavern/t_box.dds"
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'taunt' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_taunt').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 's_taunt' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_strong_taunt').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'gg' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_gg').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		##### lost friendly
+		text_multi = {
+			visible = "[GetScriptedGui('joust_decision_ftaunt').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_ftaunt').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetScriptedGui('joust_decision_fgg').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_fgg').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		################################3
+		### WON DEATH DUEL
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'dtaunt' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_dtaunt').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'ds_taunt' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_strong_dtaunt').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'dgg' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_dgg').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'dltaunt' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_dltaunt').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'dls_taunt' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_strong_dltaunt').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'dlgg' )]"
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('joust_decision_dlgg').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		#####
+	}
+	icon = {
+		#visible = "[GetVariableSystem.HasValue( 'j_dec_box', '1' )]"
+		parentanchor = center
+		position = { 400 -80 }
+		size = { 600 80 }
+		#texture = "gfx/interface/tavern/t_box.dds"
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'taunt' )]"
+			parentanchor = vcenter|left
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "Perhaps fishing is more your sport?"
+			default_format = "#high"
+			fontsize = 22
+			using = Font_Type_Flavor
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 's_taunt' )]"
+			parentanchor = vcenter|left
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "Fetch my slippers if you're going to act like a churl."
+			default_format = "#high"
+			fontsize = 22
+			using = Font_Type_Flavor
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+		text_multi = {
+			visible = "[GetVariableSystem.HasValue( 'j_decision', 'gg' )]"
+			parentanchor = vcenter|left
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			default_format = "#high"
+			fontsize = 22
+			using = Font_Type_Flavor
+			text = "Good Job! Get up."
+			background = {
+				texture = "gfx/interface/tavern/t_box.dds"
+				margin = { 10 3 }
+			}
+		}
+				##### lost friendly
+				text_multi = {
+					visible = "[GetScriptedGui('joust_decision_ftaunt').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					parentanchor = vcenter|hcenter
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					text = "Better luck next time, challenge me again if you dare!"
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				}
+				text_multi = {
+					visible = "[GetScriptedGui('joust_decision_fgg').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					parentanchor = vcenter|hcenter
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					text = "Not bad, get some practice and try again."
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				}
+				################################3
+				#### WON DEATH DUEL
+				text_multi = {
+					visible = "[GetVariableSystem.HasValue( 'j_decision', 'dtaunt' )]"
+					parentanchor = vcenter|left
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					text = "And now, you die..."
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				
+				}
+				text_multi = {
+					visible = "[GetVariableSystem.HasValue( 'j_decision', 'ds_taunt' )]"
+					parentanchor = vcenter|left
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					text = "Perhaps some coin will, persuade me not to end you!"
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				}
+				text_multi = {
+					visible = "[GetVariableSystem.HasValue( 'j_decision', 'dgg' )]"
+					parentanchor = vcenter|left
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					text = "You may live.."
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				}
+				text_multi = {
+					visible = "[GetVariableSystem.HasValue( 'j_decision', 'dltaunt' )]"
+					parentanchor = vcenter|left
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					text = "Raise 2 fingers in the sky and ask for mercy."
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				
+				}
+				text_multi = {
+					visible = "[GetVariableSystem.HasValue( 'j_decision', 'dls_taunt' )]"
+					parentanchor = vcenter|left
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					text = "Offer to cover the life debt in gold."
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				}
+				text_multi = {
+					visible = "[GetVariableSystem.HasValue( 'j_decision', 'dlgg' )]"
+					parentanchor = vcenter|left
+					layoutpolicy_horizontal = expanding
+					margin = { 15 15 }
+					max_width = 515
+					autoresize = yes
+					default_format = "#high"
+					fontsize = 22
+					using = Font_Type_Flavor
+					text = "I will die like a warrior!"
+					background = {
+						texture = "gfx/interface/tavern/t_box.dds"
+						margin = { 10 3 }
+					}
+				}
+	}
+	####PLAY
+	icon = {
+		#visible = "[GetScriptedGui('j_striker_cleaner').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		visible = "[GetScriptedGui('jf_win').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		position = { 400 80 }
+		size = { 200 160 }
+		texture = "gfx/interface/tavern/t_box.dds"
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_win').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		text = "Taunt"
+		position = { 400 40 }
+		onclick = "[GetScriptedGui('joust_decision_taunt').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'taunt' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_win').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		text = "Strong Taunt"
+		position = { 400 80 }
+		onclick = "[GetScriptedGui('joust_decision_strong_taunt').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 's_taunt' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_win').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		text = "Good Sportsmanship"
+		position = { 400 120 }
+		onclick = "[GetScriptedGui('joust_decision_gg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'gg' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	#### DEATH
+	icon = {
+		visible = "[GetScriptedGui('jf_win2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		position = { 400 80 }
+		size = { 200 160 }
+		texture = "gfx/interface/tavern/t_box.dds"
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_win2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		text = "Kill"
+		position = { 400 40 }
+		onclick = "[GetScriptedGui('joust_decision_dtaunt').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'dtaunt' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_win2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[GetScriptedGui('joust_decision_strong_dtaunt').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		parentanchor = center
+		text = "Bargain"
+		position = { 400 80 }
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'ds_taunt' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_win2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		text = "Mercy"
+		position = { 400 120 }
+		onclick = "[GetScriptedGui('joust_decision_dgg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'dgg' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	##### DEATH LOSS
+	icon = {
+		visible = "[GetScriptedGui('jf_lost2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		position = { 400 80 }
+		size = { 200 160 }
+		texture = "gfx/interface/tavern/t_box.dds"
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_lost2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		text = "Mercy!"
+		onclick = "[GetScriptedGui('joust_decision_dltaunt').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		position = { 400 40 }
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'dltaunt' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_lost2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		text = "Bargain"
+		onclick = "[GetScriptedGui('joust_decision_strong_dltaunt').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		position = { 400 80 }
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'dls_taunt' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	button_standard = {
+		visible = "[GetScriptedGui('jf_lost2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = center
+		onclick = "[GetScriptedGui('joust_decision_dlgg').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+		text = "Honorable Death"
+		position = { 400 120 }
+		state = {
+			name = _mouse_enter
+			on_start = "[GetVariableSystem.Set( 'j_decision', 'dlgg' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '1' )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetVariableSystem.Set( 'j_decision', '0' )]"
+			on_start = "[GetVariableSystem.Set( 'j_dec_box', '0' )]"
+			frame = 1
+		}
+	}
+	horse_win = {
+		visible = "[GetScriptedGui('jf_win3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		datacontext = "[GetPlayer]"
+		position = { 55 100 }
+		parentanchor = hcenter|vcenter
+
+	}
+	horse_lost = {
+		visible = "[GetScriptedGui('jf_win3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		datacontext = "[GetPlayer.MakeScope.Var('joust_challenger')]"
+		datacontext = "[Scope.GetCharacter]"
+		position = { -225 200 }
+		parentanchor = hcenter|vcenter
+
+	}
+	horse_win = {
+		visible = "[GetScriptedGui('jf_lost3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		datacontext = "[GetPlayer.MakeScope.Var('joust_challenger')]"
+		datacontext = "[Scope.GetCharacter]"
+		position = { 55 100 }
+		parentanchor = hcenter|vcenter
+		icon = {
+			size = { 117 400 }
+			#mirror = horizontal
+			parentanchor = hcenter|vcenter
+			position = { -145 -210 }
+			texture = "gfx/interface/tavern/lance3.png"
+		}
+	}
+	horse_lost = {
+		visible = "[GetScriptedGui('jf_lost3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		datacontext = "[GetPlayer]"
+		position = { -225 200 }
+		parentanchor = hcenter|vcenter
+
+	}
+
+	state = {
+		name = fire_flost
+		trigger_when = "[GetScriptedGui('jf_lost').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('jf_lost').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = fire_flost1
+		trigger_when = "[GetScriptedGui('joust_decision_ftaunt').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('joust_decision_ftaunt').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = fire_flost2
+		trigger_when = "[GetScriptedGui('joust_decision_ftauntgg').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('joust_decision_fgg').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+}

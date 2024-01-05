@@ -1,0 +1,18 @@
+﻿l_simp_chinese:
+
+king_nothing_modifier: "王无"
+king_nothing_modifier_desc: "你是一个国王，但它的代价是什么？一切.."
+
+rem_king_nothing_decision: "删除绰号 王无"
+rem_king_nothing_decision_tooltip: "$kn_i_must_admit$"
+rem_king_nothing_decision_confirm: "必须这样做！"
+
+king_nothing_decision: "为什么不，我应该是国王！"
+king_nothing_decision_tooltip: "$kn_gain_nothing$"
+king_nothing_decision_confirm: "他们会弯曲膝盖！"
+
+kn_gain_nothing: "你获得了一个王国，但你失去了许多人的尊重，导致许多人憎恨你并宣布你为假国王。什么都没有！"
+kn_i_must_admit: "我必须承认我错了！"
+kn_requirements: "拥有至少1个或更多 [duchies|E]"
+kn_hold_another: "持有 2 个王国"
+kn_rem_nothing: "以骄傲为代价，你承认你错了，失去了王者的绰号。"

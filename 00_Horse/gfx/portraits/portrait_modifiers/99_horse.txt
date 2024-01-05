@@ -1,0 +1,27 @@
+﻿
+
+im_on_a_horse_height = {
+
+	static_size = {
+		dna_modifiers = {
+			morph = {
+				mode = replace				
+				gene = gene_height
+				template = normal_height
+				value = 0.6
+			}
+
+
+		}	
+		
+		weight = {
+			base = 0
+			modifier = {
+				add = 299
+				has_character_flag = is_on_a_horse_b
+			}
+		}
+	}
+
+
+}

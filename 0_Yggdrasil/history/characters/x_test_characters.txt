@@ -1,0 +1,163 @@
+﻿
+ guild_girl_person = {
+	 name = "Guild Girl"
+	 dna = guild_girl
+	 martial = 0
+	 diplomacy = 0
+	 intrigue = 0
+	 stewardship = 0
+	 religion = "catholic"
+	 culture = human
+	 immortal = yes
+	 trait = trait_guild_girl
+	
+	 851.1.1 = {
+		 birth = yes
+	 }
+	
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+ }
+
+# 111113 = {
+	# name = test_army_commander_red
+	# martial = 22
+	# diplomacy = 5
+	# intrigue = 5
+	# stewardship = 5
+	# religion = "catholic"
+	# culture = goblin
+	# trait = gregarious
+	
+	# 1022.1.1 = {
+		# birth = yes
+	# }
+
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+# }
+
+# 111114 = {
+	# name = test_skirmish_commander_blue
+	# martial = 8
+	# diplomacy = 5
+	# intrigue = 5
+	# stewardship = 5
+	# religion = "catholic"
+	# culture = goblin
+	# trait = arbitrary
+	# trait = arrogant
+	# trait = education_martial_3
+	
+	# 1022.1.1 = {
+		# birth = yes
+	# }
+
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+# }
+
+# 111115 = {
+	# name = test_skirmish_commander_red
+	# martial = 4
+	# diplomacy = 5
+	# intrigue = 5
+	# stewardship = 5
+	# religion = "catholic"
+	# culture = goblin
+	# trait = arbitrary
+	# trait = arrogant
+	# trait = craven
+	
+	# 1022.1.1 = {
+		# birth = yes
+	# }
+
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+# }
+
+# 111116 = {
+	# name = test_melee_commander_blue
+	# martial = 17
+	# diplomacy = 5
+	# intrigue = 5
+	# stewardship = 5
+	# religion = "catholic"
+	# culture = goblin
+	# trait = brave
+	
+	# 1022.1.1 = {
+		# birth = yes
+	# }
+
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+# }
+
+# 111117 = {
+	# name = test_melee_commander_red
+	# martial = 8
+	# diplomacy = 5
+	# intrigue = 5
+	# stewardship = 5
+	# religion = "catholic"
+	# culture = goblin
+	# trait = arbitrary
+	
+	# 1022.1.1 = {
+		# birth = yes
+	# }
+
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+# }
+
+# 111118 = {
+	# name = test_retreat_commander_blue
+	# martial = 8
+	# diplomacy = 5
+	# intrigue = 5
+	# stewardship = 5
+	# religion = "catholic"
+	# culture = goblin
+	# trait = arbitrary
+	# trait = arrogant
+	# trait = education_martial_3
+	
+	# 1022.1.1 = {
+		# birth = yes
+	# }
+
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+# }
+
+# 111119 = {
+	# name = test_retreat_commander_red
+	# martial = 8
+	# diplomacy = 5
+	# intrigue = 5
+	# stewardship = 5
+	# religion = "catholic"
+	# culture = goblin
+	# trait = arbitrary
+	# trait = arrogant
+	# trait = education_martial_3
+	
+	# 1022.1.1 = {
+		# birth = yes
+	# }
+
+	# 1099.5.2 = {
+		# death = "1099.5.2"
+	# }
+# }
+

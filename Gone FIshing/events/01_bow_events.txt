@@ -1,0 +1,21 @@
+﻿namespace = bow
+
+##################################################
+
+bow.1000 = {
+	type = character_event
+	title = {}
+	desc = {}
+	theme = none	
+	widgets = {
+		widget = {
+			gui = "open_bow"			
+			container = "custom_widgets_container"
+			controller = default
+			setup_scope = {}
+		}
+	}
+		
+	
+	option = { name = {} }
+}

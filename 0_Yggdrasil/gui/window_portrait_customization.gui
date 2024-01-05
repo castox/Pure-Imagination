@@ -1,0 +1,1945 @@
+window = {
+	name = "window_portrait_customization"
+	parentanchor = center
+	layer = top
+	movable = no
+	visible = yes
+	size = { 100% 100% }
+	alwaystransparent = yes
+
+	icon = {
+		parentanchor = bottom
+		texture = "gfx/dark_small.dds"
+		visible = no
+
+		state = {
+			name = show_map
+			using = showme
+		}
+
+		state = {
+			name = hide_map
+			using = hideme
+		}
+
+		state = {
+			name = show_cover
+			using = showme
+		}
+
+		state = {
+			name = hide_cover
+			using = hideme
+		}
+	}
+
+	datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+	datacontext = "[GetIllustration( 'character_view_bg' )]"
+
+	widget = { # blocks mouse clicks
+		using = full
+		alwaystransparent = no
+
+		background = { # default grey bg
+			texture = "gfx/interface/component_tiles/background_area_light.dds"
+			spriteType = Corneredstretched
+			spriteborder = { 18 0 }
+			margin = { 50 50 }
+		}
+
+		state = {
+			name = show_map
+			on_start = "[PdxGuiWidget.Hide]"
+		}
+
+		state = {
+			name = hide_map
+			on_start = "[PdxGuiWidget.Show]"
+		}
+	}
+
+	widget = {
+		size = { 100% 100% }
+		widget = {# backgrounds
+			size = { 100% 100% }
+			alpha = 0.5
+
+			state = {
+				name = not_transparent
+				alpha = 1
+			}
+
+			state = {
+				name = transparent
+				alpha = 0.5
+			}
+
+			using = portrait_bgs
+			using = cfp_portrait_bgs
+		}
+
+		widget = {#greenscreens
+			size = { 100% 100% }
+
+			widget = {
+			  size = { 100% 100% }
+			  visible = no
+
+			  using = hide_bg_temp
+
+			  state = {
+			    name = black_bg
+			    on_start = "[PdxGuiWidget.Show]"
+			  }
+
+			  background = {
+			    texture = "gfx/black.dds"
+			    fittype = centercrop
+			  }
+			}
+
+			widget = {
+			  size = { 100% 100% }
+			  visible = no
+
+			  using = hide_bg_temp
+
+			  state = {
+			    name = green_bg
+			    on_start = "[PdxGuiWidget.Show]"
+			  }
+
+			  background = {
+			    texture = "gfx/green.dds"
+			    fittype = centercrop
+			  }
+			}
+
+			widget = {
+			  size = { 100% 100% }
+			  visible = no
+
+			  using = hide_bg_temp
+
+			  state = {
+			    name = blue_bg
+			    on_start = "[PdxGuiWidget.Show]"
+			  }
+
+			  background = {
+			    texture = "gfx/blue.dds"
+			    fittype = centercrop
+			  }
+			}
+
+			widget = {
+			  size = { 100% 100% }
+			  visible = no
+
+			  using = hide_bg_temp
+
+			  state = {
+			    name = white_bg
+			    on_start = "[PdxGuiWidget.Show]"
+			  }
+
+			  background = {
+			    texture = "gfx/white.dds"
+			    fittype = centercrop
+			  }
+			}
+		}
+	}
+
+	datacontext = "[GetScriptedGui('refresh_characters')]"
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Standard
+		on_start = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'character', PortraitCustomizationWindow.GetCharacter.MakeScope ).End)]"
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Standard
+	}
+
+	widget = { # bg
+		size = { 100% 100% }
+		visible = no
+
+		state = {
+			name = backlight
+			on_start = "[PdxGuiWidget.Show]"
+		}
+
+		state = {
+			name = backlight_off
+			on_start = "[PdxGuiWidget.Hide]"
+		}
+
+		background = {
+			using = Background_Portrait_Glow
+			color = { 0.77 0.7 0.6 0.5 }
+		}
+	}
+
+	window = { # portraits
+		using = full
+		parentanchor = center
+		alwaystransparent = yes
+
+		state = {
+			name = hide_portraits
+			on_start = "[PdxGuiWidget.Hide]"
+		}
+
+		state = {
+			name = show_portraits
+			on_start = "[PdxGuiWidget.Show]"
+		}
+
+		window = { # main character
+			movable = yes
+			size = { 100% 100% }
+			alwaystransparent = yes
+			parentanchor = center
+
+			state = {
+				name = hide_main
+				using = hideme
+			}
+
+			state = {
+				name = show_main
+				using = showme
+			}
+
+			icon = {
+				parentanchor = bottom|hcenter
+				position = { 0 55 }
+				texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+				scale = 0.7
+				name = "shadow"
+			}
+
+			widget = { # portrait
+				using = full
+				datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+
+				portrait_body_barber_main = {
+					datacontext = "[GetScriptedGui('zoom1')]"
+					visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				}
+
+				portrait_torso_barber_main = {
+					datacontext = "[GetScriptedGui('zoom2')]"
+					visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				}
+
+				portrait_head_barber_main = {
+					datacontext = "[GetScriptedGui('zoom3')]"
+					visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				}
+			}
+		}
+
+		portrait_window = {
+			position = { -300 0 }
+			blockoverride "context" {
+				datacontext = "[GetScriptedGui('add_to_barber')]"
+				size = { 100% 100% }
+				visible = "[And(PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed.IsValid, Not(ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed.MakeScope).End)))]"
+				datacontext = "[PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed]"
+			}
+		}
+
+		portrait_window = {
+			position = { 300 0 }
+			blockoverride "context" {
+				datacontext = "[GetScriptedGui('add_to_barber')]"
+				size = { 100% 100% }
+				visible = "[And(PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir.IsValid, Not(ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir.MakeScope).End)))]"
+				datacontext = "[PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir]"
+			}
+		}
+
+		portrait_slot = {
+			position = { -450 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_1')]" }
+		}
+
+		portrait_slot = {
+			position = { -125 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_2')]" }
+		}
+
+		portrait_slot = {
+			position = { 125 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_3')]" }
+		}
+
+		portrait_slot = {
+			position = { 450 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_4')]" }
+		}
+
+		portrait_slot = {
+			position = { -450 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_5')]" }
+		}
+
+		portrait_slot = {
+			position = { -125 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_6')]" }
+		}
+
+		portrait_slot = {
+			position = { 125 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_7')]" }
+		}
+
+		portrait_slot = {
+			position = { 450 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_8')]" }
+		}
+
+		portrait_slot = {
+			position = { -450 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_9')]" }
+		}
+
+		portrait_slot = {
+			position = { -125 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_10')]" }
+		}
+
+		portrait_slot = {
+			position = { 125 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_11')]" }
+		}
+
+		portrait_slot = {
+			position = { 450 0 }
+			blockoverride "data" { datamodel = "[GetPlayer.MakeScope.GetList('portrait_12')]" }
+		}
+
+		icon = { # move all
+			parentanchor = hcenter|bottom
+			size = { 800 50 }
+			position = { 0 0 }
+			alwaystransparent = no
+
+			state = {
+				name = hide_controls
+				alpha = 0
+			}
+
+			state = {
+				name = show_controls
+				alpha = 1
+			}
+
+			icon = {
+				texture = "gfx/interface/colors/white.dds"
+        color = { 0.9 0.8 0.2 0.3 }
+        spriteType = Corneredtiled
+        size = { 100% 3 }
+				parentanchor = bottom
+				position = { 0 -2 }
+			}
+
+			onmousehierarchyenter = "[PdxGuiWidget.FindChild('overlay').TriggerAnimation('show_movement')]"
+			onmousehierarchyleave = "[PdxGuiWidget.FindChild('overlay').TriggerAnimation('hide_movement')]"
+
+			widget = {
+				name = "overlay"
+				using = full
+				alpha = 0
+
+				state = {
+					name = show_movement
+					alpha = 1
+				}
+
+				state = {
+					name = hide_movement
+					alpha = 0
+				}
+
+				text_single = {
+					parentanchor = hcenter|bottom
+					position = { 0 -20 }
+					text = "drag_to_move_all"
+					#default_format = "#clickable"
+				}
+
+				button_standard_clean = {
+					size = { 100% 100% }
+					alwaystransparent = yes
+				}
+			}
+		}
+	}
+
+	widget = { # menus
+		size = { 100% 100% }
+
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/component_masks/mask_vignette.dds"
+			color = { 0.15 0.15 0.15 1 }
+			spriteType = Corneredtiled
+			spriteborder = { 40 40 }
+		}
+
+		icon = {
+			parentanchor = right|bottom
+			texture = "gfx/right_cover.dds"
+		}
+
+		state = {
+			name = hide_controls
+			alpha = 0
+		}
+
+		state = {
+			name = show_controls
+			alpha = 1
+		}
+
+		state = {
+			name = _mouse_hierarchy_enter
+			on_start = "[PdxGuiTriggerAllAnimations('show_controls')]"
+		}
+
+		widget = { #clothes
+			parentanchor = right
+			position = { -5 5 }
+			size = { 400 220 }
+
+			background = {
+				using = Background_Area_Dark
+				margin = { 10 2 }
+				alpha = 0.8
+			}
+
+			vbox = {
+				name = "accessories_grid"
+				datamodel = "[PortraitCustomizationWindow.GetAccessoryItems]"
+				margin = { 10 0 }
+				margin_bottom = 5
+				spacing = 0
+
+				item = {
+					widget = {
+						size = { 400 30 }
+
+						text_label_left = {
+							text = "[AccessoryItem.GetName]"
+							widgetanchor = right # this is dumb but align = right refused to work for some reason. Will figure out later
+							position = { 105 3 }
+						}
+
+						dropdown_menu_standard =
+						{
+							position = { 80 0 }
+							blockoverride "dropdown_properties"
+							{
+									datamodel = "[AccessoryItem.GetOptions]"
+									onselectionchanged = "[AccessoryItem.OnSelect]"
+									selectedindex = "[AccessoryItem.GetSelectedIndex]"
+							}
+
+							blockoverride "dropdown_size"
+							{
+									size = { 300 32 }
+							}
+
+							blockoverride "dropdown_list_maxsize"
+							{
+									maximumsize = { 291 760 }
+							}
+
+							blockoverride "dropdown_active_item_properties"
+							{
+								text = "[AccessoryItemOption.GetName]"
+							}
+
+							blockoverride "dropdown_item_properties"
+							{
+								onmousehierarchyenter = "[AccessoryItemOption.OnHover]"
+								text = "[AccessoryItemOption.GetName]"
+							}
+
+							blockoverride "dropdown_list_properties"
+							{
+								onmousehierarchyleave = "[PortraitCustomizationWindow.RestorePreviousPortraitModifierIndex]"
+							}
+						}
+
+					}
+
+				}
+			}
+		}
+
+		widget = { #hair colors
+			size = { 750 50 }
+			datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+
+			state = {
+				name = hide_left_side
+				using = hideme
+			}
+
+			state = {
+				name = show_left_side
+				using = showme
+			}
+
+			position = { 0 0 }
+			parentanchor = hcenter
+			#widgetanchor = center
+
+			hbox = {
+				name = "hair_colors_grid"
+				datamodel = "[PortraitCustomizationWindow.GetHairColorItems]"
+				margin = { 10 10 }
+				spacing = 3
+				scale = 0.75
+
+				background = {
+					using = Background_Area
+				}
+
+				item = {
+					hbox = {
+						button_standard_clean = {
+							name = "color_button"
+							visible = "[Not(HairColorItem.IsDefault)]"
+							size = { 50 50 }
+							onclick = "[HairColorItem.OnSelect]"
+							down = "[HairColorItem.IsSelected]"
+
+							icon = {
+								parentanchor = center
+								size = { 40 40 }
+
+								texture = "gfx/interface/colors/white.dds"
+								tintcolor = "[HairColorItem.GetRGBA]"
+								using = Mask_Rough_Edges
+							}
+						}
+
+						button_standard_clean = {
+							name = "default_color_button"
+							visible = "[HairColorItem.IsDefault]"
+							size = { 50 50 }
+							onclick = "[HairColorItem.OnSelect]"
+							down = "[HairColorItem.IsSelected]"
+
+							icon = {
+								parentanchor = center
+								size = { 40 40 }
+
+								texture = "gfx/interface/colors/white.dds"
+								tintcolor = { 1.0 1.0 1.0 0.1 }
+								using = Mask_Rough_Edges
+							}
+
+							text_single = {
+								name = "text"
+								text = "PCW_DEFAULT_HAIR_COLOR"
+								default_format = "#low"
+								parentanchor = center
+							}
+						}
+					}
+				}
+			}
+		}
+
+		button_icon = {
+			parentanchor = right|bottom
+			position = { -10 -50 }
+			texture = "gfx/interface/icons/flat_icons/replace.dds"
+			clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_close"
+
+			datacontext = "[GetScriptedGui('clear_poses')]"
+	    onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+			tooltip = "reset_poses"
+
+			using = Animation_ShowHide_Standard
+		}
+
+		button_icon = {
+			parentanchor = right|bottom
+			position = { -10 -10 }
+			shortcut = "close_window"
+			tooltip = "CLOSE_TOOLTIP"
+			texture = "gfx/interface/icons/flat_icons/window_close.dds"
+			clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_close"
+			onclick = "[PortraitCustomizationWindow.Close]"
+			using = Animation_ShowHide_Standard
+		}
+
+		flowcontainer = { # other buttons
+			parentanchor = bottom|right
+			direction = vertical
+			position = { -250 -10 }
+			ignoreinvisible = yes
+
+			button_FB_list = {
+				text = "corner_shadow"
+				visible = no
+				blockoverride "margin" {
+					margin_left = 40
+				}
+
+				onclick = "[PdxGuiTriggerAllAnimations('show_cover')]"
+
+				state = {
+					name = show_cover
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				state = {
+					name = hide_cover
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				state = {
+					name = hide_map
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				button_checkbox = {
+					parentanchor = vcenter
+					position = { 3 0 }
+					checked = no
+					alpha = 0.6
+					alwaystransparent = yes
+				}
+			}
+
+			button_FB_list = {
+				text = "corner_shadow"
+				visible = no
+				blockoverride "margin" {
+					margin_left = 40
+				}
+
+				onclick = "[PdxGuiTriggerAllAnimations('hide_cover')]"
+
+				state = {
+					name = show_map
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				state = {
+					name = hide_map
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				state = {
+					name = show_cover
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				state = {
+					name = hide_cover
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				button_checkbox = {
+					parentanchor = vcenter
+					position = { 3 0 }
+					checked = yes
+					alwaystransparent = yes
+				}
+			}
+
+			widget = { # I was having issues with setting spacing to the flowcontainer
+				size = { 0 5 }
+			}
+
+			flowcontainer = {
+				ignoreinvisible = yes
+				visible = no
+				direction = vertical
+
+				state = {
+					name = hide_extras
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				state = {
+					name = show_extras
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+
+				button_standard = {
+					text = "name"
+
+					onclick = "[PdxGuiTriggerAllAnimations('show_name')]"
+					onclick = "[PdxGuiWidget.Hide]"
+
+					state = {
+						name = hide_name
+						on_start = "[PdxGuiWidget.Show]"
+					}
+
+					button_checkbox = {
+						parentanchor = vcenter
+						position = { 3 0 }
+						checked = no
+						alpha = 0.6
+						alwaystransparent = yes
+					}
+				}
+
+				button_standard = {
+					text = "name"
+					visible = no
+
+					onclick = "[PdxGuiTriggerAllAnimations('hide_name')]"
+					onclick = "[PdxGuiWidget.Hide]"
+
+					state = {
+						name = show_name
+						on_start = "[PdxGuiWidget.Show]"
+					}
+
+					button_checkbox = {
+						parentanchor = vcenter
+						position = { 3 0 }
+						checked = yes
+						alwaystransparent = yes
+					}
+				}
+
+				widget = {
+					size = { 0 5 }
+				}
+
+				button_standard = {
+					text = "house"
+
+					onclick = "[PdxGuiTriggerAllAnimations('show_house')]"
+					onclick = "[PdxGuiWidget.Hide]"
+
+					state = {
+						name = hide_house
+						on_start = "[PdxGuiWidget.Show]"
+					}
+
+					button_checkbox = {
+						parentanchor = vcenter
+						position = { 3 0 }
+						checked = no
+						alpha = 0.6
+						alwaystransparent = yes
+					}
+				}
+
+				button_standard = {
+					text = "house"
+					visible = no
+
+					onclick = "[PdxGuiTriggerAllAnimations('hide_house')]"
+					onclick = "[PdxGuiWidget.Hide]"
+
+					state = {
+						name = show_house
+						on_start = "[PdxGuiWidget.Show]"
+					}
+
+					button_checkbox = {
+						parentanchor = vcenter
+						position = { 3 0 }
+						checked = yes
+						alwaystransparent = yes
+					}
+				}
+
+				widget = {
+					size = { 0 5 }
+				}
+
+				button_standard = {
+					text = "religion"
+
+					onclick = "[PdxGuiTriggerAllAnimations('show_rel')]"
+					onclick = "[PdxGuiWidget.Hide]"
+
+					state = {
+						name = hide_rel
+						on_start = "[PdxGuiWidget.Show]"
+					}
+
+					button_checkbox = {
+						parentanchor = vcenter
+						position = { 3 0 }
+						checked = no
+						alpha = 0.6
+						alwaystransparent = yes
+					}
+				}
+
+				button_standard = {
+					text = "religion"
+					visible = no
+
+					onclick = "[PdxGuiTriggerAllAnimations('hide_rel')]"
+					onclick = "[PdxGuiWidget.Hide]"
+
+					state = {
+						name = show_rel
+						on_start = "[PdxGuiWidget.Show]"
+					}
+
+					button_checkbox = {
+						parentanchor = vcenter
+						position = { 3 0 }
+						checked = yes
+						alwaystransparent = yes
+					}
+				}
+
+				widget = {
+					size = { 0 5 }
+				}
+			}
+
+
+			button_standard = {
+				text = "extras"
+
+				onclick = "[PdxGuiTriggerAllAnimations('show_extras')]"
+				onclick = "[PdxGuiWidget.Hide]"
+
+				state = {
+					name = hide_extras
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+			}
+
+			button_standard = {
+				text = "extras"
+				visible = no
+
+				onclick = "[PdxGuiTriggerAllAnimations('hide_extras')]"
+				onclick = "[PdxGuiWidget.Hide]"
+
+				state = {
+					name = show_extras
+					on_start = "[PdxGuiWidget.Show]"
+				}
+			}
+		}
+
+		flowcontainer = { #bottom buttons
+			parentanchor = bottom|right
+			spacing = 5
+			direction = vertical
+			position = { -50 -10 }
+			ignoreinvisible = yes
+
+			flowcontainer = {
+
+				state = {
+					name = hide_controls
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				state = {
+					name = show_controls
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				button_standard = {
+					texture = "gfx/interface/buttons/button_verb_primary.dds"
+					size = { 85 33 }
+					#tooltip = "Zoom out"
+					shortcut = "decrease_speed"
+					shortcut = "decrease_speed_2"
+					shortcut = "decrease_speed_3"
+
+					flowcontainer = {
+						parentanchor = center
+
+						button_icon = {
+							size = { 30 30 }
+							alwaystransparent = yes
+							texture = "gfx/interface/icons/flat_icons/search.dds"
+						}
+						button_icon = {
+							size = { 30 30 }
+							parentanchor = vcenter
+							alwaystransparent = yes
+							texture = "gfx/interface/icons/flat_icons/minus.dds"
+						}
+					}
+
+					datacontext = "[GetScriptedGui('zoom_out')]"
+					enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+					onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				}
+
+				button_standard = {
+					texture = "gfx/interface/buttons/button_verb_primary.dds"
+					size = { 85 33 }
+					#tooltip = "Zoom in"
+					shortcut = "increase_speed"
+					shortcut = "increase_speed_2"
+					shortcut = "increase_speed_3"
+
+					flowcontainer = {
+						parentanchor = center
+
+						button_icon = {
+							size = { 30 30 }
+							alwaystransparent = yes
+							texture = "gfx/interface/icons/flat_icons/search.dds"
+						}
+						button_icon = {
+							size = { 30 30 }
+							parentanchor = vcenter
+							alwaystransparent = yes
+							texture = "gfx/interface/icons/flat_icons/plus.dds"
+						}
+					}
+
+					datacontext = "[GetScriptedGui('zoom_in')]"
+					enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+					onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				}
+			}
+
+			widget = {
+				size = { 0 5 }
+			}
+
+			button_standard = {
+				texture = "gfx/interface/buttons/button_verb_primary.dds"
+
+        buttonText = {
+          text_single = {
+            size = { 100% 100% }
+            autoresize = no
+            margin = { 10 0 }
+            align = center|nobaseline
+            default_format = "#high"
+						text = "hide_controls"
+          }
+				}
+
+				tooltip = "show_controls_tt"
+				shortcut = "council_window"
+
+				onclick = "[PdxGuiTriggerAllAnimations('hide_controls')]"
+
+				state = {
+					name = hide_controls
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				state = {
+					name = show_controls
+					on_start = "[PdxGuiWidget.Show]"
+				}
+      }
+
+			button_standard = {
+				texture = "gfx/interface/buttons/button_verb_primary.dds"
+				visible = no
+
+				tooltip = "show_controls_tt"
+				shortcut = "council_window"
+
+				onclick = "[PdxGuiTriggerAllAnimations('show_controls')]"
+
+				state = {
+					name = hide_controls
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				state = {
+					name = show_controls
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+      }
+
+			button_standard = {
+				texture = "gfx/interface/buttons/button_verb_primary.dds"
+
+				onclick = "[PdxGuiTriggerAllAnimations('hide_map')]"
+				onclick = "[PdxGuiTriggerAllAnimations('default_bg')]"
+				visible = no
+				shortcut = "court_window"
+				tooltip = "."
+
+				buttonText = {
+					text_single = {
+						size = { 100% 100% }
+						autoresize = no
+						margin = { 10 0 }
+						align = center|nobaseline
+						default_format = "#high"
+						text = "close_map"
+					}
+				}
+
+				state = {
+					name = show_map
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				state = {
+					name = hide_map
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+			}
+
+			button_standard = {
+				texture = "gfx/interface/buttons/button_verb_primary.dds"
+				onclick = "[PdxGuiTriggerAllAnimations('show_map')]"
+				onclick = "[PdxGuiTriggerAllAnimations('hide_bg')]"
+				onclick = "[PdxGuiTriggerAllAnimations('backlight_off')]"
+				shortcut = "court_window"
+				tooltip = "."
+
+				buttonText = {
+					text_single = {
+						size = { 100% 100% }
+						autoresize = no
+						margin = { 10 0 }
+						align = center|nobaseline
+						default_format = "#high"
+						text = "show_map"
+					}
+				}
+
+				state = {
+					name = show_map
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				state = {
+					name = hide_map
+					on_start = "[PdxGuiWidget.Show]"
+				}
+			}
+
+			button_standard = {
+				text = "hide_portraits"
+
+				onclick = "[PdxGuiTriggerAllAnimations('hide_portraits')]"
+
+				state = {
+					name = hide_portraits
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				state = {
+					name = show_portraits
+					on_start = "[PdxGuiWidget.Show]"
+				}
+			}
+
+			button_standard = {
+				text = "show_portraits"
+				visible = no
+
+				onclick = "[PdxGuiTriggerAllAnimations('show_portraits')]"
+
+				state = {
+					name = hide_portraits
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				state = {
+					name = show_portraits
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+			}
+
+			spacer = {
+				size = { 0 5 }
+			}
+
+			button_primary = {
+				name = "apply_button"
+				text = "PCW_APPLY"
+				onclick = "[PortraitCustomizationWindow.ApplyAndClose]"
+				tooltip = ""
+			}
+		}
+
+		button = {
+			size = { 0 0 }
+			visible = no
+
+			state = {
+				name = hide_controls
+				using = showme
+			}
+
+			state = {
+				name = show_controls
+				using = hideme
+			}
+			shortcut = "council_window"
+			onclick = "[PdxGuiTriggerAllAnimations('show_controls')]"
+
+		}
+	}
+
+	window = { # poses and bgs
+		size = { 450 100% }
+		movable = no
+		alwaystransparent = yes
+		allow_outside = yes
+
+		state = {
+			name = hide_controls
+			using = hideme
+		}
+
+		state = {
+			name = show_controls
+			using = showme
+		}
+
+		widget = {
+			using = full
+			#alwaystransparent = yes
+			allow_outside = yes
+
+			state = {
+				name = hide_left_side
+				using = Animation_Curve_Default
+				position_x = -400
+				duration = 0.3
+			}
+
+			state = {
+				name = show_left_side
+				using = Animation_Curve_Default
+				position_x = 0
+				duration = 0.3
+			}
+
+			widget = { #bg
+				size = { 200 100% }
+
+				state = {
+					name = show_bgs
+					on_start = "[PdxGuiWidget.Show]"
+				}
+
+				state = {
+					name = hide_bgs
+					on_start = "[PdxGuiWidget.Hide]"
+				}
+
+				background = {
+					using = Background_Area_Dark
+				}
+
+				text_single = {
+					text = "background"
+					position = { 0 10 }
+					parentanchor = hcenter
+				}
+
+				flowcontainer = {
+					direction = vertical
+					ignoreinvisible = yes
+					spacing = -2
+
+					position = { 10 50 }
+
+					button_FB_list = {
+						text = "transparent"
+						blockoverride "margin" {
+							margin_left = 40
+						}
+						onclick = "[PdxGuiTriggerAllAnimations('not_transparent')]"
+
+						state = {
+							name = not_transparent
+							on_start = "[PdxGuiWidget.Hide]"
+						}
+
+						state = {
+							name = transparent
+							on_start = "[PdxGuiWidget.Show]"
+						}
+
+						button_checkbox = {
+							parentanchor = vcenter
+							position = { 3 0 }
+							checked = yes
+							alwaystransparent = yes
+						}
+					}
+
+					button_FB_list = {
+						text = "transparent"
+						blockoverride "margin" {
+							margin_left = 40
+						}
+						onclick = "[PdxGuiTriggerAllAnimations('transparent')]"
+						visible = no
+
+						state = {
+							name = not_transparent
+							on_start = "[PdxGuiWidget.Show]"
+						}
+
+						state = {
+							name = transparent
+							on_start = "[PdxGuiWidget.Hide]"
+						}
+
+						button_checkbox = {
+							parentanchor = vcenter
+							position = { 3 0 }
+							checked = no
+							alpha = 0.6
+							alwaystransparent = yes
+						}
+					}
+
+					button_FB_list = {
+						blockoverride "margin" {
+							margin_left = 40
+						}
+						text = "backlight"
+						onclick = "[PdxGuiTriggerAllAnimations('backlight')]"
+
+						state = {
+							name = backlight
+							on_start = "[PdxGuiWidget.Hide]"
+						}
+
+						state = {
+							name = backlight_off
+							on_start = "[PdxGuiWidget.Show]"
+						}
+
+						button_checkbox = {
+							parentanchor = vcenter
+							position = { 3 0 }
+							checked = no
+							alpha = 0.6
+							alwaystransparent = yes
+						}
+					}
+
+					button_FB_list = {
+						text = "backlight"
+						blockoverride "margin" {
+							margin_left = 40
+						}
+						onclick = "[PdxGuiTriggerAllAnimations('backlight_off')]"
+						visible = no
+
+						state = {
+							name = backlight
+							on_start = "[PdxGuiWidget.Show]"
+						}
+
+						state = {
+							name = backlight_off
+							on_start = "[PdxGuiWidget.Hide]"
+						}
+
+						button_checkbox = {
+							parentanchor = vcenter
+							position = { 3 0 }
+							checked = yes
+							alwaystransparent = yes
+						}
+					}
+				}
+
+				margin_widget = {#bg buttons
+					size = { 100% 100% }
+					margin_top = 130
+					margin_left = 10
+
+					scrollarea = {
+						size = { 100% 100% }
+
+						scrollbarpolicy_horizontal = always_off
+
+						scrollbar_vertical = {
+								using = Scrollbar_Vertical
+						}
+
+					 	scrollwidget = {
+							flowcontainer = {
+								direction = vertical
+								using = bg_buttons
+								using = cfp_bg_buttons
+							}
+						}
+					}
+				}
+			}
+
+			widget = {
+				size = { 200 100% }
+				allow_outside = yes
+				alwaystransparent = yes
+
+				state = {
+					name = hide_bgs
+					using = Animation_Curve_Default
+					position_x = -200
+					duration = 0.1
+				}
+
+				state = {
+					name = show_bgs
+					using = Animation_Curve_Default
+					position_x = 0
+					duration = 0.2
+				}
+
+				widget = { # character tabs
+					size = { 110 100% }
+					position = { 396 3 }
+					#alwaystransparent = yes
+
+					scrollarea = {
+						size = { 100% 100% }
+						alwaystransparent = yes
+
+						scrollbarpolicy_horizontal = always_off
+						scrollbar_vertical = { using = Scrollbar_Vertical }
+
+						scrollwidget = {
+							flowcontainer = {
+								direction = vertical
+								ignoreinvisible = yes
+								#alwaystransparent = no
+
+								pose_tab = {
+									down = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+									onclick = "[PdxGuiTriggerAllAnimations('show_main')]"
+
+									blockoverride "checkbox" {}
+
+									button = {
+										onclick = "[PdxGuiTriggerAllAnimations('hide_main')]"
+										onclick = "[PdxGuiWidget.Hide]"
+										size = { 50 50 }
+
+										state = {
+											name = show_main
+											using = showme
+										}
+
+										position = { 55 10 }
+										#parentanchor = vcenter
+
+										button_checkbox = {
+											alwaystransparent = yes
+
+											checked = yes
+							      }
+									}
+
+									button = {
+										onclick = "[PdxGuiTriggerAllAnimations('show_main')]"
+										onclick = "[PdxGuiWidget.Hide]"
+										size = { 50 50 }
+										visible = no
+
+										state = {
+											name = show_main
+											using = hideme
+										}
+
+										state = {
+											name = hide_main
+											using = showme
+										}
+
+										position = { 55 10 }
+										parentanchor = vcenter
+
+										button_checkbox = {
+											alwaystransparent = yes
+							      }
+									}
+
+									datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+								}
+
+								pose_tab = {
+									down = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed.MakeScope).End)]"
+									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed.MakeScope).End)]"
+									visible = "[PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed.IsValid]"
+
+									datacontext = "[PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed]" # for the portrait
+									blockoverride "checkbox data" { datacontext = "[GetScriptedGui('add_to_barber_simple')]" } # ignores the slot system
+								}
+
+								pose_tab = {
+									down = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir.MakeScope).End)]"
+									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir.MakeScope).End)]"
+									visible = "[PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir.IsValid]"
+
+									datacontext = "[PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir]" # for the portrait
+									blockoverride "checkbox data" { datacontext = "[GetScriptedGui('add_to_barber_simple')]" }
+								}
+
+								button_tab_vertical = {
+									size = { 100 40 }
+									enabled = no
+									name = "hide_pinned"
+									datacontext = "[GetScriptedGui('any_pinned')]"
+									visible = "[Not(ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+									tooltip = "no_pinned"
+
+									button_pin = {
+										alwaystransparent = yes
+										parentanchor = center
+										alpha = 0.8
+									}
+								}
+
+								container = {
+									ignoreinvisible = yes
+									datacontext = "[GetScriptedGui('any_pinned')]"
+									visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+									button_tab_vertical = {
+										size = { 100 40 }
+										onclick = "[PdxGuiTriggerAllAnimations('hide_pinned_chars')]"
+										onclick = "[PdxGuiWidget.Hide]"
+										onclick = "[PdxGuiWidget.AccessParent.FindChild('show_pinned').Show]"
+										name = "hide_pinned"
+
+										button_icon = {
+											alwaystransparent = yes
+											parentanchor = center
+											alpha = 0.8
+											texture = "gfx/interface/icons/flat_icons/button_expand_arrow.dds"
+										}
+									}
+
+									button_tab_vertical = {
+										visible = no
+										size = { 100 40 }
+										onclick = "[PdxGuiTriggerAllAnimations('show_pinned_chars')]"
+										onclick = "[PdxGuiWidget.Hide]"
+										onclick = "[PdxGuiWidget.AccessParent.FindChild('hide_pinned').Show]"
+										name = "show_pinned"
+
+										button_icon = {
+											alwaystransparent = yes
+											parentanchor = center
+											mirror = vertical
+											alpha = 0.8
+											texture = "gfx/interface/icons/flat_icons/button_expand_arrow.dds"
+										}
+									}
+								}
+
+								dynamicgridbox = {
+									datamodel = "[GetPlayer.MakeScope.GetList('barber_characters')]"
+
+									state = {
+										name = hide_pinned_chars
+										using = hideme
+									}
+
+									state = {
+										name = show_pinned_chars
+										using = showme
+									}
+
+									item = {
+										pose_tab = {
+											down = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Scope.GetCharacter.MakeScope).End)]"
+											onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Scope.GetCharacter.MakeScope).End)]"
+
+											datacontext = "[Scope.GetCharacter]"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				widget = { #poses widget
+					position = { 200 0 }
+					size = { 200 100% }
+
+					background = {
+						using = Background_Area_Dark
+						alpha = 0.8
+					}
+
+					button_replace = {
+						scale = 4
+						alpha = 0.5
+						parentanchor = hcenter
+						position = { 0 100 }
+						datacontext = "[GetScriptedGui('refresh_characters')]"
+						visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+						onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+						tooltip = "refresh"
+					}
+
+					widget = {#main poses
+						using = full
+
+						text_single = {
+							text = "pose"
+							parentanchor = hcenter
+							position = { -5 10 }
+						}
+
+					  button_FB_list = {
+							position = { 10 50 }
+					  	text = "default"
+					  	datacontext = "[GetScriptedGui('default_pose')]"
+					    onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Character.MakeScope ).End)]"
+					  }
+
+						margin_widget = {
+							using = full
+							margin_top = 95
+							margin_left = 10
+
+							scrollarea = {
+								datacontext = "[GetScriptedGui('choose_pose')]"
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+								size = { 100% 100% }
+
+								scrollbarpolicy_horizontal = always_off
+								scrollbar_vertical = { using = Scrollbar_Vertical }
+
+							 	scrollwidget = {
+									flowcontainer = {
+										direction = vertical
+										spacing =-2
+										datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+										###
+										using = pose_buttons
+										###
+									}
+								}
+							}
+
+							scrollarea = {
+								datacontext = "[GetScriptedGui('choose_pose')]"
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed.MakeScope).End)]"
+								size = { 100% 100% }
+
+								scrollbarpolicy_horizontal = always_off
+								scrollbar_vertical = { using = Scrollbar_Vertical }
+
+							 	scrollwidget = {
+									flowcontainer = {
+										direction = vertical
+										datacontext = "[PortraitCustomizationWindow.GetCharacter.GetPrimarySpouseOrBetrothed]"
+										###
+										using = pose_buttons
+										###
+									}
+								}
+							}
+
+							scrollarea = {
+								datacontext = "[GetScriptedGui('choose_pose')]"
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir.MakeScope).End)]"
+								size = { 100% 100% }
+
+								scrollbarpolicy_horizontal = always_off
+								scrollbar_vertical = { using = Scrollbar_Vertical }
+
+							 	scrollwidget = {
+									flowcontainer = {
+										direction = vertical
+										datacontext = "[PortraitCustomizationWindow.GetCharacter.GetPrimaryTitle.GetHeir]"
+										###
+										using = pose_buttons
+										###
+									}
+								}
+							}
+
+							overlappingitembox = {
+								using = full
+								ignoreinvisible = yes
+								datamodel = "[GetPlayer.MakeScope.GetList('barber_characters')]"
+
+								item = {
+									scrollarea = {
+										datacontext = "[Scope.GetCharacter]"
+										datacontext = "[GetScriptedGui('choose_pose')]"
+										visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Scope.GetCharacter.MakeScope).End)]"
+										size = { 100% 100% }
+
+										scrollbarpolicy_horizontal = always_off
+										scrollbar_vertical = { using = Scrollbar_Vertical }
+
+									 	scrollwidget = {
+											flowcontainer = {
+												direction = vertical
+												datacontext = "[Scope.GetCharacter]"
+												###
+												using = pose_buttons
+												###
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			container = {
+				ignoreinvisible = yes
+
+				button = {
+					size = { 60 45 }
+					onclick = "[PdxGuiTriggerAllAnimations('hide_bgs')]"
+					onclick = "[PdxGuiWidget.Hide]"
+
+					state = {
+						name = show_bgs
+						on_start = "[PdxGuiWidget.Show]"
+					}
+					tooltip = "hide_bgs"
+					shortcut = "character_window"
+
+					button_icon = {
+						texture = "gfx/interface/icons/flat_icons/button_list_arrow.dds"
+						parentanchor = vcenter
+						position = { 10 0 }
+						alwaystransparent = yes
+
+						mirror = horizontal
+						size = { 18 25 }
+						alpha = 0.6
+					}
+				}
+
+				button = {
+					size = { 60 45 }
+					onclick = "[PdxGuiTriggerAllAnimations('show_bgs')]"
+					onclick = "[PdxGuiWidget.Hide]"
+					visible = no
+
+					state = {
+						name = hide_bgs
+						on_start = "[PdxGuiWidget.Show]"
+					}
+					tooltip = "show_bgs"
+					shortcut = "character_window"
+
+					button_icon = {
+						texture = "gfx/interface/icons/flat_icons/button_list_arrow.dds"
+						parentanchor = vcenter
+						position = { 10 0 }
+						alwaystransparent = yes
+
+						size = { 18 25 }
+						alpha = 0.6
+					}
+				}
+			}
+
+			# container = {
+			# 	ignoreinvisible = yes
+			# 	position = { 403 10 }
+			# 	visible = no
+			#
+			# 	background = {
+			# 		using = Background_Area_Dark
+			# 		alpha = 0.8
+			# 		margin = { 10 20 }
+			# 	}
+			#
+			# 	button_icon = {
+			# 		texture = "gfx/interface/icons/flat_icons/button_list_arrow.dds"
+			# 		onclick = "[PdxGuiTriggerAllAnimations('hide_left_side')]"
+			# 		onclick = "[PdxGuiWidget.Hide]"
+			# 		mirror = horizontal
+			# 		size = { 25 40 }
+			# 		alpha = 0.6
+			#
+			# 		state = {
+			# 			name = show_left_side
+			# 			on_start = "[PdxGuiWidget.Show]"
+			# 		}
+			# 	}
+			#
+			# 	button_icon = {
+			# 		texture = "gfx/interface/icons/flat_icons/button_list_arrow.dds"
+			# 		onclick = "[PdxGuiTriggerAllAnimations('show_left_side')]"
+			# 		onclick = "[PdxGuiWidget.Hide]"
+			# 		size = { 25 40 }
+			# 		visible = no
+			# 		alpha = 0.6
+			#
+			# 		state = {
+			# 			name = hide_left_side
+			# 			on_start = "[PdxGuiWidget.Show]"
+			# 		}
+			# 	}
+			# }
+		}
+	}
+
+	window = { # name
+		size = { 900 100 }
+		movable = yes
+		position = { 420 72 }
+		alwaystransparent = yes
+		visible = no
+
+		state = {
+			name = hide_name
+			on_start = "[PdxGuiWidget.Hide]"
+		}
+
+		state = {
+			name = show_name
+			on_start = "[PdxGuiWidget.Show]"
+		}
+
+		datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+
+		container = {
+			resizeparent = yes
+
+			flowcontainer = {
+				position = { 75 32 }
+				spacing = 15
+				alwaystransparent = no
+				ignoreinvisible = yes
+
+				background = {
+					using = Background_Area_Solid
+					margin = { 20 10 }
+					margin_top = 0
+					margin_bottom = 10
+				}
+
+				text_single = {
+					using = Font_Type_Flavor
+					fontsize = 35
+					text = "[Character.GetUINameNotMeNoTooltip],"
+					elide = right
+					maximumsize = { 1200 -1 }
+					parentanchor = vcenter
+					fontsize_min = 29
+				}
+
+				text_single = {
+					fontsize = 30
+					using = Font_Type_Flavor
+					text = "[Character.GetAge]"
+					parentanchor = vcenter
+				}
+			}
+
+			coa_realm_medium_crown = {
+				datacontext = "[Character]"
+				visible = "[Character.HasLandedTitles]"
+				alwaystransparent = yes
+
+				blockoverride "coa_button"
+				{
+					name = "realm_shield"
+				}
+			}
+		}
+	}
+
+	window = { # house
+		size = { 500 100 }
+		position = { 470 180 }
+		movable = yes
+		alwaystransparent = yes
+		visible = no
+
+		state = {
+			name = hide_house
+			on_start = "[PdxGuiWidget.Hide]"
+		}
+
+		state = {
+			name = show_house
+			on_start = "[PdxGuiWidget.Show]"
+		}
+
+		container = {
+			datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+			datacontext = "[Character.GetHouse]"
+			resizeparent = yes
+
+			flowcontainer = {
+				position = { 100 7 }
+				alwaystransparent = no
+				spacing = 15
+
+				background = {
+					using = Background_Area_Solid
+					margin = { 20 10 }
+					margin_left = 60
+					margin_top = 0
+					margin_bottom = 8
+				}
+
+				flowcontainer = {
+					direction = vertical
+
+					flowcontainer = {
+						spacing = 10
+						text_single = {
+							text = "house"
+							fontsize = 25
+							default_format = "#high"
+							fontsize_min = 24
+							maximumsize = { 100 -1 }
+							elide = right
+						}
+						text_single = {
+							text = "[Character.GetDynastyHouseNameNoTooltip]"
+							fontsize = 25
+							default_format = "#high"
+							fontsize_min = 24
+							maximumsize = { 300 -1 }
+							elide = right
+						}
+					}
+					flowcontainer = {
+						spacing = 10
+						text_single = {
+							text = "members"
+							fontsize = 25
+						}
+						text_single = {
+							text = "[Character.GetDynasty.GetNumberOfLivingMembers]"
+							fontsize = 25
+						}
+					}
+				}
+			}
+
+			coa_house_medium = {
+				alwaystransparent = yes
+				flowcontainer = {
+					name = "characters_status_in_house"
+					ignoreinvisible = yes
+
+					icon = {
+						name = "bastard"
+						visible = "[Not(Character.IsLegitimateMemberOfHouse)]"
+						framesize = { 40 40 }
+						frame = 4
+						size = { 20 20 }
+						texture = "gfx/interface/icons/portraits/relation.dds"
+					}
+
+					icon = {
+						name = "head_icon"
+						visible = "[LessThan_int32(Character.GetDynastyHeadRelationFrame('(bool)no'), '(int32)9')]"
+						size = { 20 20 }
+
+						texture = "gfx/interface/icons/portraits/relation.dds"
+						framesize = { 40 40 }
+						frame = "[Character.GetDynastyHeadRelationFrame('(bool)no')]"
+						tooltip = "[Character.GetDynastyHeadTooltip]"
+					}
+				}
+			}
+		}
+	}
+
+	window = { # religion
+		size = { 500 100 }
+		position = { 920 186 }
+
+		movable = yes
+		alwaystransparent = yes
+		visible = no
+
+		state = {
+			name = hide_rel
+			on_start = "[PdxGuiWidget.Hide]"
+		}
+
+		state = {
+			name = show_rel
+			on_start = "[PdxGuiWidget.Show]"
+		}
+
+		container = {
+			datacontext = "[PortraitCustomizationWindow.GetCharacter]"
+			resizeparent = yes
+
+			flowcontainer = {
+				spacing = 20
+
+				container = {
+					parentanchor = vcenter
+					button_religion_icon = {
+						position = { 0 15 }
+						name = "faith_button"
+						datacontext = "[Character.GetFaith]"
+						size = { 50 50 }
+						alwaystransparent = yes
+					}
+				}
+
+				background = {
+					using = Background_Area_Solid
+					margin = { 20 10 }
+					margin_left = 15
+					margin_top = 0
+					margin_bottom = 9
+				}
+
+				flowcontainer = {
+					direction = vertical
+					alwaystransparent = no
+
+					text_single = {
+						text = "[Character.GetFaith.GetNameNoTooltip]"
+						fontsize = 25
+					}
+
+					text_single = {
+						text = "[Character.GetCulture.GetNameNoTooltip]"
+						fontsize = 25
+					}
+				}
+			}
+		}
+	}
+
+	# error_horse = {
+	# 	parentanchor = right
+	# 	position = { -100 500 }
+	# 	visible = "[And( Not( IsPauseMenuShown ), Not(ReleaseMode) )]"
+	# }
+}

@@ -1,0 +1,118 @@
+# 4014 - NISHAPUR
+4014 = {	# 4314 - NISHAPUR
+		
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # tajik
+	religion = catholic  # mazdayasna
+	
+	# History
+	
+	1060.1.1 = { religion = catholic  # maturidi }
+}
+
+# 4238 - Merv
+4238 = {	# 4238 - Merv
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # tajik
+	religion = catholic  # mazdayasna
+	
+	# History
+	
+	960.1.1 = {
+		religion = catholic  # maturidi
+	}
+	1160.1.1 = {
+		culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # turkish
+	}
+
+}
+
+# 4044 - Abivard
+4044 = {	# 4044 - Abivard
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # tajik
+	religion = catholic  # mazdayasna
+	
+	# History
+	
+	1060.1.1 = {
+		culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # turkish
+		religion = catholic  # ashari
+	}
+
+}
+
+
+# 4252 - Taleqan
+4252 = {	# 4252 - Taleqan
+	
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # tajik
+	religion = catholic  # zurvanism
+	
+	# History
+	987.1.1 = {
+		religion = catholic  # maturidi
+	}
+
+}
+# 4215 - Herat
+4215 = {	# 4215 - Herat
+	
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # tajik
+	religion = catholic  # azariqa
+	
+	# History
+	987.1.1 = {
+		religion = catholic  # maturidi
+	}
+
+}
+
+# 4223 - Dizah
+4223 = {	# 4223 - Dizah
+	
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # tajik
+	religion = catholic  # zurvanism
+	
+	# History
+	1087.1.1 = {
+		religion = catholic  # maturidi
+	}
+
+}
+
+# 4228 - Darmashan
+4228 = {	# 4228 - Darmashan
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # afghan
+	religion = catholic  # mahayana
+
+}
+

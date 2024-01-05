@@ -1,0 +1,35 @@
+﻿
+tavern_game_props = {
+	usage = none
+	dragon_prop = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = game_props
+				template = dragon_prop
+				value = 1.0
+			}
+		}
+	}
+	dslongsword_prop = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = game_props
+				template = dslongsword_prop
+				value = 1.0
+			}
+		}
+	}
+	kyoto_prop = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = game_props
+				template = kyoto_prop
+				value = 1.0
+			}
+		}
+	}
+}
+

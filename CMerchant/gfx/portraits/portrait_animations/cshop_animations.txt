@@ -1,0 +1,588 @@
+﻿############################################################################################################################################################
+############################################################################################################################################################
+##CCShop
+CCdrink = {
+	male = {
+		default = { head = "waroverview_attacker" torso = "drinking_body" }
+
+		drink_c = {
+			animation = { head = "waroverview_attacker" torso = "drinking_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					OR = {
+						var:drinking = 0
+						var:drinking = 2
+					}
+					
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = mug_prop
+				animations = waroverview_attacker_decal
+			}
+		}
+		drink_x = {
+			animation = { head = "waroverview_attacker" torso = "drinking_body2" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 150
+					has_character_flag = drinking_now
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = mug_prop
+				animations = waroverview_attacker_decal
+			}
+		}
+		drink_y = {
+			animation = { head = "emotion_pain_entry" torso = "emotion_drunk_entry" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 220
+					has_character_flag = stumble
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+		drink_z = {
+			animation = { head = "waroverview_attacker" torso = "drinking_body3" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 300
+					has_character_flag = drinking_refill
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = mug_prop
+				animations = waroverview_attacker_decal
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCfish = {
+	male = {
+		default = { head = "emotion_happy_entry" torso = "idlefishing_body" }
+
+		cast_b = {
+			animation = { head = "emotion_happy_entry" torso = "idlefishing_body" }
+
+			weight = {
+				base = 10
+				modifier = {
+					add = 10
+					has_character_flag = fishing_idle
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+
+		cast_c = {
+			animation = { head = "emotion_happy_entry" torso = "cast_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 160
+					has_character_flag = casting
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+		cast_9 = {
+			animation = { head = "emotion_happy_entry" torso = "reeling_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 180
+					has_character_flag = fish_on_line
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+		cast_10 = {
+			animation = { head = "emotion_happy_entry" torso = "reeling_body2" }
+
+			weight = {
+				base = 0
+
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCcheer = {
+	male = {
+		default = { head = "emotion_happy_entry" torso = "cheer_body" }
+
+		cheer_C = {
+			animation = { head = "emotion_happy_entry" torso = "cheer_body" }
+
+			weight = {
+				base = 100
+
+				modifier = {
+					add = 120
+					has_character_flag = cheer
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCdrunk = {
+	male = {
+		animation = { head = "emotion_pain_entry" torso = "emotion_drunk_entry" }
+
+		drunk_C = {
+			animation = { head = "emotion_pain_entry" torso = "emotion_drunk_entry" }
+
+			weight = {
+				base = 100
+
+				modifier = {
+					add = 120
+					has_character_flag = drunkard
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCkneel = {
+	male = {
+		default = { head = "waroverview_attacker" torso = "kneeling_body" }
+
+		kneeling_C = {
+			animation = { head = "waroverview_attacker" torso = "kneeling_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					has_character_flag = kneeling
+				}
+			}
+
+			portrait_modifier = {
+				animations = waroverview_attacker_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+Writing = {
+	male = {
+		default = { head = "emotion_happy_entry" torso = "writing_body" }
+
+		kneeling_C = {
+			animation = { head = "emotion_happy_entry" torso = "writing_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					has_character_flag = writing
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+Throne = {
+	male = {
+		default = { head = "waroverview_attacker" torso = "throne_body" }
+
+		kneeling_C = {
+			animation = { head = "waroverview_attacker" torso = "throne_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					has_character_flag = throne
+				}
+			}
+
+			portrait_modifier = {
+				animations = waroverview_attacker_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+
+cshop = {
+	male = {
+		default = { head = "AI_forgiving_entry" torso = "AI_forgiving_entry" }
+
+		show_right = {
+			animation = { head = "emotion_flirty_entry" torso = "emotion_flirty_entry" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					has_character_flag = s_left
+				}
+			}
+		}
+		show_left = {
+			animation = { head = "emotion_flirtyLeft_entry" torso = "emotion_flirtyLeft_entry" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 100
+					has_character_flag = s_right
+				}
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+cshop_c = {
+	male = {
+		default = { head = "AI_rational" torso = "AI_rational" }
+
+		show_c = {
+			animation = { head = "AI_rational" torso = "AI_rational" }
+
+			weight = {
+				base = 100
+
+				modifier = {
+					add = 100
+					has_character_flag = asdfasdf
+				}
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+equip_pose = {
+	male = {
+		default = { head = "AI_rational" torso = "equip_body" }
+
+		show_c = {
+			animation = { head = "AI_rational" torso = "equip_body" }
+
+			weight = {
+				base = 100
+
+				modifier = {
+					add = 100
+					has_character_flag = asdfasdf
+				}
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+dummy_pose = {
+	male = {
+		animation = { head = "idle" torso = "equip_body2" }
+
+		show_dummy_r = {
+			animation = { head = "idle" torso = "equip_body2" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = is_target_dummy
+					NOT = {
+						has_character_flag = is_target_dummy_hit
+					}
+				}
+			}
+		}
+		show_dummy = {
+			animation = { head = "idle" torso = "equip_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 200
+					AND = {
+						has_character_flag = is_target_dummy
+						has_character_flag = is_target_dummy_hit
+					}
+					
+				}
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+bow_pose = {
+	male = {
+		default = { head = "archer_head" torso = "b_idle_body" }
+
+		draw_idle = {
+			animation = { head = "archer_head" torso = "b_idle_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					has_character_flag = pull_idle
+					NOT = {
+						has_character_flag = pull_drawl
+						has_character_flag = pull_drawh
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = bow_prop
+				animations = emotion_happy_decal
+			}
+		}
+		draw_idleh = {
+			animation = { head = "archer_head" torso = "b_idle_bodyh"  }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 230
+					AND = {
+						OR = {
+							has_character_flag = pull_idle
+							has_character_flag = pull_release
+						}
+
+						has_character_flag = pull_drawh
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = bow_prop
+				animations = emotion_happy_decal
+			}
+		}
+		draw_idlel = {
+			animation = { head = "archer_head" torso = "b_idle_bodyl"  }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 230
+					AND = {
+						OR = {
+							has_character_flag = pull_idle
+							has_character_flag = pull_release
+						}
+						has_character_flag = pull_drawl
+					}
+
+				}
+			}
+			portrait_modifier = {
+				animations_props = bow_prop
+				animations = emotion_happy_decal
+			}
+		}
+		draw_pull = {
+			animation = { head = "archer_head" torso = "b_pullback_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 220
+					AND = {
+						has_character_flag = pull_draw
+						has_character_flag = pull_drawm
+					}
+
+				}
+			}
+			portrait_modifier = {
+				animations_props = bow1_prop
+				animations = emotion_happy_decal
+			}
+		}
+		draw_pullh = {
+			animation = { head = "archer_head" torso = "b_pullback_bodyh" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 220
+					AND = {
+						has_character_flag = pull_draw
+						has_character_flag = pull_drawh
+					}
+				}
+			}
+			portrait_modifier = {
+				animations_props = bow1_prop
+				animations = emotion_happy_decal
+			}
+		}
+		draw_pulll = {
+			animation = { head = "archer_head" torso = "b_pullback_bodyl" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 220
+					AND = {
+						has_character_flag = pull_draw
+						has_character_flag = pull_drawl
+					}
+
+				}
+			}
+			portrait_modifier = {
+				animations_props = bow1_prop
+				animations = emotion_happy_decal
+			}
+		}
+		draw_rel = {
+			animation = { head = "archer_head" torso = "b_release_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 200
+					has_character_flag = pull_releasefdfdg
+				}
+			}
+			portrait_modifier = {
+				animations_props = bow_prop
+				animations = emotion_happy_decal
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}

@@ -1,0 +1,53 @@
+﻿
+
+have_some_cake = {
+    usage = game
+    cake_modifier = {
+        dna_modifiers = {
+            morph = {
+                mode = modify
+                gene = gene_age
+                template = no_aging
+                value = 1.0
+            }
+            morph = {
+                mode = modify
+                gene = gene_bs_bust
+                template = bust_shape_cake
+                value = 1.0
+            }
+			morph = {
+                mode = modify
+                gene = gene_bs_body_type
+                template = body_type_cake
+                value = 0.59
+            }
+			morph = {
+                mode = modify
+                gene = gene_bs_body_shape
+                template = body_shape_cake
+                value = 0.67
+            }
+            accessory = {
+                mode = add
+                gene = clothes
+                template = none
+                value = 1.0
+            }
+			accessory = {
+                mode = add
+                gene = legwear
+                template = none
+                value = 1.0
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+				age > 15
+				is_female = yes
+            }
+        }
+    }
+}

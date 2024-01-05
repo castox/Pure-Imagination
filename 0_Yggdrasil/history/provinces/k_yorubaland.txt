@@ -1,0 +1,42 @@
+# 8068 - ILE-IFE
+8068 = {	# 8068 - ILE-IFE
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # yoruba
+	religion = catholic  # west_african_orisha_pagan
+	
+	# History
+
+}
+
+# 8071 - BENIN
+8071 = {	# 8071 - BENIN
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # edo
+	religion = catholic  # west_african_orisha_pagan
+	
+	# History
+
+}
+
+# 8072 - BENIN CITY
+8072 = {	# 8072 - BENIN CITY
+	
+	# Misc
+	culture = human
+850.1.1 = { culture = human }
+851.1.1 = { religion = catholic }  # edo
+	religion = catholic  # west_african_orisha_pagan
+	
+	# History
+	867.1.1 = {
+		special_building_slot = walls_of_benin_01
+	}
+
+}
+

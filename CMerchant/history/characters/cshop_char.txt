@@ -1,0 +1,41 @@
+﻿castox = {
+	name = "Castox"
+	dna = castox
+	dynasty = castox
+	
+	religion = catholic
+	culture = roman
+	
+	immortal = yes
+
+	martial = 4
+	prowess = 3
+	diplomacy = 4
+	intrigue = 6
+	stewardship = 5
+	learning = 5
+	
+	
+	trait = education_martial_4
+	trait = intellect_good_3
+	trait = blademaster_3
+	trait = whole_of_body
+	trait = ambitious
+	trait = education_intrigue_4
+	trait = merchant_castox
+
+
+	disallow_random_traits = yes
+
+
+	1.1.1= {
+		birth = "1.1.1"	
+		effect = {
+			set_immortal_age = 24
+			add_character_flag = has_scripted_appearance
+			set_global_variable = { name = castox value = character:castox }
+			new_castox = yes
+		}
+	}
+
+}

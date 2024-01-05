@@ -1,0 +1,27 @@
+[h1]The Way of Kings: Artifact Module[/h1]
+This is a complete rewrite of the Godherja artifact module by the Way of Kings team. It adds functionality, makes the module more modular and stable, and vastly reduces the barrier to entry for a new modder wishing to modify the module, because all the functions are dynamically generated from one master list of artifacts.
+
+[b]Features:[/b]
+Everything you know and love from the Godherja artifact module, including their awesome art and the Artifact Creation decision/events!
+More tooltips and modifier icon options!
+More Way of Kings artifacts, such as Shardblades and Soulcasters, and even a new Mount slot! Don't worry, they won't be generated in an otherwise vanilla game - but you can manually add them if you're a modder!
+Simplified modularity; can most likely be included in your Total Conversion mod without a single conflict.
+When you know where to look, it only takes about 1 minute to fully implement a new artifact from scratch.
+You could even add brand new artifacts from the debug menu!
+You can now Gift Artifacts through a custom GUI, so you can still get some use out of your artifacts once you've upgraded them.
+There are debug interactions and decisions to grant yourself artifacts or steal all artifacts from the target.
+Performance improvements for AI artifact usage!
+Artifacts can now stack!
+
+[b]NEW![/b] Special functionality when combined with the Community Flavor Pack allows you to tie artifacts to specific models! (Currently experimental and only tied to the Reichskrone and Iron Crown of Lombardy by default)
+The Community Flavor Pack is available at:
+https://steamcommunity.com/sharedfiles/filedetails/?id=2220098919
+
+[b]Incompatibilities:[/b]
+The only base game file that is touched is hud.gui. If you are running mods that modify hud.gui, this mod will conflict with them. However, there's only one noteworthy block of text that needs to be merged, which is quite simple for you to do manually - see the Artifact README.info for detailed instructions.
+
+
+[b]Modding instructions:[/b]
+Instructions on how to mod this module yourself are found in the "Artifacts README.info" file in the mod folder.
+
+If you wish to use this module in your own mod, please credit The Way of Kings team (as well as Godherja, if you use their art assets!) and consider making another feature of your mod modular and releasing it to the community so that we may all benefit as a modding community. If you need assistance with modularization, feel free to visit our discord at https://discord.gg/kr7emNrd9K and ask for advice.

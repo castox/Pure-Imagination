@@ -1,0 +1,70 @@
+﻿l_english:
+ 
+ fabrial_create.1.t: "Create Fabrial"
+ fabrial_create.1.desc: "I've decided to prepare for the creation of a fabrial. I will need to buy supplies and employ a team of junior artifabrians to perform testing. Now, what do I want to create?"
+ fabrial_create.1.a: "Create a Spanreed"
+ fabrial_create.1.b: "Create a Painrial"
+ fabrial_create.1.c: "Create an Alerter"
+ fabrial_create.1.d: "Create a Soulcaster"
+ fabrial_create.1.nope: "Nevermind"
+ 
+ fabrial_repair.1001.t: "Repair Fabrial"
+ fabrial_repair.1001.desc: "The frustrations of imperfection! I have this awe-inspiring artifact, yet its broken state tantalizes me with its potential! It's time to see to it that it be fixed."
+ fabrial_repair.1001.a: "Fix my soulcaster"
+ fabrial_repair.1001.nope: "Nevermind"
+ fabrial_repair.1001.easy: "It's an easy fix."
+ fabrial_repair.1001.difficult: "It's a tricky fix and requires resources."
+ fabrial_repair.1001.disaster: "Disaster!"
+ fabrial_repair.1002.desc: "Turns out the problem with my [ROOT.GetCharacter.MakeScope.Var('repairing_broken_artifact').GetFlagName] was simply a misaligned gem housing!"
+ fabrial_repair.1002.a: "Oh, how silly I feel..."
+ fabrial_repair.1003.desc: "The [ROOT.GetCharacter.MakeScope.Var('repairing_broken_artifact').GetFlagName]is not in a great shape, but it's salvageable. Unfortunately it will require that I invest some resources."
+ fabrial_repair.1003.a: "It's worth it!"
+ fabrial_repair.1004.desc: "The [ROOT.GetCharacter.MakeScope.Var('repairing_broken_artifact').GetFlagName] is unsalvageable."
+ fabrial_repair.1004.a: "Oh no!"
+
+ request_repair_interaction: "Request Artifact Repair"
+ request_repair_interaction_desc: "Request Artifact Repair"
+ fabrial_repair.2001.t: "Repair Fabrial Request"
+ # Actor:
+ fabrial_repair.2001.desc: "The frustrations of imperfection! I have this awe-inspiring artifact, yet its broken state tantalizes me with its potential! It's high time to see to it that it be fixed, even if I have to pay [recipient.GetTitledFirstName] for [recipient.GetHerHis] talent as an [GetTrait('artifabrian').GetName( recipient )]."
+ fabrial_repair.2001.a: "Please fix my soulcaster"
+ fabrial_repair.2001.nope: "Nevermind"
+ # Recipient:
+ fabrial_repair.2002.desc: "Turns out the problem with [actor.GetTitledFirstNamePossessive] [recipient.MakeScope.Var('repairing_broken_artifact').GetFlagName] was simply a misaligned gem housing! It's a trivial fix, and it's ready to be returned. This whole ordeal was silly - I should tell [actor.GetHerHim] to be more careful with the alignment in the future."
+ fabrial_repair.2002.a: "At least I got paid."
+ fabrial_repair.2002.b: "I can't charge money for this."
+ fabrial_repair.2002.steal: "On second thought, it's mine now!"
+
+ fabrial_repair.2003.desc: "The [actor.MakeScope.Var('repairing_broken_artifact').GetFlagName] is not in a great shape, but it's salvageable. Unfortunately it will require that I actually spend the resources given to me by [actor.GetTitledFirstName]."
+ fabrial_repair.2003.a: "A promise is a promise..."
+ fabrial_repair.2003.steal: "I'll tell [actor.GetHerHim] it's unsalvageable."
+ fabrial_repair.2003.steal_b: "I'll pocket it as is!"
+
+ fabrial_repair.2004.desc: "The [recipient.MakeScope.Var('repairing_broken_artifact').GetFlagName] is unsalvageable."
+ fabrial_repair.2004.a: "Oh no!"
+ fabrial_repair.2004.b: "I should return the [gold]..."
+
+ # Actor:
+ fabrial_repair.2011.desc: "The [recipient.MakeScope.Var('repairing_broken_artifact').GetFlagName] has been successfully repaired thanks to [recipient.GetTitledFirstName]!"
+ fabrial_repair.2011.a: "Expensive, but worth it!"
+
+ fabrial_repair.2012.desc: "[damnation|E]! According to [recipient.GetTitledFirstName], the [recipient.MakeScope.Var('repairing_broken_artifact').GetFlagName] was unsalvageable, to the point where there's no point even pretending it could ever be repaired."
+ fabrial_repair.2012.a: "Oh no! And I spent so many spheres!"
+ fabrial_repair.2012.b: "I refuse to believe it!"
+ fabrial_repair.investigate: "You will investigate for any signs of wrongdoing."
+ fabrial_repair.discovery: "You discovered the theft of your artifact!"
+ fabrial_repair.no_discovery: "You discovered they did not steal your artifact"
+
+ fabrial_repair.2013.desc: "Oh my! Apparently it was so easily repaired that [recipient.GetTitledFirstName] not only repaired the [recipient.MakeScope.Var('repairing_broken_artifact').GetFlagName], [recipient.GetSheHe] also returned my [gold]!"
+ fabrial_repair.2013.a: "What a swell surprise!"
+ fabrial_repair.2013.b: "I'll let [recipient.GetHerHim] know I owe [recipient.GetHerHim] a favor!"
+
+ fabrial_repair.2014.desc: "I'm not sure how to feel. According to [recipient.GetTitledFirstName], the [recipient.MakeScope.Var('repairing_broken_artifact').GetFlagName] was unsalvageable, but at least [recipient.GetSheHe] returned my [gold]."
+ fabrial_repair.2014.a: "Storms..."
+ 
+ fabrial_repair.2021.desc: "My spies report that [recipient.GetTitledFirstName] has recently been showing off a new [artifact|E] to his other friends... An [artifact|E] which matches the description of the one [recipient.GetSheHe] claimed was lost! #EMP My#! artifact!"
+ fabrial_repair.2021.a: "I knew it!"
+
+ fabrial_repair.2022.desc: "My spies report that [recipient.GetTitledFirstName] has been expressing a sentiment of guilt to [recipient.GetHerHis] friends over the artifact repair debacle. They also found the remains of the artifact, and concluded that it had indeed been tinkered with and effectively destroyed. Unfortunately, our scheme was found out and now [recipient.GetTitledFirstName] knows I distrusted [recipient.GetHerHim] enough to send spies..."
+ fabrial_repair.2022.a: "I suppose I misjudged..."
+ 

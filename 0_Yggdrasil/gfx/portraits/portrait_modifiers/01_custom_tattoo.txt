@@ -1,0 +1,481 @@
+﻿custom_tattoo = {
+	usage = customization
+	interface_position = 5
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = complexion_grovewoken
+	}
+	
+	add_accessory_modifiers = {
+		gene = complexion
+		template = complexion_lightbringer
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		# is_valid_custom = {
+		# 	highest_held_title_tier >= tier_duchy
+		# }
+		template = western_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		# is_valid_custom = {
+		# 	highest_held_title_tier >= tier_kingdom
+		# }
+		template = complexion_lichlord
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		# is_valid_custom = {
+		# 	highest_held_title_tier >= tier_kingdom
+		# }
+		template = western_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = complexion_1
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = complexion_2
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = northern_war
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = byzantine_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = byzantine_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = byzantine_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = byzantine_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = byzantine_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = byzantine_war
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = mena_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = mena_low_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = mena_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = mena_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = mena_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = mena_war
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = steppe_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = steppe_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = steppe_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = steppe_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = steppe_war
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = sub_saharan_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = sub_saharan_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = sub_saharan_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = sub_saharan_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = indian_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = indian_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = indian_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = indian_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = indian_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = indian_war
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_hre_common
+		is_valid_custom = {
+			has_dlc = "Garments of the Holy Roman Empire"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_hre_high_nobility
+		is_valid_custom = {
+			has_dlc = "Garments of the Holy Roman Empire"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_hre_royalty
+		is_valid_custom = {
+			has_dlc = "Garments of the Holy Roman Empire"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_hre_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_hre_war
+		is_valid_custom = {
+			has_dlc = "Garments of the Holy Roman Empire"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_abbasid_common
+		is_valid_custom = {
+			has_dlc = "Fashion of the Abbasid Court"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_abbasid_high_nobility
+		is_valid_custom = {
+			has_dlc = "Fashion of the Abbasid Court"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_abbasid_royalty
+		is_valid_custom = {
+			has_dlc = "Fashion of the Abbasid Court"
+		}
+	}	
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_abbasid_imperial
+		is_valid_custom = {
+			has_dlc = "Fashion of the Abbasid Court"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dde_abbasid_war
+		is_valid_custom = {
+			has_dlc = "Fashion of the Abbasid Court"
+		}
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = crusades_western_war
+	}
+
+	#add_accessory_modifiers = {
+	#	gene = hairstyles
+	#	template = rtt_hairstyles
+	#	
+	#	is_valid_custom = {
+	#		monarchs_journey_unlock = 1
+	#	}
+	#}
+	male_complexion_secular_rtt_nobility_01_low = {
+		usage = customization
+		dna_modifiers = {
+			accessory = {
+				mode = add
+
+				gene = complexion
+				template = monarchs_journey_low
+				value = 0
+			}
+		}
+		
+		is_valid_custom = {
+			monarchs_journey_unlock = 3
+			is_male = yes
+		}
+	}
+
+	male_complexion_secular_rtt_jester_01_low = {
+		usage = customization
+		dna_modifiers = {
+			accessory = {
+				mode = add
+
+				gene = complexion
+				template = monarchs_journey_low
+				value = 1
+			}
+		}
+		
+		is_valid_custom = {
+			monarchs_journey_unlock = 4
+			is_male = yes
+		}
+	}
+
+	female_complexion_secular_rtt_nobility_01_low = {
+		usage = customization
+		dna_modifiers = {
+			accessory = {
+				mode = add
+
+				gene = complexion
+				template = monarchs_journey_low
+				value = 1
+			}
+		}
+		
+		is_valid_custom = {
+			monarchs_journey_unlock = 5
+			is_male = no
+		}
+	}
+		# Eldari #
+	add_accessory_modifiers = {
+		gene = complexion
+		template = eldari_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = eldari_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = eldari_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = eldari_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = eldari_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = eldari_war
+	}
+
+	# Woodari #
+	add_accessory_modifiers = {
+		gene = complexion
+		template = woodari_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = woodari_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = woodari_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = woodari_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = woodari_imperial
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = woodari_war
+	}
+# SHADARI #
+	add_accessory_modifiers = {
+		gene = complexion
+		template = shadari_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = shadari_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = shadari_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = shadari_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = shadari_war
+	}
+	add_accessory_modifiers = {
+		gene = complexion
+		template = shadari_imperial
+	}
+# NORKSE #
+	add_accessory_modifiers = {
+		gene = complexion
+		template = norkse_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = norkse_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = norkse_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = norkse_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = norkse_war
+	}
+	add_accessory_modifiers = {
+		gene = complexion
+		template = norkse_imperial
+	}
+	
+	#Dwarv#
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dwarv_common
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dwarv_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dwarv_high_nobility
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dwarv_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dwarv_war
+	}
+	add_accessory_modifiers = {
+		gene = complexion
+		template = dwarv_imperial
+	}
+}

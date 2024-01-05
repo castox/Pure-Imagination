@@ -1,0 +1,1880 @@
+###
+remove_a_empty = {
+		#QTY FILE
+	if = { limit = {global_var:Amethyst_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Amethyst_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Amethyst_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Amethyst_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Amethyst_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Amethyst_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Amethyst_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Amethyst_Dust }
+	}
+	if = { limit = { global_var:Amethyst_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Amethyst_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Amethyst_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Amethyst_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Amethyst_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Amethyst_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Amethyst_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Amethyst_Large }
+	}
+	if = { limit = {global_var:Animal_Claw_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Animal_Claw }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Animal_Claw }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Animal_Claw }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Animal_Claw }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Animal_Claw }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Animal_Claw }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Animal_Claw }
+	}
+	if = { limit = {global_var:Animal_Claw_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Animal_Claw_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Animal_Claw_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Animal_Claw_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Animal_Claw_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Animal_Claw_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Animal_Claw_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Animal_Claw_M }
+	}
+	if = { limit = {global_var:Animal_Fat_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Animal_Fat }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Animal_Fat }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Animal_Fat }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Animal_Fat }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Animal_Fat }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Animal_Fat }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Animal_Fat }
+	}
+	if = { limit = {global_var:Animal_Skin_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Animal_Skin }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Animal_Skin }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Animal_Skin }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Animal_Skin }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Animal_Skin }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Animal_Skin }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Animal_Skin }
+	}
+	if = { limit = {global_var:Animal_Tooth_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Animal_Tooth }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Animal_Tooth }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Animal_Tooth }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Animal_Tooth }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Animal_Tooth }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Animal_Tooth }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Animal_Tooth }
+	}
+	if = { limit = {global_var:Animal_Tooth_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Animal_Tooth_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Animal_Tooth_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Animal_Tooth_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Animal_Tooth_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Animal_Tooth_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Animal_Tooth_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Animal_Tooth_M }
+	}
+	if = { limit = {global_var:Apple_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Apple }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Apple }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Apple }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Apple }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Apple }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Apple }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Apple }
+	}
+	if = { limit = {global_var:Arachnid_Leg_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Arachnid_Leg }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Arachnid_Leg }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Arachnid_Leg }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Arachnid_Leg }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Arachnid_Leg }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Arachnid_Leg }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Arachnid_Leg }
+	}
+	if = { limit = {global_var:Arachnid_Leg_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Arachnid_Leg_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Arachnid_Leg_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Arachnid_Leg_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Arachnid_Leg_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Arachnid_Leg_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Arachnid_Leg_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Arachnid_Leg_M }
+	}
+	if = { limit = {global_var:Ash_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Ash }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Ash }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Ash }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Ash }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Ash }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Ash }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Ash }
+	}
+	if = { limit = {global_var:Bear_Skin_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Bear_Skin }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Bear_Skin }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Bear_Skin }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Bear_Skin }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Bear_Skin }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Bear_Skin }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Bear_Skin }
+	}
+	if = { limit = {global_var:Bellows_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Bellows }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Bellows }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Bellows }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Bellows }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Bellows }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Bellows }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Bellows }
+	}
+	if = { limit = {global_var:Book_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Book_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Book_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Book_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Book_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Book_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Book_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Book_1 }
+	}
+	if = { limit = {global_var:Bread_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Bread }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Bread }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Bread }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Bread }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Bread }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Bread }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Bread }
+	}
+	if = { limit = {global_var:Brick_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Brick }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Brick }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Brick }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Brick }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Brick }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Brick }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Brick }
+	}
+	if = { limit = {global_var:Bug_Shell_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Bug_Shell_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Bug_Shell_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Bug_Shell_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Bug_Shell_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Bug_Shell_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Bug_Shell_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Bug_Shell_Type_1 }
+	}
+	if = { limit = {global_var:Bug_Shell_Type_1_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Bug_Shell_Type_1_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Bug_Shell_Type_1_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Bug_Shell_Type_1_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Bug_Shell_Type_1_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Bug_Shell_Type_1_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Bug_Shell_Type_1_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Bug_Shell_Type_1_M }
+	}
+	if = { limit = {global_var:Bug_Shell_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Bug_Shell_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Bug_Shell_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Bug_Shell_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Bug_Shell_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Bug_Shell_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Bug_Shell_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Bug_Shell_Type_2 }
+	}
+	if = { limit = {global_var:Bug_Shell_Type_2_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Bug_Shell_Type_2_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Bug_Shell_Type_2_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Bug_Shell_Type_2_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Bug_Shell_Type_2_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Bug_Shell_Type_2_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Bug_Shell_Type_2_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Bug_Shell_Type_2_M }
+	}
+	if = { limit = {global_var:Carrot_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Carrot }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Carrot }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Carrot }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Carrot }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Carrot }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Carrot }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Carrot }
+	}
+	if = { limit = {global_var:Cheese_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Cheese }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Cheese }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Cheese }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Cheese }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Cheese }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Cheese }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Cheese }
+	}
+	if = { limit = {global_var:Cherries_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Cherries }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Cherries }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Cherries }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Cherries }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Cherries }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Cherries }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Cherries }
+	}
+	if = { limit = {global_var:Citrine_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Citrine_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Citrine_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Citrine_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Citrine_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Citrine_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Citrine_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Citrine_Dust }
+	}
+	if = { limit = {global_var:Citrine_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Citrine_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Citrine_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Citrine_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Citrine_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Citrine_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Citrine_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Citrine_Large }
+	}
+	if = { limit = {global_var:Claw_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Claw }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Claw }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Claw }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Claw }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Claw }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Claw }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Claw }
+	}
+	if = { limit = {global_var:Clay_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Clay }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Clay }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Clay }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Clay }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Clay }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Clay }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Clay }
+	}
+	if = { limit = {global_var:Coal_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Coal }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Coal }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Coal }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Coal }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Coal }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Coal }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Coal }
+	}
+	if = { limit = {global_var:Cooked_Fish_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Cooked_Fish }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Cooked_Fish }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Cooked_Fish }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Cooked_Fish }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Cooked_Fish }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Cooked_Fish }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Cooked_Fish }
+	}
+	if = { limit = {global_var:Deer_Horn_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Deer_Horn }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Deer_Horn }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Deer_Horn }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Deer_Horn }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Deer_Horn }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Deer_Horn }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Deer_Horn }
+	}
+	if = { limit = {global_var:Deer_Horn_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Deer_Horn_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Deer_Horn_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Deer_Horn_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Deer_Horn_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Deer_Horn_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Deer_Horn_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Deer_Horn_Dust }
+	}
+	if = { limit = {global_var:Diamond_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Diamond_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Diamond_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Diamond_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Diamond_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Diamond_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Diamond_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Diamond_Dust }
+	}
+	if = { limit = {global_var:Diamond_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Diamond_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Diamond_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Diamond_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Diamond_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Diamond_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Diamond_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Diamond_Large }
+	}
+	if = { limit = {global_var:Dragon_Scales_Black_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Dragon_Scales_Black }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Dragon_Scales_Black }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Dragon_Scales_Black }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Dragon_Scales_Black }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Dragon_Scales_Black }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Dragon_Scales_Black }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Dragon_Scales_Black }
+	}
+	if = { limit = {global_var:Dragon_Scales_Blue_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Dragon_Scales_Blue }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Dragon_Scales_Blue }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Dragon_Scales_Blue }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Dragon_Scales_Blue }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Dragon_Scales_Blue }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Dragon_Scales_Blue }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Dragon_Scales_Blue }
+	}
+	if = { limit = {global_var:Dragon_Scales_Red_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Dragon_Scales_Red }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Dragon_Scales_Red }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Dragon_Scales_Red }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Dragon_Scales_Red }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Dragon_Scales_Red }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Dragon_Scales_Red }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Dragon_Scales_Red }
+	}
+	if = { limit = {global_var:Dragon_Scales_White_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Dragon_Scales_White }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Dragon_Scales_White }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Dragon_Scales_White }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Dragon_Scales_White }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Dragon_Scales_White }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Dragon_Scales_White }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Dragon_Scales_White }
+	}
+	if = { limit = {global_var:Dragon_Scales_Yellow_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Dragon_Scales_Yellow }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Dragon_Scales_Yellow }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Dragon_Scales_Yellow }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Dragon_Scales_Yellow }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Dragon_Scales_Yellow }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Dragon_Scales_Yellow }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Dragon_Scales_Yellow }
+	}
+	if = { limit = {global_var:Dyes_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Dyes }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Dyes }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Dyes }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Dyes }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Dyes }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Dyes }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Dyes }
+	}
+	if = { limit = {global_var:Egg_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Egg }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Egg }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Egg }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Egg }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Egg }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Egg }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Egg }
+	}
+	if = { limit = {global_var:Emerald_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Emerald_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Emerald_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Emerald_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Emerald_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Emerald_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Emerald_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Emerald_Dust }
+	}
+	if = { limit = {global_var:Emerald_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Emerald_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Emerald_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Emerald_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Emerald_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Emerald_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Emerald_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Emerald_Large }
+	}
+	if = { limit = {global_var:Feathers_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Feathers }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Feathers }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Feathers }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Feathers }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Feathers }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Feathers }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Feathers }
+	}
+	if = { limit = {global_var:Flower_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_1 }
+	}
+	if = { limit = {global_var:Flower_Type_1_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_1_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_1_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_1_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_1_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_1_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_1_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_1_M }
+	}
+	if = { limit = {global_var:Flower_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_2 }
+	}
+	if = { limit = {global_var:Flower_Type_2_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_2_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_2_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_2_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_2_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_2_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_2_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_2_M }
+	}
+	if = { limit = {global_var:Flower_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_3 }
+	}
+	if = { limit = {global_var:Flower_Type_3_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_3_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_3_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_3_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_3_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_3_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_3_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_3_M }
+	}
+	if = { limit = {global_var:Flower_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_4 }
+	}
+	if = { limit = {global_var:Flower_Type_4_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_4_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_4_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_4_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_4_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_4_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_4_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_4_M }
+	}
+	if = { limit = {global_var:Flower_Type_5_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_5 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_5 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_5 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_5 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_5 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_5 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_5 }
+	}
+	if = { limit = {global_var:Flower_Type_5_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_5_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_5_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_5_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_5_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_5_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_5_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_5_M }
+	}
+	if = { limit = {global_var:Flower_Type_6_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_6 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_6 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_6 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_6 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_6 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_6 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_6 }
+	}
+	if = { limit = {global_var:Flower_Type_6_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Flower_Type_6_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Flower_Type_6_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Flower_Type_6_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Flower_Type_6_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Flower_Type_6_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Flower_Type_6_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Flower_Type_6_M }
+	}
+	if = { limit = {global_var:Garlic_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Garlic }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Garlic }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Garlic }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Garlic }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Garlic }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Garlic }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Garlic }
+	}
+	if = { limit = {global_var:Garlic_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Garlic_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Garlic_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Garlic_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Garlic_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Garlic_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Garlic_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Garlic_M }
+	}
+	if = { limit = {global_var:Grape_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Grape }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Grape }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Grape }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Grape }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Grape }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Grape }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Grape }
+	}
+	if = { limit = {global_var:Heart_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Heart }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Heart }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Heart }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Heart }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Heart }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Heart }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Heart }
+	}
+	if = { limit = {global_var:Herb_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Herb_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Herb_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Herb_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Herb_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Herb_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Herb_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Herb_Type_1 }
+	}
+	if = { limit = {global_var:Herb_Type_1_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Herb_Type_1_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Herb_Type_1_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Herb_Type_1_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Herb_Type_1_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Herb_Type_1_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Herb_Type_1_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Herb_Type_1_M }
+	}
+	if = { limit = {global_var:Herb_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Herb_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Herb_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Herb_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Herb_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Herb_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Herb_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Herb_Type_2 }
+	}
+	if = { limit = {global_var:Herb_Type_2_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Herb_Type_2_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Herb_Type_2_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Herb_Type_2_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Herb_Type_2_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Herb_Type_2_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Herb_Type_2_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Herb_Type_2_M }
+	}
+	if = { limit = {global_var:Herb_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Herb_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Herb_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Herb_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Herb_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Herb_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Herb_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Herb_Type_3 }
+	}
+	if = { limit = {global_var:Herb_Type_3_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Herb_Type_3_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Herb_Type_3_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Herb_Type_3_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Herb_Type_3_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Herb_Type_3_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Herb_Type_3_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Herb_Type_3_M }
+	}
+	if = { limit = {global_var:Human_Bone_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Bone }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Bone }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Bone }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Bone }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Bone }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Bone }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Bone }
+	}
+	if = { limit = {global_var:Human_Bone_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Bone_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Bone_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Bone_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Bone_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Bone_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Bone_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Bone_Dust }
+	}
+	if = { limit = {global_var:Human_Eye_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Eye }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Eye }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Eye }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Eye }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Eye }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Eye }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Eye }
+	}
+	if = { limit = {global_var:Human_Eye_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Eye_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Eye_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Eye_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Eye_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Eye_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Eye_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Eye_M }
+	}
+	if = { limit = {global_var:Human_Skull_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Skull }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Skull }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Skull }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Skull }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Skull }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Skull }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Skull }
+	}
+	if = { limit = {global_var:Human_Skull_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Skull_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Skull_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Skull_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Skull_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Skull_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Skull_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Skull_Dust }
+	}
+	if = { limit = {global_var:Human_Tooth_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Tooth }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Tooth }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Tooth }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Tooth }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Tooth }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Tooth }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Tooth }
+	}
+	if = { limit = {global_var:Human_Tooth_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Human_Tooth_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Human_Tooth_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Human_Tooth_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Human_Tooth_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Human_Tooth_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Human_Tooth_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Human_Tooth_Dust }
+	}
+	if = { limit = {global_var:Icons_Layer_Effect_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Icons_Layer_Effect }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Icons_Layer_Effect }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Icons_Layer_Effect }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Icons_Layer_Effect }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Icons_Layer_Effect }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Icons_Layer_Effect }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Icons_Layer_Effect }
+	}
+	if = { limit = {global_var:Icons_Layer_Effect_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Icons_Layer_Effect_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Icons_Layer_Effect_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Icons_Layer_Effect_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Icons_Layer_Effect_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Icons_Layer_Effect_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Icons_Layer_Effect_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Icons_Layer_Effect_M }
+	}
+	if = { limit = {global_var:Ink_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Ink }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Ink }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Ink }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Ink }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Ink }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Ink }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Ink }
+	}
+	if = { limit = {global_var:Jasper_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Jasper }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Jasper }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Jasper }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Jasper }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Jasper }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Jasper }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Jasper }
+	}
+	if = { limit = {global_var:Journal_Bloody_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Journal_Bloody }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Journal_Bloody }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Journal_Bloody }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Journal_Bloody }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Journal_Bloody }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Journal_Bloody }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Journal_Bloody }
+	}
+	if = { limit = {global_var:Journal_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Journal_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Journal_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Journal_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Journal_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Journal_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Journal_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Journal_Type_1 }
+	}
+	if = { limit = {global_var:Journal_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Journal_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Journal_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Journal_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Journal_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Journal_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Journal_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Journal_Type_2 }
+	}
+	if = { limit = {global_var:Leaf_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Leaf }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Leaf }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Leaf }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Leaf }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Leaf }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Leaf }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Leaf }
+	}
+	if = { limit = {global_var:Leaf_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Leaf_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Leaf_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Leaf_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Leaf_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Leaf_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Leaf_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Leaf_M }
+	}
+	if = { limit = {global_var:Liqueur_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Liqueur }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Liqueur }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Liqueur }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Liqueur }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Liqueur }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Liqueur }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Liqueur }
+	}
+	if = { limit = {global_var:Liquor_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Liquor }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Liquor }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Liquor }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Liquor }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Liquor }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Liquor }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Liquor }
+	}
+	if = { limit = {global_var:Liver_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Liver }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Liver }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Liver }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Liver }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Liver }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Liver }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Liver }
+	}
+	if = { limit = {global_var:Livestock_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Livestock }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Livestock }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Livestock }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Livestock }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Livestock }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Livestock }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Livestock }
+	}
+	if = { limit = {global_var:Metal_1_Ore_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Metal_1_Ore }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Metal_1_Ore }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Metal_1_Ore }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Metal_1_Ore }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Metal_1_Ore }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Metal_1_Ore }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Metal_1_Ore }
+	}
+	if = { limit = {global_var:Metal_2_Ore_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Metal_2_Ore }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Metal_2_Ore }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Metal_2_Ore }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Metal_2_Ore }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Metal_2_Ore }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Metal_2_Ore }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Metal_2_Ore }
+	}
+	if = { limit = {global_var:Metal_3_Ore_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Metal_3_Ore }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Metal_3_Ore }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Metal_3_Ore }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Metal_3_Ore }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Metal_3_Ore }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Metal_3_Ore }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Metal_3_Ore }
+	}
+	if = { limit = {global_var:Metal_4_Ore_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Metal_4_Ore }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Metal_4_Ore }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Metal_4_Ore }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Metal_4_Ore }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Metal_4_Ore }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Metal_4_Ore }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Metal_4_Ore }
+	}
+	if = { limit = {global_var:Metal_5_Ore_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Metal_5_Ore }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Metal_5_Ore }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Metal_5_Ore }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Metal_5_Ore }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Metal_5_Ore }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Metal_5_Ore }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Metal_5_Ore }
+	}
+	if = { limit = {global_var:Milk_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Milk }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Milk }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Milk }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Milk }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Milk }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Milk }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Milk }
+	}
+	if = { limit = {global_var:Monster_Claw_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Monster_Claw }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Monster_Claw }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Monster_Claw }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Monster_Claw }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Monster_Claw }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Monster_Claw }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Monster_Claw }
+	}
+	if = { limit = {global_var:Monster_Claw_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Monster_Claw_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Monster_Claw_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Monster_Claw_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Monster_Claw_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Monster_Claw_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Monster_Claw_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Monster_Claw_M }
+	}
+	if = { limit = {global_var:Monster_Eye_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Monster_Eye }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Monster_Eye }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Monster_Eye }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Monster_Eye }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Monster_Eye }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Monster_Eye }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Monster_Eye }
+	}
+	if = { limit = {global_var:Monster_Eye_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Monster_Eye_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Monster_Eye_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Monster_Eye_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Monster_Eye_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Monster_Eye_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Monster_Eye_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Monster_Eye_M }
+	}
+	if = { limit = {global_var:Monster_Feather_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Monster_Feather }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Monster_Feather }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Monster_Feather }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Monster_Feather }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Monster_Feather }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Monster_Feather }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Monster_Feather }
+	}
+	if = { limit = {global_var:Monster_Tooth_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Monster_Tooth }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Monster_Tooth }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Monster_Tooth }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Monster_Tooth }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Monster_Tooth }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Monster_Tooth }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Monster_Tooth }
+	}
+	if = { limit = {global_var:Monster_Tooth_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Monster_Tooth_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Monster_Tooth_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Monster_Tooth_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Monster_Tooth_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Monster_Tooth_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Monster_Tooth_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Monster_Tooth_M }
+	}
+	if = { limit = {global_var:Mortar_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mortar }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mortar }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mortar }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mortar }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mortar }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mortar }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mortar }
+	}
+	if = { limit = {global_var:Mushroom_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_1 }
+	}
+	if = { limit = {global_var:Mushroom_Type_1_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_1_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_1_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_1_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_1_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_1_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_1_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_1_M }
+	}
+	if = { limit = {global_var:Mushroom_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_2 }
+	}
+	if = { limit = {global_var:Mushroom_Type_2_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_2_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_2_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_2_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_2_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_2_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_2_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_2_M }
+	}
+	if = { limit = {global_var:Mushroom_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_3 }
+	}
+	if = { limit = {global_var:Mushroom_Type_3_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_3_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_3_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_3_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_3_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_3_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_3_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_3_M }
+	}
+	if = { limit = {global_var:Mushroom_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_4 }
+	}
+	if = { limit = {global_var:Mushroom_Type_4_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_4_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_4_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_4_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_4_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_4_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_4_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_4_M }
+	}
+	if = { limit = {global_var:Mushroom_Type_5_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_5 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_5 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_5 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_5 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_5 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_5 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_5 }
+	}
+	if = { limit = {global_var:Mushroom_Type_5_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_5_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_5_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_5_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_5_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_5_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_5_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_5_M }
+	}
+	if = { limit = {global_var:Mushroom_Type_6_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_6 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_6 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_6 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_6 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_6 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_6 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_6 }
+	}
+	if = { limit = {global_var:Mushroom_Type_6_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Mushroom_Type_6_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Mushroom_Type_6_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Mushroom_Type_6_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Mushroom_Type_6_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Mushroom_Type_6_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Mushroom_Type_6_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Mushroom_Type_6_M }
+	}
+	if = { limit = {global_var:Oil_Large_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Oil_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Oil_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Oil_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Oil_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Oil_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Oil_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Oil_Large_Type_1 }
+	}
+	if = { limit = {global_var:Oil_Large_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Oil_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Oil_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Oil_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Oil_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Oil_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Oil_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Oil_Large_Type_2 }
+	}
+	if = { limit = {global_var:Oil_Large_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Oil_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Oil_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Oil_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Oil_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Oil_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Oil_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Oil_Large_Type_3 }
+	}
+	if = { limit = {global_var:Oil_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Oil_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Oil_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Oil_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Oil_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Oil_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Oil_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Oil_Type_1 }
+	}
+	if = { limit = {global_var:Oil_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Oil_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Oil_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Oil_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Oil_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Oil_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Oil_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Oil_Type_2 }
+	}
+	if = { limit = {global_var:Oil_Type_33_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Oil_Type_33 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Oil_Type_33 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Oil_Type_33 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Oil_Type_33 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Oil_Type_33 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Oil_Type_33 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Oil_Type_33 }
+	}
+	if = { limit = {global_var:Orange_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Orange }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Orange }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Orange }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Orange }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Orange }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Orange }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Orange }
+	}
+	if = { limit = {global_var:Pear_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pear }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pear }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pear }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pear }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pear }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pear }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pear }
+	}
+	if = { limit = {global_var:Pearl_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pearl }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pearl }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pearl }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pearl }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pearl }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pearl }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pearl }
+	}
+	if = { limit = {global_var:Pearl_Black_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pearl_Black }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pearl_Black }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pearl_Black }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pearl_Black }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pearl_Black }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pearl_Black }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pearl_Black }
+	}
+	if = { limit = {global_var:Pearl_Black_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pearl_Black_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pearl_Black_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pearl_Black_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pearl_Black_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pearl_Black_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pearl_Black_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pearl_Black_Dust }
+	}
+	if = { limit = {global_var:Pearl_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pearl_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pearl_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pearl_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pearl_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pearl_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pearl_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pearl_Dust }
+	}
+	if = { limit = {global_var:Pen_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pen }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pen }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pen }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pen }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pen }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pen }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pen }
+	}
+	if = { limit = {global_var:Polar_Bear_Skin_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Polar_Bear_Skin }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Polar_Bear_Skin }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Polar_Bear_Skin }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Polar_Bear_Skin }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Polar_Bear_Skin }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Polar_Bear_Skin }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Polar_Bear_Skin }
+	}
+	if = { limit = {global_var:Pot_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pot }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pot }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pot }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pot }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pot }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pot }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pot }
+	}
+	if = { limit = {global_var:Potion_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion }
+	}
+	if = { limit = {global_var:Potion_Cure_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Cure_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Cure_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Cure_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Cure_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Cure_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Cure_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Cure_Large }
+	}
+	if = { limit = {global_var:Potion_Cure_Medium_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Cure_Medium }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Cure_Medium }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Cure_Medium }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Cure_Medium }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Cure_Medium }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Cure_Medium }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Cure_Medium }
+	}
+	if = { limit = {global_var:Potion_Cure_Small_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Cure_Small }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Cure_Small }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Cure_Small }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Cure_Small }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Cure_Small }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Cure_Small }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Cure_Small }
+	}
+	if = { limit = {global_var:Potion_Empty_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Empty }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Empty }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Empty }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Empty }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Empty }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Empty }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Empty }
+	}
+	if = { limit = {global_var:Potion_Health_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Health_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Health_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Health_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Health_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Health_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Health_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Health_Large }
+	}
+	if = { limit = {global_var:Potion_Health_Medium_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Health_Medium }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Health_Medium }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Health_Medium }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Health_Medium }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Health_Medium }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Health_Medium }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Health_Medium }
+	}
+	if = { limit = {global_var:Potion_Health_Small_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Health_Small }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Health_Small }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Health_Small }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Health_Small }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Health_Small }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Health_Small }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Health_Small }
+	}
+	if = { limit = {global_var:Potion_Mana_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Mana_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Mana_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Mana_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Mana_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Mana_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Mana_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Mana_Large }
+	}
+	if = { limit = {global_var:Potion_Mana_Medium_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Mana_Medium }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Mana_Medium }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Mana_Medium }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Mana_Medium }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Mana_Medium }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Mana_Medium }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Mana_Medium }
+	}
+	if = { limit = {global_var:Potion_Mana_Small_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Mana_Small }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Mana_Small }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Mana_Small }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Mana_Small }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Mana_Small }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Mana_Small }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Mana_Small }
+	}
+	if = { limit = {global_var:Potion_Misc_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Misc_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Misc_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Misc_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Misc_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Misc_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Misc_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Misc_Type_1 }
+	}
+	if = { limit = {global_var:Potion_Misc_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Misc_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Misc_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Misc_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Misc_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Misc_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Misc_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Misc_Type_2 }
+	}
+	if = { limit = {global_var:Potion_Misc_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Misc_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Misc_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Misc_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Misc_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Misc_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Misc_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Misc_Type_3 }
+	}
+	if = { limit = {global_var:Potion_Misc_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Misc_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Misc_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Misc_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Misc_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Misc_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Misc_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Misc_Type_4 }
+	}
+	if = { limit = {global_var:Potion_Misc_Type_5_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Misc_Type_5 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Misc_Type_5 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Misc_Type_5 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Misc_Type_5 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Misc_Type_5 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Misc_Type_5 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Misc_Type_5 }
+	}
+	if = { limit = {global_var:Potion_Poison_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Poison_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Poison_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Poison_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Poison_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Poison_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Poison_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Poison_Large }
+	}
+	if = { limit = {global_var:Potion_Poison_Medium_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Poison_Medium }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Poison_Medium }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Poison_Medium }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Poison_Medium }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Poison_Medium }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Poison_Medium }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Poison_Medium }
+	}
+	if = { limit = {global_var:Potion_Poison_Small_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Poison_Small }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Poison_Small }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Poison_Small }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Poison_Small }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Poison_Small }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Poison_Small }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Poison_Small }
+	}
+	if = { limit = {global_var:Potion_Regeneration_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Regeneration_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Regeneration_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Regeneration_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Regeneration_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Regeneration_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Regeneration_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Regeneration_Large }
+	}
+	if = { limit = {global_var:Potion_Regeneration_Medium_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Regeneration_Medium }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Regeneration_Medium }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Regeneration_Medium }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Regeneration_Medium }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Regeneration_Medium }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Regeneration_Medium }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Regeneration_Medium }
+	}
+	if = { limit = {global_var:Potion_Regeneration_Small_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Potion_Regeneration_Small }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Potion_Regeneration_Small }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Potion_Regeneration_Small }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Potion_Regeneration_Small }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Potion_Regeneration_Small }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Potion_Regeneration_Small }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Potion_Regeneration_Small }
+	}
+	if = { limit = {global_var:Pouch_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Pouch }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Pouch }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Pouch }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Pouch }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Pouch }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Pouch }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Pouch }
+	}
+	if = { limit = {global_var:Radish_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Radish }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Radish }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Radish }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Radish }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Radish }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Radish }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Radish }
+	}
+	if = { limit = {global_var:Recipe_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Recipe_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Recipe_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Recipe_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Recipe_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Recipe_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Recipe_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Recipe_Type_1 }
+	}
+	if = { limit = {global_var:Red_Moss_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Red_Moss }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Red_Moss }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Red_Moss }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Red_Moss }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Red_Moss }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Red_Moss }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Red_Moss }
+	}
+	if = { limit = {global_var:Red_Moss_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Red_Moss_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Red_Moss_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Red_Moss_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Red_Moss_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Red_Moss_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Red_Moss_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Red_Moss_M }
+	}
+	if = { limit = {global_var:Root_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_1 }
+	}
+	if = { limit = {global_var:Root_Type_1_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_1_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_1_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_1_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_1_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_1_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_1_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_1_M }
+	}
+	if = { limit = {global_var:Root_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_2 }
+	}
+	if = { limit = {global_var:Root_Type_2_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_2_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_2_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_2_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_2_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_2_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_2_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_2_M }
+	}
+	if = { limit = {global_var:Root_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_3 }
+	}
+	if = { limit = {global_var:Root_Type_3_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_3_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_3_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_3_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_3_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_3_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_3_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_3_M }
+	}
+	if = { limit = {global_var:Root_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_4 }
+	}
+	if = { limit = {global_var:Root_Type_4_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Root_Type_4_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Root_Type_4_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Root_Type_4_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Root_Type_4_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Root_Type_4_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Root_Type_4_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Root_Type_4_M }
+	}
+	if = { limit = {global_var:Ruby_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Ruby_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Ruby_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Ruby_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Ruby_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Ruby_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Ruby_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Ruby_Dust }
+	}
+	if = { limit = {global_var:Ruby_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Ruby_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Ruby_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Ruby_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Ruby_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Ruby_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Ruby_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Ruby_Large }
+	}
+	if = { limit = {global_var:Rune_Large_Blank_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Large_Blank }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Large_Blank }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Large_Blank }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Large_Blank }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Large_Blank }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Large_Blank }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Large_Blank }
+	}
+	if = { limit = {global_var:Rune_Large_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Large_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Large_Type_1 }
+	}
+	if = { limit = {global_var:Rune_Large_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Large_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Large_Type_2 }
+	}
+	if = { limit = {global_var:Rune_Large_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Large_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Large_Type_3 }
+	}
+	if = { limit = {global_var:Rune_Large_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Large_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Large_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Large_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Large_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Large_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Large_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Large_Type_4 }
+	}
+	if = { limit = {global_var:Rune_Small_Blank_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Small_Blank }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Small_Blank }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Small_Blank }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Small_Blank }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Small_Blank }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Small_Blank }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Small_Blank }
+	}
+	if = { limit = {global_var:Rune_Small_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Small_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Small_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Small_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Small_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Small_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Small_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Small_Type_1 }
+	}
+	if = { limit = {global_var:Rune_Small_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Small_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Small_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Small_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Small_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Small_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Small_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Small_Type_2 }
+	}
+	if = { limit = {global_var:Rune_Small_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Small_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Small_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Small_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Small_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Small_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Small_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Small_Type_3 }
+	}
+	if = { limit = {global_var:Rune_Small_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Rune_Small_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Rune_Small_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Rune_Small_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Rune_Small_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Rune_Small_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Rune_Small_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Rune_Small_Type_4 }
+	}
+	if = { limit = {global_var:Sack_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Sack }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Sack }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Sack }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Sack }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Sack }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Sack }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Sack }
+	}
+	if = { limit = {global_var:Sack_Bloody_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Sack_Bloody }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Sack_Bloody }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Sack_Bloody }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Sack_Bloody }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Sack_Bloody }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Sack_Bloody }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Sack_Bloody }
+	}
+	if = { limit = {global_var:Sapphire_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Sapphire_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Sapphire_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Sapphire_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Sapphire_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Sapphire_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Sapphire_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Sapphire_Dust }
+	}
+	if = { limit = {global_var:Sapphire_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Sapphire_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Sapphire_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Sapphire_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Sapphire_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Sapphire_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Sapphire_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Sapphire_Large }
+	}
+	if = { limit = {global_var:Scroll_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Scroll_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Scroll_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Scroll_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Scroll_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Scroll_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Scroll_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Scroll_Type_1 }
+	}
+	if = { limit = {global_var:Scroll_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Scroll_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Scroll_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Scroll_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Scroll_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Scroll_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Scroll_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Scroll_Type_2 }
+	}
+	if = { limit = {global_var:Scroll_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Scroll_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Scroll_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Scroll_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Scroll_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Scroll_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Scroll_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Scroll_Type_3 }
+	}
+	if = { limit = {global_var:Scroll_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Scroll_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Scroll_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Scroll_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Scroll_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Scroll_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Scroll_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Scroll_Type_4 }
+	}
+	if = { limit = {global_var:Scroll_Type_5_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Scroll_Type_5 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Scroll_Type_5 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Scroll_Type_5 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Scroll_Type_5 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Scroll_Type_5 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Scroll_Type_5 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Scroll_Type_5 }
+	}
+	if = { limit = {global_var:Scroll_Type_6_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Scroll_Type_6 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Scroll_Type_6 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Scroll_Type_6 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Scroll_Type_6 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Scroll_Type_6 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Scroll_Type_6 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Scroll_Type_6 }
+	}
+	if = { limit = {global_var:Scroll_Type_7_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Scroll_Type_7 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Scroll_Type_7 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Scroll_Type_7 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Scroll_Type_7 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Scroll_Type_7 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Scroll_Type_7 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Scroll_Type_7 }
+	}
+	if = { limit = {global_var:Sea_Shell_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Sea_Shell }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Sea_Shell }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Sea_Shell }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Sea_Shell }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Sea_Shell }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Sea_Shell }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Sea_Shell }
+	}
+	if = { limit = {global_var:Sea_Shell_M_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Sea_Shell_M }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Sea_Shell_M }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Sea_Shell_M }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Sea_Shell_M }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Sea_Shell_M }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Sea_Shell_M }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Sea_Shell_M }
+	}
+	if = { limit = {global_var:Silkworm_Cocoon_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Silkworm_Cocoon }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Silkworm_Cocoon }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Silkworm_Cocoon }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Silkworm_Cocoon }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Silkworm_Cocoon }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Silkworm_Cocoon }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Silkworm_Cocoon }
+	}
+	if = { limit = {global_var:Silver_Coin_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Silver_Coin }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Silver_Coin }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Silver_Coin }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Silver_Coin }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Silver_Coin }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Silver_Coin }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Silver_Coin }
+	}
+	if = { limit = {global_var:Spellbook_Blank_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spellbook_Blank }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spellbook_Blank }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spellbook_Blank }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spellbook_Blank }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spellbook_Blank }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spellbook_Blank }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spellbook_Blank }
+	}
+	if = { limit = {global_var:Spellbook_Type_1_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spellbook_Type_1 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spellbook_Type_1 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spellbook_Type_1 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spellbook_Type_1 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spellbook_Type_1 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spellbook_Type_1 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spellbook_Type_1 }
+	}
+	if = { limit = {global_var:Spellbook_Type_2_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spellbook_Type_2 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spellbook_Type_2 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spellbook_Type_2 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spellbook_Type_2 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spellbook_Type_2 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spellbook_Type_2 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spellbook_Type_2 }
+	}
+	if = { limit = {global_var:Spellbook_Type_3_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spellbook_Type_3 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spellbook_Type_3 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spellbook_Type_3 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spellbook_Type_3 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spellbook_Type_3 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spellbook_Type_3 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spellbook_Type_3 }
+	}
+	if = { limit = {global_var:Spellbook_Type_4_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spellbook_Type_4 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spellbook_Type_4 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spellbook_Type_4 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spellbook_Type_4 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spellbook_Type_4 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spellbook_Type_4 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spellbook_Type_4 }
+	}
+	if = { limit = {global_var:Spellbook_Type_5_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spellbook_Type_5 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spellbook_Type_5 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spellbook_Type_5 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spellbook_Type_5 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spellbook_Type_5 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spellbook_Type_5 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spellbook_Type_5 }
+	}
+	if = { limit = {global_var:Spellbook_Type_6_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spellbook_Type_6 }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spellbook_Type_6 }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spellbook_Type_6 }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spellbook_Type_6 }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spellbook_Type_6 }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spellbook_Type_6 }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spellbook_Type_6 }
+	}
+	if = { limit = {global_var:Spices_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Spices }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Spices }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Spices }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Spices }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Spices }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Spices }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Spices }
+	}
+	if = { limit = {global_var:Sting_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Sting }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Sting }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Sting }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Sting }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Sting }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Sting }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Sting }
+	}
+	if = { limit = {global_var:Tongue_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Tongue }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Tongue }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Tongue }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Tongue }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Tongue }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Tongue }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Tongue }
+	}
+	if = { limit = {global_var:Tourmaline_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Tourmaline_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Tourmaline_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Tourmaline_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Tourmaline_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Tourmaline_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Tourmaline_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Tourmaline_Dust }
+	}
+	if = { limit = {global_var:Tourmaline_Large_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Tourmaline_Large }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Tourmaline_Large }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Tourmaline_Large }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Tourmaline_Large }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Tourmaline_Large }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Tourmaline_Large }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Tourmaline_Large }
+	}
+	if = { limit = {global_var:Turquoise_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Turquoise }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Turquoise }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Turquoise }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Turquoise }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Turquoise }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Turquoise }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Turquoise }
+	}
+	if = { limit = {global_var:Turquoise_Dust_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Turquoise_Dust }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Turquoise_Dust }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Turquoise_Dust }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Turquoise_Dust }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Turquoise_Dust }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Turquoise_Dust }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Turquoise_Dust }
+	}
+	if = { limit = {global_var:Water_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Water }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Water }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Water }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Water }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Water }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Water }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Water }
+	}
+	if = { limit = {global_var:Wine_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Wine }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Wine }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Wine }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Wine }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Wine }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Wine }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Wine }
+	}
+	if = { limit = {global_var:Wolf_Skin_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Wolf_Skin }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Wolf_Skin }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Wolf_Skin }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Wolf_Skin }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Wolf_Skin }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Wolf_Skin }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Wolf_Skin }
+	}
+	if = { limit = {global_var:Wooden_Hammer_Qty = 0 }
+	remove_list_global_variable = { name = pshop_resources target = flag:Wooden_Hammer }
+	remove_list_global_variable = { name = pshop_animal_resources target = flag:Wooden_Hammer }
+	remove_list_global_variable = { name = pshop_plant_resources target = flag:Wooden_Hammer }
+	remove_list_global_variable = { name = pshop_tools_resources target = flag:Wooden_Hammer }
+	remove_list_global_variable = { name = pshop_special_resources target = flag:Wooden_Hammer }
+	remove_list_global_variable = { name = pshop_mineral_resources target = flag:Wooden_Hammer }
+	remove_list_global_variable = { name = pshop_potion_resources target = flag:Wooden_Hammer }
+	}
+
+
+}
+
+#if = { limit = { global_var:Amethyst_Large_Qty = 0 } remove_list_global_variable = { name = pshop_resources target = flag:Amethyst_Large } }

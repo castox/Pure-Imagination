@@ -1,0 +1,125 @@
+
+window = {
+	name = "horse"
+	scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	movable = yes
+	icon = {
+		parentanchor = "center"
+		#texture = "gfx/tavern.png"
+	}
+	#PLayer Right ide
+
+		horse_stance = {
+			#visible = noS
+
+			parentanchor = hcenter|bottom
+			position = { 0 -100 }
+			datacontext = "[GetPlayer]"
+
+			state = {
+				trigger_when = "[GetScriptedGui('is_trot').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+				name = a
+				next = b
+				on_start = "[GetScriptedGui('trot_f').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+				using = Animation_Curve_Default
+				duration = 0.3
+		
+			}
+		
+			state = {
+				name = b
+				next = c
+				on_start = "[GetScriptedGui('trot_r').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+				using = Animation_Curve_Default
+				duration = 0.3
+		
+			}
+		
+			state = {
+				name = c
+				next = d
+				using = Animation_Curve_Default
+				duration = 0.3
+				on_start = "[GetScriptedGui('trot_l').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+			}
+		
+			state = {
+				name = d
+				next = a
+				on_start = "[GetScriptedGui('trot_f').Execute(GuiScope.SetRoot(Scope.GetCharacter.MakeScope).End)]"
+				using = Animation_Curve_Default
+				duration = 0.3
+		
+			}
+		
+			state = {
+				name = stop_trotting_now
+				
+				on_start = "[PdxGuiWidget.InterruptAnimation('a')]"
+				on_start = "[PdxGuiWidget.InterruptAnimation('b')]"
+				on_start = "[PdxGuiWidget.InterruptAnimation('c')]"
+				on_start = "[PdxGuiWidget.InterruptAnimation('d')]"
+				trigger_when = "[GetScriptedGui('is_not_trot').IsShown( GuiScope.SetRoot( Scope.GetCharacter.MakeScope ).End )]"
+			}   
+
+		}
+
+		#	on_finish = "[GetScriptedGui('j_end').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+
+#
+		button_standard = {
+			size = { 0 0 }
+			onclick = "[GetScriptedGui('is_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			shortcut = "character_window"
+		}
+
+	state = {
+		name = haltall
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+		on_finish = "[GetScriptedGui('is_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	state = {
+		name = trota1
+		next = trota2
+		trigger_on_create = yes
+		duration = 0.1
+		on_start = "[GetScriptedGui('trot_l').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = trota2
+		next = trota3
+		duration = 0.1
+		on_start = "[GetScriptedGui('exit_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = trota3
+		next = trota4
+		duration = 0.1
+		on_start = "[GetScriptedGui('trot_r').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	state = {
+		name = trota4
+		next = trota1
+		duration = 0.1
+		on_start = "[GetScriptedGui('exit_trot').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('exit_joust').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets horse')]"
+    }
+
+
+}

@@ -1,0 +1,42 @@
+﻿cac_county_modifier_advisor_1_land_administration = {
+	icon = letter_positive
+	monthly_county_control_change_add = 0.5
+	development_growth = 0.75
+	development_growth_factor = 0.25
+	# county_opinion_add = 1
+}
+cac_county_modifier_advisor_2_land_administration = {
+	icon = letter_positive
+	monthly_county_control_change_add = 0.5
+	development_growth = 0.75
+	development_growth_factor = 0.25
+	# county_opinion_add = 1
+}
+cac_county_modifier_advisor_3_land_administration = {
+	icon = letter_positive
+	monthly_county_control_change_add = 0.5
+	development_growth = 0.75
+	development_growth_factor = 0.25
+	# county_opinion_add = 1
+}
+cac_county_modifier_advisor_4_land_administration = {
+	icon = letter_positive
+	monthly_county_control_change_add = 0.5
+	development_growth = 0.75
+	development_growth_factor = 0.25
+	# county_opinion_add = 1
+}
+cac_county_modifier_advisor_5_land_administration = {
+	icon = letter_positive
+	monthly_county_control_change_add = 0.5
+	development_growth = 0.75
+	development_growth_factor = 0.25
+	# county_opinion_add = 1
+}
+cac_county_modifier_advisor_6_land_administration = {
+	icon = letter_positive
+	monthly_county_control_change_add = 0.5
+	development_growth = 0.75
+	development_growth_factor = 0.25
+	# county_opinion_add = 1
+}

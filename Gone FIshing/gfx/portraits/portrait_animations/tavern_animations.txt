@@ -1,0 +1,307 @@
+﻿############################################################################################################################################################
+############################################################################################################################################################
+##CCShop
+CCdrink = {
+	male = {
+		default = { head = "waroverview_attacker" torso = "drinking_body" }
+
+		drink_c = {
+			animation = { head = "waroverview_attacker" torso = "drinking_body" }
+
+			weight = {
+				base = 10
+
+				modifier = {
+					add = 100
+					OR = {
+						var:drinking = 0
+						var:drinking = 2
+					}
+					
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = mug_prop
+				animations = waroverview_attacker_decal
+			}
+		}
+		drink_x = {
+			animation = { head = "waroverview_attacker" torso = "drinking_body2" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 150
+					has_character_flag = drinking_now
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = mug_prop
+				animations = waroverview_attacker_decal
+			}
+		}
+		drink_y = {
+			animation = { head = "emotion_pain_entry" torso = "emotion_drunk_entry" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 220
+					has_character_flag = stumble
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+		drink_z = {
+			animation = { head = "waroverview_attacker" torso = "drinking_body3" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 300
+					has_character_flag = drinking_refill
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = mug_prop
+				animations = waroverview_attacker_decal
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCfish = {
+	male = {
+		default = { head = "emotion_happy_entry" torso = "idlefishing_body" }
+
+		cast_b = {
+			animation = { head = "emotion_happy_entry" torso = "idlefishing_body" }
+
+			weight = {
+				base = 10
+				modifier = {
+					add = 10
+					has_character_flag = fishing_idle
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+
+		cast_c = {
+			animation = { head = "emotion_happy_entry" torso = "cast_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 160
+					has_character_flag = casting
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+		cast_9 = {
+			animation = { head = "emotion_happy_entry" torso = "reeling_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 180
+					has_character_flag = fish_on_line
+				}
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+		cast_10 = {
+			animation = { head = "emotion_happy_entry" torso = "reeling_body2" }
+
+			weight = {
+				base = 0
+
+			}
+
+			portrait_modifier = {
+				animations_props = pole_prop
+				animations = emotion_happy_decal
+			}
+		}
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCcheer = {
+	male = {
+		default = { head = "emotion_happy_entry" torso = "cheer_body" }
+
+		cheer_C = {
+			animation = { head = "emotion_happy_entry" torso = "cheer_body" }
+
+			weight = {
+				base = 100
+
+				modifier = {
+					add = 120
+					has_character_flag = cheer
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCdrunk = {
+	male = {
+		animation = { head = "emotion_pain_entry" torso = "emotion_drunk_entry" }
+
+		drunk_C = {
+			animation = { head = "emotion_pain_entry" torso = "emotion_drunk_entry" }
+
+			weight = {
+				base = 100
+
+				modifier = {
+					add = 120
+					has_character_flag = drunkard
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+CCkneel = {
+	male = {
+		default = { head = "waroverview_attacker" torso = "kneeling_body" }
+
+		kneeling_C = {
+			animation = { head = "waroverview_attacker" torso = "kneeling_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					has_character_flag = kneeling
+				}
+			}
+
+			portrait_modifier = {
+				animations = waroverview_attacker_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+Writing = {
+	male = {
+		default = { head = "emotion_happy_entry" torso = "writing_body" }
+
+		kneeling_C = {
+			animation = { head = "emotion_happy_entry" torso = "writing_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					has_character_flag = writing
+				}
+			}
+
+			portrait_modifier = {
+				animations = emotion_happy_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}
+Throne = {
+	male = {
+		default = { head = "waroverview_attacker" torso = "throne_body" }
+
+		kneeling_C = {
+			animation = { head = "waroverview_attacker" torso = "throne_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					has_character_flag = throne
+				}
+			}
+
+			portrait_modifier = {
+				animations = waroverview_attacker_decal
+			}
+		}
+
+	}
+
+	boy = {
+		default = { head = "idle" torso = "idle" }
+	}
+	female = male
+	girl = boy
+}

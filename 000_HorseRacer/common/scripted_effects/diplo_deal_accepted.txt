@@ -1,0 +1,452 @@
+﻿diplo_deal_accepted = {
+
+
+	#vassals
+
+	every_in_global_list = {
+		variable = diplo_1_vassals
+		
+		limit = {
+			has_variable = m_indie
+		}
+		add_opinion = {
+			target = global_var:diplo_1
+			modifier = thinks_liege_incapable_opinion
+		}
+
+		add_opinion = {
+			target = global_var:diplo_2
+			modifier = granted_independence_opinion
+		}
+		
+		add_truce_both_ways = {
+			character = global_var:diplo_2
+			days = 3650
+			name = TRUCE_GRANT_INDEPENDENCE
+		}
+		add_truce_both_ways = {
+			character = global_var:diplo_1
+			days = 365
+			name = TRUCE_GRANT_INDEPENDENCE
+		}
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		becomes_independent = {
+			change = scope:change
+		}
+
+		resolve_title_and_vassal_change = scope:change
+								
+	}
+	every_in_global_list = {
+		variable = diplo_2_vassals
+		
+		limit = {
+			has_variable = m_indie
+		}
+		add_opinion = {
+			target = global_var:diplo_2
+			modifier = thinks_liege_incapable_opinion
+		}
+
+
+		add_opinion = {
+			target = global_var:diplo_1
+			modifier = granted_independence_opinion
+		}
+
+		add_truce_both_ways = {
+			character = global_var:diplo_2
+			days = 365
+			name = TRUCE_GRANT_INDEPENDENCE
+		}
+		add_truce_both_ways = {
+			character = global_var:diplo_1
+			days = 3650
+			name = TRUCE_GRANT_INDEPENDENCE
+		}
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		becomes_independent = {
+			change = scope:change
+		}
+
+		resolve_title_and_vassal_change = scope:change
+								
+	}
+
+	every_in_global_list = {
+		variable = diplo_g_vassals
+
+		create_title_and_vassal_change = {
+			type = returned
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		change_liege = {
+			liege = global_var:diplo_2
+			change = scope:change
+		}
+		
+		resolve_title_and_vassal_change = scope:change
+		add_opinion = {
+			target = global_var:diplo_1
+			modifier = thinks_liege_incapable_opinion
+		}
+
+	}
+	every_in_global_list = {
+		variable = diplo_t_vassals
+
+		create_title_and_vassal_change = {
+			type = returned
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		change_liege = {
+			liege = global_var:diplo_1
+			change = scope:change
+		}
+		
+		resolve_title_and_vassal_change = scope:change
+		add_opinion = {
+			target = global_var:diplo_2
+			modifier = thinks_liege_incapable_opinion
+		}
+
+	}
+	#Non_aggression
+
+
+	if = {
+		limit = {
+			global_var:diplo_nona = 5
+		}
+
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = diplo_non_aggression_5
+				target = global_var:diplo_1
+			}
+		}
+	}
+	if = {
+		limit = {
+			global_var:diplo_nona = 10
+		}
+
+		global_var:diplo_2 = { 
+			add_opinion = {
+				modifier = diplo_non_aggression_10
+				target = global_var:diplo_1
+			}
+		}
+	}
+	if = {
+		limit = {
+			global_var:diplo_nona = 20
+		}
+
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = diplo_non_aggression_20
+				target = global_var:diplo_1
+			}
+		}
+	}
+# Alliance
+	if = {
+		limit = {
+			
+			global_var:diplo_alliance  = 1 
+
+		}
+		global_var:diplo_1 = {
+			create_alliance = {
+				target = global_var:diplo_2
+				allied_through_owner = global_var:diplo_1
+				allied_through_target = global_var:diplo_2
+			}
+		}
+		global_var:diplo_2 = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+			add_opinion = {
+				modifier = perk_negotiated_alliance_opinion
+				target = global_var:diplo_1
+			}
+		}
+	}
+#
+#Swear Oath
+if = {
+	limit = {
+		global_var:diplo_soath  = 1 
+	}
+	global_var:diplo_1 = {
+		create_title_and_vassal_change = {
+			type = returned
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		change_liege = {
+			liege = global_var:diplo_2
+			change = scope:change
+		}
+		
+		resolve_title_and_vassal_change = scope:change
+	}
+}
+#
+# VAssalize
+if = {
+	limit = {
+		
+		global_var:diplo_vassalize   = 1 
+	}
+
+	global_var:diplo_2 = {
+		create_title_and_vassal_change = {
+			type = returned
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		change_liege = {
+			liege = global_var:diplo_1
+			change = scope:change
+		}
+		
+		resolve_title_and_vassal_change = scope:change
+	}
+}
+#
+#marriage
+	if = {
+		limit = {
+			AND = {
+				exists = global_var:diplo_1_offered
+				exists = global_var:diplo_2_offered
+			}
+		}
+		if = {
+			limit = {
+				global_var:diplo_matrilineal_1   = 1 
+			}
+
+			if = {
+				limit = {
+					OR = {
+						global_var:diplo_1_offered = {
+							is_adult = no
+						}
+						global_var:diplo_2_offered = {
+							is_adult = no
+						}
+					}
+				}
+				global_var:diplo_1_offered = {
+					create_betrothal_matrilineal = global_var:diplo_2_offered 
+				}
+	 
+			}
+			else = {
+				global_var:diplo_1_offered = {
+					marry_matrilineal = global_var:diplo_2_offered 
+				}
+			}
+			global_var:diplo_1 = {
+				create_alliance = {
+					target = global_var:diplo_2
+					allied_through_owner = global_var:diplo_1_offered
+					allied_through_target = global_var:diplo_2_offered
+				}
+			}							
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						global_var:diplo_1_offered = {
+							is_adult = no
+						}
+						global_var:diplo_2_offered = {
+							is_adult = no
+						}
+					}
+				}
+				global_var:diplo_1_offered = {
+					create_betrothal = global_var:diplo_2_offered 
+				}
+	 
+			}
+			else = {
+				global_var:diplo_1_offered = {
+					marry = global_var:diplo_2_offered
+				}
+			}
+			global_var:diplo_1 = {
+				create_alliance = {
+					target = global_var:diplo_2
+					allied_through_owner = global_var:diplo_1_offered
+					allied_through_target = global_var:diplo_2_offered
+				}
+			}							
+		}
+	}
+#
+#Titles
+	every_in_global_list = {
+			variable = taken_lands
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+
+		change_title_holder = {
+			holder = global_var:diplo_1
+			change = scope:title_change
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	every_in_global_list = {
+		variable = given_lands
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+
+		change_title_holder = {
+			holder = global_var:diplo_2
+			change = scope:title_change
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+#
+#gold
+	if = {
+		limit = {
+			global_var:gold_1_val > 1 
+		}					
+		global_var:diplo_1 = {
+			pay_short_term_gold = {
+				gold = global_var:gold_1_val
+				target = global_var:diplo_2
+			}
+		}
+	}
+	if = {
+		limit = {
+			global_var:gold_2_val > 1 
+		}					
+		global_var:diplo_2 = {
+			pay_short_term_gold = {
+				gold = global_var:gold_2_val
+				target = global_var:diplo_1
+			}
+		}
+	}					
+
+#
+#artifacts
+	every_in_global_list = {
+		variable = diplo_g_artifacts
+		
+		set_owner = global_var:diplo_2
+		#can_be_claimed_by = global_var:diplo_2
+		global_var:diplo_1 = { remove_personal_artifact_claim = prev }
+		global_var:diplo_1.house = { remove_house_artifact_claim = prev }
+
+	}
+	every_in_global_list = {
+		variable = diplo_t_artifacts
+		
+		set_owner = global_var:diplo_1
+		#can_be_claimed_by = global_var:diplo_1
+		global_var:diplo_2 = { remove_personal_artifact_claim = prev }
+		global_var:diplo_2.house = { remove_house_artifact_claim = prev }
+	}
+#
+#Strong Hook
+	if = {
+		limit = {
+			global_var:diplo_shook  = 1 
+		}
+		global_var:diplo_1 = {
+			remove_hook = {
+				target = global_var:diplo_2
+			}
+		}
+	}
+	if = {
+		limit = {
+			global_var:diplo_2_1_strong  = 1 
+		}
+		global_var:diplo_2 = {
+			remove_hook = {
+				target = global_var:diplo_1
+			}
+		}
+	}
+#	
+#WeakHook
+	if = {
+		limit = {
+			global_var:diplo_whook = 1 
+		}
+		global_var:diplo_1 = {
+			remove_hook = {
+				target = global_var:diplo_2
+			}
+		}
+	}
+	if = {
+		limit = {
+			
+			global_var:diplo_2_1_weak  = 1 
+		}
+		global_var:diplo_2 = {
+			remove_hook = {
+				target = global_var:diplo_1
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			global_var:diplo_1 = {
+				is_at_war_with = global_var:diplo_2
+			}
+		}
+		every_character_war = {
+			limit = {
+			
+				OR = {
+					AND = {
+						is_war_leader = global_var:diplo_1
+						is_attacker = global_var:diplo_1
+						is_defender = global_var:diplo_2									
+					}
+					AND = {
+						is_war_leader = global_var:diplo_1
+						is_defender = global_var:diplo_1
+						is_attacker = global_var:diplo_2
+					}
+				}
+				
+			}
+			end_war = white_peace
+		}
+
+	}
+
+#
+end_diplo_deal = yes
+}

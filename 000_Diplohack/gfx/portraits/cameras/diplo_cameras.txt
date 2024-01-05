@@ -1,0 +1,28 @@
+﻿diplo_overview_1 = {
+	camera = {
+		position = cylindrical{ 300 0 75 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = { 0 0 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+
+diplo_overview_2 = {
+	camera = {
+		position = cylindrical{ 300 0 -100 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = { 0 0 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = camera_torso
+}
+

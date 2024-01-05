@@ -1,0 +1,271 @@
+talk_opt = { 
+	if = {
+		limit = {
+		NOT = { has_character_flag = cat1 }
+		}
+		set_variable = {
+			name = cat1
+			value = 0
+		}
+	}
+	change_variable = { name = cat1 add = $talk_val$ }
+}
+char_opt = { 
+	if = {
+		limit = {
+		NOT = {has_character_flag = cat2 }
+		}
+		set_variable = {
+			name = cat2
+			value = 0
+		}
+	}
+	change_variable = { name = cat2 add = $char_val$ }
+}
+fight_opt = { 
+	if = {
+		limit = {
+		NOT = { has_character_flag = cat3 }
+		}
+		set_variable = {
+			name = cat3
+			value = 0
+		}
+	}
+	change_variable = { name = cat3 add = $fight_val$ }
+}
+inter_opt = { 
+	if = {
+		limit = {
+		NOT = { has_character_flag = cat4  }
+		}
+		set_variable = {
+			name = cat4
+			value = 0
+		}
+	}
+	change_variable = { name = cat4 add = $inter_val$ }
+}
+
+final_opt = {
+			if = {
+			limit = {
+				
+				var:cat1 = { compare_value => 15 }
+				var:cat2 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = kingy
+			} #kingy
+		}
+		if = {
+			limit = {
+				
+				var:cat1 = { compare_value => 15 }
+				var:cat3 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = noble_fighter
+			} #noble fighter
+		}
+		if = {
+			limit = {
+				
+				var:cat1 = { compare_value => 15 }
+				var:cat4 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = shady_king
+			}  #shady king
+		}
+		if = {
+			limit = {
+				
+				var:cat1 = { compare_value => 25 }
+				
+			}
+			add_character_flag = {
+				flag = king_nothing
+			} # King Nothing
+		}
+		if = {
+			limit = {
+				
+				var:cat1 = { compare_value => 10 }
+				var:cat2 = { compare_value => 15 }
+				
+			}
+			add_character_flag = {
+				flag = politician
+			} #politician
+		}
+		if = {
+			limit = {
+				
+				var:cat3 = { compare_value => 10 }
+				var:cat2 = { compare_value => 15 }
+				
+			}
+			add_character_flag = {
+				flag = low_hero
+			} #low hero
+		}
+		if = {
+			limit = {
+				
+				var:cat4 = { compare_value => 10 }
+				var:cat2 = { compare_value => 15 }
+				
+			}
+			add_character_flag = {
+				flag = sus_hero
+			} #sus hero
+		}
+		if = {
+			limit = {
+				
+				var:cat2 = { compare_value => 25 }
+				
+			}
+			add_character_flag = {
+				flag = nice_guy
+			} # Nice Guy
+		}
+		if = {
+			limit = {
+				
+				var:cat3 = { compare_value => 15 }
+				var:cat1 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = fighting_king
+			} #Fighting king
+		}
+		if = {
+			limit = {
+				
+				var:cat3 = { compare_value => 15 }
+				var:cat2 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = high_hero
+			} #high hero
+		}
+		if = {
+			limit = {
+			
+				var:cat3= { compare_value => 15 }
+				var:cat4 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = dirty_fighter
+			} #Dirty Fighter
+		}
+		if = {
+			limit = {
+				
+				var:cat3 = { compare_value => 25 }
+				
+			}
+			add_character_flag = {
+				flag = kick_ass
+			} # All I know is fighting
+		}
+		if = {
+			limit = {
+				
+				var:cat4 = { compare_value => 15 }
+				var:cat1 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = ambitious_noble
+			} #Ambitious Noble
+		}
+		if = {
+			limit = {
+				
+				var:cat4 = { compare_value => 15 }
+				var:cat2 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = sus
+			} #sus
+		}
+		if = {
+			limit = {
+				
+				var:cat4 = { compare_value => 15 }
+				var:cat3 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = nasty_fighter
+			} # Nasty fighter
+		}
+		if = {
+			limit = {
+			
+				var:cat4 = { compare_value => 25 }
+				
+			}
+			add_character_flag = {
+				flag = shady_mcshadyface
+			} # Shady McShady
+		}
+		if = {
+			limit = {
+				
+				var:cat1 = { compare_value => 10 }
+				var:cat2 = { compare_value => 10 }
+				var:cat3 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = true_hero
+			} #true hero
+		}
+		if = {
+			limit = {
+			
+				var:cat1 = { compare_value => 10 }
+				var:cat2 = { compare_value => 10 }
+				var:cat4 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = sus_king
+			} # Sus king
+		}
+		if = {
+			limit = {
+			
+				var:cat1 = { compare_value => 10 }
+				var:cat3 = { compare_value => 10 }
+				var:cat4 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = rude_king
+			} # Rude King
+		}
+		if = {
+			limit = {
+			
+				var:cat2 = { compare_value => 10 }
+				var:cat3 = { compare_value => 10 }
+				var:cat4 = { compare_value => 10 }
+				
+			}
+			add_character_flag = {
+				flag = rude_hero
+			} # Rude Hero
+		}
+}

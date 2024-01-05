@@ -1,0 +1,153 @@
+#drink gui
+target_trigger = {
+
+    scope = character
+
+	effect = {
+		if = {
+			limit = {
+				var:tar_loc <= 0 
+			}
+
+			set_variable = { name = tar_loc value = 1 }
+		} 
+		else = {
+			change_variable = { name = tar_loc subtract = 0.025 }
+		}
+	}
+}
+sway = {
+
+    scope = character
+	is_shown = {
+		var:drinks_down = 2
+		NOT ={
+			has_trait = drunkard
+		}
+	}
+	effect = {
+
+	}
+}
+stumble = {
+
+    scope = character
+	is_shown = {
+		has_character_flag = stumble
+	}
+	effect = {
+		add_character_flag = drinking_now
+		remove_character_flag = stumble
+	}
+}
+circle_hit2 = {
+    scope = character
+    effect = {
+		set_variable = {
+			name = circle_set
+			value = var:tar_loc
+		}
+
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = hu_val
+                }
+            }
+            set_variable = {
+                name = hu_val
+                value = 0
+            }
+        }
+
+		if = {
+			limit = {
+				var:tar_loc <= 0.3
+				
+			}
+			change_variable = {
+				name = hu_val
+				add = 15
+			} 
+		}
+		if = {
+			limit = {
+				var:tar_loc <= 0.1
+				
+			}
+			change_variable = {
+				name = hu_val
+				add = 10
+			} 
+		}
+		if = {
+			limit = {
+				var:tar_loc > 0.3
+				
+			}
+			change_variable = {
+				name = hu_val
+				subtract = 3
+			}
+			remove_character_flag = drinking_now
+			add_character_flag = stumble 
+		}
+		if = {
+			limit = {
+				has_trait = drunkard
+			}
+			change_variable = {
+				name = hu_val
+				add = 5
+			} 
+		}		
+		if = {
+			limit = {
+				var:hu_val >= 100
+			}
+			set_variable = {
+                name = hu_val
+                value = 0
+            }
+			if = {
+				limit = {
+					NOT = {
+						has_variable = drinks_down
+					}
+				}
+				set_variable = {
+					name = drinks_down
+					value = 1
+				}
+			}
+			else = {
+				change_variable = {
+					name = drinks_down
+					add = 1
+				}
+				remove_character_flag = drinking_now
+				add_character_flag = drinking_refill
+			}
+			if = {
+				limit = {
+					var:drinks_down = 3
+				}
+				if = {
+					limit = {
+						var:edrinks_down < 3
+					}
+					game_won_effect = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				var:hu_val < 1
+			}
+			set_variable = {
+                name = hu_val
+                value = 0
+            }
+		}
+    }
+}

@@ -1,0 +1,21 @@
+pdxmesh = {
+	name = "lance_mesh"
+	file = "lance.mesh"
+
+	meshsettings = {
+		name = "lance.001"
+		index = 0
+		texture_diffuse = "lance_diffuse.dds"
+		texture_normal = "lance_normal.dds"
+		texture_specular = "nospec.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+
+}
+
+entity = {
+	name = "lance_entity"
+	pdxmesh = "lance_mesh"
+}

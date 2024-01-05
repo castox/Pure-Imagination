@@ -1,0 +1,311 @@
+### This GUI cannot use types or templates from other files, as they have not been loaded yet.
+widget = {
+	name = "load_screen"
+	parentanchor = center
+	size = { 1920 1080 }
+	scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+
+	widget_loading_screen = {}
+	
+}
+
+
+types LoadingScreen
+{
+	type widget_loading_screen = widget {
+		size = { 100% 100% }
+
+		background = {
+		texture = "gfx/interface/intro/back1.jpg"
+		fittype = centercrop
+		}
+		icon = {
+			texture = "gfx/interface/intro/back2.jpg"
+			fittype = centercrop
+			alpha = 0
+
+			state = {
+				name = fade_in
+				next = fade_in2
+				trigger_on_create = yes
+				alpha = 0
+			}
+			state = {
+				name = fade_in2
+				next = fade_in3
+				duration = 30
+				alpha = 1
+			}
+			state = {
+				name = fade_in3
+				next = fade_in
+				alpha = 0
+				duration = 30
+			}			
+				
+		}
+			
+		flowcontainer = {
+			margin = { 25 25 }
+
+			flowcontainer = {
+				ignoreinvisible = yes
+				spacing = 15
+
+				background = {
+					visible = "[ReleaseMode]"
+					texture = "gfx/interface/component_masks/mask_fade_circle.dds"
+					color = { 0.15 0.15 0.15 0.7 }
+					margin = { 0 30 }
+					margin_left = 150
+					margin_right = 80
+				}
+
+				progressbar = {
+					size = { 65 65 }
+					gfxtype = framedprogressbargfx
+					texture = "gfx/interface/frontend/loading_progress.dds"
+					framesize = { 88 88 }
+					loopinterval = 1.5
+					max = 0
+
+					icon = {
+						parentanchor =  center
+						texture = "gfx/interface/frontend/ck3_logo_banner.dds"
+						size = { 36 45 }
+						scale = 0.8
+					}
+				}
+
+				textbox = {
+					name = "load_status_text"
+					visible = "[Not(ReleaseMode)]"
+					parentanchor = vcenter
+					size = { 200 30 }
+					fontsize = 20
+					font = StandardGameFont
+					default_format = "#medium;glow_color:{0.1,0.1,0.1,1}"
+					align = left|nobaseline
+				}
+
+				textbox = {
+					name = "load_status_text_release"
+					visible = "[ReleaseMode]"
+					text = "LOADSCREEN_INITIALIZING_GAME"
+					parentanchor = vcenter
+					size = { 200 30 }
+					fontsize = 20
+					font = StandardGameFont
+					align = left|nobaseline
+					default_format = "#medium;glow_color:{0.1,0.1,0.1,1}"
+				}
+			}
+		}
+
+		clickable_version_number = {
+			visible = "[Not(ReleaseMode)]"
+
+			parentanchor = bottom|right
+			position = { -15 -15 }
+		}
+	}
+}
+
+template Animation_LoadingScreen_ShowHide
+{
+	alpha = 0.3
+
+	state = {
+		name = appear
+		trigger_on_create = yes
+		bezier = { 0.25 0.1 0.25 1 }
+		delay = 0.3
+		duration = 1
+
+		alpha = 1
+	}
+
+	state = {
+		name = _show
+		bezier = { 0.25 0.1 0.25 1 }
+		duration = 1
+
+		alpha = 1
+	}
+
+	state = {
+		name = _hide
+		bezier = { 0.25 0.1 0.25 1 }
+		duration = 1
+
+		alpha = 0
+	}
+}
+
+
+Types BasicFrontendTypes
+{
+	type clickable_version_number = button_group {
+		name = "copy_build_version"
+
+		onclick = "[CopyBuildVersionInfoToClipboard]"
+		tooltip = "[GetBuildVersionDescriptionWithClickToCopy]"
+
+		textbox = {
+			name = "build_version"
+			parentanchor = center
+			autoresize = yes
+			block "version_text" {
+				text = "TOP_BAR_VERSION"
+				align = right
+			}
+
+			default_format = "#medium;glow_color:{0,0,0,1}"
+		}
+
+
+	}
+
+}
+
+types Buttons
+{
+	
+    ## The standard button
+    type button_standard = button_normal
+    {
+        texture = "gfx/interface/buttons/button_standard.dds"
+        size = { 170 33 }
+
+        gfxtype = togglepushbuttongfx
+        effectname = "NoHighlight"
+
+        upframe = 1
+        uphoverframe = 2
+        uppressedframe = 3
+        downframe = 4
+        downhoverframe = 4
+        downpressedframe = 4
+        disableframe = 7
+
+        spriteType = Corneredtiled
+        spriteborder = { 3 3 }
+        framesize = { 249 78 }
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = center|nobaseline
+                default_format = "#clickable"
+            }
+        }
+
+        modify_texture = {
+            name = "overlay"
+            texture = "gfx/interface/buttons/button_standard_overlay.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 3 3 }
+            blend_mode = overlay
+            alpha = 0.3
+        }
+
+        block "disabled"
+        {
+            highlight_icon = {
+                size = { 100% 100% }
+                gfxtype = togglepushbuttongfx
+                effectname = "NoHighlight"
+                texture = "gfx/interface/buttons/button_disabled_stripes.dds"
+                spriteType = Corneredtiled
+                spriteborder = { 2 2 }
+                framesize  = { 238 63 }
+
+                upframe = 1
+                uphoverframe = 1
+                uppressedframe = 1
+                downframe = 1
+                downhoverframe = 1
+                downpressedframe = 1
+                disableframe = 2
+
+                alpha = 0.4
+
+                modify_texture = {
+                    name = "overlay"
+                    texture = "gfx/interface/buttons/button_standard_overlay.dds"
+                    spriteType = Corneredstretched
+                    spriteborder = { 3 3 }
+                    blend_mode = overlay
+                }
+
+                block "button_standard_mouseover" {}
+            }
+        }
+
+        highlight_icon = {
+            size = { 100% 100% }
+            gfxtype = togglepushbuttongfx
+            effectname = "NoHighlight"
+            texture = "gfx/interface/buttons/button_mouseover.dds"
+            spriteType = Corneredstretched
+            spriteborder = { 20 20 }
+            framesize  = { 238 63 }
+
+            upframe = 1
+            uphoverframe = 2
+            uppressedframe = 1
+            downframe = 1
+            downhoverframe = 1
+            downpressedframe = 1
+            disableframe = 1
+
+            alpha = 0.5
+
+            block "button_standard_mouseover" {}
+        }
+
+        margin_widget = {
+            size = { 100% 100% }
+            margin = { 3 3 }
+
+            block "vignette"
+            {
+                icon = {
+                    name = "vignette"
+                    size = { 100% 100% }
+                    alpha = 0.2
+                    texture = "gfx/interface/component_masks/mask_vignette.dds"
+                    color = { 0.15 0.15 0.15 1 }
+                }
+            }
+        }
+    }
+
+}
+
+types Default
+{
+	type game_button = game_button {
+		using = tooltip_es
+		shaderfile = "gfx/FX/pdxgui_pushbutton.shader"
+		oversound = "event:/SFX/UI/Generic/sfx_ui_generic_icon_pointer_over"
+		clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_icon_select"
+		button_ignore = right
+	}
+
+	type button = game_button {
+		#gfxtype = framedbuttongfx
+		#shaderfile = "gfx/FX/pdxgui_pushbutton.shader"
+		gfxtype = buttongfx
+
+
+		tooltip_offset = { 0 0 }
+		#tooltop_widget = TooltipWithPaddingUsedForTooltipsInTooltips
+		filter_mouse = right
+		oversound = "event:/SFX/UI/Generic/sfx_ui_generic_icon_pointer_over"
+		clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_icon_select"
+		button_ignore = right
+	}
+}

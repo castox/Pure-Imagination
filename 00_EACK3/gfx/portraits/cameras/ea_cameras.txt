@@ -1,0 +1,81 @@
+﻿diplo_overview_1 = {
+	camera = {
+		position = cylindrical{ 300 0 75 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = { 0 0 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown.dds"
+}
+
+diplo_overview_2 = {
+	camera = {
+		position = cylindrical{ 300 0 -100 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = { 0 0 0 } # L/R, U/D, F/B
+		look_at_node = camera_torso_look_at
+		fov = 30
+		camera_near_far = { 10 400 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown.dds"
+}
+
+card_view_1 = {
+	camera = {
+		position = cylindrical{ 240 0 -40 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -10 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 22
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown.dds"
+}
+card_view_2 = {
+	camera = {
+		position = cylindrical{ 240 0 -40 } # Radius, height, angle
+		position_node = camera_torso_look_at
+
+		look_at = {	0 -20 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 22
+		camera_near_far = { 50 400 }
+	}
+
+	unknown = "gfx/portraits/unknown_portraits/unknown.dds"
+}
+
+card_1_cam = {
+	camera = {
+		position = cylindrical{ 400 150 -90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 35
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+card_2_cam = {
+	camera = {
+		position = cylindrical{ 400 150 -10 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 35
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}

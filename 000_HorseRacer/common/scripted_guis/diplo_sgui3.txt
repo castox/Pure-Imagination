@@ -1,0 +1,1127 @@
+﻿
+dp_bowx =  {
+	scope = character
+	is_shown = {
+		
+	}
+
+	effect = {
+	
+		global_var:diplo_1 = {
+			remove_character_flag = sk_run
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						has_character_flag = dp_bow
+					}
+					remove_character_flag = dp_bow
+				}
+				else = {
+					remove_character_flag = sk_run
+					remove_character_flag = dance_dance
+					add_character_flag = dp_bow
+				}
+			}
+		}
+
+	}
+}
+dp_giftx = {
+	scope = character
+	is_shown = {
+		
+	}
+
+	effect = {
+		
+		global_var:diplo_1 = {
+			remove_character_flag = sk_run
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						has_character_flag = dance_dance
+					}
+					remove_character_flag = dance_dance
+
+				}
+				else = {
+					remove_character_flag = sk_run
+					remove_character_flag = dp_bow
+					add_character_flag = dance_dance
+				}
+			}
+	}
+	}
+}
+sk_movement = {
+
+	scope = character
+	is_shown = {
+		
+	}
+
+	effect = {
+
+		if = {
+			limit = {
+				has_character_flag = sk_swing
+			}
+
+		}
+
+		else_if = {
+			limit = {
+				OR = {
+					any_in_global_list = {
+						variable = npc_listing
+						is_in_br = yes
+					}
+
+				}
+			}
+			sk_collision = yes
+			if = { limit = { has_character_flag = sk_walk_down } change_global_variable = { name = sk_s_pos add = 25} change_global_variable = { name = sk_ss_pos subtract = 25} }
+			if = { limit = { has_character_flag = sk_walk_up } change_global_variable = { name = sk_s_pos subtract = 25} change_global_variable = { name = sk_ss_pos add = 25} }
+
+			if = { limit = { has_character_flag = sk_walk_right } change_global_variable = { name = sk_x_pos add = 25} change_global_variable = { name = sk_xx_pos subtract = 25} }
+			if = { limit = { has_character_flag = sk_walk_left } change_global_variable = { name = sk_x_pos subtract = 25} change_global_variable = { name = sk_xx_pos add = 25} }
+
+			if = { limit = { has_character_flag = sk_upl } change_global_variable = { name = sk_s_pos subtract = 25} change_global_variable = { name = sk_ss_pos add = 25} change_global_variable = { name = sk_x_pos subtract = 25} change_global_variable = { name = sk_xx_pos add = 25}}
+			if = { limit = { has_character_flag = sk_upr } change_global_variable = { name = sk_s_pos subtract = 25} change_global_variable = { name = sk_ss_pos add = 25} change_global_variable = { name = sk_x_pos add = 25} change_global_variable = { name = sk_xx_pos subtract = 25} }
+
+			if = { limit = { has_character_flag = sk_downl } change_global_variable = { name = sk_s_pos add = 25} change_global_variable = { name = sk_ss_pos subtract = 25} change_global_variable = { name = sk_x_pos subtract = 25} change_global_variable = { name = sk_xx_pos add = 25}}
+			if = { limit = { has_character_flag = sk_downr } change_global_variable = { name = sk_s_pos add = 25} change_global_variable = { name = sk_ss_pos subtract = 25} change_global_variable = { name = sk_x_pos add = 25} change_global_variable = { name = sk_xx_pos subtract = 25} }
+
+			map_fixer = yes
+		}
+		else = {
+			#CONSTANT WATCH FOR MOVEMENT
+
+				if = {
+					limit = {
+						AND = {
+							has_character_flag = sk_walk_left
+							has_character_flag = sk_run
+							global_var:sk_xx_pos >= 50
+						}
+					}
+					change_global_variable = { name = sk_xx_pos subtract = 15}
+					change_global_variable = { name = sk_x_pos add = 7 }
+	
+				#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+				}
+				if = {
+					limit = {
+						AND = {
+							has_character_flag = sk_walk_left
+							has_character_flag = sk_run
+							global_var:sk_xx_pos <= 50
+						}
+					}
+					remove_character_flag = sk_run
+					set_global_variable = { name = sk_xx_pos value = 50 }
+					set_global_variable = { name = sk_x_pos value = 0 }
+	
+				#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+				}
+			#WALK LEFT
+
+						#WALK RIGHT
+			if = {
+				limit = {
+					AND = {
+						has_character_flag = sk_walk_right
+						has_character_flag = sk_run
+						global_var:sk_xx_pos <= 2175
+					}
+				}
+				change_global_variable = { name = sk_xx_pos add = 15}
+				change_global_variable = { name = sk_x_pos subtract = 7 }
+
+			#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+			}
+			if = {
+				limit = {
+					AND = {
+						has_character_flag = sk_walk_right
+						has_character_flag = sk_run
+						global_var:sk_xx_pos >= 2175
+					}
+				}
+				remove_character_flag = sk_run
+				set_global_variable = { name = sk_xx_pos value = 2175 }
+				set_global_variable = { name = sk_x_pos value = -960 }
+
+			#global_var:r_npc_1 = { set_variable = { name = sk_npc_x_pos value = 4385 } set_variable = { name = sk_npc_y_pos value = 1995 } }
+			}
+		}
+
+
+	}
+
+}
+start_qk = {
+	scope = character
+
+	effect = {
+		set_global_variable = { name = sk_x_pos value = 0 }
+		set_global_variable = { name = sk_s_pos value = 0 }
+		set_global_variable = { name = sk_xx_pos value = 50 }
+		set_global_variable = { name = sk_ss_pos value = 0 }
+		set_global_variable = { name = timemin value = 0 }
+		set_global_variable = { name = timehr value = 7 }
+		set_global_variable = { name = timemin2 value = 0 }
+		
+		global_var:diplo_2 = {
+			random_knight = {
+
+				set_global_variable = { name = guard1 value = this }
+			}
+			random_knight = {
+				limit = {
+					NOT = {
+						this = global_var:guard1
+					} 
+				}
+				set_global_variable = { name = guard2 value = this }
+			}
+			random_courtier_or_guest = {
+				set_global_variable = { name = ccc1 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					NOT  = {
+						this = global_var:ccc1
+					}
+				}
+				set_global_variable = { name = ccc2 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+					}
+				}
+				set_global_variable = { name = ccc3 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					limit = {
+						NOR  = {
+							this = global_var:ccc1
+							this = global_var:ccc2
+							this = global_var:ccc3
+
+						}
+					}
+				}
+				set_global_variable = { name = ccc4 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+
+					}
+				}
+				set_global_variable = { name = ccc5 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+
+					}
+				}
+				set_global_variable = { name = ccc6 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+
+					}
+				}
+				set_global_variable = { name = ccc7 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+						this = global_var:ccc7
+
+					}
+				}
+				set_global_variable = { name = ccc8 value = this }
+			}
+			random_courtier_or_guest = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+						this = global_var:ccc7
+						this = global_var:ccc8
+
+					}
+				}
+				set_global_variable = { name = ccc9 value = this }
+			}
+
+
+			random_courtier_or_guest = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+						this = global_var:ccc7
+						this = global_var:ccc8
+						this = global_var:ccc9
+
+					}
+				}
+				set_global_variable = { name = ccc10 value = this }
+			}
+			random_vassal_or_below = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+						this = global_var:ccc7
+						this = global_var:ccc8
+						this = global_var:ccc9
+						this = global_var:ccc10
+
+					}
+				}
+				set_global_variable = { name = ccc11 value = this }
+			}
+			random_vassal_or_below = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+						this = global_var:ccc7
+						this = global_var:ccc8
+						this = global_var:ccc9
+						this = global_var:ccc10
+						this = global_var:ccc11
+
+					}
+				}
+				set_global_variable = { name = ccc12 value = this }
+			}
+			random_vassal_or_below = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+						this = global_var:ccc7
+						this = global_var:ccc8
+						this = global_var:ccc9
+						this = global_var:ccc10
+						this = global_var:ccc11
+						this = global_var:ccc12
+
+					}
+				}
+				set_global_variable = { name = ccc13 value = this }
+			}
+			random_vassal_or_below = {
+				limit = {
+					NOR  = {
+						this = global_var:ccc1
+						this = global_var:ccc2
+						this = global_var:ccc3
+						this = global_var:ccc4
+						this = global_var:ccc5
+						this = global_var:ccc6
+						this = global_var:ccc7
+						this = global_var:ccc8
+						this = global_var:ccc9
+						this = global_var:ccc10
+						this = global_var:ccc11
+						this = global_var:ccc12
+						this = global_var:ccc13
+					}
+				}
+				set_global_variable = { name = ccc14 value = this }
+			}
+		}
+		#every_in_global_list = {
+		#	variable = npc_listing
+		#	set_variable = { name = sk_npc_x_pos value = 965 }
+		#	set_variable = { name = sk_npc_y_pos value = 5900}
+		#}
+
+	}
+}
+
+sk_remove_walk = {
+	scope = character
+	is_shown = {
+		has_character_flag = sk_run
+	}
+
+	effect = {
+		remove_character_flag = sk_run
+	}
+}
+
+sk_remove_walk = {
+	scope = character
+	is_shown = {
+		has_character_flag = sk_run
+	}
+
+	effect = {
+		remove_character_flag = sk_run
+	}
+}
+sk_walk_up = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_up
+
+		NOR = {
+			has_character_flag = sk_walk_left
+			has_character_flag = sk_walk_right
+			has_character_flag = sk_down
+			has_character_flag = sk_upl
+			has_character_flag = sk_upr
+			has_character_flag = sk_downl
+			has_character_flag = sk_downr
+			has_character_flag = is_died2
+		}
+	}
+	effect = {
+		remove_character_flag = sk_down
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_walk_left
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_downr
+		remove_character_flag = sk_walk_right
+		add_character_flag = sk_up
+		add_character_flag = sk_run
+		
+	}
+}
+
+sk_walk_down = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_down
+
+		NOR = {
+			has_character_flag = sk_walk_left
+			has_character_flag = sk_walk_right
+			has_character_flag = sk_up
+			has_character_flag = sk_upl
+			has_character_flag = sk_upr
+			has_character_flag = sk_downl
+			has_character_flag = sk_downr
+			
+		}
+	}
+	effect = {
+
+		remove_character_flag = sk_up
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_walk_left
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_downr
+		remove_character_flag = sk_walk_right
+		add_character_flag = sk_down
+		add_character_flag = sk_run
+		
+	}
+}
+
+sk_walk_left = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_walk_left
+
+		NOR = {
+			has_character_flag = sk_down
+			has_character_flag = sk_walk_right
+			has_character_flag = sk_up
+			has_character_flag = sk_upl
+			has_character_flag = sk_upr
+			has_character_flag = sk_downl
+			has_character_flag = sk_downr
+			has_character_flag = is_died2
+		}
+	}
+
+	effect = {
+
+		remove_character_flag = sk_up
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_down
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_downr
+		remove_character_flag = sk_walk_right
+		add_character_flag = sk_walk_left
+		if = {
+			limit = {
+				has_character_flag = sk_run
+			}
+			remove_character_flag = sk_run
+		}
+		else = {
+			court_position:envoy_court_position = {
+			remove_character_flag = dp_bow
+			remove_character_flag = dance_dance
+			}
+			add_character_flag = sk_run
+		}
+		
+	}
+}
+
+sk_walk_right = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_walk_right
+
+		NOR = {
+			has_character_flag = sk_down
+			has_character_flag = sk_walk_left
+			has_character_flag = sk_up
+			has_character_flag = sk_upl
+			has_character_flag = sk_upr
+			has_character_flag = sk_downl
+			has_character_flag = sk_downr
+			has_character_flag = is_died2
+		}
+	}
+
+	effect = {
+
+		remove_character_flag = sk_up
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_down
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_downr
+		remove_character_flag = sk_walk_left
+		add_character_flag = sk_walk_right
+		if = {
+			limit = {
+				has_character_flag = sk_run
+			}
+			remove_character_flag = sk_run
+		}
+		else = {
+			court_position:envoy_court_position = {
+				remove_character_flag = dp_bow
+				remove_character_flag = dance_dance
+				}
+			add_character_flag = sk_run
+		}
+		
+	}
+}
+
+sk_upl = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_upl
+		NOR = {
+			has_character_flag = sk_down
+			has_character_flag = sk_walk_left
+			has_character_flag = sk_up
+			has_character_flag = sk_walk_right
+			has_character_flag = sk_upr
+			has_character_flag = sk_downl
+			has_character_flag = sk_downr
+			has_character_flag = is_died2
+		}
+	}
+	effect = {
+		remove_character_flag = sk_down
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_downr
+		remove_character_flag = sk_walk_left
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_up
+		remove_character_flag = sk_walk_right
+		add_character_flag = sk_upl
+		add_character_flag = sk_run
+		
+	}
+}
+sk_upr = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_upr
+		NOR = {
+			has_character_flag = sk_down
+			has_character_flag = sk_walk_left
+			has_character_flag = sk_up
+			has_character_flag = sk_walk_right
+			has_character_flag = sk_upl
+			has_character_flag = sk_downl
+			has_character_flag = sk_downr
+			has_character_flag = is_died2
+		}
+	}
+	effect = {
+		remove_character_flag = sk_down
+		remove_character_flag = sk_downr
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_walk_left
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_up
+		remove_character_flag = sk_walk_right
+		add_character_flag = sk_upr
+		add_character_flag = sk_run
+		
+	}
+}
+sk_downl = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_downl
+		NOR = {
+			has_character_flag = sk_down
+			has_character_flag = sk_walk_left
+			has_character_flag = sk_up
+			has_character_flag = sk_walk_right
+			has_character_flag = sk_upr
+			has_character_flag = sk_upl
+			has_character_flag = sk_downr
+			has_character_flag = is_died2
+		}
+	}
+	effect = {
+		remove_character_flag = sk_down
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_walk_left
+		remove_character_flag = sk_downr
+		remove_character_flag = sk_up
+		remove_character_flag = sk_walk_right
+		add_character_flag = sk_downl
+		add_character_flag = sk_run
+		
+	}
+}
+sk_downr = {
+
+	scope = character
+	is_shown = {
+		has_character_flag = sk_downr
+		NOR = {
+			has_character_flag = sk_down
+			has_character_flag = sk_walk_left
+			has_character_flag = sk_up
+			has_character_flag = sk_walk_right
+			has_character_flag = sk_upr
+			has_character_flag = sk_upl
+			has_character_flag = sk_downl
+			has_character_flag = is_died2
+		}
+	}
+	effect = {
+		remove_character_flag = sk_down
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_walk_left
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_up
+		remove_character_flag = sk_walk_right
+		add_character_flag = sk_downr
+		add_character_flag = sk_run
+		
+	}
+}
+
+
+
+
+qk_run_stop = {
+	scope = character
+
+	effect = {
+
+
+		remove_character_flag = sk_run
+		remove_character_flag = sk_sprint
+	
+	}
+}
+sk_movement_rem = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			has_character_flag = sk_run
+			has_character_flag = sk_sprint
+		}
+	}
+
+	effect = {
+		
+		remove_character_flag = sk_run
+		remove_character_flag = sk_sprint
+
+	}
+}
+its_6am = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			exists = global_var:dncycle
+			global_var:dncycle = 1
+		}
+
+	}
+
+	effect = {
+		set_global_variable = { name = dncycle value = 0 }
+	}
+}
+its_6pm = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			exists = global_var:dncycle
+			global_var:dncycle = 2
+		}
+
+	}
+	effect = {
+		set_global_variable = { name = dncycle value = 0 }
+	}
+}
+sk_map_zoomin = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			exists = global_var:sk_map_zoom
+			global_var:sk_map_zoom = 1.5
+		}
+
+	}
+
+	effect = {
+		set_global_variable = { name = sk_map_zoom value = 1.5 }
+	}
+}
+
+sk_map_zoomout = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			exists = global_var:sk_map_zoom
+			global_var:sk_map_zoom = 1
+		}
+
+	}
+
+	effect = {
+		set_global_variable = { name = sk_map_zoom value = 1 }
+	}
+}
+
+
+qk_eq = {
+	scope = character
+	is_shown = {
+		has_character_flag = qk_eq
+	}
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = qk_eq
+			}
+			remove_character_flag = qk_eq
+			set_global_variable = { name = fight_q value = 0 }
+		}
+		else = {
+			add_character_flag = qk_eq
+			set_global_variable = { name = fight_q value = 1 }
+		}
+	}
+}
+qk_sprint = {
+	scope = character
+	is_shown = {
+		has_character_flag = sk_sprint
+	}
+	effect = {
+
+			
+			add_character_flag = sk_sprint
+		
+		
+	}
+}
+qk_sprint_rem = {
+	scope = character
+
+	effect = {
+		remove_character_flag = sk_run
+		remove_character_flag = sk_sprint
+	}
+
+}
+qk_swing = {
+	scope = character
+	is_shown = {
+		has_character_flag = sk_swing
+	}
+	effect = {
+
+		add_character_flag = sk_swing
+		#get_smacked2 = yes
+		#get_smacked = yes
+	}
+
+}
+qk_rswing = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = sk_swing
+	}
+	effect = {
+
+		remove_character_flag = sk_swing
+		#rem_smacked = yes
+	}
+
+}
+qk_rem_smack = {
+	scope = character
+
+	effect = {
+		rem_smacked = yes
+	}
+}
+
+qk_mid_swing = {
+	scope = character
+
+	effect = {
+		get_smacked2 = yes
+		get_smacked = yes
+	}
+}
+qk_dialog = {
+	scope = character
+
+	is_shown = {
+		global_var:r_npc_1 = {
+			is_in_ar = yes
+		}
+	}
+	effect = {
+
+		add_character_flag = sk_cue_dialog
+	
+	}
+
+}
+qk_dialog2 = {
+	scope = character
+	is_shown = {
+		has_character_flag = sk_cue_dialog
+	}
+	effect = {
+		remove_character_flag = sk_cue_dialog
+	}
+}
+qk_dialog3 = {
+	scope = character
+	is_shown = {
+		
+	}
+	effect = {
+		remove_character_flag = sk_cue_dialog
+		every_in_global_list = {
+			variable = npc_listing
+			limit = {
+				has_character_flag = sk_poi_2
+			}
+			add_character_flag = is_agro
+
+		}
+	}
+}
+
+skqk_fixer = {
+	scope = character
+	is_shown = {
+		OR = {
+			global_var:sk_x_pos > 0
+			global_var:sk_x_pos < -9575
+			global_var:sk_s_pos > 5400
+			global_var:sk_s_pos < 0
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				global_var:sk_x_pos > 0
+			}
+			set_global_variable = { name = sk_x_pos value = 0 }
+			set_global_variable = { name = sk_xx_pos value = 0 }
+		}
+		if = {
+			limit = {
+				global_var:sk_x_pos < -9575
+			}
+			set_global_variable = { name = sk_x_pos value = -9575 }
+			set_global_variable = { name = sk_xx_pos value = 9575 }
+		}
+		if = {
+			limit = {
+				global_var:sk_s_pos < 0
+			}
+			set_global_variable = { name = sk_s_pos value = 0 }
+			set_global_variable = { name = sk_ss_pos value = 0 }
+		}
+		if = {
+			limit = {
+				global_var:sk_s_pos > 5400
+			}
+			set_global_variable = { name = sk_s_pos value = 5400 }
+			set_global_variable = { name = sk_ss_pos value = -5400 }
+		}
+	}
+
+}
+check_sr = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			any_in_global_list = {
+				variable = npc_listing
+				is_in_sr = yes
+			}
+			any_in_global_list = {
+				variable = main_npc_listing
+				is_in_sr = yes
+			}
+		}
+	}
+}
+is_agro = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = is_agro
+	}
+	effect = {
+		add_character_flag = is_agro
+	}
+}
+is_died = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = is_died
+	}
+	effect = {
+		remove_character_flag = is_agro
+		add_character_flag = is_died2
+	}
+}
+
+is_a_poi = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			has_character_flag = sk_poi_1
+			has_character_flag = sk_poi_2
+			has_character_flag = sk_poi_3
+		}
+		NOT = {
+			has_character_flag = is_agro
+		}
+	}
+}
+
+is_reg_npc = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			has_character_flag = is_agro
+			has_character_flag = sk_poi_1
+			has_character_flag = sk_poi_2
+			has_character_flag = sk_poi_3
+		}
+	}
+
+}
+
+timeoday = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						exists = global_var:timemin
+						exists = global_var:timehr
+					}
+				}
+
+			}
+			set_global_variable = { name = timemin value = 0 }
+			set_global_variable = { name = timehr value = 7 }
+		}
+		else = {
+			change_global_variable = { name = timemin add = 0.5 }
+
+		if = {
+			limit = {
+				global_var:timemin >= 60
+			}
+			set_global_variable = { name = timemin value = 0 }
+			change_global_variable = { name = timehr add = 1 }
+		}
+		if = {
+			limit = {
+				AND = {
+					global_var:timehr = 7
+					global_var:timemin = 0
+				}
+
+			}
+			set_global_variable = { name = dncycle value = 1 }
+		}
+		if = {
+			limit = {
+				AND = {
+					global_var:timehr = 18
+					global_var:timemin = 0
+				}
+
+			}
+			set_global_variable = { name = dncycle value = 2 }
+		}
+		if = {
+			limit = {
+				global_var:timehr >= 25
+			}
+			set_global_variable = { name = timehr value = 1 }
+		}
+		}
+		
+	}
+}
+check_ar = {
+	scope = character
+
+	is_shown = {
+
+		any_in_global_list = {
+			variable = npc_listing
+			is_in_ar = yes
+		}
+	}
+}
+exit_qk = {
+	scope = character
+
+	effect = {
+		every_in_global_list = {
+			variable = npc_listing
+			remove_variable = sk_jump
+			remove_variable = sk_run
+			remove_character_flag = sk_sprint
+			remove_character_flag = sk_swing
+			remove_character_flag = qk_eq
+			remove_variable = sk_walk_left
+			remove_variable = sk_walk_right
+			remove_variable = sk_s_pos
+			remove_variable = sk_x_pos
+			remove_character_flag = sk_up
+			remove_character_flag = sk_upl
+			remove_character_flag = sk_upr
+			remove_character_flag = sk_down
+			remove_character_flag = sk_downl
+			remove_character_flag = sk_downr
+		}
+		clear_global_variable_list = npc_listing
+		remove_global_variable = r_npc_1
+		remove_global_variable = r_npc_2
+		remove_global_variable = timemin
+		remove_global_variable = timehr
+		remove_variable = sk_jump
+		remove_variable = sk_run
+		remove_character_flag = sk_sprint
+		remove_character_flag = sk_swing
+		remove_character_flag = qk_eq
+		remove_variable = sk_walk_left
+		remove_variable = sk_walk_right
+		remove_variable = sk_s_pos
+		remove_variable = sk_x_pos
+		remove_character_flag = sk_up
+		remove_character_flag = sk_upl
+		remove_character_flag = sk_upr
+		remove_character_flag = sk_down
+		remove_character_flag = sk_downl
+		remove_character_flag = sk_downr
+	
+	}
+}

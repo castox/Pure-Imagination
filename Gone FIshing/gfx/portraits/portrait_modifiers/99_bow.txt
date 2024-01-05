@@ -1,0 +1,115 @@
+﻿
+test_dummy = {
+
+	no_portrait_t = {
+		dna_modifiers = {
+			morph = {
+				mode = replace				
+				gene = gene_bs_body_type
+				template = no_portrait
+				value = 1.0
+			}
+			morph = {
+				mode = replace				
+				gene = complexion
+				template = complexion_no_face
+				value = 1.0
+			}
+			morph = {
+				mode = replace				
+				gene = gene_age
+				template = no_aging
+				value = 1.0
+			}
+			morph = {
+				mode = modify				
+				gene = gene_eyebrows_shape
+				template = no_eyebrows
+				value = 0.5
+			}
+			morph = {
+				mode = modify				
+				gene = gene_eyebrows_fullness
+				template = no_eyebrows
+				value = 0.5
+			}
+			accessory = {
+				mode = add				
+				gene = clothes
+				template = no_clothes
+				value = 0.5
+			}
+			accessory = {
+				mode = modify				
+				gene = eye_accessory
+				template = no_eyes
+				value = 0.5
+			}
+			accessory = {
+				mode = modify				
+				gene = teeth_accessory
+				template = no_teeth
+				value = 0.5
+			}
+			accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear 
+                value = 1
+			} 
+
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			}
+			accessory = {
+				mode = add				
+				gene = legwear
+				template = no_legwear
+				value = 0.5
+			}
+			accessory = {
+				mode = add				
+				gene = props
+				template = x_target
+				value = 0.5
+			}
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 500
+				this = global_var:t_dummy
+			}
+		}
+	}
+
+
+}
+archer_height = {
+
+	static_size = {
+		dna_modifiers = {
+			morph = {
+				mode = replace				
+				gene = gene_height
+				template = normal_height
+				value = 0.6
+			}
+
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 299
+				has_character_flag = is_archer
+			}
+		}
+	}
+
+
+}

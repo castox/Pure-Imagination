@@ -1,0 +1,18 @@
+﻿l_french:
+
+king_nothing_modifier: "Roi rien"
+king_nothing_modifier_desc: "Tu es un roi, mais qu'est-ce que ça a coûté ? Tout.."
+
+rem_king_nothing_decision: "Supprimez le surnom King Nothing."
+rem_king_nothing_decision_tooltip: "$kn_i_must_admit$"
+rem_king_nothing_decision_confirm: "Il faut le faire!"
+
+king_nothing_decision: "Pourquoi pas, je devrais être roi !"
+king_nothing_decision_tooltip: "$kn_gain_nothing$"
+king_nothing_decision_confirm: "Ils vont plier le genou !"
+
+kn_gain_nothing: "Vous gagnez un royaume mais vous perdez le respect de beaucoup, ce qui fait que beaucoup vous haïssent et vous déclarent un faux roi. Il va King Nothing !!"
+kn_i_must_admit: "Je dois admettre que j'avais tort !"
+kn_requirements: "Oposséder au moins 1 ou plusieurs [duchies|E]"
+kn_hold_another: "Tenir 2 royaumes"
+kn_rem_nothing: "Au prix de beaucoup de fierté, vous admettez que vous vous êtes trompé et perdez le surnom de King Nothing."

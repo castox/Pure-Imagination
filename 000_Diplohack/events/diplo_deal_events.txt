@@ -1,0 +1,334 @@
+﻿####################
+# MISC INTERACTIONS
+####################
+
+namespace = diplo_deal_event
+
+# Offer Vassalization Response: Accepted
+diplo_deal_event.0001 = {
+	type = letter_event
+	opening = {
+		desc = fatal_offer
+	}
+	desc = fatal_offer_message
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = deadly_insulting_offer
+				target = global_var:diplo_1
+			}
+		}
+
+		global_var:diplo_1 = {
+			court_position:envoy_court_position  = {
+				death = {
+					death_reason = death_head_ripped_off
+					killer = global_var:diplo_2
+				}
+			}
+
+		}
+	}
+
+	option = {
+		name = fatal_offer_ok
+		end_diplo_deal = yes
+	}
+}
+
+diplo_deal_event.0002 = {
+	type = letter_event
+	opening = {
+		desc = fatal_offer
+	}
+	desc = diplo_block_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = block_offer
+				target = global_var:diplo_1
+			}
+		}
+		global_var:diplo_1 = {
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						NOT = {
+							has_variable = envoyskill
+						}
+					}
+
+					set_variable = { name = envoyskill value = -5 }
+				}
+				else = {
+					change_variable = { name = envoyskill subtract = 5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ok_offer_ok
+		end_diplo_deal = yes
+	}
+}
+
+diplo_deal_event.0003 = {
+	type = letter_event
+	opening = {
+		desc = fatal_offer
+	}
+	desc = diplo_strong_insulting_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = strong_insulting_offer
+				target = global_var:diplo_1
+			}
+		}
+		global_var:diplo_1 = {
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						NOT = {
+							has_variable = envoyskill
+						}
+					}
+
+					set_variable = { name = envoyskill value = -3 }
+				}
+				else = {
+					change_variable = { name = envoyskill subtract = 3 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ok_offer_ok
+		end_diplo_deal = yes
+	}
+}
+
+diplo_deal_event.0004 = {
+	type = letter_event
+	opening = {
+		desc = diplo_insulting_offer_opening
+	}
+	desc = diplo_insulting_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = insulting_offer
+				target = global_var:diplo_1
+			}
+		}
+		global_var:diplo_1 = {
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						NOT = {
+							has_variable = envoyskill
+						}
+					}
+
+					set_variable = { name = envoyskill value = -2 }
+				}
+				else = {
+					change_variable = { name = envoyskill subtract = 2 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ok_offer_ok
+
+		end_diplo_deal = yes
+	}
+}
+diplo_deal_event.0005 = {
+	type = letter_event
+	opening = {
+		desc = diplo_accept_offer_opening
+	}
+	desc = diplo_accept_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = deal_made
+				target = global_var:diplo_1
+			}
+		}
+
+		if = {
+			limit = {
+				diplo_deal < -5
+			}
+
+			global_var:diplo_1 = {
+				add_character_modifier = {
+					modifier = shady_deal_made
+					years = 1
+				}
+			}
+
+			global_var:diplo_1 = {
+				court_position:envoy_court_position = {
+					if = {
+						limit = {
+							NOT = {
+								has_variable = envoyskill
+							}
+						}
+	
+						set_variable = { name = envoyskill value = 1 }
+					}
+					else = {
+						change_variable = { name = envoyskill add = 1 }
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ok_offer_ok
+		diplo_deal_accepted = yes
+	}
+}
+diplo_deal_event.0006 = {
+	type = letter_event
+	opening = {
+		desc = diplo_accept_good_offer_opening
+	}
+	desc = diplo_accept_good_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = good_deal_made
+				target = global_var:diplo_1
+			}
+		}
+		global_var:diplo_1 = {
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						NOT = {
+							has_variable = envoyskill
+						}
+					}
+
+					set_variable = { name = envoyskill value = 3 }
+				}
+				else = {
+					change_variable = { name = envoyskill add = 3 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = diplo_offer_ok
+		diplo_deal_accepted = yes
+	}
+}
+diplo_deal_event.0007 = {
+	type = letter_event
+	opening = {
+		desc = diplo_accept_great_offer_opening
+	}
+	desc = diplo_accept_great_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_2 = {
+			add_opinion = {
+				modifier = great_deal_made
+				target = global_var:diplo_1
+			}
+		}
+		global_var:diplo_1 = {
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						NOT = {
+							has_variable = envoyskill
+						}
+					}
+
+					set_variable = { name = envoyskill value = 5 }
+				}
+				else = {
+					change_variable = { name = envoyskill add = 5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = diplo_offer_ok
+		diplo_deal_accepted = yes
+	}
+}
+diplo_deal_event.0008 = {
+	type = letter_event
+	opening = {
+		desc = diplo_decline_offer_opening
+	}
+	desc = diplo_decline_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+
+	}
+
+	option = {
+		name = ok_offer_ok
+		end_diplo_deal = yes
+	}
+}
+diplo_deal_event.0009 = {
+	type = letter_event
+	opening = {
+		desc = diplo_decline_np_offer_opening
+	}
+	desc = diplo_decline_np_offer
+	sender = global_var:diplo_2
+
+	immediate = {
+		global_var:diplo_1 = {
+			court_position:envoy_court_position = {
+				if = {
+					limit = {
+						NOT = {
+							has_variable = envoyskill
+						}
+					}
+
+					set_variable = { name = envoyskill value = -1 }
+				}
+				else = {
+					change_variable = { name = envoyskill subtract = 1 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ok_offer_ok
+		end_diplo_deal = yes
+	}
+}

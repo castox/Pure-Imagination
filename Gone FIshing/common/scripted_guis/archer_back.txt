@@ -1,0 +1,393 @@
+is_norse = {
+
+    scope = character
+	is_shown = {
+	
+		capital_province = { geographical_region = world_europe_north }
+		
+	}
+}
+is_western = {
+
+    scope = character
+	is_shown = {
+		NOR = {
+			
+			capital_province = { geographical_region = world_europe_north }
+			capital_province = { geographical_region = world_middle_east }
+			capital_province = { geographical_region = world_india }
+			capital_province = { geographical_region = world_steppe }
+			capital_province = { geographical_region = world_asia_minor }
+			capital_province = { geographical_region = world_africa }
+
+		}
+	}
+}
+is_eastern = {
+
+    scope = character
+	is_shown = {
+		capital_province = { geographical_region = world_middle_east }	
+	}
+}
+is_india = {
+
+    scope = character
+	is_shown = {
+		capital_province = { geographical_region = world_india }	
+	}
+}
+is_asia = {
+
+    scope = character
+	is_shown = {
+		
+		OR = {
+
+			capital_province = { geographical_region = world_steppe }
+			capital_province = { geographical_region = world_asia_minor }
+		}
+		
+	}
+}
+is_africa = {
+
+    scope = character
+	is_shown = {
+
+		capital_province = { geographical_region = world_africa }
+		
+	}
+}
+open_archer = {
+	scope = character
+
+	effect = {
+		play_music_cue =  mx_archer
+		random_list = {
+			1 = { 
+				set_variable = { name = target_c1 value = 9 } 
+				modifier = {
+					add = 50
+					var:archer1 = {
+						marshal < 12
+					}
+				}
+			}
+			1 = { 
+				set_variable = { name = target_c1 value = 10 } 
+				modifier = {
+					add = 50
+					var:archer1 = {
+						AND = {
+							marshal >= 12
+							marshal <= 14
+						}
+					}
+				}
+			}
+			1 = { 
+				set_variable = { name = target_c1 value = 11 } 
+				modifier = {
+					add = 50
+					var:archer1 = {
+						AND = {
+							marshal >= 14
+							marshal <= 16
+						}
+					}
+				}
+			}
+			1 = { 
+				set_variable = { name = target_c1 value = 12 } 
+				modifier = {
+					add = 50
+					var:archer1 = {
+						marshal > 17
+					}
+				}
+			}
+		}
+		random_list = {
+			1 = { 
+				set_variable = { name = target_c2 value = 11} 
+				modifier = {
+					add = 50
+					var:archer2 = {
+						marshal < 12
+					}
+				}
+			}
+			1 = { 
+				set_variable = { name = target_c2 value = 12 } 
+				modifier = {
+					add = 50
+					var:archer2 = {
+						AND = {
+							marshal >= 12
+							marshal <= 14
+						}
+					}
+				}
+			}
+			1 = { 
+				set_variable = { name = target_c2 value = 14 } 
+				modifier = {
+					add = 50
+					var:archer2 = {
+						AND = {
+							marshal >= 14
+							marshal <= 16
+						}
+					}
+				}
+			}
+			1 = { 
+				set_variable = { name = target_c2 value = 16 } 
+				modifier = {
+					add = 50
+					var:archer2 = {
+						marshal > 17
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				var:target_c1 = var:target_c2
+			}
+			change_variable = { name = target_c2 subtract = 1 } 
+		}
+	}
+}
+gcx = {
+	scope = character
+	is_shown = {
+		has_character_flag = start_game
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = start_game
+			}
+			change_variable = { name = game_countx subtract = 1 }
+		}
+		
+		if = {
+			limit = {
+				var:game_countx < 0
+			}
+			if = {
+				limit = {
+					has_character_flag = start_game
+				}
+				end_archer_game = yes
+			}
+			
+			remove_character_flag = start_game
+		}
+		
+	}
+}
+buwon = {
+	scope = character
+	is_shown = {
+		has_character_flag = b_you_won
+	}
+}
+butied = {
+	scope = character
+	is_shown = {
+		has_character_flag = b_you_tied
+	}
+}
+bulost = {
+	scope = character
+	is_shown = {
+		has_character_flag = b_you_lost
+	}
+}
+
+b_endgame_d = {
+	scope = character
+	is_shown = {
+		OR = {
+			has_character_flag = b_you_lost
+			has_character_flag = b_you_won
+			has_character_flag = b_you_tied
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				AND = {
+					var:target_c > var:target_c1
+					var:target_c > var:target_c2
+				}
+			}
+			add_character_flag = b_you_won
+			add_prestige = 50
+			set_variable = {
+				name = archer_winner
+				value = root
+			}
+	
+			var:archer1 = {
+				pay_short_term_gold = {
+					target = prev
+					gold = 50
+				}
+			}
+			var:archer2 = {
+				pay_short_term_gold = {
+					target = prev
+					gold = 50
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					var:target_c1 > var:target_c
+					var:target_c1 > var:target_c2
+				}
+			}
+			add_character_flag = b_you_lost
+			var:archer1 = {
+				add_prestige = 50
+				root = {
+					set_variable = {
+						name = archer_winner
+						value = prev
+					}
+				}
+			}
+	
+			pay_short_term_gold = {
+				target = var:archer1
+				gold = 50
+			}
+	
+			var:archer2 = {
+				pay_short_term_gold = {
+					target = var:archer1
+					gold = 50
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					var:target_c2 > var:target_c
+					var:target_c2 > var:target_c1
+				}
+			}
+			add_character_flag = b_you_lost
+			var:archer2 = {
+				add_prestige = 50
+				root = {
+					set_variable = {
+						name = archer_winner
+						value = prev
+					}
+				}
+			}
+	
+			pay_short_term_gold = {
+				target = var:archer2
+				gold = 50
+			}
+	
+			var:archer1 = {
+				pay_short_term_gold = {
+					target = var:archer2
+					gold = 50
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					var:target_c = var:target_c1
+					var:target_c > var:target_c2
+				}
+			}
+	
+			add_character_flag = b_you_tied
+			add_prestige = 25
+			var:archer1 = {
+				add_prestige = 25
+				root = {
+					set_variable = {
+						name = archer_winner
+						value = prev
+					}
+				}
+			}
+	
+			var:archer2 = {
+				pay_short_term_gold = {
+					target = prev
+					gold = 25
+				}
+				pay_short_term_gold = {
+					target = var:archer1
+					gold = 25
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					var:target_c = var:target_c2
+					var:target_c > var:target_c1
+				}
+	
+			}
+			
+			add_character_flag = b_you_tied
+			add_prestige = 25
+			var:archer2 = {
+				add_prestige = 25
+				root = {
+					set_variable = {
+						name = archer_winner
+						value = prev
+					}
+				}
+			}
+			var:archer1 = {
+				pay_short_term_gold = {
+					target = prev
+					gold = 25
+				}
+				pay_short_term_gold = {
+					target = var:archer2
+					gold = 25
+				}
+			}
+		}
+		if ={
+			limit = {
+				NOT = {
+					has_variable = b_highscore
+				}
+			}
+			set_variable = {
+				name = b_highscore
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				var:target_c > var:b_highscore
+			}
+			set_variable = {
+				name = b_highscore
+				value = var:target_c
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+types ProgressBars2
+{
+
+    Type progressbar_meter = icon
+    {
+        shaderfile = "gfx/FX/repeat_texture.shader"
+        alpha = 0.8
+		animation_progessbar_center_glowx = {
+			#visible = "[Not(SiegeWindow.GetSiege.IsBlocked)]"
+            flipdirection = yes
+			size = { 100% 98% }
+		}
+        block "bar_color"
+        {
+			texture = "gfx/interface/tavern/p_progress.dds"
+        }
+    }
+    Type progressbar_meter_1 = icon
+    {
+        shaderfile = "gfx/FX/repeat_texture.shader"
+        alpha = 0.8
+		animation_progessbar_center_glowx = {
+			#visible = "[Not(SiegeWindow.GetSiege.IsBlocked)]"
+            flipdirection = yes
+			size = { 100% 98% }
+		}
+        block "bar_color"
+        {
+			texture = "gfx/interface/tavern/f_progress.dds"
+        }
+    }
+
+}

@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "target_mesh"
+	file = "target.mesh"
+
+	meshsettings = {
+		name = "target.001"
+		index = 0
+		texture_diffuse = "dummy_diffuse.dds"
+		texture_normal = "dummy_normal.dds"
+		texture_specular = "dummy_properties.dds"
+		shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "target_entity"
+	pdxmesh = "target_mesh"
+}

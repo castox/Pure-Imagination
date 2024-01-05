@@ -1,0 +1,10 @@
+﻿l_french:
+
+bow_decision:0 "Organisez un tournoi de tir à l'arc !"
+bow_decision_confirm:0 "$bow_decision$"
+bow_decision_tooltip:0 "$bow_decision$"
+bow_decision_desc:0 "Organisez un tournoi de tir à l'arc, testez vos compétences contre les meilleurs du monde de chaque région"
+bow_decision_effect_tooltip: "Le droit d'entrée est de 50 pièces d'or, le gagnant remporte tout !\n\nSi vous tirez, vous le partagez avec l'autre archer. Parce que je suis trop paresseux pour faire un tour de la flèche d'or !\n\nUn tournoi peut avoir lieu tous les 30 jours.\n\nSi c'est la première fois que vous venez, appuyez sur le bouton du didacticiel car vous allez\npasser un mauvais moment. Mais ne vous inquiétez pas ! vous vous y habituerez et vous verrez bientôt que la barre n'est pas trop haute.\n\nVous pouvez également rester après le tournoi pour vous entraîner davantage."
+
+BOW_TUT: "Commencez par déplacer votre souris de haut en bas sur l'écran pour découvrir vos 3 plages de positions\n\nÉlevé, moyen, bas\n\nCliquez sur le côté droit de l'écran et testez-le.\nEn fonction de votre cible, vous devez ajuster .\n\nMaintenir enfoncé le bouton gauche de la souris équipe une flèche aussi longtemps que vous la maintenez enfoncée.\nPendant que vous avez une flèche, vous remarquerez que la flèche sur le mannequin de précision se déplace de haut en bas. Lâcher une flèche à l'intérieur de la cible rouge est une précision maximale.\n\nCependant, cela ne garantira pas un coup ! Sur le côté droit du mannequin, vous verrez une barre. Maintenir la barre d'espacement ajoutera de la puissance à votre tir ! la barre elle-même est jaune, mais lorsque vous atteignez la puissance appropriée pour le tir, elle deviendra verte !\nAprès avoir relâché une flèche, votre puissance reviendra à 0 ou lorsque vous relâcherez la barre d'espace, elle commencera à baisser.\n\nLa la bonne combinaison de la position de visée, de la précision de la visée et de la puissance de visée vous assure d'obtenir un coup.\n\nTouchez autant de cibles que possible en 60 secondes. l'écran.\nAbattez-les et gagnez ! Partir pendant le match est aussi un gage. Amusez-vous.\n\n~Castox"
+

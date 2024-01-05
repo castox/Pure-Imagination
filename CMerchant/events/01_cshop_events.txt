@@ -1,0 +1,38 @@
+﻿namespace = cshop
+
+##################################################
+
+cshop.1000 = {
+	type = character_event
+	title = "somthing_here1"
+	desc = "somthing_here2"	
+	theme = none	
+	widgets = {
+		widget = {
+			gui = "open_cshop"			
+			container = "custom_widgets_container"
+			controller = default
+			setup_scope = { }
+		}
+	}
+		
+	# This won't actually ever be shown.
+	option = { name = "somthing_here3" }
+}
+cshop.1001 = {
+	type = character_event
+	title = "somthing_here1"
+	desc = "somthing_here2"	
+	theme = none	
+	widgets = {
+		widget = {
+			gui = "open_equip"			
+			container = "custom_widgets_container"
+			controller = default
+			setup_scope = { }
+		}
+	}
+		
+	# This won't actually ever be shown.
+	option = { name = "somthing_here3" }
+}

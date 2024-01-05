@@ -1,0 +1,157 @@
+
+is_trot = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = is_trotting
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = is_trotting
+			}
+			remove_character_flag = is_trotting
+		}
+		else = {
+			add_character_flag = is_trotting
+		}
+		
+	} 
+}
+is_r2d2 = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = r2_move
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = r2_move
+			}
+			remove_character_flag = r2_move
+		}
+		else = {
+			add_character_flag = r2_move
+			remove_character_flag = r2d2_rotate
+		}
+		
+	} 
+}
+r2d2_view = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = r2d2_side
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = r2d2_side
+			}
+			remove_character_flag = r2d2_side
+		}
+		else = {
+			add_character_flag = r2d2_side
+		}
+		
+	} 
+}
+r2d2_rotate = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = r2d2_rotate
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = r2d2_rotate
+			}
+
+			remove_character_flag = r2d2_rotate
+		}
+		else = {
+			add_character_flag = r2d2_rotate
+			remove_character_flag = r2_move
+		}
+		
+	} 
+}
+rem_r2d2 = {
+	scope = character
+
+	effect = {
+		remove_character_flag = r2_move
+	}
+}
+is_not_trot = {
+	scope = character
+	is_shown = {
+		NOT = {
+			has_character_flag = is_trotting
+		}
+	}
+	effect = {
+		remove_character_flag = is_trotting
+	} 
+}
+
+trot_l = {
+
+    scope = character
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = is_trotting
+			}
+			remove_character_flag = horse_ridingr
+			add_character_flag = horse_ridingl
+		}
+		else = {
+			remove_character_flag = horse_ridingl
+			remove_character_flag = horse_ridingr
+		}
+
+	}
+}
+trot_r = {
+
+    scope = character
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = is_trotting
+			}
+			remove_character_flag = horse_ridingl
+			add_character_flag = horse_ridingr
+		}
+		else = {
+			remove_character_flag = horse_ridingl
+			remove_character_flag = horse_ridingr
+		}
+
+	}
+}
+trot_f = {
+
+    scope = character
+
+	effect = {
+		remove_character_flag = horse_ridingl
+		remove_character_flag = horse_ridingr
+	}
+}
+
+debug_visual = {
+	is_shown = {
+		has_character_flag = debugger
+	}
+}
+

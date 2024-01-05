@@ -1,0 +1,5 @@
+﻿
+dynn_varys = {
+	name = "Varys"
+	culture = lyseni
+}

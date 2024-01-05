@@ -1,0 +1,35 @@
+﻿l_simp_chinese:
+
+challenge_interaction:0 "饮酒比赛"
+trait_fisher_character_desc:0 "这个人花了太多时间钓鱼，但这让他们赢得了闻起来像鱼的男人的尊重"
+trait_fisher_desc:0 "外出钓鱼"
+trait_legendary_fisherman:0 "传奇渔夫"
+
+fish1_name: "金枪鱼"
+fish2_name: "鲭鱼"
+fish3_name: "三文鱼"
+fish4_name: "巴沙鱼"
+fish5_name: "粉红鲑鱼"
+fish6_name: "大菱鲆"
+fish7_name: "鲈鱼"
+fish8_name: "鲢鱼"
+fish9_name: "岩鱼"
+fish10_name: "多拉多"
+fish11_name: "派克"
+fish12_name: "梭鲈"
+fish13_name: "海峡鲶鱼"
+fish14_name: "虹鳟鱼"
+fish15_name: "H鲱鱼"
+fish16_name: "Hornicorn"
+
+go_fishing_decision:0 "去钓鱼！"
+go_fishing_decision_confirm:0 "$go_fishing_decision$"
+go_fishing_decision_tooltip:0 "$go_fishing_decision$"
+go_fishing_decision_desc:0 "我需要减轻一些压力，我去钓鱼怎么样，我的好朋友卡斯托克斯伯爵知道最佳地点！"
+go_fishing_decision_effect_tooltip:0 "钓鱼可以减轻压力，鱼越坚韧，压力就越小。\n\n捕获所有 15 条鱼将授予您传奇渔夫的特性！"
+
+FISH_ICON_CAUGHT: "[Localize(Concatenate(Concatenate('@fish_',GetPlayer.MakeScope.Var('current_fish1').GetFlagName), '!'))]" 
+FISH_NAME_DESC: "你抓到了 [Localize(Concatenate(GetPlayer.MakeScope.Var('current_fish1').GetFlagName,'_name'))]! "
+FISH_NAME: "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+FISH_ICON: "[Localize(Concatenate(Concatenate('@fish_',Scope.GetFlagName), '!'))]" 
+

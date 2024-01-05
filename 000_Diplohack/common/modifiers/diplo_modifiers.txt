@@ -1,0 +1,7 @@
+﻿
+
+shady_deal_made = { 
+	icon = diplomacy_negative
+	general_opinion = -5
+	stacking = yes
+}

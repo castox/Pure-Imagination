@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "mug_mesh"
+	file = "mug.mesh"
+
+	meshsettings = {
+		name = "mug_meshShape.001"
+		index = 0
+		texture_diffuse = "TX_floor_plank_A_basecolor.TGA"
+		texture_normal = "TX_floor_plank_A_normal.TGA"
+		texture_specular = ""
+		shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "mug_entity"
+	pdxmesh = "mug_mesh"
+}

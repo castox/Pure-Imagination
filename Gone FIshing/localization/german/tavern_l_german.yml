@@ -1,0 +1,35 @@
+﻿l_german:
+
+challenge_interaction:0 "Trinkwettbewerb"
+trait_fisher_character_desc:0 "Diese Person verbringt viel zu viel Zeit mit Angeln, aber es hat ihm den Respekt von Typen eingebracht, die nach Fisch riechen"
+trait_fisher_desc:0 "Angeln"
+trait_legendary_fisherman:0 "Legendärer Fischer"
+
+fish1_name: "Thunfisch"
+fish2_name: "Makrele"
+fish3_name: "Lachs"
+fish4_name: "Pangasius"
+fish5_name: "Buckellachs"
+fish6_name: "Steinbutt Brill"
+fish7_name: "Seebarsch"
+fish8_name: "Silberkarpfen"
+fish9_name: "Felsenfisch"
+fish10_name: "Dorado"
+fish11_name: "Pike"
+fish12_name: "Zander"
+fish13_name: "Kanalwels"
+fish14_name: "Regenbogenforelle"
+fish15_name: "Hering"
+fish16_name: "Hornicorn"
+
+go_fishing_decision:0 "Angeln gehen!"
+go_fishing_decision_confirm:0 "$go_fishing_decision$"
+go_fishing_decision_tooltip:0 "$go_fishing_decision$"
+go_fishing_decision_desc:0 "Ich muss etwas Stress abbauen, wie wäre es mit Angeln, mein guter Freund Graf Castox kennt den perfekten Spot!"
+go_fishing_decision_effect_tooltip:0 "Angeln reduziert Stress. Je härter der Fisch, desto mehr Stress wird reduziert.\n\nWenn Sie alle 15 Fische fangen, erhalten Sie die Eigenschaft, legendäre Fischer!"
+
+FISH_ICON_CAUGHT: "[Localize(Concatenate(Concatenate('@fish_',GetPlayer.MakeScope.Var('current_fish1').GetFlagName), '!'))]" 
+FISH_NAME_DESC: "Du hast einen erwischt [Localize(Concatenate(GetPlayer.MakeScope.Var('current_fish1').GetFlagName,'_name'))]! "
+FISH_NAME: "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+FISH_ICON: "[Localize(Concatenate(Concatenate('@fish_',Scope.GetFlagName), '!'))]" 
+

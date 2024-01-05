@@ -1,0 +1,27 @@
+﻿
+t_dummy_template = {
+	name = "Target"
+	religion = catholic
+	culture = roman
+	age = 24
+	immortal = yes
+
+	martial = 0
+	prowess = 0
+	diplomacy = 0
+	intrigue = 0
+	stewardship = 0
+	learning = 0
+	
+	
+	trait = education_martial_4
+
+
+
+	disallow_random_traits = yes
+	after_creation = {
+		set_immortal_age = 24
+		add_character_flag = has_scripted_appearance
+	}
+
+}

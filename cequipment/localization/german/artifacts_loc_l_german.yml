@@ -1,0 +1,432 @@
+﻿l_german:
+ 
+ ARTIFACTS_BUTTON:0 "#T Artefakte #!"
+ ARTIFACTS_VIEW_TITLE:0 "Artefakte"
+ ARTIFACTS_VIEW_TITLES:0 "Unsere Artefakte"
+ ARTIFACTS_VIEW_NONE:0 "Keine Artefakte"
+ ARTIFACTS:0 "Artefakte"
+ artifacts:0 "Artefakte"
+ gift_artifact:0 "Schenke Artefakte"
+ 
+ destroy_artifact_tt:0 "Zerstöre Artefakt"
+ equip_artifact_tt:0 "Artefakt ausrüsten"
+ equipped_artifact:0 "#P Ausgerüstet#!"
+ unequip_artifact_tt:0 "Artefakt ablegen"
+ unequipped_artifact:0 "#N Abgelegt#!"
+ send_artifacts:0 "Artefakte senden"
+ 
+ gift_artifacts_interaction:0 "Artefakte schenken"
+ gift_artifacts_interaction_desc:0 "Schenke dieser Person ein Artefakt"
+ gift_artifacts_interaction_notification:0 "Geschenktes Artefakt"
+ 
+ steal_all_artifacts:0 "Alle Artefakte stehlen"
+ steal_all_artifacts_desc:0 "Artefakt dieser Person stehlen"
+ steal_all_artifacts_notification:0 "Artefakte gestohlen"
+ 
+ artifact_debug_decision:0 "Alle Artefakte holen"
+ artifact_debug_decision_tooltip:2 "(Debug Interaction)"
+ artifact_debug_decision_desc:0 "Du wirst alle Artefakte im Spiel erhalten. "
+ artifact_debug_decision_effect_tooltip:2 "Du wirst alle Artefakte im Spiel erhalten"
+ artifact_debug_decision_confirm:0 "Ultimative Macht!"
+ 
+# Mouseover tooltip emulates the modifier by default - if your mod uses Passive Modifiers for unequipped items, you can add the passive tooltip here as well.
+ artifact_tooltip:0 "#T [GetModifier(Concatenate(Scope.GetFlagName,'_modifier')).GetName]#! \n[GetModifier(Concatenate(Scope.GetFlagName,'_modifier')).GetDesc]"
+ 
+ ADD_ARTIFACT_EFFECT:0 "Erhaltet das Artefakt [ARTIFACT.GetFlagName|V].1"
+ ADD_ARTIFACT_EFFECT_FIRST:1 "Du wirst das Artefakt [CHARACTER.MakeScope.Var('most_recent_artifact').GetFlagName] erhalten, auch $MODIFIER|V0$ und der Wert ist $VALUE|V0$.2"
+ ADD_ARTIFACT_EFFECT_FIRST_PAST:1 "Du hast das Artefakt [ARTIFACT.GetFlagName|V].3"
+ ADD_ARTIFACT_EFFECT_THIRD:0 "[CHARACTER.GetShortUIName|U] erhält das Artefakt $VALUE|V0$.4"
+ ADD_ARTIFACT_EFFECT_THIRD_PAST:0 "[CHARACTER.GetShortUIName|U] erhält das Artefakt [ARTIFACT.GetFlagName|V].5"
+ 
+ GET_ARTIFACT_NAME:0 "[Concatenate(Scope.GetFlagName,'_name')]"
+ GET_ARTIFACT_TYPE:0 "[Concatenate(Scope.GetFlagName,'_type')]"
+ GET_ARTIFACT_MODIFIER:0 "[Concatenate(Scope.GetFlagName,'_modifier')]"
+ GET_ARTIFACT_EQUIPPED:0 "[Concatenate(Scope.GetFlagName,'_equipped')]"
+ GET_ARTIFACT_SELECTED:0 "[Concatenate(Scope.GetFlagName,'_selected')]"
+ GET_ARTIFACT_NAME_LOC:0 "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+ GET_ARTIFACT_TYPE_LOC:0 "[Localize(Concatenate(Scope.GetFlagName,'_type'))]"
+ GET_ARTIFACT_MODIFIER_LOC:0 "[Localize(Concatenate(Scope.GetFlagName,'_modifier'))]"
+ GET_ARTIFACT_EQUIPPED_LOC:0 "[Localize(Concatenate(Scope.GetFlagName,'_equipped'))]"
+ GET_ARTIFACT_SELECTED_LOC:0 "[Localize(Concatenate(Scope.GetFlagName,'_selected'))]"
+ 
+ #For some reason we need one loc to call custom loc and then call back to loc in order to get dynamically updating text.
+ selected_artifact:0 "[ROOT.Var('artifact_selection').GetFlagName]"
+ selected_artifact_title:0 "[GetPlayer.Custom('GetSelectedArtifactTitle')]"
+ artifact_title:0 "[Localize(Concatenate(ROOT.Var('artifact_selection').GetFlagName,'_name'))]" 
+ selected_artifact_desc:0 "[GetPlayer.Custom('GetSelectedArtifactDesc')]"
+ artifact_desc:0 "[Localize(Concatenate(ROOT.Var('artifact_selection').GetFlagName,'_desc'))]" 
+ selected_artifact_equipped:0 "[GetPlayer.Custom('GetSelectedArtifactEquipped')]"
+ 
+ artifact_name_fallback:0 ""
+ artifact_desc_fallback:0 "Wenn du ein Artefakt erhältst, wird Name und Beschreibung hier erscheinen."
+ artifact_equip_fallback:0 ""
+ 
+ selected_artifact_type:0 "[GetPlayer.Custom('GetArtifactType')]"
+ artifact_type_handheld:0 "@skill_prowess_icon!# #Z Handgeführt#!"
+ artifact_type_armor:0 "@dread_icon!# #Z  Rüstung#!"
+ artifact_type_headgear:0 "@knight_icon!# #Z Kopfschutz#!"
+ artifact_type_jewelry:0 "@arrange_marriage_icon!# #Z Schmuck#!"
+ artifact_type_mount:0 "@icon_horse!# #Z Reittier#!"
+ artifact_type_fabrial:0 "[magic_i]#Z Fabrial#!"
+ artifact_type_fallback:0 "#Z Untyped#!"
+ 
+ selected_artifact_indestructible:0 "[GetPlayer.Custom('GetSelectedArtifactIndestructible')]"
+ indestructible_artifact:0 "#P Unzerstörbar#!"
+ destructible_artifact:0 "#N Zerstörbar#!"
+ #"[Localize(Concatenate(ROOT.Var('artifact_selection').GetFlagName,'_name'))]"
+ 
+ selected_artifact_rarity:0 "[GetPlayer.Custom('GetSelectedArtifactRarity')]"
+ artifact_rarity_1:0 "@army_quality_icon_1!Seltenheit - 1"
+ artifact_rarity_2:0 "@army_quality_icon_2!#Z Seltenheit - 2#!"
+ artifact_rarity_3:0 "@army_quality_icon_3!#P Seltenheit - 3#!"
+ artifact_rarity_4:0 "@army_quality_icon_4!#N Seltenheit - 4#!"
+ artifact_rarity_fallback:0 "@army_quality_icon_5!#D Unikat#!"
+ 
+ #add_artifact_tt:0 "Gain artifact ." 
+ # [GetModifier('$ARTIFACT$_modifier').GetNameWithTooltip]"
+ gave_artifacts_opinion:0 "Gab Artefakte"
+ 
+ ### Events
+ artifact_gift.1.t:0 "Artefakt schenken"
+  artifact_gift.1.desc:0 "Man kann nur so viele Artefakte auf einmal verwenden. Es liegt also im Interesse meiner Dynastie sicherzustellen, dass alle unsere Artefakte sinnvoll genutzt werden. \n\nAus diesem Grunde habe ich beschlossen, [recipient.GetTitledFirstName] ein Artefakt zu schenken."
+ artifact_gift.1.a:0 "Ich werde sie verschenken..."
+ artifact_gift.1.tt:0 "(Use the GUI)"
+ 
+ artifact_siege.0002.t:0 "Artefakt beschlagnahmt!"
+ artifact_siege.0002.desc:0 "Während der Belagerung von [artifact_barony.GetName] haben mir meine Männer einen höchst merkwürdigen Gegenstand präsentiert. Es scheint, dass der dumme [artifact_holder.GetName] eines seiner unschätzbaren Artefakte in seiner eigenen Schatzkammer zurückgelassen hat, frei für die Einnahme durch meine Männer! Ich habe es freudig in mein eigenes Repertoire aufgenommen."
+ artifact_siege.0002.a:0 "Wer's findet darf's behalten!"
+ 
+ artifact_siege.0003.t:0 "Artefakt verloren!"
+ artifact_siege.0003.desc:0 "Unsere Feinde haben eines unserer unschätzbaren Artefakte aus der Schatzkammer bei [artifact_barony.GetName] geplündert! Sie sind mit ihrer Beute schnell entkommen. Unser Artefakt ist wahrscheinlich bereits in den Händen unseres Feindes."
+ artifact_siege.0003.a:0 "Verdammt!"
+ 
+ artifact_create.0008.t:0 "Ein Meisterwerk erschaffen"
+ artifact_create.0008.desc:0 "Ich habe veranlasst, dass ein geeigneter Schmied für die Aufgabe herbeigerufen wird. Aber zuerst muss ich entscheiden, wie weit ich gehen will und was genau ich haben will. Eine neue Rüstung könnte mir helfen, mich als den Herrscher zu präsentieren, der ich bin. Während eine neue Waffe zweifellos im Kampf und möglicherweise auch außerhalb von Nutzen sein könnte. Andererseits kann ich immer ein paar neue Prachtstücke gebrauchen ... "
+ artifact_create.0008.a:0 "Eine Waffe!"
+ artifact_create.0008.b:0 "Eine Rüstung!" 
+ artifact_create.0008.c:0 "Etwas anderes!"
+ 
+ artifact_create.0001.t:0 "Ein Meisterwerk erschaffen"
+ artifact_create.0001.desc_weapon:0 "Eine Waffe wäre mir ganz recht! Ob im Kampf oder um anzugeben, nichts anderes wäre das Geld wert. Jetzt stellt sich einzig die Frage, wie viel genau ich dafür ausgeben will. Ich könnte etwas wirklich Großartiges schaffen, aber natürlich muss ich mir letztendlich Sorgen über die Finanzen machen. Es gibt keine Garantie, dass das, was ich erhalte, die Investition völlig wert ist, wenn ich die gesamte Staatskasse dafür ausgebe ... "
+ artifact_create.0001.desc_crown:0 "Eine Rüstung! Eine prunkvolle Rüstung! Oder zumindest funktional. Jetzt stellt sich einzig die Frage, wie viel genau ich dafür ausgebe. Ich könnte etwas wirklich Großartiges schaffen, aber natürlich muss ich letztendlich die Finanzen im Auge behalten. Es gibt kein Versprechen, dass das, was ich erhalte, die Investition völlig wert ist, wenn ich die gesamte Staatskasse dafür ausgebe ... "
+ artifact_create.0001.desc_jewelry:0 "Ein paar Prachtstücke, ein Stab, eine Krone und Schmuck, um allen meine Insignien zu zeigen. Nichts, woran man sparen sollte, aber solche Dinge können überraschend teuer sein. Etwas Großartiges zu erschaffen würde den Hof zweifellos beeindrucken, aber Insolvenz ist wahrscheinlich zur Zeit nicht in Mode ... "
+ artifact_create.0001.a:0 "Etwas Funktionales ist alles was ich brauche." 
+ artifact_create.0001.a.tt:0 "Dies führt zu einem Artefakt der Seltenheit 1."
+ artifact_create.0001.b:0 "Etwas Schönes, aber nicht zu protzig ..."
+ artifact_create.0001.b.tt:0 "Dies führt zu einem Artefakt der Seltenheit 2."
+ artifact_create.0001.c:0 "Ich will nur das Beste!" 
+ artifact_create.0001.c.tt:0 "Dies führt zu einem Artefakt der Seltenheit 3."
+ artifact_create.0001.d:0 "Wenn ich es mir noch einmal überlege, vielleicht doch nicht."
+ 
+ artifact_create.degrade.tt:0 "Die Qualität des Artefakts wird sich verschlechtern."
+ artifact_create.degrade.t:0 "Qualitätsverlust"
+ artifact_create.degrade.desc:0 "Die Qualität des Artefakts hat sich verschlechtert."
+ artifact_create.improvement.tt:0 "Die Qualität des Artefakts wird verbessert."
+ artifact_create.improvement.t:0 "Qualitätssteigerung"
+ artifact_create.improvement.desc:0 "Die Qualität des Artefakts hat sich verbessert."
+ 
+ artifact_create.0002.t:0 "Eine gute Gelegenheit"
+ artifact_create.0002.desc:0 "Ich werde von meinen Handwerkern beiseite gezogen, ihre Augen glänzend vor Aufregung. "Mein Herr!" sagt der leitende Handwerker, außer sich vor Freude. "Wir haben unsere Arbeit abgeschlossen. Darüber hinaus können wir das Werk möglicherweise mit Eurer Unterstützung verbessern. Mit Eurer Zustimmung sind wir bereit, sofort mit der weiteren Arbeit zu beginnen." Während ich den Worten des Handwerkers zuhöre, überlege ich mir meine Optionen genau."
+ artifact_create.0002.a:0 "Gut ..."
+ artifact_create.0002.a.success:0 "Die Qualität der Arbeit hat sich verbessert" 
+ artifact_create.0002.a.failure:0 "Die Qualität der Arbeit hat sich nicht verbessert" 
+ artifact_create.0002.a.greatsuccess:0 "Die Qualität der Arbeit hat sich deutlich verbessert" 
+ artifact_create.0002.b:0 "Nein, wir können keine weiteren Ressourcen mehr dafür verschwenden." 
+ 
+ artifact_create.0003.t:0 "Erfolgreiche Arbeit"
+ artifact_create.0003.desc:0 "Als ich die Werkstatt der Handwerker betrete, sieht mich der Anführer derjenigen, die an dem Artefakt arbeiten, an und neigt den Kopf. "Mein Herr", beginnt er. "Ich bin stolz euch berichten zu können, dass die Arbeit ein Erfolg war und wir den Gegenstand nach euren Wünschen erschaffen konnten. Ich glaube, wir können noch weitere Verbesserungen vornehmen, wenn wir mehr Zeit und Ressourcen hätten.""
+ artifact_create.0003.a:0 "Gut ..."
+ artifact_create.0003.a.success:0 "Die Qualität der Arbeit hat sich verbessert"
+ artifact_create.0003.a.failure:0 "Die Qualität der Arbeit hat sich nicht verbessert"
+ artifact_create.0003.a.greatsuccess:0 "Die Qualität der Arbeit hat sich deutlich verbessert!"
+ artifact_create.0003.b:0 "Nein, wir können keine weiteren Ressourcen mehr dafür verschwenden."
+ 
+ artifact_create.0004.t:0 "Eine Enttäuschung"
+ artifact_create.0004.desc:0 "Ein Vertreter meiner Schmiede eilt zu mir und bringt, entgegen meiner guten Hoffnungen, schlechte Nachrichten. \n\n "Mein Herr ... ", beginnt er. "Ich ... nun, mein Gehilfe, kein guter Junge, Meldrick, der kleine Dummkopf ... nun ... nun, wir wollten ... " Was als nächstes kommt, ist eine lange Tirade von Beschwerden und Ausreden, die mich einfach nur darüber informiert, dass der Gegenstand, mit dem meine Schmiede beauftragt wurden, in weitaus schlechterer Qualität als ursprünglich erhofft geschaffen wurde, und ich habe das schleichende Gefühl, dass Meldrick einfach nur ein Sündenbock für eine weitgreifendere Inkompetenz ist. Ich könnte sie einfach weiterarbeiten lassen, oder das gesamte Gesindel hinauswerfen und das Geld für jemanden ausgeben, der kompetenter ist. "
+ artifact_create.0004.a:0 "Was können wir hier retten?" 
+ artifact_create.0004.a.success:0 "Die Schmiede schaffen es, den Schaden rückgängig zu machen"
+ artifact_create.0004.a.failure:0 "Die Qualität der Arbeit hat sich verschlechtert" 
+ artifact_create.0004.b:0 "Ich werde nichts davon retten."
+ 
+ artifact_create.0005.t:0 "Schlampige Arbeit"
+ artifact_create.0005.desc:0 "Beim Betreten der Werkstatt der Handwerker stelle ich sofort fest, dass etwas schief gelaufen ist. Die Handwerker stehen niedergeschlagen und verzweifelt um meinen Auftrag herum, und als ich näher komme, kann ich sehen, dass ihre Arbeit mehr Schaden als Nutzen gebracht hat. \n\n "Ich entschuldige mich aufrichtig, mein Herr." Krächzt der leitende Handwerker. "Mit Eurer Gnade und etwas mehr Zeit kann ich versuchen, den Schaden zu reparieren ...""
+ artifact_create.0005.a:0 "Was können wir hier tun?"
+ artifact_create.0005.a.success:0 "Den Schmieden gelingt es, den Schaden rückgängig zu machen. "
+ artifact_create.0005.a.failure:0 "Die Qualität der Arbeit hat sich verschlechtert. "
+ artifact_create.0005.b:0 "Ich werde nichts davon retten."
+ 
+ artifact_create.0006.t:0 "Stand meiner Arbeit"
+ artifact_create.0006.improve.desc:0 "Die anfänglichen Entwürfe waren zwar angemessen, aber Angemessenheit ist nicht genug für jemanden meiner Statur! Ich hatte meine Schmiede damit beauftragt, an einigen potenziellen Verbesserungen zu arbeiten, mit der Hoffnung, dass das Endergebnis gegenüber den anfänglichen Entwürfen zu minimalen Kosten weiter verbessert werden kann ... und nun ... \n\n Ich bin außer mir vor Freude über das Ergebnis! Die Arbeit übertrifft sogar meine wildesten Erwartungen und sollte noch besser werden, als ich ursprünglich gehofft hatte!"
+ artifact_create.0006.degrade.desc:0 "Die anfänglichen Entwürfe waren zwar angemessen, aber Angemessenheit ist nicht genug für jemanden meiner Statur! Ich hatte meine Schmiede damit beauftragt, an einigen potenziellen Verbesserungen zu arbeiten, mit der Hoffnung, dass das Endergebnis gegenüber den anfänglichen Entwürfen zu minimalen Kosten weiter verbessert werden kann ... und nun ... \n\n Das Ergebnis war enttäuschend. Die Berichte meiner Schmiede zeigen, dass die versuchten Verbesserungen tatsächlich die Qualität der Arbeit verschlechtert haben. Es scheint, dass die Winde des Schicksals nicht freundlich zu mir waren."
+ artifact_create.0006.fallback.desc:0 "Die anfänglichen Entwürfe waren zwar angemessen, aber Angemessenheit ist nicht genug für jemanden meiner Statur! Ich habe meine Schmiede damit beauftragt, an einigen potenziellen Verbesserungen zu arbeiten, mit der Hoffnung, dass das Endergebnis gegenüber den anfänglichen Entwürfen zu minimalen Kosten weiter verbessert werden kann... und nun ... \n\n Das Ergebnis war leider nur angemessen, obwohl die ersten Berichte Verbesserungen in mehreren Schlüsselbereichen versprachen."
+  artifact_create.0006.a:0 "Ein akzeptables Ergebnis. Lasst uns den Entwurf vervollständigen ..."
+ artifact_create.0006.b:0 "Verflucht! Lasst uns den Entwurf vervollständigen ..."
+ 
+ artifact_create.0007.t:0 "Eine noch bessere Kreation?"
+ artifact_create.0007.desc:0 "Als ich mit Spannung auf Neuigkeiten von meinen Schmieden gewartet habe, habe ich mich gefragt, ob die Arbeit prächtig genug ist. Wäre es nicht möglich, zusätzliche Anstrengungen zu unternehmen und einen Gegenstand zu schaffen, der wirklich der Ewigkeit würdig ist? Vielleicht wird er nicht großartig, aber stattdessen etwas wirklich Inspirierendes. Wenn ich nur ... etwas Mühe fordern, mehr Geld investieren, mehr Zeit investieren würde, könnten wir vielleicht schwindelerregende neue Höhen der Handwerkskunst erreichen. Es besteht jedoch immer das Risiko, dass das fertige Werk schlechter wird. Alle Änderungen, die während des Schmiedevorgangs vorgenommen werden, bergen dieses Risiko. Und die Aufforderung an Schmiede, mir Sonne und Sterne zu geben, kann den gegenteiligen Effekt haben. Die Entscheidung liegt wie immer bei mir und allein bei mir."
+ artifact_create.0007.a:0 "Wir können noch weiter gehen ... "
+ artifact_create.0007.a.tt:0 "Ich werde versuchen, ein Legendäres Artefakt herzustellen."
+ artifact_create.0007.b:0 "Ich sollte hier aufhören. Was ich in Auftrag gegeben hatte, war vollkommen akzeptabel."
+ 
+ artifact_create.0008.t:0 "Was erschaffen, was erschaffen ..."
+ artifact_create.0008.desc:0 "Jetzt muss ich entscheiden, welche Art von Artefakt ich genau möchte. Vielleicht ein Schwert, um den Adel meines Ranges zu zeigen ... oder vielleicht eine Rüstung, die in bestimmten anderen Situationen nützlicher sein kann. Ich könnte sogar ein Set mit wunderschönen Kronjuwelen in Auftrag geben, um alle in meinem Hof zu beeindrucken."
+ artifact_create.0008.a:0 "Eine tödliche Waffe! "
+ artifact_create.0008.a.tt:0 "Das fertige Artefakt wird eine Waffe sein."
+ artifact_create.0008.b:0 "Eine Rüstung!"
+ artifact_create.0008.b.tt:0 "Das fertige Artefakt wird eine Rüstung sein."
+ artifact_create.0008.c:0 "Wunderschöner Schmuck!"
+ artifact_create.0008.c.tt:0 "Das fertige Artefakt wird ein Satz Kronjuwelen sein."
+ artifact_create.0008.d:0 "Wenn ich darüber nachdenke, vielleicht doch nicht."
+ 
+ artifact_create.0009.t:0 "Die Arbeit abgeschlossen"
+ artifact_create.0009.desc:0 "Als sich meine Schmiede nähern, flankiert von Gardisten, tragen sie die versiegelte Truhe mit dem Gegenstand mit sich, den ich vor so langer Zeit in Auftrag gegeben habe. Meine Kehle schnürt sich zusammen, waren alle Anstrengungen umsonst? Werde ich als Erster ein wahres Artefakt mit mir führen, das zu Recht über Generationen hinweg in meiner Familie weitergegeben werden wird? Die Gedanken rasen mir durch den Kopf, als ich mit zitternden Händen die Siegel öffne und finde ..."
+ artifact_create.0009.a:0 "Ein atemberaubender Erfolg! Ein wahres Artefakt!"
+ artifact_create.0009.a.tt:0 "Eine perfekte Ergänzung, so wie ich es mir gewünscht habe!"
+ artifact_create.0009.b:0 "Ein düsterer Misserfolg! Verdammt noch mal!"
+ artifact_create.0009.c:0 "Nichts. Nutzloser Müll."
+ 
+ artifact_hunt.0001.t:0 "Die Jagd Beginnt"
+ artifact_hunt.0001.desc:0 "Durch meine jüngsten Heldentaten bin ich auf Beweise für einen möglichen Gegenstand gestoßen, der Historikern seit geraumer Zeit verborgen geblieben ist. Natürlich könnte alles nur ein phantasievolles Gerücht sein, Geschichten alter Frauen oder möglicherweise sogar geradezu Fälschungen. Trotzdem, für den Fall, dass diese Gerüchte wahr sind, wäre ich dumm, eine solche Gelegenheit zu verpassen. Artefakte von historischer Bedeutung können für diejenigen, die ein Auge dafür haben, von enormem Wert sein und jeder Herrscher der eines besitzt, wäre zweifellos für lange Zeit die Rede vom Lande. Mein Geist füllt sich mit Bildern von prächtigen Helmen, glänzenden und vergoldeten Schwertern und Brustpanzern, die nur von den geschicktesten Händen der Geschichte geschlagen wurden. Ich habe das Gefühl, als würde ich sie jetzt schon alle in meinen Händen halten ..."
+ artifact_hunt.0001.a:0 "Zeit auf die Jagd zu gehen!"
+ artifact_hunt.0001.b:0 "Vielleicht ein anderes Mal."
+ 
+ artifact_hunt.0002.t:0 "Angeheuerte Hilfe"
+ artifact_hunt.0002.desc:0 "Warum sollte ich mir die Mühe machen, Spuren nachzujagen, die sich als wilde Gänsejagd herausstellen? Ich habe so viel wichtigere, offensichtlich reale Probleme am Hofe zu lösen. Ich kann einfach keine Zeit verlieren, um mich persönlich mit Gerüchten zu befassen. Das heißt aber nicht, dass ich sie ignorieren muss, denn dies könnte sich in der Tat als ziemlich dumm erweisen. Anstatt mich auf den Weg zu machen, habe ich beschlossen, einige Einheimische einzustellen, die das Suchen für mich übernehmen. Jäger, Fallensteller, Veteranen vergangener Kriege, Menschen, die die Lage des Landes kennen sollten. Sie werden gut und vertrauenswürdig sein, solange ich ihnen einen angemessenen Betrag als Gegenleistung für das Auffinden des Artefakts zahle."
+ artifact_hunt.0002.a:0 "Viel Glück!"
+ artifact_hunt.0002.b:0 "Vielleicht sollte ich mein Gold für ein sichereres Unterfangen aufbewahren."
+ 
+ artifact_hunt.0003.t:0 "Die Reihe"
+ artifact_hunt.0003.desc:0 "Jeder gute Anführer muss bereit sein, sich beim Streben nach Ruhm und Macht die Hände schmutzig zu machen, so haben es uns die Geschichtenerzähler überliefert. Heute werde ich eine Reihe meines persönlichen Gefolges führen, um nach dem angeblich nahe gelegenen Artefakt zu suchen. Die Gruppe wird in Paare aufgeteilt und auf eine möglichst große Fläche geschickt. Hoffentlich wird der Ausflug von kurzer Dauer sein und ohne Einmischung von Menschen, Tieren oder dunkleren Wesenheiten. Die Jagd wurde nicht für schwere Kämpfe ausgerüstet, und unser Hauptvorteil wird die Geschwindigkeit sein. Mit etwas Glück werde ich spätestens morgen nach Hause zurückkehren, mein neues Artefakt an meiner Seite."
+ artifact_hunt.0003.a:0 "Wir Reiten!"
+ artifact_hunt.0003.b:0 "Ich habe andere Schlachten zu gewinnen."
+ 
+ artifact_hunt.0004.t:0 "Eine Vereinbarung Treffen"
+ artifact_hunt.0004.desc:0 "Anscheinend hat das Artefakt, nach dem ich gesucht habe, tatsächlich den Weg in die Hände eines kleinen benachbarten Adligen gefunden. Sie sind vielleicht nicht so bereit, sich einfach davon zu trennen, selbst für eine gute Summe Münzen. Angesichts der Tatsache, dass ich der dominierende Herr in dieser Region bin, könnte ich natürlich meine Macht und meinen persönlichen Charme einsetzen, um sie zur Einwilligung zu bringen. Sollte das nicht geschehen, könnte ich noch einen Schritt weiter gehen und auf Drohungen und Beschwichtigungen zurückgreifen. Ich hoffe nur, dass sie auf die Vernunft hören, bevor es zu etwas so Unzivilisiertem kommt."
+ artifact_hunt.0004.a:0 "Zeit, eine Einladung zu verschicken."
+ artifact_hunt.0004.b:0 "Vielleicht sollte ich mein Gold für ein sichereres Unterfangen aufbewahren."
+ 
+ artifact_hunt.0005.t:0 "Über Die Bücher"
+ artifact_hunt.0005.desc:0 "Ziellos herumzusuchen mag für die einfachen Leute gut und schön sein, aber ich stehe über einer solchen Zeitverschwendung! Ich habe Informationen über das Artefakt gefunden, das angeblich in der Nähe sein soll. Durch die Analyse der Hinweise, die in diesen alten Büchern und Schriftrollen hinterlassen wurden, kann ich die mögliche Ruhestätte meines Ziels erheblich eingrenzen, was den schwierigsten Teil dieser Aufgabe umso einfacher macht. Sobald ich den Ort entschlüsselt habe, kann ich einfach einige Wissenschaftler mit archäologischen Fähigkeiten entsenden, um meinen neuen Preis zu sichern."
+ artifact_hunt.0005.a:0 "Nun, welche Schriftrolle war es?"
+ artifact_hunt.0005.b:0 "Auf den zweiten Blick wird dies wahrscheinlich ein sinnloses Unterfangen sein."
+ 
+ artifact_hunt.0006.t:0 "Eine Bürokratische Pause"
+ artifact_hunt.0006.desc:0 "Mein Verwalter hat mir von einer äußerst glücklichen Entwicklung bei der Suche nach dem Artefakt berichtet! Es scheint, dass lokale Aufzeichnungen den Schlüssel zum Wiederfinden meines Ziels enthalten. Natürlich sind viele dieser Dokumente überaus ausführlich und erfordern sorgfältiges Lesen und Querverweise, um ein Verständnis für sie zu gewährleisten. Mein Verwalter hat zugesagt mir zu helfen, einige der möglichen Chiffren und Codes zu erkennen, von denen er glaubt, dass sie in diesen Aufzeichnungen versteckt sind. Angesichts der harten Arbeit, die jemand geleistet hat um diesen Schatz zu verbergen, kann ich nicht sicher sein ob wir Erfolg haben werden."
+ artifact_hunt.0006.a:0 "Holt mir einen Abakus."
+ artifact_hunt.0006.b:0 "Vielleicht sollte ich auf einen regnerischen Tag warten, um dieses Rätsel zu lösen."
+ 
+ artifact_hunt.0007.t:0 "Wohlwollendes Drängen"
+ artifact_hunt.0007.desc:0 "Als ich meine Jagd beendet habe, überglücklich von meinem Erfolg, überkommt mich ein seltsames Gefühl. Es ist kein unangenehmes Gefühl, sondern wie warmer Drang, der mich zu etwas Unbekanntem hinzieht. Ich wende mich von meinem Weg ab und gehe auf die mysteriöse und unbekannte Kraft zu, die mich anzieht. Unweigerlich erreiche ich den Ort, an den es mich bringen wollte, und finde ein bestimmtes Objekt, an dem der Zug am stärksten ist. An diesem Punkt verschwindet das Gefühl."
+ artifact_hunt.0007.a:0 "Vielleicht war es Schicksal ..."
+ artifact_hunt.0007.b:0 "Einige Dinge sollte man vielleicht am besten in Ruhe lassen ..."
+ 
+ artifact_hunt.0008.t:0 "Kein Glück"
+ artifact_hunt.0008.desc:0 "Trotz meiner Bemühungen ist die Suche nach einem legendären Artefakt gescheitert. Ob aufgrund meiner eigenen Fehler oder derjenigen, die ich angeworben habe, die Spur ist kalt geworden."
+ artifact_hunt.0008.a:0 "Schade."
+ 
+ make_new_artifact:0 "Einen Gegenstand herstellen"
+ make_new_artifact_confirm:0 "Lasst uns anfangen."
+ make_new_artifact.tt:0 "Beginnt mit der Erstellung eines neuen Artefakts."
+ make_new_artifact.desc:0 "Waffen, Rüstungen und die Insignien eines Herrschers. Es ist an der Zeit etwas in Auftrag zu geben, um meinen wahrhaft höheren Stand gegenüber meinen Kollegen zu zeigen. Die Frage ist nur, was genau ich will und wie viel ich bereit bin auszugeben ..."
+ make_new_artifact.effect.tt:0 "Ich kann wählen, welche Art von Artefakt ich geschmiedet haben möchte und welche Qualität der Gegenstand haben soll. Jedoch könnte sich das Endergebnis immer noch ändern ..."
+ 
+ ### Artifacts
+ 
+ artifact_1_name:0 "Reichskrone"
+ artifact_1_desc:0 "Die Reichskrone wurde im 10. Jahrhundert in Westdeutschland hergestellt und ist das Symbol der kaiserlichen Autorität über Mitteleuropa. Das goldverzauberte Diadem wurde so gestaltet, dass es den byzantinischen Kronen Ostroms ähnelt. Es eignet sich nur für diejenigen, die den Titel eines Kaisers der Römer beanspruchen. \n\n Kann nur von einem katholischen Kaiser ausgerüstet werden."
+ artifact_1_modifier:0 "Reichskrone"
+ artifact_1_passive:0 "Reichskrone"
+ 
+ artifact_2_name:0 "Kaiserliches Diadem"
+ artifact_2_desc:0 "Byzantinische Kronen wurden regelmäßig gewechselt, waren aber immer stark verziert. Das kaiserliche Diadem ist eine wunderschöne Konstruktion in den Hallen Ost-Roms und dient als Symbol für die Autorität, Majestät und den Reichtum des Kaisers in Konstantinopel."
+ artifact_2_modifier:0 "Kaiserliches Diadem"
+ 
+ artifact_3_name:0 "Eisenkrone der Lombardei"
+ artifact_3_desc:0 "Die eiserne Krone der Langobarden ist überhaupt nicht aus Eisen, sondern in der Tat glänzendes Gold, Silber und Edelsteine. So genannt, weil das Band darin behauptet, aus einem eisernen Nagel des wahren Kreuzes geschlagen worden zu sein. Die Krone ist ein Symbol der kaiserlichen Herrschaft aller Art über die Reiche Italiens."
+ artifact_3_modifier:0 "Eisenkrone der Lombardei"
+ 
+ artifact_4_name:0 "Langschwert"
+ artifact_4_desc:0 "Obwohl das Schwert eine der häufigsten Waffen der Welt ist, ist dieses etwas ungewöhnlich. Es ist ein bisschen glänzender, ein bisschen auffälliger, ein bisschen haltbarer als die anderen, da es von einem talentierten Schmied geschmiedet wurde. Aber ob dies den Träger besser darin macht, Feinde zu töten, hängt ganz davon ab, wer es führt."
+ artifact_4_modifier:0 "Langschwert"
+ 
+ artifact_5_name:0 "Vorzügliches Langschwert"
+ artifact_5_desc:0 "Jeder mit einem scharfen Auge, der dieses Schwert anschaut, kann sagen, dass es von guter Herstellung ist, und es trägt das Zeichen eines lokal bekannten Schmieds an der Basis der Klinge. Obwohl es an Verzierung wie bei einigen Zeremonienwaffen mangelt, sind seine Materialien von hoher Qualität und es ist ein Segen für jeden erfahrenen Kämpfer, der es führt."
+ artifact_5_modifier:0 "Vorzügliches Langschwert"
+ 
+ artifact_6_name:0 "Schwert der Helden"
+ artifact_6_desc:0 "Dieses Schwert hat eine königliche Ausstrahlung und kombiniert eine gut geschärfte und polierte Klinge mit einem vergoldeten Griff und einer verzierten Scheide. Ob es nun von einem erfahrenen Schwertkämpfer, einem bekannten Ritter oder einem stattlichen Lehnsherr geführt wird, diese Waffe scheint für die Hände eines wirklich erfahrenen Individuums geschaffen worden zu sein."
+ artifact_6_modifier:0 "Schwert der Helden"
+ 
+ artifact_7_name:0 "Schwert der Legenden"
+ artifact_7_desc:0 "Dieses Schwert scheint ein Gefühl von #EMP Größe!# auszustrahlen! Wenn man es nur sieht, zaubert die Phantasie Bilder von tapferen Rittern die Drachen töten, edlen Königen die in die Schlacht stürmen, und legendären Duellanten, die Gegner in Stücke schneiden. Auch wenn es nicht von einem Gott geschmiedet oder von einem Heiligen geführt wurde, sieht es auf jeden Fall so aus."
+ artifact_7_modifier:0 "Schwert der Legenden"
+ 
+ artifact_8_name:0 "Silberne Krone"
+ artifact_8_desc:0 "Diese einfache, aber ästhetisch ansprechende Kopfbedeckung ist eine einfache, aber elegante Silberkrone und ein Symbol für den Reichtum und das Ansehen eines Menschen. Nur diejenigen mit Status und Ansehen würden diese in der Öffentlichkeit tragen."
+ artifact_8_modifier:0 "Silberne Krone"
+ 
+ artifact_9_name:0 "Rubinkrone"
+ artifact_9_desc:0 "Dieses mit Silber und Rubinen eingelegte alte Artefakt wurde von talentierten Handwerkern aus den Ländern von Rira hergestellt. Diese Krone ist ein kleines Vermögen wert, und man kann sicher sein, dass jeder, auf welchem Haupt dieses Diadem ruht, sowohl äußerst reich als auch mächtig ist."
+ artifact_9_modifier:0 "Rubinkrone"
+ 
+ artifact_10_name:0 "Goldene Krone"
+ artifact_10_desc:0 "Diese vorzügliche Krone besteht aus dunkelrotem Gold mit feinstem Elfenbein sowie einer Vielzahl teurer Steine und Edelsteine. Die Qualität ist einwandfrei; Nur diejenigen mit hohem Status und großer Macht sind es wert, solch ein prestigeträchtiges Artefakt zu tragen."
+ artifact_10_modifier:0 "Goldene Krone"
+ 
+ artifact_11_name:0 "Krone der Legenden"
+ artifact_11_desc:0 "Von den Händen eines Schmiedemeisters gefertigt, sind Platin und Gold makellos in diese optisch atemberaubende Krone eingewebt. Edelsteine und Diamanten glitzern rund um das unschätzbar wertvolle Artefakt. Diese Krone ist ein einzigartiges Artefakt und nur den reichsten und mächtigsten Herrschern würdig."
+ artifact_11_modifier:0 "Krone der Legenden"
+ 
+ artifact_12_name:0 "Kronjuwelen"
+ artifact_12_desc:0 "Diese Kronjuwelen sind glänzend und sicherlich wertvoll, wurden aber ohne allzu viel Geschick hergestellt. Trotzdem tragen sie effektiv zur Ehrfurcht bei, die von ihrem Besitzer ausstrahlt."
+ artifact_12_modifier:0 "Kronjuwelen"
+ 
+ artifact_13_name:0 "Vorzügliche Kronjuwelen"
+ artifact_13_desc:0 "Dieser Satz Kronjuwelen wurde gekonnt gefertigt und ist bemerkenswert anzusehen. Dies zeigt die Macht ihres Besitzers auf effektive und dennoch bescheidene Weise."
+ artifact_13_modifier:0 "Vorzügliche Kronjuwelen"
+ 
+ artifact_14_name:0 "Außergewöhnliche Kronjuwelen"
+ artifact_14_desc:0 "Dieser Schmuck wurde meisterhaft und im Wesentlichen fehlerfrei hergestellt, ein wirklich wunderbarer Anblick. Dies zeigt die Macht, die sie repräsentieren in solchem Maße, dass niemand sie leugnen kann."
+ artifact_14_modifier:0 "Außergewöhnliche Kronjuwelen"
+ 
+ artifact_15_name:0 "Königliche Kronjuwelen"
+ artifact_15_desc:0 "Diese Edelsteine sind atemberaubend schön und legendär, jenseits was Worte ausdrücken können. Sie leuchten so hell, ihr Besitzer könnte den Himmel selbst besitzen."
+ artifact_15_modifier:0 "Königliche Kronjuwelen"
+ 
+ artifact_16_name:0 "Geschärfte Axt"
+ artifact_16_desc:0 "Seit den Anfängen der Metallurgie haben sich die Grundkonstruktionen der Äxte im Laufe der Menschheitsgeschichte kaum verändert: ein geschärfter Metallkopf der an einem Holzgriff befestigt ist. Und diese Axt ist nicht anders. Sie sieht vielleicht nicht viel schicker aus als das durchschnittliche Holzfällerwerkzeug, aber sie kann Knochen genauso leicht durchschneiden wie Holz."
+ artifact_16_modifier:0 "Geschärfte Axt"
+ 
+ artifact_17_name:0 "Verzierte Axt"
+ artifact_17_desc:0 "Diese Axt ist aus gutem Burgstahl geschmiedet und hat einen stabilen Holzgriff. Sie ist perfekt in der Lage, als Waffe eines erfahrenen Kämpfers auf dem Schlachtfeld zu dienen, und hat zweifellos die Kerben und Narben, um dies zu beweisen."
+ artifact_17_modifier:0 "Verzierte Axt"
+ 
+ artifact_18_name:0 "Vergoldete Axt"
+ artifact_18_desc:0 "Diese Axt schafft ein feines Gleichgewicht zwischen Nützlichkeit und Zeremonie; Der Kopf ist mit kunstvollen Motiven graviert und der Griff aus poliertem Holz glänzt im Sonnenlicht. Dies macht sie jedoch nicht weniger tauglich einen Feind zu töten. Eine gute Waffe für einen Herrscher, der sowohl Schönheit als auch Brutalität schätzt."
+ artifact_18_modifier:0 "Vergoldete Axt"
+ 
+ artifact_19_name:0 "Meisterhafte Axt"
+ artifact_19_desc:0 "Diese Axt ist ein Wunderbarer Anblick. Ein Blatt, das mit Goldfiligran verziert ist, ein versilberter Schaft und ein mit Edelsteinen ausgekleideter Griff. Viele, die sie sehen, halten für einen Moment inne und bedauern, dass eine solch schöne Handarbeit an einen so hässlichen Ort wie ein Schlachtfeld gebracht wird - jedoch nur solange, bis ihr Besitzer ihnen den Schädel damit spaltet."
+ artifact_19_modifier:0 "Meisterhafte Axt"
+ 
+ artifact_20_name:0 "Vorzügliche Lanze"
+ artifact_20_desc:0 "Diese Lanze ist von guter Qualität. Sie ist in keiner Weise besonders und dient einfachhalber als gute, solide Waffe für den Adel. Man wäre ziemlich zufrieden, reite man damit in die Schlacht, obwohl sie höchstwahrscheinlich nicht der auffälligste Gegenstand wäre, der im Kampf zur Schau gestellt würde."
+ artifact_20_modifier:0 "Vorzügliche Lanze"
+ 
+ artifact_21_name:0 "Geschliffene Lanze"
+ artifact_21_desc:0 "Geschaffen für den Kampf, geschmiedet von einem erfahrenen Schmied. Diese Lanze ist besonders robust und stark, und deshalb schwieriger zu finden als eine durchschnittliche Lanze. Renommierte Herrscher wären zweifellos sehr zufrieden, wenn sie diese in die Schlacht tragen würden!"
+ artifact_21_modifier:0 "Geschliffene Lanze"
+ 
+ artifact_22_name:0 "Blutdurstige Lanze"
+ artifact_22_desc:0 "Diese Lanze wurde zweifellos von einem renommierten Schmied mit unglaublichem Können und Talent hergestellt und weckt Ehrfurcht und Angst, wenn sie auf dem Schlachtfeld gesehen wird. Dadurch ist sie wertvoll und schwer zu erwerben. Einige sagen, wenn ihre Spitze die Sonne fängt, könne man sehen wie das Blut aller Männer, die durch sie gestorben sind, von der Kante rinnt."
+ artifact_22_modifier:0 "Blutdurstige Lanze"
+ 
+ artifact_23_name:0 "Legendäre Lanze"
+ artifact_23_desc:0 "Eine Lanze, die mit nahezu unvergleichlichem Geschick hergestellt wurde. Sie wurde geschmiedet, um jeden Krieg in dem sie sich befindet zu beenden und jeden Schild in ihrem Pfad zu durchbohren. Armeen werden zweifellos zerschlagen und fliehen bei ihrem bloßen Anblick, während sie Berge von Leichen zurücklässt. Man muss sich fragen, ob diese Lanze eher als Kriegs- oder Propagandawaffe wirksamer ist."
+ artifact_23_modifier:0 "Legendäre Lanze"
+ 
+ artifact_24_name:0 "Königliches Zepter"
+ artifact_24_desc:0 "Ein Zepter, das die Menschen in all ihren Tugenden und Lastern regieren soll. Es ist robust, aber ohne besondere Handwerkskunst hergestellt. Nichtsdestotrotz ist es hübsch anzusehen und sicherlich für den Adel geeignet, der sich vor seinen gewöhnlichen Verwandten hervorheben will."
+ artifact_24_modifier:0 "Königliches Zepter"
+ 
+ artifact_25_name:0 "Rubinzepter"
+ artifact_25_desc:0 "Allen, die dieses Zepter sehen ist klar, dass es alles andere als ein gewöhnliches  ist. Es ist kunstvoll gemacht, wenn auch nicht perfekt und wird am Hofe sicherlich einige Blicke auf sich ziehen. Aus diesem Grund wird es sicherlich die meisten beeindrucken, die es erblicken."
+ artifact_25_modifier:0 "Rubinzepter"
+ 
+ artifact_26_name:0 "Smaragdzepter"
+ artifact_26_desc:0 "Dieses Zepter steht hoch über dem Leben sterblicher Wesen. Ein Meisterwerk der Handwerkskunst. Alle, die es betrachten, lassen ihre Augen darauf verweilen. Es wird mit Sicherheit fast jeden beeindrucken und vermittelt nahezu unübertroffene Autorität."
+ artifact_26_modifier:0 "Smaragdzepter"
+ 
+ artifact_27_name:0 "Diamantzepter"
+ artifact_27_desc:0 "Ein Zepter von wahrhaft legendärer Schönheit. Man sagt, dass diejenigen die es betrachten gelegentlich vor Neid verrückt werden. Es wird ohne Frage Gehorsam am Hofe hervorrufen, was den Höhepunkt sterblicher Autorität darstellt."
+ artifact_27_modifier:0 "Diamantzepter"
+ 
+ artifact_28_name:0 "Kettenhemd"
+ artifact_28_desc:0 "Eine vollständige Rüstung erfordert viel Metall. Ein Preis, der für fast jeden mit niedriger Geburt unerschwinglich ist. Eine zu besitzen und zu pflegen, auch ohne Dekorationen oder Verzierungen, ist immer noch ein Zeichen von großem Reichtum."
+ artifact_28_modifier:0 "Kettenhemd"
+ 
+ artifact_29_name:0 "Schienenpanzer"
+ artifact_29_desc:0 "Diese Rüstung zeigt, dass ihr Träger einen höheren Stand als der durchschnittliche fahrende Ritter hat. Das Metall ist frei von Rost, Dellen oder Kratzern und bleibt unter der Obhut pflichtbewusster Knappen strahlend poliert. Sie besitzt sogar einige Lackierungen in den Hausfarben des Besitzers."
+ artifact_29_modifier:0 "Schienenpanzer"
+ 
+ artifact_30_name:0 "Meisterhafte Rüstung"
+ artifact_30_desc:0 "Diese Rüstung wurde entworfen, um jemanden von hoher Stellung zu schützen, was sich and dem Mass der Handwerkskunst und den Details zeigt. Nicht nur sind die einzelnen Rüstungsteile aus feinstem Stahl,  die sie verbindenden und akzentuierenden Komponenten bestehen auch aus vorzüglichen Materialien. Alles, von der Oberseite des Helmes bis zur Unterseite der Stiefel, stellt hohe Qualität zur Schau."
+ artifact_30_modifier:0 "Meisterhafte Rüstung"
+ 
+ artifact_31_name:0 "Vergoldete Plattenrüstung"
+ artifact_31_desc:0 "Man kann an einem einzigen Blick auf diese Rüstung erkennen, dass ihr Träger so reich ist wie Krösus. Fast jedes Stück hat eine Art Gold- oder Silbereinlage, die durch goldene Nieten akzentuiert und mit einem reich gefärbten Wams und einem mit Seide gefütterten Umhang bekleidet ist. Ein Rüstungsanzug, der für einen König geschaffen wurde."
+ artifact_31_modifier:0 "Vergoldete Plattenrüstung"
+ 
+ artifact_oathbringer_name:0 "Eidbringer"
+ artifact_oathbringer_desc:0 "Eidbringer war die Scherbenklinge des berüchtigten Alethi-Kriegsherrn Sadees der Sonnenmacher, der über Generationen weitergegeben wurde, bis Dalinar Kholin seinen Besitzer tötete und ihn während des Alethi-Einigungskrieges für sich beanspruchte." 
+ artifact_oathbringer_modifier:0 "Eidbringer"
+ #artifact_oathbringer_modifier_desc:0 "Eidbringer"
+ 
+ artifact_sunraiser_name:0 "Sonnenwache"
+ artifact_sunraiser_desc:0 "Sonnenwache war die Klinge des Hochprinzen Kalanor. Nachdem Dalinar Kholin ihn getötet hatte, schenkte er Elhokar Kholin die Klinge."
+ artifact_sunraiser_modifier:0 "Sonnenwache"
+ #artifact_sunraiser_modifier_desc:0 "Sonnenwache"
+ 
+ artifact_mayalaran_name:0 "Mayalaran"
+ artifact_mayalaran_desc:0 "Mayalaran war die Splitterklinge eines Randtänzers, der sie während der Feigheit aufgab. Es landete schließlich in den Händen von Adolin Kholin.
+ artifact_mayalaran_modifier:0 "Mayalaran"
+ #artifact_mayalaran_modifier_desc:0 "Mayalaran"
+ 
+ artifact_shardplate_name:0 "Scherbenpanzer"
+ artifact_shardplate_desc:0 "Scherbenpanzer, die legendäre Rüstung der strahlenden Ritter. Sein Träger ist nahezu unverwundbar."
+ artifact_shardplate_modifier:0 "Scherbenpanzer"
+ #artifact_shardplate_modifier_desc:0 "Scherbenpanzer"
+ 
+ artifact_shardblade_name:0 "Scherbenklinge"
+ artifact_shardblade_desc:0 "Eine Scherbenklinge, eine der legendären Waffen der strahlenden Ritter. Diese Klingen sind wertvoller als Königreiche und schneiden mit Leichtigkeit durch jeden Feind."
+ artifact_shardblade_modifier:0 "Scherbenklinge"
+ #artifact_shardblade_modifier_desc:0 "Scherbenklinge"
+ 
+ extra_blade_modifier:0 "Extra Shardblade"
+ extra_blade_modifier_desc:0 "This character has an extra shardblade, earned in battle or a duel"
+ 
+ extra_plate_modifier:0 "Extra Shardplate"
+ extra_plate_modifier_desc:0 "This character has extra shardplate, earned in battle or a duel"
+ 
+ artifact_soulcaster_name:0 "Seelenzauber"
+ artifact_soulcaster_desc:0 "A Seelenzauber is a fabrial which accesses the Surge of Transformation, and can be used to create things such as food, metal, smoke, and other Essences."
+ artifact_soulcaster_modifier:0 "Seelenzauber"
+ artifact_soulcaster_modifier_desc:0 "[investiture|E]: [investiture_i|E]#N -2.0#!/month"
+ 
+ artifact_spanreed_name:0 "Spanreed"
+ artifact_spanreed_desc:0 "A spanreed is a fabrial which can be used for long distance communications."
+ artifact_spanreed_modifier:0 "Spanreed"
+ #artifact_spanreed_modifier_desc:0 "Spanreed"
+ 
+ artifact_painrial_name:0 "Painrial"
+ artifact_painrial_desc:0 "A painrial is a fabrial which can either reduce the pain you feel or make the enemy feel extreme pain."
+ artifact_painrial_modifier:0 "Painrial"
+ #artifact_painrial_modifier_desc:0 "Painrial"
+ 
+ artifact_alerter_name:0 "Alerter"
+ artifact_alerter_desc:0 "A alerter is a fabrial which can warn you when people are near, and what they are feeling."
+ artifact_alerter_modifier:0 "Alerter"
+ #artifact_alerter_modifier_desc:0 "Alerter"
+ 
+ artifact_nightblood_name:0 "Nightblood"
+ artifact_nightblood_desc:0 "Hello! Would you like to destroy some evil today?"
+ artifact_nightblood_modifier:0 "Nightblood"
+ #artifact_alerter_modifier_desc:0 "Nightblood"
+ nightblood_drawn_modifier:0 "Nightblood Unleashed"
+ nightblood_drawn_modifier_desc:0 "[investiture|E]: [investiture_i|E]#N -50.0#!/month"
+ 
+ artifact_jezrien_honorblade_name:0 "Jezrien's Honorblade"
+ artifact_jezrien_honorblade_desc:0 "The Honorblades are the magical swords carried by the Heralds to fight the Voidbringers during the Desolations. They were pieces of Honor's soul that gave their wielders access to his essence. This one belonged to Jezrien, Herald of Kings"
+ artifact_jezrien_honorblade_modifier:0 "Jezrien's Honorblade"
+ #artifact_jezrien_honorblade_modifier_desc:0 "Jezrien's Honorblade"
+ 
+ artifact_type_four_biochromatic_entity_name:0 "Type Four Biochromatic Entity"
+ artifact_type_four_biochromatic_entity_desc:0 "A type four biochromatic entity is a sentient awakened object that never had life. It takes 1000 breaths."
+ artifact_type_four_biochromatic_entity_modifier:0 "Type Four Biochromatic Entity"
+ #artifact_type_four_biochromatic_entity_modifier_desc:0 "Type Four Biochromatic Entity"
+ 
+ artifact_ryshadium_name:0 "Ryshadium"
+ artifact_ryshadium_desc:0 "Ryshadium are effectively enormous horses that have adapted to life on Roshar with stone hooves and a certain level of sentience. One cannot tame a Ryshadium - it chooses a worthy rider."
+ artifact_ryshadium_modifier:0 "Ryshadium"
+ #artifact_ryshadium_icon:0 "x"
+ #artifact_ryshadium_modifier_desc:0 "Type Four Biochromatic Entity"

@@ -1,0 +1,309 @@
+﻿
+######################################################
+############### ANIMATION TEMPLATES ##################
+######################################################
+
+
+
+types Castox_talk_Animations
+{
+    type animation_talk = icon {
+        name = "castox_talk_effect"
+
+        alwaystransparent = yes
+
+
+        state = {
+            trigger_when = "[GetScriptedGui('talk_now').IsShown( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+            name = a
+            next = b
+            on_start = "[GetScriptedGui('talk_mode_a').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+			
+            using = Animation_Curve_Default
+            duration = 0.10
+
+        }
+        state = {
+            name = b
+            next = c
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = c
+            next = d
+            
+            using = Animation_Curve_Default
+            duration = 0.09
+            on_start = "[GetScriptedGui('end_talk').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = d
+            next = e
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = e
+            next = f
+            on_start = "[GetScriptedGui('talk_mode_e').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+            
+            using = Animation_Curve_Default
+            duration = 0.10
+
+        }
+        state = {
+            name = f
+            next = g
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = g
+            next = h
+            
+            using = Animation_Curve_Default
+            duration = 0.09
+            on_start = "[GetScriptedGui('end_talk').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = h
+            next = i
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = i
+            next = j
+            
+            using = Animation_Curve_Default
+            duration = 0.10
+            on_start = "[GetScriptedGui('talk_mode_i').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = j
+            next = k
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = k
+            next = l
+            
+            using = Animation_Curve_Default
+            duration = 0.09
+            on_start = "[GetScriptedGui('end_talk').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = l
+            next = m
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = m
+            next = n
+            on_start = "[GetScriptedGui('talk_mode_o').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+            
+            using = Animation_Curve_Default
+            duration = 0.10
+
+        }
+        state = {
+            name = n
+            next = o
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = o
+            next = p
+            
+            using = Animation_Curve_Default
+            duration = 0.09
+            on_start = "[GetScriptedGui('end_talk').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = p
+            next = q
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = q
+            next = r
+            on_start = "[GetScriptedGui('talk_mode_u').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+            
+            using = Animation_Curve_Default
+            duration = 0.10
+
+        }
+
+        state = {
+            name = r
+            next = s
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = s
+            next = t
+            
+            using = Animation_Curve_Default
+            duration = 0.09
+            on_start = "[GetScriptedGui('end_talk').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+        state = {
+            name = t
+            next = a
+            
+            using = Animation_Curve_Default
+            duration = 0.11
+            on_start = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+        }
+
+
+  
+        state = {
+            trigger_when = "[GetScriptedGui('end_talk_now').IsShown( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+            name = end_talk
+			on_start = "[PdxGuiInterruptAllAnimations('a')]"
+			on_start = "[PdxGuiInterruptAllAnimations('b')]"
+			on_start = "[PdxGuiInterruptAllAnimations('c')]"
+			on_start = "[PdxGuiInterruptAllAnimations('d')]"
+			on_start = "[PdxGuiInterruptAllAnimations('e')]"
+			on_start = "[PdxGuiInterruptAllAnimations('f')]"
+			on_start = "[PdxGuiInterruptAllAnimations('g')]"
+			on_start = "[PdxGuiInterruptAllAnimations('h')]"
+			on_start = "[PdxGuiInterruptAllAnimations('i')]"
+			on_start = "[PdxGuiInterruptAllAnimations('j')]"
+            on_start = "[PdxGuiInterruptAllAnimations('k')]"
+            on_start = "[PdxGuiInterruptAllAnimations('l')]"
+            on_start = "[PdxGuiInterruptAllAnimations('m')]"
+            on_start = "[PdxGuiInterruptAllAnimations('n')]"
+            on_start = "[PdxGuiInterruptAllAnimations('o')]"
+            on_start = "[PdxGuiInterruptAllAnimations('p')]"
+            on_start = "[PdxGuiInterruptAllAnimations('q')]"
+            on_start = "[PdxGuiInterruptAllAnimations('r')]"
+            on_start = "[PdxGuiInterruptAllAnimations('s')]"
+            on_start = "[PdxGuiInterruptAllAnimations('t')]"
+			on_finish = "[GetScriptedGui('end_talk_now').Execute( GuiScope.SetRoot(GetGlobalVariable('ctalker').Char.MakeScope).End)]"
+			
+            using = Animation_Curve_Default
+        }                                
+    }
+	type portrait_body_test = widget {
+		size = {620 800 }
+
+        widget = {
+            size = { 100% 100% }
+            using = Portrait_Background_Glows
+        }
+
+        portrait_button = {
+            parentanchor = bottom|hcenter
+			size = {620 800 }
+            using = portrait_base
+
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetPortrait('environment_body', 'camera_body', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_body.dds"
+            }
+            effectname = "NoHighlight"
+
+            block "prison" {
+                highlight_icon = {
+                    name = "prison_bars"
+                    visible = "[Character.IsImprisoned]"
+                    size = { 100% 100% }
+                    effectname = "NoHighlight"
+                    texture = "gfx/portraits/portrait_prison_body.dds"
+
+                    modify_texture = {
+                        name = "mask"
+                        texture = "gfx/portraits/portrait_mask_body.dds"
+                        spriteType = Corneredstretched
+                        blend_mode = alphamultiply
+                    }
+                }
+            }
+
+            block "portrait_button" {}
+        }
+
+        portrait_status_icons = {
+            parentanchor = bottom|left
+            position = { 60 -5 }
+            scale = 0.85
+
+            background = {
+                using = Background_Area_Dark
+                margin = { 3 3 }
+                alpha = 0.8
+            }
+        }
+
+        block "coa" {
+            coa_realm_medium_crown = {
+                visible = "[Character.HasLandedTitles]"
+                parentanchor = bottom|left
+                position = { -2 4 }
+            }
+        }
+
+        block "opinion_box"
+        {
+            portrait_opinion = {
+                parentanchor = bottom|hcenter
+                block "position_portrait_opinion_body" {
+                    position = { 0 -2 }
+                }
+            }
+        }
+
+        #portrait unknown glow
+        button = {
+            name = "portrait_unknown_body_glow"
+            parentanchor = center
+            position = { 0 -15 }
+            gfxtype = framedbuttongfx
+            effectname = "NoHighlight"
+            texture = "gfx/portraits/unknown_portraits/button_unknown_small.dds"
+            size = { 240 330 }
+            framesize = { 564 780 }
+            upframe = 1
+            overframe = 2
+
+            block "glow_visible" {
+
+                visible = "[Not(Character.IsValid)]"
+
+            }
+
+            block "glow_flip" {}
+
+            block "onclick" {}
+
+        }
+    }
+}

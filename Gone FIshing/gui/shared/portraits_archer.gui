@@ -1,0 +1,349 @@
+######################################################
+################## PORTRAIT TYPES ####################
+######################################################
+
+types PortraitTypes_ccshop
+{
+
+    ####################################
+    ######### MAIN PORTRAITS ###########
+    ####################################
+
+    # The standard portrait types. CoA, opinion and status icons are included by default; use blockovveride to disable them.
+    type cshop = widget {
+        size = { 1920 1080 }
+       
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshop-0', 'cshop', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type cshop_b = widget {
+        size = { 1920 1080 }
+       
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshopback', 'cshop', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type cshop_s = widget {
+        size = { 1920 1080 }
+       
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshopside', 'cshop', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type cshop_s1 = widget {
+        size = { 1920 1080 }
+       
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshopside1', 'cshop', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type cshop_1 = widget {
+        size = { 1920 1080 }
+       
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1390 1570 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshop-1', 'cshop_c', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type cshop_2 = widget {
+        size = { 1920 1080 }
+  
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshop-1', 'personality_rational', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type equip_stance = widget {
+        size = { 1920 1080 }
+
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_tavern', 'cshop00', 'equip_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type bow_stance = widget {
+        size = { 540 720 }
+
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = vcenter|hcenter
+            size = { 540 720 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_temple', 'cshop0x', 'bow_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+            icon = {
+                visible = "[GetScriptedGui('b_add_m').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                size = { 240 50 }
+
+                parentanchor = vcenter|hcenter
+                position = { 120 -133 }
+                texture = "gfx/interface/cshop/range/arrow.png"
+    
+                state = {
+                    name = maim0
+                    next = maim1
+                    trigger_when = "[GetScriptedGui('b_maim').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                    on_finish = "[GetScriptedGui('d_hit').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                    position = { 1320 -133 }
+                    duration = 0.1
+                }
+                state = {
+                    name = maim1
+                    position = { 120 -133 }
+                    on_start = "[GetScriptedGui('b_maim').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                }
+            }
+            icon = {
+                visible = "[GetScriptedGui('b_add_h').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                size = { 385 105 }
+   
+                parentanchor = vcenter|hcenter
+                position = { 105 -170 }
+                texture = "gfx/interface/cshop/range/arrowh.png"
+   
+                state = {
+                    name = laim0
+                    next = laim1
+                    trigger_when = "[GetScriptedGui('b_haim').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                    on_finish = "[GetScriptedGui('d_hit3').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                    position = { 1520 -733 }
+                    duration = 0.2
+                }
+                state = {
+                    name = laim1
+                    position = { 105 -170 }
+                    on_start = "[GetScriptedGui('b_haim').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                }
+                
+    
+            }
+            icon = {
+                visible = "[GetScriptedGui('b_add_l').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                size = { 240 50 }
+    
+                parentanchor = vcenter|hcenter
+                position = { 125 -113 }
+                texture = "gfx/interface/cshop/range/arrowl.png"
+    
+                state = {
+                    name = laim0
+                    next = laim1
+                    trigger_when = "[GetScriptedGui('b_laim').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                    on_finish = "[GetScriptedGui('d_hit2').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                    position = { 1020 33 }
+                    duration = 0.1
+                }
+                state = {
+                    name = laim1
+                    position = { 125 -113 }
+                    on_start = "[GetScriptedGui('b_laim').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                }
+    
+            }
+            icon = {
+    
+                parentanchor = bottom|hcenter
+                position = { 10 -40 }
+                texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+                scale = .8
+            }
+		}
+    }
+    type my_dummy = widget {
+        size = { 590 770 }
+
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 590 770 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshopdummy', 'dummy_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_shoulders.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type my_dummy1 = widget {
+        size = { 290 470 }
+
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 290 470 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshopdummy', 'dummy_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_shoulders.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type my_dummy2 = widget {
+        size = { 590 770 }
+        allow_outside = no
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 590 770 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'cshopdummyx', 'dummy_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_shoulders.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type crowd_stance = widget {
+        size = { 190 270 }
+
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 190 270 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_temple', 'cshopcrowd', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+}

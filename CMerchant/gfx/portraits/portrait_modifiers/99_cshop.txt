@@ -1,0 +1,491 @@
+﻿
+castox1 = {
+
+	castox_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = western_commoner_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_01
+                value = 0.74 # For the randomness to work correctly
+            }
+			color = {
+				gene = skin_color
+				mode = modify				
+				#x = 0.0
+				y = 0.10
+			}
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_01
+                value = 0.2 # For the randomness to work correctly
+            }
+			accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear 
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = headgear_2
+                template = no_headgear
+                value = 1
+			}
+			accessory = {
+                mode = add
+                gene = special_headgear
+                template = no_headgear
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = none
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				this = global_var:castox
+				
+			}
+		}
+	}
+
+
+}
+castox2 = { #middle east
+
+	castox2_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = indian_commoner_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_01
+                value = 0.74 # For the randomness to work correctly
+            }
+			color = {
+				gene = skin_color
+				mode = modify				
+				#x = 0.0
+				y = 0.20
+			}
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_01
+                value = 0.2 # For the randomness to work correctly
+            }
+			accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear 
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = headgear_2
+                template = no_headgear
+                value = 1
+			}
+			accessory = {
+                mode = add
+                gene = special_headgear
+                template = no_headgear
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = none
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				this = global_var:castox
+				var:store_owner = {
+					OR = {
+						capital_province = { geographical_region = world_middle_east }
+						capital_province = { geographical_region = world_india }
+					}
+					
+				}
+				
+			}
+		}
+	}
+
+
+}
+castox3 = { #africa
+
+	castox3_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = sub_saharan_commoner_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_01
+                value = 0.64 # For the randomness to work correctly
+            }
+			color = {
+				gene = skin_color
+				mode = modify				
+				#x = 0.0
+				y = 0.30
+			}
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_01
+                value = 0.41 # For the randomness to work correctly
+            }
+			accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear 
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = headgear_2
+                template = no_headgear
+                value = 1
+			}
+			accessory = {
+                mode = add
+                gene = special_headgear
+                template = no_headgear
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = none
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				this = global_var:castox
+				var:store_owner = {
+					OR = {
+						capital_province = { geographical_region = world_africa }
+						capital_province = { geographical_region = world_africa_west }
+						capital_province = { geographical_region = world_africa_east }
+						capital_province = { geographical_region = world_africa_north }
+						capital_province = { geographical_region = world_africa_north_west }
+						capital_province = { geographical_region = world_africa_north_east }
+					}
+					
+				}
+				
+			}
+		}
+	}
+
+
+}
+castox4 = { #asia
+
+	castox4_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = steppe_commoner_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_01
+                value = 0.58 # For the randomness to work correctly
+            }
+			color = {
+				gene = skin_color
+				mode = modify				
+				#x = 0.0
+				y = -0.1
+			}
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_01
+                value = 0.71 # For the randomness to work correctly
+            }
+			accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear 
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = headgear_2
+                template = no_headgear
+                value = 1
+			}
+			accessory = {
+                mode = add
+                gene = special_headgear
+                template = no_headgear
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = none
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				this = global_var:castox
+				var:store_owner = {
+					OR = {
+						capital_province = { geographical_region = world_steppe }
+						capital_province = { geographical_region = world_asia_minor }
+					}
+					
+				}
+				
+			}
+		}
+	}
+
+
+}
+castox5 = { #Norse #fp1
+
+	castox5_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = fp1_low_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_01
+                value = 0.52 # For the randomness to work correctly
+            }
+			color = {
+				gene = skin_color
+				mode = modify				
+				#x = 0.0
+				y = -0.1
+			}
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_01
+                value = 0.77 # For the randomness to work correctly
+            }
+			accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear 
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = headgear_2
+                template = no_headgear
+                value = 1
+			}
+			accessory = {
+                mode = add
+                gene = special_headgear
+                template = no_headgear
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = none
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 220
+				this = global_var:castox
+				has_fp1_dlc_trigger = yes
+				var:store_owner = {
+					OR = {
+						capital_province = { geographical_region = world_europe_north }
+					}
+					
+				}
+				
+			}
+		}
+	}
+
+
+}
+castox6 = { #Norse
+
+	castox6_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = northern_low_nobility_clothes
+				value = 0.1 
+			}
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_01
+                value = 0.48 # For the randomness to work correctly
+            }
+			color = {
+				gene = skin_color
+				mode = modify				
+				#x = 0.0
+				y = -0.1
+			}
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_01
+                value = 0.62 # For the randomness to work correctly
+            }
+			accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear 
+                value = 1
+			} 
+			accessory = {
+                mode = add
+                gene = headgear_2
+                template = no_headgear
+                value = 1
+			}
+			accessory = {
+                mode = add
+                gene = special_headgear
+                template = no_headgear
+                value = 1
+			}  
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = none
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				this = global_var:castox
+				has_fp1_dlc_trigger = no
+				var:store_owner = {
+					capital_province = { geographical_region = world_europe_north }
+				}
+				
+			}
+		}
+	}
+
+
+}
+
+
+talk_begin_mod = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.1
+			}
+					
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				has_character_flag = talk_begin3
+            }
+        }
+    }
+}
+talk_begin_mod2 = {
+    usage = game
+    dna_change_example_modifier = {
+        dna_modifiers = {
+
+			morph = {
+				mode = modify				
+				gene = gene_mouth_open
+				template = mouth_open_neg
+				value = 0.3
+			}
+					
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+				has_character_flag = talk_begin
+            }
+        }
+    }
+}

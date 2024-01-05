@@ -1,0 +1,3 @@
+﻿ca_dragons_onhand = {
+	value = 2
+}

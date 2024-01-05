@@ -1,0 +1,46 @@
+pdxmesh = {
+	name = "horse_mesh"
+	file = "horse.mesh"
+	animation = { id = "idle" type = "horse_i.anim" }
+	meshsettings = {
+		name = "horse.001"
+		index = 0
+		texture_diffuse = "horse_diffuse.dds"
+		texture_normal = "no_normal.dds"
+		texture_specular = "nospec.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+pdxmesh = {
+	name = "horse_meshl"
+	file = "horse.mesh"
+	animation = { id = "idle" type = "horse_l.anim" }
+	meshsettings = {
+		name = "horse.001"
+		index = 0
+		texture_diffuse = "horse_diffuse.dds"
+		texture_normal = "no_normal.dds"
+		texture_specular = "nospec.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+
+entity = {
+	name = "horse_entity"
+	pdxmesh = "horse_mesh"
+
+	default_state = "idle"
+	state = {	name = "idle"	animation = "idle" }
+}
+
+entity = {
+	name = "horsel_entity"
+	pdxmesh = "horse_meshl"
+
+	default_state = "idle"
+	state = {	name = "idle"	animation = "idle" }
+}
+

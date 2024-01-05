@@ -1,0 +1,7 @@
+﻿cac_county_modifier_advisor_land_administration_realistic = {
+	icon = letter_positive
+	monthly_county_control_change_add = 0.1
+	development_growth = 0.1
+	development_growth_factor = 0.05
+	county_opinion_add = 1
+}

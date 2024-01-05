@@ -1,0 +1,177 @@
+﻿############################################################################################################################################################
+############################################################################################################################################################
+##CCShop
+
+
+
+battler_pose = {
+	male = {
+		default = { head = "ls_head" torso = "qk_idle_body" }
+
+		equipped_idle = {
+			animation = { head = "ls_head" torso = "qk_idle_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+
+					AND = {
+						has_character_flag = qk_eq
+						
+						NOR = {
+							has_character_flag = sk_jump
+							has_character_flag = sk_run
+							has_character_flag = sk_swing
+							has_character_flag = sk_sprint
+							
+						}
+					}
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		equipped_swing = {
+			animation = { head = "ls_head" torso = "qk_swing_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 800
+					has_character_flag= b_is_striking
+
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		equipped_swalk = {
+			animation = { head = "ls_head" torso = "ds_swalk_body" }
+	
+			weight = {
+				base = 0
+	
+				modifier = {
+					add = 120
+					has_character_flag = duel_walk_forward
+					NOT = {
+						has_character_flag = duel_walk_back
+					}
+					
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		equipped_sbwalk = {
+			animation = { head = "ls_head" torso = "ds_sbwalk_body" }
+	
+			weight = {
+				base = 0
+	
+				modifier = {
+					add = 120
+					has_character_flag = duel_walk_back
+					NOT = {
+						has_character_flag = duel_walk_forward
+					}
+					
+					
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		equipped_run = {
+			animation = { head = "ls_head" torso = "qk_sprint_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 120
+					
+					has_character_flag = cbs_rtp
+
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		equipped_hit = {
+			animation = { head = "emotion_paranoia_entry" torso = "qk_ghit_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 1000
+					has_character_flag = is_getting_hit
+					NOT = {
+						has_character_flag = is_died
+						
+					}
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		equipped_dead_fall = {
+			animation = { head = "emotion_paranoia_entry" torso = "qk_die1_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 1000
+					has_character_flag = is_died
+					
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		equipped_dead_final = {
+			animation = { head = "emotion_paranoia_entry" torso = "qk_die2_body" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 1000
+					has_character_flag = is_died2
+					
+				}
+			}
+			portrait_modifier = {
+				tavern_game_props = dslongsword_prop
+				animations = emotion_happy_decal
+			}
+		}
+		portrait_modifier = {
+			tavern_game_props = dslongsword_prop
+			animations = emotion_happy_decal
+		}
+	}
+
+	boy = male
+	female = male
+	girl = male
+}

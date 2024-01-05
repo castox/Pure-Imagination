@@ -1,0 +1,54 @@
+﻿#Nothing yet
+
+diplo_envoy_started = {
+	on_actions = {
+		diplo_employ_envoy
+		delay = { years = { 1 2 } }
+		#diplo_want_a_deal  #not done
+	}
+}
+on_game_start = {
+	on_actions = {
+		diplo_envoy_started
+	}
+}
+
+diplo_employ_envoy = {
+
+
+	effect = {
+		diplo_fix_this = yes
+		every_living_character = {
+			limit = {
+				is_ai = yes
+				is_landed = yes
+				is_imprisoned = no
+				is_available = yes
+				highest_held_title_tier > tier_barony
+				NOT = { employs_court_position = envoy_court_position }
+				diplomacy > 12
+				gold > 100
+				NOT = { has_variable = diplo_has_appointed }
+			}
+	
+		
+			random_courtier = {
+				limit = {
+					diplomacy > 8
+				}
+				prev = {
+					set_variable = { name = diplo_has_appointed value = 0 }
+					appoint_court_position = {
+						recipient = prev
+						court_position = envoy_court_position
+					}
+				}
+			}
+			
+		}
+		trigger_event = {
+			on_action = diplo_employ_envoy
+			days = 365
+		}
+	}
+}

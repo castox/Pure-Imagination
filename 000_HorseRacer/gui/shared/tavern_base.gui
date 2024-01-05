@@ -1,0 +1,76 @@
+######################################################
+################## PORTRAIT TYPES ####################
+######################################################
+
+template portrait_base_tavern
+{
+    pop_out = yes
+    block "grayscale" {
+        grayscale = "[Not(Character.IsAlive)]"
+    }
+
+    gfxtype = portraitbuttongfx
+    shaderfile = "gfx/FX/jomini/gui_portrait.shader"
+
+    intersectionmask = no
+
+    background_texture = "gfx/portraits/portrait_transparent.dds"
+    texture = "gfx/portraits/portrait_transparent.dds"
+
+    clicksound = "event:/SFX/UI/Character/sfx_ui_character_portrait_select"
+    oversound = "event:/SFX/UI/Character/sfx_ui_character_portrait_pointer_over"
+
+    block "portrait_button_template_onmouseenter"
+    {
+        state = {
+            name = _mouse_enter
+            on_start = "[Character.OnMouseEnter]"
+        }
+    }
+    block "portrait_button_template_onmouseleave"
+    {
+        state = {
+            name = _mouse_leave
+            on_start = "[Character.OnMouseLeave]"
+        }
+    }
+
+    block "portrait_button_template_onclick"
+    {
+        onclick = "[DefaultOnCharacterClick(Character.GetID)]"
+    }
+
+    block "portrait_button_template_onrightclick"
+    {
+        onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
+        button_ignore = none
+    }
+
+    filter_mouse = right
+
+    block "portrait_button_template_tooltip"
+    {
+        tooltip_enabled = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+
+        tooltipwidget = {
+            cooltip_type = {
+                blockoverride "interaction_info" {
+                    text = "CHARACTER_TOOLTIP_INSTRUCTION"
+                }
+            }
+        }
+    }
+
+    using = tooltip_es
+    tooltip_offset = { 0 0 }
+    tooltip_verticalbehavior = slide
+    tooltip_horizontalbehavior = mirror
+
+    block "portrait_transformation"
+    {
+        portrait_scale = { 1.0 1.0 }
+        portrait_offset = { 0.0 0.0 }
+    }
+}
+
+

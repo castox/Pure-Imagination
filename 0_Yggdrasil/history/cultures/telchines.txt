@@ -1,0 +1,13 @@
+785.1.1 = {
+	discover_innovation = innovation_bronze_socket_axe
+	#
+	#
+}
+1310.1.1 = {
+	discover_innovation = innovation_earthworks
+	discover_innovation = innovation_barracks
+	#
+	discover_innovation = innovation_city_planning
+	discover_innovation = innovation_city_states
+	discover_innovation = innovation_potters_wheel
+}

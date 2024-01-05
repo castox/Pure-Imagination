@@ -1,0 +1,10 @@
+﻿l_german:
+
+bow_decision:0 "Veranstalten Sie ein Bogenschießen-Turnier!"
+bow_decision_confirm:0 "$bow_decision$"
+bow_decision_tooltip:0 "$bow_decision$"
+bow_decision_desc:0 "Veranstalten Sie ein Bogenturnier, testen Sie Ihre Fähigkeiten gegen die Weltbesten aus allen Regionen!"
+bow_decision_effect_tooltip: "Das Startgeld beträgt 50 Gold, der Gewinner nimmt alles!\n\nWenn du remisst, teilst du es mit dem anderen Bogenschützen. Weil ich zu faul bin, eine goldene Pfeilrunde zu machen!\n\nEin Turnier kann alle 30 Tage abgehalten werden.\n\nWenn dies dein erstes Mal ist, klicke auf den Tutorial-Button, weil du\neine schlechte Zeit haben wirst. Aber keine Sorge! du wirst den Dreh raus haben und bald wirst du sehen, dass die Latte nicht zu hoch liegt.\n\nDu kannst auch nach dem Turnier bleiben, um noch etwas zu üben"
+
+BOW_TUT: "Beginnen Sie, indem Sie Ihre Maus auf dem Bildschirm nach oben und unten bewegen, um Ihre 3 Positionsbereiche zu entdecken\n\nHoch, Mittel, Tief\n\nKlicken Sie auf die rechte Seite des Bildschirms und testen Sie es.\nJe nachdem, wo sich Ihr Ziel befindet, müssen Sie anpassen .\n\nWenn Sie die linke Maustaste gedrückt halten, wird ein Pfeil so lange angelegt, wie Sie ihn gedrückt halten.\nWenn Sie einen Pfeil haben, werden Sie feststellen, dass sich der Pfeil auf dem Genauigkeits-Dummy auf und ab bewegt. Das Abfeuern eines Pfeils innerhalb des roten Ziels ist die maximale Genauigkeit.\n\nDies garantiert jedoch keinen Treffer! Auf der rechten Seite des Dummys sehen Sie einen Balken. Halten Sie die LEERTASTE gedrückt, um Ihrem Schuss Kraft zu verleihen! der Balken selbst ist gelb, aber wenn du die richtige Kraft für den Schuss erreichst, wird er grün!\nNachdem du einen Pfeil loslässt, geht deine Kraft auf 0 zurück oder wenn du die LEERTASTE loslässt, wird sie sinken.\n\nDie Die richtige Kombination aus Zielposition, Zielgenauigkeit und Zielkraft sorgt dafür, dass Sie einen Treffer erzielen.\n\nTreffen Sie in 60 Sekunden so viele Ziele wie möglich Bildschirm.\nSchieße sie raus und gewinne! Auch das Verlassen während des Spiels ist eine Selbstverständlichkeit. Viel Spaß.\n\n~Castox"
+

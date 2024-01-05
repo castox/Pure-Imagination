@@ -1,0 +1,213 @@
+﻿agot_bm_8282 = {
+	start_date = 8282.9.15
+	is_playable = yes
+	group = agot_bm_group_8282
+	
+	weight = {
+		value = 100
+	}
+	
+	# Aerys II Targaryen (The Iron Throne) ID: Targaryen_1
+	character = {
+		name = "bookmark_282_aerys_targaryen"
+		dynasty = dynn_Targaryen
+		dynasty_splendor_level = 3
+		type = male
+		birth = 8243.6.1
+		title = e_the_iron_throne
+		government = lp_feudal_government
+		culture = high_valyrian
+		religion = the_seven_main
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Targaryen_1
+		position = { 700 520 }
+
+		animation = lunatic
+	}
+
+	# Rhaegar Targaryen (Dragonstone) ID: Targaryen_3
+	character = {
+		name = "bookmark_282_rhaegar_targaryen"
+		dynasty = dynn_Targaryen
+		dynasty_splendor_level = 3
+		type = male
+		birth = 8259.6.1
+		title = d_dragonstone
+		government = lp_feudal_government
+		culture = high_valyrian
+		religion = the_seven_main
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		history_id = Targaryen_3
+		position = { 1100 310 }
+
+		animation = war_attacker
+	}
+
+	# Robert Baratheon (The Stormlands) ID: Baratheon_2
+	character = {
+		name = "bookmark_282_robert_baratheon"
+		dynasty = dynn_Baratheon
+		dynasty_splendor_level = 2
+		type = male
+		birth = 8262.10.1
+		title = k_the_stormlands
+		government = lp_feudal_government
+		culture = stormlander
+		religion = the_seven_main
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Baratheon_2
+		position = { 1150 660 }
+
+		animation = marshal
+	}
+
+	# Eddard Stark (The North) ID: Stark_3
+	character = {
+		name = "bookmark_282_eddard_stark"
+		dynasty = dynn_Stark
+		dynasty_splendor_level = 3
+		type = male
+		birth = 8263.1.1
+		title = k_the_north
+		government = lp_feudal_government
+		culture = northman
+		religion = old_gods_south
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		history_id = Stark_3
+		position = { 420 150 }
+
+		animation = marshal
+	}
+
+	# Tywin Lannister (The Westerlands) ID: Lannister_1
+	character = {
+		name = "bookmark_282_tywin_lannister"
+		dynasty = dynn_Lannister
+		dynasty_splendor_level = 3
+		type = male
+		birth = 8242.1.1
+		title = k_the_westerlands
+		government = lp_feudal_government
+		culture = westerman
+		religion = the_seven_main
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		history_id = Lannister_1
+		position = { 310 550 }
+
+		animation = personality_callous
+	}
+}
+
+agot_bm_8284 = {
+	start_date = 8284.6.2
+	is_playable = yes
+	group = agot_bm_group_8284
+
+	weight = {
+		value = 100
+	}
+
+	#Robert
+	character = {
+		name = "bookmark_king_robert_baratheon"
+		dynasty = dynn_Baratheon
+		type = male
+		title = e_the_iron_throne
+		religion = the_seven_main
+		culture = stormlander
+		birth = 8262.10.1
+		government = lp_feudal_government
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Baratheon_2
+		dynasty_splendor_level = 3
+		position = { 1000 375 }
+
+		animation = drink
+	}
+
+	#Varys
+	character = {
+		name = "bookmark_284_lord_varys"
+		dynasty = dynn_varys
+		type = male
+		title = c_blackstripe
+		religion = rhllor
+		culture = lyseni
+		birth = 8257.1.1
+		government = lp_feudal_government
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Eunuch_1
+		dynasty_splendor_level = 3
+		position = { 680 555 }
+
+		animation = scheme
+	}
+
+	#Stannis
+	character = {
+		name = "bookmark_284_stannis_baratheon"
+		dynasty = dynn_Baratheon
+		type = male
+		title = d_dragonstone
+		religion = the_seven_main
+		culture = stormlander
+		birth = 8264.1.1
+		government = lp_feudal_government
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Baratheon_3
+		dynasty_splendor_level = 3
+		position = { 1470 525 }
+
+		animation = dismissal
+	}
+	#Renly
+	character = {
+		name = "bookmark_284_renly_baratheon"
+		dynasty = dynn_Baratheon
+		type = male
+		title = k_the_stormlands
+		religion = the_seven_main
+		culture = stormlander
+		birth = 8277.1.1
+		government = lp_feudal_government
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Baratheon_4
+		dynasty_splendor_level = 3
+		position = { 1050 750 }
+	}
+	#Tywin
+	character = {
+		name = "bookmark_284_tywin_lannister"
+		dynasty = dynn_Lannister
+		type = male
+		title = k_the_westerlands
+		religion = the_seven_main
+		culture = westerman
+		birth = 8242.1.1
+		government = lp_feudal_government
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Lannister_1
+		dynasty_splendor_level = 3
+		position = { 300 475 }
+
+		animation = personality_callous
+	}
+	#Balon
+	character = {
+		name = "bookmark_balon_greyjoy"
+		dynasty = dynn_Greyjoy
+		type = male
+		title = k_the_iron_islands
+		religion = drowned_god_main
+		culture = ironborn
+		birth = 8219.1.1
+		government = lp_feudal_government
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = Greyjoy_5
+		dynasty_splendor_level = 3
+		position = { 450 200 }
+
+		animation = personality_zealous
+	}
+}
+

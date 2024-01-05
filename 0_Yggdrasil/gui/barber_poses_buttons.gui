@@ -1,0 +1,433 @@
+types PoseButtons {
+  type pose_button = button_FB_list {
+    onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Character.MakeScope ).End)]"
+		down = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End)]"
+  }
+
+  type barber_head_small = widget {
+    size = { 60 60 }
+    scale = 0.6
+
+      icon = {
+          size = { 90 90 }
+          position = { -15 -22 }
+          using = Background_Portrait_Glow
+          color = { 0.8 0.8 0.9 1.0 }
+          visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).End)]"
+
+          block "empty_character" {}
+          icon = {
+            size = { 180 90 }
+            using = Background_Portrait_Glow
+            color = { 0.8 0.7 0.55 0.3 }
+          }
+      }
+
+
+      portrait_button = {
+          parentanchor = bottom|hcenter
+          size = { 80 100 }
+          using = portrait_base
+          block "portrait_texture"
+          {
+              portrait_texture = "[Character.GetCachedPortrait('environment_head', 'camera_head', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+          }
+          mask = "gfx/portraits/portrait_mask_head.dds"
+          effectname = "NoHighlight"
+
+          highlight_icon = {
+              name = "prison_bars"
+              visible = "[Character.IsImprisoned]"
+              size = { 80 88 }
+              parentanchor = bottom
+              effectname = "NoHighlight"
+              texture = "gfx/portraits/portrait_prison_head.dds"
+
+              modify_texture = {
+                  name = "mask"
+                  texture = "gfx/portraits/portrait_mask_head.dds"
+                  spriteType = Corneredstretched
+                  blend_mode = alphamultiply
+              }
+          }
+
+          block "portrait_button" {}
+      }
+
+      widget = {
+          size = { 100% 100% }
+
+          background = {
+              texture = "gfx/portraits/portrait_rank.dds"
+              margin = { -4 -4 }
+              framesize = { 95 94 }
+              frame = "[Character.GetPrimaryTitle.GetTierFrame]"
+          }
+      }
+
+      block "coa" {
+        coa_realm_tiny = {
+          alwaystransparent = yes
+          tooltip_enabled = no
+          visible = "[Character.HasLandedTitles]"
+          parentanchor = bottom|left
+          position = { -7 5 }
+        }
+      }
+
+      widget = {
+          size = { 100% 100% }
+          block "empty_character" {}
+
+          background = {
+              texture = "gfx/portraits/portrait_frame.dds"
+              using = Color_Grey
+              margin = { -4 -4 }
+              alpha = 0.4
+
+              modify_texture = {
+                  texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
+                  blend_mode = alphamultiply
+              }
+          }
+
+          background = {
+              visible = "[Character.IsHovered]"
+              texture = "gfx/portraits/portrait_frame.dds"
+              using = Color_Grey
+              alpha = 0.7
+              margin = { -4 -4 }
+          }
+      }
+
+      # Portrait unknown glow
+      highlight_icon = {
+          name = "portrait_unknown_head_small_glow"
+          parentanchor = center
+          position = { 3 -9 }
+          gfxtype = framedbuttongfx
+          effectname = "NoHighlight"
+          texture = "gfx/portraits/unknown_portraits/button_unknown_head.dds"
+          size = { 80 100 }
+          framesize = { 384 480 }
+          upframe = 1
+          overframe = 2
+          block "glow_visible" {
+
+              visible = "[Not(Character.IsValid)]"
+          }
+
+          block "glow_flip" {}
+
+          block "onclick" {}
+      }
+  }
+
+	type pose_tab = button_tab_vertical  {
+		size = { 100 50 }
+    mirror = horizontal
+    datacontext = "[GetScriptedGui('choose_pose')]"
+    onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
+    button_ignore = none
+    tooltip = "pose_tab_tt"
+
+    background = {
+      using = Background_Area
+    }
+
+		barber_head_small = {
+			position = { 5 7 }
+      parentanchor = vcenter
+			blockoverride "portrait_button" {
+				alwaystransparent = yes
+				tooltip_enabled = no
+			}
+    }
+
+    blockoverride "coa" {}
+
+    block "checkbox" {
+
+      button = {
+        size = { 50 50 }
+        position = { 55 10 }
+        block "checkbox data" {
+          datacontext = "[GetScriptedGui('add_to_barber')]"
+        }
+        onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).End)]"
+        visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).End)]"
+        enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).End)]"
+
+        button_checkbox = {
+          alwaystransparent = yes
+          checked = no
+        }
+      }
+
+      button = {
+        size = { 50 50 }
+        position = { 55 10 }
+
+        datacontext = "[GetScriptedGui('remove_from_barber')]"
+        onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).AddScope('new_root', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+        visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('character', Character.MakeScope).AddScope('new_root', PortraitCustomizationWindow.GetCharacter.MakeScope).End)]"
+
+        button_checkbox = {
+          alwaystransparent = yes
+          checked = yes
+        }
+      }
+    }
+	}
+}
+
+template "pose_buttons"
+{
+  pose_button = {
+    text = "right"
+    datacontext = "[GetScriptedGui('right_pose')]"
+  }
+
+  pose_button = {
+    text = "middle"
+    datacontext = "[GetScriptedGui('middle_pose')]"
+  }
+
+  pose_button = {
+    text = "left"
+    datacontext = "[GetScriptedGui('left_pose')]"
+  }
+
+  widget = {
+    size = { 0 12 }
+  }
+
+  pose_button = {
+  	text = "chancellor"
+  	datacontext = "[GetScriptedGui('chancellor_pose')]"
+  }
+  pose_button = {
+  	text = "steward"
+  	datacontext = "[GetScriptedGui('steward_pose')]"
+  }
+  pose_button = {
+  	text = "marshal"
+  	datacontext = "[GetScriptedGui('marshal_pose')]"
+  }
+  pose_button = {
+  	text = "spymaster"
+  	datacontext = "[GetScriptedGui('spymaster_pose')]"
+  }
+  pose_button = {
+  	text = "chaplain"
+  	datacontext = "[GetScriptedGui('chaplain_pose')]"
+  }
+
+  widget = {
+    size = { 0 12 }
+  }
+
+  pose_button = {
+  	text = "admiration"
+  	datacontext = "[GetScriptedGui('admiration_pose')]"
+  }
+  pose_button = {
+  	text = "angry"
+  	datacontext = "[GetScriptedGui('angry_pose')]"
+  }
+  pose_button = {
+  	text = "beg"
+  	datacontext = "[GetScriptedGui('beg_pose')]"
+  }
+  pose_button = {
+  	text = "bold"
+  	datacontext = "[GetScriptedGui('bold_pose')]"
+  }
+  pose_button = {
+  	text = "boredom"
+  	datacontext = "[GetScriptedGui('boredom_pose')]"
+  }
+  pose_button = {
+  	text = "callous"
+  	datacontext = "[GetScriptedGui('callous_pose')]"
+  }
+  pose_button = {
+  	text = "compassionate"
+  	datacontext = "[GetScriptedGui('compassionate_pose')]"
+  }
+  pose_button = {
+  	text = "content"
+  	datacontext = "[GetScriptedGui('content_pose')]"
+  }
+  pose_button = {
+  	text = "coward"
+  	datacontext = "[GetScriptedGui('coward_pose')]"
+  }
+  pose_button = {
+  	text = "cynical"
+  	datacontext = "[GetScriptedGui('cynical_pose')]"
+  }
+  pose_button = {
+  	text = "disapproval"
+  	datacontext = "[GetScriptedGui('disapproval_pose')]"
+  }
+  pose_button = {
+  	text = "disbelief"
+  	datacontext = "[GetScriptedGui('disbelief_pose')]"
+  }
+  pose_button = {
+  	text = "disgust"
+  	datacontext = "[GetScriptedGui('disgust_pose')]"
+  }
+  pose_button = {
+  	text = "dishonorable"
+  	datacontext = "[GetScriptedGui('dishonorable_pose')]"
+  }
+  pose_button = {
+  	text = "dismissal"
+  	datacontext = "[GetScriptedGui('dismissal_pose')]"
+  }
+  pose_button = {
+  	text = "fear"
+  	datacontext = "[GetScriptedGui('fear_pose')]"
+  }
+  pose_button = {
+    text = "flirtation"
+    datacontext = "[GetScriptedGui('flirtation_pose')]"
+  }
+  pose_button = {
+  	text = "flirtation_left"
+  	datacontext = "[GetScriptedGui('flirtation_left_pose')]"
+  }
+  pose_button = {
+  	text = "forgiving"
+  	datacontext = "[GetScriptedGui('forgiving_pose')]"
+  }
+  pose_button = {
+  	text = "greedy"
+  	datacontext = "[GetScriptedGui('greedy_pose')]"
+  }
+  pose_button = {
+  	text = "grief"
+  	datacontext = "[GetScriptedGui('grief_pose')]"
+  }
+  pose_button = {
+  	text = "happy"
+  	datacontext = "[GetScriptedGui('happy_pose')]"
+  }
+  pose_button = {
+  	text = "honorable"
+  	datacontext = "[GetScriptedGui('honorable_pose')]"
+  }
+  pose_button = {
+  	text = "irrational"
+  	datacontext = "[GetScriptedGui('irrational_pose')]"
+  }
+  pose_button = {
+  	text = "love"
+  	datacontext = "[GetScriptedGui('love_pose')]"
+  }
+  pose_button = {
+  	text = "newborn"
+  	datacontext = "[GetScriptedGui('newborn_pose')]"
+  }
+  pose_button = {
+  	text = "pain"
+  	datacontext = "[GetScriptedGui('pain_pose')]"
+  }
+  pose_button = {
+  	text = "paranoia"
+  	datacontext = "[GetScriptedGui('paranoia_pose')]"
+  }
+  pose_button = {
+  	text = "rational"
+  	datacontext = "[GetScriptedGui('rational_pose')]"
+  }
+  pose_button = {
+  	text = "sadness"
+  	datacontext = "[GetScriptedGui('sadness_pose')]"
+  }
+  pose_button = {
+  	text = "schadenfreude"
+  	datacontext = "[GetScriptedGui('schadenfreude_pose')]"
+  }
+  pose_button = {
+  	text = "scheme"
+  	datacontext = "[GetScriptedGui('scheme_pose')]"
+  }
+  pose_button = {
+  	text = "shame"
+  	datacontext = "[GetScriptedGui('shame_pose')]"
+  }
+  pose_button = {
+  	text = "shock"
+  	datacontext = "[GetScriptedGui('shock_pose')]"
+  }
+  pose_button = {
+  	text = "sick"
+  	datacontext = "[GetScriptedGui('sick_pose')]"
+  }
+  pose_button = {
+  	text = "stress"
+  	datacontext = "[GetScriptedGui('stress_pose')]"
+  }
+  pose_button = {
+  	text = "vengeful"
+  	datacontext = "[GetScriptedGui('vengeful_pose')]"
+  }
+  pose_button = {
+  	text = "worry"
+  	datacontext = "[GetScriptedGui('worry_pose')]"
+  }
+  pose_button = {
+  	text = "wounded"
+  	datacontext = "[GetScriptedGui('wounded_pose')]"
+  }
+  pose_button = {
+  	text = "zealous"
+  	datacontext = "[GetScriptedGui('zealous_pose')]"
+  }
+
+  widget = {
+    size = { 0 12 }
+  }
+
+  pose_button = {
+    text = "house_arrest"
+  	datacontext = "[GetScriptedGui('arrest_pose')]"
+  }
+
+  pose_button = {
+  	text = "dungeon"
+  	datacontext = "[GetScriptedGui('prison_dungeon_pose')]"
+  }
+
+  widget = {
+    size = { 0 12 }
+  }
+
+  pose_button = {
+  	text = "attacker"
+  	datacontext = "[GetScriptedGui('attacker_pose')]"
+  }
+
+  pose_button = {
+  	text = "defender"
+  	datacontext = "[GetScriptedGui('defender_pose')]"
+  }
+
+  pose_button = {
+  	text = "tie"
+  	datacontext = "[GetScriptedGui('tie_pose')]"
+  }
+
+  pose_button = {
+  	text = "win"
+  	datacontext = "[GetScriptedGui('win_pose')]"
+  }
+
+  pose_button = {
+  	text = "loss"
+  	datacontext = "[GetScriptedGui('loss_pose')]"
+  }
+}

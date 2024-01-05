@@ -1,0 +1,267 @@
+######################################################
+################## PORTRAIT TYPES ####################
+######################################################
+
+types PortraitTypes_joust
+{
+
+    ####################################
+    ######### MAIN PORTRAITS ###########
+    ####################################
+
+
+
+    type horse_stance = widget {
+        size = { 740 920 }
+        allow_outside = yes
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 740 920 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_joust', 'horse_cam', 'horse_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type test_this = widget {
+
+        allow_outside = yes
+        tooltip_enabled = no
+        fixedgridbox = {
+            flipdirection = yes
+            addcolumn = 70
+            addrow = 70
+            maxverticalslots = 1
+            maxhorizontalslots = 15
+            
+            datamodel = "[GetPlayer.MakeScope.GetList('joust_spectate')]"
+    
+            item = {
+                my_dummy_tribune = {
+                    datacontext = "[Scope.GetCharacter]"
+                    parentanchor =left|vcenter
+                }
+            }
+        }
+    }
+    type test_this3 = widget {
+
+        allow_outside = yes
+        tooltip_enabled = no
+        fixedgridbox = {
+            flipdirection = yes
+            addcolumn = 30
+            addrow = 70
+            maxverticalslots = 6
+            maxhorizontalslots = 90
+            
+            datamodel = "[GetPlayer.MakeScope.GetList('joust_all')]"
+    
+            item = {
+                my_dummy_tribune = {
+                    datacontext = "[Scope.GetCharacter]"
+                    parentanchor =left|vcenter
+                }
+            }
+        }
+    }
+
+    type horse_opp = widget {
+        size = { 740 920 }
+        allow_outside = yes
+        tooltip_enabled = no
+
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 740 920 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_temple', 'horse_cam2', 'horse_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+    }
+    type my_dummy_tribune = widget {
+        #size = { 1190 1370 }
+        parentanchor = bottom|hcenter
+        size = { 100 280 }
+        allow_outside = yes
+        tooltip_enabled = no
+        portrait_button = {
+  
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 100 280 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_temple', 'cshoptribune', 'tribune_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_shoulders.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+    }
+    type my_dummy_tribune2 = widget {
+        #size = { 1190 1370 }
+        size = { 100 280 }
+        allow_outside = yes
+        tooltip_enabled = no
+        portrait_button = {
+  
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 100 280 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_temple', 'cshoptribune2', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_shoulders.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+    }
+    type horse_win = widget {
+        size = { 740 920 }
+        allow_outside = yes
+        tooltip_enabled = no
+
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 740 920 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_temple', 'horse_cam', 'horse_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+    }
+    type horse_lost = widget {
+        size = { 740 920 }
+        allow_outside = yes
+        tooltip_enabled = no
+
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 740 920 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_temple', 'horse_cam_lost', 'lost_pose', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		}
+    }
+
+}
+
+template portrait_base_tavern
+{
+    pop_out = yes
+    block "grayscale" {
+        grayscale = "[Not(Character.IsAlive)]"
+    }
+
+    gfxtype = portraitbuttongfx
+    shaderfile = "gfx/FX/jomini/gui_portrait.shader"
+
+    intersectionmask = no
+
+    background_texture = "gfx/portraits/portrait_transparent.dds"
+    texture = "gfx/portraits/portrait_transparent.dds"
+
+    clicksound = "event:/SFX/UI/Character/sfx_ui_character_portrait_select"
+    oversound = "event:/SFX/UI/Character/sfx_ui_character_portrait_pointer_over"
+
+    block "portrait_button_template_onmouseenter"
+    {
+        state = {
+            name = _mouse_enter
+            on_start = "[Character.OnMouseEnter]"
+        }
+    }
+    block "portrait_button_template_onmouseleave"
+    {
+        state = {
+            name = _mouse_leave
+            on_start = "[Character.OnMouseLeave]"
+        }
+    }
+
+    block "portrait_button_template_onclick"
+    {
+        onclick = "[DefaultOnCharacterClick(Character.GetID)]"
+    }
+
+    block "portrait_button_template_onrightclick"
+    {
+        onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
+        button_ignore = none
+    }
+
+    filter_mouse = right
+
+    block "portrait_button_template_tooltip"
+    {
+        tooltip_enabled = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+
+        tooltipwidget = {
+            cooltip_type = {
+                blockoverride "interaction_info" {
+                    text = "CHARACTER_TOOLTIP_INSTRUCTION"
+                }
+            }
+        }
+    }
+
+    using = tooltip_es
+    tooltip_offset = { 0 0 }
+    tooltip_verticalbehavior = slide
+    tooltip_horizontalbehavior = mirror
+
+    block "portrait_transformation"
+    {
+        portrait_scale = { 1.0 1.0 }
+        portrait_offset = { 0.0 0.0 }
+    }
+}

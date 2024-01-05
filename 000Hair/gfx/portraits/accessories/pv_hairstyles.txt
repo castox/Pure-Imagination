@@ -1,0 +1,22 @@
+﻿
+male_hair_western_20 = {
+	entity = { required_tags = "no_hair"			shared_pose_entity = head		 }
+	entity = { required_tags = "cap"				shared_pose_entity = head		entity =  "male_hair_western_20_cap_entity"  }
+	entity = { required_tags = "crown"				shared_pose_entity = head		entity =  "male_hair_western_20_crown_entity"  }
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "male_hair_western_20_entity" }
+	
+}
+female_hair_western_20 = {
+	entity = { required_tags = "no_hair"			shared_pose_entity = head		 }
+	entity = { required_tags = "cap"				shared_pose_entity = head		entity =  "female_hair_western_20_cap_entity"  }
+	entity = { required_tags = "crown"				shared_pose_entity = head		entity =  "female_hair_western_20_crown_entity"  }
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "female_hair_western_20_entity" }
+	
+}
+female_hair_western_30 = {
+	entity = { required_tags = "no_hair"			shared_pose_entity = head		 }
+	entity = { required_tags = "cap"				shared_pose_entity = head		entity =  "female_hair_western_30_cap_entity"  }
+	entity = { required_tags = "crown"				shared_pose_entity = head		entity =  "female_hair_western_30_crown_entity"  }
+	entity = { required_tags = ""					shared_pose_entity = head		entity = "female_hair_western_30_entity" }
+	
+}

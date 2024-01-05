@@ -1,0 +1,42 @@
+pdxmesh = {
+	name = "bow_mesh"
+	file = "bow.mesh"
+	animation = { id = "bow_0" type = "bow.anim" }
+	animation = { id = "bow_1" type = "bow_1.anim" }
+	animation = { id = "bow_2" type = "bow_2.anim" }
+
+	meshsettings = {
+		name = "bow.001"
+		index = 0
+		texture_diffuse = "T_ShortBow_01_D.TGA"
+		texture_normal = "T_ShortBow_01_N.TGA"
+		texture_specular = ""
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+}
+pdxmesh = {
+	name = "bow_mesh"
+	file = "bow.mesh"
+	animation = { id = "bow_0" type = "bow.anim" }
+
+	meshsettings = {
+		name = "bow.001"
+		index = 0
+		texture_diffuse = "T_ShortBow_01_D.TGA"
+		texture_normal = "T_ShortBow_01_N.TGA"
+		texture_specular = "T_ShortBow_01_MR.TGA"
+		shader = "portrait_attachment_pattern"
+		#shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+}
+entity = {
+	name = "bow_entity"
+	pdxmesh = "bow_mesh"
+
+	default_state = "idle"
+	state = {	name = "idle"	animation = "bow_0" }
+}

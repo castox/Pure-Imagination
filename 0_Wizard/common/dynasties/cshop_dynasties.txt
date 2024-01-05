@@ -1,0 +1,4 @@
+﻿castox = {
+	name = "de Castius"
+	culture = roman
+}

@@ -1,0 +1,371 @@
+﻿diplo_bl_1 = 1
+diplo_bl_2 = 2
+diplo_bl_3 = 3
+diplo_bl_4 = 4
+diplo_bl_5 = 5
+diplo_bl_6 = 6
+diplo_bl_7 = 7
+diplo_bl_8 = 8
+
+county_pm_value2 = {
+	value = 10 
+		
+		if = {
+			limit = { tier = tier_county }
+			add = this.county_pm_value
+			add = this.diplo_bb_value
+
+			if = { limit = {  this = { has_county_modifier = siege_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = occupation_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = county_mysterious_disappearances_modifier  } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = guarded_irrigated_oasis_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = nine_fingered_peasants_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = county_extorted_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_forced_assimilation_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_chastised_beloved_adventurer_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_increased_presence_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_superstitious_of_ruler_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = harassing_merchants_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_inefficient_tax_collection_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_deserting_levies_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_smuggling_ring_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_bandits_rampant_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_inefficient_census_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_lack_of_sheriffs_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_lack_of_courts_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_thieves_guild_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_unsafe_highways_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_uncooperative_guilds_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_lackluster_administration_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = opulent_pigsty_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_weapons_carried_in_city_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = oasis_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_raised_runestone_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = irrigated_oasis_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_listened_to_locals_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = encouraged_improvement_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = invested_in_province_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_confident_in_humanity_modifier } } add = 2 }
+			if = { limit = {  this = { has_county_modifier = county_increased_opinion_modifier } } add = 2 }
+			if = { limit = {  this = { has_county_modifier = reinvested_in_province_modifier } } add = 2 }
+
+
+		}
+
+		if ={
+			limit = { tier = tier_duchy }
+			add = 45
+			add = this.defacto_value
+
+		}
+		if ={
+			limit = { tier = tier_kingdom }
+			add = 170
+			add = this.defacto_value
+
+		}
+		if ={
+			limit = { tier = tier_empire }
+			add = 210
+			add = this.defacto_value
+		}
+
+}
+county_pm_value3 = {
+	value = 0 
+		
+		if = {
+			limit = { tier = tier_county }
+			add = this.county_pm_value
+			add = this.diplo_bb_value
+
+			if = { limit = {  this = { has_county_modifier = siege_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = occupation_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = county_mysterious_disappearances_modifier  } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = guarded_irrigated_oasis_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = nine_fingered_peasants_modifier } } subtract = 1 }
+			if = { limit = {  this = { has_county_modifier = county_extorted_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_forced_assimilation_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_chastised_beloved_adventurer_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_increased_presence_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_superstitious_of_ruler_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = harassing_merchants_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_inefficient_tax_collection_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_deserting_levies_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_smuggling_ring_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_bandits_rampant_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_inefficient_census_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_lack_of_sheriffs_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_lack_of_courts_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_thieves_guild_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_unsafe_highways_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_uncooperative_guilds_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = county_corruption_lackluster_administration_modifier } } subtract = 2 }
+			if = { limit = {  this = { has_county_modifier = opulent_pigsty_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_weapons_carried_in_city_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = oasis_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_raised_runestone_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = irrigated_oasis_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_listened_to_locals_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = encouraged_improvement_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = invested_in_province_modifier } } add = 1 }
+			if = { limit = {  this = { has_county_modifier = county_confident_in_humanity_modifier } } add = 2 }
+			if = { limit = {  this = { has_county_modifier = county_increased_opinion_modifier } } add = 2 }
+			if = { limit = {  this = { has_county_modifier = reinvested_in_province_modifier } } add = 2 }
+
+
+		}
+}
+diplo_building_slots = {
+	value = 0 
+	every_county_province = {
+		add = building_slots
+	}
+	#BS: ES: SB: HS:
+}
+diplo_building_slots_empty = {
+	value = 0 
+	every_county_province = {
+		add = free_building_slots
+	}
+	#BS: ES: SB: HS:
+}
+diplo_county_provinces = {
+	value = 0 
+	every_county_province = {
+		add = 1
+	}
+	#BS: ES: SB: HS:
+}
+diplo_county_provinces_buildings = {
+	value = 0 
+	every_county_province = {
+	#	add = 1
+		add = combined_building_level
+	}
+	#BS: ES: SB: HS:
+
+}
+diplo_bb_value = {
+	value = 0 
+
+	every_county_province = {
+
+		#Building Slots
+		add = building_slots
+		subtract = free_building_slots
+		add = fort_level
+		if = { limit = { has_special_building_slot = yes } add = 4 }
+		if = { limit = { has_special_building = yes } add = 8 } #Do they have a building
+		if = { limit = { barony = { is_holy_site = yes } } add = 15 }
+		#Holdng Type
+		if = { limit = { has_holding_type = castle_holding } add = 2 }
+		if = { limit = { has_holding_type = tribal_holding } add = 1 }
+		if = { limit = { has_holding_type = church_holding } add = 1 }
+		if = { limit = { has_holding_type = city_holding } add = 1 }
+		if = { limit = { NOR = { has_holding_type = city_holding has_holding_type = castle_holding has_holding_type = church_holding has_holding_type = tribal_holding } } add = 1 }
+
+		#Terrain
+		if = { limit = { terrain = farmlands } add = 1 }
+		if = { limit = { terrain = plains } add = 1 }
+		if = { limit = { terrain = drylands } subtract = 1 }
+		if = { limit = { terrain = desert } add = 1 }
+		if = { limit = { terrain = oasis } add = 1 }
+		if = { limit = { terrain = floodplains } subtract = 1 }
+		if = { limit = { terrain = steppe } add = 1 }
+		if = { limit = { terrain = mountains } add = 1 }
+		if = { limit = { terrain = desert_mountains } add = 1 }
+		if = { limit = { terrain = wetlands } subtract = 1 }
+		if = { limit = { terrain = forest } add = 1 }
+		if = { limit = { terrain = taiga } add = 1 }
+		if = { limit = { terrain = jungle } subtract = 1 }
+		if = { limit = { terrain = hills } add = 1 }
+
+		#Building Levels
+
+		if = { limit = { has_building = outposts_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = logging_camps_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = peat_quarries_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = hill_forts_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = plantations_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = quarries_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = hunting_grounds_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = military_camps_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = pastures_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = ramparts_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = curtain_walls_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = watchtowers_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = cereal_fields_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = barracks_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = camel_farms_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = hill_farms_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = elephant_pens_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = common_tradeport_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = orchards_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = farm_estates_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = regimental_grounds_01 } add = diplo_bl_1 }
+		if = { limit = { has_building = monastic_schools_01 } add = diplo_bl_1 }
+		#2
+		if = { limit = { has_building = outposts_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = logging_camps_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = peat_quarries_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = hill_forts_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = plantations_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = quarries_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = hunting_grounds_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = military_camps_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = pastures_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = ramparts_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = curtain_walls_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = watchtowers_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = cereal_fields_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = barracks_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = camel_farms_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = hill_farms_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = elephant_pens_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = common_tradeport_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = orchards_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = farm_estates_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = regimental_grounds_02 } add = diplo_bl_2 }
+		if = { limit = { has_building = monastic_schools_02 } add = diplo_bl_2 }
+		#3
+		if = { limit = { has_building = outposts_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = logging_camps_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = peat_quarries_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = hill_forts_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = plantations_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = quarries_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = hunting_grounds_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = military_camps_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = pastures_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = ramparts_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = curtain_walls_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = watchtowers_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = cereal_fields_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = barracks_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = camel_farms_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = hill_farms_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = elephant_pens_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = common_tradeport_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = orchards_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = farm_estates_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = regimental_grounds_03 } add = diplo_bl_3 }
+		if = { limit = { has_building = monastic_schools_03 } add = diplo_bl_3 }
+		#4
+		if = { limit = { has_building = outposts_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = logging_camps_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = peat_quarries_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = hill_forts_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = plantations_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = quarries_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = hunting_grounds_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = military_camps_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = pastures_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = ramparts_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = curtain_walls_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = watchtowers_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = cereal_fields_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = barracks_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = camel_farms_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = hill_farms_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = elephant_pens_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = common_tradeport_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = orchards_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = farm_estates_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = regimental_grounds_04 } add = diplo_bl_4 }
+		if = { limit = { has_building = monastic_schools_04 } add = diplo_bl_4 }
+		#5
+		if = { limit = { has_building = outposts_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = logging_camps_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = peat_quarries_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = hill_forts_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = plantations_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = quarries_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = hunting_grounds_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = military_camps_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = pastures_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = ramparts_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = curtain_walls_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = watchtowers_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = cereal_fields_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = barracks_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = camel_farms_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = hill_farms_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = elephant_pens_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = common_tradeport_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = orchards_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = farm_estates_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = regimental_grounds_05 } add = diplo_bl_5 }
+		if = { limit = { has_building = monastic_schools_05 } add = diplo_bl_5 }
+		#6
+		if = { limit = { has_building = outposts_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = logging_camps_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = peat_quarries_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = hill_forts_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = plantations_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = quarries_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = hunting_grounds_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = military_camps_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = pastures_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = ramparts_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = curtain_walls_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = watchtowers_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = cereal_fields_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = barracks_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = camel_farms_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = hill_farms_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = elephant_pens_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = common_tradeport_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = orchards_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = farm_estates_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = regimental_grounds_06 } add = diplo_bl_6 }
+		if = { limit = { has_building = monastic_schools_06 } add = diplo_bl_6 }
+		#7
+		if = { limit = { has_building = outposts_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = logging_camps_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = peat_quarries_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = hill_forts_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = plantations_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = quarries_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = hunting_grounds_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = military_camps_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = pastures_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = ramparts_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = curtain_walls_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = watchtowers_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = cereal_fields_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = barracks_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = camel_farms_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = hill_farms_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = elephant_pens_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = common_tradeport_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = orchards_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = farm_estates_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = regimental_grounds_07 } add = diplo_bl_7 }
+		if = { limit = { has_building = monastic_schools_07 } add = diplo_bl_7 }
+		#8
+		if = { limit = { has_building = outposts_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = logging_camps_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = peat_quarries_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = hill_forts_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = plantations_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = quarries_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = hunting_grounds_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = military_camps_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = pastures_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = ramparts_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = curtain_walls_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = watchtowers_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = cereal_fields_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = barracks_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = camel_farms_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = hill_farms_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = elephant_pens_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = common_tradeport_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = orchards_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = farm_estates_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = regimental_grounds_08 } add = diplo_bl_8 }
+		if = { limit = { has_building = monastic_schools_08 } add = diplo_bl_8 }
+	}
+}
+

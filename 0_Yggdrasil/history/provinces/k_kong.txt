@@ -1,0 +1,9 @@
+# 8147 - WORODUGU
+8147 = {
+	# Misc
+	culture = ogre
+851.1.1 = { culture = ogre }
+850.1.1 = { religion = ogre }  # bobo
+	religion = ogre  # west_african_pagan
+	# History
+}

@@ -1,0 +1,390 @@
+﻿
+
+jouster_height = {
+
+	static_size = {
+		dna_modifiers = {
+			morph = {
+				mode = replace				
+				gene = gene_height
+				template = normal_height
+				value = 0.6
+			}
+
+
+		}	
+		
+		weight = {
+			base = 0
+			modifier = {
+				add = 299
+				has_character_flag = is_jouster
+			}
+		}
+	}
+
+
+}
+
+jouster1 = {
+
+	jouster_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = western_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dde_hre_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			} 
+			accessory = {
+				mode = add
+				gene = legwear
+				template = western_war_legwear
+				range = { 0 1 } # For the randomness to work correctly
+			} 
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 200
+				has_character_flag = is_jouster
+				
+			}
+		}
+	}
+
+
+}
+jouster2 = { #middle east
+
+	jouster2_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = dde_abbasid_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dde_abbasid_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				AND = {
+					has_character_flag = is_jouster
+					capital_province = { geographical_region = world_middle_east }
+				}
+			}
+		}
+	}
+
+
+}
+jouster2i = { #india
+
+	jouster2i_portrait = {
+		dna_modifiers = {
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = indian_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = indian_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				AND = {
+					has_character_flag = is_jouster
+					capital_province = { geographical_region = world_india }
+				}
+			}
+		}
+	}
+
+
+}
+jouster3 = { #africa
+
+	jouster3_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = sub_saharan_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = mena_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				has_character_flag = is_jouster
+				OR = {
+					capital_province = { geographical_region = world_africa }
+					capital_province = { geographical_region = world_africa_west }
+					capital_province = { geographical_region = world_africa_east }
+					capital_province = { geographical_region = world_africa_north }
+					capital_province = { geographical_region = world_africa_north_west }
+					capital_province = { geographical_region = world_africa_north_east }
+				}
+
+			}
+		}
+	}
+
+
+}
+jouster4 = { #asia
+
+	jouster4_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = steppe_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = steppe_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 215
+			
+					has_character_flag = is_jouster
+				OR = {
+					capital_province = { geographical_region = world_steppe }
+					capital_province = { geographical_region = world_tibet }
+				}
+			}
+		}
+	}
+
+
+}
+jouster4i = { #asia -minor
+
+	jouster4i_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = byzantine_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = byzantine_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				AND = {
+					has_character_flag = is_jouster
+					capital_province = { geographical_region = world_asia_minor }	
+				}
+			}
+		}
+	}
+
+
+}
+jouster5 = { #Norse #fp1
+
+	jouster5_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = fp1_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = fp1_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			} 
+			accessory = {
+				mode = add
+				gene = legwear
+				template = fp1_common_legwear
+				range = { 0 1 } # For the randomness to work correctly
+			} 
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 220
+				AND = {
+					has_character_flag = is_jouster
+					has_fp1_dlc_trigger = yes
+					capital_province = { geographical_region = world_europe_north }
+				}
+			}
+		}
+	}
+
+
+}
+jouster6 = { #Norse
+
+	jouster6_portrait = {
+		dna_modifiers = {
+
+
+			accessory = {
+				mode = add
+				gene = clothes
+				template = northern_war_nobility_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = northern_war
+				range = { 0 1 } # For the randomness to work correctly
+			} 
+			accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloaks
+                value = 1
+			}  
+
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 210
+				AND = {
+					has_character_flag = is_jouster
+					has_fp1_dlc_trigger = no
+					capital_province = { geographical_region = world_europe_north }
+				}
+			}
+		}
+	}
+
+
+}
+
+dual_prop = {
+	dual_prop_weld = {
+		dna_modifiers = {
+			accessory = {
+				mode = add				
+				gene = dual_prop
+				template = lance
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 299
+				has_character_flag = is_jouster
+			}
+		}
+	}
+}

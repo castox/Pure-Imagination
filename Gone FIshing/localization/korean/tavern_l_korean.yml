@@ -1,0 +1,35 @@
+﻿l_korean:
+
+challenge_interaction:0 "음주 대회"
+trait_fisher_character_desc:0 "이 사람은 낚시에 너무 많은 시간을 할애하지만 물고기 냄새가 나는 친구들의 존경을 받았습니다."
+trait_fisher_desc:0 "아웃 낚시"
+trait_legendary_fisherman:0 "전설의 어부"
+
+fish1_name: "참치"
+fish2_name: "고등어"
+fish3_name: "연어"
+fish4_name: "판가시우스"
+fish5_name: "핑크 연어"
+fish6_name: "터벗 브릴"
+fish7_name: "농어"
+fish8_name: "은잉어"
+fish9_name: "바위 물고기"
+fish10_name: "도라도"
+fish11_name: "창꼬치"
+fish12_name: "파이크 퍼치"
+fish13_name: "채널 메기"
+fish14_name: "무지개송어"
+fish15_name: "청어"
+fish16_name: "Hornicorn"
+
+go_fishing_decision:0 "낚시를!"
+go_fishing_decision_confirm:0 "$go_fishing_decision$"
+go_fishing_decision_tooltip:0 "$go_fishing_decision$"
+go_fishing_decision_desc:0 "스트레스를 좀 줄여야겠어요. 낚시하러 가는 건 어때요, 제 절친한 친구인 Castox 백작님은 완벽한 장소를 알고 계시거든요!"
+go_fishing_decision_effect_tooltip:0 "낚시를 하면 스트레스가 줄어들고, 물고기가 강할수록 스트레스도 줄어듭니다.\n\n마리의 물고기를 모두 포획하면 특성이 부여됩니다, 전설적인 어부!"
+
+FISH_ICON_CAUGHT: "[Localize(Concatenate(Concatenate('@fish_',GetPlayer.MakeScope.Var('current_fish1').GetFlagName), '!'))]" 
+FISH_NAME_DESC: "당신은 잡았어 [Localize(Concatenate(GetPlayer.MakeScope.Var('current_fish1').GetFlagName,'_name'))]! "
+FISH_NAME: "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+FISH_ICON: "[Localize(Concatenate(Concatenate('@fish_',Scope.GetFlagName), '!'))]" 
+

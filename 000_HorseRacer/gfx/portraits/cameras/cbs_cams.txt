@@ -1,0 +1,229 @@
+﻿
+riding_front = {
+	camera = {
+		position = cylindrical{ 700 500 0 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 36
+		camera_near_far = { 10 6000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+riding_frontss = {
+	camera = {
+		position = cylindrical{ 700 700 0 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 32
+		camera_near_far = { 10 6000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+riding_left = {
+	camera = {
+		position = cylindrical{ 1500 760 -90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+riding_right = {
+	camera = {
+		position = cylindrical{ 1800 360 90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 20
+		camera_near_far = { 10 3600 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+
+
+
+sk_uright = {
+	camera = {
+		position = cylindrical{ 800 800 120 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_uleft = {
+	camera = {
+		position = cylindrical{ 800 800 -120 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_dright = {
+	camera = {
+		position = cylindrical{ 800 800 30 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_dleft = {
+	camera = {
+		position = cylindrical{ 800 800 -30 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_right = {
+	camera = {
+		position = cylindrical{ 800 800 90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_left = {
+	camera = {
+		position = cylindrical{ 800 800 -90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_building = {
+	camera = {
+		position = cylindrical{ 1200 900 0 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 10000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_down = {
+	camera = {
+		position = cylindrical{ 800 800 0 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+sk_up = {
+	camera = {
+		position = cylindrical{ 800 800 180 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 12
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+circle_hud = {
+	camera = {
+		position = cylindrical{ 270 70 0 } # Radius,	height, angle
+		position_node = camera_torso_look_at
+
+		look_at = { 0 -2 0 } # L/R, U/D, F/B
+		look_at_node = bn_h_head_mid
+		fov = 20
+		camera_near_far = { 10 1000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+
+sk_test = {
+	camera = {
+		position = cylindrical{ 300 200 90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 50
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+battler_1_cam = {
+	camera = {
+		position = cylindrical{ 600 150 -90 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 35
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}
+battler_2_cam = {
+	camera = {
+		position = cylindrical{ 600 150 80 } # Radius, height, angle
+		#position_node = camera_torso_look_at
+
+		look_at = {	0 95 0 } # L/R, U/D, F/B
+		#look_at_node = camera_torso_look_at
+		fov = 35
+		camera_near_far = { 10 3000 }
+	}
+
+	unknown = "gfx/0.dds"
+}

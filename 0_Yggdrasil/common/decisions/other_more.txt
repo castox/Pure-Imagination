@@ -1,0 +1,30 @@
+﻿inquisition_enabled = {
+	picture = gfx/interface/illustrations/decisions/cheat_tab.dds
+	title = "Convert Realm to Religion"
+    desc = "Increase wealth with one simple click."
+    selection_tooltip = "Don't go too far..."
+    confirm_text = "Increase your treasury by 1000 Gold"
+
+	is_shown = {
+		is_ai = no
+	}
+
+	effect = {
+
+			every_county = {
+				set_county_culture = liege.culture
+				set_county_faith = liege.faith
+			}
+
+			every_liege_or_above = {
+				limit = {}
+
+				every_vassal_or_below = {
+					set_culture = liege.culture
+					set_character_faith_with_conversion = liege.faith
+				}
+			}
+	}
+
+	ai_check_interval = 0
+}

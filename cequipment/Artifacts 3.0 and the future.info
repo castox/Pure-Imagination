@@ -1,0 +1,13 @@
+####################################
+### WAY OF KINGS ARTIFACT MODULE ###
+###     WHAT IS UP WITH 3.0      ###
+###        by  Tobbzn            ###
+####################################
+
+Patch 1.4 saw the arrival of many modding features that negated a lot of the jank that was previously required for the old versions of the module, such as GetGlobalVariable and MakeScopeFlag which allows you to pass flags to scripted GUI. This means that the indexing system is no longer needed.
+
+
+
+Note that as Paradox is officially adding Artifacts to the Royal Court DLC, the module will most likely not be maintained after the Royal Court is released.
+
+As mod support has changed significantly across the patches, a lot of the existing documentation for the module is now outdated. However, given that the module is reaching the end of its lifespan with patch 1.5 and the Royal Court, updating and documenting it all is not a very motivating task. Apologies if you have a critical dependency on this mod - but I guarantee that anything you want to do with artifacts will be easier to implement with official support than with the jank provided by this module.

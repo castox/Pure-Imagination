@@ -1,0 +1,230 @@
+﻿#Bring a character to your court
+challenge_interaction = {
+		interface_priority = 30
+		common_interaction = yes
+		category = interaction_category_hostile
+
+		desc = "Challenge to Drinking Contest"
+	
+		greeting = negative
+	
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				is_clergy = no
+			}
+			scope:recipient = {
+				is_ai = yes
+				is_adult = yes
+				is_clergy = no
+			}
+		}
+	
+		is_valid_showing_failures_only = {
+			# Neither of the characters can be imprisoned.
+			scope:actor = { is_imprisoned = no }
+			scope:recipient = { is_imprisoned = no }
+		}
+	
+		can_send = {
+		}
+		
+		cost = { prestige = 80 }
+	
+		on_send = {
+		}
+	
+		on_accept = {
+			# Set up the bout immediately.
+			scope:actor = {
+				set_variable = {
+					name = drink_challenger
+					value = scope:recipient
+				}
+				
+				trigger_event = tavern_games.1000
+			}
+			scope:recipient = {
+				save_scope_as = scope:drink_c
+			}
+			
+		}
+	
+		on_decline = {
+			# Scope:actor decline processing.
+			scope:actor = {
+				# Inform them of the decline & scope:recipient loses some prestige.
+				send_interface_toast = {
+					title = "No... I dont think I will"
+					left_icon = scope:recipient
+					right_icon = scope:actor
+					scope:recipient = { add_prestige = medium_prestige_loss }
+					show_as_tooltip = {
+						add_prestige = medium_prestige_value
+					}
+				}
+			}
+		}
+	
+		auto_accept = no
+	
+		ai_accept = {
+			base = 0 # Try to make it 0 for most interactions
+	
+			# Relative fightan ability.
+			modifier = {
+				desc = CTSC_RELATIVE_PROWESS
+				scope:actor.prowess < scope:recipient.prowess
+				add = {
+					value = scope:recipient.prowess
+					subtract = scope:actor.prowess
+					multiply = 2
+				}
+			}
+			modifier = {
+				desc = CTSC_RELATIVE_PROWESS
+				scope:recipient.prowess < scope:actor.prowess
+				add = {
+					value = scope:actor.prowess
+					subtract = scope:recipient.prowess
+					multiply = -2
+				}
+			}
+			# Weight up for personality values.
+			ai_value_modifier = {
+				who = scope:recipient
+				ai_boldness = {
+					if = {
+						limit = {
+							scope:recipient = {
+								ai_boldness > 0
+								ai_rationality < 0
+							}
+						}
+						value = 2
+					}
+					else_if = {
+						limit = {
+							scope:recipient = {
+								NOT = { ai_boldness = 0 }
+							}
+						}
+						value = 1
+					}
+				}
+				ai_vengefulness = {
+					if = {
+						limit = {
+							scope:recipient = {
+								NOT = { ai_vengefulness = 0 }
+							}
+						}
+						value = 0.75
+					}
+				}
+				ai_honor = {
+					if = {
+						limit = {
+							scope:recipient = {
+								ai_honor > 0
+							}
+						}
+						value = 0.5
+					}
+				}
+			}
+			# Apply tier differences.
+			## King -> Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value >= 4
+					}
+				}
+				add = 15
+			}
+			## Duke -> Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = 3
+					}
+				}
+				add = 10
+			}
+			## Count -> Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = 2
+					}
+				}
+				add = 5
+			}
+			## King <- Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = -2
+					}
+				}
+				add = -10
+			}
+			## Duke <- Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value = -3
+					}
+				}
+				add = -20
+			}
+			## Count <- Baron.
+			modifier = {
+				desc = AI_REFUSAL_RANK_DIFFERENCE
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value <= -4
+					}
+				}
+				add = -30
+			}
+			# Nemesis modifier.
+			modifier = {
+				desc = offer_vassalization_interaction_aibehavior_nemesis_tt
+				trigger = {
+					scope:recipient = {
+						has_relation_nemesis = scope:actor
+					}
+				}
+				add = 50
+			}
+		}
+	
+		# AI
+		ai_potential = {
+
+		}
+		
+		ai_target_quick_trigger = {
+			adult = yes
+		}
+		ai_targets = {
+			ai_recipients = scripted_relations
+		}
+	
+		ai_will_do = {
+			base = -50
+		}
+}

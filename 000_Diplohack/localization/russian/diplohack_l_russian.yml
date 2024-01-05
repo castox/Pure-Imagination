@@ -1,0 +1,71 @@
+﻿l_russian:
+
+COUNTY_DEVELOPMENT_TOOLTIP_DIPLO: "#T Разработка: [Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevel]/100#!\n[Scope.GetLandedTitle.GetCountyData.GetDevelopmentIgnoredDesc][Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentIncreaseDesc]"
+COUNTY_CONTROL_TOOLTIP_DIPLO:0 "#T Окружной контроль: [Scope.GetLandedTitle.GetCountyData.GetControlLevelOutOfMax]#!\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlIncreaseDesc]"
+
+envoy_court_position:0 "посланник"
+envoy_court_position_desc:0 "Назначение $envoy_court_position$ выполнять дипломатические миссии и разрешать дипломатические действия."
+diplo_non_aggression_20:0 "Пакт o ненападении 20 лет"
+diplo_non_aggression_10:0 "Пакт o ненападении 10 лет"
+diplo_non_aggression_5:0 "Пакт o ненападении 5 лет"
+I_CANNOT_DECLARE_WAR_NONA:0 "У вас есть активный пакт о ненападении"
+has_non_aggression_pact:0 "У вас есть активный пакт о ненападении"
+diplo_start:0 "Отправить посланника"
+
+ok_offer_ok:0 "Ok"
+deal_offer_ok:0 "Сделка совершена!"
+tos_deal:0 "Условия сделки"
+
+
+#event outcome messages
+fatal_offer:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]..."
+fatal_offer_ok:0 "Ваш посланник умер..."
+fatal_offer_message:0 "Ваш посланник, похоже, потерял голову, вы можете послать кого-нибудь, чтобы вернуть ее."
+
+diplo_block_offer:0 "Никогда больше не разговаривай ни со мной, ни с моим сыном."
+
+diplo_insulting_offer_opening:0 "к подлому [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_insulting_offer:0 "Я оскорбляю вас, но, судя по вашему предложению, вы недостаточно умны, чтобы понять это..."
+diplo_strong_insulting_offer:0 "Сделайте себе одолжение и не посылайте очередного посланника, если вам дорога их жизнь!"
+
+diplo_accept_offer_opening:0 "К [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_accept_offer:0 "Я ознакомился с условиями сделки и принимаю их, надеюсь, в будущем будет больше плодотворных сделок."
+
+diplo_accept_good_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_good_offer:0 "Фантастическое предложение, я должен принять"
+
+diplo_accept_great_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_great_offer:0 "Я получил ваше предложение и считаю, что оно очень выгодно для нас обоих!"
+
+diplo_decline_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_offer:0 "Я должен отказаться..."
+
+diplo_decline_np_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_np_offer:0 " Извините, но я не вижу смысла в вашем предложении."
+
+#Deal Outcomes
+diplo_result_tool1:0 "Ваш посланник убит."
+diplo_result_tool2:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] настолько безумен, что разрывает все будущие сделки."
+diplo_result_tool3:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] сильно оскорбляется."
+diplo_result_tool4:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] оскорблен."
+diplo_result_tool5:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Принимает сделку."
+diplo_result_tool6:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] благодарен за сделку."
+diplo_result_tool7:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] благодарен за вашу доброту и высокого мнения о вас."
+diplo_result_tool8:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Не принимает сделку."
+diplo_result_tool9:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] Не видит смысла в сделке."
+
+#Interface
+diplo_enabled:0 " Сделка между [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip] и [GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] находится в процессе."
+diplo_able:0 "У вас нет посланника, наймите его на специальные вкладки при дворе."
+
+#opinion modifiers
+deal_made:0 "Дипломатические сделки завершены"
+good_deal_made:0 "Завершение хороших дипломатических сделок"
+great_deal_made:0 "Великие дипломатические сделки завершены"
+insulting_offer:0 "Дипломатические оскорбления"
+strong_insulting_offer:0 "Серьезные дипломатические оскорбления"
+deadly_insulting_offer:0 "Дипломатическая гибель"
+block_offer:0 "Заблокированные дипломатические переговоры"
+
+#p Modifier
+shady_deal_made:0 "Теневые предложения"

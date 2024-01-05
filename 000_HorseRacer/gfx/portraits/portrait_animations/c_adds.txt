@@ -1,0 +1,189 @@
+﻿hrjockey_gallop = {
+	male = { 
+		default = { head = "jockey_gallop_entry" torso = "jockey_gallop_entry" } 
+		portrait_modifier = {			
+			animations_props = ep2_horse_01_cgallop
+            animations = no_cloak
+			animations = fat_additive
+			animations = dwarf_additive
+		}
+	}
+	female = male
+	girl = male
+	boy = male
+}
+
+hrjockey_idle = {
+	male = { 
+		default = { head = "jockey_idle_entry" torso = "jockey_idle_entry" } 
+		portrait_modifier = {			
+			animations_props = ep2_horse_01_idle
+            animations = no_cloak
+			animations = fat_additive
+			animations = dwarf_additive
+		}
+	}
+	female = male
+	girl = male
+	boy = male
+}
+
+hrjockey_victory = {
+	male = { 
+		default = { head = "jockey_victory_entry" torso = "jockey_victory_entry" } 
+		portrait_modifier = {			
+			animations_props = ep2_horse_01_victory
+            animations = no_cloak
+			animations = fat_additive
+			animations = dwarf_additive
+		}
+	}
+	female = male
+	girl = male
+	boy = male
+}
+
+hrjockey_loss = {
+	male = { 
+		default = { head = "jockey_loss_entry" torso = "jockey_loss_entry" } 
+		portrait_modifier = {			
+			animations_props = ep2_horse_01_loss
+            animations = no_cloak
+			animations = fat_additive
+			animations = dwarf_additive
+		}
+	}
+	female = male
+	girl = male
+	boy = male
+}
+
+hrjockey_walk = {
+	male = { 
+		default = { head = "jockey_walk_entry" torso = "jockey_walk_entry" } 
+		portrait_modifier = {			
+			animations_props = ep2_horse_01_walk
+            animations = no_cloak
+			animations = fat_additive
+			animations = dwarf_additive
+		}
+		
+	}
+	female = male
+	girl = male
+	boy = male
+}
+
+racing_pose = {
+	male = {
+		
+		default = { head = "jockey_idle_entry" torso = "jockey_idle_entry" } 
+
+		hr_idle = {
+			animation = {  head = "jockey_gallop_entry" torso = "jockey_gallop_entry" } 
+
+			weight = {
+				base = 0
+				modifier = {
+					add = 1200
+					NOR = {
+						has_character_flag = sk_jump
+						has_character_flag = hr_run
+						has_character_flag = hr_win
+						has_character_flag = hr_loss
+						
+					}
+				}
+			}
+
+			portrait_modifier = {			
+				animations_props = ep2_horse_01_cgallop
+				animations = no_cloak
+				animations = fat_additive
+				animations = dwarf_additive
+			}
+
+		}
+		hr_walk = {
+			animation = { head = "jockey_walk_entry" torso = "jockey_walk_entry" } 
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 1000
+					has_character_flag= hr_walk
+
+				}
+			}
+			portrait_modifier = {			
+				animations_props = ep2_horse_01_walk
+				animations = no_cloak
+				animations = fat_additive
+				animations = dwarf_additive
+			}
+		}
+		hr_run = {
+			animation = { head = "jockey_gallop_entry" torso = "jockey_gallop_entry" } 
+	
+			weight = {
+				base = 0
+	
+				modifier = {
+					add = 1000
+					has_character_flag = hr_run
+				}
+			}
+			portrait_modifier = {			
+				animations_props = ep2_horse_01_cgallop
+				animations = no_cloak
+				animations = fat_additive
+				animations = dwarf_additive
+			}
+		}
+	
+		### Wins/Loss
+		hr_win = {
+			animation = { head = "jockey_victory_entry" torso = "jockey_victory_entry" } 
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 1000
+					has_character_flag = hr_win
+				}
+			}
+			portrait_modifier = {			
+				animations_props = ep2_horse_01_victory
+				animations = no_cloak
+				animations = fat_additive
+				animations = dwarf_additive
+			}
+		}
+		hr_loss = {
+			animation = { head = "jockey_loss_entry" torso = "jockey_loss_entry" } 
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 1000
+					has_character_flag = hr_loss
+					
+				}
+			}
+			portrait_modifier = {			
+				animations_props = ep2_horse_01_loss
+				animations = no_cloak
+				animations = fat_additive
+				animations = dwarf_additive
+			}
+		}
+
+	}
+
+	boy = male
+	female = male
+	girl = male
+}

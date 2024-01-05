@@ -1,0 +1,833 @@
+﻿
+###################
+# Populations
+###################
+diplo_county_population_1 = {
+	value = total_county_levies
+	multiply = county.development_level
+}
+
+diplo_county_population = {
+	value = diplo_county_population_1
+	multiply = 7 #or whatever get us to a proper number
+}
+
+county_levies_values = {
+	value = total_county_levies
+	divide = 80
+}
+
+county_pm_development = {
+	value = county.development_level
+	divide = 4
+}
+control_value2 = {
+	value = county.county_control
+
+}
+building_value2 = {
+	value = county.culture
+
+}
+county_pm_value = {
+	value = county_levies_values
+	add = county_pm_development
+}
+
+
+del_value = {
+	value = county.development_level
+}
+defacto_value = {
+	value = defacto_possible
+	
+	every_in_de_facto_hierarchy = {
+		limit = { tier = tier_county }
+ 		add = county.county_pm_value3
+	}
+
+}
+defacto_value2 = {
+	value = defacto_value
+	add = 170
+}
+
+defacto_possible = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+ 		add = county.county_pm_value3 		
+	}
+}
+diplo_opinion = {
+	value = global_var:opi
+
+	divide = 8
+}
+#peace values
+#
+g_land_value = {
+	value = 0 
+
+	every_in_global_list = {
+		variable = given_lands
+
+		if ={
+			limit = { tier = tier_county }
+			add = this.county_pm_value2
+			if  = {
+				limit = {
+					global_var:diplo_2 = {
+						has_claim_on = prev
+					}
+				}
+				subtract  = 5
+			}
+		}
+		if ={
+			limit = { tier = tier_duchy }
+			add = 45
+			add = this.defacto_value
+			if  = {
+				limit = {
+					global_var:diplo_2 = {
+						has_claim_on = prev
+					}
+				}
+				subtract  = 15
+			}
+		}
+		if ={
+			limit = { tier = tier_kingdom }
+			add = 170
+			add = this.defacto_value
+			if  = {
+				limit = {
+					global_var:diplo_2 = {
+						has_claim_on = prev
+					}
+				}
+				subtract  = 15
+			}
+		}
+		if ={
+			limit = { tier = tier_empire }
+			add = 210
+			add = this.defacto_value
+			if  = {
+				limit = {
+					global_var:diplo_2 = {
+						has_claim_on = prev
+					}
+				}
+				subtract  = 20
+			}
+		}
+	}	
+}
+#
+t_land_value = {
+	value = 0
+
+	every_in_global_list = {
+		variable = taken_lands
+
+		if ={
+			limit = { tier = tier_county }
+
+			subtract = this.county_pm_value2
+
+		}
+		if ={
+			limit = { tier = tier_duchy }
+			subtract = 45
+			subtract = this.defacto_value
+
+		}
+		if ={
+			limit = { tier = tier_kingdom }
+			subtract = 170
+			subtract = this.defacto_value
+		}
+		if ={
+			limit = { tier = tier_empire }
+			subtract = 210
+			subtract = this.defacto_value
+		}
+	}	
+}
+
+#
+g_gold_value = {
+	value = global_var:gold_1_val
+
+	divide = 40
+	
+}
+#
+t_gold_value2 = {
+	value = global_var:gold_2_val
+	
+	if = { limit = { global_var:diplo_2 = { has_trait = greedy } } divide = 60 }
+	else = { divide = 40 }
+
+}
+t_gold_value = {
+	value = 0
+	
+	subtract = t_gold_value2 
+}
+rec_diplo_skill1 = {
+	value = global_var:diplo_2.diplomacy
+	
+	divide = 5
+}
+rec_diplo_skill = {
+	value = 0
+	subtract = rec_diplo_skill1
+}
+envoy_skill_value = {
+	value = 0
+
+	if = { limit = { global_var:diplo_1 = { court_position:envoy_court_position = { aptitude:envoy_court_position = 1 } } } add = 1 }
+	if = { limit = { global_var:diplo_1 = { court_position:envoy_court_position = { aptitude:envoy_court_position = 2 } } } add = 2 }
+	if = { limit = { global_var:diplo_1 = { court_position:envoy_court_position = { aptitude:envoy_court_position = 3 } } } add = 3 }
+	if = { limit = { global_var:diplo_1 = { court_position:envoy_court_position = { aptitude:envoy_court_position = 4 } } } add = 4 }
+	if = { limit = { global_var:diplo_1 = { court_position:envoy_court_position = { aptitude:envoy_court_position = 5 } } } add = 5 }
+}
+
+#
+fear_value = {
+	value = 0
+
+	if = {
+		limit ={
+			global_var:diplo_2 = {
+				has_dread_level_towards = {
+					target = global_var:diplo_1
+					level = 1
+				}
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit ={
+			global_var:diplo_2 = {
+				has_dread_level_towards = {
+					target = global_var:diplo_1
+					level = 2
+				}
+			}
+		}
+		add = 5	
+	}
+	if = {
+		limit ={
+			global_var:diplo_1 = {
+				has_dread_level_towards = {
+					target = global_var:diplo_2
+					level = 1
+				}
+			}
+		}
+		subtract = 2
+	}
+	if = {
+		limit ={
+			global_var:diplo_1 = {
+				has_dread_level_towards = {
+					target = global_var:diplo_2
+					level = 2
+				}
+			}
+		}
+		subtract = 5
+	}		
+}
+#
+rival_value = {
+	value = 0
+
+		global_var:diplo_2 = {
+			if = {
+				limit = {
+					has_relation_rival = global_var:diplo_1
+				}
+				subtract = 20
+			}
+		}
+		
+}
+
+ext_treaty_value = {
+	value = 0
+
+	if = {
+		limit = {
+			global_var:diplo_whook = 1 
+		}
+		add = 7
+	}
+	if = {
+		limit = {
+			global_var:diplo_shook  = 1 
+		}
+		add = 14
+	}
+	if = {
+		limit = {
+			global_var:diplo_2 = { has_weak_hook = global_var:diplo_1 }
+		}
+		subtract = 7
+	}
+	if = {
+		limit = {
+			global_var:diplo_2 = { has_strong_hook = global_var:diplo_1 }
+		}
+		subtract = 14
+	}
+	
+}
+
+
+ptm_value = {
+	#value = ptm_value2
+	#value = diplo_marriage_value
+	value = 0
+	
+	if = {
+		limit = {
+			AND = {
+				exists = global_var:diplo_1_offered
+				exists = global_var:diplo_2_offered
+			}
+		}
+		add = diplo_mi_value
+		add = 4
+		add = diplo_opinion
+		if = {
+			limit = {
+				AND = {
+					global_var:diplo_matrilineal_1 = 1 
+					global_var:diplo_1_offered = {
+						is_female = yes
+					}
+				}
+			}
+			subtract = 10
+		}
+		if = {
+			limit = {
+				AND = {
+					global_var:diplo_2_offered = { is_primary_heir_of = global_var:diplo_2 }
+					global_var:diplo_2_offered = { is_female = no }
+				}
+			}
+			subtract = 50
+		}
+		if = {
+			limit = {
+				AND = {
+					global_var:diplo_matrilineal_1   = 1 
+					global_var:diplo_2_offered = { is_primary_heir_of = global_var:diplo_2 }
+					global_var:diplo_2_offered = { is_female = no }
+				}
+			}
+			subtract = 500
+		}
+		if = {
+			limit = {
+				AND = {
+					global_var:diplo_matrilineal_1   = 1 
+					global_var:diplo_1_offered = {
+						is_female = no
+					}
+				}
+			}
+			add = 5
+		}
+		if = {
+			limit = {
+				AND = {
+					global_var:diplo_1_offered = { is_primary_heir_of = global_var:diplo_1 }
+					global_var:diplo_1_offered = { is_female = no }
+				}
+			}
+			add = 20
+		}
+		
+	}
+	else = {
+		add = 0
+	}
+
+}
+ptm_value2 = {
+	value = 0
+	if = {
+		limit = {
+			AND = {
+				exists = global_var:diplo_1_offered
+				exists = global_var:diplo_2_offered
+			}
+		}
+		add = {
+			value = diplo_mi_value
+			#divide = 12
+			multiply = 0.005
+		}
+	}
+	else = {
+		add = 0
+	}
+}
+
+#
+legacy_value = {
+	value = 0 
+
+	global_var:diplo_1 = {
+				
+		if = {
+			limit = {
+				dynasty = {
+					has_dynasty_perk = erudition_legacy_5
+				}
+				
+			}
+			add = 10
+		}
+	}
+	global_var:diplo_2 = {
+				
+		if = {
+			limit = {
+				dynasty = {
+					has_dynasty_perk = erudition_legacy_5
+				}
+			}
+			subtract = 10
+		}
+	}
+}
+
+
+diplo_artifact_value = {
+	value = 0
+
+		if = { limit = { this = { rarity = common  } } add = 1 }
+		if = { limit = { this = { rarity = masterwork  } } add = 2 }
+		if = { limit = { this = { rarity = famed  } } add = 4 }
+		if = { limit = { this = { rarity = illustrious } } add = 8 }
+		if = { limit = { this = { has_variable = historical_unique_artifact } } add = 3 }
+		if = { limit = { this = { has_variable = relic } } add = 1 }
+		if = { limit = { this = { has_variable = artifact_succession_title } } add = 3}
+		if = {
+			limit = { artifact_durability <= define:NInventory|ARTIFACT_LOW_DURABILITY }
+			divide = 2 # 1/3 for damaged artifacts
+		}
+		if = {
+			limit = { artifact_durability <= define:NInventory|ARTIFACT_VERY_LOW_DURABILITY }
+			divide = 3 # 1/3 for very damaged artifacts
+		}
+		if = {
+			limit = { can_be_claimed_by = global_var:diplo_2 }
+			divide = 1.5 # 3/2 for claimed artifacts
+		}
+		if = {
+			limit = { global_var:diplo_2.liege = global_var:diplo_1 }
+			divide = 1.33 # 3/4 for vassals
+		}
+		floor = yes
+
+		 min = 2 
+		 max = 50
+}
+diplo_artifact_value1 = {
+	value = 0
+
+		if = { limit = { this = { rarity = common  } } add = 1 }
+		if = { limit = { this = { rarity = masterwork  } } add = 2 }
+		if = { limit = { this = { rarity = famed  } } add = 4 }
+		if = { limit = { this = { rarity = illustrious } } add = 8 }
+		if = { limit = { this = { has_variable = historical_unique_artifact } } add = 3 }
+		if = { limit = { this = { has_variable = relic } } add = 1 }
+		if = { limit = { this = { has_variable = artifact_succession_title } } add = 3}
+		if = {
+			limit = { artifact_durability <= define:NInventory|ARTIFACT_LOW_DURABILITY }
+			divide = 2 # 1/3 for damaged artifacts
+		}
+		if = {
+			limit = { artifact_durability <= define:NInventory|ARTIFACT_VERY_LOW_DURABILITY }
+			divide = 3 # 1/3 for very damaged artifacts
+		}
+		if = {
+			limit = { can_be_claimed_by = global_var:diplo_1 }
+			divide = 1.5 # 3/2 for claimed artifacts
+		}
+		if = {
+			limit = { global_var:diplo_1.liege = global_var:diplo_2 }
+			divide = 1.33 # 3/4 for vassals
+		}
+		floor = yes
+
+		min = 2 
+		max = 50
+}
+
+
+diplo_artifact = {
+	value = 0
+
+	every_in_global_list = {
+		variable = diplo_g_artifacts
+		
+		add = this.diplo_artifact_value
+
+
+	}
+	every_in_global_list = {
+		variable = diplo_t_artifacts
+		
+		subtract = this.diplo_artifact_value1
+
+	}
+
+}
+
+nona_reg = {
+	value = 0 
+	add = {
+		value = 1
+			subtract = {
+				value = global_var:diplo_2.max_military_strength
+				divide = { value = global_var:diplo_1.max_military_strength min = 1 }
+			}
+		multiply = 10
+	}
+}
+diplo_soath = {
+	value = 0
+	if = {
+		limit = {
+			global_var:diplo_soath  = 1 
+		}
+		add = nona_reg
+		global_var:diplo_1 = {
+			every_held_title = {
+				if = { limit = { tier = tier_barony } add = 1 }
+				if = { limit = { tier = tier_county } add = 10 }
+				if = { limit = { tier = tier_duchy } add = 30 }
+				if = { limit = { tier = tier_kingdom } add = 60 }
+				if = { limit = { tier = tier_empire } add = 100 }
+			}
+		}
+	}
+}
+diplo_vassalize = {
+	value = 0
+	if = {
+		limit = {
+			global_var:diplo_vassalize = 1 
+		}
+		add = nona_reg
+		global_var:diplo_2 = {
+			every_held_title = {
+				if ={
+					limit = { tier = tier_county }
+		
+					subtract = this.county_pm_value2
+
+					if  = {
+						limit = {
+							global_var:diplo_1 = {
+								has_claim_on = prev
+							}
+						}
+						add  = 5
+					}
+		
+				}
+				if ={
+					limit = { tier = tier_duchy }
+					subtract = 45
+					subtract = this.defacto_value
+					if  = {
+						limit = {
+							global_var:diplo_1 = {
+								has_claim_on = prev
+							}
+						}
+						add  = 10
+					}
+		
+				}
+				if ={
+					limit = { tier = tier_kingdom }
+					subtract = 170
+					subtract = this.defacto_value
+					if  = {
+						limit = {
+							global_var:diplo_1 = {
+								has_claim_on = prev
+							}
+						}
+						add  = 20
+					}
+				}
+				if ={
+					limit = { tier = tier_empire }
+					subtract = 210
+					subtract = this.defacto_value
+					if  = {
+						limit = {
+							global_var:diplo_1 = {
+								has_claim_on = prev
+							}
+						}
+						add  = 40
+					}
+				}
+
+				#if = { limit = { tier = tier_barony } subtract = 1 }
+				#if = { limit = { tier = tier_county } subtract = 18 }
+				#if = { limit = { tier = tier_duchy } subtract = 30 }
+				#if = { limit = { tier = tier_kingdom } subtract = 60 }
+				#if = { limit = { tier = tier_empire } subtract = 100 }
+			}
+		}
+
+		add = global_var:opi
+		#add = diplo_diff_faith
+	}
+}
+diplo_alliance_value = {
+	value = 0
+	if = {
+		limit = {
+			global_var:diplo_alliance = 1 
+		}
+		add = {
+			value = 1
+			subtract = {
+				value = global_var:diplo_2.max_military_strength
+				divide = { value = global_var:diplo_1.max_military_strength min = 1 }
+			}
+			multiply = 10
+		}
+
+		if = {
+			limit = {
+				global_var:opi   < 0 
+			}
+			add = global_var:opi
+		}
+		global_var:diplo_1 = {
+			every_ally = {
+	
+				subtract = 4
+			}
+		}
+		add = diplo_diff_faith
+		
+	}
+
+}
+
+diplo_diff_faith = {
+	value = 0
+
+	if = {
+		limit = {
+			global_var:diplo_2.faith = {
+				faith_hostility_level = {
+					target = global_var:diplo_1.faith
+					value = faith_fully_accepted_level
+				}
+			}
+		}
+		subtract = 5
+	}
+	if = {
+		limit = {
+			global_var:diplo_2.faith = {
+				faith_hostility_level = {
+					target = global_var:diplo_1.faith
+					value = faith_astray_level
+				}
+			}
+		}
+		subtract = 10
+	}
+	if = {
+		limit = {
+			global_var:diplo_2.faith = {
+				faith_hostility_level = {
+					target = global_var:diplo_1.faith
+					value = faith_hostile_level
+				}
+			}
+		}
+		subtract = 20
+	}
+	if = {
+		limit = {
+			global_var:diplo_2.faith = {
+				faith_hostility_level = {
+					target = global_var:diplo_1.faith
+					value = faith_evil_level
+				}
+			}
+		}
+		subtract = 30
+	}
+}
+nona_value = {
+	value = nona_reg
+	#value = 0 
+	if = { limit = { global_var:diplo_nona = 5 } add = 3 }
+	else_if = { limit = { global_var:diplo_nona = 10 } add = 6 }
+	else_if = { limit = { global_var:diplo_nona = 20 } add = 10 }
+	else = { subtract = nona_reg }
+	
+}
+diplo_rank = {
+	value = 0
+	if = { limit = { global_var:diplo_1 = global_var:diplo_2.liege } add = 5 }
+	if = { limit = { global_var:diplo_2 = global_var:diplo_1.liege } subtract = 5 }
+}
+diplo_warscore = {
+	value = 0
+
+	global_var:diplo_1 = {
+		ordered_character_war = {
+			limit = {
+				is_war_leader = global_var:diplo_1
+				primary_attacker = global_var:diplo_1
+				primary_defender = global_var:diplo_2
+			}
+			add = {
+				value = attacker_war_score
+				multiply = 1.4
+			}
+
+			
+		}
+		ordered_character_war = {
+			limit = {
+				is_war_leader = global_var:diplo_1
+				primary_attacker = global_var:diplo_2
+				primary_defender = global_var:diplo_1
+			}
+			add = {
+				value = defender_war_score
+				multiply = 1.4
+			}
+		}
+	}
+	if = {
+		limit = {
+			global_var:diplo_1 = {
+				is_at_war_with = global_var:diplo_2
+			}
+		}
+		add = -100
+	}
+
+}
+diplo_vassal_value = {
+	value = 0
+	every_in_global_list = {
+		variable = diplo_g_vassals
+		add = this.diplo_vassal_capital_value
+	}
+	every_in_global_list = {
+		variable = diplo_t_vassals
+		subtract = this.diplo_vassal_capital_value
+	}
+	every_in_global_list = {
+		variable = diplo_1_vassals
+		limit = {
+			has_variable = m_indie
+		}
+		add = this.diplo_vassal_capital_value
+
+		if = { limit = { highest_held_title_tier = tier_county} subtract = 10 }
+		if = { limit = { highest_held_title_tier = tier_duchy} subtract = 20 }
+		if = { limit = { highest_held_title_tier = tier_kingdom} subtract = 30 }
+		if = { limit = { highest_held_title_tier = tier_empire} subtract = 40 }
+	}
+	every_in_global_list = {
+		variable = diplo_2_vassals
+		limit = {
+			has_variable = m_indie
+		}
+		subtract = this.diplo_vassal_capital_value
+
+		if = { limit = { highest_held_title_tier = tier_county} add = 10 }
+		if = { limit = { highest_held_title_tier = tier_duchy} add = 20 }
+		if = { limit = { highest_held_title_tier = tier_kingdom} add = 30 }
+		if = { limit = { highest_held_title_tier = tier_empire} add = 40 }
+	}
+}
+diplo_deal = {
+	value = 0
+
+	add = diplo_warscore
+	add = diplo_vassal_value
+	add = diplo_alliance_value
+	add = diplo_rank
+	add = diplo_artifact
+	add = ext_treaty_value
+	add = g_land_value
+	add = t_land_value
+	add = g_gold_value
+	add = t_gold_value
+	add = ptm_value
+	add = legacy_value
+	add = nona_value
+	add = diplo_soath
+	add = diplo_vassalize
+	#Mulitplayer has no ai personality decreases
+	if = { limit = { global_var:diplo_2 = { is_ai = yes } } add = diplo_opinion }
+	if = { limit = { global_var:diplo_2 = { is_ai = yes } } add = rival_value }
+	if = { limit = { global_var:diplo_2 = { is_ai = yes } } add = fear_value } 
+	if = { limit = { global_var:diplo_2 = { is_ai = yes } } add = rec_diplo_skill }
+	if = { limit = { global_var:diplo_2 = { is_ai = yes } } add = envoy_skill_value }
+}
+
+sense_check = {
+	value = 0
+	
+	add = diplo_vassal_value
+	add = diplo_alliance_value
+	add = diplo_artifact
+	add = g_land_value
+	add = t_land_value
+	add = g_gold_value
+	add = t_gold_value
+	add = ptm_value
+	add = nona_value
+	add = diplo_soath
+	add = diplo_vassalize
+}
+diplo_sm = {
+	value = this.martial
+}
+diplo_sd = {
+	value = this.diplomacy
+}
+diplo_si = {
+	value = this.intrigue
+}
+diplo_sl = {
+	value = this.learning
+}
+diplo_sp = {
+	value = this.prowess
+}
+diplo_ss = {
+	value = this.stewardship
+}
+

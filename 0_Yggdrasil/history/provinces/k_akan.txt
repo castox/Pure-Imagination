@@ -1,0 +1,19 @@
+# 8000 - GANEBOAFO
+8000 = {
+	# Misc
+	culture = ogre
+851.1.1 = { culture = ogre }
+850.1.1 = { religion = ogre }  # guan
+	religion = ogre  # akom_pagan
+	# History	
+}
+
+# 8009 - KUMASI
+8009 = {
+	# Misc
+	culture = ogre
+851.1.1 = { culture = ogre }
+850.1.1 = { religion = ogre }  # akan
+	religion = ogre  # akom_pagan
+	# History
+}

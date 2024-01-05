@@ -1,0 +1,115 @@
+﻿diplomacy_lifestyle = {
+
+	is_highlighted = {
+		has_trait = education_diplomacy		
+	}
+
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+
+martial_lifestyle = {
+
+	is_highlighted = {
+		has_trait = education_martial		
+	}
+
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+
+stewardship_lifestyle = {
+
+	is_highlighted = {
+		has_trait = education_stewardship		
+	}
+	
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+
+intrigue_lifestyle = {
+
+	is_highlighted = {
+		has_trait = education_intrigue		
+	}
+	
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+
+learning_lifestyle = {
+
+	is_highlighted = {
+		has_trait = education_learning		
+	}
+	
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+
+blue_lifestyle = {
+
+	is_highlighted = {
+		has_trait = blue_mage		
+	}
+	
+	is_valid = {
+		var:magic_type = { compare_value = 1 }
+	}
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+gold_lifestyle = {
+
+	is_highlighted = {
+		has_trait = gold_mage		
+	}
+	is_valid = {
+		var:magic_type = { compare_value = 2 }
+	}
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+red_lifestyle = {
+
+	is_highlighted = {
+		has_trait = red_mage	
+	}
+	
+	is_valid = {
+		var:magic_type = { compare_value = 3 }
+	}
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+green_lifestyle = {
+
+	is_highlighted = {
+		has_trait = green_mage		
+	}
+	is_valid = {
+		var:magic_type = { compare_value = 4 }
+	}
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}
+purple_lifestyle = {
+
+	is_highlighted = {
+		has_trait = purple_mage	
+	}
+	is_valid = {
+		var:magic_type = { compare_value = 5 }
+	}
+	
+	xp_per_level = 1000
+	base_xp_gain = 25
+}

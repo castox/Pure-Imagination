@@ -1,0 +1,568 @@
+
+
+window = {
+	name = "bow"
+	scale = "[ScaleToFitElementInside('(int32)1920', '(int32)1080')]"
+	parentanchor = hcenter|vcenter
+	size = { 1920 1080 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	movable = yes
+	icon = {
+		visible = "[GetScriptedGui('is_norse').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/range/norse.dds"
+	}
+	icon = {
+		visible = "[GetScriptedGui('is_western').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/range/western.dds"
+	}
+	icon = {
+		visible = "[GetScriptedGui('is_eastern').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/range/mena.dds"
+	}
+	icon = {
+		visible = "[GetScriptedGui('is_india').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/range/india.dds"
+	}
+	icon = {
+		visible = "[GetScriptedGui('is_africa').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/range/africa.dds"
+	}
+	icon = {
+		visible = "[GetScriptedGui('is_asia').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = hcenter|vcenter
+		texture = "gfx/interface/cshop/range/plain.dds"
+	}
+
+	widget = {
+		
+		size = { 40 342 }
+		parentanchor = vcenter|right
+		position = { -50 -180 }
+
+		tooltip = "Power Bar"
+		using = tooltip_below
+		
+		vbox = {
+			background = {
+				texture = "gfx/interface/tavern/black_progress.dds"
+			}
+
+			widget = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				layoutstretchfactor_vertical = "[GetProgressBarValueMaxOtherScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('power_bar').GetValue), '(float)100', '(int32)342' )]"
+			}
+			##
+			widget = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				layoutstretchfactor_vertical = "[GetProgressBarValueMaxScaled(FixedPointToFloat(GetPlayer.MakeScope.Var('power_bar').GetValue), '(float)100', '(int32)342' )]"
+
+				progressbar_metera = {
+					size = { 100% 100% }
+					using = Animation_ShowHide_Standard
+				}
+				progressbar_metera_1 = {
+					visible = "[GetScriptedGui('is_in_range1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					size = { 100% 100% }
+					using = Animation_ShowHide_Standard
+				}
+				progressbar_metera_1 = {
+					visible = "[GetScriptedGui('is_in_range2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					size = { 100% 100% }
+					using = Animation_ShowHide_Standard
+				}
+				progressbar_metera_1 = {
+					visible = "[GetScriptedGui('is_in_range3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					size = { 100% 100% }
+					using = Animation_ShowHide_Standard
+				}
+			}
+		}
+		icon = {
+			parentanchor = vcenter|hcenter
+			texture = "gfx/interface/tavern/drink_frame.dds"
+		}
+
+	}
+	crowd_stance = {
+		datacontext = "[GetPlayer.MakeScope.Var('archer1')]"
+		datacontext = "[Scope.GetCharacter]"
+		parentanchor = left|vcenter
+		position = { 10 60 }
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { 6 -45 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.1
+		}
+
+	}
+	crowd_stance = {
+		datacontext = "[GetPlayer.MakeScope.Var('archer2')]"
+		datacontext = "[Scope.GetCharacter]"
+		parentanchor = left|vcenter
+		position = { 90 60 }
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { 6 -45 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.1
+		}
+
+	}
+	icon = {
+		parentanchor = hcenter|vcenter
+		size = { 100% 100% }
+		position = { 200 570 }
+		# spectate
+		movable = no
+		fixedgridbox = {
+			flipdirection = yes
+			addcolumn = 70
+			addrow = 70
+			maxverticalslots = 1
+			
+			datamodel = "[GetPlayer.MakeScope.GetList('spectate')]"
+			item = {
+				crowd_stance = {
+					datacontext = "[Scope.GetCharacter]"
+					parentanchor = left|vcenter
+					icon = {
+						parentanchor = bottom|hcenter
+						position = { 6 -43 }
+						texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+						scale = 0.1
+					}
+			
+				}
+			}
+		}
+		
+	}
+	icon = {
+		visible = "[GetVariableSystem.Exists( 'b_tutorial' )]"
+		parentanchor = top|hcenter
+		position = { 0 100 }
+		texture = "gfx/interface/tavern_gfx/mask_off.dds"
+		tintcolor = { 0 0 0 0.8 }
+		size = { 1215 900 }
+		margin = { 0 5 }
+		using = Mask_Rough_Edges
+		alpha = 1
+		fittype = centercrop
+		mirror = horizontal
+
+
+		modify_texture = {
+			
+			texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+			blend_mode = overlay
+			alpha = 0.9
+		}
+		text_multi = {
+		
+			parentanchor = top|left
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 1215
+			fontsize = 25
+			autoresize = yes
+			text = BOW_TUT
+		}
+	}
+	icon = {
+		visible = "[GetScriptedGui('b_endgame_d').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = top|hcenter
+		position = { 0 220 }
+		texture = "gfx/interface/icons/lifestyle_tree_backgrounds/skulduggery.dds"
+		tintcolor = { 0 0 0 0.8 }
+		size = { 515 200 }
+		margin = { 0 5 }
+		using = Mask_Rough_Edges
+		alpha = 0.9
+		fittype = centercrop
+		mirror = horizontal
+
+		modify_texture = {
+
+			texture = "gfx/interface/component_masks/mask_fade_corners_bottom.dds"
+			blend_mode = alphamultiply
+			alpha = 0.6
+		}
+
+		modify_texture = {
+			
+			texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+			blend_mode = overlay
+			alpha = 0.4
+		}
+		text_multi = {
+		
+			parentanchor = vcenter|hcenter
+			layoutpolicy_horizontal = expanding
+			margin = { 15 15 }
+			max_width = 515
+			autoresize = yes
+			text = "[GetScriptedGui('b_endgame_d').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+	}
+	bow_stance = {
+		parentanchor = hcenter|vcenter
+		datacontext = "[GetPlayer]"
+		position = { -800 300 }
+
+	}
+	my_dummy = {
+		visible = "[GetScriptedGui('dummy_t_1').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = right|vcenter
+		datacontext = "[GetGlobalVariable('t_dummy')]"
+		datacontext = "[Scope.GetCharacter]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { 6 -177 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.3
+		}
+		position = { -100 180 }
+
+	}
+	my_dummy1 = {
+		visible = "[GetScriptedGui('dummy_t_2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = right|vcenter
+		datacontext = "[GetGlobalVariable('t_dummy')]"
+		datacontext = "[Scope.GetCharacter]"
+		icon = {
+			parentanchor = bottom|hcenter
+			position = { 6 -117 }
+			texture = "gfx/interface/frontend/portrait_main_menu_shadow.dds"
+			scale = 0.2
+		}
+		position = { -600 380 }
+
+	}
+	my_dummy2 = {
+
+		parentanchor = vcenter|right
+		position = { 100 -180 }
+		datacontext = "[GetGlobalVariable('t_dummy')]"
+		datacontext = "[Scope.GetCharacter]"
+
+		icon = {
+			parentanchor = vcenter|hcenter
+			texture = "gfx/interface/cshop/range/target.png"
+			size = { 80 80 }
+			position = { 0 -40 }
+			alpha = 0.2
+		}
+		icon = {
+			parentanchor = vcenter|hcenter
+			texture = "gfx/interface/cshop/range/a_back.dds"
+			size = { 40 40 }
+			
+
+			state = {
+				name = a
+				next = a
+				trigger_on_create = yes
+				duration = 0.025
+				position_y = "[FixedPointToFloat(GetPlayer.MakeScope.Var('arrow_loc').GetValue)]"
+				on_start = "[GetScriptedGui('arrow_trigger').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			}
+			
+		}
+
+	}
+	icon = {
+		parentanchor = right|top
+		texture = "gfx/interface/cshop/range/bird.dds"
+		position = { -100 -200 }
+		size = { 200 200 }
+		icon = {
+			parentanchor = vcenter|hcenter
+			visible = "[And(GetScriptedGui('b_idle2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ),GetScriptedGui('dummy_t_3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+			texture = "gfx/interface/cshop/range/bird_hit.dds"
+		}
+		state = {
+			name = m_bird
+			trigger_when ="[GetScriptedGui('dummy_t_3').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position = { -100 0 }
+			duration = 0.3
+		}
+		state = {
+			name = m_bird2
+			trigger_when ="[GetScriptedGui('dummy_t_3_n').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			position = { -100 -200 }
+			duration = 0.3
+		}
+	}
+	button = {
+		size= { 100 100 }
+		texture = ""
+		shortcut = "pause"
+		onclick = "[GetScriptedGui('pull_power').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		clicksound = "event:/"
+
+		state = {
+			name = 1_press
+			next = 1_press
+			duration = 0.01
+			trigger_on_create = yes
+			on_start = "[GetScriptedGui('pp_0').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+	}
+	state = {
+		name = open_archer
+		trigger_on_create = yes
+		on_start = "[GetScriptedGui('open_archer').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		on_start = "[GetVariableSystem.Clear( 'b_start' )]"
+	}
+	#
+	state = {
+		name = game_c
+		next = game_c
+		trigger_on_create = yes
+		duration = 1
+		on_start = "[GetScriptedGui('gcx').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+	text_single = {
+		visible = "[GetScriptedGui('gcx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = top|left
+		position = { 20 20 }
+		text = "Time: [FixedPointToFloat(GetPlayer.MakeScope.Var('game_countx').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+
+	text_single = {
+		visible = "[GetScriptedGui('gcx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = top|left
+		position = { 20 60 }
+		text = "Hit Count: [FixedPointToFloat(GetPlayer.MakeScope.Var('target_c').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+
+	text_single = {
+		visible = "[GetScriptedGui('gcx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = top|left
+		position = { 20 100 }
+		text = "[GetPlayer.MakeScope.Var('archer1').GetCharacter.GetNameNoTooltip]: [FixedPointToFloat(GetPlayer.MakeScope.Var('target_c1').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+	text_single = {
+		visible = "[GetScriptedGui('gcx').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		parentanchor = top|left
+		position = { 20 140 }
+		text = "[GetPlayer.MakeScope.Var('archer2').GetCharacter.GetNameNoTooltip]: [FixedPointToFloat(GetPlayer.MakeScope.Var('target_c2').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+	text_single = {
+		
+		parentanchor = top|left
+		position = { 20 200 }
+		text = "High Score: [FixedPointToFloat(GetPlayer.MakeScope.Var('b_highscore').GetValue)]"
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+	}
+	text_single = {
+		parentanchor = top|hcenter
+		position = { 0 0 }
+		visible = "[GetScriptedGui('buwon').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		text = "YOU WON!"
+		fontsize = 100
+
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+
+	}
+	text_single = {
+		parentanchor = top|hcenter
+		position = { 0 0 }
+		visible = "[GetScriptedGui('bulost').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		text = "You lost to [GetPlayer.MakeScope.Var('archer_winner').GetCharacter.GetNameNoTooltip]!"
+		fontsize = 50
+
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+
+	}
+	text_single = {
+		parentanchor = top|hcenter
+		position = { 0 0 }
+		visible = "[GetScriptedGui('butied').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		text = "YOU TIED WITH [GetPlayer.MakeScope.Var('archer_winner').GetCharacter.GetNameNoTooltip]!"
+		fontsize = 100
+
+		default_format = "#high"
+		using = Font_Size_Big
+		using = Font_Type_Flavor
+
+	}
+
+
+
+
+	state = {
+		name = bb_idle
+		trigger_when = "[GetScriptedGui('b_idle').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 0.1
+		on_finish = "[GetScriptedGui('b_idle').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	state = {
+		name = bb_idle2
+		trigger_when = "[GetScriptedGui('b_idle2').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		duration = 1
+		on_finish = "[GetScriptedGui('b_idle2').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+	}
+
+	state = {
+		name = ready2
+		trigger_when = "[Not(IsGamePaused)]"
+		on_start = "[OnPause]"
+	}
+
+	button = {
+	
+		size = { 1920 550 }
+		parentanchor = top|right
+	
+
+		state = {
+			name = _mouse_press
+			frame = 3
+			on_start = "[GetScriptedGui('b_draw').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+
+		state = {
+			name = _mouse_release
+			frame = 2
+			on_start = "[GetScriptedGui('b_release').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			
+		}
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('b_add_h').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('b_remove_h').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+	}
+	button = {
+		size = { 1920 250 }
+		position = { 0 550 }
+		parentanchor = top|right
+		#texture = "gfx/interface/cshop/ebar.dds"
+
+		state = {
+			name = _mouse_press
+			frame = 3
+			on_start = "[GetScriptedGui('b_draw').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+
+		state = {
+			name = _mouse_release
+			frame = 2
+			on_start = "[GetScriptedGui('b_release').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			
+		}
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('b_add_m').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('b_remove_m').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+	}
+	button = {
+	
+		size = { 1920 500 }
+		position = { 0 800 }
+		parentanchor = top|right
+		
+		state = {
+			name = _mouse_press
+			frame = 3
+			on_start = "[GetScriptedGui('b_draw').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		}
+
+		state = {
+			name = _mouse_release
+			frame = 2
+			on_start = "[GetScriptedGui('b_release').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			
+		}
+		state = {
+			name = _mouse_enter
+			on_start = "[GetScriptedGui('b_add_l').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 2
+		}
+
+		state = {
+			name = _mouse_leave
+			on_start = "[GetScriptedGui('b_remove_l').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+			frame = 1
+		}
+	}
+	button_standard = { #exits test gui
+		visible = "[Not(GetVariableSystem.Exists( 'b_start' ))]"
+		parentanchor = right|bottom
+		position = { -750 -10 }
+		text = "Tutorial"
+		onclick = "[GetVariableSystem.Toggle( 'b_tutorial')]"
+	}
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -550 -10 }
+        text = "Start"
+		visible = "[Not(GetVariableSystem.Exists( 'b_start' ))]"
+		onclick = "[GetVariableSystem.Toggle( 'b_start')]"
+		onclick = "[GetScriptedGui('get_dummy').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+    
+    }
+
+	button_standard = { #exits test gui
+		visible = no
+        parentanchor = right|bottom
+		position = { -250 -10 }
+        text = "cleaner"
+		onclick = "[GetScriptedGui('b_cleaner').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+    
+    }
+
+	button_standard = { #exits test gui
+        parentanchor = right|bottom
+		position = { -50 -10 }
+        text = "Exit"
+		onclick = "[GetScriptedGui('exit_archer').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets bow')]"
+    }
+
+}

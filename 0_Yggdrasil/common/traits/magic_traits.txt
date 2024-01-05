@@ -1,0 +1,11 @@
+
+
+merchant = {
+
+	index = 9981
+	desc = trait_merchant_desc
+	genetic = no
+	immortal = yes
+	set_immortal_age = 16
+	
+}

@@ -1,0 +1,6 @@
+﻿#### MOOD TRACKS
+mx_archer = {
+	music = "file:/music/archer.mp3"
+	mood = no
+	can_be_interrupted = no
+}

@@ -1,0 +1,197 @@
+﻿m_slow_walk = 10
+m_walk = 15
+m_run = 25
+m_sprint = 35
+cmap_sizex = 11520
+cmap_sizey = 6480
+
+
+cmmap_sizex = {
+	value = cmap_sizex
+	divide = 30
+}
+cmmap_sizey = {
+	value = cmap_sizey
+	divide = 30
+}
+true_map_x = {
+	value = 0 
+	if = {
+		limit = {
+			exists = global_var:sk_x_pos
+		}
+		add = global_var:sk_x_pos
+		#subtract = 1205
+	}
+
+}
+
+true_envoy_x = {
+	value = 0 
+
+	if = {
+		limit = {
+			exists = global_var:sk_xx_pos
+		}
+		add = global_var:sk_xx_pos
+	}
+}
+true_map_y = {
+	value = 0 
+	if = {
+		limit = {
+			exists = global_var:sk_s_pos
+		}
+		add = global_var:sk_s_pos
+	}
+
+}
+zeroy = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_y_pos } add = var:sk_npc_y_pos }
+
+	
+}
+
+zerox = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_x_pos } add = var:sk_npc_x_pos }
+
+}
+mini_ax = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_x_pos } add = var:sk_npc_x_pos }
+	divide = 30
+
+	
+}
+
+mini_ay = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_y_pos } add = var:sk_npc_y_pos }
+	divide = 30
+}
+qkpx = {
+	value = 0
+	if = {
+		limit = {
+			exists = global_var:sk_xx_pos
+		}
+		add = global_var:sk_xx_pos
+	}
+	add = 965
+	#add = 5
+}
+
+qkpy = {
+	value = 0
+	if = {
+		limit = {
+			exists = global_var:sk_ss_pos
+		}
+		add = global_var:sk_ss_pos
+	}
+	add = 6020
+
+}
+mini_x = {
+	value = qkpx
+	divide = 30
+	subtract = 3
+}
+mini_y = {
+	value = qkpy
+	divide = 30
+	subtract = 3
+}
+qkclx = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_x_pos } add = var:sk_npc_x_pos }
+	subtract = qkpx
+	
+}
+qkcly = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_y_pos } add = var:sk_npc_y_pos }
+	subtract = qkpy
+	
+	
+}
+qkclxn = {
+	value = 0
+
+	prev = {
+		if = { limit =  { has_variable = sk_npc_x_pos } add = var:sk_npc_x_pos }
+	}
+	if = { limit =  { has_variable = sk_npc_x_pos } subtract = var:sk_npc_x_pos }
+	
+
+}
+qkclyn = {
+	#check
+	value = prev.var:sk_npc_y_pos
+	subtract = var:sk_npc_y_pos
+	
+}
+
+qkclx1 = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_x_pos } add = var:sk_npc_x_pos }
+	subtract = var:sk_npc_x_target_pos
+
+
+}
+qkcly1 = {
+	value = 0
+	if = { limit =  { has_variable = sk_npc_y_pos } add = var:sk_npc_y_pos }
+	subtract = var:sk_npc_y_target_pos
+
+}
+qkpxch = {
+	value = 0
+	if = {
+		limit = {
+			exists = global_var:sk_xx_pos
+		}
+		add = global_var:sk_xx_pos
+	}
+	add = 960
+	subtract = 25
+}
+
+qkpycl = {
+	value = 0
+	if = {
+		limit = {
+			exists = global_var:sk_ss_pos
+		}
+		add = global_var:sk_ss_pos
+	}
+	add = 6020
+	subtract = 35
+}
+
+
+qkpych = {
+	value = 0
+	if = {
+		limit = {
+			exists = global_var:sk_ss_pos
+		}
+		add = global_var:sk_ss_pos
+	}
+	add = 6020
+	add = 35
+}
+
+
+combat_action_range = 150
+combat_action_range_n = -150
+action_range = 200
+action_range_n = -200
+striking_range = 150
+striking_range_n = -150
+bump_range_n = -60
+bump_range = 60
+bumpy_range_n = -50
+bumpy_range = 160

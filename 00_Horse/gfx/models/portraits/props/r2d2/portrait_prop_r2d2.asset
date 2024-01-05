@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "R2D2"
+	file = "R2D2.mesh"
+
+	meshsettings = {
+		name = "R2D2"
+		index = 0
+		texture_diffuse = "R2D2Tex.png"
+		texture_normal = "R2D2Tex.png"
+		texture_specular = "R2D2Tex.png"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "r2d2_entity"
+	pdxmesh = "R2D2"
+}

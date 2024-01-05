@@ -1,0 +1,29 @@
+#k_venice
+##d_venice ###################################
+###c_venezia
+2517 = {	#VENEZIA
+	culture = high_elf
+850.1.1 = { culture = high_elf }
+851.1.1 = { religion = elvani }  # cisalpine
+	religion = elvani # catholic
+	holding = castle_holding
+	#
+	special_building_slot = doges_palace_01
+	special_building = doges_palace_01
+}
+
+###c_veneto
+2506 = {	#MESTRE
+	culture = high_elf
+850.1.1 = { culture = high_elf }
+851.1.1 = { religion = elvani }  # cisalpine
+	religion = elvani # catholic
+	holding = castle_holding
+}
+
+2504 = {	#CHIOGGIA
+	holding = city_holding
+}
+
+
+

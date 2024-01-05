@@ -1,0 +1,7 @@
+﻿#### MOOD TRACKS
+
+mx_tavern = {
+	music = "file:/music/tavern.mp3"
+	weight = 15
+	can_be_interrupted = yes
+}

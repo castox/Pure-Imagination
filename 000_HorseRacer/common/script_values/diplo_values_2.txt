@@ -1,0 +1,911 @@
+﻿
+# If you added traits and want to them rated go to the bottom above the divide = 2 and add them with a value
+#
+# EX; if = { limit = { has_trait = bossy } subtract = diplo_hc_bad_1 } 
+# OR
+# EX; if = { limit = { has_trait = bossy } subtract = 6 }
+############################################
+diplo_mi_value = {
+	value = 0 
+	add = global_var:diplo_1_offered.diplo_human_capital_value
+	subtract = global_var:diplo_2_offered.diplo_human_capital_value
+}
+diplo_fix_level = 2
+diplo_hc_bad_1 = 1
+diplo_hc_bad_2 = 4
+diplo_hc_bad_3 = 25
+diplo_hc_good_1 = 1
+diplo_hc_good_2 = 2
+diplo_hc_good_3 = 3
+
+diplo_human_capital_value = {
+	value = 0
+
+	#fertile fertility > low_fertility
+	if = { limit = { fertility <= low_fertility } subtract = 3 }
+	if = { limit = { AND = { fertility > low_fertility fertility < high_fertility } } add = 1 }
+	if = { limit = { fertility >= high_fertility } add = 3 }
+
+
+	#land
+	if = { limit = { is_landed = yes } add = 3 }
+	if = { limit = { is_landed = no } subtract = 1 }
+
+
+	#Rank
+	if = { limit = { liege.highest_held_title_tier = tier_kingdom } add = 3 }
+	if = { limit = { liege.highest_held_title_tier = tier_duchy } add = 2 }
+	if = { limit = { liege.highest_held_title_tier = tier_county } add = 1 }
+	if = { limit = { liege.highest_held_title_tier = tier_empire } add = 4 }
+
+	if = { limit = { highest_held_title_tier = tier_kingdom } add = 3 }
+	if = { limit = { highest_held_title_tier = tier_duchy } add = 2 }
+	if = { limit = { highest_held_title_tier = tier_county } add = 1 }
+	if = { limit = { highest_held_title_tier = tier_empire } add = 4 }
+
+	#skills - stackable
+	if = { limit = { terrible_sum_of_all_skills_trigger = yes } subtract = 2 }
+	if = { limit = { poor_sum_of_all_skills_trigger = yes } subtract = 1 }
+	if = { limit = { average_sum_of_all_skills_trigger = yes } add = 1 }
+	if = { limit = { good_sum_of_all_skills_trigger = yes } add = 3 }
+	if = { limit = { excellent_sum_of_all_skills_trigger = yes } add = 3 }
+
+	#Traits
+	if = { limit = { has_trait = bossy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = improvident } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = reclusive  } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = craven } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = lazy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = irritable } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = lustful } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = rakish } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = rowdy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = dull } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = arbitrary } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = impatient } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = comfort_eater } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = gluttonous } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = shy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = arrogant } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = paranoid } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = stubborn } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = cynical } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = inappetetic } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = legitimized_bastard } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = beauty_bad_1 } subtract = diplo_hc_bad_1 }
+	
+	if = { limit = { has_trait = wild_oat } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = child_of_concubine } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = disputed_heritage } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = bastard } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = deviant } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = drunkard } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = hashishiyah } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = profligate } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = deceitful } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = callous } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = sadistic } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = vengeful } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = wrathful } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = torturer } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = greedy } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = flagellant } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = wounded  } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_variable = std_from_unfaithfulness_against } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = beauty_bad_2 } subtract = diplo_hc_bad_2 }
+
+	if = { limit = { has_trait = consumption } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = cancer } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = great_pox } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = gout_ridden } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = ill } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = pneumonic } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = typhus } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = smallpox } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = bubonic_plague } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = leper } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = beauty_bad_3 } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = scarred } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = blind } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = hunchbacked } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = dwarf } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = spindly } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = scaly } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = albino } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = one_eyed } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = one_legged } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = incapable } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = maimed } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = typhus  } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = gout_ridden } subtract = diplo_hc_bad_3 }
+
+
+	if = { limit = { has_trait = education_diplomacy_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_martial_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_stewardship_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_learning_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_intrigue_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = just } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = journaller } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = brave } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = diligent } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = content } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = patient } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = calm } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = temperate } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = trusting } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = humble } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = gregarious } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = pensive } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = beauty_good_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = ambitious } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = education_diplomacy_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_martial_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_stewardship_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_learning_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_intrigue_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = confider } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = athletic } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = zealous } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = chaste } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = honest } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = scholar } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = theologian } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = contrite  } add = diplo_hc_bad_1 }
+	if = { limit = { has_trait = giant } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = beauty_good_2 } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = education_diplomacy_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_diplomacy_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_martial_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_martial_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_stewardship_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_stewardship_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_learning_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_learning_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_intrigue_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_intrigue_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = gallant } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = berserker } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = shieldmaiden } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = varangian } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = viking } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = diplomat } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = beauty_good_3 } add = 5 }
+	if = { limit = { has_trait = family_first } add = diplo_hc_good_3 }
+
+
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_reveler
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_reveler
+					value >= 50
+	
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_reveler
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_blademaster
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_blademaster
+				
+					value >= 50
+		
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_blademaster
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 100
+					track = falconer
+				}
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 100
+					track = hunter
+				}
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 50
+					track = falconer
+				}
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 50
+					track = hunter
+				}
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value < 50
+					track = falconer
+				}
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value < 50
+					track = hunter
+				}
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				
+					value >= 50
+			
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_physician
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_physician
+				
+					value >= 50
+			
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_physician
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+	if = { limit = { has_trait = strategist } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = overseer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = gallant } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = architect } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = administrator } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = avaricious } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = schemer } add = diplo_hc_good_2}
+	if = { limit = { has_trait = seducer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = whole_of_body } add = 4 }
+
+
+	if = { limit = { has_trait = lifestyle_herbalist } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = lifestyle_gardener } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = charming } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = curious } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = depressed_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = depressed_genetic } subtract = diplo_hc_bad_2}
+
+	if = { limit = { has_trait = lunatic_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = lunatic_genetic } subtract = diplo_hc_bad_2}
+
+	if = { limit = { has_trait = possessed_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = possessed_genetic } subtract = diplo_hc_bad_2}
+
+	if = { limit = { has_trait = disfigured } subtract = diplo_hc_bad_3}
+	if = { limit = { has_trait = infirm } subtract = diplo_hc_bad_3}
+
+	if = { limit = { has_trait = lovers_pox } subtract = diplo_hc_bad_3}
+
+	if = { limit = { has_trait = compassionate } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = arbitrary } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = generous } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = forgiving } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = fickle } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = intellect_good_1 } add = 2 }
+	if = { limit = { has_trait = intellect_good_2 } add = 3 }
+	if = { limit = { has_trait = intellect_good_3 } add = 5 }
+
+	if = { limit = { has_trait = intellect_bad_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = intellect_bad_2 } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = intellect_bad_3 } subtract = diplo_hc_bad_3 }
+
+	if = { limit = { has_trait = physique_good_1 } add = 2 }
+	if = { limit = { has_trait = physique_good_2 } add = 3}
+	if = { limit = { has_trait = physique_good_3 } add = 5 }
+
+
+
+	if = { limit = { has_trait = pure_blooded } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = fecund } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = strong } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = shrewd } add = diplo_hc_good_2 }
+
+
+
+	if = { limit = { has_trait = physique_bad_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = physique_bad_2 } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = physique_bad_3 } subtract = diplo_hc_bad_3 }
+
+	if = { limit = { has_trait = clubfooted } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = lisping } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = weak } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = wheezing } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = bleeder } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = cannibal } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = incestuous } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = adulterer } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = fornicator } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = murderer } subtract = diplo_hc_bad_2 }
+
+	if = { limit = { has_trait = infertile } subtract = diplo_hc_bad_3 }
+
+	if = { limit = { has_trait = pilgrim } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = sayyid } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = faith_warrior } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = poet } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = born_in_the_purple } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = viking } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = adventurer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = heresiarch } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = peasant_leader } add = 4 }
+
+	if = { limit = { has_trait = witch } add = diplo_hc_bad_1 }
+
+	if = { limit = { has_trait = logistician } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = military_engineer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = aggressive_attacker } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = unyielding_defender } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = forder } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = flexible_leader } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = desert_warrior } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = jungle_stalker } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = reaver } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = reckless } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = holy_warrior } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = open_terrain_expert } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = rough_terrain_expert } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = forest_fighter } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = cautious_leader } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = organizer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = winter_soldier } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = crusader_king } add = 6 }
+
+
+
+	divide = 2
+}
+
+diplo_vassal_capital_value = {
+	value = 0
+
+	#fertile fertility > low_fertility
+	if = { limit = { fertility <= low_fertility } subtract = 3 }
+	if = { limit = { AND = { fertility > low_fertility fertility < high_fertility } } add = 1 }
+	if = { limit = { fertility >= high_fertility } add = 3 }
+
+
+	#land
+	if = { limit = { is_landed = yes } add = 3 }
+	if = { limit = { is_landed = no } subtract = 1 }
+
+
+	#Rank
+	if = { limit = { liege.highest_held_title_tier = tier_kingdom } add = 3 }
+	if = { limit = { liege.highest_held_title_tier = tier_duchy } add = 2 }
+	if = { limit = { liege.highest_held_title_tier = tier_county } add = 1 }
+	if = { limit = { liege.highest_held_title_tier = tier_empire } add = 4 }
+
+	if = { limit = { highest_held_title_tier = tier_kingdom } add = 3 }
+	if = { limit = { highest_held_title_tier = tier_duchy } add = 2 }
+	if = { limit = { highest_held_title_tier = tier_county } add = 1 }
+	if = { limit = { highest_held_title_tier = tier_empire } add = 4 }
+
+	#skills - stackable
+	if = { limit = { terrible_sum_of_all_skills_trigger = yes } subtract = 2 }
+	if = { limit = { poor_sum_of_all_skills_trigger = yes } subtract = 1 }
+	if = { limit = { average_sum_of_all_skills_trigger = yes } add = 1 }
+	if = { limit = { good_sum_of_all_skills_trigger = yes } add = 3 }
+	if = { limit = { excellent_sum_of_all_skills_trigger = yes } add = 3 }
+	#Traits
+	if = { limit = { has_trait = bossy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = improvident } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = reclusive  } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = craven } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = lazy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = irritable } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = lustful } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = rakish } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = rowdy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = dull } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = arbitrary } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = impatient } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = comfort_eater } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = gluttonous } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = shy } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = arrogant } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = paranoid } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = stubborn } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = cynical } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = inappetetic } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = legitimized_bastard } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = beauty_bad_1 } subtract = diplo_hc_bad_1 }
+	
+	if = { limit = { has_trait = wild_oat } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = child_of_concubine } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = disputed_heritage } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = bastard } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = deviant } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = drunkard } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = hashishiyah } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = profligate } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = deceitful } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = callous } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = sadistic } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = vengeful } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = wrathful } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = torturer } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = greedy } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = flagellant } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = wounded  } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_variable = std_from_unfaithfulness_against } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = beauty_bad_2 } subtract = diplo_hc_bad_2 }
+
+	if = { limit = { has_trait = consumption } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = cancer } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = great_pox } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = gout_ridden } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = ill } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = pneumonic } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = typhus } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = smallpox } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = bubonic_plague } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = leper } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = beauty_bad_3 } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = scarred } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = blind } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = hunchbacked } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = dwarf } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = spindly } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = scaly } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = albino } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = one_eyed } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = one_legged } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = incapable } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = maimed } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = typhus  } subtract = diplo_hc_bad_3 }
+	if = { limit = { has_trait = gout_ridden } subtract = diplo_hc_bad_3 }
+
+
+	if = { limit = { has_trait = education_diplomacy_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_martial_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_stewardship_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_learning_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = education_intrigue_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = just } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = journaller } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = brave } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = diligent } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = content } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = patient } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = calm } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = temperate } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = trusting } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = humble } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = gregarious } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = pensive } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = beauty_good_1 } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = ambitious } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = education_diplomacy_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_martial_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_stewardship_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_learning_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = education_intrigue_2 } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = confider } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = athletic } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = zealous } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = chaste } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = honest } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = scholar } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = theologian } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = contrite  } add = diplo_hc_bad_1 }
+	if = { limit = { has_trait = giant } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = beauty_good_2 } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = education_diplomacy_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_diplomacy_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_martial_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_martial_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_stewardship_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_stewardship_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_learning_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_learning_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_intrigue_3 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = education_intrigue_4 } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = gallant } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = berserker } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = shieldmaiden } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = varangian } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = viking } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = diplomat } add = diplo_hc_good_3 }
+	if = { limit = { has_trait = beauty_good_3 } add = 5 }
+	if = { limit = { has_trait = family_first } add = diplo_hc_good_3 }
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_reveler
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_reveler
+					value >= 50
+	
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_reveler
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_blademaster
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_blademaster
+				
+					value >= 50
+		
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_blademaster
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 100
+					track = falconer
+				}
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 100
+					track = hunter
+				}
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 50
+					track = falconer
+				}
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value >= 50
+					track = hunter
+				}
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value < 50
+					track = falconer
+				}
+				has_trait_xp = {
+					trait = lifestyle_hunter
+					value < 50
+					track = hunter
+				}
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				
+					value >= 50
+			
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_physician
+				value >= 100
+			}
+		}
+	 add = diplo_hc_good_3
+	 subtract = diplo_fix_level
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_physician
+				
+					value >= 50
+			
+			}
+		}
+	 add = diplo_hc_good_2
+	}
+	if = { 
+		limit = { 
+			has_trait_xp = {
+				trait = lifestyle_physician
+				value < 50
+			}
+		}
+	 add = diplo_hc_good_1
+	}
+
+	if = { limit = { has_trait = strategist } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = overseer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = gallant } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = architect } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = administrator } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = avaricious } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = schemer } add = diplo_hc_good_2}
+	if = { limit = { has_trait = seducer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = whole_of_body } add = 4 }
+
+
+
+	if = { limit = { has_trait = lifestyle_herbalist } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = lifestyle_gardener } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = charming } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = curious } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = depressed_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = depressed_genetic } subtract = diplo_hc_bad_2}
+
+	if = { limit = { has_trait = lunatic_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = lunatic_genetic } subtract = diplo_hc_bad_2}
+
+	if = { limit = { has_trait = possessed_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = possessed_genetic } subtract = diplo_hc_bad_2}
+
+	if = { limit = { has_trait = disfigured } subtract = diplo_hc_bad_3}
+	if = { limit = { has_trait = infirm } subtract = diplo_hc_bad_3}
+
+	if = { limit = { has_trait = lovers_pox } subtract = diplo_hc_bad_3}
+
+	if = { limit = { has_trait = compassionate } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = arbitrary } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = generous } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = forgiving } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = fickle } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = intellect_good_1 } add = 2 }
+	if = { limit = { has_trait = intellect_good_2 } add = 3 }
+	if = { limit = { has_trait = intellect_good_3 } add = 5 }
+
+	if = { limit = { has_trait = intellect_bad_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = intellect_bad_2 } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = intellect_bad_3 } subtract= diplo_hc_bad_3 }
+
+	if = { limit = { has_trait = physique_good_1 } add = 2 }
+	if = { limit = { has_trait = physique_good_2 } add = 3}
+	if = { limit = { has_trait = physique_good_3 } add = 5 }
+
+
+
+	if = { limit = { has_trait = pure_blooded } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = fecund } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = strong } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = shrewd } add = diplo_hc_good_2 }
+
+
+
+	if = { limit = { has_trait = physique_bad_1 } subtract = diplo_hc_bad_1 }
+	if = { limit = { has_trait = physique_bad_2 } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = physique_bad_3 } subtract = diplo_hc_bad_3 }
+
+	if = { limit = { has_trait = clubfooted } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = lisping } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = weak } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = wheezing } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = bleeder } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = cannibal } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = incestuous } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = adulterer } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = fornicator } subtract = diplo_hc_bad_2 }
+	if = { limit = { has_trait = murderer } subtract = diplo_hc_bad_2 }
+
+	if = { limit = { has_trait = infertile } subtract = diplo_hc_bad_3 }
+
+	if = { limit = { has_trait = pilgrim } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = sayyid } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = faith_warrior } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = poet } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = born_in_the_purple } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = viking } add = diplo_hc_good_1 }
+	if = { limit = { has_trait = adventurer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = heresiarch } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = peasant_leader } add = 4 }
+
+	if = { limit = { has_trait = witch } add = diplo_hc_bad_1 }
+
+	if = { limit = { has_trait = logistician } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = military_engineer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = aggressive_attacker } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = unyielding_defender } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = forder } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = flexible_leader } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = desert_warrior } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = jungle_stalker } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = reaver } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = reckless } add = diplo_hc_good_1 }
+
+	if = { limit = { has_trait = holy_warrior } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = open_terrain_expert } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = rough_terrain_expert } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = forest_fighter } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = cautious_leader } add = diplo_hc_good_2 }
+
+	if = { limit = { has_trait = organizer } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = winter_soldier } add = diplo_hc_good_2 }
+	if = { limit = { has_trait = crusader_king } add = 6 }
+
+
+	divide = 2
+
+	every_held_title = {
+		add = this.county_pm_value2
+	}
+}

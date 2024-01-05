@@ -1,0 +1,1143 @@
+﻿############################################################
+# START updates
+###########################################################
+
+
+#####################################
+# Accept / Counter / Send
+##################################
+
+diplo_send = {
+	scope = character
+
+
+	is_shown = {
+		AND = {
+			this = global_var:diplo_1
+			global_var:diplo_2 = { is_ai = yes }
+
+		}
+
+	}
+
+
+
+	effect = {
+		set_global_variable = { name = diplo_deal_started value = 2 }
+		#####################################
+		# Accept / Counter / Send / NEGATIVE EFFECT
+		##################################
+		if = {
+			limit = {
+				diplo_deal < -50
+			}
+			
+				random_list = {
+					20 = {
+						modifier = {
+							add = 20
+	
+							global_var:diplo_2 = { 
+								diplo_kill_trigger = yes
+							}
+						}
+	#
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0001
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool1
+						}
+	
+						## KILL
+						
+					}
+					20 = {
+						modifier = {
+							add = 20
+							global_var:diplo_2 = { 
+								diplo_block_trigger = yes
+							}
+						}
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0002
+							}
+						}
+						# BLOCK OFFER
+						custom_tooltip = {
+							text = diplo_result_tool2
+						}
+					}
+					60 = {
+						modifier = {
+							add = 40
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_neutral_reject_trigger = yes
+									diplo_dumb_trigger = yes
+								}
+							}
+						}
+	
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0003
+							}
+						}
+						## Reject Strong Insult
+						custom_tooltip = {
+							text = diplo_result_tool3
+						}
+
+					}
+				}
+				
+			#
+		}
+		
+		
+		else_if = {
+			limit = {
+				AND = {
+					diplo_deal > -49
+					diplo_deal < -21
+				}
+			}
+			#Disgusted Insult
+			#
+			
+				random_list = {
+					20 = {
+						modifier = {
+							add = 20
+		
+							global_var:diplo_2 = { 
+								diplo_block_trigger = yes
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0002
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool2
+						}
+						## BLOCK
+						
+					}
+					20 = {
+						modifier = {
+							add = 40
+		
+							global_var:diplo_2 = { 
+		
+								OR = {
+									diplo_intelligent_trigger = yes
+									diplo_cruel_trigger = yes
+								}
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0003
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool3
+						}
+						## Strong Insult
+						
+					}
+		
+					60 = {
+						modifier = {
+							add = 40
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_smart_trigger = yes
+									diplo_neutral_reject_trigger = yes
+								}
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0004
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool4
+						}
+						# Reject Regular Insult
+					}
+				}
+			
+		}
+		
+		else_if = {
+			limit = {
+				AND = {
+					diplo_deal > -20
+					diplo_deal < -11
+				}
+			}
+			#Insulted
+		
+				random_list = {
+					20 = {
+						modifier = {
+							add = 20
+		
+							global_var:diplo_2 = { 
+								
+								OR = {
+									diplo_cruel_trigger = yes
+									diplo_smart_trigger = yes
+								}
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0003
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool3
+						}
+						## Strong Insult
+						
+					}
+					20 = {
+						modifier = {
+							add = 40
+		
+							global_var:diplo_2 = { 
+								diplo_block_trigger = yes
+		
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0002
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool2
+						}
+						## Block
+						
+					}
+		
+					70 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								diplo_neutral_reject_trigger = yes
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0004
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool4
+						}
+						## Insulted
+					}
+				}
+			
+			#
+		}
+		
+		else_if = {
+			limit = {
+				AND = {
+					diplo_deal > -10
+					diplo_deal < -6
+				}
+			}
+			#possible except
+		
+			
+				random_list = {
+					1 = {
+						modifier = {
+							add = 20
+		
+							global_var:diplo_2 = { 
+								diplo_dumb_trigger = yes
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0005
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool5
+						}
+						## Dumb Accept
+						
+					}
+	
+					45 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								diplo_smart_accept_trigger = yes
+								NOT = {
+									diplo_cruel_trigger = yes
+								}
+								
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0008
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool8
+						}
+						## No point
+					}
+					45 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								diplo_cruel_trigger = yes
+								diplo_intelligent_trigger = yes
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0004
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool4
+						}
+						## Insulted
+					}
+				}
+			
+			#
+		}
+		
+		else_if = {
+			limit = {
+				AND = {
+					diplo_deal > -5
+					diplo_deal < 1
+				}
+			}
+			#High possible except
+			
+				random_list = {
+					2 = {
+						modifier = {
+							add = 25
+		
+							global_var:diplo_2 = { 
+								diplo_dumb_trigger = yes
+		
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0005
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool5
+						}
+						# Accept Dumb
+						
+					}
+					50 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_cruel_trigger = yes
+									diplo_smart_trigger = yes
+									diplo_just_trigger = yes
+								}
+		
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0008
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool8
+						}
+						##dde 1002
+					}
+					48 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_block_trigger = yes
+								}
+
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0009
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool9
+						}
+						## No point
+					}
+				}
+			
+		
+			#
+		}
+		
+		else_if = {
+			limit = {
+				AND = {
+					diplo_deal > 0
+					diplo_deal < 6
+				}
+			}
+				#High possible except
+			
+				random_list = {
+					30 = {
+						modifier = {
+							add = 16
+		
+							global_var:diplo_2 = { 
+								diplo_mid_trigger = yes										
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0005
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool5
+						}
+						##dde 1000
+						
+					}
+
+		
+					30 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+
+								OR = {
+									diplo_smart_trigger = yes
+									diplo_just_trigger = yes
+								}
+		
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0008
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool8
+						}
+						## Reject
+					}
+					20 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+
+								diplo_cruel_trigger = yes
+								
+							}
+						}
+						#
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0009
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool9
+						}
+						## No point
+					}
+					20 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								diplo_intelligent_trigger = yes
+								
+							}
+						}
+						#
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0004
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool4
+						}
+						## Insulted
+					}
+				}
+			
+		
+			#
+		}
+		else_if = {
+			limit = {
+				AND = {
+					diplo_deal > 5
+					diplo_deal < 11
+				}
+			}
+			#High possible except
+			
+				random_list = {
+					40 = {
+						modifier = {
+							add = 16
+		
+							global_var:diplo_2 = { 
+								diplo_mid_trigger = yes
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0006
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool6
+						}
+						## Accept dumb
+						
+					}
+		
+					40 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_just_trigger = yes
+									diplo_smart_trigger = yes
+								}
+		
+							}
+						}
+						#accept
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0005
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool5
+						}
+						#accept
+					}
+					10 = {
+						modifier = {
+							add = 40
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_smart_reject_trigger = yes
+									diplo_cruel_trigger = yes
+								}
+		
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0008
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool8
+						}
+						##dde Reject Smart Guy
+					}
+				}
+			
+		
+			#
+		}
+		else_if = {
+			limit = {
+				AND = {
+					diplo_deal > 10
+					diplo_deal < 26
+				}
+			}
+			#High possible except
+			
+				random_list = {
+					40 = {
+						modifier = {
+							add = 25
+		
+							global_var:diplo_2 = { 
+								
+								diplo_mid_trigger = yes
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0007
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool7
+						}
+						##dde 1000
+						
+					}
+					40 = {
+						modifier = {
+							add = 25
+		
+							global_var:diplo_2 = { 
+		
+								OR = {
+									diplo_just_trigger = yes
+									diplo_smart_trigger = yes
+								}
+		
+		
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0006
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool6
+						}
+						##dde 1000
+						
+					}
+		
+					10 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+
+								OR = {
+									diplo_smart_reject_trigger = yes
+									diplo_cruel_trigger = yes
+								}
+		
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0005
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool5
+						}
+						##dde 1002
+					}
+
+				}
+			
+		
+			#
+		}
+		else_if = {
+			limit = {
+		
+				diplo_deal > 25
+		
+			}
+			#High possible except
+			
+				random_list = {
+					40 = {
+						modifier = {
+							add = 25
+		
+							global_var:diplo_2 = { 
+								diplo_mid_trigger = yes
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0007
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool7
+						}
+						##dde 1000
+						
+					}
+					40 = {
+						modifier = {
+							add = 25
+		
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_just_trigger = yes
+									diplo_smart_trigger = yes
+								}
+		
+							}
+						}
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0006
+							}
+						}
+						custom_tooltip = {
+							text = diplo_result_tool6
+						}
+						##dde 1000
+						
+					}
+		
+
+					10 = {
+						modifier = {
+							add = 30
+							global_var:diplo_2 = { 
+								OR = {
+									diplo_smart_reject_trigger = yes
+									diplo_cruel_trigger = yes
+								}
+		
+							}
+						}
+						#rejection
+		
+						global_var:diplo_1 = {
+							trigger_event = {
+								id = diplo_deal_event.0005
+							}
+						}
+						##dde 1002
+						custom_tooltip = {
+							text = diplo_result_tool5
+						}
+					}
+				}
+			
+		
+			#
+		}
+	}
+}
+
+#diplo_check_sinews = {
+#	scope = title
+
+#	is_shown = {
+#		AND = {
+#			exists = county_population
+#			has_variable = county_population
+#		}
+		
+#	}
+#}
+diplo_send_player = {
+	scope = character
+	is_shown = {
+		AND = {
+			this = global_var:diplo_1
+			global_var:diplo_2 = { is_ai = no }
+		}
+	}
+
+	effect = {
+		
+		set_global_variable = { name = diplo_deal_view value = 0 }
+		set_diplo_turn = yes
+	}
+}
+
+diplo_counter = {
+	scope = character
+
+
+	is_shown = {
+		AND = {
+			this = global_var:diplo_2
+			global_var:diplo_2 = { 
+				#is_ai = no 
+				employs_court_position = envoy_court_position
+			}
+		}
+	}
+
+	effect = {
+		reset_counter_diplo_deal = yes
+		set_diplo_counter = yes
+	}
+}
+
+diplo_player_accept = {
+	scope = character
+	is_shown = {
+		AND = {
+			global_var:diplo_deal_started = 2 
+			this = global_var:diplo_2
+		}
+
+	}
+	effect = {
+
+		global_var:diplo_1 = {
+			trigger_event = {
+				id = diplo_deal_event.0005
+			}
+		}
+	}
+}
+diplo_deal_view = {
+	scope = character
+
+	is_shown = { global_var:diplo_deal_view  = 1 }
+
+	effect = {
+		
+		if = {
+			limit = {
+				global_var:diplo_deal_view  = 1 
+			}
+			set_global_variable = { name = diplo_deal_view value = 0 }
+		}
+		else = {
+			set_global_variable = { name = diplo_deal_view value = 1 }
+		}
+	}
+}
+diplo_deal_viewr = {
+	scope = character
+
+
+	effect = {
+		set_global_variable = { name = diplo_deal_view value = 0 }
+	}
+}
+diplo_viewport_0 = {
+	scope = character
+	is_shown = {
+		OR = {
+			AND = {
+				exists = global_var:diplo_1
+				global_var:diplo_deal_started  = 1 
+				this = global_var:diplo_1
+				global_var:diplo_deal_view   = 1 
+			}
+			AND = {
+				exists = global_var:diplo_2
+				global_var:diplo_deal_started = 2 
+				this = global_var:diplo_2
+				global_var:diplo_deal_view  = 1 
+			}
+		}
+	}
+}
+diplo_viewport_1 = {
+	scope = character
+	is_shown = {
+		AND = {
+			exists = global_var:diplo_1
+			global_var:diplo_deal_started = 1 
+			this = global_var:diplo_1
+		}
+	}
+}
+diplo_viewport_2 = {
+	scope = character
+	is_shown = {
+		AND = {
+			exists = global_var:diplo_2
+			global_var:diplo_deal_started   = 2 
+			this = global_var:diplo_2
+		}
+	}
+}
+diplo_in_progress = {
+	scope = character
+	is_shown = {
+		OR = {
+
+			AND = {
+				exists = global_var:diplo_1
+				this = global_var:diplo_1
+				OR = {
+					global_var:diplo_deal_started   = 1 
+					global_var:diplo_deal_started  = 2 
+				}
+
+			}
+			AND = {
+				exists= global_var:diplo_2
+				this = global_var:diplo_2
+				OR = {
+					global_var:diplo_deal_started  = 1 
+					global_var:diplo_deal_started  = 2 
+				}
+			}
+		}
+	}
+}
+diplo_title_dejure = {
+	scope = title
+	is_valid = {
+
+		custom_tooltip = {
+			text = diplo_bs2
+			OR = {
+				AND = {
+					tier > tier_county
+					any_in_de_jure_hierarchy = {
+						is_target_in_global_variable_list = { name = given_lands target = this }
+					}
+
+				}
+				tier = tier_county			
+			}
+		}	
+	}
+
+}
+diplo_title_dejure2 = {
+	scope = title
+	is_valid = {
+
+		custom_tooltip = {
+			text = diplo_bs1
+			OR = {
+				AND = {
+					tier > tier_county
+					any_in_de_jure_hierarchy = {
+						is_target_in_global_variable_list = { name = taken_lands target = this }
+					}
+
+				}
+				tier = tier_county			
+			}
+		}	
+	}
+
+}
+
+
+diplo_error_fixer = {
+	scope = character
+	is_shown = {
+		NOT = { exists = global_var:diplo_deal_started }
+	}
+	effect = {
+		diplo_fix_this = yes
+	}
+}
+diplo_is_enabled = {
+	scope = character
+	is_shown = {
+
+		OR = {
+			AND = {
+				this = global_var:diplo_2
+				global_var:diplo_deal_started   = 2 
+				NOT = { global_var:diplo_deal_view  = 1  }
+			}
+			AND = {
+				this = global_var:diplo_1
+				global_var:diplo_deal_started = 1 
+				NOT = { global_var:diplo_deal_view   = 1  }
+			}
+		}
+		
+	}
+}
+diplo_makesense = {
+	scope = character
+	is_valid = {
+		custom_tooltip = {
+			text = diplo_bs3
+			NOR = {
+				any_in_global_list = {
+					variable = diplo_1_lands
+					NOT = { this.holder = global_var:diplo_1 }
+				}
+				any_in_global_list = {
+					variable = diplo_2_lands
+					NOT = { this.holder = global_var:diplo_2 }
+				}
+			}
+		}
+		custom_tooltip = {
+			text = diplo_bs4
+				NOR = {
+					AND = {
+						exists = diplo_1_offered
+						diplo_1_offered = {
+							OR = {
+								is_married = yes
+								is_betrothed = yes
+							}
+						}
+					}
+					AND = {
+						exists = diplo_2_offered
+						diplo_2_offered = {
+							OR = {
+								is_married = yes
+								is_betrothed = yes
+							}
+						}
+					}
+				}
+
+		}
+		custom_tooltip = {
+			text = diplo_bs5
+			NOR = {
+				any_in_global_list = {
+					variable = diplo_1_vassals
+					NOT = { is_vassal_of = global_var:diplo_1 }
+				}	
+				any_in_global_list = {
+					variable = diplo_2_vassals
+					NOT = { is_vassal_of = global_var:diplo_2 }
+				}
+			}
+			
+		}
+		custom_tooltip = {
+			text = diplo_bs6
+			NOT = {
+				this.sense_check = 0 
+			}
+		}
+	}
+}
+diplo_world_checker = {
+	scope = character
+	effect = {
+		diplo_world_check = yes
+	}
+}
+diplo_player_has_gold = {
+	scope = character
+
+	is_shown = {
+		
+		AND = {
+			exists = global_var:diplo_1
+			global_var:diplo_1.current_gold_value > 0
+		}
+	}
+}
+diplo_ai_has_gold = {
+	scope = character
+
+	is_shown = {
+		
+		AND = {
+			exists = global_var:diplo_2
+			global_var:diplo_2.current_gold_value > 0
+		}
+	}
+}
+diplo_has_holysite = {
+	scope = title
+
+	is_shown = {
+		AND = {
+			tier = tier_county
+			any_county_province = {
+				barony = {
+					is_holy_site = yes
+				}
+			}
+		}
+
+	}
+}
+diplo_has_sp = {
+	scope = title
+
+	is_shown = {
+		AND = {
+			tier = tier_county
+			
+			any_county_province = {
+				has_special_building = yes
+			}
+
+		}
+	}
+}
+diplo_death_fixer = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			global_var:diplo_1 = { is_alive = no }
+			global_var:diplo_2 = { is_alive = no }
+		}
+	}
+
+	effect = {
+		end_diplo_deal = yes
+	}
+}
+
+

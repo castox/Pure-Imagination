@@ -1,0 +1,96 @@
+﻿cshop_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
+	desc = cshop_decision_desc
+	selection_tooltip = cshop_decision_tooltip
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					global_var:castox = { is_alive = no }
+				}
+				reincarnate_castox = yes
+				
+				global_var:castox = {
+					set_variable = {
+						name = store_owner
+						value = prev
+					}
+				}
+			}
+			else = {
+				global_var:castox = {
+					set_variable = {
+						name = store_owner
+						value = prev
+					}
+				}
+			}
+
+		}
+
+		trigger_event = {
+			id = cshop.1000
+			days = 1
+		}
+		custom_tooltip = cshop_decision_effect_tooltip
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+equip_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
+	desc = equip_decision_desc
+	selection_tooltip = equip_decision_tooltip
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		hidden_effect = {
+
+			#
+		}
+
+		trigger_event = {
+			id = cshop.1001
+		}
+		custom_tooltip = equip_decision_effect_tooltip
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

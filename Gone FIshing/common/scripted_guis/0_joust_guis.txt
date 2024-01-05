@@ -1,0 +1,1270 @@
+﻿left_j_adjust = {
+	scope = character
+	effect = {
+		if = {
+			limit = {
+				var:p_x_loc = -125
+			}
+		}
+		else = {
+			change_variable = { name = p_x_loc subtract = 50 }
+		}
+	}
+}
+right_j_adjust = {
+	scope = character
+	effect = {
+		if = {
+			limit = {
+				var:p_x_loc = 125
+			}
+		}
+		else = {
+			change_variable = { name = p_x_loc add = 50 }
+		}
+	}
+}
+up_j_adjust = {
+	scope = character
+	effect = {
+		if = {
+			limit = {
+				var:p_y_loc = -125
+			}
+		}
+		else = {
+			change_variable = { name = p_y_loc subtract = 50 }
+		}
+	}
+}
+down_j_adjust = {
+	scope = character
+	effect = {
+		if = {
+			limit = {
+				var:p_y_loc = 125
+			}
+		}
+		else = {
+			change_variable = { name = p_y_loc add = 50 }
+		}
+	}
+}
+e_rounds = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			var:joust_h = 2
+			var:joust_h = 4
+			var:joust_h = 6
+			var:joust_h = 8
+			var:joust_h = 10
+		}
+		NOR = {
+			has_character_flag = joust_lost
+			has_character_flag = joust_win
+		}
+	}
+}
+o_rounds = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			var:joust_h = 0
+			var:joust_h = 1
+			var:joust_h = 3
+			var:joust_h = 5
+			var:joust_h = 7
+			var:joust_h = 9
+		}
+		NOR = {
+			has_character_flag = joust_lost
+			has_character_flag = joust_win
+		}
+	}
+}
+j_start = {
+	scope = character
+
+	is_shown = {
+		NOR = {
+			has_character_flag = is_in_joust
+			has_character_flag = joust_lost
+			has_character_flag = joust_win
+		}
+	}
+
+	effect = {
+		add_character_flag = is_in_joust
+		add_character_flag = is_in_joust_2
+	}
+}
+j_end = {
+	scope = character
+
+	effect = {
+
+		remove_character_flag = j_in_range
+		remove_character_flag = j_struck
+		remove_character_flag = is_in_joust
+		remove_character_flag = j_hit_it
+		remove_character_flag = j_got_hit
+		var:joust_challenger = {
+			remove_character_flag = j_hit_it
+			remove_character_flag = j_got_hit
+		}
+		
+		if = {
+			limit = {
+				has_character_flag = joust_win
+			}
+			play_music_cue =  mx_j_good
+		}
+		else_if = {
+			limit = {
+				has_character_flag = joust_lost
+			}
+			play_music_cue =  mx_j_bad
+		}
+		else = {
+			#play_music_cue =  mx_j_crowd
+		}
+	}
+}
+j_striker = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = is_in_joust_2
+	}
+
+	effect = {
+		add_character_flag = j_in_range
+	}
+}
+j_striker_cleaner = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = j_in_range
+		AND = {
+			var:p_x_loc = var:o_x_loc
+			var:p_y_loc = var:o_y_loc
+		}
+		NOT = {
+			has_character_flag = j_struck
+		}
+	}
+
+	effect = {
+
+		if = {
+			limit = {
+				NOT = { 
+					#has_character_flag = j_struck
+					has_character_flag = j_hit_it
+				}
+				
+			}
+			change_variable = { name = joust_o add = 1 }
+			set_global_variable = { name = j_status value = 3 }
+			add_character_flag = j_got_hit
+			var:joust_challenger = { 
+				add_character_flag = j_hit_it
+			}
+			play_music_cue = mx_j_bad
+		}
+		if = {
+			limit = {
+				var:joust_o = 5
+			}
+			rem_trot = yes
+			add_character_flag = joust_lost
+		}
+
+		remove_character_flag = j_in_range
+		remove_character_flag = is_in_joust_2
+	}
+}
+j_target_in = {
+	is_shown = {
+		AND = {
+			var:p_x_loc = var:o_x_loc
+			var:p_y_loc = var:o_y_loc
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				AND = {
+					var:p_x_loc = var:o_x_loc
+					var:p_y_loc = var:o_y_loc
+					#has_character_flag = j_in_range
+				}
+			}
+			change_variable = { name = joust_s add = 1 }
+			add_character_flag = j_struck
+			add_character_flag = j_hit_it
+			var:joust_challenger = {
+				add_character_flag = j_got_hit
+			}
+			play_music_cue =  mx_j_good
+			set_global_variable = { name = j_status value = 1 }
+		}
+
+		if = {
+			limit = {
+				var:joust_s = 5
+			}
+			
+			rem_trot = yes
+			add_character_flag = joust_win
+			set_global_variable = { name = j_status value = 2 }
+			play_music_cue =  mx_j_good
+		}
+		if = {
+			limit = {
+				var:joust_o = 5
+			}
+			rem_trot = yes
+			add_character_flag = joust_lost
+			play_music_cue =  mx_j_bad
+		}
+	}
+}
+exit_joust = {
+	scope = character
+
+	effect = {
+		if = {
+			limit ={
+				has_character_flag = joust_to_death
+				NOR = {
+					has_character_flag = joust_lost
+					has_character_flag = joust_win
+				}
+			}
+			end_joust = yes
+			death = {
+				killer = root
+			}
+
+		}
+		else_if = {
+			limit ={
+				NOR = {
+					has_character_flag = joust_to_death
+					has_character_flag = joust_lost
+					has_character_flag = joust_win
+				}
+			}
+			add_prestige = -40
+
+			add_opinion = {
+				target = var:joust_challenger
+				modifier = insult_opinion
+				opinion = -25
+			}
+			
+			var:joust_challenger = {
+				add_prestige = 80
+				add_gold = 80
+			}
+			end_joust = yes
+		}
+		else = {
+			end_joust = yes
+		}
+	}
+}
+jf_over = {
+	scope = character
+	is_shown = {
+		NOR = {
+			has_character_flag = joust_lost
+			has_character_flag = joust_win
+		}
+	}
+}
+jf_win3 = {
+	scope = character
+	is_shown = {
+		has_character_flag = joust_win
+	}
+}
+jf_lost3 = {
+	scope = character
+	is_shown = {
+		has_character_flag = joust_lost
+	}
+}
+jf_win2 = {
+	scope = character
+	is_shown = {
+		has_character_flag = joust_win
+		has_character_flag = joust_to_death
+		
+	}
+}
+jf_lost2 = {
+	scope = character
+	is_shown = {
+		has_character_flag = joust_lost
+		has_character_flag = joust_to_death
+		
+	}
+}
+jf_win = {
+	scope = character
+	is_shown = {
+		has_character_flag = joust_win
+		NOT = {
+			has_character_flag = joust_to_death
+		}
+	}
+}
+jf_lost = {
+	scope = character
+	is_shown = {
+		has_character_flag = joust_lost
+		NOT = {
+			has_character_flag = joust_to_death
+		}
+	}
+	effect = {
+		random_list = {
+			1 = {
+				modifier = {
+					OR = {
+						has_trait = brave
+						has_trait = just
+						has_trait = compassionate
+						has_trait = honest
+						has_trait = forgiving
+						has_trait = generous
+					}
+					add = 50
+				}
+				add_character_flag = joust_lost_gg
+			}
+			1 = {
+				modifier = {
+					OR = {
+						has_trait = deceitful
+						has_trait = sadistic
+						has_trait = callous
+						has_trait = greedy
+						has_trait = vengeful
+						has_trait = wrathful
+					}
+					add = 50
+				}
+				add_character_flag = joust_lost_taunt
+			}
+		}
+	}
+}
+joust_llt = {
+	scope = character
+	is_shown ={
+		has_character_flag = joust_lost_taunt
+	}
+}
+joust_llg = {
+	scope = character
+	is_shown ={
+		has_character_flag = joust_lost_gg
+	}
+}
+#wf
+joust_decision_taunt = {
+	scope = character
+
+	effect = {
+		add_prestige = 80
+		add_gold = 80
+		var:joust_challenger = {
+			add_prestige = -40
+			add_opinion = {
+				target = prev
+				modifier = insult_opinion
+				opinion = -25
+			}
+		}
+		end_joust = yes
+	}
+}
+joust_decision_strong_taunt = {
+	scope = character
+
+	effect = {
+		add_prestige = 160
+		add_gold = 160
+		var:joust_challenger = {
+			add_prestige = -80
+			add_opinion = {
+				target = root
+				modifier = insult_opinion
+				opinion = -100
+			}
+			set_relation_rival = prev
+
+			every_close_family_member = {
+				custom = "Every close family member"
+				add_opinion = {
+					target = root
+					modifier = insult_opinion
+					opinion = -50
+				}
+			}
+		}
+		end_joust = yes
+	}
+}
+joust_decision_gg = {
+	scope = character
+
+	effect = {
+		add_prestige = 160
+		var:joust_challenger = {
+			add_prestige = -20
+			add_opinion = {
+				target = root
+				modifier = kindness_opinion
+				opinion = 20
+			}
+
+			every_close_family_member = {
+				custom = "Every close family member"
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 20
+				}
+			}
+		}
+		end_joust = yes
+	}
+}
+#lf
+joust_decision_ftaunt = {
+	scope = character
+
+	is_shown = {
+		AND = {
+			has_character_flag = joust_lost_taunt
+			NOR = {
+				has_character_flag = joust_to_death
+				has_character_flag = joust_lost_gg
+			}
+		}
+	}
+
+	effect = {
+		add_prestige = -40
+
+		add_opinion = {
+			target = var:joust_challenger
+			modifier = insult_opinion
+			opinion = -25
+		}
+		
+		var:joust_challenger = {
+			add_prestige = 80
+			add_gold = 80
+		}
+		
+	}
+}
+joust_decision_fgg = {
+
+	scope = character
+
+	is_shown = {
+		AND ={
+			has_character_flag = joust_lost_gg
+			NOR = {
+				has_character_flag = joust_to_death
+				has_character_flag = joust_lost_taunt
+			}
+		}
+		
+	}
+	effect = {
+		add_opinion = {
+			target = var:joust_challenger
+			modifier = pleased_opinion
+			opinion = 20
+		}
+		add_prestige = -40
+		every_close_family_member = {
+			custom = "Every close family member"
+			add_opinion = {
+				target = prev.var:joust_challenger
+				modifier = pleased_opinion
+				opinion = 20
+			}
+		}
+		var:joust_challenger = {
+			add_prestige = 80
+
+			every_vassal = {
+				custom = "Every vasaal"
+				add_opinion = {
+					target = prev
+					modifier = reputation_opinion
+					opinion = 30
+				}
+			}
+		}
+	}
+}
+#wdd
+joust_decision_dtaunt = {
+	scope = character
+
+	effect = {
+		every_vassal = {
+			custom = "Every vassal"
+			add_opinion = {
+				target = root
+				modifier = cruelty_opinion
+				opinion = -10
+			}
+		}
+		every_close_family_member = {
+			custom = "Every close family member"
+			add_opinion = {
+				target = root
+				modifier = reputation_opinion
+				opinion = 20
+			}
+		}
+		add_gold = 200
+		var:joust_challenger = {
+
+			every_close_family_member = {
+				custom = "Every close family member"
+				set_relation_rival = root
+				add_opinion = {
+					target = root
+					modifier = cruelty_opinion
+					opinion = -100
+				}
+			}
+			end_joust = yes
+			death = {
+				#death_reason = death_duel
+				killer = root
+			}
+		}
+		end_joust = yes
+	}
+}
+joust_decision_strong_dtaunt = {
+	scope = character
+
+	effect = {
+		every_vassal = {
+			custom = "Every vassal"
+			add_opinion = {
+				target = root
+				modifier = reputation_opinion
+				opinion = 20
+			}
+		}
+
+		var:joust_challenger = {
+			pay_short_term_gold = { target = root gold = gold }
+
+			every_close_family_member = {
+				custom = "Every close family member"
+				add_opinion = {
+					target = root
+					modifier = kindness_opinion
+					opinion = 10
+				}
+			}
+		}
+		end_joust = yes
+	}
+}
+joust_decision_dgg = {
+	scope = character
+
+	effect = {
+		root.dynasty = {
+			add_dynasty_prestige_level = 1
+			add_dynasty_prestige = 1000
+		}
+		var:joust_challenger = {
+			add_prestige = -300
+			add_opinion = {
+				target = root
+				modifier = kindness_opinion
+				opinion = 100
+			}
+
+			every_close_family_member = {
+				custom = "Every close family member"
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 100
+				}
+			}
+		}
+		end_joust = yes
+	}
+}
+#ldd
+joust_decision_dlgg = {
+	scope = character
+
+	effect = {
+		every_vassal = {
+			custom = "Every vassal"
+			add_opinion = {
+				target = prev.var:joust_challenger
+				modifier = cruelty_opinion
+				opinion = -40
+			}
+		}
+		every_close_family_member = {
+			custom = "Every close family member"
+			set_relation_rival = prev.var:joust_challenger
+			add_opinion = {
+				target = prev.var:joust_challenger
+				modifier = cruelty_opinion
+				opinion = -100
+			}
+		}
+
+		var:joust_challenger = {
+			add_gold = 150
+			every_close_family_member = {
+				custom = "Every close family member"
+				add_opinion = {
+					target = root.var:joust_challenger
+					modifier = reputation_opinion
+					opinion = 20
+				}
+			}
+		}
+		end_joust = yes
+		death = {
+			#death_reason = death_duel
+			killer = var:joust_challenger
+		}
+
+	}
+}
+joust_decision_strong_dltaunt = {
+	scope = character
+
+	effect = {
+
+		random_list = {
+			3 = {
+				modifier = {
+					OR = {
+						has_trait = brave
+						has_trait = just
+						has_trait = compassionate
+						has_trait = honest
+						has_trait = forgiving
+						has_trait = generous
+					}
+					add = 50
+				}
+				every_close_family_member = {
+					custom = "Every close family member"
+					add_opinion = {
+						target = prev.var:joust_challenger
+						modifier = kindness_opinion
+						opinion = 70
+					}
+				}
+				pay_short_term_gold = { target = var:joust_challenger gold = gold }
+				var:joust_challenger = {
+					add_prestige = 100
+					every_close_family_member = {
+						custom = "Every close family member"
+						add_opinion = {
+							target = prev.var:joust_challenger
+							modifier = kindness_opinion
+							opinion = 10
+						}
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					OR = {
+						has_trait = deceitful
+						has_trait = sadistic
+						has_trait = callous
+						has_trait = greedy
+						has_trait = vengeful
+						has_trait = wrathful
+					}
+					add = 50
+				}
+				every_close_family_member = {
+					custom = "Every close family member"
+					set_relation_rival = root.var:joust_challenger
+					add_opinion = {
+						target = root.var:joust_challenger
+						modifier = cruelty_opinion
+						opinion = -100
+					}
+				}
+				var:joust_challenger = {
+					add_gold = 80
+				}
+				end_joust = yes
+				death = {
+					#death_reason = death_duel
+					killer = var:joust_challenger
+				}
+			}
+		}
+		end_joust = yes
+	}
+}
+joust_decision_dltaunt = {
+	scope = character
+
+	effect = {
+		random_list = {
+
+			1 = {
+				modifier = {
+					OR = {
+						has_trait = brave
+						has_trait = just
+						has_trait = compassionate
+						has_trait = honest
+						has_trait = forgiving
+						has_trait = generous
+					}
+					add = 50
+				}
+
+				var:joust_challenger.dynasty = {
+					add_dynasty_prestige_level = 1
+					add_dynasty_prestige = 1000
+				}
+				add_prestige = -300
+
+				add_opinion = {
+					target = var:joust_challenger
+					modifier = kindness_opinion
+					opinion = 100
+				}
+
+				every_close_family_member = {
+					custom = "Every close family member"
+					add_opinion = {
+						target = prev.var:joust_challenger
+						modifier = pleased_opinion
+						opinion = 100
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					OR = {
+						has_trait = deceitful
+						has_trait = sadistic
+						has_trait = callous
+						has_trait = greedy
+						has_trait = vengeful
+						has_trait = wrathful
+					}
+					add = 50
+				}
+				every_close_family_member = {
+					custom = "Every close family member"
+					set_relation_rival = prev.var:joust_challenger
+					add_opinion = {
+						target = prev.var:joust_challenger
+						modifier = cruelty_opinion
+						opinion = -100
+					}
+				}
+
+				var:joust_challenger = {
+					add_gold = 80
+				}
+				end_joust = yes
+				death = {
+					#death_reason = death_duel
+					killer = var:joust_challenger
+				}
+			}
+	
+		}
+		end_joust = yes
+	}
+}
+trot_pl = {
+
+    scope = character
+
+	effect = {
+		remove_character_flag = horse_ridingpr
+		remove_character_flag = horse_ridingr
+		remove_character_flag = horse_ridingl
+		add_character_flag = horse_ridingpl
+	}
+}
+liege_check = {
+
+    scope = character
+	is_shown = {
+		NOR = {
+			this = var:joust_challenger.liege
+			var:joust_challenger = var:joust_challenger.liege
+			
+			#is_independent_ruler = yes
+		}
+	}
+}
+liege_check2 = {
+
+    scope = character
+	is_shown = {
+		NOT = {
+			#this = var:joust_challenger.liege
+			#var:joust_challenger = var:joust_challenger.liege
+			#root.liege = root
+			is_independent_ruler = yes
+		}
+	}
+}
+trot_l = {
+
+    scope = character
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = is_in_joust
+			}
+		
+			remove_character_flag = horse_ridingpr
+			remove_character_flag = horse_ridingr
+			remove_character_flag = horse_ridingpl
+			add_character_flag = horse_ridingl
+			var:joust_challenger = {
+
+				remove_character_flag = horse_ridingpr
+				remove_character_flag = horse_ridingl
+				remove_character_flag = horse_ridingpl
+				add_character_flag = horse_ridingr
+				
+			}
+		}
+	}
+}
+trot_r = {
+
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = is_in_joust
+			}
+		
+			remove_character_flag = horse_ridingpr
+			remove_character_flag = horse_ridingl
+			remove_character_flag = horse_ridingpl
+			add_character_flag = horse_ridingr
+			var:joust_challenger ={
+				remove_character_flag = horse_ridingpr
+				remove_character_flag = horse_ridingl
+				remove_character_flag = horse_ridingpl
+				add_character_flag = horse_ridingr
+							
+			}
+		}
+
+	}
+}
+
+trot_pr = {
+
+	scope = character
+
+	effect = {
+		remove_character_flag = horse_ridingl
+		remove_character_flag = horse_ridingr
+		remove_character_flag = horse_ridingpl
+		add_character_flag = horse_ridingpr
+	}
+}
+exit_trot = {
+
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = is_in_joust
+			}
+		
+			remove_character_flag = horse_ridingl
+			remove_character_flag = horse_ridingr
+			remove_character_flag = horse_ridingpl
+			remove_character_flag = horse_ridingpr
+			var:joust_challenger = {
+			
+				remove_character_flag = horse_ridingl
+				remove_character_flag = horse_ridingr
+				remove_character_flag = horse_ridingpl
+				remove_character_flag = horse_ridingpr	
+			}
+		}
+
+	}
+}
+j_opening = {
+
+	effect = {
+		set_global_variable = { name = j_status value = 0 }
+		play_music_cue =  mx_j_open
+	}
+}
+j_opening_crowd = {
+
+	effect = {
+		#play_music_cue =  mx_j_crowd
+	}
+}
+j_now = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = is_in_joust
+
+		NOR = {
+			has_character_flag = joust_win
+			has_character_flag = joust_lost
+			has_character_flag = j_struck
+		}
+	}
+
+	effect = {
+		set_global_variable = { name = j_status value = 0 }
+		change_variable = { name = joust_h add = 1 }
+
+		random_list = {
+			1 = { 
+				set_variable = { name = o_y_loc value = -125 }
+				set_variable = { name = o_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -125 }
+				set_variable = { name = o_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -125 }
+				set_variable = { name = o_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -125 }
+				set_variable = { name = o_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -125 }
+				set_variable = { name = o_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -125 }
+				set_variable = { name = o_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = o_y_loc value = -75 }
+				set_variable = { name = o_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -75 }
+				set_variable = { name = o_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -75 }
+				set_variable = { name = o_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -75 }
+				set_variable = { name = o_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -75 }
+				set_variable = { name = o_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -75 }
+				set_variable = { name = o_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = o_y_loc value = -25 }
+				set_variable = { name = o_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -25 }
+				set_variable = { name = o_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -25 }
+				set_variable = { name = o_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -25 }
+				set_variable = { name = o_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -25 }
+				set_variable = { name = o_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = -25 }
+				set_variable = { name = o_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = o_y_loc value = 25 }
+				set_variable = { name = o_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 25 }
+				set_variable = { name = o_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 25 }
+				set_variable = { name = o_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 25 }
+				set_variable = { name = o_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 25 }
+				set_variable = { name = o_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 25 }
+				set_variable = { name = o_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = o_y_loc value = 75 }
+				set_variable = { name = o_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 75 }
+				set_variable = { name = o_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 75 }
+				set_variable = { name = o_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 75 }
+				set_variable = { name = o_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 75 }
+				set_variable = { name = o_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 75 }
+				set_variable = { name = o_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = o_y_loc value = 125 }
+				set_variable = { name = o_x_loc value = -125 }  
+			}
+			1 = { 
+				
+				set_variable = { name = o_y_loc value = 125 }
+				set_variable = { name = o_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 125 }
+				set_variable = { name = o_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 125 }
+				set_variable = { name = o_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 125 }
+				set_variable = { name = o_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = o_y_loc value = 125 }
+				set_variable = { name = o_x_loc value = 125 }  
+			}
+		}
+		random_list = {
+			1 = { 
+				set_variable = { name = p_y_loc value = -125 }
+				set_variable = { name = p_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -125 }
+				set_variable = { name = p_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -125 }
+				set_variable = { name = p_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -125 }
+				set_variable = { name = p_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -125 }
+				set_variable = { name = p_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -125 }
+				set_variable = { name = p_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = p_y_loc value = -75 }
+				set_variable = { name = p_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -75 }
+				set_variable = { name = p_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -75 }
+				set_variable = { name = p_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -75 }
+				set_variable = { name = p_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -75 }
+				set_variable = { name = p_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -75 }
+				set_variable = { name = p_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = p_y_loc value = -25 }
+				set_variable = { name = p_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -25 }
+				set_variable = { name = p_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -25 }
+				set_variable = { name = p_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -25 }
+				set_variable = { name = p_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -25 }
+				set_variable = { name = p_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = -25 }
+				set_variable = { name = p_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = p_y_loc value = 25 }
+				set_variable = { name = p_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 25 }
+				set_variable = { name = p_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 25 }
+				set_variable = { name = p_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 25 }
+				set_variable = { name = p_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 25 }
+				set_variable = { name = p_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 25 }
+				set_variable = { name = p_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = p_y_loc value = 75 }
+				set_variable = { name = p_x_loc value = -125 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 75 }
+				set_variable = { name = p_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 75 }
+				set_variable = { name = p_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 75 }
+				set_variable = { name = p_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 75 }
+				set_variable = { name = p_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 75 }
+				set_variable = { name = p_x_loc value = 125 }  
+			}
+			#
+			1 = { 
+				set_variable = { name = p_y_loc value = 125 }
+				set_variable = { name = p_x_loc value = -125 }  
+			}
+			1 = { 
+				
+				set_variable = { name = p_y_loc value = 125 }
+				set_variable = { name = p_x_loc value = -75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 125 }
+				set_variable = { name = p_x_loc value = -25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 125 }
+				set_variable = { name = p_x_loc value = 25 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 125 }
+				set_variable = { name = p_x_loc value = 75 }  
+			}
+			1 = { 
+				set_variable = { name = p_y_loc value = 125 }
+				set_variable = { name = p_x_loc value = 125 }  
+			}
+		}
+	}
+}

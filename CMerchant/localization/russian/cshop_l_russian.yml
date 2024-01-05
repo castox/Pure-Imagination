@@ -1,0 +1,20 @@
+﻿l_russian:
+
+
+CURRENT_HELMET: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_helmet').GetFlagName), '!'))]" 
+CURRENT_PLATES: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_plates').GetFlagName), '!'))]" 
+CURRENT_PANTS: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_pants').GetFlagName), '!'))]" 
+CURRENT_RANGE: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_range').GetFlagName), '!'))]" 
+CURRENT_PROJECTILE: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_projectile').GetFlagName), '!'))]" 
+CURRENT_NECK: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_neck').GetFlagName), '!'))]" 
+CURRENT_SHOULDERS: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_shoulders').GetFlagName), '!'))]" 
+CURRENT_GLOVES: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_gloves').GetFlagName), '!'))]" 
+CURRENT_ACCESSORY: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_accessory').GetFlagName), '!'))]" 
+CURRENT_BOOTS: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_boots').GetFlagName), '!'))]" 
+CURRENT_WEAPON: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_weapon').GetFlagName), '!'))]" 
+CURRENT_SHIELD: "[Localize(Concatenate(Concatenate('@cs_',GetPlayer.MakeScope.Var('current_shield').GetFlagName), '!'))]" 
+
+
+CSHOP_NAME: "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+CSHOP_ICON: "[Localize(Concatenate(Concatenate('@cs_',Scope.GetFlagName), '!'))]" 
+

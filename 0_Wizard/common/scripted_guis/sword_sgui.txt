@@ -1,0 +1,197 @@
+
+move_forward = {
+
+	scope = character
+
+	is_shown = {
+		has_character_flag = sw_walk_forward
+	}
+
+	effect = {
+		set_variable  = { name = plane_value_2 value = -700 }
+		remove_character_flag = sw_attack
+		remove_character_flag = sw_attack_hit
+		remove_character_flag = sw_walk_backward
+		add_character_flag = sw_walk_forward
+	}
+}
+move_trigger = {
+	scope = character
+
+	effect = {
+		if = {
+			limit = {
+				has_character_flag = sw_walk_forward
+			}
+			if ={
+				limit = {
+					NOT = { has_variable = plane_value }
+				}
+				set_variable  = { name = plane_value value = 0 }			
+			}
+			change_variable = { name = plane_value subtract = 5 }
+		}
+		if = {
+			limit = {
+				has_character_flag = sw_walk_backward
+			}
+			if ={
+				limit = {
+					NOT = { has_variable = plane_value }
+				}
+				set_variable  = { name = plane_value value = 0 }			
+			}
+			change_variable = { name = plane_value add = 5 }
+		}
+	}
+}
+
+move_r_forward = {
+	scope = character
+	is_shown = {
+		has_character_flag = sw_walk_forward
+	}
+	effect = {
+		remove_character_flag = sw_walk_forward
+	}
+}
+move_r_backward = {
+	scope = character
+	is_shown = {
+		has_character_flag = sw_walk_backward
+	}
+	effect = {
+		remove_character_flag = sw_walk_backward
+	}
+}
+move_backward = {
+	scope = character
+	is_shown = {
+		has_character_flag = sw_walk_backward
+	}
+	effect = {
+	
+		remove_character_flag = sw_attack
+		remove_character_flag = sw_attack_hit
+		add_character_flag = sw_walk_backward
+		remove_character_flag = sw_walk_forward
+	}
+}
+
+move_strike = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = sw_attack
+	}
+	effect = {
+	
+		add_character_flag = sw_attack
+		remove_character_flag = sw_attack_hit
+		remove_character_flag = sw_walk_backward
+		remove_character_flag = sw_walk_forward
+		set_variable  = { name = plane_value_x value = 0 }
+		change_variable = { name = plane_value_x add = var:plane_value }
+		change_variable = { name = plane_value_x subtract = var:plane_value_2 }
+		if = {
+			limit = {
+				AND = {
+					var:plane_value_x > 259
+					var:plane_value_x < 301
+				}
+			}
+			global_var:castox = {
+				add_character_flag = sw_attack_hit
+				remove_character_flag = sw_walk_backward
+				remove_character_flag = sw_walk_forward
+				remove_character_flag = sw_attack
+			}
+		}
+	}
+}
+move_hit2 = {
+	scope = character
+	is_shown = {
+		global_var:castox = {
+			has_character_flag = sw_attack_hit
+		}
+	}
+	effect = {
+		global_var:castox = {
+			add_character_flag = sw_attack_hit
+			remove_character_flag = sw_walk_backward
+			remove_character_flag = sw_walk_forward
+			remove_character_flag = sw_attack
+		}
+
+	}
+}
+move_hit = {
+	scope = character
+	is_shown = {
+		has_character_flag = sw_attack_hit
+	}
+	effect = {
+		add_character_flag = sw_attack_hit
+		remove_character_flag = sw_walk_backward
+		remove_character_flag = sw_walk_forward
+		remove_character_flag = sw_attack
+
+	}
+}
+move_victory = {
+	scope = character
+	is_shown = {
+		has_character_flag = sw_victory
+	}
+	effect = {
+		add_character_flag = sw_victory
+		remove_character_flag = sw_attack_hit
+		remove_character_flag = sw_walk_backward
+		remove_character_flag = sw_walk_forward
+		remove_character_flag = sw_attack
+
+	}
+}
+move_stop = {
+	scope = character
+
+	effect = {
+		remove_character_flag = move_reset
+	}
+}
+move_reset = {
+	scope = character
+	is_shown = {
+		has_character_flag = move_reset
+	}
+	effect = {
+
+		set_variable  = { name = plane_value_x value = 0 }
+		change_variable = { name = plane_value_x add = var:plane_value }
+		change_variable = { name = plane_value_x subtract = var:plane_value_2 }
+		remove_character_flag = move_reset
+		remove_character_flag = sw_attack
+		remove_character_flag = sw_attack_hit
+		remove_character_flag = sw_walk_backward
+		remove_character_flag = sw_walk_forward
+		remove_character_flag = sw_victory
+	}
+}
+move_reset2 = {
+	scope = character
+	is_shown = {
+		has_character_flag = move_reset
+	}
+	effect = {
+		global_var:castox = {
+			remove_character_flag = move_reset
+			remove_character_flag = sw_attack
+			remove_character_flag = sw_attack_hit
+			remove_character_flag = sw_walk_backward
+			remove_character_flag = sw_walk_forward
+			remove_character_flag = sw_victory
+		}
+
+	}
+}

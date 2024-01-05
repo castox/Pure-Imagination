@@ -1,0 +1,146 @@
+﻿
+#fishes
+move_my_fish = {
+	
+	set_variable = { name = fish_loc value = fish_spot }
+
+}
+tier_1_fish = {
+	set_variable = { name = fish_tier value = 1 }
+	add_character_flag = fish_on_line
+	set_variable = { name = fish_score value = 100 }
+	random_list = {
+
+		30 = {
+			
+
+			set_variable = {
+				name = current_fish1
+				value = flag:fish1
+			}
+		}
+		30 = {
+			
+
+			set_variable = {
+				name = current_fish1
+				value = flag:fish2
+			}
+		}
+		30 = {
+			
+
+			set_variable = {
+				name = current_fish1
+				value = flag:fish3
+			}
+		}
+		30 = {
+
+			set_variable = {
+				name = current_fish1
+				value = flag:fish13
+			}
+		}
+	}
+}
+tier_2_fish = {
+	set_variable = { name = fish_tier value = 1 }
+	add_character_flag = fish_on_line
+	set_variable = { name = fish_score value = 80 }
+	random_list = {
+
+		50 = {
+
+			set_variable = {
+				name = current_fish1
+				value = flag:fish4
+			}
+
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish5
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish10
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish11
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish14
+			}
+		}
+	}
+}
+tier_3_fish = {
+	set_variable = { name = fish_tier value = 1 }
+	add_character_flag = fish_on_line
+	set_variable = { name = fish_score value = 60 }
+	random_list = {
+		40 = {
+			
+			set_variable = {
+				name = current_fish1
+				value= flag:fish16
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value= flag:fish7
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish8
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish9
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish15
+			}
+		}
+		50 = {
+
+			set_variable = {
+				name = current_fish1
+				value = flag:fish12
+			}
+		}
+		50 = {
+			
+			set_variable = {
+				name = current_fish1
+				value = flag:fish6
+			}
+		}
+	}
+}

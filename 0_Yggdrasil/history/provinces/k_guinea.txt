@@ -1,0 +1,48 @@
+# 6988 - ODIENNE
+6988 = {	# 6988 - ODIENNE
+	
+	# Misc
+	culture = ogre
+851.1.1 = { culture = ogre }
+850.1.1 = { religion = ogre }  # malinke
+	religion = ogre  # west_african_pagan
+	
+	# History
+
+}
+
+# 8178 - TAMISO
+8178 = {	# 8178 - TAMISO
+	
+	# Misc
+	culture = ogre
+851.1.1 = { culture = ogre }
+850.1.1 = { religion = ogre }  # mel
+	religion = ogre  # west_african_roog_pagan
+	
+	# History
+
+}
+
+# 8159 - MACENTA
+8159 = {	# 8159 - MACENTA
+	
+	# Misc
+	culture = ogre
+851.1.1 = { culture = ogre }
+850.1.1 = { religion = ogre }  # mel
+	religion = ogre  # west_african_pagan
+	
+	# History
+
+}
+# 8222 - WENYON
+8222 = {
+	# Misc
+	culture = ogre
+851.1.1 = { culture = ogre }
+850.1.1 = { religion = ogre }  # kru
+	religion = ogre  # akom_pagan
+	
+	# History
+}

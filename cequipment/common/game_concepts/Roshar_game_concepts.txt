@@ -1,0 +1,312 @@
+﻿
+dawncity_holding = {
+	alias = { dawncity dawncities dawncity_holdings }
+	parent = holding_type
+	texture = "gfx/interface/icons/icon_holding_castle.dds"
+}
+
+codes_of_war = {
+	alias = { codes }
+	texture = "gfx/interface/icons/war_status/war_icon.dds"
+} 
+
+highprincedom = {
+	alias = { highprincedoms highprince highprinces}
+	parent = title
+
+	texture = "gfx/interface/coat_of_arms/crown_strip_115_gameconcept.dds"
+	framesize = { 104 104 }
+	frame = 4
+}
+
+era_of_solitude = {
+	texture = "gfx/interface/icons/message_feed/learning.dds"
+}
+
+silver_kingdom = {
+	alias = { silver_kingdoms epoch_kingdom epoch_kingdoms }
+	parent = title
+	texture = "gfx/interface/coat_of_arms/crown_strip_115_gameconcept.dds"
+	framesize = { 104 104 }
+	frame = 5
+}
+
+herald = {
+	alias = { heralds kadasix kadasixes elin}
+	texture = "/gfx/interface/icons/traits/herald.dds"
+}
+
+knights_radiant ={
+	alias = {knight_radiant radiant radiants radiant_glyph}
+	texture = "gfx/interface/icons/glyphs/SLA_symbol_100.png"
+}
+nahel_bond = {
+	alias = {bond}
+}
+radiant_squire = {
+	alias = {squire squires radiant_squires squirehood squireship}
+}
+
+radiant_mentor = {
+	alias = {radiant_mentors}
+}
+
+voidbringer = {
+	alias = { voidbringers voidbinders voidbinding voidbinder}
+	texture = "gfx/interface/icons/modifiers/magic_negative.dds"
+}
+
+desolation = {
+	alias = { desolations }
+	texture = "gfx/interface/icons/message_feed/learning.dds"
+}
+
+last_desolation = {
+	alias = { aharietiam }
+	texture = "gfx/interface/icons/message_feed/learning.dds"
+}
+
+almighty = {
+	alias = { the_almighty honor tanavast } 
+	texture = "gfx/interface/icons/religion/eastern_vorin.dds"
+}
+
+ashyn = {
+	alias = { tranquiline_halls human_home}
+}
+
+braize = {
+	alias = { damnation }
+}
+
+roshar = {
+#	alias = { Roshar }
+}
+
+highstorm = {
+	alias = { highstorms stormfather storm storms wind}
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+
+investiture = {
+	alias = { invested investitures investiture_i stormlight magic magic_i}
+	texture = "gfx/interface/icons/icon_investiture.dds"
+}
+
+adhesion = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+gravitation = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+division = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+abrasion = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+progression = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+illumination = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+transformation = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+transportation = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+cohesion = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+tension = { 
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+
+windrunner = { 
+	alias = {windrunners windrunner_glyph}
+	texture = "gfx/interface/icons/glyphs/Windrunners.png"
+}
+skybreaker = { 
+	alias = {skybreakers skybreaker_glyph}
+	texture = "gfx/interface/icons/glyphs/Skybreakers.png"
+}
+dustbringer = { 
+	alias = {dustbringers dustbringer_glyph}
+	texture = "gfx/interface/icons/glyphs/Dustbringers.png"
+}
+edgedancer = { 
+	alias = {edgedancers edgedancer_glyph}
+	texture = "gfx/interface/icons/glyphs/Edgedancers.png"
+}
+truthwatcher = { 
+	alias = {truthwatchers truthwatcher_glyph}
+	texture = "gfx/interface/icons/glyphs/Truthwatchers.png"
+}
+lightweaver = { 
+	alias = {lightweavers lightweaver_glyph}
+	texture = "gfx/interface/icons/glyphs/Lightweavers.png"
+}
+elsecaller = { 
+	alias = {elsecallers elsecaller_glyph}
+	texture = "gfx/interface/icons/glyphs/Elsecallers.png"
+}
+willshaper = { 
+	alias = {willshapers willshaper_glyph}
+	texture = "gfx/interface/icons/glyphs/Willshapers.png"
+}
+stoneward = { 
+	alias = {stonewards stoneward_glyph}
+	texture = "gfx/interface/icons/glyphs/Stonewards.png"
+}
+bondsmith = { 
+	alias = {bondsmiths bondsmith_glyph}
+	texture = "gfx/interface/icons/glyphs/Bondsmiths.png"
+}
+
+shard_of_adonalsium = {
+	alias = { shards_of_adonalsium shard shards adonalsium god gods}
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+
+surgebinding = {
+	alias = { surge surges surgebinder surgebinders surgebindings surgebind}
+	texture = "gfx/interface/icons/modifiers/magic_positive.dds"
+}
+
+first_ideal_of_the_knights_radiant = { alias = { first_ideal }}
+
+singers = {
+	alias = { singer singer_i}
+	texture = "gfx/interface/icons/character_status/icon_singer.dds"
+}
+humans = {
+	alias = { human humanity human_i}
+	texture = "gfx/interface/icons/character_status/icon_human.dds"
+}
+
+spren = {}
+
+siah = {
+	alias = {siah_aimian}
+}
+dysian = {
+	alias = {dysian_aimian sleepless}
+}
+
+jezrien = { alias = {jezerezeh yezier jezerezeh_elin jes}}
+
+nale = { alias = {nalan nalan_elin nin nin_son_god nakku nan}}
+
+chana = { alias = {chanarach chanarach_elin chach}}
+
+vedel = { alias = {vedeledev_elin vev}}
+
+pailiah = { alias = {palah pali}}
+
+ash  = { alias = {shalash_elin shalash shallash shash}}
+
+battar = { alias = {battah battah_elin betab}}
+
+kalak = { alias = {kelek kelek_elin kellai restares kak}}
+
+talenel = { alias = {taln talenelat talenelat_elin stonesinew tanat bearer_of_agonies the_bearer_of_agonies tuk}}
+
+ishar = { alias = {ishi tashi tezim ishu_son_god }}
+
+rhythms = {
+	alias = { rhythm }
+	texture = "gfx/interface/icons/modifiers/rhythm_positive.dds"
+}
+
+gemhearts = {
+	alias = { gemheart }
+	texture = "gfx/interface/icons/character_status/icon_singer.dds"
+}
+
+forms = {alias = { form }}
+
+shardblades = {alias = { shardblade }}
+
+shardplate = {}
+
+cultivation = {
+alias = { koravellium_avast mother_cultivation mother_of_the_world koravari}
+	texture = "/gfx/interface/icons/currencies/icon_dynasty_prestige_05.dds"
+}
+
+odium = {
+	alias = { rayse void father_of_hatred passion_god}	
+	texture = "/gfx/interface/icons/currencies/icon_prestige_00.dds"
+}
+
+unmade = {
+	texture = "/gfx/interface/icons/currencies/icon_prestige_00.dds"
+}
+
+song_of_listing = {
+	texture = "gfx/interface/icons/modifiers/rhythm_positive.dds"
+}
+
+recreance = {
+	alias = {fall_of_the_knights_radiant}
+}
+
+darkeyed = {
+	alias = {darkeyed_i darkeyes darklord }
+	texture = "gfx/interface/icons/character_status/icon_darkeyed_big.dds"
+	framesize = { 189 189 }
+}
+lighteyed = {
+	alias = {lighteyed_i lighteyes brightlord brightness}
+	texture = "gfx/interface/icons/character_status/icon_lighteyed_big.dds"
+	framesize = { 189 189 }
+	#size = { 90 45 }
+}
+redeyed = {
+	alias = {redeyed_i redeyes }
+	texture = "gfx/interface/icons/character_status/icon_redeyed_big.dds"
+	framesize = { 189 189 }
+}
+
+artifact = {
+	alias = {artifacts equipment item items handheld weapon armor headgear jewelry mount}
+	texture = "gfx/artifacts/maintab_artifacts.dds"
+}
+armor_value = {
+}
+
+book = {
+	alias = {book_i books tome tomes treatise treatises}
+	texture = "gfx/interface/booklet/icon.dds"
+}
+
+species = {
+	alias = {race}
+}
+
+stances = {
+	alias = {dueling_stances dueling_stance stance}
+}
+windstance = {}
+flamestance = {}
+bloodstance = {}
+smokestance = {}
+stonestance = {}
+vinestance = {}
+ironstance = {}
+
+ten_essences = {
+	alias = {essence essences}
+}
+first_essence = {}
+second_essence = {}
+third_essence = {}
+fourth_essence = {}
+fifth_essence = {}
+sixth_essence = {}
+seventh_essence = {}
+eighth_essence = {}
+ninth_essence = {}
+tenth_essence = {}

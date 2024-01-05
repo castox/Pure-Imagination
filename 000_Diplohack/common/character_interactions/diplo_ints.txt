@@ -1,0 +1,234 @@
+﻿diplo_start = {
+
+
+	category = interaction_category_diplomacy
+	icon = _missing_interaction
+	interface_priority = 70
+	common_interaction = yes
+
+	auto_accept = yes
+	use_diplomatic_range = yes
+	ignores_pending_interaction_block = no
+
+	cooldown_against_recipient = { years = 5 }
+
+	desc = diplo_send_info
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			is_imprisoned = no
+			NOR = { 
+				AND =  {
+					exists = court_position:envoy_court_position
+					court_position:envoy_court_position = scope:recipient 
+				}
+				
+				this = scope:recipient 
+			}
+		}
+		#future use
+		scope:recipient = {
+			is_landed = yes
+			is_imprisoned = no
+			#is_available = yes
+			highest_held_title_tier > tier_barony
+			is_theocratic_lessee = no
+
+			NOT = {
+				has_government = theocracy_government
+				#is_at_war_with = scope:actor
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+
+		scope:actor = {
+			custom_tooltip = {
+				text = diplo_able
+				employs_court_position = envoy_court_position
+			}
+		}
+
+		custom_tooltip = {
+			text = diplo_enabled
+
+			NOT = {
+				global_var:diplo_deal_started = 1
+				global_var:diplo_deal_started = 2
+			}
+		}
+
+	}
+	cost = {
+		prestige = {
+			if = {
+				limit = {
+					scope:actor = {
+						tier_difference = {
+							target = scope:recipient
+							value = 3
+						}
+					}
+				}
+				if = {
+					limit = {
+						exists = global_var:diplo_emode 
+					}
+					value = 25`
+				}
+				else = {
+					value = 50
+				}
+			}
+			if = {
+				limit = {
+					scope:actor = {
+						tier_difference = {
+							target = scope:recipient
+							value = 2
+						}
+					}
+				}
+				if = {
+					limit = {
+						exists = global_var:diplo_emode 
+					}
+					value = 35
+				}
+				else = {
+					value = 70
+				}
+			}
+			if = {
+				limit = {
+					scope:actor = {
+						tier_difference = {
+							target = scope:recipient
+							value = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						exists = global_var:diplo_emode 
+					}
+					value = 40
+				}
+				else = {
+					value = 80
+				}
+			}
+			if = {
+				limit = {
+					scope:actor = {
+						tier_difference = {
+							target = scope:recipient
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						exists = global_var:diplo_emode 
+					}
+					value = 45
+				}
+				else = {
+					value = 90
+				}
+			}
+			if = {
+				limit = {
+					scope:actor = {
+						tier_difference = {
+							target = scope:recipient
+							value = -1
+						}
+					}
+				}
+				if = {
+					limit = {
+						exists = global_var:diplo_emode 
+					}
+					value = 55
+				}
+				else = {
+					value = 110
+				}
+			}
+			if = {
+				limit = {
+					scope:actor = {
+						tier_difference = {
+							target = scope:recipient
+							value = -2
+						}
+					}
+				}
+				if = {
+					limit = {
+						exists = global_var:diplo_emode 
+					}
+					value = 65
+				}
+				else = {
+					value = 130
+				}
+			}
+			if = {
+				limit = {
+					scope:actor = {
+						tier_difference = {
+							target = scope:recipient
+							value = -3
+						}
+					}
+				}
+
+				if = {
+					limit = {
+						exists = global_var:diplo_emode 
+					}
+					value = 75
+				}
+				else = {
+					value = 150
+				}
+			}
+
+		}
+		gold = {
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 1 } } exists = global_var:diplo_emode } } value = 20 }
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 1 } } NOT = { exists = global_var:diplo_emode } } } value = 50 }
+
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 2 } } exists = global_var:diplo_emode } } value = 15 }
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 2 } } NOT = { exists = global_var:diplo_emode } } } value = 40 }
+
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 3 } } exists = global_var:diplo_emode } } value = 10 }
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 3 } } NOT = { exists = global_var:diplo_emode } } } value = 30 }
+
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 4 } } exists = global_var:diplo_emode } } value = 5 }
+			if = { limit = {  AND = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 4 } } NOT = { exists = global_var:diplo_emode } } } value = 20 }
+
+			if = { limit = { scope:actor = { court_position:envoy_court_position = { aptitude:envoy_court_position = 5 } } } value = 0 }
+		}
+	}
+	on_accept = {
+		
+		scope:actor = {
+			#trigger_event = {
+			#	id = diplo_deal_event.1000
+			#}
+			reset_diplo = yes
+			set_diplo_players = yes
+			set_diplo_lands = yes
+			set_diplo_marriage = yes
+			set_global_variable = { name = diplo_deal_view value = 1 }
+		}
+		scope:recipient = {
+			save_opinion_value_as = { name = opin target = scope:actor }
+			set_global_variable = { name = opi value = scope:opin }
+		}
+		
+	}
+}

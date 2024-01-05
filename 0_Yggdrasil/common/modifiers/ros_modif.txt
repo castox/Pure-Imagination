@@ -1,0 +1,17 @@
+﻿
+spartan_ideals = {
+	icon = spartan_ideals
+	stress_gain_mult = -10
+	stress_loss_mult = -10
+	
+}
+
+private_raid_modifier = {
+	icon = county_modifier_opinion_negative
+	independent_ruler_opinion = -5
+}
+
+blasted = {
+	icon = county_modifier_opinion_negative
+	levy_size = -1000
+}

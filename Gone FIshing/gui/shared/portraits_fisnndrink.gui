@@ -1,0 +1,214 @@
+######################################################
+################## PORTRAIT TYPES ####################
+######################################################
+
+types FishNDrink
+{
+
+    ####################################
+    ######### MAIN PORTRAITS ###########
+    ####################################
+
+    # The standard portrait types. CoA, opinion and status icons are included by default; use blockovveride to disable them.
+    type portrait_fish = widget {
+        size = { 1920 1080 }
+        allow_outside = yes
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_battlefield', 'camera_fishing', 'CCfish', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type portrait_fish_norse = widget {
+        size = { 1920 1080 }
+        allow_outside = yes
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_armory', 'camera_fishing2', 'CCfish', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type portrait_fish_lake = widget {
+        size = { 1920 1080 }
+        allow_outside = yes
+        tooltip_enabled = no
+        portrait_button = {
+            allow_outside = yes
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 1290 1470 }
+			using = portrait_base_tavern
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_portrait_editor', 'camera_fishing3', 'CCfish', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/interface/tavern_gfx/mask_off.dds"
+            
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type portrait_drink = widget {
+        size = { 830 1010 }
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 790 970 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'drinking_pri', 'CCdrink', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_character_view.dds"
+            }
+            effectname = "NoHighlight"
+
+		   }
+    } 
+    type portrait_drink_opp = widget {
+        size = { 830 1010 }
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 790 970 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'drinking_sec', 'CCdrink', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_character_view.dds"
+            }
+            effectname = "NoHighlight"
+
+		   }
+    } 
+    type portrait_drink_spouse = widget {
+        size = { 100 280 }
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 100 280 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'drinking_spouse', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_character_view.dds"
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type portrait_drink_random_1 = widget {
+        size = { 410 590 }
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 410 590 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'drinking_rando1', 'CCcheer', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_character_view.dds"
+            }
+            effectname = "NoHighlight"
+
+		   }
+    } 
+    type portrait_drink_random_2 = widget {
+        size = { 570 750 }
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 570 750 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'drinking_rando2', 'CCcheer', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_character_view.dds"
+            }
+            effectname = "NoHighlight"
+
+		   }
+    } 
+    type portrait_drink_random_3 = widget {
+        size = { 220 390 }
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 220 390 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'drinking_rando3', 'CCdrunk', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_character_view.dds"
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    type portrait_drink_random_4 = widget {
+        size = { 230 410 }
+        tooltip_enabled = no
+        portrait_button = {
+            tooltip_enabled = no
+            parentanchor = bottom|hcenter
+            size = { 230 410 }
+			using = portrait_base
+			alwaystransparent = yes
+            block "portrait_texture" {
+                portrait_texture = "[Character.GetAnimatedPortrait('environment_event_feast', 'drinking_rando4', 'CCcheer', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            }
+            block "mask" {
+                mask = "gfx/portraits/portrait_mask_character_view.dds"
+            }
+            effectname = "NoHighlight"
+
+		   }
+    }
+    
+}
+

@@ -1,0 +1,132 @@
+﻿
+
+king_nothing_decision = {
+	picture = "gfx/kn_dec.dds"
+	major = yes
+	ai_check_interval = 60
+	desc = found_kingdom_decision_desc
+
+
+
+	is_shown = {
+		NOT = { has_character_modifier = king_nothing_modifier }
+	}
+
+	is_valid = {
+
+		is_independent_ruler = yes
+		custom_description = {
+			text = kn_requirements
+			any_held_title = {
+				count >= 1
+				tier = tier_duchy
+			}
+		}
+
+	}
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 200
+		prestige = 400
+		piety = 100
+	}
+
+
+	effect = {
+
+		hidden_effect = {
+			add_character_modifier =  { modifier = king_nothing_modifier }
+		}
+	
+		create_custom_kingdom_effect = yes
+		custom_tooltip = kn_gain_nothing
+		if = {
+			limit = {
+				is_ai = no
+				NOT = { exists = global_var:found_kingdom_decision  }
+			}
+			set_global_variable = {
+				name = found_kingdom_decision
+				value = root
+			}
+			set_global_variable = {
+				name = found_kingdom_decision_kingdom
+				value = root.primary_title
+			}
+		}
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
+
+rem_king_nothing_decision = {
+	picture = "gfx/rem_kn_dec.dds"
+	major = yes
+	ai_check_interval = 60
+	desc = kn_i_must_admit
+
+
+	is_shown = {
+		has_character_modifier = king_nothing_modifier
+	}
+
+	is_valid = {
+		prestige_level >= 3
+		has_character_modifier = king_nothing_modifier
+		is_independent_ruler = yes
+		OR = {
+			custom_description = {
+				text = found_kingdom_decision_three_duchies_held
+				any_held_title = {
+					count > 2
+					tier = tier_duchy
+				}
+			}
+			custom_description = {
+				text = kn_hold_another
+				any_held_title = {
+					count >= 2
+					tier = tier_kingdom
+				}
+			}
+			sub_realm_size >= 30
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		prestige = 600
+		piety = 100
+	}
+
+
+	effect = {
+		hidden_effect = { = {
+			remove_character_modifier =  { modifier = king_nothing_modifier }
+		}
+		custom_tooltip = kn_rem_nothing
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

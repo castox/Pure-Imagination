@@ -1,0 +1,40 @@
+﻿mission_1 = {
+    picture = gfx/interface/illustrations/decisions/guild_2.dds
+  	major = yes
+    title = "Guild Introduction"
+    desc = "Take the guild placement test and receive your class and magic assessment"
+    selection_tooltip = "Accept"
+    confirm_text = "Accept"
+
+    is_shown = {
+		  is_ai = no
+    }
+
+    effect = {
+      trigger_event = guild_event.1
+    }
+  	ai_check_interval = 0
+
+    ai_will_do = 0
+}
+
+mission_2 = {
+    picture = gfx/interface/illustrations/decisions/guild_2.dds
+  	major = yes
+    title = "Quest: Goblins in the North"
+    desc = "Quest"
+    selection_tooltip = "Accept Quest"
+    confirm_text = "Accept Quest"
+
+    is_shown = {
+		is_ai = no
+    }
+
+     effect = {
+      trigger_event = guild_event.2
+    }
+
+	ai_check_interval = 0
+
+    ai_will_do = 0
+}

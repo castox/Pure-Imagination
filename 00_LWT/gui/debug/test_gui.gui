@@ -1,0 +1,107 @@
+
+
+# This window is just for testing. You can spawn it from the console menu.
+window = {
+	name = "test_window"
+	# parentanchor = right
+	# position = { -50 100 }
+	size = { 1100 920 }
+	layer = top
+	filter_mouse = all
+	alwaystransparent = no
+
+	using = Window_Background
+	using = Window_Decoration
+	using = Window_Movable
+	state = {
+		trigger_on_create = yes
+		name = a
+		on_start = "[GetScriptedGui('set_talker_test').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+	}
+
+	text_single = {
+		visible = "[GetVariableSystem.Exists( 'start_talk' )]"
+		parentanchor = top|hcenter
+		text = "thisssssssssssssssssssssssssssssssssss"
+	}
+	portrait_body_test = {
+		datacontext = "[GetPlayer]"
+		parentanchor = center
+		animation_talk = {}
+		visible = yes
+	}
+	#
+	button_standard = {
+		
+		parentanchor =  bottom|right
+		raw_text = "set pose d"
+		position = { -100 -400 }
+		size = { 120 30 }
+		onclick = "[GetScriptedGui('talk_mode_d').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+	}
+	button_standard = {
+		
+		parentanchor =  bottom|right
+		raw_text = "set pose a"
+		position = { -100 -450 }
+		size = { 120 30 }
+		onclick = "[GetScriptedGui('talk_mode_a').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+	}
+	button_standard = {
+		
+		parentanchor =  bottom|right
+		raw_text = "set pose e"
+		position = { -100 -500 }
+		size = { 120 30 }
+		onclick = "[GetScriptedGui('talk_mode_e').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+	}
+	button_standard = {
+		
+		parentanchor =  bottom|right
+		raw_text = "set pose i"
+		position = { -100 -550 }
+		size = { 120 30 }
+		onclick = "[GetScriptedGui('talk_mode_i').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+	}
+	button_standard = {
+		
+		parentanchor =  bottom|right
+		raw_text = "set pose o"
+		position = { -100 -600 }
+		size = { 120 30 }
+		onclick = "[GetScriptedGui('talk_mode_o').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+	}
+	button_standard = {
+		
+		parentanchor =  bottom|right
+		raw_text = "set pose u"
+		position = { -100 -650 }
+		size = { 120 30 }
+		onclick = "[GetScriptedGui('talk_mode_u').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+	}
+	button_standard = {
+		
+		parentanchor =  bottom|right
+		raw_text = "Talk"
+		position = { -100 -300 }
+		size = { 120 30 }
+		onclick = "[GetScriptedGui('talk_now').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+	}
+
+
+	button_standard = {
+		parentanchor =  bottom|right
+		raw_text = "Exit"
+		position = { -100 -200 }
+		size = { 120 30 }
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets test_window')]"
+
+	}
+}

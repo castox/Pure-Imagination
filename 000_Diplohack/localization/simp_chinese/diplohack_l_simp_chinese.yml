@@ -1,0 +1,71 @@
+﻿l_simp_chinese:
+
+COUNTY_DEVELOPMENT_TOOLTIP_DIPLO: "#T 发展: [Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevel]/100#!\n[Scope.GetLandedTitle.GetCountyData.GetDevelopmentIgnoredDesc][Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyDevelopmentIncreaseDesc]"
+COUNTY_CONTROL_TOOLTIP_DIPLO:0 "#T 县控: [Scope.GetLandedTitle.GetCountyData.GetControlLevelOutOfMax]#!\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlEffectsDesc]\n\n[Scope.GetLandedTitle.GetCountyData.GetCountyControlIncreaseDesc]"
+
+envoy_court_position:0 "使者"
+envoy_court_position_desc:0 "$envoy_court_position$ 的目的是执行外交任务并启用外交行动。"
+diplo_non_aggression_20:0 "互不侵犯条约 20 年"
+diplo_non_aggression_10:0 "互不侵犯条约 10 年"
+diplo_non_aggression_5:0 "互不侵犯条约 5 年"
+I_CANNOT_DECLARE_WAR_NONA:0 "你有一个有效的互不侵犯条约"
+has_non_aggression_pact:0 "你有一个有效的互不侵犯条约"
+diplo_start:0 "Send Envoy"
+
+ok_offer_ok:0 "行"
+deal_offer_ok:0 "交易完成！"
+tos_deal:0 "交易条款"
+
+
+#event outcome messages
+fatal_offer:0 "[GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]..."
+fatal_offer_ok:0 "你的使者死了……"
+fatal_offer_message:0 "你的使者好像失去了脑袋，你可以派人去找回它"
+
+diplo_block_offer:0 "不要再和我或我儿子说话了。"
+
+diplo_insulting_offer_opening:0 "To the vile [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_insulting_offer:0 "我会侮辱你，但从你的提议来看，你不够聪明，无法理解......"
+diplo_strong_insulting_offer:0 "如果您珍惜他们的生命，请帮自己一个忙，不要派其他使者！"
+
+diplo_accept_offer_opening:0 "到 [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip]"
+diplo_accept_offer:0 "我已经阅读了交易条款并接受了，我希望未来会有更多富有成效的交易。"
+
+diplo_accept_good_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_good_offer:0 "很棒的提议，我必须接受"
+
+diplo_accept_great_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_accept_great_offer:0 "我收到了您的报价，发现这对我们双方都大有裨益！"
+
+diplo_decline_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_offer:0 "我必须拒绝..."
+
+diplo_decline_np_offer_opening:0 "$diplo_accept_offer_opening$"
+diplo_decline_np_offer:0 " 我很抱歉，但我认为你的提议毫无意义"
+
+#Deal Outcomes
+diplo_result_tool1:0 "你的使者被杀了。"
+diplo_result_tool2:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 太生气了，他们切断了所有未来的交易。"
+diplo_result_tool3:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 受到极大的侮辱。"
+diplo_result_tool4:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 被侮辱。"
+diplo_result_tool5:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 接受交易。"
+diplo_result_tool6:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 很感激这笔交易。"
+diplo_result_tool7:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 很感谢你的好意，对你有很高的评价。"
+diplo_result_tool8:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 不接受交易。"
+diplo_result_tool9:0 "[GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 没有看到这笔交易的意义。"
+
+#Interface
+diplo_enabled:0 " 之间的交易 [GetGlobalVariable('diplo_1').GetCharacter.GetShortUINameNoTooltip] 和 [GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip] 正在处理。"
+diplo_able:0 "您没有特使，请在法庭职位特殊选项卡中雇用一个。"
+
+#opinion modifiers
+deal_made:0 "外交交易完成"
+good_deal_made:0 "完成了良好的外交交易"
+great_deal_made:0 "完成重大外交交易"
+insulting_offer:0 "外交侮辱"
+strong_insulting_offer:0 "严重的外交侮辱"
+deadly_insulting_offer:0 "外交伤亡"
+block_offer:0 "外交谈判受阻"
+
+#p Modifier
+shady_deal_made:0 "黑幕交易"

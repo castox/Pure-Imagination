@@ -1,0 +1,134 @@
+﻿l_french:
+
+##################################################
+##################################################
+##         Text in [brackets] will change       ## 
+##           automatically depending on         ##
+##              the game language!              ##
+##################################################
+##################################################
+
+
+#Texts on the top of the GUI / Translation for other languages needed
+ diplo_gui_title:0 "Votre Envoy a pris contact avec [GetGlobalVariable('diplo_2').GetCharacter.GetShortUINameNoTooltip]"
+ diplo_gui_unpaused:0 "#L $CURRENT_DATE$ #!"
+ diplo_gui_paused:0 "#L $PAUSED$ #!" 
+ diplo_send_info:0 "Le coût de l'or est déterminé par les compétences de votre émissaire et le coût de prestige est déterminé par les différences de rang entre vous et la personne à qui vous envoyez l'émissaire."
+
+
+#Texts in the value box / Translation for other languages needed
+ diplo_gui_value_breakout:0 "#L Répartition de la valeur #!"
+ tos_deal:0 "#L Conditions de l'accord #!"
+  diplo_gui_vassal_value:0 "#E $VASSALS_COLON$ #! [GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_vassal_value')|0]"
+diplo_gui_war_value:0 "#E $lesson_warscore$ #! [GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_warscore')|0]"
+#[opinion], [dread], [diplomacy], [marriage], [gold], [rival], [hook], [artifacts], [alliance], [liege], [vassalize]
+#translation in the brackets not needed, it's game code, that auto-translate depending on user's game language
+ diplo_gui_general_opinion:0 "#E [opinion]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_opinion')|0]"
+ diplo_gui_fear_value:0 "#E [dread]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('fear_value')|0]" 
+ diplo_gui_envoy_skill:0 "#E $envoy_court_position$ Compétence:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('envoy_skill_value')|0]" 
+ diplo_gui_diplo2_skill:0 "#E $CHARACTER_HERHIS_THEIR$ [diplomacy]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('rec_diplo_skill')|0]" 
+ diplo_gui_marriage_value:0 "#E [marriage]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('ptm_value')|0]" 
+ diplo_gui_give_titles:0 "#E Titres donnés:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('g_land_value')|0]" 
+ diplo_gui_request_titles:0 "#E Titres demandés:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('t_land_value')|0]" 
+ diplo_gui_give_gold:0 "#E [gold]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('g_gold_value')|0]" 
+ diplo_gui_request_gold:0 "#E [gold]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('t_gold_value')|0]" 
+ diplo_gui_rival_value:0 "#E [rival]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('rival_value')|0]" 
+ diplo_gui_hook_value:0 "#E [hook]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('ext_treaty_value')|0]" 
+ diplo_gui_dynasty_legacy:0 "#E $DYNASTY$ $SHOW_LEGACY$:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('legacy_value')|0]" 
+ diplo_gui_artifact_value:0 "#E [artifacts]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_artifact')|0]" 
+ diplo_gui_alliance_value:0 "#E [alliance]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_alliance_value')|0]" 
+ diplo_gui_liege_relations:0 "#E [liege]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_rank')|0]"
+ diplo_gui_non_aggresion_pact:0 "#E Pacte de non-agression:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('nona_value')|0]" 
+ diplo_gui_sworn_oath:0 "#E Serment assermenté:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_soath')|0]"  
+ diplo_gui_vassalization:0 "#E [vassalize]:  #![GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('diplo_vassalize')|0]" 
+  diplo_gui_provinces: "#E Provinces #![GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('diplo_county_provinces')|0]\n[buildings|E]:  #![GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('diplo_county_provinces_buildings')|0]\n#E Emplacements de construction:  #![GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('diplo_building_slots')|0]" 
+ 
+#Label texts in the middle of gui (Text scroll) / Translation for other languages needed
+#[title], [artifacts], [marriage]
+#translation in the brackets not needed, it's game code, that auto-translate depending on user's game language
+ diplo_gui_title_label:0 "[title]"
+ diplo_gui_artifact_label:0 "[artifacts]"
+ diplo_gui_marriages_label:0 "[marriage]"
+ diplo_gui_other_actions_label:0 "$SETTINGS_CATEGORY_INTERFACE_MISC$"
+ 
+ 
+#Title Tab in the bottom middle & Texts on both sides  / Translation for other languages needed
+#[title], [culture], [development], [levies], [control]
+#translation in the brackets not needed, it's game code, that auto-translate depending on user's game language 
+ diplo_gui_title_tab:0 "[title]"
+ 
+ diplo_est_value:0 "Valeur"
+ diplo_est_pop:0 "Population"
+
+
+ diplo_gui_titles1_est_value:0 "#E $diplo_est_value$: #! #I [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('defacto_value2')|0]"
+ diplo_gui_titles2_est_value:0 "#E $diplo_est_value$: #! #I [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('county_pm_value2')|0]"
+ diplo_gui_titles3_est_value:0 "#E $diplo_est_value$: #! #I [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('defacto_value2')|0]"
+ diplo_gui_titles4_est_value:0 "#E $diplo_est_value$: #! #I [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('county_pm_value2')|0]"
+
+ diplo_gui_estimated_population1:0 "#E $diplo_est_pop$ : #! [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('diplo_county_population')|0]"
+ diplo_gui_estimated_population2:0 "#E $diplo_est_pop$ : #! [Scope.GetLandedTitle.MakeScope.Var('county_population').GetValue|0]"
+ 
+ diplo_gui_culture1:0 "#E [culture|E]: #![Scope.GetLandedTitle.GetCountyData.GetCulture.GetName]"
+ diplo_gui_culture2:0 "#E [culture|E]: #![Scope.GetLandedTitle.GetCountyData.GetCulture.GetName]"
+ 
+ diplo_gui_development1:0 "#E [development|E]: #![Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevelString]"
+ diplo_gui_development2:0"#E [development|E]: #![Scope.GetLandedTitle.GetCountyData.GetDevelopmentLevelString]"
+ 
+ diplo_gui_levies1:0 "#E [levies|E]: #! [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('total_county_levies')|0]"
+ diplo_gui_levies2:0 "#E [levies|E]: #! [GuiScope.SetRoot( Scope.GetLandedTitle.MakeScope ).ScriptValue('total_county_levies')|0]"
+ 
+ diplo_gui_control1:0 "#E [control|E]: #![Scope.GetLandedTitle.GetCountyData.GetControl]"
+ diplo_gui_control2:0 "#E [control|E]: #![Scope.GetLandedTitle.GetCountyData.GetControl]"
+ 
+
+#Artifact Tab in the bottom middle & Texts on both sides  / Translation for other languages needed
+#[artifacts]
+#translation in the brackets not needed, it's game code, that auto-translate depending on user's game language
+ diplo_gui_artifact_tab:0 "[artifacts]"
+ 
+ diplo_gui_artifact_value1:0 "#E Valeur: #! [GuiScope.SetRoot( Artifact.MakeScope ).ScriptValue('diplo_artifact_value')]"
+ diplo_gui_artifact_value2:0 "#E Valeur: #! [GuiScope.SetRoot( Artifact.MakeScope ).ScriptValue('diplo_artifact_value1')]"
+ 
+
+#Marriage Tab in the bottom middle
+#[marriage]
+#translation in the brackets not needed, it's game code, that auto-translate depending on user's game language
+ diplo_gui_marriage_tab:0 "[marriage]"
+ 
+ 
+#Other Actions Tab in the bottom middle & Texts on the right side  / Translation for other languages needed
+#[alliance], [vassalize]
+#translation in the brackets not needed, it's game code, that auto-translate depending on user's game language
+ diplo_gui_other_actions_tab:0 "$SETTINGS_CATEGORY_INTERFACE_MISC$"
+ diplo_gui_other_actions_alliance:0 "[alliance]"
+ diplo_gui_other_actions_swear_oath:0 "Faire un serment"
+ diplo_gui_other_actions_vassalize:0 "[vassalize]"
+ 
+ diplo_gui_other_actions_gold_button_offer:0 "Offre"
+ diplo_gui_other_actions_gold_button_demand:0 "Demande"
+ 
+ diplo_gui_other_actions_weak_hook:0 "$game_concept_weak_hook$"
+ diplo_gui_other_actions_strong_hook:0 "$game_concept_strong_hook$"
+ 
+ diplo_gui_other_actions_non_aggression_pact:0 "Pacte de non-agression (années)"
+
+
+#Accept, Counter, Send, Send to Player, Decline, Reset & Minimize Buttons in the bottom middle / Translation for other languages needed
+ diplo_gui_accept_offer_tab:0 "$REFORMATION_CONFIRM_CANCEL_ACCEPT$"
+ diplo_gui_counter_offer_tab:0 "Compteur"
+ diplo_gui_send_offer_tab:0 "Envoyer"
+ diplo_gui_send_player_tab:0 "Envoyer au joueur"
+ diplo_gui_decline_offer_tab:0 "Déclin"
+ 
+ diplo_gui_reset_button:0 "$RESET_DISMISSED_BUTTON_TEXT$"
+ diplo_gui_minimize_button:0 "$MINIMIZE_TOOLTIP$"
+
+ diplo_easy_deal:0 "EASY MODE"
+ diplo_easy_deal_confirm:0 "$CONFIRM$"
+
+ diplo_cancel_deal:0 "ENVOY - Cancel hung deal, help clear an error with deal."
+ diplo_cancel_deal_confirm:0 "$CONFIRM$"
+
+ diplo_no_easy_deal:0 "No Easy Mode Decision"
+ diplo_no_easy_deal_confirm:0 "$CONFIRM$"

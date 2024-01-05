@@ -1,0 +1,45 @@
+﻿
+end_joust = {
+	
+	remove_character_flag = joust_win
+	remove_character_flag = joust_lost
+	remove_character_flag = is_in_joust
+	remove_character_flag = is_jouster
+	remove_character_flag = horse_ridingl
+	remove_character_flag = horse_ridingpl
+	remove_character_flag = horse_ridingpr
+	remove_character_flag = horse_ridingr
+	remove_character_flag = is_in_joust_2
+	remove_character_flag = j_in_range
+	remove_character_flag = j_hit_it
+	remove_character_flag = j_got_hit
+	remove_character_flag = joust_lost_taunt
+	remove_character_flag = joust_lost_gg
+	remove_character_flag = joust_to_death
+
+	clear_variable_list = joust_all
+	var:joust_challenger = {
+		remove_character_flag = is_jouster
+		remove_character_flag = j_hit_it
+		remove_character_flag = j_got_hit
+		remove_character_flag = horse_ridingl
+		remove_character_flag = horse_ridingr
+		remove_character_flag = horse_ridingpl
+		remove_character_flag = horse_ridingpr
+	}
+
+}
+rem_trot = {
+	remove_character_flag = is_in_joust
+	remove_character_flag = horse_ridingl
+	remove_character_flag = horse_ridingr
+	remove_character_flag = horse_ridingpl
+	remove_character_flag = horse_ridingpr
+	var:joust_challenger = {
+	
+		remove_character_flag = horse_ridingl
+		remove_character_flag = horse_ridingr
+		remove_character_flag = horse_ridingpl
+		remove_character_flag = horse_ridingpr	
+	}
+}

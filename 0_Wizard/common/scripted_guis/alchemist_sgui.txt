@@ -1,0 +1,459 @@
+
+#
+add_purchase = {
+	scope = character
+
+	is_shown = {
+		is_target_in_variable_list = { name = current_purchases target = scope:target }
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_variable = total_s_value
+				}
+			}
+			set_variable = { name = total_s_value value = 0 }
+		}
+		if = {
+			limit = {
+				is_target_in_variable_list = { name = current_purchases target = scope:target }
+			}
+			change_variable = { name = total_s_value subtract = scope:valuex }
+			remove_list_variable = { name = current_purchases target = scope:target }
+			#remove_list_global_variable = {}
+		}
+		else = {
+			add_to_variable_list = {
+				name = current_purchases
+				target = scope:target
+			}
+			change_variable = { name = total_s_value add = scope:valuex }
+		}
+	}
+}
+clear_cart = {
+	scope = character
+
+	effect = {
+		clear_variable_list = current_purchases
+		set_variable = { name = total_s_value value = 0 }
+
+	}
+}
+buy_enable = {
+	scope = character
+	is_shown = {
+		NOT = {
+			var:total_s_value > gold
+		}
+	}
+}
+purchase_cart = {
+	scope = character
+
+	effect  = {
+		every_in_list = {
+			variable = current_purchases
+
+			add_to_global_variable_list = { name = pshop_resources target = this }
+
+			if = {
+				limit = {
+					is_target_in_global_variable_list = { name = ashop_mineral_resources target = this }
+				}
+				add_to_global_variable_list = { name = pshop_mineral_resources target = this }
+			}
+			else_if = {
+				limit = {
+					is_target_in_global_variable_list = { name = ashop_plant_resources target = this }
+				}
+				add_to_global_variable_list = { name = pshop_plant_resources target = this }
+			}
+			else_if = {
+				limit = {
+					is_target_in_global_variable_list = { name = ashop_animal_resources target = this }
+				}
+				add_to_global_variable_list = { name = pshop_animal_resources target = this }
+			}
+			else_if = {
+				limit = {
+					is_target_in_global_variable_list = { name = ashop_tools_resources target = this }
+				}
+				add_to_global_variable_list = { name = pshop_tools_resources target = this }
+			}
+			else_if = {
+				limit = {
+					is_target_in_global_variable_list = { name = ashop_special_resources target = this }
+				}
+				add_to_global_variable_list = { name = pshop_special_resources target = this }
+			}
+			else_if = {
+				limit = {
+					is_target_in_global_variable_list = { name = ashop_potion_resources target = this }
+				}
+				add_to_global_variable_list = { name = pshop_potion_resources target = this }
+			}
+
+			if = { limit = { this = flag:Amethyst_Dust } change_global_variable = { name = Amethyst_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Amethyst_Large } change_global_variable = { name = Amethyst_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Animal_Claw } change_global_variable = { name = Animal_Claw_Qty add = 1 } }
+			else_if = { limit = { this = flag:Animal_Fat } change_global_variable = { name = Animal_Fat_Qty add = 1 } }
+			else_if = { limit = { this = flag:Animal_Skin } change_global_variable = { name = Animal_Skin_Qty add = 1 } }
+			else_if = { limit = { this = flag:Animal_Tooth } change_global_variable = { name = Animal_Tooth_Qty add = 1 } }
+			else_if = { limit = { this = flag:Apple } change_global_variable = { name = Apple_Qty add = 1 } }
+			else_if = { limit = { this = flag:Arachnid_Leg } change_global_variable = { name = Arachnid_Leg_Qty add = 1 } }
+			else_if = { limit = { this = flag:Ash } change_global_variable = { name = Ash_Qty add = 1 } }
+			else_if = { limit = { this = flag:Bear_Skin } change_global_variable = { name = Bear_Skin_Qty add = 1 } }
+			else_if = { limit = { this = flag:Bellows } change_global_variable = { name = Bellows_Qty add = 1 } }
+			else_if = { limit = { this = flag:Book_1 } change_global_variable = { name = Book_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Bread } change_global_variable = { name = Bread_Qty add = 1 } }
+			else_if = { limit = { this = flag:Brick } change_global_variable = { name = Brick_Qty add = 1 } }
+			else_if = { limit = { this = flag:Bug_Shell_Type_1 } change_global_variable = { name = Bug_Shell_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Bug_Shell_Type_2 } change_global_variable = { name = Bug_Shell_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Carrot } change_global_variable = { name = Carrot_Qty add = 1 } }
+			else_if = { limit = { this = flag:Cheese } change_global_variable = { name = Cheese_Qty add = 1 } }
+			else_if = { limit = { this = flag:Cherries } change_global_variable = { name = Cherries_Qty add = 1 } }
+			else_if = { limit = { this = flag:Citrine_Dust } change_global_variable = { name = Citrine_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Citrine_Large } change_global_variable = { name = Citrine_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Claw } change_global_variable = { name = Claw_Qty add = 1 } }
+			else_if = { limit = { this = flag:Clay } change_global_variable = { name = Clay_Qty add = 1 } }
+			else_if = { limit = { this = flag:Coal } change_global_variable = { name = Coal_Qty add = 1 } }
+			else_if = { limit = { this = flag:Cooked_Fish } change_global_variable = { name = Cooked_Fish_Qty add = 1 } }
+			else_if = { limit = { this = flag:Deer_Horn } change_global_variable = { name = Deer_Horn_Qty add = 1 } }
+			else_if = { limit = { this = flag:Diamond_Dust } change_global_variable = { name = Diamond_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Diamond_Large } change_global_variable = { name = Diamond_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Dragon_Scales_Black } change_global_variable = { name = Dragon_Scales_Black_Qty add = 1 } }
+			else_if = { limit = { this = flag:Dragon_Scales_Blue } change_global_variable = { name = Dragon_Scales_Blue_Qty add = 1 } }
+			else_if = { limit = { this = flag:Dragon_Scales_Red } change_global_variable = { name = Dragon_Scales_Red_Qty add = 1 } }
+			else_if = { limit = { this = flag:Dragon_Scales_White } change_global_variable = { name = Dragon_Scales_White_Qty add = 1 } }
+			else_if = { limit = { this = flag:Dragon_Scales_Yellow } change_global_variable = { name = Dragon_Scales_Yellow_Qty add = 1 } }
+			else_if = { limit = { this = flag:Dyes } change_global_variable = { name = Dyes_Qty add = 1 } }
+			else_if = { limit = { this = flag:Egg } change_global_variable = { name = Egg_Qty add = 1 } }
+			else_if = { limit = { this = flag:Emerald_Dust } change_global_variable = { name = Emerald_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Emerald_Large } change_global_variable = { name = Emerald_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Feathers } change_global_variable = { name = Feathers_Qty add = 1 } }
+			else_if = { limit = { this = flag:Flower_Type_1 } change_global_variable = { name = Flower_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Flower_Type_2 } change_global_variable = { name = Flower_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Flower_Type_3 } change_global_variable = { name = Flower_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Flower_Type_4 } change_global_variable = { name = Flower_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Flower_Type_5 } change_global_variable = { name = Flower_Type_5_Qty add = 1 } }
+			else_if = { limit = { this = flag:Flower_Type_6 } change_global_variable = { name = Flower_Type_6_Qty add = 1 } }
+			else_if = { limit = { this = flag:Garlic } change_global_variable = { name = Garlic_Qty add = 1 } }
+			else_if = { limit = { this = flag:Grape } change_global_variable = { name = Grape_Qty add = 1 } }
+			else_if = { limit = { this = flag:Heart } change_global_variable = { name = Heart_Qty add = 1 } }
+			else_if = { limit = { this = flag:Herb_Type_1 } change_global_variable = { name = Herb_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Herb_Type_2 } change_global_variable = { name = Herb_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Herb_Type_3 } change_global_variable = { name = Herb_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Human_Bone } change_global_variable = { name = Human_Bone_Qty add = 1 } }
+			else_if = { limit = { this = flag:Human_Eye } change_global_variable = { name = Human_Eye_Qty add = 1 } }
+			else_if = { limit = { this = flag:Human_Skull } change_global_variable = { name = Human_Skull_Qty add = 1 } }
+			else_if = { limit = { this = flag:Human_Tooth } change_global_variable = { name = Human_Tooth_Qty add = 1 } }
+			else_if = { limit = { this = flag:Icons_Layer_Effect } change_global_variable = { name = Icons_Layer_Effect_Qty add = 1 } }
+			else_if = { limit = { this = flag:Ink } change_global_variable = { name = Ink_Qty add = 1 } }
+			else_if = { limit = { this = flag:Jasper } change_global_variable = { name = Jasper_Qty add = 1 } }
+			else_if = { limit = { this = flag:Journal_Bloody } change_global_variable = { name = Journal_Bloody_Qty add = 1 } }
+			else_if = { limit = { this = flag:Journal_Type_1 } change_global_variable = { name = Journal_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Journal_Type_2 } change_global_variable = { name = Journal_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Leaf } change_global_variable = { name = Leaf_Qty add = 1 } }
+			else_if = { limit = { this = flag:Liqueur } change_global_variable = { name = Liqueur_Qty add = 1 } }
+			else_if = { limit = { this = flag:Liquor } change_global_variable = { name = Liquor_Qty add = 1 } }
+			else_if = { limit = { this = flag:Liver } change_global_variable = { name = Liver_Qty add = 1 } }
+			else_if = { limit = { this = flag:Livestock } change_global_variable = { name = Livestock_Qty add = 1 } }
+			else_if = { limit = { this = flag:Metal_1_Ore } change_global_variable = { name = Metal_1_Ore_Qty add = 1 } }
+			else_if = { limit = { this = flag:Metal_2_Ore } change_global_variable = { name = Metal_2_Ore_Qty add = 1 } }
+			else_if = { limit = { this = flag:Metal_3_Ore } change_global_variable = { name = Metal_3_Ore_Qty add = 1 } }
+			else_if = { limit = { this = flag:Metal_4_Ore } change_global_variable = { name = Metal_4_Ore_Qty add = 1 } }
+			else_if = { limit = { this = flag:Metal_5_Ore } change_global_variable = { name = Metal_5_Ore_Qty add = 1 } }
+			else_if = { limit = { this = flag:Milk } change_global_variable = { name = Milk_Qty add = 1 } }
+			else_if = { limit = { this = flag:Monster_Claw } change_global_variable = { name = Monster_Claw_Qty add = 1 } }
+			else_if = { limit = { this = flag:Monster_Eye } change_global_variable = { name = Monster_Eye_Qty add = 1 } }
+			else_if = { limit = { this = flag:Monster_Feather } change_global_variable = { name = Monster_Feather_Qty add = 1 } }
+			else_if = { limit = { this = flag:Monster_Tooth } change_global_variable = { name = Monster_Tooth_Qty add = 1 } }
+			else_if = { limit = { this = flag:Mortar } change_global_variable = { name = Mortar_Qty add = 1 } }
+			else_if = { limit = { this = flag:Mushroom_Type_1 } change_global_variable = { name = Mushroom_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Mushroom_Type_2 } change_global_variable = { name = Mushroom_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Mushroom_Type_3 } change_global_variable = { name = Mushroom_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Mushroom_Type_4 } change_global_variable = { name = Mushroom_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Mushroom_Type_5 } change_global_variable = { name = Mushroom_Type_5_Qty add = 1 } }
+			else_if = { limit = { this = flag:Mushroom_Type_6 } change_global_variable = { name = Mushroom_Type_6_Qty add = 1 } }
+			else_if = { limit = { this = flag:Oil_Large_Type_1 } change_global_variable = { name = Oil_Large_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Oil_Large_Type_2 } change_global_variable = { name = Oil_Large_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Oil_Large_Type_3 } change_global_variable = { name = Oil_Large_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Oil_Type_1 } change_global_variable = { name = Oil_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Oil_Type_2 } change_global_variable = { name = Oil_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Oil_Type_33 } change_global_variable = { name = Oil_Type_33_Qty add = 1 } }
+			else_if = { limit = { this = flag:Orange } change_global_variable = { name = Orange_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pear } change_global_variable = { name = Pear_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pearl } change_global_variable = { name = Pearl_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pearl_Black } change_global_variable = { name = Pearl_Black_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pearl_Black_Dust } change_global_variable = { name = Pearl_Black_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pearl_Dust } change_global_variable = { name = Pearl_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pen } change_global_variable = { name = Pen_Qty add = 1 } }
+			else_if = { limit = { this = flag:Polar_Bear_Skin } change_global_variable = { name = Polar_Bear_Skin_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pot } change_global_variable = { name = Pot_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion } change_global_variable = { name = Potion_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Cure_Large } change_global_variable = { name = Potion_Cure_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Cure_Medium } change_global_variable = { name = Potion_Cure_Medium_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Cure_Small } change_global_variable = { name = Potion_Cure_Small_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Empty } change_global_variable = { name = Potion_Empty_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Health_Large } change_global_variable = { name = Potion_Health_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Health_Medium } change_global_variable = { name = Potion_Health_Medium_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Health_Small } change_global_variable = { name = Potion_Health_Small_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Mana_Large } change_global_variable = { name = Potion_Mana_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Mana_Medium } change_global_variable = { name = Potion_Mana_Medium_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Mana_Small } change_global_variable = { name = Potion_Mana_Small_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Misc_Type_1 } change_global_variable = { name = Potion_Misc_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Misc_Type_2 } change_global_variable = { name = Potion_Misc_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Misc_Type_3 } change_global_variable = { name = Potion_Misc_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Misc_Type_4 } change_global_variable = { name = Potion_Misc_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Misc_Type_5 } change_global_variable = { name = Potion_Misc_Type_5_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Poison_Large } change_global_variable = { name = Potion_Poison_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Poison_Medium } change_global_variable = { name = Potion_Poison_Medium_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Poison_Small } change_global_variable = { name = Potion_Poison_Small_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Regeneration_Large } change_global_variable = { name = Potion_Regeneration_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Regeneration_Medium } change_global_variable = { name = Potion_Regeneration_Medium_Qty add = 1 } }
+			else_if = { limit = { this = flag:Potion_Regeneration_Small } change_global_variable = { name = Potion_Regeneration_Small_Qty add = 1 } }
+			else_if = { limit = { this = flag:Pouch } change_global_variable = { name = Pouch_Qty add = 1 } }
+			else_if = { limit = { this = flag:Radish } change_global_variable = { name = Radish_Qty add = 1 } }
+			else_if = { limit = { this = flag:Recipe_Type_1 } change_global_variable = { name = Recipe_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Red_Moss } change_global_variable = { name = Red_Moss_Qty add = 1 } }
+			else_if = { limit = { this = flag:Root_Type_1 } change_global_variable = { name = Root_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Root_Type_2 } change_global_variable = { name = Root_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Root_Type_3 } change_global_variable = { name = Root_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Root_Type_4 } change_global_variable = { name = Root_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Ruby_Dust } change_global_variable = { name = Ruby_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Ruby_Large } change_global_variable = { name = Ruby_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Large_Blank } change_global_variable = { name = Rune_Large_Blank_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Large_Type_1 } change_global_variable = { name = Rune_Large_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Large_Type_2 } change_global_variable = { name = Rune_Large_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Large_Type_3 } change_global_variable = { name = Rune_Large_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Large_Type_4 } change_global_variable = { name = Rune_Large_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Small_Blank } change_global_variable = { name = Rune_Small_Blank_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Small_Type_1 } change_global_variable = { name = Rune_Small_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Small_Type_2 } change_global_variable = { name = Rune_Small_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Small_Type_3 } change_global_variable = { name = Rune_Small_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Rune_Small_Type_4 } change_global_variable = { name = Rune_Small_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Sack } change_global_variable = { name = Sack_Qty add = 1 } }
+			else_if = { limit = { this = flag:Sack_Bloody } change_global_variable = { name = Sack_Bloody_Qty add = 1 } }
+			else_if = { limit = { this = flag:Sapphire_Dust } change_global_variable = { name = Sapphire_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Sapphire_Large } change_global_variable = { name = Sapphire_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Scroll_Type_1 } change_global_variable = { name = Scroll_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Scroll_Type_2 } change_global_variable = { name = Scroll_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Scroll_Type_3 } change_global_variable = { name = Scroll_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Scroll_Type_4 } change_global_variable = { name = Scroll_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Scroll_Type_5 } change_global_variable = { name = Scroll_Type_5_Qty add = 1 } }
+			else_if = { limit = { this = flag:Scroll_Type_6 } change_global_variable = { name = Scroll_Type_6_Qty add = 1 } }
+			else_if = { limit = { this = flag:Scroll_Type_7 } change_global_variable = { name = Scroll_Type_7_Qty add = 1 } }
+			else_if = { limit = { this = flag:Sea_Shell } change_global_variable = { name = Sea_Shell_Qty add = 1 } }
+			else_if = { limit = { this = flag:Silkworm_Cocoon } change_global_variable = { name = Silkworm_Cocoon_Qty add = 1 } }
+			else_if = { limit = { this = flag:Silver_Coin } change_global_variable = { name = Silver_Coin_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spellbook_Blank } change_global_variable = { name = Spellbook_Blank_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spellbook_Type_1 } change_global_variable = { name = Spellbook_Type_1_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spellbook_Type_2 } change_global_variable = { name = Spellbook_Type_2_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spellbook_Type_3 } change_global_variable = { name = Spellbook_Type_3_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spellbook_Type_4 } change_global_variable = { name = Spellbook_Type_4_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spellbook_Type_5 } change_global_variable = { name = Spellbook_Type_5_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spellbook_Type_6 } change_global_variable = { name = Spellbook_Type_6_Qty add = 1 } }
+			else_if = { limit = { this = flag:Spices } change_global_variable = { name = Spices_Qty add = 1 } }
+			else_if = { limit = { this = flag:Sting } change_global_variable = { name = Sting_Qty add = 1 } }
+			else_if = { limit = { this = flag:Tongue } change_global_variable = { name = Tongue_Qty add = 1 } }
+			else_if = { limit = { this = flag:Tourmaline_Dust } change_global_variable = { name = Tourmaline_Dust_Qty add = 1 } }
+			else_if = { limit = { this = flag:Tourmaline_Large } change_global_variable = { name = Tourmaline_Large_Qty add = 1 } }
+			else_if = { limit = { this = flag:Turquoise } change_global_variable = { name = Turquoise_Qty add = 1 } }
+			else_if = { limit = { this = flag:Water } change_global_variable = { name = Water_Qty add = 1 } }
+			else_if = { limit = { this = flag:Wine } change_global_variable = { name = Wine_Qty add = 1 } }
+			else_if = { limit = { this = flag:Wolf_Skin } change_global_variable = { name = Wolf_Skin_Qty add = 1 } }
+			else_if = { limit = { this = flag:Wooden_Hammer } change_global_variable = { name = Wooden_Hammer_Qty add = 1 } }
+		}
+	}
+}
+load_ing = {
+	scope = character
+
+	effect = {
+		set_variable = { name = current_ind value = scope:target }
+	}
+}
+can_boil = {
+	scope = character
+	is_shown = { 
+		AND = {
+			NOR = { 
+				is_target_in_global_variable_list = { name = ashop_tools_resources target = var:current_ind }
+				is_target_in_global_variable_list = { name = ashop_special_resources target = var:current_ind  } 
+				is_target_in_global_variable_list = { name = ashop_potion_resources target = var:current_ind  } 
+			}
+			is_target_in_global_variable_list = { name = pshop_tools_resources target = flag:Pot  } 
+		}
+	}
+}
+can_motar = {
+	scope = character
+	is_shown = { 
+		AND = {
+			is_target_in_global_variable_list = { name = can_motar target = var:current_ind  }
+			is_target_in_global_variable_list = { name = pshop_tools_resources target = flag:Mortar  }
+		}
+	}
+}
+can_hammer = {
+	scope = character
+	is_shown = { 
+		AND = {
+			is_target_in_global_variable_list = { name = can_hammer target = var:current_ind  }
+			is_target_in_global_variable_list = { name = pshop_tools_resources target = flag:Wooden_Hammer  }
+		}
+	}
+}
+
+can_i_sell = {
+	scope = character
+	is_shown = { is_target_in_global_variable_list = { name = can_i_sell target = var:current_ind  } }
+}
+be_mortar = {
+	scope = character
+
+	effect = {
+		if = { limit = { var:current_ind = flag:Animal_Claw } set_variable = { name = current_indm value = flag:Animal_Claw_M } change_global_variable = { name = Animal_Claw_M_Qty add = 2 }change_global_variable = { name = Animal_Claw_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Animal_Tooth } set_variable = { name = current_indm value = flag:Animal_Tooth_M } change_global_variable = { name = Animal_Tooth_M_Qty add = 2 }change_global_variable = { name = Animal_Tooth_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Arachnid_Leg } set_variable = { name = current_indm value = flag:Arachnid_Leg_M } change_global_variable = { name = Arachnid_Leg_M_Qty add = 1 }change_global_variable = { name = Arachnid_Leg_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Bug_Shell_Type_1 } set_variable = { name = current_indm value = flag:Bug_Shell_Type_1_M } change_global_variable = { name = Bug_Shell_Type_1_M_Qty add = 1 }change_global_variable = { name = Bug_Shell_Type_1_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Bug_Shell_Type_2 } set_variable = { name = current_indm value = flag:Bug_Shell_Type_2_M } change_global_variable = { name = Bug_Shell_Type_2_M_Qty add = 1 }change_global_variable = { name = Bug_Shell_Type_2_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Flower_Type_1 } set_variable = { name = current_indm value = flag:Flower_Type_1_M } change_global_variable = { name = Flower_Type_1_M_Qty add = 3 }change_global_variable = { name = Flower_Type_1_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Flower_Type_2 } set_variable = { name = current_indm value = flag:Flower_Type_2_M } change_global_variable = { name = Flower_Type_2_M_Qty add = 3 }change_global_variable = { name = Flower_Type_2_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Flower_Type_3 } set_variable = { name = current_indm value = flag:Flower_Type_3_M } change_global_variable = { name = Flower_Type_3_M_Qty add = 3 }change_global_variable = { name = Flower_Type_3_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Flower_Type_4 } set_variable = { name = current_indm value = flag:Flower_Type_4_M } change_global_variable = { name = Flower_Type_4_M_Qty add = 3 }change_global_variable = { name = Flower_Type_4_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Flower_Type_5 } set_variable = { name = current_indm value = flag:Flower_Type_5_M } change_global_variable = { name = Flower_Type_5_M_Qty add = 3 }change_global_variable = { name = Flower_Type_5_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Flower_Type_6 } set_variable = { name = current_indm value = flag:Flower_Type_6_M } change_global_variable = { name = Flower_Type_6_M_Qty add = 3 }change_global_variable = { name = Flower_Type_6_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Garlic } set_variable = { name = current_indm value = flag:Garlic_M } change_global_variable = { name = Garlic_M_Qty add = 1 }change_global_variable = { name = Garlic_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Herb_Type_1 } set_variable = { name = current_indm value = flag:Herb_Type_1_M } change_global_variable = { name = Herb_Type_1_M_Qty add = 3 }change_global_variable = { name = Herb_Type_1_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Herb_Type_2 } set_variable = { name = current_indm value = flag:Herb_Type_2_M } change_global_variable = { name = Herb_Type_2_M_Qty add = 3 }change_global_variable = { name = Herb_Type_2_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Herb_Type_3 } set_variable = { name = current_indm value = flag:Herb_Type_3_M } change_global_variable = { name = Herb_Type_3_M_Qty add = 3 }change_global_variable = { name = Herb_Type_3_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Human_Eye } set_variable = { name = current_indm value = flag:Human_Eye_M } change_global_variable = { name = Human_Eye_M_Qty add = 1 }change_global_variable = { name = Human_Eye_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Icons_Layer_Effect } set_variable = { name = current_indm value = flag:Icons_Layer_Effect_M } change_global_variable = { name = Icons_Layer_Effect_M_Qty add = 3 }change_global_variable = { name = Icons_Layer_Effect_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Leaf } set_variable = { name = current_indm value = flag:Leaf_M } change_global_variable = { name = Leaf_M_Qty add = 1 }change_global_variable = { name = Leaf_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Monster_Claw } set_variable = { name = current_indm value = flag:Monster_Claw_M } change_global_variable = { name = Monster_Claw_M_Qty add = 2 }change_global_variable = { name = Monster_Claw_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Monster_Eye } set_variable = { name = current_indm value = flag:Monster_Eye_M } change_global_variable = { name = Monster_Eye_M_Qty add = 1 }change_global_variable = { name = Monster_Eye_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Monster_Tooth } set_variable = { name = current_indm value = flag:Monster_Tooth_M } change_global_variable = { name = Monster_Tooth_M_Qty add = 2 }change_global_variable = { name = Monster_Tooth_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Mushroom_Type_1 } set_variable = { name = current_indm value = flag:Mushroom_Type_1_M } change_global_variable = { name = Mushroom_Type_1_M_Qty add = 3 }change_global_variable = { name = Mushroom_Type_1_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Mushroom_Type_2 } set_variable = { name = current_indm value = flag:Mushroom_Type_2_M } change_global_variable = { name = Mushroom_Type_2_M_Qty add = 3 }change_global_variable = { name = Mushroom_Type_2_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Mushroom_Type_3 } set_variable = { name = current_indm value = flag:Mushroom_Type_3_M } change_global_variable = { name = Mushroom_Type_3_M_Qty add = 3 }change_global_variable = { name = Mushroom_Type_3_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Mushroom_Type_4 } set_variable = { name = current_indm value = flag:Mushroom_Type_4_M } change_global_variable = { name = Mushroom_Type_4_M_Qty add = 3 }change_global_variable = { name = Mushroom_Type_4_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Mushroom_Type_5 } set_variable = { name = current_indm value = flag:Mushroom_Type_5_M } change_global_variable = { name = Mushroom_Type_5_M_Qty add = 3 }change_global_variable = { name = Mushroom_Type_5_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Mushroom_Type_6 } set_variable = { name = current_indm value = flag:Mushroom_Type_6_M } change_global_variable = { name = Mushroom_Type_6_M_Qty add = 3 }change_global_variable = { name = Mushroom_Type_6_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Red_Moss } set_variable = { name = current_indm value = flag:Red_Moss_M } change_global_variable = { name = Red_Moss_M_Qty add = 3 }change_global_variable = { name = Red_Moss_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Root_Type_1 } set_variable = { name = current_indm value = flag:Root_Type_1_M } change_global_variable = { name = Root_Type_1_M_Qty add = 3 }change_global_variable = { name = Root_Type_1_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Root_Type_2 } set_variable = { name = current_indm value = flag:Root_Type_2_M } change_global_variable = { name = Root_Type_2_M_Qty add = 3 }change_global_variable = { name = Root_Type_2_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Root_Type_3 } set_variable = { name = current_indm value = flag:Root_Type_3_M } change_global_variable = { name = Root_Type_3_M_Qty add = 3 }change_global_variable = { name = Root_Type_3_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Root_Type_4 } set_variable = { name = current_indm value = flag:Root_Type_4_M } change_global_variable = { name = Root_Type_4_M_Qty add = 3 }change_global_variable = { name = Root_Type_4_Qty subtract = 1 }}
+		else_if = { limit = { var:current_ind = flag:Sea_Shell } set_variable = { name = current_indm value = flag:Sea_Shell_M } change_global_variable = { name = Sea_Shell_M_Qty add = 5 }change_global_variable = { name = Sea_Shell_Qty subtract = 1 }}
+		
+		
+		add_to_global_variable_list = { name = pshop_resources target = var:current_indm }
+
+		if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_mineral_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_mineral_resources target = var:current_indm }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_plant_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_plant_resources target = var:current_indm }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_animal_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_animal_resources target = var:current_indm }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_tools_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_tools_resources target = var:current_indm }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_special_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_special_resources target = var:current_indm }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_potion_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_potion_resources target = var:current_indm }
+		}
+		remove_a_empty = yes
+	}
+}
+
+be_crushed = {
+	scope = character 
+
+	effect = {
+		if = { limit = { var:current_ind = flag:Amethyst_Large } set_variable = { name = current_indc value = flag:Amethyst_Dust } change_global_variable = { name = Amethyst_Dust_Qty add = 5 } change_global_variable = { name = Amethyst_Large_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Citrine_Large } set_variable = { name = current_indc value = flag:Citrine_Dust } change_global_variable = { name = Citrine_Dust_Qty add = 5 } change_global_variable = { name = Citrine_Large_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Deer_Horn } set_variable = { name = current_indc value = flag:Deer_Horn_Dust } change_global_variable = { name = Deer_Horn_Dust_Qty add = 5 } change_global_variable = { name = Deer_Horn_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Diamond_Large } set_variable = { name = current_indc value = flag:Diamond_Dust } change_global_variable = { name = Diamond_Dust_Qty add = 5 } change_global_variable = { name = Diamond_Large_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Emerald_Large } set_variable = { name = current_indc value = flag:Emerald_Dust } change_global_variable = { name = Emerald_Dust_Qty add = 5 } change_global_variable = { name = Emerald_Large_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Human_Bone } set_variable = { name = current_indc value = flag:Human_Bone_Dust } change_global_variable = { name = Human_Bone_Dust_Qty add = 5 } change_global_variable = { name = Human_Bone_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Human_Skull } set_variable = { name = current_indc value = flag:Human_Skull_Dust } change_global_variable = { name = Human_Skull_Dust_Qty add = 5 } change_global_variable = { name = Human_Skull_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Human_Tooth } set_variable = { name = current_indc value = flag:Human_Tooth_Dust } change_global_variable = { name = Human_Tooth_Dust_Qty add = 5 } change_global_variable = { name = Human_Tooth_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Jasper } set_variable = { name = current_indc value = flag:Jasper_Dust } change_global_variable = { name = Jasper_Dust_Qty add = 5 } change_global_variable = { name = Jasper_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Livestock } set_variable = { name = current_indc value = flag:Livestock_Dust } change_global_variable = { name = Livestock_Dust_Qty add = 5 } change_global_variable = { name = Livestock_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Pearl } set_variable = { name = current_indc value = flag:Pearl_Dust } change_global_variable = { name = Pearl_Dust_Qty add = 5 } change_global_variable = { name = Pearl_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Pearl_Black } set_variable = { name = current_indc value = flag:Pearl_Black_Dust } change_global_variable = { name = Pearl_Black_Dust_Qty add = 5 } change_global_variable = { name = Pearl_Black_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Ruby_Large } set_variable = { name = current_indc value = flag:Ruby_Dust } change_global_variable = { name = Ruby_Dust_Qty add = 5 } change_global_variable = { name = Ruby_Large_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Sapphire_Large } set_variable = { name = current_indc value = flag:Sapphire_Dust } change_global_variable = { name = Sapphire_Dust_Qty add = 5 } change_global_variable = { name = Sapphire_Large_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Tourmaline_Large } set_variable = { name = current_indc value = flag:Tourmaline_Dust } change_global_variable = { name = Tourmaline_Dust_Qty add = 5 } change_global_variable = { name = Tourmaline_Large_Qty subtract = 1 } }
+		else_if = { limit = { var:current_ind = flag:Turquoise } set_variable = { name = current_indc value = flag:Turquoise_Dust } change_global_variable = { name = Turquoise_Dust_Qty add = 5 } change_global_variable = { name = Turquoise_Qty subtract = 1 } }
+		
+
+		add_to_global_variable_list = { name = pshop_resources target = var:current_indc }
+
+		if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_mineral_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_mineral_resources target = var:current_indc }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_plant_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_plant_resources target = var:current_indc }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_animal_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_animal_resources target = var:current_indc }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_tools_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_tools_resources target = var:current_indc }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_special_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_special_resources target = var:current_indc }
+		}
+		else_if = {
+			limit = {
+				is_target_in_global_variable_list = { name = ashop_potion_resources target = var:current_ind }
+			}
+			add_to_global_variable_list = { name = pshop_potion_resources target = var:current_indc }
+		}
+		remove_a_empty = yes
+		
+	}
+}

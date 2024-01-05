@@ -1,0 +1,137 @@
+######################################################
+################## PORTRAIT TYPES ####################
+######################################################
+
+types PortraitTypes_Diplo
+{
+
+    ####################################
+    ######### MAIN PORTRAITS ###########
+    ####################################
+
+
+    type portrait_diplo = margin_widget {
+        size = { 240 300 }
+        margin = { 3 3 }
+        tooltip_enabled = no
+
+        portrait_button = {
+            size = { 620 832 }
+            parentanchor = bottom|hcenter
+            using = portrait_base
+            allow_outside = yes
+            tooltip_enabled = no
+            alwaystransparent = yes
+            portrait_texture = "[Character.GetAnimatedPortrait('environment_cw_india_throneroom_main', 'diplo_overview_1', 'throne_room_conversation_1', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            mask = "gfx/2.dds"
+            effectname = "NoHighlight"
+
+            block "portrait_button" {}
+
+            block "portrait_transformation"
+            {
+                portrait_scale = { 1 1 }
+            }
+
+
+        }
+    }
+    type portrait_diplo_2 = margin_widget {
+        size = { 240 300 }
+        margin = { 3 3 }
+        tooltip_enabled = no
+
+        portrait_button = {
+            size = { 560 772 }
+            parentanchor = bottom|hcenter
+            using = portrait_base
+            allow_outside = yes
+            tooltip_enabled = no
+            alwaystransparent = yes
+            portrait_texture = "[Character.GetAnimatedPortrait('environment_cw_india_throneroom_main', 'diplo_overview_2', 'throne_room_conversation_2', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            mask = "gfx/2.dds"
+            effectname = "NoHighlight"
+
+            block "portrait_button" {}
+
+            block "portrait_transformation"
+            {
+                portrait_scale = { 1 1 }
+            }
+
+
+        }
+    }
+
+}
+
+template portrait_base_tavern
+{
+    pop_out = yes
+    block "grayscale" {
+        grayscale = "[Not(Character.IsAlive)]"
+    }
+
+    gfxtype = portraitbuttongfx
+    shaderfile = "gfx/FX/jomini/gui_portrait.shader"
+
+    intersectionmask = no
+
+    background_texture = "gfx/portraits/portrait_transparent.dds"
+    texture = "gfx/portraits/portrait_transparent.dds"
+
+    clicksound = "event:/SFX/UI/Character/sfx_ui_character_portrait_select"
+    oversound = "event:/SFX/UI/Character/sfx_ui_character_portrait_pointer_over"
+
+    block "portrait_button_template_onmouseenter"
+    {
+        state = {
+            name = _mouse_enter
+            on_start = "[Character.OnMouseEnter]"
+        }
+    }
+    block "portrait_button_template_onmouseleave"
+    {
+        state = {
+            name = _mouse_leave
+            on_start = "[Character.OnMouseLeave]"
+        }
+    }
+
+    block "portrait_button_template_onclick"
+    {
+        onclick = "[DefaultOnCharacterClick(Character.GetID)]"
+    }
+
+    block "portrait_button_template_onrightclick"
+    {
+        onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
+        button_ignore = none
+    }
+
+    filter_mouse = right
+
+    block "portrait_button_template_tooltip"
+    {
+        tooltip_enabled = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+
+        tooltipwidget = {
+            cooltip_type = {
+                blockoverride "interaction_info" {
+                    text = "CHARACTER_TOOLTIP_INSTRUCTION"
+                }
+            }
+        }
+    }
+
+    using = tooltip_es
+    tooltip_offset = { 0 0 }
+    tooltip_verticalbehavior = slide
+    tooltip_horizontalbehavior = mirror
+
+    block "portrait_transformation"
+    {
+        portrait_scale = { 1.0 1.0 }
+        portrait_offset = { 0.0 0.0 }
+    }
+}

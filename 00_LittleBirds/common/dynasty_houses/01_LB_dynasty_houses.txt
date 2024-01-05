@@ -1,0 +1,6 @@
+﻿
+house_Varys = {
+	name = "dynn_varys"
+	dynasty = dynn_varys
+	motto = "Little Birds"
+}

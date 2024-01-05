@@ -1,0 +1,2655 @@
+﻿
+#cshop
+new_castox = {
+	create_dynamic_title = {
+		tier = empire
+		name = "Merchanchant Empire"
+	}
+	create_title_and_vassal_change = {
+		type = created
+		save_scope_as = change
+		add_claim_on_loss = no
+	}
+	scope:new_title = {
+		set_capital_county = title:c_naxos
+		set_landless_title = yes
+		set_destroy_on_succession = yes
+		set_delete_on_destroy = yes
+		set_no_automatic_claims = yes
+		set_definitive_form = yes
+		set_can_be_named_after_dynasty = no
+		change_title_holder = {
+			holder = global_var:castox
+			change = scope:change
+		}
+	}
+	resolve_title_and_vassal_change = scope:change
+	global_var:castox = {
+		set_variable = {
+			name = peasant_title
+			value = scope:new_title
+		}
+	}
+	scope:new_title = { generate_coa = factions }
+}
+reincarnate_castox = {
+	if = {
+		limit = {
+			global_var:castox = { is_alive = no }
+		}
+
+			create_character = {
+				template_character = global_var:castox
+				save_scope_as = new_castox
+				template = castox_template
+				location = title:c_naxos
+				after_creation = {
+					copy_inheritable_appearance_from = global_var:castox
+					set_immortal_age = 24
+					change_first_name = "Castox"
+					set_house = global_var:castox.house
+					add_character_flag = has_scripted_appearance
+					set_global_variable = { name = castox value = scope:new_castox }
+					new_castox = yes
+				}
+			}
+		
+	}
+}
+
+a_add_helmet = {
+	add_to_global_variable_list = {
+		name = helmets_1
+		target = flag:l1-14
+	}
+	add_to_global_variable_list = {
+		name = helmets_1
+		target = flag:l1-15
+	}
+	add_to_global_variable_list = {
+		name = helmets_1
+		target = flag:l1-21
+	}
+	add_to_global_variable_list = {
+		name = helmets_1
+		target = flag:l1-38
+	}
+	#lv2
+	add_to_global_variable_list = {
+		name = helmets_2
+		target = flag:l2-4
+	}
+	add_to_global_variable_list = {
+		name = helmets_2
+		target = flag:l2-17
+	}
+	add_to_global_variable_list = {
+		name = helmets_2
+		target = flag:l2-31
+	}
+	add_to_global_variable_list = {
+		name = helmets_2
+		target = flag:l2-38
+	}
+	#lv3
+	add_to_global_variable_list = {
+		name = helmets_3
+		target = flag:l3-3
+	}
+	add_to_global_variable_list = {
+		name = helmets_3
+		target = flag:l3-18
+	}
+	add_to_global_variable_list = {
+		name = helmets_3
+		target = flag:l3-19
+	}
+	add_to_global_variable_list = {
+		name = helmets_3
+		target = flag:l3-20
+	}
+	add_to_global_variable_list = {
+		name = helmets_3
+		target = flag:l3-23
+	}
+	add_to_global_variable_list = {
+		name = helmets_3
+		target = flag:l3-31
+	}
+	add_to_global_variable_list = {
+		name = helmets_3
+		target = flag:l3-40
+	}
+	#Lv4
+	add_to_global_variable_list = {
+		name = helmets_4
+		target = flag:l4-7
+	}
+	add_to_global_variable_list = {
+		name = helmets_4
+		target = flag:l4-10
+	}
+	add_to_global_variable_list = {
+		name = helmets_4
+		target = flag:l4-18
+	}
+}
+a_add_plates = {
+	add_to_global_variable_list = {
+		name = plates_1
+		target = flag:l1-22
+	}
+	add_to_global_variable_list = {
+		name = plates_1
+		target = flag:l1-39
+	}
+
+	#lv2
+	add_to_global_variable_list = {
+		name = plates_2
+		target = flag:l2-5
+	}
+	add_to_global_variable_list = {
+		name = plates_2
+		target = flag:l2-18
+	}
+	add_to_global_variable_list = {
+		name = plates_2
+		target = flag:l2-39
+	}
+
+	#lv3
+	add_to_global_variable_list = {
+		name = plates_3
+		target = flag:l3-4
+	}
+	add_to_global_variable_list = {
+		name = plates_3
+		target = flag:l3-24
+	}
+	add_to_global_variable_list = {
+		name = plates_3
+		target = flag:l3-32
+	}
+	add_to_global_variable_list = {
+		name = plates_3
+		target = flag:l3-41
+	}
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = plates_4
+		target = flag:l4-11
+	}
+	add_to_global_variable_list = {
+		name = plates_4
+		target = flag:l4-19
+	}
+
+}
+a_add_pants = {
+	add_to_global_variable_list = {
+		name = pants_1
+		target = flag:l1-23
+	}
+	add_to_global_variable_list = {
+		name = pants_1
+		target = flag:l1-40
+	}
+
+	#lv2
+	add_to_global_variable_list = {
+		name = pants_2
+		target = flag:l2-6
+	}
+	add_to_global_variable_list = {
+		name = pants_2
+		target = flag:l2-19
+	}
+	add_to_global_variable_list = {
+		name = pants_2
+		target = flag:l2-40
+	}
+
+	#lv3
+	add_to_global_variable_list = {
+		name = pants_3
+		target = flag:l3-25
+	}
+	add_to_global_variable_list = {
+		name = pants_3
+		target = flag:l3-33
+	}
+	add_to_global_variable_list = {
+		name = pants_3
+		target = flag:l3-42
+	}
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = pants_4
+		target = flag:l4-12
+	}
+	add_to_global_variable_list = {
+		name = pants_4
+		target = flag:l4-20
+	}
+
+}
+a_add_range = {
+	add_to_global_variable_list = {
+		name = range_w_1
+		target = flag:l1-4
+	}
+	add_to_global_variable_list = {
+		name = range_w_1
+		target = flag:l1-9
+	}
+
+	#lv2
+	add_to_global_variable_list = {
+		name = range_w_2
+		target = flag:l2-14
+	}
+	add_to_global_variable_list = {
+		name = range_w_2
+		target = flag:l2-15
+	}
+	add_to_global_variable_list = {
+		name = range_w_2
+		target = flag:l2-16
+	}
+
+	#lv3
+	add_to_global_variable_list = {
+		name = range_w_3
+		target = flag:l3-12
+	}
+
+}
+a_add_projectile = {
+	add_to_global_variable_list = {
+		name = projectile_1
+		target = flag:l1-0
+	}
+	add_to_global_variable_list = {
+		name = projectile_1
+		target = flag:l1-1
+	}
+	add_to_global_variable_list = {
+		name = projectile_1
+		target = flag:l1-47
+	}
+	add_to_global_variable_list = {
+		name = projectile_1
+		target = flag:l1-48
+	}
+	#lv2
+	add_to_global_variable_list = {
+		name = projectile_2
+		target = flag:l2-0
+	}
+	add_to_global_variable_list = {
+		name = projectile_2
+		target = flag:l2-1
+	}
+	add_to_global_variable_list = {
+		name = projectile_2
+		target = flag:l2-51
+	}
+	add_to_global_variable_list = {
+		name = projectile_2
+		target = flag:l2-52
+	}
+	#lv3
+	add_to_global_variable_list = {
+		name = projectile_3
+		target = flag:l3-0
+	}
+	add_to_global_variable_list = {
+		name = projectile_3
+		target = flag:l3-1
+	}
+	add_to_global_variable_list = {
+		name = projectile_3
+		target = flag:l3-51
+	}
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = projectile_4
+		target = flag:l4-33
+	}
+
+}
+a_add_neck = {
+	add_to_global_variable_list = {
+		name = neck_1
+		target = flag:l1-27
+	}
+
+	#lv2
+	add_to_global_variable_list = {
+		name = neck_2
+		target = flag:l2-34
+	}
+	add_to_global_variable_list = {
+		name = neck_2
+		target = flag:l2-35
+	}
+
+	#lv3
+	add_to_global_variable_list = {
+		name = neck_3
+		target = flag:l3-29
+	}
+	add_to_global_variable_list = {
+		name = neck_3
+		target = flag:l3-30
+	}
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = neck_4
+		target = flag:l4-16
+	}
+
+}
+a_add_shoulders = {
+	add_to_global_variable_list = {
+		name = shoulders_1
+		target = flag:l1-10
+	}
+	add_to_global_variable_list = {
+		name = shoulders_1
+		target = flag:l1-11
+	}
+	add_to_global_variable_list = {
+		name = shoulders_1
+		target = flag:l1-24
+	}
+	add_to_global_variable_list = {
+		name = shoulders_1
+		target = flag:l1-41
+	}
+	#lv2
+	add_to_global_variable_list = {
+		name = shoulders_2
+		target = flag:l2-7
+	}
+	add_to_global_variable_list = {
+		name = shoulders_2
+		target = flag:l2-20
+	}
+	add_to_global_variable_list = {
+		name = shoulders_2
+		target = flag:l2-23
+	}
+	add_to_global_variable_list = {
+		name = shoulders_2
+		target = flag:l2-24
+	}
+	add_to_global_variable_list = {
+		name = shoulders_2
+		target = flag:l2-25
+	}
+	add_to_global_variable_list = {
+		name = shoulders_2
+		target = flag:l2-26
+	}
+	add_to_global_variable_list = {
+		name = shoulders_2
+		target = flag:l2-41
+	}
+	#lv3
+	add_to_global_variable_list = {
+		name = shoulders_3
+		target = flag:l3-6
+	}
+	add_to_global_variable_list = {
+		name = shoulders_3
+		target = flag:l3-13
+	}
+	add_to_global_variable_list = {
+		name = shoulders_3
+		target = flag:l3-14
+	}
+	add_to_global_variable_list = {
+		name = shoulders_3
+		target = flag:l3-26
+	}
+	add_to_global_variable_list = {
+		name = shoulders_3
+		target = flag:l3-34
+	}
+	add_to_global_variable_list = {
+		name = shoulders_3
+		target = flag:l3-43
+	}
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = shoulders_4
+		target = flag:l4-13
+	}
+	add_to_global_variable_list = {
+		name = shoulders_4
+		target = flag:l4-21
+	}
+
+}
+a_add_gloves = {
+	add_to_global_variable_list = {
+		name = gloves_1
+		target = flag:l1-12
+	}
+	add_to_global_variable_list = {
+		name = gloves_1
+		target = flag:l1-25
+	}
+	add_to_global_variable_list = {
+		name = gloves_1
+		target = flag:l1-42
+	}
+
+	#lv2
+	add_to_global_variable_list = {
+		name = gloves_2
+		target = flag:l2-8
+	}
+	add_to_global_variable_list = {
+		name = gloves_2
+		target = flag:l2-21
+	}
+	add_to_global_variable_list = {
+		name = gloves_2
+		target = flag:l2-27
+	}
+	add_to_global_variable_list = {
+		name = gloves_2
+		target = flag:l2-28
+	}
+	add_to_global_variable_list = {
+		name = gloves_2
+		target = flag:l2-29
+	}
+	add_to_global_variable_list = {
+		name = gloves_2
+		target = flag:l2-42
+	}
+
+	#lv3
+	add_to_global_variable_list = {
+		name = gloves_3
+		target = flag:l3-7
+	}
+	add_to_global_variable_list = {
+		name = gloves_3
+		target = flag:l3-15
+	}
+	add_to_global_variable_list = {
+		name = gloves_3
+		target = flag:l3-27
+	}
+	add_to_global_variable_list = {
+		name = gloves_3
+		target = flag:l3-35
+	}
+	add_to_global_variable_list = {
+		name = gloves_3
+		target = flag:l3-44
+	}
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = gloves_4
+		target = flag:l4-4
+	}
+	add_to_global_variable_list = {
+		name = gloves_4
+		target = flag:l4-14
+	}
+	add_to_global_variable_list = {
+		name = gloves_4
+		target = flag:l4-22
+	}
+}
+a_add_accessory = {
+	add_to_global_variable_list = {
+		name = accessory_1
+		target = flag:l1-4
+	}
+	add_to_global_variable_list = {
+		name = accessory_1
+		target = flag:l1-5
+	}
+	add_to_global_variable_list = {
+		name = accessory_1
+		target = flag:l1-30
+	}
+	add_to_global_variable_list = {
+		name = accessory_1
+		target = flag:l1-31
+	}
+	add_to_global_variable_list = {
+		name = accessory_1
+		target = flag:l1-49
+	}
+
+	#lv2
+	add_to_global_variable_list = {
+		name = accessory_2
+		target = flag:l2-10
+	}
+	add_to_global_variable_list = {
+		name = accessory_2
+		target = flag:l2-11
+	}
+	add_to_global_variable_list = {
+		name = accessory_2
+		target = flag:l2-37
+	}
+	add_to_global_variable_list = {
+		name = accessory_2
+		target = flag:l2-53
+	}
+
+	#lv3
+	add_to_global_variable_list = {
+		name = accessory_3
+		target = flag:l3-9
+	}
+	add_to_global_variable_list = {
+		name = accessory_3
+		target = flag:l3-39
+	}
+
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = accessory_4
+		target = flag:l4-1
+	}
+	add_to_global_variable_list = {
+		name = accessory_4
+		target = flag:l4-2
+	}
+	add_to_global_variable_list = {
+		name = accessory_4
+		target = flag:l4-25
+	}
+	add_to_global_variable_list = {
+		name = accessory_4
+		target = flag:l4-26
+	}	
+	add_to_global_variable_list = {
+		name = accessory_4
+		target = flag:l4-34
+	}
+	add_to_global_variable_list = {
+		name = accessory_4
+		target = flag:l4-35
+	}
+}
+a_add_boots = {
+	add_to_global_variable_list = {
+		name = boots_1
+		target = flag:l1-26
+	}
+	add_to_global_variable_list = {
+		name = boots_1
+		target = flag:l1-43
+	}
+	#lv2
+	add_to_global_variable_list = {
+		name = boots_2
+		target = flag:l2-9
+	}
+	add_to_global_variable_list = {
+		name = boots_2
+		target = flag:l2-22
+	}
+	add_to_global_variable_list = {
+		name = boots_2
+		target = flag:l2-43
+	}
+	#lv3
+	add_to_global_variable_list = {
+		name = boots_3
+		target = flag:l3-8
+	}
+	add_to_global_variable_list = {
+		name = boots_3
+		target = flag:l3-28
+	}
+	add_to_global_variable_list = {
+		name = boots_3
+		target = flag:l3-36
+	}
+	add_to_global_variable_list = {
+		name = boots_3
+		target = flag:l3-45
+	}
+	#Lv4
+	add_to_global_variable_list = {
+		name = boots_4
+		target = flag:l4-15
+	}
+	add_to_global_variable_list = {
+		name = boots_4
+		target = flag:l4-23
+	}
+}
+a_add_shield = {
+	add_to_global_variable_list = {
+		name = shield_1
+		target = flag:l1-32
+	}
+	add_to_global_variable_list = {
+		name = shield_1
+		target = flag:l1-33
+	}
+
+	#lv2
+	add_to_global_variable_list = {
+		name = shield_2
+		target = flag:l2-30
+	}
+	add_to_global_variable_list = {
+		name = shield_2
+		target = flag:l2-44
+	}
+
+	#lv3
+	add_to_global_variable_list = {
+		name = shield_3
+		target = flag:l3-17
+	}
+	add_to_global_variable_list = {
+		name = shield_3
+		target = flag:l3-46
+	}
+
+	#Lv4
+	add_to_global_variable_list = {
+		name = shield_4
+		target = flag:l4-27
+	}
+
+}
+a_add_weapon = {
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-2
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-3
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-6
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-7
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-13
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-16
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-17
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-18
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-19
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-20
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-28
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-29
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-34
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-35
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-36
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-37
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-44
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-45
+	}
+	add_to_global_variable_list = {
+		name = weapon_1
+		target = flag:l1-46
+	}
+	#lv2
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-2
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-3
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-12
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-13
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-32
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-33
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-36
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-45
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-46
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-47
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-48
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-49
+	}
+	add_to_global_variable_list = {
+		name = weapon_2
+		target = flag:l2-50
+	}
+	#lv3
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-6
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-2
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-10
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-11
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-16
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-21
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-22
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-37
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-38
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-47
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-48
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-49
+	}
+	add_to_global_variable_list = {
+		name = weapon_3
+		target = flag:l3-50
+	}
+	#Lv4
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-0
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-5
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-6
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-8
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-9
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-24
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-28
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-29
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-30
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-31
+	}
+	add_to_global_variable_list = {
+		name = weapon_4
+		target = flag:l4-32
+	}
+}
+
+a_popshop = {
+	a_add_helmet = yes
+	a_add_plates = yes
+	a_add_pants = yes
+	a_add_range = yes
+	a_add_projectile = yes
+	a_add_neck = yes
+	a_add_shoulders = yes
+	a_add_gloves = yes
+	a_add_accessory = yes
+	a_add_boots = yes
+	a_add_shield = yes
+	a_add_weapon = yes
+
+}
+
+##USER DEBUG
+u_add_helmet = {
+	add_to_variable_list = {
+		name = helmets_1
+		target = flag:l1-14
+	}
+	add_to_variable_list = {
+		name = helmets_1
+		target = flag:l1-15
+	}
+	add_to_variable_list = {
+		name = helmets_1
+		target = flag:l1-21
+	}
+	add_to_variable_list = {
+		name = helmets_1
+		target = flag:l1-38
+	}
+	#lv2
+	add_to_variable_list = {
+		name = helmets_2
+		target = flag:l2-4
+	}
+	add_to_variable_list = {
+		name = helmets_2
+		target = flag:l2-17
+	}
+	add_to_variable_list = {
+		name = helmets_2
+		target = flag:l2-31
+	}
+	add_to_variable_list = {
+		name = helmets_2
+		target = flag:l2-38
+	}
+	#lv3
+	add_to_variable_list = {
+		name = helmets_3
+		target = flag:l3-3
+	}
+	add_to_variable_list = {
+		name = helmets_3
+		target = flag:l3-18
+	}
+	add_to_variable_list = {
+		name = helmets_3
+		target = flag:l3-19
+	}
+	add_to_variable_list = {
+		name = helmets_3
+		target = flag:l3-20
+	}
+	add_to_variable_list = {
+		name = helmets_3
+		target = flag:l3-23
+	}
+	add_to_variable_list = {
+		name = helmets_3
+		target = flag:l3-31
+	}
+	add_to_variable_list = {
+		name = helmets_3
+		target = flag:l3-40
+	}
+	#Lv4
+	add_to_variable_list = {
+		name = helmets_4
+		target = flag:l4-7
+	}
+	add_to_variable_list = {
+		name = helmets_4
+		target = flag:l4-10
+	}
+	add_to_variable_list = {
+		name = helmets_4
+		target = flag:l4-18
+	}
+}
+u_add_plates = {
+	add_to_variable_list = {
+		name = plates_1
+		target = flag:l1-22
+	}
+	add_to_variable_list = {
+		name = plates_1
+		target = flag:l1-39
+	}
+	
+	#lv2
+	add_to_variable_list = {
+		name = plates_2
+		target = flag:l2-5
+	}
+	add_to_variable_list = {
+		name = plates_2
+		target = flag:l2-18
+	}
+	add_to_variable_list = {
+		name = plates_2
+		target = flag:l2-39
+	}
+	
+	#lv3
+	add_to_variable_list = {
+		name = plates_3
+		target = flag:l3-4
+	}
+	add_to_variable_list = {
+		name = plates_3
+		target = flag:l3-24
+	}
+	add_to_variable_list = {
+		name = plates_3
+		target = flag:l3-32
+	}
+	add_to_variable_list = {
+		name = plates_3
+		target = flag:l3-41
+	}
+	
+	#Lv4
+	add_to_variable_list = {
+		name = plates_4
+		target = flag:l4-11
+	}
+	add_to_variable_list = {
+		name = plates_4
+		target = flag:l4-19
+	}
+}
+u_add_pants = {
+	add_to_variable_list = {
+		name = pants_1
+		target = flag:l1-23
+	}
+	add_to_variable_list = {
+		name = pants_1
+		target = flag:l1-40
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = pants_2
+		target = flag:l2-6
+	}
+	add_to_variable_list = {
+		name = pants_2
+		target = flag:l2-19
+	}
+	add_to_variable_list = {
+		name = pants_2
+		target = flag:l2-40
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = pants_3
+		target = flag:l3-25
+	}
+	add_to_variable_list = {
+		name = pants_3
+		target = flag:l3-33
+	}
+	add_to_variable_list = {
+		name = pants_3
+		target = flag:l3-42
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = pants_4
+		target = flag:l4-12
+	}
+	add_to_variable_list = {
+		name = pants_4
+		target = flag:l4-20
+	}
+
+}
+u_add_range = {
+	add_to_variable_list = {
+		name = range_w_1
+		target = flag:l1-4
+	}
+	add_to_variable_list = {
+		name = range_w_1
+		target = flag:l1-9
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = range_w_2
+		target = flag:l2-14
+	}
+	add_to_variable_list = {
+		name = range_w_2
+		target = flag:l2-15
+	}
+	add_to_variable_list = {
+		name = range_w_2
+		target = flag:l2-16
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = range_w_3
+		target = flag:l3-12
+	}
+
+}
+u_add_projectile = {
+	add_to_variable_list = {
+		name = projectile_1
+		target = flag:l1-0
+	}
+	add_to_variable_list = {
+		name = projectile_1
+		target = flag:l1-1
+	}
+	add_to_variable_list = {
+		name = projectile_1
+		target = flag:l1-47
+	}
+	add_to_variable_list = {
+		name = projectile_1
+		target = flag:l1-48
+	}
+	#lv2
+	add_to_variable_list = {
+		name = projectile_2
+		target = flag:l2-0
+	}
+	add_to_variable_list = {
+		name = projectile_2
+		target = flag:l2-1
+	}
+	add_to_variable_list = {
+		name = projectile_2
+		target = flag:l2-51
+	}
+	add_to_variable_list = {
+		name = projectile_2
+		target = flag:l2-52
+	}
+	#lv3
+	add_to_variable_list = {
+		name = projectile_3
+		target = flag:l3-0
+	}
+	add_to_variable_list = {
+		name = projectile_3
+		target = flag:l3-1
+	}
+	add_to_variable_list = {
+		name = projectile_3
+		target = flag:l3-51
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = projectile_4
+		target = flag:l4-33
+	}
+
+}
+u_add_neck = {
+	add_to_variable_list = {
+		name = neck_1
+		target = flag:l1-27
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = neck_2
+		target = flag:l2-34
+	}
+	add_to_variable_list = {
+		name = neck_2
+		target = flag:l2-35
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = neck_3
+		target = flag:l3-29
+	}
+	add_to_variable_list = {
+		name = neck_3
+		target = flag:l3-30
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = neck_4
+		target = flag:l4-16
+	}
+
+}
+u_add_shoulders = {
+	add_to_variable_list = {
+		name = shoulders_1
+		target = flag:l1-10
+	}
+	add_to_variable_list = {
+		name = shoulders_1
+		target = flag:l1-11
+	}
+	add_to_variable_list = {
+		name = shoulders_1
+		target = flag:l1-24
+	}
+	add_to_variable_list = {
+		name = shoulders_1
+		target = flag:l1-41
+	}
+	#lv2
+	add_to_variable_list = {
+		name = shoulders_2
+		target = flag:l2-7
+	}
+	add_to_variable_list = {
+		name = shoulders_2
+		target = flag:l2-20
+	}
+	add_to_variable_list = {
+		name = shoulders_2
+		target = flag:l2-23
+	}
+	add_to_variable_list = {
+		name = shoulders_2
+		target = flag:l2-24
+	}
+	add_to_variable_list = {
+		name = shoulders_2
+		target = flag:l2-25
+	}
+	add_to_variable_list = {
+		name = shoulders_2
+		target = flag:l2-26
+	}
+	add_to_variable_list = {
+		name = shoulders_2
+		target = flag:l2-41
+	}
+	#lv3
+	add_to_variable_list = {
+		name = shoulders_3
+		target = flag:l3-6
+	}
+	add_to_variable_list = {
+		name = shoulders_3
+		target = flag:l3-13
+	}
+	add_to_variable_list = {
+		name = shoulders_3
+		target = flag:l3-14
+	}
+	add_to_variable_list = {
+		name = shoulders_3
+		target = flag:l3-26
+	}
+	add_to_variable_list = {
+		name = shoulders_3
+		target = flag:l3-34
+	}
+	add_to_variable_list = {
+		name = shoulders_3
+		target = flag:l3-43
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = shoulders_4
+		target = flag:l4-13
+	}
+	add_to_variable_list = {
+		name = shoulders_4
+		target = flag:l4-21
+	}
+
+}
+u_add_gloves = {
+	add_to_variable_list = {
+		name = gloves_1
+		target = flag:l1-12
+	}
+	add_to_variable_list = {
+		name = gloves_1
+		target = flag:l1-25
+	}
+	add_to_variable_list = {
+		name = gloves_1
+		target = flag:l1-42
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = gloves_2
+		target = flag:l2-8
+	}
+	add_to_variable_list = {
+		name = gloves_2
+		target = flag:l2-21
+	}
+	add_to_variable_list = {
+		name = gloves_2
+		target = flag:l2-27
+	}
+	add_to_variable_list = {
+		name = gloves_2
+		target = flag:l2-28
+	}
+	add_to_variable_list = {
+		name = gloves_2
+		target = flag:l2-29
+	}
+	add_to_variable_list = {
+		name = gloves_2
+		target = flag:l2-42
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = gloves_3
+		target = flag:l3-7
+	}
+	add_to_variable_list = {
+		name = gloves_3
+		target = flag:l3-15
+	}
+	add_to_variable_list = {
+		name = gloves_3
+		target = flag:l3-27
+	}
+	add_to_variable_list = {
+		name = gloves_3
+		target = flag:l3-35
+	}
+	add_to_variable_list = {
+		name = gloves_3
+		target = flag:l3-44
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = gloves_4
+		target = flag:l4-4
+	}
+	add_to_variable_list = {
+		name = gloves_4
+		target = flag:l4-14
+	}
+	add_to_variable_list = {
+		name = gloves_4
+		target = flag:l4-22
+	}
+}
+u_add_accessory = {
+	add_to_variable_list = {
+		name = accessory_1
+		target = flag:l1-4
+	}
+	add_to_variable_list = {
+		name = accessory_1
+		target = flag:l1-5
+	}
+	add_to_variable_list = {
+		name = accessory_1
+		target = flag:l1-30
+	}
+	add_to_variable_list = {
+		name = accessory_1
+		target = flag:l1-31
+	}
+	add_to_variable_list = {
+		name = accessory_1
+		target = flag:l1-49
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = accessory_2
+		target = flag:l2-10
+	}
+	add_to_variable_list = {
+		name = accessory_2
+		target = flag:l2-11
+	}
+	add_to_variable_list = {
+		name = accessory_2
+		target = flag:l2-37
+	}
+	add_to_variable_list = {
+		name = accessory_2
+		target = flag:l2-53
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = accessory_3
+		target = flag:l3-9
+	}
+	add_to_variable_list = {
+		name = accessory_3
+		target = flag:l3-39
+	}
+
+
+	#Lv4
+	add_to_variable_list = {
+		name = accessory_4
+		target = flag:l4-1
+	}
+	add_to_variable_list = {
+		name = accessory_4
+		target = flag:l4-2
+	}
+	add_to_variable_list = {
+		name = accessory_4
+		target = flag:l4-25
+	}
+	add_to_variable_list = {
+		name = accessory_4
+		target = flag:l4-26
+	}	
+	add_to_variable_list = {
+		name = accessory_4
+		target = flag:l4-34
+	}
+	add_to_variable_list = {
+		name = accessory_4
+		target = flag:l4-35
+	}
+}
+u_add_boots = {
+	add_to_variable_list = {
+		name = boots_1
+		target = flag:l1-26
+	}
+	add_to_variable_list = {
+		name = boots_1
+		target = flag:l1-43
+	}
+	#lv2
+	add_to_variable_list = {
+		name = boots_2
+		target = flag:l2-9
+	}
+	add_to_variable_list = {
+		name = boots_2
+		target = flag:l2-22
+	}
+	add_to_variable_list = {
+		name = boots_2
+		target = flag:l2-43
+	}
+	#lv3
+	add_to_variable_list = {
+		name = boots_3
+		target = flag:l3-8
+	}
+	add_to_variable_list = {
+		name = boots_3
+		target = flag:l3-28
+	}
+	add_to_variable_list = {
+		name = boots_3
+		target = flag:l3-36
+	}
+	add_to_variable_list = {
+		name = boots_3
+		target = flag:l3-45
+	}
+	#Lv4
+	add_to_variable_list = {
+		name = boots_4
+		target = flag:l4-15
+	}
+	add_to_variable_list = {
+		name = boots_4
+		target = flag:l4-23
+	}
+}
+u_add_shield = {
+	add_to_variable_list = {
+		name = shield_1
+		target = flag:l1-32
+	}
+	add_to_variable_list = {
+		name = shield_1
+		target = flag:l1-33
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = shield_2
+		target = flag:l2-30
+	}
+	add_to_variable_list = {
+		name = shield_2
+		target = flag:l2-44
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = shield_3
+		target = flag:l3-17
+	}
+	add_to_variable_list = {
+		name = shield_3
+		target = flag:l3-46
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = shield_4
+		target = flag:l4-27
+	}
+
+}
+u_add_weapon = {
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-2
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-3
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-6
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-7
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-13
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-16
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-17
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-18
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-19
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-20
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-28
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-29
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-34
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-35
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-36
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-37
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-44
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-45
+	}
+	add_to_variable_list = {
+		name = weapon_1
+		target = flag:l1-46
+	}
+	#lv2
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-2
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-3
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-12
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-13
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-32
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-33
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-36
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-45
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-46
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-47
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-48
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-49
+	}
+	add_to_variable_list = {
+		name = weapon_2
+		target = flag:l2-50
+	}
+	#lv3
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-6
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-2
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-10
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-11
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-16
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-21
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-22
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-37
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-38
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-47
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-48
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-49
+	}
+	add_to_variable_list = {
+		name = weapon_3
+		target = flag:l3-50
+	}
+	#Lv4
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-0
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-5
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-6
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-8
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-9
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-24
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-28
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-29
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-30
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-31
+	}
+	add_to_variable_list = {
+		name = weapon_4
+		target = flag:l4-32
+	}
+}
+
+u_popshop = {
+	u_add_helmet = yes
+	u_add_plates = yes
+	u_add_pants = yes
+	u_add_range = yes
+	u_add_projectile = yes
+	u_add_neck = yes
+	u_add_shoulders = yes
+	u_add_gloves = yes
+	u_add_accessory = yes
+	u_add_boots = yes
+	u_add_shield = yes
+	u_add_weapon = yes
+}
+
+##############
+
+ux_add_helmet = {
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l1-14
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l1-15
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l1-21
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l1-38
+	}
+	#lv2
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l2-4
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l2-17
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l2-31
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l2-38
+	}
+	#lv3
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l3-3
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l3-18
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l3-19
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l3-20
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l3-23
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l3-31
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l3-40
+	}
+	#Lv4
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l4-7
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l4-10
+	}
+	add_to_variable_list = {
+		name = helmets
+		target = flag:l4-18
+	}
+}
+ux_add_plates = {
+	add_to_variable_list = {
+		name = plates
+		target = flag:l1-22
+	}
+	add_to_variable_list = {
+		name = plates
+		target = flag:l1-39
+	}
+	
+	#lv2
+	add_to_variable_list = {
+		name = plates
+		target = flag:l2-5
+	}
+	add_to_variable_list = {
+		name = plates
+		target = flag:l2-18
+	}
+	add_to_variable_list = {
+		name = plates
+		target = flag:l2-39
+	}
+	
+	#lv3
+	add_to_variable_list = {
+		name = plates
+		target = flag:l3-4
+	}
+	add_to_variable_list = {
+		name = plates
+		target = flag:l3-24
+	}
+	add_to_variable_list = {
+		name = plates
+		target = flag:l3-32
+	}
+	add_to_variable_list = {
+		name = plates
+		target = flag:l3-41
+	}
+	
+	#Lv4
+	add_to_variable_list = {
+		name = plates
+		target = flag:l4-11
+	}
+	add_to_variable_list = {
+		name = plates
+		target = flag:l4-19
+	}
+}
+ux_add_pants = {
+	add_to_variable_list = {
+		name = pants
+		target = flag:l1-23
+	}
+	add_to_variable_list = {
+		name = pants
+		target = flag:l1-40
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = pants
+		target = flag:l2-6
+	}
+	add_to_variable_list = {
+		name = pants
+		target = flag:l2-19
+	}
+	add_to_variable_list = {
+		name = pants
+		target = flag:l2-40
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = pants
+		target = flag:l3-25
+	}
+	add_to_variable_list = {
+		name = pants
+		target = flag:l3-33
+	}
+	add_to_variable_list = {
+		name = pants
+		target = flag:l3-42
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = pants
+		target = flag:l4-12
+	}
+	add_to_variable_list = {
+		name = pants
+		target = flag:l4-20
+	}
+
+}
+ux_add_range = {
+	add_to_variable_list = {
+		name = range_w
+		target = flag:l1-4
+	}
+	add_to_variable_list = {
+		name = range_w
+		target = flag:l1-9
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = range_w
+		target = flag:l2-14
+	}
+	add_to_variable_list = {
+		name = range_w
+		target = flag:l2-15
+	}
+	add_to_variable_list = {
+		name = range_w
+		target = flag:l2-16
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = range_w
+		target = flag:l3-12
+	}
+
+}
+ux_add_projectile = {
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l1-0
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l1-1
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l1-47
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l1-48
+	}
+	#lv2
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l2-0
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l2-1
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l2-51
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l2-52
+	}
+	#lv3
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l3-0
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l3-1
+	}
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l3-51
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = projectile
+		target = flag:l4-33
+	}
+
+}
+ux_add_neck = {
+	add_to_variable_list = {
+		name = neck
+		target = flag:l1-27
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = neck
+		target = flag:l2-34
+	}
+	add_to_variable_list = {
+		name = neck
+		target = flag:l2-35
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = neck
+		target = flag:l3-29
+	}
+	add_to_variable_list = {
+		name = neck
+		target = flag:l3-30
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = neck
+		target = flag:l4-16
+	}
+
+}
+ux_add_shoulders = {
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l1-10
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l1-11
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l1-24
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l1-41
+	}
+	#lv2
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l2-7
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l2-20
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l2-23
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l2-24
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l2-25
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l2-26
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l2-41
+	}
+	#lv3
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l3-6
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l3-13
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l3-14
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l3-26
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l3-34
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l3-43
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l4-13
+	}
+	add_to_variable_list = {
+		name = shoulders
+		target = flag:l4-21
+	}
+
+}
+ux_add_gloves = {
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l1-12
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l1-25
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l1-42
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l2-8
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l2-21
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l2-27
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l2-28
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l2-29
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l2-42
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l3-7
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l3-15
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l3-27
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l3-35
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l3-44
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l4-4
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l4-14
+	}
+	add_to_variable_list = {
+		name = gloves
+		target = flag:l4-22
+	}
+}
+ux_add_accessory = {
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l1-4
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l1-5
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l1-30
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l1-31
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l1-49
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l2-10
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l2-11
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l2-37
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l2-53
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l3-9
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l3-39
+	}
+
+
+	#Lv4
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l4-1
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l4-2
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l4-25
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l4-26
+	}	
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l4-34
+	}
+	add_to_variable_list = {
+		name = accessory
+		target = flag:l4-35
+	}
+}
+ux_add_boots = {
+	add_to_variable_list = {
+		name = boots
+		target = flag:l1-26
+	}
+	add_to_variable_list = {
+		name = boots
+		target = flag:l1-43
+	}
+	#lv2
+	add_to_variable_list = {
+		name = boots
+		target = flag:l2-9
+	}
+	add_to_variable_list = {
+		name = boots
+		target = flag:l2-22
+	}
+	add_to_variable_list = {
+		name = boots
+		target = flag:l2-43
+	}
+	#lv3
+	add_to_variable_list = {
+		name = boots
+		target = flag:l3-8
+	}
+	add_to_variable_list = {
+		name = boots
+		target = flag:l3-28
+	}
+	add_to_variable_list = {
+		name = boots
+		target = flag:l3-36
+	}
+	add_to_variable_list = {
+		name = boots
+		target = flag:l3-45
+	}
+	#Lv4
+	add_to_variable_list = {
+		name = boots
+		target = flag:l4-15
+	}
+	add_to_variable_list = {
+		name = boots
+		target = flag:l4-23
+	}
+}
+ux_add_shield = {
+	add_to_variable_list = {
+		name = shield
+		target = flag:l1-32
+	}
+	add_to_variable_list = {
+		name = shield
+		target = flag:l1-33
+	}
+
+	#lv2
+	add_to_variable_list = {
+		name = shield
+		target = flag:l2-30
+	}
+	add_to_variable_list = {
+		name = shield
+		target = flag:l2-44
+	}
+
+	#lv3
+	add_to_variable_list = {
+		name = shield
+		target = flag:l3-17
+	}
+	add_to_variable_list = {
+		name = shield
+		target = flag:l3-46
+	}
+
+	#Lv4
+	add_to_variable_list = {
+		name = shield
+		target = flag:l4-27
+	}
+
+}
+ux_add_weapon = {
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-2
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-3
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-6
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-7
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-13
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-16
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-17
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-18
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-19
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-20
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-28
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-29
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-34
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-35
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-36
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-37
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-44
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-45
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l1-46
+	}
+	#lv2
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-2
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-3
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-12
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-13
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-32
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-33
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-36
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-45
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-46
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-47
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-48
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-49
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l2-50
+	}
+	#lv3
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-6
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-2
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-10
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-11
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-16
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-21
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-22
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-37
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-38
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-47
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-48
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-49
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l3-50
+	}
+	#Lv4
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-0
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-5
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-6
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-8
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-9
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-24
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-28
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-29
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-30
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-31
+	}
+	add_to_variable_list = {
+		name = weapon
+		target = flag:l4-32
+	}
+}
+
+ux_popshop = {
+	ux_add_helmet = yes
+	ux_add_plates = yes
+	ux_add_pants = yes
+	ux_add_range = yes
+	ux_add_projectile = yes
+	ux_add_neck = yes
+	ux_add_shoulders = yes
+	ux_add_gloves = yes
+	ux_add_accessory = yes
+	ux_add_boots = yes
+	ux_add_shield = yes
+	ux_add_weapon = yes
+}

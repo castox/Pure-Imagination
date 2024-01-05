@@ -1,0 +1,2 @@
+limit_break = "[GetPlayer.MakeScope.Var('mana_limit').GetValue|0]"
+current_mana = "[GetPlayer.MakeScope.Var('mana_val').GetValue|0]"
